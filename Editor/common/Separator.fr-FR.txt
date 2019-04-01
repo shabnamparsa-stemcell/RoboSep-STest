@@ -1,0 +1,289 @@
+﻿# ----------------------------------------------------------------------------
+#  Separator.fr-FR.txt
+# 
+#  Invetech Pty Ltd
+#  Victoria, 3149, Australia
+#  Phone:   (+61) 3 9211 7700
+#  Fax:     (+61) 3 9211 7701
+# 
+#  The copyright to the computer program(s) herein is the property of 
+#  Invetech Pty Ltd, Australia.
+#  The program(s) may be used and/or copied only with the written permission 
+#  of Invetech Pty Ltd or in accordance with the terms and conditions 
+#  stipulated in the agreement/contract under which the program(s)
+#  have been supplied.
+#  
+#  Copyright © 2004. All Rights Reserved.
+# 
+# ----------------------------------------------------------------------------
+#
+#	--- NOTE: THIS FILE SHOULD BE SAVED WITH UTF-8 ENCODING ---
+#
+# * NOTE: PLEASE MAINTAIN STRING RESOURCES IN SeparatorResourceManager ORDER *
+#
+# ----------------------------------------------------------------------------
+# Separator states
+# ----------------------------------------------------------------------------
+SeparatorState.Initialising=
+SeparatorState.SeparatorUnloaded=Déchargé
+SeparatorState.NoSample=Choisi
+SeparatorState.Selected=Choisi
+SeparatorState.Configured=Configuré
+SeparatorState.Ready=Prêt
+SeparatorState.Running=Courir
+SeparatorState.Paused=Fait une pause
+SeparatorState.BatchHalted=Décommandé
+SeparatorState.BatchComplete=Fini
+SeparatorState.ShuttingDown=Courir
+SeparatorState.Shutdown=		
+
+# ----------------------------------------------------------------------------
+# Separator state descriptions
+# ----------------------------------------------------------------------------
+SeparatorState.SeparatorUnloaded.Description=Choisissez un ou plusieurs protocoles par l'intermédiaire de l'écran de choix.
+SeparatorState.NoSample.Description=Écrivez le volume témoin pour tous les protocoles par l'intermédiaire de l'écran de choix.
+SeparatorState.Selected.Description=Configurez les protocoles choisis par l'intermédiaire de l'écran de configuration.
+SeparatorState.Configured.Description=Chargez les consommables pour tous les protocoles par l'intermédiaire de l'écran de configuration.
+SeparatorState.Ready.Description=Serrez "impression" pour courir les protocoles énumérés.
+SeparatorState.Running.Description=Courir...
+SeparatorState.Paused.Description=Fait une pause
+SeparatorState.BatchHalted.Description=L'exploitation de lot a décommandé. Serrez déchargent pour continuer.
+SeparatorState.BatchComplete.Description=Courez complet. Veuillez décharger le carrousel.
+SeparatorState.ShuttingDown.Description=Arrêt en marche.
+SeparatorState.Shutdown.Description=
+
+# ----------------------------------------------------------------------------
+# Log message TraceLevel strings
+# ----------------------------------------------------------------------------
+String.TraceLevelVerbose=Corrigez
+String.TraceLevelInfo=L'information
+String.TraceLevelWarning=Avertissement
+String.TraceLevelError=Erreur
+
+# ----------------------------------------------------------------------------
+# Separator strings - General
+# ----------------------------------------------------------------------------
+String.Error=Erreur
+String.OK=OK
+String.Cancel=Annulation
+String.Yes=Oui
+String.No=Non
+String.Or=ou
+String.Press=Pression
+String.Confirm=Confirmez
+String.Ignore=Ignorez
+String.ConsoleVersion=Version de console
+
+# ----------------------------------------------------------------------------
+# Separator strings - Initialisation
+# ----------------------------------------------------------------------------
+String.InitialisationFailure=L'instrument n'a pas initialisé au cours de la période d'arrêt.
+String.InitialSplashText=Chargement...
+String.ErrorSplashText=Erreur ! Se fermer...
+
+# ----------------------------------------------------------------------------
+# Separator strings - Units
+# ----------------------------------------------------------------------------
+String.MicroLitres=µL
+String.MilliLitres=mL
+
+# ----------------------------------------------------------------------------
+# Separator strings - Protocol types
+# ----------------------------------------------------------------------------
+String.ProtocolClassPositiveText=Positif
+String.ProtocolClassNegativeText=Négatif
+String.ProtocolClassMaintenanceText=Entretien
+String.ProtocolClassShutdownText=Arrêt
+
+# ----------------------------------------------------------------------------
+# Separator strings - Protocol configuration
+# ----------------------------------------------------------------------------
+String.EnterSampleVolume=Écrivez un volume témoin dans la gamme [{0}..{1}].
+String.EmptyResource=Vide
+String.TubeResource=Tube
+String.VialResource=Fiole
+String.FullTipsBoxResource=Pleine Boîte De Bouts
+String.ReagentLotId=Identification De Sort De Réactif
+
+# ----------------------------------------------------------------------------
+# Separator strings - Batch run
+# ----------------------------------------------------------------------------
+String.HydraulicFluidLevelWarningCaption=Fluide Hydraulique
+String.HydraulicFluidLevelWarning=La bouteille de fluide hydraulique devrait être remplie avant de courir la prochaine série de protocoles.\n\nRemplissez le fluide hydraulique et cliquez 'Confirmez', ou clic 'Ignorez' pour écarter ce rappel pour cette course.
+String.MaintenanceAndSeparationIncompatibleWarningCaption=Choix De Protocole D'Entretien
+String.MaintenanceAndSeparationIncompatibleWarning=Les protocoles d'entretien et de séparation ne sont pas compatibles.\nLe choix d'un protocole d'entretien deselect tous les protocoles de séparation.
+String.SeparationAndMaintenanceIncompatibleWarningCaption=Choix De Protocole De Séparation
+String.SeparationAndMaintenanceIncompatibleWarning=Les protocoles de séparation ne sont pas compatibles avec des protocoles d'entretien.\nLe choix d'un protocole de séparation deselect tous les protocoles d'entretien.
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing page (& items common to its subpages)
+# ----------------------------------------------------------------------------
+String.SampleProcessingText=Traitement D'Échantillon
+String.MessagesText=Messages
+String.CancelText=Annulation
+String.ProtocolNameText=Nom De Protocole
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Run subpage
+# ----------------------------------------------------------------------------
+String.RunSamplesText=Échantillons
+String.RunProgressText=Courez Le Progrès
+String.RunOperatorIdText=Identification de l'utilisateur
+String.RunHaltText=Halte
+String.RunHaltingText=Stopper...
+String.RunPauseText=Pause
+String.RunPausingText=Pause...
+String.RunResumeText=Résumé
+String.RunStartText=Charge
+String.RunStartingText=Commencer...
+String.RunUnloadText=Déchargez
+String.RunUnloadingText=Déchargement...
+String.RunSchedulingText=Établissement du programme...
+String.RunResumingText=Reprise...
+String.RunSamplesSelectProtocolPromptText=< Choisissez Le Protocole >
+String.RunProgressTimeRemainingText=Temps restant
+String.RunMessagesRunOrSelectText=pour commencer
+String.RunMessagesEndTimeSpanText=\nAVERTISSEMENT: Période de fin en lots {0} minutes (excède {1} seuil minutieux).
+String.RunMessagesSelectProtocolText="Choisissez le protocole" pour choisir un protocole de séparation.
+String.RunProtocolNameColumnHeaderText=Nom De Protocole
+String.RunSampleVolumeColumnHeaderText=Volume
+String.RunProtocolTypeColumnHeaderText=Type
+String.RunDeleteSelectionColumnHeaderText=Espace libre
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Protocols subpage
+# ----------------------------------------------------------------------------
+String.ProtocolsSelectionText=Protocoles
+String.ProtocolsMessagesSelectProtocolText=Choisissez un protocole. Il y a {0} quarts de cercle disponibles.
+String.ProtocolsProtocolNameColumnText=Nom De Protocole
+String.ProtocolsQuadrantsColumnText=Quarts de cercle
+String.ProtocolsTypeColumnText=Type
+String.ProtocolsMRUColumnText=Utilisé
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Sample Volume dialog
+# ----------------------------------------------------------------------------
+String.SampleVolumeText=Volume Témoin
+String.SampleVolumePromptText=Écrivez un volume dans la gamme {0} à {1}.
+String.SampleVolumeOutOfRangeText=La valeur écrite est hors de gamme. Svp clair et essai encore.
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, User ID dialog
+# ----------------------------------------------------------------------------
+String.UserIdText=Identification de l'utilisateur
+String.UserIdPromptText=Veuillez écrire votre identification de l'utilisateur (jusqu'à 6 chiffres).
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, RoboSep Keypad
+# ----------------------------------------------------------------------------
+String.KeypadCancelText=Annulation
+String.KeypadClearText=Espace libre
+String.KeypadEnterText=Entrez
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Configuration subpage
+# ----------------------------------------------------------------------------
+String.ConfigurationReagentsResourcesText=Réactifs Et Ressources
+String.ConfigurationLocationText=Endroit
+String.ConfigurationLoadedText=Chargé
+String.ConfigurationRunText=Course
+String.ConfigurationMessagesLoadedRunConfirmationText=Serrez {0} quand toutes les ressources de protocole sont chargées.
+String.ConfigurationQuadrantNumberPromptText=Quarts(s) de cercle:
+String.ConfigurationNoneRequired=Il n'y a aucune ressource exigée.
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Reagent Lot ID dialog
+# ----------------------------------------------------------------------------
+String.ReagentLotIdText=Identification De Sort De Réactif
+String.ReagentLotIdIdPromptText=Veuillez entrer dans la marque 5-chiffre.
+String.ReagentLotIdInvalidText=L'identification écrite n'est pas dans le format correct. Svp clair et essai encore.
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Pause/Resume dialog
+# ----------------------------------------------------------------------------
+String.PausePausingMessage=L'instrument fait une pause. Attendez svp tandis que l'instrument atteint un état sûr pour faire une pause. Ceci peut prendre jusqu'{0} aux secondes.
+String.PausePausedMessage=L'instrument est actuellement fait une pause. Serrez le 'Résumé' pour continuer de courir les protocoles, ou 'Stoppez' pour décommander les protocoles.
+
+# ----------------------------------------------------------------------------
+# Separator strings - Instrument Tasks page
+# ----------------------------------------------------------------------------
+String.InstrumentTasksText=Tâches D'Instrument
+
+# ----------------------------------------------------------------------------
+# Separator strings - Instrument Tasks, Maintenance subpage
+# ----------------------------------------------------------------------------
+String.MaintenanceText=Entretien
+String.MaintenancePanelText=Entretien
+String.ShutdownPanelText=Arrêt
+
+# ----------------------------------------------------------------------------
+# Separator strings - Instrument Tasks, Message Log subpage
+# ----------------------------------------------------------------------------
+String.MessageLogText=Courez La Notation
+String.MessageLogTimeColumnText=Temps
+String.MessageLogSeverityColumnText=Sévérité
+String.MessageLogMessageColumnText=Message
+
+# ----------------------------------------------------------------------------
+# Separator strings - Instrument Tasks, About subpage
+# ----------------------------------------------------------------------------
+String.AboutText=Au sujet de
+String.ButtonTextExit=Sortie
+String.AboutSoftwareGroupText=Logiciel
+String.AboutSoftwareUiText=Interface utilisateur
+String.AboutSoftareInstrumentControlText=Commande D'Instrument
+String.AboutInstrumentGroupText=Instrument
+String.AboutInstrumentSerialNumberText=Numéro de série
+String.AboutInstrumentServiceConnectionText=Service Le Raccordement
+String.AboutInstrumentConnectNetworkCableText=< Reliez le câble de réseau; remettez en marche l'application. >
+
+# ----------------------------------------------------------------------------
+# Separator strings - Exceptions
+# ----------------------------------------------------------------------------
+String.ExInstrumentCommunicationsFailure=Panne de communications d'instrument. 
+String.ExFailedToConnectToInstrumentControl=Ne s'est pas relié au serveur de commande d'instrument.
+String.ExFailedToSubscribeToInstrumentControl=N'a pas souscrit pour des événements de commande d'instrument.
+String.ExFailedToCreateSeparatorEventSink=N'a pas créé l'évier d'événement de séparateur.
+String.ExFailedToConnectToSeparator=Ne s'est pas relié au serveur de séparateur.
+String.ExMissingMandatoryProtocol=Disparus obligatoires de protocole.
+
+# ----------------------------------------------------------------------------
+# Separator strings - Relative Quadrant Locations
+# ----------------------------------------------------------------------------
+String.SampleTube=Tube Témoin
+String.VialA=Fiole De Particules Magnétiques
+String.VialB=Fiole De Cocktail De Choix
+String.VialC=Fiole De Cocktail D'Anticorps
+String.SeparationTube=Tube De Séparation
+String.WasteTube=Tube De rebut
+String.LysisBufferTube=Tube D'Amortisseur De Lysis
+#String.TipsBox=Support De Bout
+String.QuadrantBuffer=Bouteille D'Amortisseur
+String.QuadrantBuffer34=Buffer Bouteille D'Amortisseur 3 & 4
+String.QuadrantBuffer56=Buffer Bouteille D'Amortisseur 5 & 6
+#CR
+String.VialBpos=Positive Selection Cocktail Vial
+String.VialBneg=Negative Selection Cocktail Vial
+String.NegativeFractionTube=Negative Fraction Tube
+
+# ----------------------------------------------------------------------------
+# Separator strings - Error Messages
+# ----------------------------------------------------------------------------
+String.ErrorFatal=Une erreur irrémédiable s'est produite.  
+String.ErrorTerminate=L'application sera terminée.
+String.ErrorTerminateQuestion=Vous voulez avorter la course courante?
+String.ErrorReportError=Veuillez économiser une copie du dossier de notation et envoyez-l'à StemCell Technologies.
+String.ErrorCantSchedule=La combinaison choisie des protocoles ne peut pas être programmée. Essayez d'enlever un protocole pour résoudre le problème.
+
+
+# ----------------------------------------------------------------------------
+# RoboSep Type
+# ----------------------------------------------------------------------------
+String.RoboSepS=RoboSep-S
+String.RoboSep16=RoboSep-16
+
+# ----------------------------------------------------------------------------
+# RoboSep Reagent Barcode
+# ----------------------------------------------------------------------------
+String.ReagentCustom=Custom Vial
+String.ReagentNotUsed=Not Used

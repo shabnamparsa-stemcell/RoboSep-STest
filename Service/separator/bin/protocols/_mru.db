@@ -1,0 +1,145 @@
+<?xml version="1.0" standalone="yes"?>
+<SeparatorDataSource xmlns="http://tempuri.org/SeparatorDataSource.xsd">
+  <SeparationProtocol>
+    <SeparationProtocolId>1</SeparationProtocolId>
+    <SeparationProtocolProtocolId>1</SeparationProtocolProtocolId>
+    <SeparationProtocolMinimumVolume>250</SeparationProtocolMinimumVolume>
+    <SeparationProtocolMaximumVolume>8500</SeparationProtocolMaximumVolume>
+    <SeparationProtocolClass>HumanPositive</SeparationProtocolClass>
+  </SeparationProtocol>
+  <SeparationProtocol>
+    <SeparationProtocolId>2</SeparationProtocolId>
+    <SeparationProtocolProtocolId>3</SeparationProtocolProtocolId>
+    <SeparationProtocolMinimumVolume>250</SeparationProtocolMinimumVolume>
+    <SeparationProtocolMaximumVolume>8000</SeparationProtocolMaximumVolume>
+    <SeparationProtocolClass>HumanPositive</SeparationProtocolClass>
+  </SeparationProtocol>
+  <SeparationProtocol>
+    <SeparationProtocolId>3</SeparationProtocolId>
+    <SeparationProtocolProtocolId>4</SeparationProtocolProtocolId>
+    <SeparationProtocolMinimumVolume>250</SeparationProtocolMinimumVolume>
+    <SeparationProtocolMaximumVolume>8500</SeparationProtocolMaximumVolume>
+    <SeparationProtocolClass>Positive</SeparationProtocolClass>
+  </SeparationProtocol>
+  <SeparationProtocol>
+    <SeparationProtocolId>4</SeparationProtocolId>
+    <SeparationProtocolProtocolId>5</SeparationProtocolProtocolId>
+    <SeparationProtocolMinimumVolume>250</SeparationProtocolMinimumVolume>
+    <SeparationProtocolMaximumVolume>8500</SeparationProtocolMaximumVolume>
+    <SeparationProtocolClass>HumanPositive</SeparationProtocolClass>
+  </SeparationProtocol>
+  <SeparationProtocol>
+    <SeparationProtocolId>5</SeparationProtocolId>
+    <SeparationProtocolProtocolId>6</SeparationProtocolProtocolId>
+    <SeparationProtocolMinimumVolume>250</SeparationProtocolMinimumVolume>
+    <SeparationProtocolMaximumVolume>8000</SeparationProtocolMaximumVolume>
+    <SeparationProtocolClass>Positive</SeparationProtocolClass>
+  </SeparationProtocol>
+  <Sample>
+    <SampleId>1</SampleId>
+    <SampleSeparationProtocolId>3</SampleSeparationProtocolId>
+    <SampleLabel />
+    <SampleVolume>1000</SampleVolume>
+  </Sample>
+  <Sample>
+    <SampleId>2</SampleId>
+    <SampleSeparationProtocolId>3</SampleSeparationProtocolId>
+    <SampleLabel />
+    <SampleVolume>1000</SampleVolume>
+  </Sample>
+  <Sample>
+    <SampleId>3</SampleId>
+    <SampleSeparationProtocolId>3</SampleSeparationProtocolId>
+    <SampleLabel />
+    <SampleVolume>3000</SampleVolume>
+  </Sample>
+  <MaintenanceProtocol>
+    <MaintenanceProtocolId>1</MaintenanceProtocolId>
+    <MaintenanceProtocolProtocolId>2</MaintenanceProtocolProtocolId>
+    <MaintenanceProtocolTaskId>0</MaintenanceProtocolTaskId>
+    <MaintenanceProtocolTaskDescription />
+  </MaintenanceProtocol>
+  <MaintenanceProtocol>
+    <MaintenanceProtocolId>2</MaintenanceProtocolId>
+    <MaintenanceProtocolProtocolId>7</MaintenanceProtocolProtocolId>
+    <MaintenanceProtocolTaskId>0</MaintenanceProtocolTaskId>
+    <MaintenanceProtocolTaskDescription />
+  </MaintenanceProtocol>
+  <Protocol>
+    <ProtocolId>1</ProtocolId>
+    <ProtocolInstrumentControlId>477013793</ProtocolInstrumentControlId>
+    <ProtocolLabel>Human Do-it-Yourself Positive Selection 18099-high purity</ProtocolLabel>
+    <ProtocolDescription>100 uL/mL cocktail, 50 uL/mL particle, 15, 10 min incubation(s), 10, 5, 5 min separation(s)</ProtocolDescription>
+    <ProtocolQuadrantCount>1</ProtocolQuadrantCount>
+    <ProtocolUsageCount>3</ProtocolUsageCount>
+    <ProtocolUsageTime>2011-12-14T13:33:27.5223661-08:00</ProtocolUsageTime>
+  </Protocol>
+  <Protocol>
+    <ProtocolId>2</ProtocolId>
+    <ProtocolInstrumentControlId>862125732</ProtocolInstrumentControlId>
+    <ProtocolLabel>Home all</ProtocolLabel>
+    <ProtocolDescription>No Description</ProtocolDescription>
+    <ProtocolQuadrantCount>1</ProtocolQuadrantCount>
+    <ProtocolUsageCount>19</ProtocolUsageCount>
+    <ProtocolUsageTime>2011-12-12T09:32:14.1451858-08:00</ProtocolUsageTime>
+  </Protocol>
+  <Protocol>
+    <ProtocolId>3</ProtocolId>
+    <ProtocolInstrumentControlId>595492133</ProtocolInstrumentControlId>
+    <ProtocolLabel>Human APC Positive Selection 18451-high purity</ProtocolLabel>
+    <ProtocolDescription>50 uL/mL antibody, 100 uL/mL cocktail, 50 uL/mL particle, 15, 15, 10 min incubation(s), 10, 5, 5 min separation(s)</ProtocolDescription>
+    <ProtocolQuadrantCount>1</ProtocolQuadrantCount>
+    <ProtocolUsageCount>2</ProtocolUsageCount>
+    <ProtocolUsageTime>2011-12-14T13:24:04.4790674-08:00</ProtocolUsageTime>
+  </Protocol>
+  <Protocol>
+    <ProtocolId>4</ProtocolId>
+    <ProtocolInstrumentControlId>215859015</ProtocolInstrumentControlId>
+    <ProtocolLabel>Jasons Super Out Of This World Protocol</ProtocolLabel>
+    <ProtocolDescription />
+    <ProtocolQuadrantCount>1</ProtocolQuadrantCount>
+    <ProtocolUsageCount>11</ProtocolUsageCount>
+    <ProtocolUsageTime>2011-12-14T13:39:54.2380338-08:00</ProtocolUsageTime>
+  </Protocol>
+  <Protocol>
+    <ProtocolId>5</ProtocolId>
+    <ProtocolInstrumentControlId>1077159688</ProtocolInstrumentControlId>
+    <ProtocolLabel>Human CD2 Positive Selection 18657-high purity</ProtocolLabel>
+    <ProtocolDescription>100 uL/mL cocktail, 50 uL/mL particle, 12, 8 min incubation(s), 5, 5, 5 min separation(s)</ProtocolDescription>
+    <ProtocolQuadrantCount>1</ProtocolQuadrantCount>
+    <ProtocolUsageCount>1</ProtocolUsageCount>
+    <ProtocolUsageTime>2011-12-14T13:22:02.1808388-08:00</ProtocolUsageTime>
+  </Protocol>
+  <Protocol>
+    <ProtocolId>6</ProtocolId>
+    <ProtocolInstrumentControlId>1510668207</ProtocolInstrumentControlId>
+    <ProtocolLabel>Any Species PE Positive Selection 18557-high purity</ProtocolLabel>
+    <ProtocolDescription>50 uL/mL antibody, 100 uL/mL cocktail, 50 uL/mL particle, 15, 15, 10 min incubation(s), 5, 5, 5 min separation(s)</ProtocolDescription>
+    <ProtocolQuadrantCount>1</ProtocolQuadrantCount>
+    <ProtocolUsageCount>0</ProtocolUsageCount>
+    <ProtocolUsageTime>2011-12-14T12:27:55.3919749-08:00</ProtocolUsageTime>
+  </Protocol>
+  <Protocol>
+    <ProtocolId>7</ProtocolId>
+    <ProtocolInstrumentControlId>309666504</ProtocolInstrumentControlId>
+    <ProtocolLabel>Basic prime</ProtocolLabel>
+    <ProtocolDescription>No Description</ProtocolDescription>
+    <ProtocolQuadrantCount>1</ProtocolQuadrantCount>
+    <ProtocolUsageCount>53</ProtocolUsageCount>
+    <ProtocolUsageTime>2011-12-12T16:29:15.7311324-08:00</ProtocolUsageTime>
+  </Protocol>
+  <Protocol>
+    <ProtocolId>8</ProtocolId>
+    <ProtocolInstrumentControlId>1274572367</ProtocolInstrumentControlId>
+    <ProtocolLabel>Basic shutdown protocol</ProtocolLabel>
+    <ProtocolDescription>No Description</ProtocolDescription>
+    <ProtocolQuadrantCount>1</ProtocolQuadrantCount>
+    <ProtocolUsageCount>3</ProtocolUsageCount>
+    <ProtocolUsageTime>2011-11-21T16:39:07.2694721-08:00</ProtocolUsageTime>
+  </Protocol>
+  <ShutdownProtocol>
+    <ShutdownProtocolId>1</ShutdownProtocolId>
+    <ShutdownProtocolProtocolId>8</ShutdownProtocolProtocolId>
+    <ShutdownProtocolDescription />
+  </ShutdownProtocol>
+</SeparatorDataSource>

@@ -1,0 +1,363 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Instrument</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Instrument</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/tesla/dev/dev001/control/tesla/instrument/instrument.py">c:\projects\tesla\dev\dev001\control\tesla\instrument\instrument.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;<a href="#Instrument">Instrument</a>.py<br>
+#&nbsp;tesla.instrument.<a href="#Instrument">Instrument</a><br>
+#<br>
+#&nbsp;Encapsulates&nbsp;the&nbsp;level&nbsp;1&nbsp;workflows&nbsp;of&nbsp;the&nbsp;Tesla&nbsp;instrument<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="copy.html">copy</a><br>
+</td><td width="25%" valign=top><a href="math.html">math</a><br>
+</td><td width="25%" valign=top><a href="tesla.html">tesla</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>(<a href="tesla.hardware.Component.html#Component">tesla.hardware.Component.Component</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Instrument.html#Instrument">Instrument</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>(<a href="exceptions.html#StandardError">exceptions.StandardError</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Instrument.html#InstrumentError">InstrumentError</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Instrument">class <strong>Instrument</strong></a>(<a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;to&nbsp;control&nbsp;the&nbsp;instrument&nbsp;hardware&nbsp;to&nbsp;execute&nbsp;the&nbsp;Tesla&nbsp;instrument<br>
+level&nbsp;1&nbsp;workflows.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Instrument.html#Instrument">Instrument</a></dd>
+<dd><a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a></dd>
+<dd><a href="tesla.hardware.Component.html#Component">tesla.hardware.Component.Component</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Instrument-BulkBottle"><strong>BulkBottle</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;Container&nbsp;instance&nbsp;for&nbsp;the&nbsp;bulk&nbsp;bottle.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-CleanUp"><strong>CleanUp</strong></a>(self)</dt><dd><tt>Cleaning&nbsp;up&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;a&nbsp;run.&nbsp;This&nbsp;(currently)&nbsp;means&nbsp;that&nbsp;we<br>
+move&nbsp;the&nbsp;carousel&nbsp;a&nbsp;short&nbsp;distance&nbsp;from&nbsp;home&nbsp;so&nbsp;that&nbsp;the&nbsp;carousel&nbsp;tab<br>
+is&nbsp;clear&nbsp;of&nbsp;the&nbsp;opto&nbsp;(for&nbsp;easy&nbsp;removal&nbsp;of&nbsp;the&nbsp;carousel)</tt></dd></dl>
+
+<dl><dt><a name="Instrument-ClearRootQuadrantMapping"><strong>ClearRootQuadrantMapping</strong></a>(self)</dt><dd><tt>Clears&nbsp;the&nbsp;root&nbsp;quadrant&nbsp;to&nbsp;sample&nbsp;ID&nbsp;mapping.<br>
+This&nbsp;should&nbsp;be&nbsp;called&nbsp;prior&nbsp;to&nbsp;running&nbsp;a&nbsp;batch</tt></dd></dl>
+
+<dl><dt><a name="Instrument-ContainerAt"><strong>ContainerAt</strong></a>(self, sector, name)</dt><dd><tt>Return&nbsp;the&nbsp;Container&nbsp;instance&nbsp;at&nbsp;the&nbsp;given&nbsp;position.<br>
+sector&nbsp;:&nbsp;the&nbsp;sector&nbsp;to&nbsp;look&nbsp;up&nbsp;(1-4&nbsp;on&nbsp;the&nbsp;carousel,&nbsp;0&nbsp;is&nbsp;not&nbsp;on&nbsp;the&nbsp;carousel)<br>
+name:&nbsp;mnemonic&nbsp;associated&nbsp;with&nbsp;the&nbsp;container</tt></dd></dl>
+
+<dl><dt><a name="Instrument-Demo"><strong>Demo</strong></a>(self, iterations<font color="#909090">=1</font>, id<font color="#909090">=None</font>, **kw)</dt><dd><tt>Run&nbsp;a&nbsp;demo&nbsp;mode&nbsp;for&nbsp;the&nbsp;instrument.&nbsp;You&nbsp;can&nbsp;specify&nbsp;a&nbsp;number&nbsp;of<br>
+iterations.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-Flush"><strong>Flush</strong></a>(self, wasteVial, homeAtEnd<font color="#909090">=True</font>, id<font color="#909090">=None</font>, **kw)</dt><dd><tt>Flush&nbsp;out&nbsp;the&nbsp;hydraulic&nbsp;line&nbsp;to&nbsp;the&nbsp;given&nbsp;waste&nbsp;vial.<br>
+If&nbsp;homeAtEnd&nbsp;is&nbsp;true,&nbsp;the&nbsp;Z&nbsp;axis&nbsp;is&nbsp;homed&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;flush.<br>
+id&nbsp;is&nbsp;a&nbsp;unique&nbsp;identifier&nbsp;(eg.&nbsp;sample&nbsp;ID)&nbsp;for&nbsp;tracking&nbsp;the&nbsp;caller.<br>
+kw&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;optional&nbsp;parameters&nbsp;&amp;&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-HomeAll"><strong>HomeAll</strong></a>(self, id<font color="#909090">=None</font>, **kw)</dt><dd><tt>Home&nbsp;all&nbsp;axes.<br>
+id&nbsp;is&nbsp;a&nbsp;unique&nbsp;identifier&nbsp;(eg.&nbsp;sample&nbsp;ID)&nbsp;for&nbsp;tracking&nbsp;the&nbsp;caller.<br>
+kw&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;optional&nbsp;parameters&nbsp;&amp;&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-Incubate"><strong>Incubate</strong></a>(self, period_secs, id<font color="#909090">=None</font>, **kw)</dt><dd><tt>Incubate&nbsp;for&nbsp;a&nbsp;specified&nbsp;number&nbsp;of&nbsp;seconds.<br>
+id&nbsp;is&nbsp;a&nbsp;unique&nbsp;identifier&nbsp;(eg.&nbsp;sample&nbsp;ID)&nbsp;for&nbsp;tracking&nbsp;the&nbsp;caller.<br>
+kw&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;optional&nbsp;parameters&nbsp;&amp;&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-Initialise"><strong>Initialise</strong></a>(self)</dt><dd><tt>Initialise&nbsp;the&nbsp;high-level&nbsp;instrument&nbsp;components.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-InitialiseContainers"><strong>InitialiseContainers</strong></a>(self)</dt><dd><tt>Set&nbsp;up&nbsp;the&nbsp;standard&nbsp;containers&nbsp;on&nbsp;the&nbsp;instrument&nbsp;on&nbsp;startup.&nbsp;(They&nbsp;<br>
+are&nbsp;initially&nbsp;assumed&nbsp;to&nbsp;be&nbsp;empty).<br>
+Returns&nbsp;a&nbsp;map&nbsp;of&nbsp;the&nbsp;tubes,&nbsp;with&nbsp;the&nbsp;map&nbsp;key&nbsp;being&nbsp;the&nbsp;sector&nbsp;number&nbsp;<br>
+and&nbsp;the&nbsp;map&nbsp;value&nbsp;being&nbsp;a&nbsp;map&nbsp;of&nbsp;tubes&nbsp;for&nbsp;that&nbsp;sector.&nbsp;The&nbsp;sector&nbsp;tube<br>
+map&nbsp;has&nbsp;keys&nbsp;corresponding&nbsp;to&nbsp;tube&nbsp;name&nbsp;and&nbsp;each&nbsp;map&nbsp;value&nbsp;is&nbsp;the&nbsp;<br>
+corresponding&nbsp;Tube&nbsp;instance.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-Mix"><strong>Mix</strong></a>(self, vial, id<font color="#909090">=None</font>, **kw)</dt><dd><tt>Mix&nbsp;fluid&nbsp;in&nbsp;the&nbsp;given&nbsp;vial.<br>
+id&nbsp;is&nbsp;a&nbsp;unique&nbsp;identifier&nbsp;(eg.&nbsp;sample&nbsp;ID)&nbsp;for&nbsp;tracking&nbsp;the&nbsp;caller.<br>
+kw&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;optional&nbsp;parameters&nbsp;&amp;&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-MoveToAspirate"><strong>MoveToAspirate</strong></a>(self, vial, volume_ul)</dt><dd><tt>Move&nbsp;to&nbsp;aspirate&nbsp;a&nbsp;specific&nbsp;volume&nbsp;from&nbsp;the&nbsp;given&nbsp;vial.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-MoveToDispense"><strong>MoveToDispense</strong></a>(self, vial, volume_uL, usingFreeAirDispense<font color="#909090">=False</font>)</dt><dd><tt>Move&nbsp;to&nbsp;dispense&nbsp;a&nbsp;volume&nbsp;(in&nbsp;uL)&nbsp;into&nbsp;the&nbsp;given&nbsp;vial.&nbsp;The&nbsp;dispense&nbsp;can&nbsp;be<br>
+free&nbsp;air&nbsp;if&nbsp;usingFreeAirDispense&nbsp;is&nbsp;True.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-Park"><strong>Park</strong></a>(self, id<font color="#909090">=None</font>, **kw)</dt><dd><tt>Moves&nbsp;the&nbsp;robot&nbsp;to&nbsp;a&nbsp;safe&nbsp;place&nbsp;for&nbsp;powerdown</tt></dd></dl>
+
+<dl><dt><a name="Instrument-Prime"><strong>Prime</strong></a>(self, wasteVial, homeAtEnd<font color="#909090">=True</font>, id<font color="#909090">=None</font>, **kw)</dt><dd><tt>Prime&nbsp;the&nbsp;hydraulic&nbsp;line,&nbsp;using&nbsp;the&nbsp;given&nbsp;waste&nbsp;vial.<br>
+If&nbsp;homeAtEnd&nbsp;is&nbsp;true,&nbsp;the&nbsp;Z&nbsp;axis&nbsp;is&nbsp;homed&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;prime.<br>
+id&nbsp;is&nbsp;a&nbsp;unique&nbsp;identifier&nbsp;(eg.&nbsp;sample&nbsp;ID)&nbsp;for&nbsp;tracking&nbsp;the&nbsp;caller.<br>
+kw&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;optional&nbsp;parameters&nbsp;&amp;&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-ResuspendVial"><strong>ResuspendVial</strong></a>(self, destVial, srcVial<font color="#909090">=None</font>, workVolume<font color="#909090">=0</font>, usingFreeAirDispense<font color="#909090">=True</font>, id<font color="#909090">=None</font>, **kw)</dt><dd><tt>Resuspend&nbsp;the&nbsp;given&nbsp;vial.&nbsp;This&nbsp;is&nbsp;essentially&nbsp;the&nbsp;same&nbsp;as&nbsp;TopUpVial,&nbsp;<br>
+except&nbsp;that&nbsp;the&nbsp;vial&nbsp;is&nbsp;assumed&nbsp;to&nbsp;be&nbsp;empty.<br>
+id&nbsp;is&nbsp;a&nbsp;unique&nbsp;identifier&nbsp;(eg.&nbsp;sample&nbsp;ID)&nbsp;for&nbsp;tracking&nbsp;the&nbsp;caller.<br>
+kw&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;optional&nbsp;parameters&nbsp;&amp;&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-TopUpVial"><strong>TopUpVial</strong></a>(self, destVial, srcVial<font color="#909090">=None</font>, workVolume<font color="#909090">=0</font>, usingFreeAirDispense<font color="#909090">=True</font>, id<font color="#909090">=None</font>, **kw)</dt><dd><tt>Top&nbsp;up&nbsp;the&nbsp;given&nbsp;vial&nbsp;from&nbsp;the&nbsp;given&nbsp;src.&nbsp;By&nbsp;default&nbsp;(srcVial&nbsp;=&nbsp;None),&nbsp;<br>
+the&nbsp;vial&nbsp;is&nbsp;topped&nbsp;up&nbsp;from&nbsp;the&nbsp;BCCM.<br>
+id&nbsp;is&nbsp;a&nbsp;unique&nbsp;identifier&nbsp;(eg.&nbsp;sample&nbsp;ID)&nbsp;for&nbsp;tracking&nbsp;the&nbsp;caller.<br>
+kw&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;optional&nbsp;parameters&nbsp;&amp;&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-Transport"><strong>Transport</strong></a>(self, destVial, srcVial, volume_ul, usingFreeAirDispense<font color="#909090">=False</font>, id<font color="#909090">=None</font>, **kw)</dt><dd><tt>Transport&nbsp;a&nbsp;given&nbsp;volume&nbsp;of&nbsp;fluid&nbsp;(in&nbsp;uL)&nbsp;from&nbsp;srcVial&nbsp;to&nbsp;destVial.&nbsp;If<br>
+usingFreeAirDispense&nbsp;is&nbsp;True,&nbsp;we&nbsp;will&nbsp;do&nbsp;a&nbsp;free&nbsp;air&nbsp;dispense&nbsp;for&nbsp;all<br>
+dispenses&nbsp;involved&nbsp;in&nbsp;this&nbsp;transport&nbsp;workflow.<br>
+id&nbsp;is&nbsp;a&nbsp;unique&nbsp;identifier&nbsp;(eg.&nbsp;sample&nbsp;ID)&nbsp;for&nbsp;tracking&nbsp;the&nbsp;caller.<br>
+kw&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;optional&nbsp;parameters&nbsp;&amp;&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-__init__"><strong>__init__</strong></a>(self, name)</dt><dd><tt>Set&nbsp;up&nbsp;the&nbsp;instrument&nbsp;components:<br>
+-&nbsp;the&nbsp;TeslaPlatform,&nbsp;which&nbsp;handles&nbsp;mechanical&nbsp;actions.<br>
+-&nbsp;the&nbsp;TeslaPump,&nbsp;which&nbsp;handles&nbsp;fluidics</tt></dd></dl>
+
+<dl><dt><a name="Instrument-emptyReagentContainers"><strong>emptyReagentContainers</strong></a>(self)</dt><dd><tt>Set&nbsp;the&nbsp;volume&nbsp;of&nbsp;the&nbsp;reagent&nbsp;containers&nbsp;to&nbsp;zero.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-emptyWasteContainers"><strong>emptyWasteContainers</strong></a>(self)</dt><dd><tt>Set&nbsp;the&nbsp;volume&nbsp;of&nbsp;the&nbsp;waste&nbsp;containers&nbsp;to&nbsp;zero.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-getBulkBufferDeadVolume"><strong>getBulkBufferDeadVolume</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;dead&nbsp;volume&nbsp;of&nbsp;the&nbsp;bulk&nbsp;buffer&nbsp;container</tt></dd></dl>
+
+<dl><dt><a name="Instrument-getContainerVolume"><strong>getContainerVolume</strong></a>(self, sector, containerName)</dt><dd><tt>Return&nbsp;the&nbsp;volume&nbsp;(in&nbsp;uL)&nbsp;of&nbsp;the&nbsp;container&nbsp;at&nbsp;a&nbsp;location,&nbsp;specified<br>
+by&nbsp;sector&nbsp;and&nbsp;container&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-getContainers"><strong>getContainers</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;map&nbsp;of&nbsp;all&nbsp;of&nbsp;the&nbsp;containers.&nbsp;This&nbsp;is&nbsp;mainly&nbsp;for&nbsp;unit<br>
+testing&nbsp;purposes.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-getHardwareSetting"><strong>getHardwareSetting</strong></a>(self, settingKey)</dt><dd><tt>Return&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;specified&nbsp;setting&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-getPlatform"><strong>getPlatform</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;Tesla&nbsp;platform&nbsp;instance,&nbsp;primarily&nbsp;for&nbsp;testing&nbsp;purposes.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-getPump"><strong>getPump</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;DRD&nbsp;pump&nbsp;instance,&nbsp;primarily&nbsp;for&nbsp;testing&nbsp;purposes.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-homePlatform"><strong>homePlatform</strong></a>(self)</dt><dd><tt>Initialises&nbsp;(homes)&nbsp;platform&nbsp;components</tt></dd></dl>
+
+<dl><dt><a name="Instrument-isLidClosed"><strong>isLidClosed</strong></a>(self)</dt><dd><tt>Returns&nbsp;True&nbsp;if&nbsp;the&nbsp;lid&nbsp;is&nbsp;closed,&nbsp;False&nbsp;otherwise</tt></dd></dl>
+
+<dl><dt><a name="Instrument-powerDownCarousel"><strong>powerDownCarousel</strong></a>(self)</dt><dd><tt>Powers&nbsp;down&nbsp;the&nbsp;carousel&nbsp;stepper&nbsp;so&nbsp;it&nbsp;can&nbsp;spin&nbsp;freely</tt></dd></dl>
+
+<dl><dt><a name="Instrument-setContainerVolume"><strong>setContainerVolume</strong></a>(self, sector, containerName, volume_uL)</dt><dd><tt>Set&nbsp;the&nbsp;fluid&nbsp;volume&nbsp;(in&nbsp;uL)&nbsp;in&nbsp;a&nbsp;container,&nbsp;specified&nbsp;by&nbsp;sector&nbsp;and<br>
+name,&nbsp;as&nbsp;per&nbsp;<a href="#Instrument-ContainerAt">ContainerAt</a>().&nbsp;Doesn't&nbsp;return&nbsp;anything.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-setContainerVolumePercentage"><strong>setContainerVolumePercentage</strong></a>(self, sector, containerName, percentageLevel)</dt><dd><tt>Set&nbsp;the&nbsp;fluid&nbsp;volume&nbsp;as&nbsp;a&nbsp;percentage&nbsp;of&nbsp;maximum&nbsp;volume.<br>
+percentageLevel&nbsp;is&nbsp;a&nbsp;value&nbsp;between&nbsp;0&nbsp;and&nbsp;1.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>AntibodyLabel</strong> = 'AntibodyVial'</dl>
+
+<dl><dt><strong>AspirateWickingExtractOffsetLabel</strong> = 'wickingextractoffset_aspirate_mm'</dl>
+
+<dl><dt><strong>AspirationDepthLabel</strong> = 'aspirationdepthundermeniscus_mm'</dl>
+
+<dl><dt><strong>BCCMLabel</strong> = 'BCCMContainer'</dl>
+
+<dl><dt><strong>Base14mlLabel</strong> = 'baseoffset_14mlvial_mm'</dl>
+
+<dl><dt><strong>Base50mlLabel</strong> = 'baseoffset_50mlvial_mm'</dl>
+
+<dl><dt><strong>BaseAntibodyLabel</strong> = 'baseoffset_antibodyvial_mm'</dl>
+
+<dl><dt><strong>BaseBCCMLabel</strong> = 'baseoffset_bulkcontainer_mm'</dl>
+
+<dl><dt><strong>BaseBeadLabel</strong> = 'baseoffset_beadvial_mm'</dl>
+
+<dl><dt><strong>BaseCocktailLabel</strong> = 'baseoffset_cocktailvial_mm'</dl>
+
+<dl><dt><strong>BeadLabel</strong> = 'ParticleVial'</dl>
+
+<dl><dt><strong>CocktailLabel</strong> = 'CocktailVial'</dl>
+
+<dl><dt><strong>DeadVolume14mlLabel</strong> = 'deadvolume_14mlvial_ul'</dl>
+
+<dl><dt><strong>DeadVolume50mlLabel</strong> = 'deadvolume_50mlvial_ul'</dl>
+
+<dl><dt><strong>DeadVolumeAntibodyLabel</strong> = 'deadvolume_antibodyvial_ul'</dl>
+
+<dl><dt><strong>DeadVolumeBCCMLabel</strong> = 'deadvolume_bulkcontainer_ul'</dl>
+
+<dl><dt><strong>DeadVolumeBeadLabel</strong> = 'deadvolume_beadvial_ul'</dl>
+
+<dl><dt><strong>DeadVolumeCocktailLabel</strong> = 'deadvolume_cocktailvial_ul'</dl>
+
+<dl><dt><strong>DispenseWickingExtractOffsetLabel</strong> = 'wickingextractoffset_dispense_mm'</dl>
+
+<dl><dt><strong>LysisLabel</strong> = 'LysisVial'</dl>
+
+<dl><dt><strong>Min5mlTipVolumeLabel</strong> = 'minimumallowed5mltipvolume_ul'</dl>
+
+<dl><dt><strong>MinTipBaseGapLabel</strong> = 'minimumallowedvialbasetotipclearance_mm'</dl>
+
+<dl><dt><strong>MixWickingExtractOffsetLabel</strong> = 'wickingextractoffset_mix_mm'</dl>
+
+<dl><dt><strong>MixingDispenseOffsetLabel</strong> = 'mixingdispenseoffset_mm'</dl>
+
+<dl><dt><strong>MixingIterationsLabel</strong> = 'numberofmixingcycles'</dl>
+
+<dl><dt><strong>MixingPauseLabel</strong> = 'mixingpause_msec'</dl>
+
+<dl><dt><strong>MixingPistonSettlingDelayLabel</strong> = 'mixingpistonsettlingdelay_msec'</dl>
+
+<dl><dt><strong>MixingPreMixAirSlugLabel</strong> = 'mixingpremixairslug_ul'</dl>
+
+<dl><dt><strong>MixingTip1mlLabel</strong> = 'mixingtipposition_1ml'</dl>
+
+<dl><dt><strong>MixingTip5mlLabel</strong> = 'mixingtipposition_5ml'</dl>
+
+<dl><dt><strong>MixingVolumeMaxLabel</strong> = 'mixingvolumemaximum_ul'</dl>
+
+<dl><dt><strong>MixingVolumePercentageLabel</strong> = 'mixingvolumepercentage'</dl>
+
+<dl><dt><strong>ReagentLabelSet</strong> = ('AntibodyVial', 'CocktailVial', 'ParticleVial', 'SampleVial', 'SeparationVial', 'WasteVial', 'LysisVial')</dl>
+
+<dl><dt><strong>SampleLabel</strong> = 'SampleVial'</dl>
+
+<dl><dt><strong>SupernatentLabel</strong> = 'SeparationVial'</dl>
+
+<dl><dt><strong>TeslaLabel</strong> = 'Tesla'</dl>
+
+<dl><dt><strong>ThetaParkPositionLabel</strong> = 'thetaparkposition_degrees'</dl>
+
+<dl><dt><strong>Tip1mlCapacityLabel</strong> = 'capacity_1mltip_ul'</dl>
+
+<dl><dt><strong>Tip5mlCapacityLabel</strong> = 'capacity_5mltip_ul'</dl>
+
+<dl><dt><strong>TransportFlushEnabledLabel</strong> = 'transportflushenabled'</dl>
+
+<dl><dt><strong>VolumeAfterTopUpLabel</strong> = 'volumeaftertopup_ul'</dl>
+
+<dl><dt><strong>WasteLabel</strong> = 'WasteVial'</dl>
+
+<dl><dt><strong>WickingDispenseDepthLabel</strong> = 'wickingdispensedepthundermeniscus_mm'</dl>
+
+<dl><dt><strong>WickingExtractVelocityProfileLabel</strong> = 'wickingextractvelocityprofile'</dl>
+
+<dl><dt><strong>ZParkPositionLabel</strong> = 'zparkposition_mm'</dl>
+
+<dl><dt><strong>tips_1ml</strong> = (1, 2, 3)</dl>
+
+<dl><dt><strong>tips_5ml</strong> = (4, 5)</dl>
+
+<dl><dt><strong>tips_All</strong> = [1, 2, 3, 4, 5]</dl>
+
+<hr>
+Methods inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><a name="Instrument-NullTrace"><strong>NullTrace</strong></a>(self, message)</dt><dd><tt>Don't&nbsp;do&nbsp;anything&nbsp;with&nbsp;the&nbsp;message;&nbsp;used&nbsp;when&nbsp;we&nbsp;don't&nbsp;want&nbsp;debugging<br>
+traces.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-PrintTrace"><strong>PrintTrace</strong></a>(self, message)</dt><dd><tt>Print&nbsp;a&nbsp;debug&nbsp;message</tt></dd></dl>
+
+<dl><dt><a name="Instrument-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Simple&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;<a href="tesla.instrument.Subsystem.html#Subsystem">Subsystem</a>.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><a name="Instrument-registerInstance"><strong>registerInstance</strong></a>(instance)</dt><dd><tt>Register&nbsp;our&nbsp;instance&nbsp;with&nbsp;the&nbsp;Instance&nbsp;list.&nbsp;Note&nbsp;that&nbsp;this&nbsp;is&nbsp;a&nbsp;<br>
+static&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-reset"><strong>reset</strong></a>()</dt><dd><tt>Reset&nbsp;the&nbsp;subsystem&nbsp;instance&nbsp;list</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><strong>SectionName</strong> = 'Base Subsystem'</dl>
+
+<dl><dt><strong>instanceList</strong> = []</dl>
+
+<dl><dt><strong>mandatorySettings</strong> = ()</dl>
+
+<hr>
+Methods inherited from <a href="tesla.hardware.Component.html#Component">tesla.hardware.Component.Component</a>:<br>
+<dl><dt><a name="Instrument-execute"><strong>execute</strong></a>(self, functionWithArgs)</dt><dd><tt>Executes&nbsp;the&nbsp;formatted&nbsp;function&nbsp;call&nbsp;string&nbsp;functionWithArgs&nbsp;on<br>
+self.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;device's&nbsp;identifying&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="Instrument-getServiceMethods"><strong>getServiceMethods</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;methods&nbsp;that&nbsp;are&nbsp;published&nbsp;to&nbsp;the&nbsp;service&nbsp;interface</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.hardware.Component.html#Component">tesla.hardware.Component.Component</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x009414B0&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'Component' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="InstrumentError">class <strong>InstrumentError</strong></a>(<a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Exception&nbsp;for&nbsp;errors&nbsp;related&nbsp;to&nbsp;invalid&nbsp;instrument&nbsp;settings.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Instrument.html#InstrumentError">InstrumentError</a></dd>
+<dd><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a></dd>
+<dd><a href="exceptions.html#StandardError">exceptions.StandardError</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="InstrumentError-__getitem__"><strong>__getitem__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="InstrumentError-__init__"><strong>__init__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="InstrumentError-__str__"><strong>__str__</strong></a>(...)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-Lock"><strong>Lock</strong></a> = allocate_lock(...)</dt><dd><tt>allocate_lock()&nbsp;-&gt;&nbsp;lock&nbsp;object<br>
+(allocate()&nbsp;is&nbsp;an&nbsp;obsolete&nbsp;synonym)<br>
+&nbsp;<br>
+Create&nbsp;a&nbsp;new&nbsp;lock&nbsp;object.&nbsp;&nbsp;See&nbsp;LockType.__doc__&nbsp;for&nbsp;information&nbsp;about&nbsp;locks.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>gHardwareData</strong> = &lt;tesla.hardware.config.HardwareConfiguration instance at 0x008A6580&gt;</td></tr></table>
+</body></html>

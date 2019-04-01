@@ -1,0 +1,7 @@
+C:\projects\Minnie\ProtocolEditor\common\bin\Debug\CommonResources.dll
+C:\projects\Minnie\ProtocolEditor\common\bin\Debug\CommonResources.pdb
+C:\projects\Minnie\ProtocolEditor\common\bin\Debug\fr-FR\CommonResources.resources.dll
+C:\projects\Minnie\ProtocolEditor\common\obj\Debug\ResolveAssemblyReference.cache
+C:\projects\Minnie\ProtocolEditor\common\obj\Debug\fr-FR\CommonResources.resources.dll
+C:\projects\Minnie\ProtocolEditor\common\obj\Debug\CommonResources.dll
+C:\projects\Minnie\ProtocolEditor\common\obj\Debug\CommonResources.pdb

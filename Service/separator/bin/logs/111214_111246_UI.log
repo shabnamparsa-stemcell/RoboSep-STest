@@ -1,0 +1,82 @@
+RoboSep UI Log File
+Created: 20111214_111246.749
+
+20111214_111246.756	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20111214_111246.808	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20111214_111248.772	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20111214_111248.789	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	Info	RoboSep_UserConsole	Loading User Console
+20111214_111248.811	clt	RoboSep_Splash.RoboSep_Splash()	Info	RoboSep_Splash	Initializing Splash Page
+20111214_111248.850	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	General	RoboSep_UserConsole	Starting GUI Thread
+20111214_111248.853	clt	RoboSep_UserConsole.AttemptSeparatorConnection()	Info	RoboSep_UserConsole	Connecting...
+20111214_111249.644	clt	RoboSep_UserDB.Robosep_UserDB()()	Debug	RoboSep_UserDB	Initializing UserDB
+20111214_111249.691	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_111249.953	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111214_111249.965	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111214_111250.409	clt	RoboSep_UserDB.LoadAllProtocols()	Debug	RoboSep_UserDB	161protocols loaded
+20111214_111250.414	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111214_111250.736	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_111250.748	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111214_111319.310	clt	RoboSep_UserConsole.ProgressSplash()	Info	RoboSep_UserConsole	Stopping Splash page
+20111214_111319.387	clt	RoboSep_About.RoboSep_About()	Info	RoboSep_About	Initializing About user control
+20111214_111319.514	clt	RoboSep_RunSamples.RoboSep_RunSamples()	Info	RoboSep_RunSamples	Initializing Run Samples user control
+20111214_111319.606	clt	RoboSep_Splash.close()	Info	RoboSep_Splash	Closing Splash Page
+20111214_111335.749	clt	RoboSep_RunSamples.btn_home_Click()	Info	RoboSep_RunSamples	Home button clicked
+20111214_111336.418	clt	RoboSep_Protocols.LoadUsers()	Info	RoboSep_Protocols	Reloading Auto Complete for User Textbox
+20111214_111336.428	clt	RoboSep_Protocols.RoboSep_Protocols()	Info	RoboSep_Protocols	Initializing Protocols user control
+20111214_111336.536	clt	Form_Home.hex_protocols_Click()	Info	Form_Home	Protocols button clicked
+20111214_111337.423	clt	RoboSep_UserProtocolList.RoboSep_UserProtocolList()	Info	RoboSep_UserProtocolList	Generating New UserProtocol user control
+20111214_111337.486	clt	RoboSep_ProtocolList.RoboSep_ProtocolList()	Info	RoboSep_ProtocolList	Initializing Protocol List user control
+20111214_111337.491	clt	RoboSep_ProtocolList.resetForm()	Info	RoboSep_ProtocolList	
+20111214_111337.496	clt	RoboSep_UserProtocolList.resetForm()	Info	RoboSep_UserProtocolList	Reset user protocol list
+20111214_111337.504	clt	RoboSep_UserDB.loadUserProtocols()	Debug	RoboSep_UserDB	Loaded 5 protocol from User Jason
+20111214_111337.509	clt	RoboSep_UserProtocolList.addProtocols()	Info	RoboSep_UserProtocolList	Adding protocol Any Species APC Positive Selection 18453-high purity to user list
+20111214_111337.514	clt	RoboSep_UserProtocolList.addProtocols()	Info	RoboSep_UserProtocolList	Adding protocol Human CD4+ T Cell Negative Selection 19052 to user list
+20111214_111337.518	clt	RoboSep_UserProtocolList.addProtocols()	Info	RoboSep_UserProtocolList	Adding protocol Human T Cell Negative Selection 19051 to user list
+20111214_111337.523	clt	RoboSep_UserProtocolList.addProtocols()	Info	RoboSep_UserProtocolList	Adding protocol Human CD4+ T Cell Pre-Enrichment for Regulatory T Cells 18062-small volume to user list
+20111214_111337.528	clt	RoboSep_UserProtocolList.addProtocols()	Info	RoboSep_UserProtocolList	Adding protocol TestProtocol to user list
+20111214_111337.642	clt	RoboSep_Protocols.button_EditList_Click()	Info	RoboSep_Protocols	Edit list button clicked
+20111214_111340.418	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20111214_111341.588	clt	RoboSep_ProtocolList.UpdateFilters()	Debug	RoboSep_ProtocolList	Updating Filtered list
+20111214_111341.864	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20111214_111343.423	clt	RoboSep_ProtocolList.button_Add_Click()	Info	RoboSep_ProtocolList	Adding 1 protocols to user profile
+20111214_111344.230	clt	RoboSep_UserDB.saveUserProtocols()	Info	RoboSep_UserDB	saving 5protocols to user Jason
+20111214_111344.242	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111214_111344.255	clt	RoboSep_UserDB.XML_SaveUserProfile()	Debug	RoboSep_UserDB	Saved User Profile Jason with 5protocols
+20111214_111344.260	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_111344.269	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111214_111344.366	clt	RoboSep_Protocols.LoadUsers()	Info	RoboSep_Protocols	Reloading Auto Complete for User Textbox
+20111214_111344.372	clt	RoboSep_ProtocolList.button_SaveList_Click()	Info	RoboSep_ProtocolList	Save Protocol List
+20111214_111347.267	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111214_111347.315	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111214_111347.324	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 1 steps
+20111214_111347.353	clt	RoboSep_Protocols.LoadUserToServer()	Info	RoboSep_Protocols	Saving user profile
+20111214_111347.360	clt	RoboSep_UserDB.loadUserProtocols()	Debug	RoboSep_UserDB	Loaded 5 protocol from User Jason
+20111214_111347.365	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111214_111347.377	clt	RoboSep_UserDB.XML_SaveUserProfile()	Debug	RoboSep_UserDB	Saved User Profile Jason with 5protocols
+20111214_111347.439	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111214_111347.449	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111214_111348.101	clt	RoboSep_UserDB.loadUserProtocols()	Debug	RoboSep_UserDB	Loaded 5 protocol from User Jason
+20111214_111348.206	clt	RoboSep_Protocols.LoadUserToServer()	Info	RoboSep_Protocols	Saving user profile
+20111214_111348.213	clt	RoboSep_UserDB.loadUserProtocols()	Debug	RoboSep_UserDB	Loaded 5 protocol from User Jason
+20111214_111348.218	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111214_111348.280	clt	RoboSep_UserDB.XML_SaveUserProfile()	Debug	RoboSep_UserDB	Saved User Profile Jason with 5protocols
+20111214_111348.309	clt	RoboSep_UserDB.loadUserProtocols()	Debug	RoboSep_UserDB	Loaded 5 protocol from User Jason
+20111214_111348.334	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111214_111348.344	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111214_111348.456	clt	RoboSep_Protocols.btn_home_Click()	Info	RoboSep_Protocols	Home button clicked
+20111214_111349.348	clt	Form_Home.hex_sampling_Click()	Info	Form_Home	Run Sample button clicked
+20111214_111349.834	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111214_111349.889	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_111349.897	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111214_111349.903	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111214_111349.914	clt	RoboSep_UserDB.XML_SaveUserProfile()	Debug	RoboSep_UserDB	Saved User Profile Jason with 5protocols
+20111214_111349.924	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111214_111349.955	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111214_111349.980	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_111349.989	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111214_111349.995	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111214_111350.007	clt	RoboSep_UserDB.XML_SaveUserProfile()	Debug	RoboSep_UserDB	Saved User Profile Jason with 5protocols
+20111214_111350.030	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111214_111352.819	clt	RoboSep_ProtocolSelect.button_Cancel1_Click()	Info	RoboSep_ProtocolSelect	Protocol Selection cancel clicked
+20111214_111354.123	clt	RoboSep_RunSamples.btn_home_Click()	Info	RoboSep_RunSamples	Home button clicked
+20111214_111355.263	clt	Form_Home.btn_close_Click()	Info	Form_Home	Close Window button clicked

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepProtocol xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="HumanNegative" xmlns="STI">
+  <header label="Human Progenitor Negative Selection 19056-high purity" version="4" description="50 uL/mL cocktail, 75 uL/mL particles, 15 and 15 min incubations, 2x10 min separations" protocolNum1="19056" protocolNum2="0201">
+    <date created="2005-06-27" modified="2006-12-06" />
+    <author name="STI" />
+  </header>
+  <constraints>
+    <quadrants number="2" />
+    <sampleVolume min_uL="250" max_uL="9000" />
+    <workingVolume sampleThreshold_uL="4050" lowVolume_uL="5000" highVolume_uL="10000" />
+  </constraints>
+  <commands number="13">
+    <TransportCommand seq="1" label="Add cocktail to sample" extensionTime="0" freeAirDispense="false">
+      <vials src="TPC0103" dest="TPC0106" />
+      <relativeVolume proportion="0.05" />
+    </TransportCommand>
+    <MixCommand seq="2" label="Mix cocktail and sample" extensionTime="0">
+      <vials src="TPC0106" dest="TPC0106" />
+    </MixCommand>
+    <IncubateCommand seq="3" label="Incubate cocktail and sample" extensionTime="300">
+      <processingTime duration="900" />
+    </IncubateCommand>
+    <TransportCommand seq="4" label="Add particle to sample" extensionTime="0" freeAirDispense="false">
+      <vials src="TPC0104" dest="TPC0106" />
+      <relativeVolume proportion="0.075" />
+    </TransportCommand>
+    <MixCommand seq="5" label="Mix particle and sample" extensionTime="0">
+      <vials src="TPC0106" dest="TPC0106" />
+    </MixCommand>
+    <IncubateCommand seq="6" label="Incubate particle and sample" extensionTime="300">
+      <processingTime duration="900" />
+    </IncubateCommand>
+    <TopUpVialCommand seq="7" label="Top up sample with buffer" extensionTime="300" freeAirDispense="true">
+      <vials src="TPC0001" dest="TPC0106" />
+      <absoluteVolume value_uL="10000" />
+    </TopUpVialCommand>
+    <MixCommand seq="8" label="Mix sample after top up" extensionTime="0">
+      <vials src="TPC0106" dest="TPC0106" />
+    </MixCommand>
+    <TransportCommand seq="9" label="Transfer sample to magnet" extensionTime="0" freeAirDispense="true">
+      <vials src="TPC0106" dest="TPC0107" />
+      <absoluteVolume value_uL="10000" />
+    </TransportCommand>
+    <SeparateCommand seq="10" label="Separation #1" extensionTime="300">
+      <processingTime duration="600" />
+    </SeparateCommand>
+    <TransportCommand seq="11" label="Remove supernatant #1 to second magnet" extensionTime="120" freeAirDispense="true">
+      <vials src="TPC0107" dest="TPC0207" />
+      <absoluteVolume value_uL="10000" />
+    </TransportCommand>
+    <SeparateCommand seq="12" label="Separation #2" extensionTime="300">
+      <processingTime duration="600" />
+    </SeparateCommand>
+    <TransportCommand seq="13" label="Remove supernatant #2 to Enriched Tube" extensionTime="120" freeAirDispense="false">
+      <vials src="TPC0207" dest="TPC0206" />
+      <absoluteVolume value_uL="10000" />
+    </TransportCommand>
+  </commands>
+  <customNames />
+</RoboSepProtocol>

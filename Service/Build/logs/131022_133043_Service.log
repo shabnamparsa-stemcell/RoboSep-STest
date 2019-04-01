@@ -1,0 +1,143 @@
+RoboSep UI Log File
+Created: 20131022_133043.836
+
+20131022_133043.947	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20131022_133044.037	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20131022_133109.283	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20131022_133109.423	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20131022_133111.186	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20131022_133111.957	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131022_133116.734	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20131022_133118.176	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131022_133121.050	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20131022_133123.493	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20131022_133123.554	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20131022_133123.684	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20131022_133124.255	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20131022_133124.325	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20131022_133124.405	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20131022_133125.226	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20131022_133127.479	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20131022_133131.195	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20131022_133146.607	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Closing ServiceMenu
+20131022_133155.570	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Carousel
+20131022_133157.422	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = True
+
+20131022_133157.222	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Device: Carousel removePower;
+20131022_133157.212	clt	InstrumentComms.powerAxis()	Debug	InstrumentComms	CInstrumentComms::powerAxis turnOn=False
+20131022_133157.212	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Carousel set to False
+20131022_133155.570	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Carousel
+20131022_133146.607	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Closing ServiceMenu
+20131022_133136.773	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20131022_133133.788	clt	InstrumentComms.getCurrentInstrumentState()	Debug	InstrumentComms	Requested Instrument State. Received: SERVICE
+20131022_133133.778	clt	InstrumentComms.getCurrentInstrumentState()	Debug	InstrumentComms	getCurrentInstrumentState
+20131022_133133.778	clt	InstrumentComms.getCurrentInstrumentState()	Debug	InstrumentComms	Requested Instrument State. Received: SERVICE
+20131022_133157.452	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Received response:
+True
+20131022_133200.517	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Carousel set to True
+20131022_133200.537	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Theta
+20131022_133202.309	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Carousel
+20131022_133204.102	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = True
+
+20131022_133203.902	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Device: Carousel removePower;
+20131022_133203.902	clt	InstrumentComms.powerAxis()	Debug	InstrumentComms	CInstrumentComms::powerAxis turnOn=False
+20131022_133203.892	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Carousel set to False
+20131022_133202.309	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Carousel
+20131022_133200.537	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Theta
+20131022_133200.537	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20131022_133200.527	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Device: Carousel ResetPower;
+20131022_133200.527	clt	InstrumentComms.powerAxis()	Debug	InstrumentComms	CInstrumentComms::powerAxis turnOn=True
+20131022_133200.517	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Carousel set to True
+20131022_133204.112	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Received response:
+True
+20131022_133206.786	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Carousel set to True
+20131022_133212.173	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = True
+
+20131022_133211.923	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Device: Carousel removePower;
+20131022_133211.923	clt	InstrumentComms.powerAxis()	Debug	InstrumentComms	CInstrumentComms::powerAxis turnOn=False
+20131022_133211.913	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Carousel set to False
+20131022_133206.786	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20131022_133206.786	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Device: Carousel ResetPower;
+20131022_133206.786	clt	InstrumentComms.powerAxis()	Debug	InstrumentComms	CInstrumentComms::powerAxis turnOn=True
+20131022_133206.786	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Carousel set to True
+20131022_133204.112	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Received response:
+True
+20131022_133204.102	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = True
+
+20131022_133212.234	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Received response:
+True
+20131022_133214.937	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Carousel set to True
+20131022_133214.947	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Z
+20131022_133234.976	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20131022_133235.086	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20131022_133237.890	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Disconnecting
+20131022_134018.433	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20131022_134041.776	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Closing ServiceMenu
+20131022_134047.314	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = True
+
+20131022_134047.114	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Device: Robot_ZAxis removePower;
+20131022_134047.114	clt	InstrumentComms.powerAxis()	Debug	InstrumentComms	CInstrumentComms::powerAxis turnOn=False
+20131022_134047.104	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Robot_ZAxis set to False
+20131022_134041.776	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Closing ServiceMenu
+20131022_134019.003	clt	InstrumentComms.getCurrentInstrumentState()	Debug	InstrumentComms	Requested Instrument State. Received: SERVICE
+20131022_134019.003	clt	InstrumentComms.getCurrentInstrumentState()	Debug	InstrumentComms	getCurrentInstrumentState
+20131022_134019.003	clt	InstrumentComms.getCurrentInstrumentState()	Debug	InstrumentComms	Requested Instrument State. Received: SERVICE
+20131022_134018.993	clt	InstrumentComms.getCurrentInstrumentState()	Debug	InstrumentComms	getCurrentInstrumentState
+20131022_134018.953	clt	InstrumentComms.getCurrentInstrumentState()	Debug	InstrumentComms	Requested Instrument State. Received: IDLE
+20131022_134047.324	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Received response:
+True
+20131022_134049.317	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Robot_ZAxis set to True
+20131022_134049.327	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Carousel
+20131022_134052.121	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = True
+
+20131022_134051.911	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Device: Carousel removePower;
+20131022_134051.911	clt	InstrumentComms.powerAxis()	Debug	InstrumentComms	CInstrumentComms::powerAxis turnOn=False
+20131022_134051.901	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Carousel set to False
+20131022_134049.327	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Carousel
+20131022_134049.327	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20131022_134049.317	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Device: Robot_ZAxis ResetPower;
+20131022_134049.317	clt	InstrumentComms.powerAxis()	Debug	InstrumentComms	CInstrumentComms::powerAxis turnOn=True
+20131022_134049.317	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Robot_ZAxis set to True
+20131022_134047.324	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Received response:
+True
+20131022_134052.121	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Received response:
+True
+20131022_134052.762	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Carousel set to True
+20131022_134054.875	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Theta
+20131022_134056.698	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = True
+
+20131022_134056.487	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Device: Robot_ThetaAxis removePower;
+20131022_134056.487	clt	InstrumentComms.powerAxis()	Debug	InstrumentComms	CInstrumentComms::powerAxis turnOn=False
+20131022_134056.487	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Robot_ThetaAxis set to False
+20131022_134054.875	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Theta
+20131022_134052.772	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20131022_134052.772	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Device: Carousel ResetPower;
+20131022_134052.772	clt	InstrumentComms.powerAxis()	Debug	InstrumentComms	CInstrumentComms::powerAxis turnOn=True
+20131022_134052.762	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Carousel set to True
+20131022_134052.121	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Received response:
+True
+20131022_134056.708	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Received response:
+True
+20131022_134058.520	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Robot_ThetaAxis set to True
+20131022_134100.503	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Z
+20131022_134101.985	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	TipStripper
+20131022_134106.302	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Z
+20131022_134108.304	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = True
+
+20131022_134108.094	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Device: Robot_ZAxis removePower;
+20131022_134108.094	clt	InstrumentComms.powerAxis()	Debug	InstrumentComms	CInstrumentComms::powerAxis turnOn=False
+20131022_134108.094	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Robot_ZAxis set to False
+20131022_134106.302	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Z
+20131022_134101.985	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	TipStripper
+20131022_134100.503	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Z
+20131022_134058.530	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20131022_134058.520	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Device: Robot_ThetaAxis ResetPower;
+20131022_134058.520	clt	InstrumentComms.powerAxis()	Debug	InstrumentComms	CInstrumentComms::powerAxis turnOn=True
+20131022_134108.304	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Received response:
+True
+20131022_134109.336	clt	RoboSepServiceManualStepControl.button_AxisFreeEnable_Click()	Info	RoboSepServiceManualStepControl	powerAxis Robot_ZAxis set to True

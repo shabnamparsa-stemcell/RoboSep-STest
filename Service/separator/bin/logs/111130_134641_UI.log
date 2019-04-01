@@ -1,0 +1,33 @@
+RoboSep UI Log File
+Created: 20111130_134641.258
+
+20111130_134641.264	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20111130_134641.315	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20111130_134642.922	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = FalseLiquid Sensor = False
+20111130_134642.939	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	Info	RoboSep_UserConsole	Loading User Console
+20111130_134642.963	clt	RoboSep_Splash.RoboSep_Splash()	Info	RoboSep_Splash	Initializing Splash Page
+20111130_134643.025	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	General	RoboSep_UserConsole	Starting GUI Thread
+20111130_134643.031	clt	RoboSep_UserConsole.AttemptSeparatorConnection()	Info	RoboSep_UserConsole	Connecting...
+20111130_134644.026	clt	RoboSep_UserDB.Robosep_UserDB()()	Debug	RoboSep_UserDB	Initializing UserDB
+20111130_134644.076	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111130_134644.124	clt	RoboSep_UserDB.LoadAllProtocols()	Debug	RoboSep_UserDB	160protocols loaded
+20111130_134644.132	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111130_134644.868	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111130_134644.885	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111130_134647.397	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111130_134647.407	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111130_134717.020	clt	RoboSep_UserConsole.ProgressSplash()	Info	RoboSep_UserConsole	Stopping Splash page
+20111130_134717.078	clt	RoboSep_About.RoboSep_About()	Info	RoboSep_About	Initializing About user control
+20111130_134717.161	clt	RoboSep_RunSamples.RoboSep_RunSamples()	Info	RoboSep_RunSamples	Initializing Run Samples user control
+20111130_134717.241	clt	RoboSep_Splash.close()	Info	RoboSep_Splash	Closing Splash Page
+20111130_134725.874	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111130_134738.498	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111130_134738.531	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111130_134738.545	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111130_134741.250	clt	RoboSep_ProtocolSelect.button_Cancel1_Click()	Info	RoboSep_ProtocolSelect	Protocol Selection cancel clicked
+20111130_134741.981	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111130_134742.048	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 4
+20111130_134742.078	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111130_134742.120	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 4
+20111130_134743.593	clt	RoboSep_ProtocolSelect.button_SelectionMode_Click()	Info	RoboSep_ProtocolSelect	Change Protocol selection mode toAll Protocols
+20111130_134758.241	clt	RoboSep_ProtocolSelect.button_Cancel1_Click()	Info	RoboSep_ProtocolSelect	Protocol Selection cancel clicked

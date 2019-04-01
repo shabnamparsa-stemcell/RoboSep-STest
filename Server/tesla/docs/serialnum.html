@@ -1,0 +1,85 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module serialnum</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>serialnum</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/p4tesla/tesla/dev/dev001/control/tesla/serialnum.py">c:\projects\p4tesla\tesla\dev\dev001\control\tesla\serialnum.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;serialnum.py<br>
+#&nbsp;tesla.serialnum<br>
+#<br>
+#&nbsp;Simple&nbsp;class&nbsp;to&nbsp;handle&nbsp;the&nbsp;instrument&nbsp;serial&nbsp;number<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="tesla.html">tesla</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="serialnum.html#InstrumentSerialNumber">InstrumentSerialNumber</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="InstrumentSerialNumber">class <strong>InstrumentSerialNumber</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Read-only&nbsp;class&nbsp;to&nbsp;retrieve&nbsp;the&nbsp;instrument&nbsp;serial&nbsp;number,&nbsp;which&nbsp;is&nbsp;an<br>
+integer&nbsp;value.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="InstrumentSerialNumber-__init__"><strong>__init__</strong></a>(self, serialFileName<font color="#909090">=r'C:\Program Files\STI\RoboSep\config\serial.dat'</font>)</dt><dd><tt>Instrument&nbsp;serial&nbsp;number&nbsp;constructor</tt></dd></dl>
+
+<dl><dt><a name="InstrumentSerialNumber-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;serial&nbsp;number</tt></dd></dl>
+
+<dl><dt><a name="InstrumentSerialNumber-validate"><strong>validate</strong></a>(self, serialNumber)</dt><dd><tt>Returns&nbsp;True&nbsp;if&nbsp;the&nbsp;serial&nbsp;number&nbsp;appears&nbsp;to&nbsp;be&nbsp;valid&nbsp;:)</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="InstrumentSerialNumber-getSerial"><strong>getSerial</strong></a>()</dt><dd><tt>Static&nbsp;method:&nbsp;returns&nbsp;the&nbsp;instrument&nbsp;serial&nbsp;number&nbsp;(as&nbsp;a&nbsp;string).</tt></dd></dl>
+
+<dl><dt><a name="InstrumentSerialNumber-reset"><strong>reset</strong></a>()</dt><dd><tt>Static&nbsp;method:&nbsp;forces&nbsp;the&nbsp;serial&nbsp;number&nbsp;class&nbsp;to&nbsp;be&nbsp;reset&nbsp;(so&nbsp;we&nbsp;<br>
+can&nbsp;re-read&nbsp;the&nbsp;file)</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x00AC8630&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'InstrumentSerialNumber' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;(if&nbsp;defined)</tt></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

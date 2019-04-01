@@ -1,0 +1,54 @@
+C:\Projects\TESLA\Client\GUI_Controls\bin\Debug\GUI_Controls.dll
+C:\Projects\TESLA\Client\GUI_Controls\bin\Debug\GUI_Controls.pdb
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\GUI_Controls.Button_Keyboard.resources
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\GUI_Controls.Form1.resources
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\GUI_Controls.MultiList_RoboPanel.resources
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\GUI_Controls.NumberPad.resources
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\GUI_Controls.ProgressBar.resources
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\GUI_Controls.ProgressElement.resources
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\GUI_Controls.Properties.Resources.resources
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\GUI_Controls.Protocol_SearchBar.resources
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\GUI_Controls.QuadrantSelectionDialog.resources
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\GUI_Controls.RoboMessagePanel.resources
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\ResGen.read.1.tlog
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\ResGen.write.1.tlog
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\GUI_Controls.dll
+C:\Projects\TESLA\Client\GUI_Controls\obj\x86\Debug\GUI_Controls.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\bin\Debug\GUI_Controls.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\bin\Debug\GUI_Controls.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.Button_Keyboard.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.Form1.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.MultiList_RoboPanel.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.NumberPad.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.ProgressBar.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.ProgressElement.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.Properties.Resources.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.Protocol_SearchBar.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.QuadrantSelectionDialog.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.RoboMessagePanel.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GenerateResource-ResGen.read.4.tlog
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\bin\Debug\GUI_Controls.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\bin\Debug\GUI_Controls.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.Button_Keyboard.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.Form1.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.MultiList_RoboPanel.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.NumberPad.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.ProgressBar.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.ProgressElement.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.Properties.Resources.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.Protocol_SearchBar.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.QuadrantSelectionDialog.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.RoboMessagePanel.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GenerateResource-ResGen.read.4.tlog
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\GUI_Controls\obj\x86\Debug\GUI_Controls.Keyboard.resources

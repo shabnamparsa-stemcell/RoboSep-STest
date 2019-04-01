@@ -1,0 +1,193 @@
+RoboSep UI Log File
+Created: 20111201_145019.851
+
+20111201_145019.853	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20111201_145019.902	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20111201_145021.633	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = FalseLiquid Sensor = False
+20111201_145021.655	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	Info	RoboSep_UserConsole	Loading User Console
+20111201_145021.693	clt	RoboSep_Splash.RoboSep_Splash()	Info	RoboSep_Splash	Initializing Splash Page
+20111201_145021.758	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	General	RoboSep_UserConsole	Starting GUI Thread
+20111201_145021.761	clt	RoboSep_UserConsole.AttemptSeparatorConnection()	Info	RoboSep_UserConsole	Connecting...
+20111201_145022.593	clt	RoboSep_UserDB.Robosep_UserDB()()	Debug	RoboSep_UserDB	Initializing UserDB
+20111201_145022.645	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111201_145022.701	clt	RoboSep_UserDB.LoadAllProtocols()	Debug	RoboSep_UserDB	160protocols loaded
+20111201_145022.707	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111201_145023.130	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111201_145023.137	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111201_145023.145	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111201_145023.148	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111201_145052.699	clt	RoboSep_UserConsole.ProgressSplash()	Info	RoboSep_UserConsole	Stopping Splash page
+20111201_145052.758	clt	RoboSep_About.RoboSep_About()	Info	RoboSep_About	Initializing About user control
+20111201_145052.865	clt	RoboSep_RunSamples.RoboSep_RunSamples()	Info	RoboSep_RunSamples	Initializing Run Samples user control
+20111201_145052.947	clt	RoboSep_Splash.close()	Info	RoboSep_Splash	Closing Splash Page
+20111201_145238.706	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111201_145238.800	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111201_145238.830	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111201_145238.871	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111201_145240.403	clt	RoboSep_RunSamples.addToRun()	Debug	RoboSep_RunSamples	Adding protocol 'Human CD4+ T Cell Negative Selection 19052' to run at quadrant0
+20111201_145240.478	clt	NumberPad.NumberPad()	Debug	NumberPad	Opening New Number Pad window
+20111201_145241.225	clt	NumberPad.validateEntry()	Debug	NumberPad	Volume: 1.000
+20111201_145241.253	clt	RoboSep_UserConsole.SetSampleVolume()	Info	RoboSep_UserConsole	Quad: 1 Sample Vol 0.001
+20111201_145241.342	clt	RoboSep_ProtocolSelect.SelectProtocol()	Info	RoboSep_ProtocolSelect	Adding protocol to current run
+20111201_145241.347	clt	RoboSep_ProtocolSelect.button_Accept_Click()	Info	RoboSep_ProtocolSelect	Protocol Selected from User list
+20111201_145241.709	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 32:00
+20111201_145242.199	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111201_145242.266	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 3
+20111201_145242.300	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111201_145242.535	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 3
+20111201_145245.829	clt	RoboSep_RunSamples.addToRun()	Debug	RoboSep_RunSamples	Adding protocol 'Human CD4+ T Cell Negative Selection 19052' to run at quadrant2
+20111201_145245.892	clt	NumberPad.NumberPad()	Debug	NumberPad	Opening New Number Pad window
+20111201_145246.855	clt	NumberPad.validateEntry()	Debug	NumberPad	Volume: 1.000
+20111201_145246.873	clt	RoboSep_UserConsole.SetSampleVolume()	Info	RoboSep_UserConsole	Quad: 3 Sample Vol 0.001
+20111201_145246.874	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111201_145246.940	clt	RoboSep_ProtocolSelect.SelectProtocol()	Info	RoboSep_ProtocolSelect	Adding protocol to current run
+20111201_145246.948	clt	RoboSep_ProtocolSelect.button_Accept_Click()	Info	RoboSep_ProtocolSelect	Protocol Selected from User list
+20111201_145246.970	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 36:00
+20111201_145248.518	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111201_145248.583	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 4
+20111201_145248.616	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111201_145248.656	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 4
+20111201_145251.027	clt	RoboSep_RunSamples.addToRun()	Debug	RoboSep_RunSamples	Adding protocol 'Human CD4+ T Cell Negative Selection 19052' to run at quadrant3
+20111201_145251.089	clt	NumberPad.NumberPad()	Debug	NumberPad	Opening New Number Pad window
+20111201_145252.054	clt	NumberPad.validateEntry()	Debug	NumberPad	Volume: 1.000
+20111201_145252.073	clt	RoboSep_UserConsole.SetSampleVolume()	Info	RoboSep_UserConsole	Quad: 4 Sample Vol 0.001
+20111201_145252.077	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111201_145252.151	clt	RoboSep_ProtocolSelect.SelectProtocol()	Info	RoboSep_ProtocolSelect	Adding protocol to current run
+20111201_145252.160	clt	RoboSep_ProtocolSelect.button_Accept_Click()	Info	RoboSep_ProtocolSelect	Protocol Selected from User list
+20111201_145252.194	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 39:00
+20111201_145257.164	clt	RoboSep_RunSamples.button_RunSamples_Click()	Info	RoboSep_RunSamples	Run Samples button clicked
+20111201_145257.188	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111201_145258.618	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111201_145259.498	clt	RoboSep_RunSamples.button_RunSamples_Click()	Debug	RoboSep_RunSamples	Scheduling run
+20111201_145259.508	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111201_145259.514	clt	RoboSep_UserDB.getProtocolCommandList()	Debug	RoboSep_UserDB	returned 12commands
+20111201_145259.519	clt	RoboSep_RunSamples.button_RunSamples_Click()	Debug	RoboSep_RunSamples	protocol: Human CD4+ T Cell Negative Selection 19052.xml commands: 12
+20111201_145259.548	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111201_145259.578	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111201_145259.617	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111201_145259.657	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111201_145259.701	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111201_145259.877	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111201_145259.889	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 1 steps
+20111201_145259.896	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111201_145259.926	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 12 steps
+20111201_145259.933	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111201_145259.939	clt	RoboSep_UserDB.getProtocolCommandList()	Debug	RoboSep_UserDB	returned 12commands
+20111201_145259.944	clt	RoboSep_RunSamples.button_RunSamples_Click()	Debug	RoboSep_RunSamples	protocol: Human CD4+ T Cell Negative Selection 19052.xml commands: 12
+20111201_145259.951	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111201_145259.983	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 12 steps
+20111201_145259.990	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111201_145259.995	clt	RoboSep_UserDB.getProtocolCommandList()	Debug	RoboSep_UserDB	returned 12commands
+20111201_145300.001	clt	RoboSep_RunSamples.button_RunSamples_Click()	Debug	RoboSep_RunSamples	protocol: Human CD4+ T Cell Negative Selection 19052.xml commands: 12
+20111201_145300.007	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111201_145300.036	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 12 steps
+20111201_145300.115	clt	RoboSep_Resources.RoboSep_Resources()	Info	RoboSep_Resources	Generating Robosep Resources user control
+20111201_145300.204	clt	RoboSep_Resources.grabQuadrantResources()	Debug	RoboSep_Resources	Displaying quadrant 0 resources
+20111201_145300.227	clt	RoboSep_Resources.grabQuadrantResources()	Debug	RoboSep_Resources	Loading resources from sharing protocols
+20111201_145301.370	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111201_145302.789	clt	RoboSep_RunSamples.CheckHydraulicFluid()	General	RoboSep_RunSamples	Start Separation run
+20111201_145302.915	clt	RoboSep_Resources.buttonRun_Click()	Debug	RoboSep_Resources	Run Protocols button clicked
+20111201_145302.923	clt	RoboSep_RunProgress.Start()	Info	RoboSep_RunProgress	 **INITIALIZING RUN
+20111201_145349.530	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 40:00
+20111201_145426.138	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 2 Step = 1 ID = 1 CMD = Transport
+20111201_145426.166	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 1
+20111201_145431.388	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 2 Step = 2 ID = 1 CMD = Mix
+20111201_145431.396	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'1' from:'0' cmdGiven: 'Mix' elementCmdType: 'MixCommand'
+20111201_145431.401	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 2
+20111201_145502.071	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 2 Step = 2 ID = 1 CMD = Incubate
+20111201_145502.080	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'2' from:'1' cmdGiven: 'Incubate' elementCmdType: 'IncubateCommand'
+20111201_145502.087	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 3
+20111201_145540.601	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 3 Step = 1 ID = 2 CMD = Transport
+20111201_145540.612	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 1
+20111201_145610.005	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 3 Step = 2 ID = 2 CMD = Mix
+20111201_145610.016	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'1' from:'0' cmdGiven: 'Mix' elementCmdType: 'MixCommand'
+20111201_145610.022	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 2
+20111201_145647.522	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 3 Step = 2 ID = 2 CMD = Incubate
+20111201_145647.531	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'2' from:'1' cmdGiven: 'Incubate' elementCmdType: 'IncubateCommand'
+20111201_145647.537	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 3
+20111201_145727.317	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 0 Step = 1 ID = 0 CMD = Transport
+20111201_145727.328	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 1
+20111201_145756.469	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 0 Step = 2 ID = 0 CMD = Mix
+20111201_145756.477	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'1' from:'0' cmdGiven: 'Mix' elementCmdType: 'MixCommand'
+20111201_145756.483	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 2
+20111201_145833.987	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 0 Step = 2 ID = 0 CMD = Incubate
+20111201_145833.996	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'2' from:'1' cmdGiven: 'Incubate' elementCmdType: 'IncubateCommand'
+20111201_145834.002	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 3
+20111201_150507.429	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 2 Step = 4 ID = 1 CMD = Mix
+20111201_150507.441	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'3' from:'2' cmdGiven: 'Mix' elementCmdType: 'MixCommand'
+20111201_150507.448	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 4
+20111201_150544.914	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 2 Step = 5 ID = 1 CMD = Transport
+20111201_150544.923	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'4' from:'3' cmdGiven: 'Transport' elementCmdType: 'TransportCommand'
+20111201_150544.929	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 5
+20111201_150614.320	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 2 Step = 6 ID = 1 CMD = Mix
+20111201_150614.330	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'5' from:'4' cmdGiven: 'Mix' elementCmdType: 'MixCommand'
+20111201_150614.525	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 6
+20111201_150650.820	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 2 Step = 6 ID = 1 CMD = Incubate
+20111201_150650.829	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'6' from:'5' cmdGiven: 'Incubate' elementCmdType: 'IncubateCommand'
+20111201_150650.835	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 7
+20111201_150652.359	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 3 Step = 4 ID = 2 CMD = Mix
+20111201_150652.366	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'3' from:'2' cmdGiven: 'Mix' elementCmdType: 'MixCommand'
+20111201_150652.374	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 4
+20111201_150728.337	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 3 Step = 5 ID = 2 CMD = Transport
+20111201_150728.346	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'4' from:'3' cmdGiven: 'Transport' elementCmdType: 'TransportCommand'
+20111201_150728.352	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 5
+20111201_150757.744	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 3 Step = 6 ID = 2 CMD = Mix
+20111201_150757.753	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'5' from:'4' cmdGiven: 'Mix' elementCmdType: 'MixCommand'
+20111201_150757.760	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 6
+20111201_150822.079	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 3 Step = -3 ID = -1 CMD = Flush
+20111201_150822.088	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element: '5' cmdGiven: 'Flush' cmdExecuted: 'NONE'
+20111201_150835.257	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 3 Step = -3 ID = -1 CMD = Incubate
+20111201_150835.264	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'6' from:'5' cmdGiven: 'Incubate' elementCmdType: 'IncubateCommand'
+20111201_150835.270	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 7
+20111201_150836.799	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 0 Step = 4 ID = 0 CMD = Mix
+20111201_150836.807	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'3' from:'2' cmdGiven: 'Mix' elementCmdType: 'MixCommand'
+20111201_150836.812	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 4
+20111201_150912.775	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 0 Step = 5 ID = 0 CMD = Transport
+20111201_150912.784	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'4' from:'3' cmdGiven: 'Transport' elementCmdType: 'TransportCommand'
+20111201_150912.790	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 5
+20111201_150942.180	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 0 Step = 6 ID = 0 CMD = Mix
+20111201_150942.189	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'5' from:'4' cmdGiven: 'Mix' elementCmdType: 'MixCommand'
+20111201_150942.197	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 6
+20111201_151018.683	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 0 Step = 6 ID = 0 CMD = Incubate
+20111201_151018.692	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'6' from:'5' cmdGiven: 'Incubate' elementCmdType: 'IncubateCommand'
+20111201_151018.698	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 7
+20111201_151759.080	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 2 Step = 8 ID = 1 CMD = TopUp Vial
+20111201_151759.096	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'7' from:'6' cmdGiven: 'TopUp Vial' elementCmdType: 'TopUpVialCommand'
+20111201_151759.102	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 8
+20111201_151909.032	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 3 Step = 8 ID = 2 CMD = TopUp Vial
+20111201_151909.041	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'7' from:'6' cmdGiven: 'TopUp Vial' elementCmdType: 'TopUpVialCommand'
+20111201_151909.053	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 8
+20111201_152019.002	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 0 Step = 8 ID = 0 CMD = TopUp Vial
+20111201_152019.012	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'7' from:'6' cmdGiven: 'TopUp Vial' elementCmdType: 'TopUpVialCommand'
+20111201_152019.018	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 8
+20111201_152128.971	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 2 Step = 9 ID = 1 CMD = Mix
+20111201_152128.980	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'8' from:'7' cmdGiven: 'Mix' elementCmdType: 'MixCommand'
+20111201_152128.987	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 9
+20111201_152206.489	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 2 Step = 10 ID = 1 CMD = Transport
+20111201_152206.499	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'9' from:'8' cmdGiven: 'Transport' elementCmdType: 'TransportCommand'
+20111201_152206.505	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 10
+20111201_152316.460	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 3 Step = 9 ID = 2 CMD = Mix
+20111201_152316.668	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'8' from:'7' cmdGiven: 'Mix' elementCmdType: 'MixCommand'
+20111201_152316.675	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 9
+20111201_152341.810	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 3 Step = 9 ID = 2 CMD = Separate
+20111201_152341.819	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'10' from:'8' cmdGiven: 'Separate' elementCmdType: 'SeparateCommand'
+20111201_152341.826	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 11
+20111201_152353.980	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 3 Step = 10 ID = 2 CMD = Transport
+20111201_152353.988	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'11' from:'10' cmdGiven: 'Transport' elementCmdType: 'TransportCommand'
+20111201_152353.994	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 12
+20111201_152455.574	clt	ProgressBar.AllCompleted()	Debug	ProgressBar	ProgressBar COMPLETED! 
+20111201_152503.966	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 0 Step = 9 ID = 0 CMD = Mix
+20111201_152503.977	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'8' from:'7' cmdGiven: 'Mix' elementCmdType: 'MixCommand'
+20111201_152503.989	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 9
+20111201_152529.301	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 0 Step = 9 ID = 0 CMD = Separate
+20111201_152529.310	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'10' from:'8' cmdGiven: 'Separate' elementCmdType: 'SeparateCommand'
+20111201_152529.317	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 11
+20111201_152541.488	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 0 Step = 10 ID = 0 CMD = Transport
+20111201_152541.496	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element:'11' from:'10' cmdGiven: 'Transport' elementCmdType: 'TransportCommand'
+20111201_152541.503	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 12
+20111201_152608.848	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 0 Step = -3 ID = -1 CMD = Flush
+20111201_152643.043	clt	ProgressBar.AllCompleted()	Debug	ProgressBar	ProgressBar COMPLETED! 
+20111201_152651.445	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 0 Step = -3 ID = -1 CMD = Separate
+20111201_152931.662	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 2 Step = 12 ID = 1 CMD = Transport
+20111201_152931.669	clt	QuadrantProgress.ProgressToNextStep()	Debug	QuadrantProgress	Progress to element: '9' cmdGiven: 'Transport' cmdExecuted: 'NONE'
+20111201_153041.630	clt	RoboSep_RunProgress.CheckForStatusUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 3 Step = 12 ID = 2 CMD = Transport

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepUser xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="STI">
+  <UserName>R&amp;D</UserName>
+  <ProtocolFile>Section 8.12 PumpCal_10000uL 1ml sample volume Large Tip.xml</ProtocolFile>
+  <ProtocolFile>Any Species APC Positive Selection 18453-high purity.xml</ProtocolFile>
+  <ProtocolFile>Human B Cell Negative Selection 19054 w SiCOOH-5min.xml</ProtocolFile>
+</RoboSepUser>

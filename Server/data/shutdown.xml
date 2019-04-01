@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepProtocol xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Shutdown" xmlns="STI">
+  <header label="Basic shutdown protocol" version="1">
+    <date created="2004-10-21" />
+    <author name="Graeme Cross" />
+  </header>
+  <constraints>
+    <quadrants number="0" />
+    <sampleVolume min_uL="0" max_uL="0" />
+    <workingVolume sampleThreshold_uL="0" lowVolume_uL="0" highVolume_uL="0" />
+  </constraints>
+  <commands number="1">
+    <HomeAllCommand seq="1" label="Home all for shutdown" extensionTime="0" />
+  </commands>
+</RoboSepProtocol>

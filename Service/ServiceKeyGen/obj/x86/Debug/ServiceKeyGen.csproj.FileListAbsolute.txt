@@ -1,0 +1,5 @@
+C:\Projects\TESLA\_2012_09_10_update\Service\ServiceKeyGen\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\_2012_09_10_update\Service\ServiceKeyGen\bin\Debug\ServiceKeyGen.exe
+C:\Projects\TESLA\_2012_09_10_update\Service\ServiceKeyGen\bin\Debug\ServiceKeyGen.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\ServiceKeyGen\obj\x86\Debug\ServiceKeyGen.exe
+C:\Projects\TESLA\_2012_09_10_update\Service\ServiceKeyGen\obj\x86\Debug\ServiceKeyGen.pdb

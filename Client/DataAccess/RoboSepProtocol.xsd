@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+//============================================================================
+// RoboSepProtocol.xsd
+//
+// Invetech Pty Ltd
+// Victoria, 3149, Australia
+// Phone:   (+61) 3 9211 7700
+// Fax:     (+61) 3 9211 7701
+//
+// The copyright to the computer program(s) herein is the property of 
+// Invetech Pty Ltd, Australia.
+// The program(s) may be used and/or copied only with the written permission 
+// of Invetech Pty Ltd or in accordance with the terms and conditions 
+// stipulated in the agreement/contract under which the program(s)
+// have been supplied.
+// 
+// Copyright © 2004. All Rights Reserved.
+//
+//	03/29/06 - pause command - RL
+//============================================================================
+-->
+<xs:schema id="RoboSepProtocol" xmlns="STI" targetNamespace="STI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- ================================== -->
+	<!-- Definition of RoboSepProtocol type -->
+	<!-- ================================== -->
+	<xs:element name="RoboSepProtocol">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="header" />
+				<xs:element ref="constraints" />
+				<xs:element ref="commands" />
+				<!-- CR -->
+				<xs:element ref="customNames" minOccurs="0" maxOccurs="4" />
+				<!-- RL -->
+				<xs:element ref="multipleSamples" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="resultVialChecks" minOccurs="0" maxOccurs="4" />
+        <xs:element ref="vialBarcodes" minOccurs="0" maxOccurs="4" />
+			</xs:sequence>
+			<xs:attribute name="type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Positive" />
+						<xs:enumeration value="Negative" />
+						<xs:enumeration value="HumanPositive" />
+						<xs:enumeration value="MousePositive" />
+						<xs:enumeration value="HumanNegative" />
+						<xs:enumeration value="MouseNegative" />
+						<xs:enumeration value="WholeBloodPositive" />
+						<xs:enumeration value="WholeBloodNegative" />
+						<xs:enumeration value="Undefined" />
+						<xs:enumeration value="Maintenance" />
+						<xs:enumeration value="Shutdown" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<!-- ================================================== -->
+	<!-- Definition of the header type and related elements -->
+	<!-- ================================================== -->
+	<!-- CR -->
+	<xs:element name="customNames">
+		<xs:complexType>
+			<xs:attribute name="sampleTube" type="xs:string" use="optional" />
+			<xs:attribute name="bufferBottle" type="xs:string" use="optional" />
+			<xs:attribute name="separationTube" type="xs:string" use="optional" />
+			<xs:attribute name="wasteTube" type="xs:string" use="optional" />
+			<xs:attribute name="magneticParticleVial" type="xs:string" use="optional" />
+			<xs:attribute name="selectionCocktailVial" type="xs:string" use="optional" />
+			<xs:attribute name="antibodyCocktailVial" type="xs:string" use="optional" />
+			<xs:attribute name="lysisBufferTube" type="xs:string" use="optional" />
+      <xs:attribute name="bufferBottle34" type="xs:string" use="optional" />
+      <xs:attribute name="bufferBottle56" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+  <xs:element name="vialBarcodes">
+    <xs:complexType>
+      <xs:attribute name="quadrant" type="xs:string" use="optional" />
+      <xs:attribute name="squareVialBarcode" type="xs:string" use="optional" />
+      <xs:attribute name="circleVialBarcode" type="xs:string" use="optional" />
+      <xs:attribute name="triangleVialBarcode" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+  
+	<!-- RL -->
+	<xs:element name="multipleSamples">
+		<xs:complexType>
+			<xs:attribute name="Q1" type="xs:boolean" use="optional" />
+			<xs:attribute name="Q2" type="xs:boolean" use="optional" />
+			<xs:attribute name="Q3" type="xs:boolean" use="optional" />
+			<xs:attribute name="Q4" type="xs:boolean" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="resultVialChecks">
+		<xs:complexType>
+			<xs:attribute name="sampleTube" type="xs:boolean" use="optional" />
+			<xs:attribute name="bufferBottle" type="xs:boolean" use="optional" />
+			<xs:attribute name="separationTube" type="xs:boolean" use="optional" />
+			<xs:attribute name="wasteTube" type="xs:boolean" use="optional" />
+			<xs:attribute name="magneticParticleVial" type="xs:boolean" use="optional" />
+			<xs:attribute name="selectionCocktailVial" type="xs:boolean" use="optional" />
+			<xs:attribute name="antibodyCocktailVial" type="xs:boolean" use="optional" />
+			<xs:attribute name="lysisBufferTube" type="xs:boolean" use="optional" />
+      <xs:attribute name="bufferBottle34" type="xs:boolean" use="optional" />
+      <xs:attribute name="bufferBottle56" type="xs:boolean" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="header">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="date" />
+				<xs:element ref="author" />
+        <xs:element ref="robosep" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="workaround" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="versionInfo" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+			<xs:attribute name="label" type="xs:string" use="required" />
+			<xs:attribute name="version" type="xs:positiveInteger" use="required" />
+			<xs:attribute name="description" type="xs:string" use="optional" />
+			<xs:attribute name="protocolNum1" type="xs:string" use="optional" />
+			<xs:attribute name="protocolNum2" type="xs:string" use="optional" />
+			<xs:attribute name="ProtocolDescriptionManualFill" type="xs:boolean" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="date">
+		<xs:complexType>
+			<xs:attribute name="created" type="xs:date" use="required" />
+			<xs:attribute name="modified" type="xs:date" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="author">
+		<xs:complexType>
+			<xs:attribute name="name" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+  <xs:element name="robosep">
+    <xs:complexType>
+      <xs:attribute name="type" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="workaround">
+    <xs:complexType>
+      <xs:attribute name="absoluteVolMultiplier" type="xs:nonNegativeInteger" use="optional" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="versionInfo">
+    <xs:complexType>
+      <xs:attribute name="protocolRevision" type="xs:nonNegativeInteger" use="required" />
+      <xs:attribute name="protocolEditorVersion" type="xs:string" use="required" />
+      <xs:attribute name="protocolEditorINIVersion" type="xs:string" use="required" />
+      <xs:attribute name="platform" type="xs:string" use="required" />
+      <xs:attribute name="protocolFormat" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+	<!-- ======================================================= -->
+	<!-- Definition of the constraints type and related elements -->
+	<!-- ======================================================= -->
+	<xs:element name="constraints">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="quadrants" />
+				<xs:element ref="sampleVolume" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="workingVolume" minOccurs="0" maxOccurs="1" />
+        <xs:element ref="featuresSwitches" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+  <xs:element name ="featuresSwitches" >
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="feature"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name ="feature">
+    <xs:complexType>
+      <xs:attribute name="name" type="xs:string" />
+      <xs:attribute name="desc" type="xs:string" />
+      <xs:attribute name="inputType" type="xs:string" />
+      <xs:attribute name="inputData" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+	<xs:element name="quadrants">
+		<xs:complexType>
+			<xs:attribute name="number" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:nonNegativeInteger">
+						<xs:minInclusive value="0" />
+						<xs:maxInclusive value="4" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sampleVolume">
+		<xs:complexType>
+			<xs:attribute name="min_uL" type="xs:nonNegativeInteger" />
+			<xs:attribute name="max_uL" type="xs:nonNegativeInteger" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="workingVolume">
+		<xs:complexType>
+			<xs:attribute name="sampleThreshold_uL" type="xs:nonNegativeInteger" />
+			<xs:attribute name="lowVolume_uL" type="xs:nonNegativeInteger" />
+			<xs:attribute name="highVolume_uL" type="xs:nonNegativeInteger" />
+		</xs:complexType>
+	</xs:element>
+	<!-- ================================================ -->
+	<!-- Definition of the Commands/CommandSequence types -->
+	<!-- ================================================ -->
+	<xs:element name="commands">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="unbounded">
+				<xs:choice>
+					<xs:element ref="HomeAllCommand" />
+					<xs:element ref="DemoCommand" />
+					<xs:element ref="PumpLifeCommand" />
+					<xs:element ref="IncubateCommand" />
+					<xs:element ref="SeparateCommand" />
+					<xs:element ref="TransportCommand" />
+					<xs:element ref="MixCommand" />
+					<xs:element ref="TopUpVialCommand" />
+					<xs:element ref="ResuspendVialCommand" />
+					<xs:element ref="FlushCommand" />
+					<xs:element ref="PrimeCommand" />
+					<xs:element ref="PauseCommand" />
+          <xs:element ref="MixTransCommand" />
+          <xs:element ref="TopUpMixTransCommand" />
+          <xs:element ref="ResusMixSepTransCommand" />
+          <xs:element ref="ResusMixCommand" />
+          <xs:element ref="TopUpTransCommand" />
+          <xs:element ref="TopUpTransSepTransCommand" />
+          <xs:element ref="TopUpMixTransSepTransCommand" />
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="number" type="xs:positiveInteger" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<!-- ============================== -->
+	<!-- Definition of Command elements -->
+	<!-- ============================== -->
+	<!-- Service Command subtypes -->
+	<xs:element name="HomeAllCommand">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ServiceCommandType" />
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DemoCommand">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ServiceCommandType">
+					<xs:attribute name="iterations" type="xs:positiveInteger" use="required" />
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PumpLifeCommand">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ServiceCommandType">
+					<xs:attribute name="iterations" type="xs:positiveInteger" use="required" />
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- Wait Command subtypes -->
+	<xs:element name="IncubateCommand">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="WaitCommandType" />
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SeparateCommand">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="WaitCommandType" />
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PauseCommand">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="WaitCommandType" />
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- Volume Command subtypes -->
+	<xs:element name="TransportCommand">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="VolumeCommandType">
+					<xs:attribute name="freeAirDispense" type="xs:boolean" use="required" />
+					<xs:attribute name="useBufferTip" type="xs:boolean" use="optional" />
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MixCommand">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="VolumeCommandType">
+					<xs:attribute name="mixCycles" type="xs:nonNegativeInteger" use="optional" />
+					<xs:attribute name="tipTubeBottomGap" type="xs:nonNegativeInteger" use="optional" />
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TopUpVialCommand">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="VolumeCommandType">
+          <xs:attribute name="mixCycles" type="xs:nonNegativeInteger" use="optional" />
+          <xs:attribute name="tipTubeBottomGap" type="xs:nonNegativeInteger" use="optional" />
+					<xs:attribute name="freeAirDispense" type="xs:boolean" use="required" />
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResuspendVialCommand">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="VolumeCommandType">
+          <xs:attribute name="mixCycles" type="xs:nonNegativeInteger" use="optional" />
+          <xs:attribute name="tipTubeBottomGap" type="xs:nonNegativeInteger" use="optional" />
+					<xs:attribute name="freeAirDispense" type="xs:boolean" use="required" />
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+  <xs:element name="MixTransCommand">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="VolumeCommandType">
+          <xs:attribute name="mixCycles" type="xs:nonNegativeInteger" use="optional" />
+          <xs:attribute name="tipTubeBottomGap" type="xs:nonNegativeInteger" use="optional" />
+          <xs:attribute name="freeAirDispense" type="xs:boolean" use="required" />
+          <xs:attribute name="useBufferTip" type="xs:boolean" use="optional" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TopUpMixTransCommand">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="VolumeCommandType">
+          <xs:attribute name="mixCycles" type="xs:nonNegativeInteger" use="optional" />
+          <xs:attribute name="tipTubeBottomGap" type="xs:nonNegativeInteger" use="optional" />
+          <xs:attribute name="freeAirDispense" type="xs:boolean" use="required" />
+          <xs:attribute name="useBufferTip" type="xs:boolean" use="optional" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResusMixSepTransCommand">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="VolumeCommandType">
+          <xs:attribute name="mixCycles" type="xs:nonNegativeInteger" use="optional" />
+          <xs:attribute name="tipTubeBottomGap" type="xs:nonNegativeInteger" use="optional" />
+          <xs:attribute name="freeAirDispense" type="xs:boolean" use="required" />
+          <xs:attribute name="useBufferTip" type="xs:boolean" use="optional" />
+          <xs:attribute name="duration" type="xs:nonNegativeInteger" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResusMixCommand">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="VolumeCommandType">
+          <xs:attribute name="mixCycles" type="xs:nonNegativeInteger" use="optional" />
+          <xs:attribute name="tipTubeBottomGap" type="xs:nonNegativeInteger" use="optional" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TopUpTransCommand">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="VolumeCommandType">
+          <xs:attribute name="freeAirDispense" type="xs:boolean" use="required" />
+          <xs:attribute name="useBufferTip" type="xs:boolean" use="optional" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TopUpTransSepTransCommand">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="VolumeCommandType">
+					<xs:attribute name="freeAirDispense" type="xs:boolean" use="required" />
+          <xs:attribute name="useBufferTip" type="xs:boolean" use="optional" />
+          <xs:attribute name="duration" type="xs:nonNegativeInteger" use="required" />
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TopUpMixTransSepTransCommand">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="VolumeCommandType">
+          <xs:attribute name="mixCycles" type="xs:nonNegativeInteger" use="optional" />
+          <xs:attribute name="tipTubeBottomGap" type="xs:nonNegativeInteger" use="optional" />
+          <xs:attribute name="freeAirDispense" type="xs:boolean" use="required" />
+          <xs:attribute name="useBufferTip" type="xs:boolean" use="optional" />
+          <xs:attribute name="duration" type="xs:nonNegativeInteger" use="required" />
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- VolumeMaintenance Command subtypes (which are also Volume Command subtypes) -->
+	<xs:element name="FlushCommand">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="VolumeMaintenanceCommandType" />
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PrimeCommand">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="VolumeMaintenanceCommandType" />
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- ============================================== -->
+	<!-- Definition of the Command (abstract) base type -->
+	<!-- ============================================== -->
+	<xs:complexType name="CommandType">
+		<xs:attribute name="seq" type="xs:positiveInteger" use="required" />
+		<xs:attribute name="label" type="xs:string" use="required" />
+		<xs:attribute name="extensionTime" type="xs:nonNegativeInteger" use="required" />
+		<xs:anyAttribute processContents="skip" />
+	</xs:complexType>
+	<!-- ==================================================================== -->
+	<!-- Definition of the various Command sub-types and their 'helper' types -->
+	<!-- ==================================================================== -->
+	<xs:complexType name="ServiceCommandType">
+		<xs:complexContent>
+			<xs:extension base="CommandType" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WaitCommandType">
+		<xs:complexContent>
+			<xs:extension base="CommandType">
+				<xs:sequence>
+					<xs:element ref="processingTime" minOccurs="1" maxOccurs="1" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="processingTime">
+		<xs:complexType>
+			<xs:attribute name="duration" type="xs:nonNegativeInteger" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="VolumeCommandType">
+		<xs:complexContent>
+			<xs:extension base="CommandType">
+				<xs:sequence>
+					<xs:element ref="vials" minOccurs="1" maxOccurs="1" />
+          <xs:element ref="vials2" minOccurs="0" maxOccurs="1" />
+          <xs:element ref="vials3" minOccurs="0" maxOccurs="1" />
+					<xs:choice minOccurs="0" maxOccurs="1">
+						<xs:element ref="relativeVolume" />
+						<xs:element ref="absoluteVolume" />
+					</xs:choice>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:element ref="relativeVolume2" />
+            <xs:element ref="absoluteVolume2" />
+          </xs:choice>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:element ref="relativeVolume3" />
+            <xs:element ref="absoluteVolume3" />
+          </xs:choice>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:element ref="relativeVolume4" />
+            <xs:element ref="absoluteVolume4" />
+          </xs:choice>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:element ref="relativeVolume5" />
+            <xs:element ref="absoluteVolume5" />
+          </xs:choice>
+				</xs:sequence>
+				<xs:attribute name="tipRack" type="xs:int" use="optional" />
+        <xs:attribute name="numOfStages" type="xs:int" use="optional" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="vials">
+		<xs:complexType>
+			<xs:attribute name="src" type="xs:string" use="required" />
+			<xs:attribute name="dest" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+  <xs:element name="vials2">
+    <xs:complexType>
+      <xs:attribute name="src" type="xs:string" use="required" />
+      <xs:attribute name="dest" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="vials3">
+    <xs:complexType>
+      <xs:attribute name="src" type="xs:string" use="required" />
+      <xs:attribute name="dest" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+	<xs:element name="relativeVolume">
+		<xs:complexType>
+			<xs:attribute name="proportion" type="xs:decimal" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="absoluteVolume">
+		<xs:complexType>
+			<xs:attribute name="value_uL" type="xs:nonNegativeInteger" use="required" />
+		</xs:complexType>
+	</xs:element>
+  <xs:element name="relativeVolume2">
+    <xs:complexType>
+      <xs:attribute name="proportion" type="xs:decimal" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="absoluteVolume2">
+    <xs:complexType>
+      <xs:attribute name="value_uL" type="xs:nonNegativeInteger" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="relativeVolume3">
+    <xs:complexType>
+      <xs:attribute name="proportion" type="xs:decimal" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="absoluteVolume3">
+    <xs:complexType>
+      <xs:attribute name="value_uL" type="xs:nonNegativeInteger" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="relativeVolume4">
+    <xs:complexType>
+      <xs:attribute name="proportion" type="xs:decimal" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="absoluteVolume4">
+    <xs:complexType>
+      <xs:attribute name="value_uL" type="xs:nonNegativeInteger" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="relativeVolume5">
+    <xs:complexType>
+      <xs:attribute name="proportion" type="xs:decimal" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="absoluteVolume5">
+    <xs:complexType>
+      <xs:attribute name="value_uL" type="xs:nonNegativeInteger" use="required" />
+    </xs:complexType>
+  </xs:element>
+	<xs:complexType name="VolumeMaintenanceCommandType">
+		<xs:complexContent>
+			<xs:extension base="VolumeCommandType">
+				<xs:sequence>
+					<xs:element ref="flags" minOccurs="0" maxOccurs="1" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="flags">
+		<xs:complexType>
+			<xs:attribute name="home" type="xs:boolean" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,415 @@
+RoboSep-S Production Installer v1.2.1.0 
+    (Mar 21, 2018) by Chulwoong Jeon
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.9.0.0 is replaced with latest Version 4.9.x.4
+
++ RoboSep-S Server
+  Version: 1.2.1.0
+  - BugFix
+	
++ RoboSep-S GUI (Client)
+  Version: 1.2.1.0
+  - BugFix
+
++ RoboSep-S Service
+  Version: 1.0.0.9
+
+*****************************************************************************************
+RoboSep-S Production Installer v1.2.0.3 
+    (Mar 21, 2018) by Chulwoong Jeon
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.9.0.0 is replaced with latest Version 4.9.x.4
+
++ RoboSep-S Server
+  Version: 1.2.0.3
+  - deadvolume_bulkcontainer_ul = 75000 (was 15000)
+	
++ RoboSep-S GUI (Client)
+  Version: 1.2.0.3
+  - Improve barcode/EOR handling
+
++ RoboSep-S Service
+  Version: 1.0.0.9
+
+*****************************************************************************************
+RoboSep-S Production Installer v1.2.0.2 (SSXYMicroLC)
+    (Jan 11, 2018) by Chulwoong Jeon
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.9.0.0 is replaced with latest Version 4.9.x.4
+
++ RoboSep-S Server
+  Version: 1.2.0.2
+  - support SSXYMicroLC
+  - updated RSSCustVial to pass in profile full volume and profile full height
+
++ RoboSep-S GUI (Client)
+  Version: 1.2.0.2
+  - Improve exception handle messages
+  - Fix 3 character long protocol name error
+
++ RoboSep-S Service
+  Version: 1.0.0.9
+
+*****************************************************************************************
+RoboSep-S Production Installer v1.2.0.2
+    (July 04, 2017) by Chulwoong Jeon
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.9.0.0 is replaced with latest Version 4.9.x.4
+
++ RoboSep-S Server
+  Version: 1.2.0.2
+  - updated RSSCustVial to pass in profile full volume and profile full height
+
++ RoboSep-S GUI (Client)
+  Version: 1.2.0.2
+  - Improve exception handle messages
+  - Fix 3 character long protocol name error
+
++ RoboSep-S Service
+  Version: 1.0.0.9
+
+*****************************************************************************************
+
+RoboSep-S Production Installer v1.2.0.0
+    (May 11, 2016) by Chulwoong Jeon
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.7.0.5 is replaced with latest Version 4.9.x.4
+
++ RoboSep-S Server
+  Version: 1.2.0.0
+  - Support EZD Kit. In order to use EZD kit, Carousel must be upgraded.
+  - Fix ICS crash at Pause command with ‘Mix’/’Transport’ Label. 
+  - Pop up a message box when COM port is not detected.
+  - Fix a corrupt ‘user_profile.dat’ to block the system start up (Users need to re configure user profile after start up).
+  - Improve routine to handle special character for end of report generation.
+  - 2D Barcode reader sends prime command before sending trigger command. 
+  - RoboCam is upgraded into v1.1.1.1. RoboCam.ini 'StopDelayTimeInMilliSecond' controls the delay time (default: 30 sec). 
+
+
++ RoboSep-S GUI (Client)
+  Version: 1.2.0.0
+  - Disable Reagent volume warning box.
+  - Logging the end of run  Beep event. 
+  - RoboSepProtocol schema forward compatibility
+
++ RoboSep-S Service
+  Version: 1.0.0.9
+
+*****************************************************************************************
+
+RoboSep-S Production Installer v1.1.0.4c
+    (Aug 9, 2016) by Chulwoong Jeon
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.7.0.5
+
++ RoboSep-S Server
+  Version: 1.1.0.4c
+  - Fixed incorrect max sample volume handling for the combo actions
+
++ RoboSep-S GUI (Client)
+  Version: 1.1.0.0
+
++ RoboSep-S Service
+  Version: 1.0.0.9
+
+*****************************************************************************************
+
+RoboSep-S Production Installer v1.1.0.4
+    (June 8, 2016) by Chulwoong Jeon
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.7.0.5
+
++ RoboSep-S Server
+  Version: 1.1.0.4
+  - Fixed incorrect tip strip error handling	
+
++ RoboSep-S GUI (Client)
+  Version: 1.1.0.0
+
++ RoboSep-S Service
+  Version: 1.0.0.9
+
+*****************************************************************************************
+
+RoboSep-S Production Installer v1.1.0.3
+    (Mar 15, 2016) by David Baik
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.7.0.5
+
++ RoboSep-S Server
+  Version: 1.1.0.3
+  - Fixed reagent sharing issue (previously did not recognize MixTrans commands)
+  - Added software switch to bypass z-theta limit (for manufacturing/calibration)
+
++ RoboSep-S GUI (Client)
+  Version: 1.1.0.0
+
++ RoboSep-S Service
+  Version: 1.0.0.9
+
+*****************************************************************************************
+
+RoboSep-S Production Installer v1.1.0.2
+    (Dec 15, 2015) by Chulwoong Jeon
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.7.0.5
+
++ RoboSep-S Server
+  Version: 1.1.0.2
+  - Fix service relating barcode scan function
+
++ RoboSep-S GUI (Client)
+  Version: 1.1.0.0
+ 
+
++ RoboSep-S Service
+  Version: 1.0.0.9
+
+*****************************************************************************************
+
+RoboSep-S Production Installer v1.1.0.1
+    (Nov 25, 2015) by Chulwoong Jeon
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.7.0.5
+
++ RoboSep-S Server
+  Version: 1.1.0.1
+
++ RoboSep-S GUI (Client)
+  Version: 1.1.0.0
+ 
+
++ RoboSep-S Service
+  Version: 1.0.0.9
+  - Fixing an error 'clicking any text cause C# runtime error'.	
+
+*****************************************************************************************
+
+RoboSep-S Production Installer v1.0.4.0
+    (April 10, 2014) by Chulwoong Jeon
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.7.0.5
+
++ RoboSep-S Server
+  Version: 1.0.4.0
+  - 2D barcode reader scanning trigger routine changed
+  - Trimming White character for 'bcrtest.txt'
+  - splog for the client freed	
+
++ RoboSep-S GUI (Client)
+  Version: 1.0.4.0
+  - Comsmetic changes - ECR#214, 215, 216, 218, 223, 224, 231, 232, 234, 240, 214, 242, 243
+
++ RoboSep-S Service
+  Version: 1.0.0.8
+  -fixed crashing bug with barcode button in pendant mode
+  -fixed crashing bug with main user
+  -enable barcode button in pendant mode
+  -updated app icons
+
+*****************************************************************************************
+
+RoboSep-S Production Installer v1.0.3.0
+    (Feb 3, 2013) by Chulwoong Jeon
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.7.0.5
+
++ RoboSep-S Server
+  Version: 1.0.3.0
+  - Server kicks in the splash screen when the server starts and terminates the splash screen when the client is running.
+  - 2D barcode scan pattern changed by SP
+  - In log the folder, *.log, *.stlog, *.trm are compressed and saved with time stamp information and then are removed from the folders.
+  - A test mode for 2D barcode was added. 'bcrtest.txt' should be represented at config folder.
+  - config values barcode_offset_degrees/barcode_rescan_offset_degrees were relocated into the section '[Barcode_reader]'. 
+
+  Known issue:
+  - White character triminmg for 'bcrtest.txt' has to be perform at the next version.
+  - splog for the client has to be freed when the client is terminated. 
+  - Extension log data needs to be deleted after the file was compressed info the log package file.
+
++ RoboSep-S GUI (Client)
+  Version: 1.0.2.0
+  -following ECR were applied.
+   (ECR#40, ECR#47, ECR#48, ECR#53, ECR#55, ECR#59, ECR#64, ECR#86, ECR#87, ECR#88, ECR#91, ECR#92, ECR#95, ECR#96, ECR#97, ECR#98, ECR#100, ECR#102, ECR#105, ECR#107, ECR#57)
+  Known Issues:
+  -Progress bar doesn't display current steps for any maintenance protocols.
+
++ RoboSep-S Service
+  Version: 1.0.0.6
+  -removed prereq for .net framework 4 in installer
+  -changed Theta Axis defaults from 2 and 0.25 to 1 and 0.1
+  -fixed keyboard S
+  -changed settings->barcode rescan to settings->barcode offset
+  -added barcode script2 (for calibrate to vial 2 (cocktail))
+  -added pendant mode (for super user only, activate through about screen)
+  -added button for free/enable axis (pendant mode only)
+
+
++ RoboCam 
+  Version: 1.0.0.4
+
+*****************************************************************************************
+
+RoboSep-S Production Installer v1.0.1.1
+    (Oct 16, 2013) by Chulwoong Jeon
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.7.0.5
+  Know Issues: 
+  -When it tries to open protocols, the initial folder is not 'C:\Program Files\STI\RoboSep\protocols' but 'C:\Program Files\STI\RoboSepEditor\protocols'. 
+
++ RoboSep-S Server
+  Version: 1.0.0.2
+  - Support non-html end of report
+  - Release com port for barcode scanner when service mode is engaged.
+  - compress logs files and make one zip file.  	
+  - Beacon flashes when Pause is selected.
+  Known Issues: 
+  - BCR calibration will require Server to release/acquire COM Port 4 before/return from ServiceClient.
+  - "Lysis Vial delay..." msg in Launcher(from 4.6.0) is to uncoordinate simultaneous moves of theta/carousel to minimize droplet contamination.      
+
++ RoboSep-S GUI (Client)
+  Version: 1.0.0.2
+  - Support non-html end of report.
+  - Matching barcode with protocol name.
+  - Progressbar improvement when a multiple quadrants protocol is selected.
+  - Bitmap changes.
+  
+  Known Issues:
+  -The log system needs to be cleaned up. (Both 'RoboSep_ui.log' and timestamp_clt.stlog are created.)
+  -Progress bar doesn't display current steps for any maintenance protocols.
+
++ RoboSep-S Service
+  Version: 1.0.0.2
+  Details: RND-00657
+  -updated to current keyboard graphics
+  -added barcode scanner button: scanner app is specified in RoboSepService.config > Barcode Reader script > RunBarcodeApp="c:\OEM\Jadak\Imageview.exe"
+  
+
++ RoboCam 
+  Version: 1.0.0.4
+  - default recoding mode configured by 'ServerConfig.ini'	
+  Known Issues:
+  - Subtitle works with VLC and GOM players and not Windows Media Player.
+
+
+*****************************************************************************************
+
+RoboSep-S Production Installer v1.0.0.0 
+    (Aug 6, 2013) by Chulwoong Jeon
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.7.0.5
+  Details: RND-00674
+  Know Issues: 
+  -When it tries to open protocols, the initial folder is not 'C:\Program Files\STI\RoboSep\protocols' but 'C:\Program Files\STI\RoboSepEditor\protocols'. 
+
++ RoboSep-S Server
+  Version: 1.0.0.0
+  Details: RND-00623
+  Known Issues: 
+  -The log system needs to be cleaned up. (Both 'RoboSep.log' and timestamp_svr.stlog are created.)
+  - BCR calibration will require Server to release/acquire COM Port 4 before/return from ServiceClient.
+  - "Lysis Vial delay..." msg in Launcher(from 4.6.0) is to uncoordinate simultaneous moves of theta/carousel to minimize droplet contamination.      
+
++ RoboSep-S GUI (Client)
+  Version: 1.0.0.0
+  Details: RND-00663
+  Known Issues:
+  -The log system needs to be cleaned up. (Both 'RoboSep_ui.log' and timestamp_clt.stlog are created.)
+  -Progress bar doesn't display current steps for any maintenance protocols.
+
++ RoboSep-S Service
+  Version: 0.0.0.18
+  Details: RND-00657
+  Known Issues:
+  - GUI bitmap incomplete.
+  - BCR calibration routine to make external call (executable path read from config file)
+  
+
++ RoboCam 
+  Version: 1.0.0.4
+  Details: RND-00662
+  Known Issues:
+  - Subtitle works with VLC and GOM players and not Windows Media Player.
+  - Default recording mode is ??
+
+
+* Network Requirements
+----------------------
+  After RoboSep-S is installed, following folders are set as network sharing folders.
+        C:\Program Files\STI\RoboSep\protocols
+        C:\Program Files\STI\RoboSep\logs
+        C:\Program Files\STI\RoboSep\reports
+        C:\Share Data
+  In order to have proper file sharing within any intranet environments, WES7 should be configured to support the 'Windows File Sharing Service'. 
+  For future support of iPad remote desktop sharing app, the 'Bonjour' service should be installed at RoboSep-S system. Also, 'Tight VNC' should be installed at RoboSep-S system with proper password configuration.
+  Microsoft Update should be disabled. Also, automatic update for Microsoft Security Essential should be disabled, too.
+
+* End of Report Preview Requirement
+  For proper reviewing end of reports from RoboSep-S, Adobe PDF reader version X should be installed.
+
+* Disable Shell Hardware Detection Service
+  To disable USB memory stick autorun, the Shell Hardware Detection service must be disabled.
+  
+  
+* Configure File list
+----------------------
+  To operate RoboSep-S properly, following files are required in C:\Program Files\STI\RoboSep\config folder.
+  For Server -
+      Hardware.ini
+      Serial.dat
+      ServerConfig.ini (to include usage on switches)
+      cmd_times.ini
+  For GUI (Client) -
+      UserPreference.ini: defines default values for 'Preference' menu when a user profile is created.
+      Language.ini      : contains all messages for dialog boxes/menus (supporting multi language).     
+      NetworkORCA.ini   : TBA   	
+      PackageList.ini   : defines file types for diagnostic package.  
+      protocolAbbreviation.txt : defines rules to abbreviate protocol names.
+      protocolPresets.txt : defines protocol list for presets. 
+
+  For Service - 
+      RoboSepService.config
+  
+  

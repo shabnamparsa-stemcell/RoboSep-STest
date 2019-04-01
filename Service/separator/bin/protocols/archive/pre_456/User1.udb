@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepUser xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="STI">
+  <UserName>Jilla</UserName>
+  <ProtocolFile>Mouse PE Positive Selection 18554-base.xml</ProtocolFile>
+  <ProtocolFile>Human PE Positive Selection 18551-base.xml</ProtocolFile>
+  <ProtocolFile>Human CD4 Positive Selection 18052-high purity.xml</ProtocolFile>
+  <ProtocolFile>Human CD8 Positive Selection 18053-high purity.xml</ProtocolFile>
+  <ProtocolFile>Human CD19 Positive Selection 18054-high purity.xml</ProtocolFile>
+</RoboSepUser>

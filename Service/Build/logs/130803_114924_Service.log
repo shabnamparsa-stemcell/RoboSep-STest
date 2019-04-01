@@ -1,0 +1,18 @@
+RoboSep UI Log File
+Created: 20130803_114924.279
+
+20130803_114924.359	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20130803_114924.379	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20130803_114931.078	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20130803_114931.880	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20130803_114934.123	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20130803_114934.303	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130803_114940.382	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130803_114942.124	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20130803_114942.124	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as StandardUser
+20130803_114942.244	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20130803_114942.435	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20130803_114942.465	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20130803_114942.615	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20130803_114943.186	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130803_114944.618	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu

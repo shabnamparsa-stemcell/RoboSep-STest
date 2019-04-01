@@ -1,0 +1,51 @@
+RoboSep UI Log File
+Created: 20130730_181916.347
+
+20130730_181916.357	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20130730_181916.377	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20130730_181930.608	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20130730_181930.698	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20130730_181932.370	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20130730_181932.541	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130730_181934.924	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130730_181937.027	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130730_181940.442	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130730_181942.375	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20130730_181942.375	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20130730_181943.126	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20130730_181943.556	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20130730_181943.667	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20130730_181943.707	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20130730_181944.468	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130730_181946.030	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130730_181951.908	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Closing ServiceMenu
+20130730_182034.510	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130730_182034.650	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130730_182036.963	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20130730_182040.649	clt	ServiceMenu.listboxSubMenu_SelectedIndexChanged()	Info	ServiceMenu	Prepare to start script: 1. Theta Axis
+20130730_182040.719	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	None
+20130730_182103.952	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = True
+
+20130730_182103.722	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: TeslaPlatform powerDownCarousel;
+20130730_182103.712	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20130730_182101.368	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: TeslaPlatform MoveTo 1 'antibodyvial_degrees' 135;
+20130730_182101.348	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20130730_182043.413	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: Instrument HomeAll 0;
+20130730_182043.322	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20130730_182043.312	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	Running script: 1. Theta Axis
+20130730_182043.312	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: Calibration startCalibration;
+20130730_182041.259	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20130730_182103.952	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Received response:
+True
+20130730_182105.995	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Carousel
+20130730_182109.370	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130730_182111.753	clt	Keyboard.button_Cancel1_Click()	Info	Keyboard	Cancel button clicked
+20130730_182114.007	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130730_182115.368	clt	Keyboard.button_Cancel1_Click()	Info	Keyboard	Cancel button clicked
+20130730_182118.994	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130730_182120.666	clt	Keyboard.button_Cancel1_Click()	Info	Keyboard	Cancel button clicked
+20130730_182125.233	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130730_182127.216	clt	Keyboard.button_Cancel1_Click()	Info	Keyboard	Cancel button clicked

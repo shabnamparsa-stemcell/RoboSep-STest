@@ -1,0 +1,72 @@
+RoboSep UI Log File
+Created: 20111214_092550.429
+
+20111214_092550.460	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20111214_092550.536	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20111214_092552.387	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20111214_092552.403	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	Info	RoboSep_UserConsole	Loading User Console
+20111214_092552.423	clt	RoboSep_Splash.RoboSep_Splash()	Info	RoboSep_Splash	Initializing Splash Page
+20111214_092552.473	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	General	RoboSep_UserConsole	Starting GUI Thread
+20111214_092552.475	clt	RoboSep_UserConsole.AttemptSeparatorConnection()	Info	RoboSep_UserConsole	Connecting...
+20111214_092553.651	clt	RoboSep_UserDB.Robosep_UserDB()()	Debug	RoboSep_UserDB	Initializing UserDB
+20111214_092553.968	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_092554.075	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111214_092554.086	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111214_092554.791	clt	RoboSep_UserDB.LoadAllProtocols()	Debug	RoboSep_UserDB	161protocols loaded
+20111214_092554.799	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111214_092555.481	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_092555.596	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111214_092623.903	clt	RoboSep_UserConsole.ProgressSplash()	Info	RoboSep_UserConsole	Stopping Splash page
+20111214_092623.964	clt	RoboSep_About.RoboSep_About()	Info	RoboSep_About	Initializing About user control
+20111214_092624.057	clt	RoboSep_RunSamples.RoboSep_RunSamples()	Info	RoboSep_RunSamples	Initializing Run Samples user control
+20111214_092624.136	clt	RoboSep_Splash.close()	Info	RoboSep_Splash	Closing Splash Page
+20111214_092631.421	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111214_092631.519	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111214_092631.552	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111214_092631.593	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111214_092635.731	clt	RoboSep_RunSamples.addToRun()	Debug	RoboSep_RunSamples	Adding protocol 'TestProtocol' to run at quadrant0
+20111214_092635.807	clt	NumberPad.NumberPad()	Debug	NumberPad	Opening New Number Pad window
+20111214_092636.904	clt	NumberPad.validateEntry()	Debug	NumberPad	Volume: 2.000
+20111214_092636.932	clt	RoboSep_UserConsole.SetSampleVolume()	Info	RoboSep_UserConsole	Quad: 1 Sample Vol 0.002
+20111214_092636.951	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111214_092637.014	clt	RoboSep_ProtocolSelect.SelectProtocol()	Info	RoboSep_ProtocolSelect	Adding protocol to current run
+20111214_092637.024	clt	RoboSep_ProtocolSelect.button_Accept_Click()	Info	RoboSep_ProtocolSelect	Protocol Selected from User list
+20111214_092637.053	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 10:00
+20111214_092638.177	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111214_092638.245	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 3
+20111214_092638.278	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111214_092638.512	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 3
+20111214_092642.365	clt	RoboSep_ProtocolSelect.button_SelectionMode_Click()	Info	RoboSep_ProtocolSelect	Change Protocol selection mode toAll Protocols
+20111214_092644.401	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111214_092644.481	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111214_092644.492	clt	RoboSep_UserDB.XML_SaveUserProfile()	Debug	RoboSep_UserDB	Saved User Profile Jason with 6protocols
+20111214_092644.547	clt	RoboSep_ProtocolSelect.button_Accept_Click()	Info	RoboSep_ProtocolSelect	Protocol Selected from All Protocols list
+20111214_092644.587	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111214_092644.594	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 10:00
+20111214_092645.547	clt	RoboSep_UserDB.loadUserProtocols()	Debug	RoboSep_UserDB	Loaded 5 protocol from User Jason
+20111214_092645.760	clt	RoboSep_RunSamples.addToRun()	Debug	RoboSep_RunSamples	Adding protocol 'Any Species APC Positive Selection 18453-high purity' to run at quadrant2
+20111214_092645.822	clt	NumberPad.NumberPad()	Debug	NumberPad	Opening New Number Pad window
+20111214_092647.280	clt	NumberPad.button_cancel_Click()	Info	NumberPad	Cancel button click
+20111214_092647.347	clt	RoboSep_ProtocolSelect.SelectProtocol()	Info	RoboSep_ProtocolSelect	Adding protocol to current run
+20111214_092649.361	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111214_092649.426	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 2
+20111214_092649.457	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111214_092649.498	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 2
+20111214_092651.288	clt	RoboSep_ProtocolSelect.button_SelectionMode_Click()	Info	RoboSep_ProtocolSelect	Change Protocol selection mode toAll Protocols
+20111214_092653.327	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111214_092653.384	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111214_092653.452	clt	RoboSep_UserDB.XML_SaveUserProfile()	Debug	RoboSep_UserDB	Saved User Profile Jason with 6protocols
+20111214_092653.509	clt	RoboSep_ProtocolSelect.button_Accept_Click()	Info	RoboSep_ProtocolSelect	Protocol Selected from All Protocols list
+20111214_092653.547	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111214_092653.554	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 10:00
+20111214_092654.496	clt	RoboSep_UserDB.loadUserProtocols()	Debug	RoboSep_UserDB	Loaded 5 protocol from User Jason
+20111214_092654.604	clt	RoboSep_UserDB.loadUserProtocols()	Debug	RoboSep_UserDB	Loaded 5 protocol from User Jason
+20111214_092654.637	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111214_092654.644	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 10:00
+20111214_092654.717	clt	RoboSep_UserDB.loadUserProtocols()	Debug	RoboSep_UserDB	Loaded 5 protocol from User Jason
+20111214_092654.751	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111214_092654.783	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 10:00
+20111214_092654.984	clt	RoboSep_RunSamples.addToRun()	Debug	RoboSep_RunSamples	Adding protocol 'Human CD15 WB Positive Selection 18681-high purity' to run at quadrant1
+20111214_092655.072	clt	NumberPad.NumberPad()	Debug	NumberPad	Opening New Number Pad window
+20111214_092656.353	clt	NumberPad.button_cancel_Click()	Info	NumberPad	Cancel button click
+20111214_092656.426	clt	RoboSep_ProtocolSelect.SelectProtocol()	Info	RoboSep_ProtocolSelect	Adding protocol to current run

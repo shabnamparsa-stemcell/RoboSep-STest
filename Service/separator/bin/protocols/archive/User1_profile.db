@@ -1,0 +1,40 @@
+(lp1
+(iipl.types.Bunch
+Bunch
+p2
+(dp3
+S'name'
+p4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CSPE Human CD8 Pos Sel 18053 - no incubation.xml
+p5
+sS'time'
+p6
+I1179363202
+sba(iipl.types.Bunch
+Bunch
+p7
+(dp8
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\home_axes.xml'
+p9
+sg6
+I1179363202
+sba(iipl.types.Bunch
+Bunch
+p10
+(dp11
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\prime.xml'
+p12
+sg6
+I1179363202
+sba(iipl.types.Bunch
+Bunch
+p13
+(dp14
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\shutdown.xml'
+p15
+sg6
+I1179363202
+sba.

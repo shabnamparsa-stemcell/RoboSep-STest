@@ -1,0 +1,23 @@
+RoboSep UI Log File
+Created: 20130803_113814.846
+
+20130803_113814.896	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20130803_113814.926	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20130803_113818.732	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20130803_113818.902	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20130803_113821.165	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20130803_113821.355	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130803_113827.184	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130803_113829.066	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130803_113831.280	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130803_113832.772	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20130803_113832.772	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20130803_113834.865	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20130803_113835.005	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20130803_113835.065	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20130803_113835.195	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20130803_113835.696	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130803_113837.028	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130803_113937.976	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Closing ServiceMenu
+20130803_113945.857	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130803_113945.967	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu

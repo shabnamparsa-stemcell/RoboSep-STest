@@ -1,0 +1,100 @@
+﻿//  lines that begin with // are not read
+//
+// ----------------------------------------------------------------------------
+//  protocolPreset.txt
+// 
+//  This file contains the default protocol presets grouped by section names
+//  The default presets are generated only once and they are based on this file. 
+//  Once the default presets are generated. They can't be modified by users. This 
+//  file is no longer used unless the presets are deleted by some means. It will 
+//  be re-generated again.
+//  If new sections are added, the presets for the new sections are generated 
+//  but the old sections remain unchanged. 
+//  
+//  Note: If the preset name has a space in between, it is replaced by the 
+//        character '^'
+//  Version: 1.0.0.0
+// ----------------------------------------------------------------------------
+
+
+[HLA/Chimerism]
+18051HLA
+18054
+18055
+18056
+18081HLA
+18081
+18084
+18085HLA
+18086
+18184HLA
+18257
+18287HLA
+18287
+18352
+18454HLA
+18657HLA
+18681HLA
+18683HLA
+18684HLA
+18687HLA
+19051HLA
+19054HLA
+19951HLA
+19954HLA
+19961HLA
+18682
+18088
+18058
+18545HLA
+18058
+18685
+18088
+18682
+
+[Myeloma/CLL]
+18387
+18357
+18184HLA
+19154
+
+[T^Cells]
+19852
+19752
+19765
+19853
+19753
+19858
+18752
+18753
+18751
+19767
+18951
+18952
+18953
+
+[B^Cells]
+19054
+19554
+19154
+19254
+18054
+18164
+18084
+18685
+19854
+19754
+18754
+19844
+18954
+
+[Granulocytes]
+19259
+19256
+19069
+19257
+19762
+18682
+
+
+

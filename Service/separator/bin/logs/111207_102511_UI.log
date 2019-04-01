@@ -1,0 +1,31 @@
+RoboSep UI Log File
+Created: 20111207_102511.532
+
+20111207_102511.535	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20111207_102511.582	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20111207_102513.134	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20111207_102513.150	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	Info	RoboSep_UserConsole	Loading User Console
+20111207_102513.172	clt	RoboSep_Splash.RoboSep_Splash()	Info	RoboSep_Splash	Initializing Splash Page
+20111207_102513.353	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	General	RoboSep_UserConsole	Starting GUI Thread
+20111207_102513.357	clt	RoboSep_UserConsole.AttemptSeparatorConnection()	Info	RoboSep_UserConsole	Connecting...
+20111207_102514.149	clt	RoboSep_UserDB.Robosep_UserDB()()	Debug	RoboSep_UserDB	Initializing UserDB
+20111207_102514.189	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111207_102514.236	clt	RoboSep_UserDB.LoadAllProtocols()	Debug	RoboSep_UserDB	160protocols loaded
+20111207_102514.265	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111207_102514.659	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111207_102514.695	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111207_102514.746	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111207_102514.756	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111207_102544.303	clt	RoboSep_UserConsole.ProgressSplash()	Info	RoboSep_UserConsole	Stopping Splash page
+20111207_102544.366	clt	RoboSep_About.RoboSep_About()	Info	RoboSep_About	Initializing About user control
+20111207_102544.463	clt	RoboSep_RunSamples.RoboSep_RunSamples()	Info	RoboSep_RunSamples	Initializing Run Samples user control
+20111207_102544.548	clt	RoboSep_Splash.close()	Info	RoboSep_Splash	Closing Splash Page
+20111207_102624.325	clt	RoboSep_RunSamples.btn_home_Click()	Info	RoboSep_RunSamples	Home button clicked
+20111207_102626.030	clt	Form_Home.btn_close_Click()	Info	Form_Home	Close Window button clicked
+20111207_102627.322	clt	RoboSep_RunSamples.btn_home_Click()	Info	RoboSep_RunSamples	Home button clicked
+20111207_102629.172	clt	RoboSep_Logs.RoboSep_Logs()	Info	RoboSep_Logs	Initializing Logs Tab Page 
+20111207_102629.214	clt	RoboSep_RunStatsLog.RoboSep_RunStatsLog()	Info	RoboSep_RunStatsLog	Initializing Log Tab Run Statistics
+20111207_102629.371	clt	RoboSep_Logs.RoboSep_Logs()	Info	RoboSep_Logs	Loading Log Tab 0
+20111207_102629.415	clt	Form_Home.hex_logs_Click()	Info	Form_Home	Logs button clicked
+20111207_102754.109	clt	RoboSep_RunStatsLog.btn_home_Click()	Info	RoboSep_RunStatsLog	Home button clicked
+20111207_102755.407	clt	Form_Home.btn_close_Click()	Info	Form_Home	Close Window button clicked

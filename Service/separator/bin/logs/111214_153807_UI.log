@@ -1,0 +1,80 @@
+RoboSep UI Log File
+Created: 20111214_153807.976
+
+20111214_153807.978	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20111214_153808.031	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20111214_153809.968	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20111214_153809.986	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	Info	RoboSep_UserConsole	Loading User Console
+20111214_153810.016	clt	RoboSep_Splash.RoboSep_Splash()	Info	RoboSep_Splash	Initializing Splash Page
+20111214_153810.083	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	General	RoboSep_UserConsole	Starting GUI Thread
+20111214_153810.095	clt	RoboSep_UserConsole.AttemptSeparatorConnection()	Info	RoboSep_UserConsole	Connecting...
+20111214_153811.389	clt	RoboSep_UserDB.Robosep_UserDB()()	Debug	RoboSep_UserDB	Initializing UserDB
+20111214_153811.563	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111214_153811.580	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111214_153811.636	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_153812.430	clt	RoboSep_UserDB.LoadAllProtocols()	Debug	RoboSep_UserDB	161protocols loaded
+20111214_153812.435	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111214_153812.818	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_153812.849	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111214_153841.017	clt	RoboSep_UserConsole.ProgressSplash()	Info	RoboSep_UserConsole	Stopping Splash page
+20111214_153841.082	clt	RoboSep_About.RoboSep_About()	Info	RoboSep_About	Initializing About user control
+20111214_153841.184	clt	RoboSep_RunSamples.RoboSep_RunSamples()	Info	RoboSep_RunSamples	Initializing Run Samples user control
+20111214_153841.282	clt	RoboSep_Splash.close()	Info	RoboSep_Splash	Closing Splash Page
+20111214_153855.565	clt	RoboSep_RunSamples.btn_home_Click()	Info	RoboSep_RunSamples	Home button clicked
+20111214_153859.439	clt	RoboSep_Help.RoboSep_Help()	Info	RoboSep_Help	Initializing Help user control
+20111214_153859.469	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153859.818	clt	Form_Home.hex_help_Click()	Info	Form_Home	Help button clicked
+20111214_153902.457	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153902.497	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153907.538	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153907.859	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153915.595	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153915.610	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153925.099	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153925.139	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153927.419	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153929.194	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 1
+20111214_153929.587	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 1
+20111214_153929.909	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153930.035	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153930.130	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153932.978	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153932.994	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153933.490	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153933.698	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153933.907	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153934.002	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153934.026	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153934.035	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153935.483	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153936.633	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 1
+20111214_153937.003	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 1
+20111214_153937.310	clt	RoboSep_Help.HelpTabs_BackgroundImageChanged()	Info	RoboSep_Help	Load Tab Page 0
+20111214_153938.296	clt	RoboSep_About.btn_home_Click()	Info	RoboSep_About	Home button clicked
+20111214_153940.065	clt	RoboSep_Logs.RoboSep_Logs()	Info	RoboSep_Logs	Initializing Logs Tab Page 
+20111214_153940.108	clt	RoboSep_RunStatsLog.RoboSep_RunStatsLog()	Info	RoboSep_RunStatsLog	Initializing Log Tab Run Statistics
+20111214_153940.475	clt	RoboSep_Logs.RoboSep_Logs()	Info	RoboSep_Logs	Loading Log Tab 0
+20111214_153940.521	clt	Form_Home.hex_logs_Click()	Info	Form_Home	Logs button clicked
+20111214_153943.147	clt	RoboSep_Logs.RoboSep_Logs()	Info	RoboSep_Logs	Loading Log Tab 1
+20111214_153944.236	clt	RoboSep_Logs.RoboSep_Logs()	Info	RoboSep_Logs	Loading Log Tab 0
+20111214_153952.292	clt	RoboSep_Logs.RoboSep_Logs()	Info	RoboSep_Logs	Loading Log Tab 2
+20111214_153953.561	clt	BasePannel.btn_home_Click()	Info	BasePannel	Home button clicked
+20111214_153956.416	clt	RoboSep_Protocols.LoadUsers()	Info	RoboSep_Protocols	Reloading Auto Complete for User Textbox
+20111214_153956.425	clt	RoboSep_Protocols.RoboSep_Protocols()	Info	RoboSep_Protocols	Initializing Protocols user control
+20111214_153956.523	clt	Form_Home.hex_protocols_Click()	Info	Form_Home	Protocols button clicked
+20111214_153958.032	clt	RoboSep_Protocols.button_AllHuman_Click()	Info	RoboSep_Protocols	All Human selected
+20111214_153959.034	clt	RoboSep_Protocols.btn_home_Click()	Info	RoboSep_Protocols	Home button clicked
+20111214_154000.074	clt	Form_Home.hex_sampling_Click()	Info	Form_Home	Run Sample button clicked
+20111214_154000.750	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111214_154000.803	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_154000.811	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111214_154000.803	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_154000.750	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111214_154000.074	clt	Form_Home.hex_sampling_Click()	Info	Form_Home	Run Sample button clicked
+20111214_153959.034	clt	RoboSep_Protocols.btn_home_Click()	Info	RoboSep_Protocols	Home button clicked
+20111214_153958.032	clt	RoboSep_Protocols.button_AllHuman_Click()	Info	RoboSep_Protocols	All Human selected
+20111214_153956.523	clt	Form_Home.hex_protocols_Click()	Info	Form_Home	Protocols button clicked
+20111214_153956.425	clt	RoboSep_Protocols.RoboSep_Protocols()	Info	RoboSep_Protocols	Initializing Protocols user control
+20111214_153956.416	clt	RoboSep_Protocols.LoadUsers()	Info	RoboSep_Protocols	Reloading Auto Complete for User Textbox
+20111214_153953.561	clt	BasePannel.btn_home_Click()	Info	BasePannel	Home button clicked
+20111214_154000.836	clt	RoboSep_UserDB.loadUserProtocols()	Error	RoboSep_UserDB	Failed to load All Humanprotocol list

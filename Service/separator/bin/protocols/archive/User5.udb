@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepUser xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="STI">
+  <UserName>User5</UserName>
+  <ProtocolFile>life.xml</ProtocolFile>
+  <ProtocolFile>SPE tip test.xml</ProtocolFile>
+</RoboSepUser>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<!-- Select a Product Configuration -->
+		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
+		<!-- Select a Visual Studio Configuration / InstallShield Release -->
+		<Configuration>Debug</Configuration>
+		<InstallShieldRelease>$(Configuration)</InstallShieldRelease>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- The InstallShieldProject item selects the project to build -->
+		<InstallShieldProject Include="$(MSBuildProjectDirectory)\$(MSBuildProjectName).isl"/>
+		<!-- The InstallShieldReleaseFlags sets Release Flags -->
+		<!--<InstallShieldReleaseFlags Include=""/>-->
+		<!-- The InstallShieldMergeModulePath specifies what directories are
+		searched for Merge Modules -->
+		<!--<InstallShieldMergeModulePath Include=""/>-->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The ProjectReference items refer to any Visual Studio solutions you want to automatically probe for Project Output Groups.  -->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The TaggedOutputs items allow you to explicitly add extra files to output groups. Each item must include both Name and OutputGroup, as well as TargetPath metadata values. -->
+		<!--<TaggedOutputs Include="C:\My Test Exe.exe">
+			<Name>My Test Project</Name>
+			<OutputGroup>Primary output</OutputGroup>
+			<TargetPath>My Test Exe.exe</TargetPath>
+		</TaggedOutputs> -->
+	</ItemGroup>
+	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2015Limited\InstallShield.targets"/>
+	<ItemGroup/>
+	<ItemGroup>
+		<ProjectReference Include="..\common\Common.csproj">
+			<Name>Common</Name>
+			<Project>{12FBE96F-1212-4E24-9CCB-A9666F4C5203}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\common\CommonResources.csproj">
+			<Name>CommonResources</Name>
+			<Project>{05ABD542-CEFA-48E2-B689-13D64C2F8A40}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\DataAccess\DataAccess.csproj">
+			<Name>DataAccess</Name>
+			<Project>{9A5BCDC0-ACCC-4A8C-8014-7F0254A87187}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\CWJ_Console\GUI_Console.csproj">
+			<Name>GUI_Console</Name>
+			<Project>{4D8D6F32-BB42-4198-8FE6-14CFD4AB3D9C}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\GUI_Controls\GUI_Controls.csproj">
+			<Name>GUI_Controls</Name>
+			<Project>{35E0CB7F-0BB6-411F-9BFD-35852A3F63BB}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\controlAPI\InstrumentControlAPI.csproj">
+			<Name>InstrumentControlAPI</Name>
+			<Project>{8A2840DC-DD41-4CDD-9071-86F07A26ED92}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\separator\Separator.csproj">
+			<Name>Separator</Name>
+			<Project>{8C4A9C27-80BB-4619-BF10-AC831A915330}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\separatorAPI\SeparatorAPI.csproj">
+			<Name>SeparatorAPI</Name>
+			<Project>{AA229DBB-3395-4270-A06C-C38F7BB242BF}</Project>
+		</ProjectReference>
+	</ItemGroup>
+</Project>

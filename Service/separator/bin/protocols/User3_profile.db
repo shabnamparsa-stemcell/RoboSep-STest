@@ -1,0 +1,49 @@
+(lp1
+(iipl.types.Bunch
+Bunch
+p2
+(dp3
+S'name'
+p4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005C19232 - Stage 2 small volume DX1 TAC.xml
+p5
+sS'time'
+p6
+I1296761936
+sba(iipl.types.Bunch
+Bunch
+p7
+(dp8
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005C19232 - Stage 2 small volume PBS.xml
+p9
+sg6
+I1296761936
+sba(iipl.types.Bunch
+Bunch
+p10
+(dp11
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\home_axes.xml'
+p12
+sg6
+I1313465091
+sba(iipl.types.Bunch
+Bunch
+p13
+(dp14
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\prime.xml'
+p15
+sg6
+I1313465091
+sba(iipl.types.Bunch
+Bunch
+p16
+(dp17
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\shutdown.xml'
+p18
+sg6
+I1313465091
+sba.

@@ -1,0 +1,48 @@
+RoboSep UI Log File
+Created: 20130803_111604.409
+
+20130803_111604.452	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20130803_111604.474	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20130803_111635.488	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20130803_111635.648	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20130803_111637.961	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20130803_111638.151	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130803_111640.134	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130803_111641.356	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130803_111646.043	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130803_111647.585	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20130803_111647.585	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20130803_111647.765	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20130803_111647.885	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20130803_111647.915	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20130803_111648.076	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20130803_111648.647	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130803_111649.868	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130803_111652.502	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20130803_111657.029	clt	ServiceMenu.listboxSubMenu_SelectedIndexChanged()	Info	ServiceMenu	Prepare to start script: 1. Theta Axis
+20130803_111657.139	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	None
+20130803_111719.771	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = True
+
+20130803_111719.561	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: TeslaPlatform powerDownCarousel;
+20130803_111719.551	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20130803_111717.678	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: TeslaPlatform MoveTo 1 'antibodyvial_degrees' 135;
+20130803_111717.658	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20130803_111659.763	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: Instrument HomeAll 0;
+20130803_111659.602	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	Running script: 1. Theta Axis
+20130803_111659.602	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20130803_111659.592	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: Calibration startCalibration;
+20130803_111657.770	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20130803_111719.771	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Received response:
+True
+20130803_111727.813	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Theta
+20130803_111729.205	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Z
+20130803_111732.089	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Theta
+20130803_111733.391	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Z
+20130803_111737.397	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Carousel
+20130803_111742.975	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Theta
+20130803_111745.388	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Z
+20130803_111757.946	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130803_111758.006	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu

@@ -1,0 +1,26 @@
+RoboSep UI Log File
+Created: 20131014_215815.774
+
+20131014_215815.785	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20131014_215815.806	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20131014_215818.721	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20131014_215818.829	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20131014_215820.427	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20131014_215820.848	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131014_215836.270	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131014_215854.143	clt	Keyboard.button_Cancel1_Click()	Info	Keyboard	Cancel button clicked
+20131014_215859.607	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131014_215908.620	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20131014_215912.021	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131014_215916.675	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20131014_215918.192	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20131014_215918.192	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as StandardUser
+20131014_215918.281	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20131014_215918.397	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20131014_215918.433	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20131014_215918.477	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20131014_215918.807	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20131014_215919.494	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20131014_215927.042	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131014_215938.978	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131014_215945.687	clt	Keyboard.button_Cancel1_Click()	Info	Keyboard	Cancel button clicked

@@ -1,0 +1,28 @@
+RoboSep UI Log File
+Created: 20130730_175750.860
+
+20130730_175750.870	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20130730_175750.880	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20130730_175807.705	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20130730_175807.885	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20130730_175809.838	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20130730_175810.138	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130730_175814.414	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130730_175816.317	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130730_175819.772	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130730_175821.555	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20130730_175821.555	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20130730_175821.635	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20130730_175821.785	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20130730_175821.825	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20130730_175821.895	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20130730_175822.296	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130730_175823.107	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130730_175826.091	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20130730_175829.907	clt	ServiceMenu.listboxTeachingSubMenu_SelectedIndexChanged()	Info	ServiceMenu	Prepare to start script: 5. Buffer Position
+20130730_175829.987	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	None
+20130730_175832.610	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	Running script: 5. Buffer Position
+20130730_175832.911	clt	RoboSepServiceManualStepControl.btnAbort_Click()	Info	RoboSepServiceManualStepControl	clicked
+20130730_175833.231	clt	ServiceDialog.SetScriptDoneText()	Info	ServiceDialog	reset text
+20130730_175850.807	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130730_175850.887	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu

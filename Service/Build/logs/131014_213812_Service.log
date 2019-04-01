@@ -1,0 +1,22 @@
+RoboSep UI Log File
+Created: 20131014_213812.358
+
+20131014_213812.373	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20131014_213812.403	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20131014_213821.867	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20131014_213822.017	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20131014_213824.467	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20131014_213825.008	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131014_213839.018	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20131014_213902.086	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131014_213905.999	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20131014_213908.404	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20131014_213908.404	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20131014_213908.493	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20131014_213908.640	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20131014_213908.680	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20131014_213908.719	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20131014_213909.074	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20131014_213909.899	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20131014_213917.918	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20131014_213926.081	clt	Keyboard.button_Cancel1_Click()	Info	Keyboard	Cancel button clicked

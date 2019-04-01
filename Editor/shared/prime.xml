@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepProtocol xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Maintenance" xmlns="STI">
+  <header label="Basic prime" version="1">
+    <date created="2004-10-21" />
+    <author name="Graeme Cross" />
+  </header>
+  <constraints>
+    <quadrants number="1" />
+    <sampleVolume min_uL="0" max_uL="0" />
+    <workingVolume sampleThreshold_uL="0" lowVolume_uL="0" highVolume_uL="0" />
+  </constraints>
+  <commands number="3">
+    <HomeAllCommand seq="1" label="Home all axes" extensionTime="0" />
+    <PrimeCommand seq="1" label="Basic prime" extensionTime="0">
+      <vials src="TPC0001" dest="TPC0101" />
+      <flags home="false" />
+    </PrimeCommand>
+    <FlushCommand seq="2" label="Basic flush with home at the end" extensionTime="0">
+      <vials src="TPC0001" dest="TPC0101" />
+      <flags home="true" />
+    </FlushCommand>
+  </commands>
+</RoboSepProtocol>

@@ -1,0 +1,124 @@
+RoboSep UI Log File
+Created: 20111212_162806.118
+
+20111212_162806.129	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20111212_162806.181	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20111212_162808.288	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20111212_162808.308	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	Info	RoboSep_UserConsole	Loading User Console
+20111212_162808.332	clt	RoboSep_Splash.RoboSep_Splash()	Info	RoboSep_Splash	Initializing Splash Page
+20111212_162808.400	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	General	RoboSep_UserConsole	Starting GUI Thread
+20111212_162808.401	clt	RoboSep_UserConsole.AttemptSeparatorConnection()	Info	RoboSep_UserConsole	Connecting...
+20111212_162809.637	clt	RoboSep_UserDB.Robosep_UserDB()()	Debug	RoboSep_UserDB	Initializing UserDB
+20111212_162809.786	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111212_162809.792	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111212_162809.809	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111212_162811.100	clt	RoboSep_UserDB.LoadAllProtocols()	Debug	RoboSep_UserDB	160protocols loaded
+20111212_162811.105	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111212_162811.622	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111212_162811.650	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111212_162839.357	clt	RoboSep_UserConsole.ProgressSplash()	Info	RoboSep_UserConsole	Stopping Splash page
+20111212_162839.440	clt	RoboSep_About.RoboSep_About()	Info	RoboSep_About	Initializing About user control
+20111212_162839.541	clt	RoboSep_RunSamples.RoboSep_RunSamples()	Info	RoboSep_RunSamples	Initializing Run Samples user control
+20111212_162839.626	clt	RoboSep_Splash.close()	Info	RoboSep_Splash	Closing Splash Page
+20111212_162858.339	clt	RoboSep_RunSamples.btn_home_Click()	Info	RoboSep_RunSamples	Home button clicked
+20111212_162906.265	clt	RoboSep_System.RoboSep_System()	Info	RoboSep_System	Initializing System user control
+20111212_162906.334	clt	Form_Home.hex_system_Click()	Info	Form_Home	System button clicked
+20111212_162907.119	clt	RoboSep_RunSamples.addMaintenance()	Info	RoboSep_RunSamples	Adding Maintenance Protocol
+20111212_162907.125	clt	QuadrantInfo.Clear()	Info	QuadrantInfo	Quadrant info Cleared
+20111212_162907.135	clt	QuadrantInfo.Clear()	Info	QuadrantInfo	Quadrant info Cleared
+20111212_162907.146	clt	QuadrantInfo.Clear()	Info	QuadrantInfo	Quadrant info Cleared
+20111212_162907.157	clt	QuadrantInfo.Clear()	Info	QuadrantInfo	Quadrant info Cleared
+20111212_162907.179	clt	RoboSep_UserConsole.InvokeMaintenanceAction()	Info	RoboSep_UserConsole	Invoking maintenance action Prime
+20111212_162907.188	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111212_162907.217	clt	RoboSep_System.Button_BasicPrime_Click()	Info	RoboSep_System	Basic Prime Maintenance button clicked
+20111212_162907.257	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 02:00
+20111212_162908.361	clt	RoboSep_RunSamples.button_RunSamples_Click()	Info	RoboSep_RunSamples	Run Samples button clicked
+20111212_162908.415	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_162909.370	clt	RoboSep_RunSamples.button_RunSamples_Click()	Debug	RoboSep_RunSamples	Scheduling run
+20111212_162909.644	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111212_162909.652	clt	RoboSep_UserDB.getProtocolCommandList()	Debug	RoboSep_UserDB	returned 3commands
+20111212_162909.657	clt	RoboSep_RunSamples.button_RunSamples_Click()	Debug	RoboSep_RunSamples	protocol: prime.xml commands: 3
+20111212_162909.689	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_162909.722	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_162909.755	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_162909.787	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_162909.818	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_162910.183	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_162910.196	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 1 steps
+20111212_162910.204	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_162910.218	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 3 steps
+20111212_162910.295	clt	RoboSep_Resources.RoboSep_Resources()	Info	RoboSep_Resources	Generating Robosep Resources user control
+20111212_162910.419	clt	RoboSep_Resources.grabQuadrantResources()	Debug	RoboSep_Resources	Displaying quadrant 0 resources
+20111212_162910.446	clt	RoboSep_Resources.grabQuadrantResources()	Debug	RoboSep_Resources	Loading resources from sharing protocols
+20111212_162911.881	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_162912.699	clt	RoboSep_RunSamples.CheckHydraulicFluid()	General	RoboSep_RunSamples	Start Separation run
+20111212_162912.815	clt	RoboSep_Resources.buttonRun_Click()	Debug	RoboSep_Resources	Run Protocols button clicked
+20111212_162912.825	clt	RoboSep_RunProgress.Start()	Info	RoboSep_RunProgress	 **INITIALIZING RUN
+20111212_162915.780	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 02:00
+20111212_162920.452	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 0
+20111212_162950.376	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 1
+20111212_163015.262	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 2
+20111212_163024.904	clt	ProgressBar.AllCompleted()	Debug	ProgressBar	ProgressBar COMPLETED! 
+20111212_163025.986	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111212_163026.390	clt	ProgressBar.AllCompleted()	Debug	ProgressBar	ProgressBar COMPLETED! 
+20111212_163026.405	clt	ProgressBar.AllCompleted()	Debug	ProgressBar	ProgressBar COMPLETED! 
+20111212_163026.439	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_163035.084	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_163035.094	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 1 steps
+20111212_163035.110	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_163036.746	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111212_163036.753	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111212_163040.282	clt	QuadrantInfo.Clear()	Info	QuadrantInfo	Quadrant info Cleared
+20111212_163040.288	clt	QuadrantInfo.Clear()	Info	QuadrantInfo	Quadrant info Cleared
+20111212_163040.294	clt	QuadrantInfo.Clear()	Info	QuadrantInfo	Quadrant info Cleared
+20111212_163040.301	clt	QuadrantInfo.Clear()	Info	QuadrantInfo	Quadrant info Cleared
+20111212_163040.307	clt	RoboSep_RunSamples.Unload()	Info	RoboSep_RunSamples	Clearing all selected protocols
+20111212_163041.708	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111212_163041.818	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111212_163041.852	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111212_163041.898	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111212_163045.622	clt	RoboSep_RunSamples.addToRun()	Debug	RoboSep_RunSamples	Adding protocol 'Mouse Biotin Positive Selection 18556-high purity' to run at quadrant0
+20111212_163045.702	clt	NumberPad.NumberPad()	Debug	NumberPad	Opening New Number Pad window
+20111212_163047.755	clt	NumberPad.validateEntry()	Debug	NumberPad	Volume: 1.000
+20111212_163047.775	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111212_163047.779	clt	RoboSep_UserConsole.SetSampleVolume()	Info	RoboSep_UserConsole	Quad: 1 Sample Vol 0.001
+20111212_163047.855	clt	RoboSep_ProtocolSelect.SelectProtocol()	Info	RoboSep_ProtocolSelect	Adding protocol to current run
+20111212_163047.868	clt	RoboSep_ProtocolSelect.button_Accept_Click()	Info	RoboSep_ProtocolSelect	Protocol Selected from User list
+20111212_163047.895	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 1:09:00
+20111212_163048.426	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111212_163048.497	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 3
+20111212_163052.490	clt	RoboSep_RunSamples.addToRun()	Debug	RoboSep_RunSamples	Adding protocol 'Any Species PE Positive Selection 18557-high purity' to run at quadrant2
+20111212_163052.556	clt	NumberPad.NumberPad()	Debug	NumberPad	Opening New Number Pad window
+20111212_163053.834	clt	NumberPad.validateEntry()	Debug	NumberPad	Volume: 3.000
+20111212_163053.852	clt	RoboSep_UserConsole.SetSampleVolume()	Info	RoboSep_UserConsole	Quad: 3 Sample Vol 0.003
+20111212_163053.853	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111212_163053.922	clt	RoboSep_ProtocolSelect.SelectProtocol()	Info	RoboSep_ProtocolSelect	Adding protocol to current run
+20111212_163053.936	clt	RoboSep_ProtocolSelect.button_Accept_Click()	Info	RoboSep_ProtocolSelect	Protocol Selected from User list
+20111212_163054.036	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 1:13:00
+20111212_163054.419	clt	RoboSep_RunSamples.button_RunSamples_Click()	Info	RoboSep_RunSamples	Run Samples button clicked
+20111212_163054.431	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_163055.482	clt	RoboSep_RunSamples.button_RunSamples_Click()	Debug	RoboSep_RunSamples	Scheduling run
+20111212_163055.492	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111212_163055.499	clt	RoboSep_UserDB.getProtocolCommandList()	Debug	RoboSep_UserDB	returned 23commands
+20111212_163055.506	clt	RoboSep_RunSamples.button_RunSamples_Click()	Debug	RoboSep_RunSamples	protocol: Mouse Biotin Positive Selection 18556-high purity.xml commands: 23
+20111212_163055.513	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_163055.555	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 23 steps
+20111212_163055.564	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111212_163055.571	clt	RoboSep_UserDB.getProtocolCommandList()	Debug	RoboSep_UserDB	returned 23commands
+20111212_163055.577	clt	RoboSep_RunSamples.button_RunSamples_Click()	Debug	RoboSep_RunSamples	protocol: Any Species PE Positive Selection 18557-high purity.xml commands: 23
+20111212_163055.585	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_163055.630	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 23 steps
+20111212_163055.688	clt	RoboSep_Resources.RoboSep_Resources()	Info	RoboSep_Resources	Generating Robosep Resources user control
+20111212_163055.760	clt	RoboSep_Resources.grabQuadrantResources()	Debug	RoboSep_Resources	Displaying quadrant 0 resources
+20111212_163055.781	clt	RoboSep_Resources.grabQuadrantResources()	Debug	RoboSep_Resources	Loading resources from sharing protocols
+20111212_163056.557	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111212_163057.134	clt	RoboSep_RunSamples.CheckHydraulicFluid()	General	RoboSep_RunSamples	Start Separation run
+20111212_163057.188	clt	RoboSep_Resources.buttonRun_Click()	Debug	RoboSep_Resources	Run Protocols button clicked
+20111212_163057.198	clt	RoboSep_RunProgress.Start()	Info	RoboSep_RunProgress	 **INITIALIZING RUN
+20111212_163144.062	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 1:14:00
+20111212_163148.468	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 0
+20111212_163148.479	clt	RoboSep_RunProgress.pollProgressUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 2 Step = 0 ID = 1 CMD = Initializing
+20111212_163219.948	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 1
+20111212_163219.996	clt	RoboSep_RunProgress.pollProgressUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 2 Step = 1 ID = 1 CMD = Transport
+20111212_163256.950	clt	ProgressBar.MoveToStep()	Debug	ProgressBar	Progress bar ProgressBar to step 2
+20111212_163257.005	clt	RoboSep_RunProgress.pollProgressUpdate()	Info	RoboSep_RunProgress	Progress Update: Q = 2 Step = 2 ID = 1 CMD = Mix

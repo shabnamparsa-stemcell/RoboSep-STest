@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepUser xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="STI">
+  <UserName>Lindsay</UserName>
+  <ProtocolFile>Human Monocyte Negative Selection 19059-0_5mg_ml Parti.xml</ProtocolFile>
+  <ProtocolFile>Human Monocyte Negative Selection 19059-0_625mg_ml Parti.xml</ProtocolFile>
+  <ProtocolFile>Human Monocyte Negative Selection 19059-0_75mg_ml Parti.xml</ProtocolFile>
+  <ProtocolFile>Human Monocyte Negative Selection 19059-high recovery.xml</ProtocolFile>
+</RoboSepUser>

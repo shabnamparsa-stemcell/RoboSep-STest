@@ -1,0 +1,17 @@
+RoboSep UI Log File
+Created: 20140312_220842.383
+
+20140312_220842.496	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20140312_220842.615	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20140312_221143.244	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20140312_221143.274	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20140312_221143.861	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20140312_221144.300	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20140312_221144.409	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20140312_221144.539	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20140312_221145.923	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20140312_221148.034	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20140312_221148.213	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20140312_221152.756	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20140312_221155.100	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20140312_221204.854	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Closing ServiceMenu

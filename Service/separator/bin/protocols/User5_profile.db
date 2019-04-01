@@ -1,0 +1,220 @@
+(lp1
+(iipl.types.Bunch
+Bunch
+p2
+(dp3
+S'name'
+p4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman B Cell Negative Selection 19054 w SiCOOH-10min rel top.xml
+p5
+sS'time'
+p6
+I1265232122
+sba(iipl.types.Bunch
+Bunch
+p7
+(dp8
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman B Cell Negative Selection 19054 w SiCOOH-10min.xml
+p9
+sg6
+I1261587058
+sba(iipl.types.Bunch
+Bunch
+p10
+(dp11
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman B Cell Negative Selection 19054-JY 10+10.xml
+p12
+sg6
+I1276710608
+sba(iipl.types.Bunch
+Bunch
+p13
+(dp14
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman B Cell Negative Selection 19054-high purity.xml
+p15
+sg6
+I1216768050
+sba(iipl.types.Bunch
+Bunch
+p16
+(dp17
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman CD8 Memory T cell Dex - 50_150-5mL top-up; 2x2,5 sep.xml
+p18
+sg6
+I1262806100
+sba(iipl.types.Bunch
+Bunch
+p19
+(dp20
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman CD8 Memory T cell Dex - 50_150-5mL top-up; 2x5 sep.xml
+p21
+sg6
+I1264442454
+sba(iipl.types.Bunch
+Bunch
+p22
+(dp23
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman CD8 Memory T cell Dex - 50_200-5mL top-up; 2x2,5 sep.xml
+p24
+sg6
+I1265749156
+sba(iipl.types.Bunch
+Bunch
+p25
+(dp26
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman CD8 Memory T cell Dex - 50_200-5mL top-up; 2x5 sep.xml
+p27
+sg6
+I1265920212
+sba(iipl.types.Bunch
+Bunch
+p28
+(dp29
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman Monocyte Negative Selection 19058-high recovery.xml
+p30
+sg6
+I1216767990
+sba(iipl.types.Bunch
+Bunch
+p31
+(dp32
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman memory B cell positive selection -- JY 0_75_75+2_5_5+5+5 Q2 sample tube.xml
+p33
+sg6
+I1278362176
+sba(iipl.types.Bunch
+Bunch
+p34
+(dp35
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman memory B cell positive selection -- JY 0_75_75+2_5_5+5+5.xml
+p36
+sg6
+I1277244414
+sba(iipl.types.Bunch
+Bunch
+p37
+(dp38
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman naive B Cell Negative Selection from 27- 1_5 100 2_5 5min.xml
+p39
+sg6
+I1279919348
+sba(iipl.types.Bunch
+Bunch
+p40
+(dp41
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CMouse NK 19755 2x5min Sep.xml
+p42
+sg6
+I1271283726
+sba(iipl.types.Bunch
+Bunch
+p43
+(dp44
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CMouse Neutrophil Bone Marrow 19709 - custom with antibody added no wash.xml
+p45
+sg6
+I1236112046
+sba(iipl.types.Bunch
+Bunch
+p46
+(dp47
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CMouse Neutrophil Bone Marrow 19709 - custom with antibody, 50b, no wash.xml
+p48
+sg6
+I1276708580
+sba(iipl.types.Bunch
+Bunch
+p49
+(dp50
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CMouse Neutrophil Bone Marrow 19709 - custom.xml
+p51
+sg6
+I1236112102
+sba(iipl.types.Bunch
+Bunch
+p52
+(dp53
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CMouse Neutrophil Negative Selection High Recovery - 50 b, 150 d part, 1x5' seps.xml
+p54
+sg6
+I1276015612
+sba(iipl.types.Bunch
+Bunch
+p55
+(dp56
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CMouse Neutrophil Negative Selection High Recovery - 50 b, 150 d part.xml
+p57
+sg6
+I1270052726
+sba(iipl.types.Bunch
+Bunch
+p58
+(dp59
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CSPE Human CD8 Pos Sel 18053 - no incubation.xml
+p60
+sg6
+I1179370402
+sba(iipl.types.Bunch
+Bunch
+p61
+(dp62
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\home_axes.xml'
+p63
+sg6
+I1314238395
+sba(iipl.types.Bunch
+Bunch
+p64
+(dp65
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\prime.xml'
+p66
+sg6
+I1314238395
+sba(iipl.types.Bunch
+Bunch
+p67
+(dp68
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005Cseparation only.xml
+p69
+sg6
+I1276020440
+sba(iipl.types.Bunch
+Bunch
+p70
+(dp71
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\shutdown.xml'
+p72
+sg6
+I1314238395
+sba(iipl.types.Bunch
+Bunch
+p73
+(dp74
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005Ctransfer 5ml from buffer to sample.xml
+p75
+sg6
+I1261079482
+sba.

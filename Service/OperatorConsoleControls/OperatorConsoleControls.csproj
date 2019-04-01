@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{594DC6ED-D9BD-49EE-B9DB-9B2F83073733}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>OperatorConsoleControls</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Tesla.OperatorConsoleControls</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <SccAuxPath />
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/OperatorConsoleControls/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\common\Common.csproj">
+      <Name>Common</Name>
+      <Project>{12FBE96F-1212-4E24-9CCB-A9666F4C5203}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\common\CommonResources.csproj">
+      <Name>CommonResources</Name>
+      <Project>{05ABD542-CEFA-48E2-B689-13D64C2F8A40}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Name>DataAccess</Name>
+      <Project>{9A5BCDC0-ACCC-4A8C-8014-7F0254A87187}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\separatorAPI\SeparatorAPI.csproj">
+      <Name>SeparatorAPI</Name>
+      <Project>{AA229DBB-3395-4270-A06C-C38F7BB242BF}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <Reference Include="ApplicationLog">
+      <Name>ApplicationLog</Name>
+      <HintPath>..\..\..\..\..\Libs\Dev\DotNet\ApplicationLog\bin\Release\ApplicationLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutSubPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Keypad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MaintenanceSubPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MessageLogSubPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OperatorConsoleKeypad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuadrantSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoboSepButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoboSepDataView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RoboSepDlgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoboSepGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RoboSepItemList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoboSepKeypad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoboSepListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoboSepNamedPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoboSepProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoboSepProtocolFileView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoboSepProtocolView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoboSepSamplesGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoboSepSubPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoboSepWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeparatorGateway.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserProfileSubPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Content Include="ApplicationLog.dll" />
+    <EmbeddedResource Include="AboutSubPage.resx">
+      <DependentUpon>AboutSubPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keypad.resx">
+      <DependentUpon>Keypad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceSubPage.resx">
+      <DependentUpon>MaintenanceSubPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageLogSubPage.resx">
+      <DependentUpon>MessageLogSubPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatorConsoleControlsResources.resx" />
+    <EmbeddedResource Include="OperatorConsoleKeypad.resx">
+      <DependentUpon>OperatorConsoleKeypad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuadrantSelector.resx">
+      <DependentUpon>QuadrantSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepButton.resx">
+      <DependentUpon>RoboSepButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepDataView.resx">
+      <DependentUpon>RoboSepDataView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepDlgBox.resx">
+      <DependentUpon>RoboSepDlgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepGrid.resx">
+      <DependentUpon>RoboSepGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepItemList.resx">
+      <DependentUpon>RoboSepItemList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepKeypad.resx">
+      <DependentUpon>RoboSepKeypad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepListItem.resx">
+      <DependentUpon>RoboSepListItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepNamedPanel.resx">
+      <DependentUpon>RoboSepNamedPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepProgressBar.resx">
+      <DependentUpon>RoboSepProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepProtocolFileView.resx">
+      <DependentUpon>RoboSepProtocolFileView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepProtocolView.resx">
+      <DependentUpon>RoboSepProtocolView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepSamplesGrid.resx">
+      <DependentUpon>RoboSepSamplesGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepSubPage.resx">
+      <DependentUpon>RoboSepSubPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepWaitForm.resx">
+      <DependentUpon>RoboSepWaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfileSubPage.resx">
+      <DependentUpon>UserProfileSubPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="OperatorConsoleControls.mdx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

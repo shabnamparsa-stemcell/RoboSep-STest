@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepProtocol xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Positive" xmlns="STI">
+  <header label="OQ4 1000 uL dispense Sel to Sample" version="7">
+    <date created="2005-05-31" modified="2005-06-06" />
+    <author name="JD" />
+  </header>
+  <constraints>
+    <quadrants number="1" />
+    <sampleVolume min_uL="0" max_uL="10000" />
+    <workingVolume sampleThreshold_uL="10000" lowVolume_uL="999" highVolume_uL="1001" />
+  </constraints>
+  <commands number="1">
+    <TransportCommand seq="1" label="Addition" extensionTime="0" freeAirDispense="false">
+      <vials src="TPC0103" dest="TPC0106" />
+      <absoluteVolume value_uL="1000" />
+    </TransportCommand>
+  </commands>
+</RoboSepProtocol>

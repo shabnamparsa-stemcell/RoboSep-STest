@@ -1,0 +1,32 @@
+RoboSep UI Log File
+Created: 20111214_170957.277
+
+20111214_170957.280	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20111214_170957.326	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20111214_170959.132	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20111214_170959.149	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	Info	RoboSep_UserConsole	Loading User Console
+20111214_170959.171	clt	RoboSep_Splash.RoboSep_Splash()	Info	RoboSep_Splash	Initializing Splash Page
+20111214_170959.231	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	General	RoboSep_UserConsole	Starting GUI Thread
+20111214_170959.235	clt	RoboSep_UserConsole.AttemptSeparatorConnection()	Info	RoboSep_UserConsole	Connecting...
+20111214_171000.046	clt	RoboSep_UserDB.Robosep_UserDB()()	Debug	RoboSep_UserDB	Initializing UserDB
+20111214_171000.093	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_171000.761	clt	RoboSep_UserDB.LoadAllProtocols()	Debug	RoboSep_UserDB	161protocols loaded
+20111214_171000.766	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111214_171001.084	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_171001.100	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111214_171003.786	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111214_171003.800	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111214_171033.725	clt	RoboSep_UserConsole.ProgressSplash()	Info	RoboSep_UserConsole	Stopping Splash page
+20111214_171033.832	clt	RoboSep_About.RoboSep_About()	Info	RoboSep_About	Initializing About user control
+20111214_171033.947	clt	RoboSep_RunSamples.RoboSep_RunSamples()	Info	RoboSep_RunSamples	Initializing Run Samples user control
+20111214_171034.060	clt	RoboSep_Splash.close()	Info	RoboSep_Splash	Closing Splash Page
+20111214_171057.499	clt	RoboSep_RunSamples.btn_home_Click()	Info	RoboSep_RunSamples	Home button clicked
+20111214_171058.594	clt	Form_Home.hex_service_Click()	Info	Form_Home	Service button clicked
+20111214_171059.573	clt	RoboSep_ServiceLogin.btn_home_Click()	Info	RoboSep_ServiceLogin	Home button clicked
+20111214_171100.156	clt	RoboSep_System.RoboSep_System()	Info	RoboSep_System	Initializing System user control
+20111214_171100.220	clt	Form_Home.hex_system_Click()	Info	Form_Home	System button clicked
+20111214_171102.861	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111214_171106.370	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111214_171117.405	clt	FileBrowser.FileBrowser()	Info	FileBrowser	Start Dir: F:\File Location: C:\Program Files (x86)\STI\RoboSep\ZippedFiles\20111214_1648_repLog.zipmode: SelectTargetDir
+20111214_171117.427	clt	FileBrowser.LoadDirectory()	Debug	FileBrowser	Loading Directory 'F:\
+20111214_171119.674	clt	FileBrowser.button_OK_Click()	Info	FileBrowser	Ok button clicked

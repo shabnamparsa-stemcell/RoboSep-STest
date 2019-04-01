@@ -1,0 +1,102 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module TubeGeometry</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>TubeGeometry</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/p4tesla/tesla/dev/dev001/control/tesla/types/tubegeometry.py">c:\projects\p4tesla\tesla\dev\dev001\control\tesla\types\tubegeometry.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;<a href="#TubeGeometry">TubeGeometry</a>.py<br>
+#&nbsp;tesla.types.<a href="#TubeGeometry">TubeGeometry</a><br>
+#<br>
+#&nbsp;Defines&nbsp;a&nbsp;tube&nbsp;geometry,&nbsp;and&nbsp;allows&nbsp;a&nbsp;calculation&nbsp;of&nbsp;fluid&nbsp;height&nbsp;as&nbsp;a&nbsp;function&nbsp;of&nbsp;volume<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="math.html">math</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>(<a href="exceptions.html#StandardError">exceptions.StandardError</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="TubeGeometry.html#TubeGeometryError">TubeGeometryError</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="TubeGeometry.html#TubeGeometry">TubeGeometry</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TubeGeometry">class <strong>TubeGeometry</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Define&nbsp;the&nbsp;geometric&nbsp;characteristics&nbsp;for&nbsp;a&nbsp;tube&nbsp;sitting&nbsp;in&nbsp;the&nbsp;Tesla&nbsp;carousel<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="TubeGeometry-BasePosition"><strong>BasePosition</strong></a>(self)</dt><dd><tt>Provide&nbsp;the&nbsp;base&nbsp;position&nbsp;(in&nbsp;mm).</tt></dd></dl>
+
+<dl><dt><a name="TubeGeometry-Capacity"><strong>Capacity</strong></a>(self)</dt><dd><tt>Provide&nbsp;the&nbsp;maximum&nbsp;tube&nbsp;capacity.</tt></dd></dl>
+
+<dl><dt><a name="TubeGeometry-DeadVolume"><strong>DeadVolume</strong></a>(self)</dt><dd><tt>Provide&nbsp;the&nbsp;dead&nbsp;volume&nbsp;(in&nbsp;ul).</tt></dd></dl>
+
+<dl><dt><a name="TubeGeometry-HeightAtCapacity"><strong>HeightAtCapacity</strong></a>(self)</dt><dd><tt>Provide&nbsp;the&nbsp;height&nbsp;of&nbsp;the&nbsp;meniscus&nbsp;when&nbsp;tube&nbsp;is&nbsp;at&nbsp;full&nbsp;capacity.</tt></dd></dl>
+
+<dl><dt><a name="TubeGeometry-HeightOfMeniscus"><strong>HeightOfMeniscus</strong></a>(self, volume)</dt><dd><tt>Given&nbsp;a&nbsp;volume(ul)&nbsp;of&nbsp;fluid&nbsp;in&nbsp;the&nbsp;tube,&nbsp;determine&nbsp;the&nbsp;height&nbsp;of&nbsp;the&nbsp;meniscus&nbsp;above&nbsp;the&nbsp;base&nbsp;position&nbsp;(in&nbsp;mm).</tt></dd></dl>
+
+<dl><dt><a name="TubeGeometry-__init__"><strong>__init__</strong></a>(self, basePosition, deadVolume, tubeProfile)</dt><dd><tt>Define&nbsp;a&nbsp;tube&nbsp;geometry:<br>
+basePosition&nbsp;-&nbsp;the&nbsp;position&nbsp;of&nbsp;the&nbsp;bottom&nbsp;of&nbsp;the&nbsp;tube&nbsp;when&nbsp;placed&nbsp;on&nbsp;the&nbsp;instrument<br>
+deadVolume&nbsp;&nbsp;-&nbsp;the&nbsp;amount&nbsp;of&nbsp;fluid&nbsp;that&nbsp;is&nbsp;not&nbsp;accessible<br>
+tubeProfile&nbsp;-&nbsp;the&nbsp;volume/height&nbsp;characteristics&nbsp;of&nbsp;the&nbsp;tube</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TubeGeometryError">class <strong>TubeGeometryError</strong></a>(<a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="TubeGeometry.html#TubeGeometryError">TubeGeometryError</a></dd>
+<dd><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a></dd>
+<dd><a href="exceptions.html#StandardError">exceptions.StandardError</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="TubeGeometryError-__getitem__"><strong>__getitem__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TubeGeometryError-__init__"><strong>__init__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TubeGeometryError-__str__"><strong>__str__</strong></a>(...)</dt></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

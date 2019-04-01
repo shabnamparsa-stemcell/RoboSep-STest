@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DE8492E2-06A1-4FA1-AAB4-6C10E0F18569}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tesla.Service</RootNamespace>
+    <AssemblyName>Service</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Build\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Build\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SR_BT03L_service_menu_CLICK.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ApplicationLog">
+      <HintPath>..\ApplicationLog.dll</HintPath>
+    </Reference>
+    <Reference Include="CookComputing.XmlRpc">
+      <HintPath>..\CookComputing.XmlRpc.dll</HintPath>
+    </Reference>
+    <Reference Include="SeparatorAPI, Version=4.6.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RoboBarcodeRescanPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoboBarcodeRescanPanel.Designer.cs">
+      <DependentUpon>RoboBarcodeRescanPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RobosepModelButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DoubleBufferPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LED.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PassthroughButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PassthroughButton.Designer.cs">
+      <DependentUpon>PassthroughButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PictureButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProcessScript.cs" />
+    <Compile Include="RoboSepServiceManualStepControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoboSepServiceManualStepControl.Designer.cs">
+      <DependentUpon>RoboSepServiceManualStepControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SerivceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SerivceDialog.Designer.cs">
+      <DependentUpon>SerivceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstrumentComms.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceLogin.Designer.cs">
+      <DependentUpon>ServiceLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceMenu.Designer.cs">
+      <DependentUpon>ServiceMenu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RoboBarcodeRescanPanel.resx">
+      <DependentUpon>RoboBarcodeRescanPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboSepServiceManualStepControl.resx">
+      <DependentUpon>RoboSepServiceManualStepControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SerivceDialog.resx">
+      <DependentUpon>SerivceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceLogin.resx">
+      <DependentUpon>ServiceLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceMenu.resx">
+      <DependentUpon>ServiceMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="RoboSepService.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\common\Common.csproj">
+      <Project>{12FBE96F-1212-4E24-9CCB-A9666F4C5203}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\common\CommonResources.csproj">
+      <Project>{05ABD542-CEFA-48E2-B689-13D64C2F8A40}</Project>
+      <Name>CommonResources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CWJ_Console\GUI_Console.csproj">
+      <Project>{4D8D6F32-BB42-4198-8FE6-14CFD4AB3D9C}</Project>
+      <Name>GUI_Console</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{9A5BCDC0-ACCC-4A8C-8014-7F0254A87187}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GUI_Controls\GUI_Controls.csproj">
+      <Project>{35E0CB7F-0BB6-411F-9BFD-35852A3F63BB}</Project>
+      <Name>GUI_Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XmlRpcServiceInterface\XmlRpcServiceInterface.csproj">
+      <Project>{408D4274-CC43-4680-B7DE-E060DC5C93EC}</Project>
+      <Name>XmlRpcServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SR_BT03L_service_menu_CLICK.ico" />
+    <None Include="Resources\video_2.png" />
+    <None Include="Resources\video_1.png" />
+    <None Include="Resources\video_0.png" />
+    <None Include="Resources\video_inactive.png" />
+    <None Include="Resources\ServiceMenuBG.JPG" />
+    <None Include="Resources\AbortButtonDisable.png" />
+    <None Include="Resources\AbortButton0.png" />
+    <None Include="Resources\AbortButton1.png" />
+    <None Include="Resources\AbortButton2.png" />
+    <Content Include="Resources\AxisControlBG.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisPump1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisPump2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisPump3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\BUTTON_PROMPTBUTTON_BLACK_BIG3.bmp" />
+    <None Include="Resources\BUTTON_PROMPTBUTTON_BLACK0.bmp" />
+    <None Include="Resources\BUTTON_PROMPTBUTTON_BLACK3.bmp" />
+    <None Include="Resources\BUTTON_PROMPTBUTTON_BLACK_BIG0.bmp" />
+    <None Include="Resources\barcode_inactive.png" />
+    <None Include="Resources\barcode_0.png" />
+    <None Include="Resources\barcode_1.png" />
+    <None Include="Resources\barcode_2.png" />
+    <Content Include="Resources\Carousel2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ConnectButton0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ConnectButton1.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\HardwareInfoBG.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\ServicePanel.JPG" />
+    <None Include="Resources\MainMenuSelectionBridge.PNG" />
+    <None Include="Resources\StepPanel.png" />
+    <None Include="Resources\HelpTabPanel.JPG" />
+    <None Include="Resources\PageUpButtonDisable.png" />
+    <None Include="Resources\PageDownButton0.png" />
+    <None Include="Resources\PageDownButton1.png" />
+    <None Include="Resources\PageDownButton2.png" />
+    <None Include="Resources\PageDownButtonDisable.png" />
+    <None Include="Resources\PageUpButton0.png" />
+    <None Include="Resources\PageUpButton1.png" />
+    <None Include="Resources\PageUpButton2.png" />
+    <None Include="Resources\robosep_service_background.png" />
+    <None Include="Resources\HardwareInfoBG.png" />
+    <None Include="Resources\LED_2.png" />
+    <None Include="Resources\LED_0.png" />
+    <None Include="Resources\LED_1.png" />
+    <None Include="Resources\serviceMenu_2.png" />
+    <None Include="Resources\serviceMenu_0.png" />
+    <None Include="Resources\serviceMenu_1.png" />
+    <None Include="Resources\ServiceMenuBG.png" />
+    <None Include="Resources\login_test.png" />
+    <Content Include="Resources\StepSize.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\StripperOut_grey.bmp" />
+    <None Include="Resources\StripperIn.bmp" />
+    <None Include="Resources\StripperIn_grey.bmp" />
+    <None Include="Resources\StripperOut.bmp" />
+    <None Include="Resources\StripperIn1.png" />
+    <None Include="Resources\StripperIn0.png" />
+    <None Include="Resources\StripperOut1.png" />
+    <None Include="Resources\StripperOut0.png" />
+    <None Include="Resources\stepSize.png" />
+    <None Include="Resources\Stripper1.png" />
+    <None Include="Resources\Stripper0.png" />
+    <None Include="Resources\Stripper2.png" />
+    <Content Include="Resources\test1.avi">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\test2.avi">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\test3.avi">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Theta2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VertArm2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\CarouselDisabled.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CarouselEnabled.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\AcceptButton0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AcceptButton1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AcceptButton2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AcceptButtonDisable.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisBuffer1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisBuffer2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisBuffer3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisCarousel1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisCarousel2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisCarousel3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisControls.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisControls2.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisControls3.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisStrip1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisStrip2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisStrip3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisTheta1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisTheta2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AxisTheta3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BackButton0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BackButton1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BackButton2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BackButtonDisable.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Carousel0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Carousel1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CarouselCClockwise0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CarouselCClockwise1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CarouselClockwise0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CarouselClockwise1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CornerBL.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CornerBR.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CornerTL.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CornerTR.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CourseFine0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CourseFine1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CourseFine2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\HelpTab0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\HelpTab1.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MainMenuSelection.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\RestoreButton0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\RestoreButton1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\RestoreButton2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\RestoreButtonDisable.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ServiceBG.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Theta0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Theta1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ThetaLeft0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ThetaLeft1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ThetaRight0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ThetaRight1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VertArm0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VertArm1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VertArmDown0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VertArmDown1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VertArmUp0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VertArmUp1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\vertAxis1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\vertAxis2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\vertAxis3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+copy "$(ProjectDir)RoboSepService.config" "$(TargetDir)..\config\RoboSepService.config"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

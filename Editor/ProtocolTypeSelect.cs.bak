@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using Tesla.Common.ResourceManagement;
+
+namespace Tesla.ProtocolEditor
+{
+    public partial class ProtocolTypeSelect : Form
+    {
+        private ProtocolRobosepTypes mCurrentType;
+        private Dictionary<string, ProtocolRobosepTypes> mConvertBack;
+        public ProtocolTypeSelect(ProtocolRobosepTypes currentType)
+        {
+            InitializeComponent();
+            mCurrentType = currentType;
+            mConvertBack = new Dictionary<string, ProtocolRobosepTypes>();
+            foreach (ProtocolRobosepTypes enumValue in Enum.GetValues(typeof(ProtocolRobosepTypes)))
+            {
+                mConvertBack[SeparatorResourceManager.RobosepTypeToString(enumValue)]=enumValue;
+            }
+        }
+
+        private void ProtocolTypeSelect_Load(object sender, EventArgs e)
+        {
+            switch (mCurrentType)
+            {
+                case ProtocolRobosepTypes.RoboSepS_1_0:
+                    cmbRobosepType.Items.Add(SeparatorResourceManager.RobosepTypeToString(ProtocolRobosepTypes.RoboSepS_1_1));
+                    cmbRobosepType.Items.Add(SeparatorResourceManager.RobosepTypeToString(ProtocolRobosepTypes.RoboSep16));
+                    break;
+                case ProtocolRobosepTypes.RoboSepS_1_1:
+                    cmbRobosepType.Items.Add(SeparatorResourceManager.RobosepTypeToString(ProtocolRobosepTypes.RoboSepS_1_0));
+                    cmbRobosepType.Items.Add(SeparatorResourceManager.RobosepTypeToString(ProtocolRobosepTypes.RoboSep16));
+                    break;
+                case ProtocolRobosepTypes.RoboSep16:
+                    break;
+            }
+
+            cmbRobosepType.SelectedIndex = 0;
+
+        }
+
+        public ProtocolRobosepTypes GetSelectedType()
+        {
+            return mConvertBack[(string)cmbRobosepType.SelectedItem];
+        }
+    }
+}

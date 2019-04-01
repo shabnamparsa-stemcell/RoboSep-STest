@@ -1,0 +1,240 @@
+//----------------------------------------------------------------------------
+// IInstrumentControl
+//
+// Invetech Pty Ltd
+// Victoria, 3149, Australia
+// Phone:   (+61) 3 9211 7700
+// Fax:     (+61) 3 9211 7701
+//
+// The copyright to the computer program(s) herein is the property of 
+// Invetech Pty Ltd, Australia.
+// The program(s) may be used and/or copied only with the written permission 
+// of Invetech Pty Ltd or in accordance with the terms and conditions 
+// stipulated in the agreement/contract under which the program(s)
+// have been supplied.
+// 
+// Copyright © 2004. All Rights Reserved.
+//
+// Notes"
+//    03/24/05 - added bool ParkArm(), IsLidClosed() bdr
+// 	  04/11/05 - added parkpump to deenergize pump - bdr
+//
+//----------------------------------------------------------------------------
+
+#define bdr31  // park arm pump
+#define bdr32  // lid closed
+
+
+using System;
+using System.Collections;
+using CookComputing.XmlRpc;
+using Tesla.Common.ProtocolCommand;
+
+namespace Tesla.InstrumentControl
+{	
+	/// <summary>
+	/// Public XML-RPC API for the InstrumentControl subsystem
+	/// </summary>
+	/// <seealso>
+	/// IInstrumentControlEvents
+	/// </seealso>
+	/// <remarks>
+	/// This is the .NET description of the XML-RPC API published by the Instrument Control 
+	/// subsystem.  That is, we redefine the methods and parameters in terms of .NET types where 
+	/// possible, using features in the .NET XML-RPC implementation to help with data 
+	/// transformation to/from .NET structures.
+	/// XML-RPC methods must return a value.  Our convention for the Instrument Control
+	/// interface is that methods will return bool (and a run-time value 'true') if there
+	/// is no other return type.  
+	/// </remarks>
+	public interface IInstrumentControl
+	{
+		#region Instrument Control XML-RPC Server
+
+		/// <summary>
+		/// Verify whether we can communicate with the Instrument Control XML-RPC server
+		/// </summary>
+		/// <returns>True if the Instrument Control server is running.</returns>
+		bool		Ping();
+
+		/// <summary>
+		/// Tell the Instrument Control XML-RPC Server to execute a controlled shut-down.
+		/// </summary>
+		/// <returns>
+		/// Successful Halt method invocation: true; unsuccessful invocation: false.
+		/// </returns>
+		/// <remarks>
+		/// This method is exposed by the XML-RPC server but is intended for "internal" use only.		
+		/// </remarks>
+		bool		Halt();
+
+		/// <summary>
+		/// Get descriptive information on the Instrument Control XML-RPC Server.
+		/// </summary>
+		/// <returns>
+		/// An untyped (object) array containing (string) gateway URL, (string) server version, (int) uptime in 
+		/// seconds.
+		/// </returns>		
+		string[]	GetServerInfo();
+
+		/// <summary>
+		/// Register an IInstrumentControlEvents event sink (XML-RPC server) with the Instrument Control XML-RPC 
+		/// server.
+		/// </summary>
+		/// <param name="eventSinkURL"></param>
+		/// <returns>
+		/// Successful subscription: true; unsuccessful subscription: false.
+		/// </returns>
+		bool		Subscribe(string eventSinkURL);
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		string[]	GetSubscriberList();
+
+		/// <summary>
+		/// Cancel registration of an IInstrumentControlEvents event sink (XML-RPC server) with the Instrument 
+		/// Control XML-RPC server.
+		/// </summary>
+		/// <param name="eventSinkURL"></param>
+		/// <returns>
+		/// Successful subscription cancellation: true; unsuccessful subscription cancellation: false.
+		/// </returns>
+		
+		bool		Unsubscribe(string eventSinkURL);
+
+		#endregion Instrument Control XML-RPC Server		
+
+		#region Run
+
+		/// <summary>
+		/// Schedule a batch processing run
+		/// </summary>
+		/// <param name="samples"></param>
+		/// <returns>Estimated batch processing duration</returns>		
+		DateTime	ScheduleRun(XmlRpcSample[] samples);
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		DateTime	StartRun(XmlRpcSample[] samples, string batchRunUserId,
+			bool isSharing, int[] sharedSectorsTranslation, int[]sharedSectorsProtocolIndex);
+
+		/// <summary>
+		/// 
+		/// </summary>
+		bool		PauseRun();
+
+		/// <summary>
+		/// 
+		/// </summary>
+		bool		ResumeRun();
+		
+        #if bdr31
+		/// <summary> 
+		/// Move the arm to a safe theta to remove carousel - bdr
+		/// </summary> 
+		bool		ParkArm();
+
+		/// <summary> 
+		/// Put the pump valve in de-energized mode - bdr
+		/// </summary> 
+		bool		ParkPump();
+        #endif
+        
+		/// <summary>
+		/// 
+		/// </summary>
+		bool		HaltRun();
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		bool		AbortRun();
+
+		#endregion Run
+
+		#region Protocol
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		XmlRpcProtocol[]	GetProtocols();
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="protocolId"></param>
+		/// <param name="sampleVolume_ul"></param>
+		/// <returns></returns>
+        XmlRpcConsumables[]	CalculateConsumables(int protocolId, double sampleVolume_ul);
+
+		#endregion Protocol
+
+		#region Instrument
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		string[]	GetErrorLog();
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		string		GetInstrumentState();
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		XmlRpcContainer	GetContainerVolumes();
+
+        /// <summary>
+        /// Test if the hydraulic fluid needs refilling.
+        /// </summary>
+        /// <returns></returns>
+        bool        IsHydroFluidLow();
+
+        /// <summary>
+        /// Instruct the instrument to assume the user has refilled the hydraulic fluid container.
+        /// </summary>
+        /// <returns></returns>
+        bool        SetHydroFluidFull();
+
+        #if bdr32
+        /// <summary>
+        /// Report the state of the lid sensor - bdr
+        /// </summary>
+        /// <returns></returns>
+        bool        IsLidClosed();
+        #endif
+
+		/// <summary>
+		/// Pause command
+		/// </summary>
+		/// <returns></returns>
+		bool isPauseCommand();
+
+		/// <summary>
+		/// Pause command
+		/// </summary>
+		/// <returns></returns>
+		string getPauseCommandCaption();
+        
+        /// <summary>
+        /// Get the time span of individual protocol end times for protocols in the batch.
+        /// </summary>
+        /// <returns>End time span in seconds.</returns>
+        int         GetEndTimeSpan();
+
+
+        XmlRpcProtocolCommand[] getProtocolCommandList(int protocolIdx);
+
+		#endregion Instrument
+	}
+}

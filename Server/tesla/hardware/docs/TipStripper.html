@@ -1,0 +1,122 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module TipStripper</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>TipStripper</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/p4tesla/tesla/dev/dev001/control/tesla/hardware/tipstripper.py">c:\projects\p4tesla\tesla\dev\dev001\control\tesla\hardware\tipstripper.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;<a href="#TipStripper">TipStripper</a>.py<br>
+#&nbsp;Tesla.Hardware.<a href="#TipStripper">TipStripper</a><br>
+#<br>
+#&nbsp;Drives&nbsp;a&nbsp;stepper&nbsp;card&nbsp;(via&nbsp;SimpleStep&nbsp;module)&nbsp;to&nbsp;control&nbsp;the&nbsp;Tip&nbsp;Stripper<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="TipStripper.html#TipStripper">TipStripper</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TipStripper">class <strong>TipStripper</strong></a>(<a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;to&nbsp;drive&nbsp;the&nbsp;Tip&nbsp;Stripper&nbsp;via&nbsp;a&nbsp;SimpleStep&nbsp;stepper&nbsp;card&nbsp;(ie&nbsp;may&nbsp;<br>
+move&nbsp;between&nbsp;two&nbsp;positions&nbsp;only).<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="TipStripper.html#TipStripper">TipStripper</a></dd>
+<dd><a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="TipStripper-Disengage"><strong>Disengage</strong></a>(self)</dt><dd><tt>Disengage&nbsp;Tip&nbsp;Stripper</tt></dd></dl>
+
+<dl><dt><a name="TipStripper-Engage"><strong>Engage</strong></a>(self)</dt><dd><tt>Engage&nbsp;Tip&nbsp;Stripper</tt></dd></dl>
+
+<dl><dt><a name="TipStripper-IsEngaged"><strong>IsEngaged</strong></a>(self)</dt><dd><tt>Determine&nbsp;current&nbsp;engagement&nbsp;state&nbsp;of&nbsp;Tip&nbsp;Stripper</tt></dd></dl>
+
+<dl><dt><a name="TipStripper-PortsUsed"><strong>PortsUsed</strong></a>(self)</dt><dd><tt>The&nbsp;port&nbsp;being&nbsp;used&nbsp;to&nbsp;communicate&nbsp;with&nbsp;Tip&nbsp;Stripper.<br>
+Returns&nbsp;(Engage,Disengage)&nbsp;ports</tt></dd></dl>
+
+<dl><dt><a name="TipStripper-__init__"><strong>__init__</strong></a>(self, name, card, configData<font color="#909090">={}</font>, moreSettings<font color="#909090">={}</font>)</dt><dd><tt>Refer&nbsp;to&nbsp;stepper&nbsp;card&nbsp;being&nbsp;controlled</tt></dd></dl>
+
+<dl><dt><a name="TipStripper-getDeviceUsage"><strong>getDeviceUsage</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;number&nbsp;of&nbsp;full&nbsp;traverses&nbsp;of&nbsp;the&nbsp;axis</tt></dd></dl>
+
+<dl><dt><a name="TipStripper-getDisengageDriveStatus"><strong>getDisengageDriveStatus</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;disengage&nbsp;digital&nbsp;output&nbsp;status&nbsp;for&nbsp;the&nbsp;tip&nbsp;stripper</tt></dd></dl>
+
+<dl><dt><a name="TipStripper-getEngageDriveStatus"><strong>getEngageDriveStatus</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;engage&nbsp;digital&nbsp;output&nbsp;status&nbsp;for&nbsp;the&nbsp;tip&nbsp;stripper</tt></dd></dl>
+
+<dl><dt><a name="TipStripper-getHomeStatus"><strong>getHomeStatus</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;home&nbsp;digital&nbsp;input&nbsp;status&nbsp;for&nbsp;the&nbsp;tip&nbsp;stripper</tt></dd></dl>
+
+<dl><dt><a name="TipStripper-getLimitStatus"><strong>getLimitStatus</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;limit&nbsp;digital&nbsp;input&nbsp;status&nbsp;for&nbsp;the&nbsp;tip&nbsp;stripper</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>DefaultValues</strong> = {'maxtraversetime_msec': '800', 'steppercarddisengageport': '25', 'steppercardengageport': '24'}</dl>
+
+<dl><dt><strong>DisengagePortLabel</strong> = 'steppercarddisengageport'</dl>
+
+<dl><dt><strong>EngagePortLabel</strong> = 'steppercardengageport'</dl>
+
+<dl><dt><strong>TraverseTimeLabel</strong> = 'maxtraversetime_msec'</dl>
+
+<hr>
+Methods inherited from <a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a>:<br>
+<dl><dt><a name="TipStripper-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Simple&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;device.</tt></dd></dl>
+
+<dl><dt><a name="TipStripper-execute"><strong>execute</strong></a>(self, functionWithArgs)</dt><dd><tt>Executes&nbsp;the&nbsp;formatted&nbsp;function&nbsp;call&nbsp;string&nbsp;functionWithArgs&nbsp;on<br>
+self.</tt></dd></dl>
+
+<dl><dt><a name="TipStripper-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;device's&nbsp;identifying&nbsp;name.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a>:<br>
+<dl><dt><a name="TipStripper-registerDevice"><strong>registerDevice</strong></a>(deviceInstance)</dt><dd><tt>Register&nbsp;our&nbsp;device&nbsp;with&nbsp;the&nbsp;<a href="tesla.hardware.Device.html#Device">Device</a>&nbsp;list.&nbsp;Note&nbsp;that&nbsp;this&nbsp;is&nbsp;a&nbsp;<br>
+static&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="TipStripper-registerLogger"><strong>registerLogger</strong></a>(loggerInstance)</dt><dd><tt>Register&nbsp;an&nbsp;instance&nbsp;of&nbsp;a&nbsp;Tesla&nbsp;logger&nbsp;with&nbsp;the&nbsp;devices.&nbsp;Note&nbsp;that<br>
+this&nbsp;is&nbsp;a&nbsp;static&nbsp;method.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x0090CF30&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'Device' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>deviceList</strong> = []</dl>
+
+<dl><dt><strong>logger</strong> = None</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

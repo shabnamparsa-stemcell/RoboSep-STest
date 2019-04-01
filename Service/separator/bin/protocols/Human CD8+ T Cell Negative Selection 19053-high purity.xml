@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepProtocol xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="HumanNegative" xmlns="STI">
+  <header label="Human CD8+ T Cell Negative Selection 19053-high purity" version="2" description="50 uL/mL cocktail, 75 uL/mL particle, 10, 10 min incubation(s), 10, 10 min separation(s)" protocolNum1="19053" protocolNum2="0201" ProtocolDescriptionManualFill="false">
+    <date created="2005-06-21" modified="2009-05-01" />
+    <author name="STI" />
+  </header>
+  <constraints>
+    <quadrants number="2" />
+    <sampleVolume min_uL="500" max_uL="8500" />
+    <workingVolume sampleThreshold_uL="4050" lowVolume_uL="5000" highVolume_uL="10000" />
+  </constraints>
+  <commands number="14">
+    <TransportCommand seq="1" label="Add cocktail to sample" extensionTime="0" freeAirDispense="false" useBufferTip="false">
+      <vials src="TPC0103" dest="TPC0106" />
+      <relativeVolume proportion="0.05" />
+    </TransportCommand>
+    <MixCommand seq="2" label="Mix cocktail and sample" extensionTime="0" mixCycles="3" tipTubeBottomGap="0">
+      <vials src="TPC0106" dest="TPC0106" />
+      <relativeVolume proportion="0.5" />
+    </MixCommand>
+    <IncubateCommand seq="3" label="Incubate cocktail and sample" extensionTime="300">
+      <processingTime duration="600" />
+    </IncubateCommand>
+    <MixCommand seq="4" label="Mix particles" extensionTime="0" mixCycles="3" tipTubeBottomGap="50">
+      <vials src="TPC0104" dest="TPC0104" />
+      <absoluteVolume value_uL="500" />
+    </MixCommand>
+    <TransportCommand seq="5" label="Add particles to sample" extensionTime="0" freeAirDispense="false" useBufferTip="false">
+      <vials src="TPC0104" dest="TPC0106" />
+      <relativeVolume proportion="0.075" />
+    </TransportCommand>
+    <MixCommand seq="6" label="Mix particles and sample" extensionTime="0" mixCycles="3" tipTubeBottomGap="0">
+      <vials src="TPC0106" dest="TPC0106" />
+      <relativeVolume proportion="0.5" />
+    </MixCommand>
+    <IncubateCommand seq="7" label="Incubate particles and sample" extensionTime="300">
+      <processingTime duration="600" />
+    </IncubateCommand>
+    <TopUpVialCommand seq="8" label="Top up sample with buffer" extensionTime="300" freeAirDispense="true">
+      <vials src="TPC0001" dest="TPC0106" />
+      <absoluteVolume value_uL="10000" />
+    </TopUpVialCommand>
+    <MixCommand seq="9" label="Mix sample after top up" extensionTime="0" mixCycles="3" tipTubeBottomGap="0">
+      <vials src="TPC0106" dest="TPC0106" />
+      <relativeVolume proportion="0.5" />
+    </MixCommand>
+    <TransportCommand seq="10" label="Transfer sample to magnet" extensionTime="0" freeAirDispense="true" useBufferTip="false">
+      <vials src="TPC0106" dest="TPC0107" />
+      <absoluteVolume value_uL="10000" />
+    </TransportCommand>
+    <SeparateCommand seq="11" label="Separation #1" extensionTime="300">
+      <processingTime duration="600" />
+    </SeparateCommand>
+    <TransportCommand seq="12" label="Transfer supernatant #1 to second quadrant" extensionTime="300" freeAirDispense="true" useBufferTip="false">
+      <vials src="TPC0107" dest="TPC0207" />
+      <absoluteVolume value_uL="10000" />
+    </TransportCommand>
+    <SeparateCommand seq="13" label="Separation #2" extensionTime="300">
+      <processingTime duration="600" />
+    </SeparateCommand>
+    <TransportCommand seq="14" label="Transfer supernatant #2 to enriched tube" extensionTime="120" freeAirDispense="false" useBufferTip="true">
+      <vials src="TPC0207" dest="TPC0206" />
+      <absoluteVolume value_uL="10000" />
+    </TransportCommand>
+  </commands>
+  <customNames sampleTube="" bufferBottle="" separationTube="" wasteTube="" magneticParticleVial="" selectionCocktailVial="" antibodyCocktailVial="" lysisBufferTube="" />
+  <customNames sampleTube="" bufferBottle="" separationTube="" wasteTube="" magneticParticleVial="" selectionCocktailVial="" antibodyCocktailVial="" lysisBufferTube="" />
+  <customNames sampleTube="" bufferBottle="" separationTube="" wasteTube="" magneticParticleVial="" selectionCocktailVial="" antibodyCocktailVial="" lysisBufferTube="" />
+  <customNames sampleTube="" bufferBottle="" separationTube="" wasteTube="" magneticParticleVial="" selectionCocktailVial="" antibodyCocktailVial="" lysisBufferTube="" />
+</RoboSepProtocol>
+<!-- DO NOT EDIT THIS LINE!! #RoboSep Client:4.5.6.0 #RoboSep Serial:0001 #Time:5/1/2009 11:35:58 AM //DO NOT EDIT THIS LINE!! -->

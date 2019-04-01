@@ -1,0 +1,153 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module simple_client</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>simple_client</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/tesla/dev/dev001/control/tools/simple_client.py">c:\projects\tesla\dev\dev001\control\tools\simple_client.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;simple_client.py<br>
+#<br>
+#&nbsp;A&nbsp;simple&nbsp;client&nbsp;for&nbsp;testing&nbsp;the&nbsp;Tesla&nbsp;XML-RPC&nbsp;gateway&nbsp;(instrument&nbsp;controller)<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="SimpleXMLRPCServer.html">SimpleXMLRPCServer</a><br>
+<a href="ipl.html">ipl</a><br>
+<a href="msvcrt.html">msvcrt</a><br>
+</td><td width="25%" valign=top><a href="socket.html">socket</a><br>
+<a href="sys.html">sys</a><br>
+<a href="tesla.html">tesla</a><br>
+</td><td width="25%" valign=top><a href="threading.html">threading</a><br>
+<a href="time.html">time</a><br>
+<a href="xmlrpclib.html">xmlrpclib</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="simple_client.html#ClientInterface">ClientInterface</a>
+</font></dt><dt><font face="helvetica, arial"><a href="simple_client.html#Monitor">Monitor</a>
+</font></dt><dt><font face="helvetica, arial"><a href="simple_client.html#SimpleClient">SimpleClient</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ClientInterface">class <strong>ClientInterface</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;is&nbsp;the&nbsp;interface&nbsp;that&nbsp;we&nbsp;subscribe&nbsp;the&nbsp;server&nbsp;to&nbsp;send&nbsp;back&nbsp;reports<br>
+to.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ClientInterface-__init__"><strong>__init__</strong></a>(self, errorFlag)</dt><dd><tt>Constructor&nbsp;with&nbsp;one&nbsp;parameter:&nbsp;an&nbsp;errorFlag&nbsp;Event&nbsp;object&nbsp;that&nbsp;<br>
+allows&nbsp;us&nbsp;to&nbsp;indicate&nbsp;that&nbsp;an&nbsp;error&nbsp;has&nbsp;occurred.</tt></dd></dl>
+
+<dl><dt><a name="ClientInterface-ping"><strong>ping</strong></a>(self)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;we&nbsp;can&nbsp;be&nbsp;pinged.</tt></dd></dl>
+
+<dl><dt><a name="ClientInterface-reportETC"><strong>reportETC</strong></a>(self, etc)</dt><dd><tt>Report&nbsp;the&nbsp;run&nbsp;ETC&nbsp;to&nbsp;us&nbsp;(usually&nbsp;if&nbsp;it&nbsp;has&nbsp;been&nbsp;updated).</tt></dd></dl>
+
+<dl><dt><a name="ClientInterface-reportError"><strong>reportError</strong></a>(self, level, errorCode, numParams, params)</dt><dd><tt>Report&nbsp;an&nbsp;error&nbsp;message&nbsp;to&nbsp;us.</tt></dd></dl>
+
+<dl><dt><a name="ClientInterface-reportStatus"><strong>reportStatus</strong></a>(self, state, msg, numParams, params)</dt><dd><tt>Report&nbsp;a&nbsp;status&nbsp;message&nbsp;to&nbsp;us.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Monitor">class <strong>Monitor</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>An&nbsp;XML-RPC&nbsp;server&nbsp;that&nbsp;is&nbsp;used&nbsp;by&nbsp;the&nbsp;instrument&nbsp;controller&nbsp;server&nbsp;to<br>
+report&nbsp;status&nbsp;and&nbsp;error&nbsp;messages&nbsp;back&nbsp;to&nbsp;us&nbsp;with.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Monitor-__init__"><strong>__init__</strong></a>(self, host<font color="#909090">='localhost'</font>, port<font color="#909090">=8765</font>, logging<font color="#909090">=False</font>)</dt><dd><tt>Construct&nbsp;the&nbsp;XML-RPC&nbsp;gateway&nbsp;with&nbsp;an&nbsp;optional&nbsp;host&nbsp;and&nbsp;optional&nbsp;<br>
+port.&nbsp;Turning&nbsp;logging&nbsp;on&nbsp;enables&nbsp;the&nbsp;standard&nbsp;SimpleXMLRPCServer&nbsp;requests&nbsp;<br>
+logging.</tt></dd></dl>
+
+<dl><dt><a name="Monitor-check"><strong>check</strong></a>(self)</dt><dd><tt>Check&nbsp;for&nbsp;an&nbsp;incoming&nbsp;request&nbsp;to&nbsp;handle.</tt></dd></dl>
+
+<dl><dt><a name="Monitor-run"><strong>run</strong></a>(self, x, period)</dt><dd><tt>Start&nbsp;the&nbsp;server&nbsp;running.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SimpleClient">class <strong>SimpleClient</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;simple&nbsp;client&nbsp;for&nbsp;testing&nbsp;the&nbsp;Tesla&nbsp;XML-RPC&nbsp;interface.&nbsp;With&nbsp;this<br>
+client,&nbsp;you&nbsp;should&nbsp;be&nbsp;able&nbsp;to&nbsp;start&nbsp;the&nbsp;instrument&nbsp;up,&nbsp;get&nbsp;a&nbsp;list&nbsp;of&nbsp;<br>
+protocols,&nbsp;schedule&nbsp;some&nbsp;samples&nbsp;and&nbsp;kick&nbsp;off&nbsp;a&nbsp;run.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="SimpleClient-__init__"><strong>__init__</strong></a>(self, hostURL, monitorURL, debug<font color="#909090">=True</font>)</dt></dl>
+
+<dl><dt><a name="SimpleClient-getProtocols"><strong>getProtocols</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;list&nbsp;of&nbsp;protocols</tt></dd></dl>
+
+<dl><dt><a name="SimpleClient-halt"><strong>halt</strong></a>(self)</dt><dd><tt>Halt&nbsp;the&nbsp;client&nbsp;and&nbsp;server</tt></dd></dl>
+
+<dl><dt><a name="SimpleClient-printInfo"><strong>printInfo</strong></a>(self)</dt><dd><tt>Print&nbsp;some&nbsp;general&nbsp;information&nbsp;from&nbsp;the&nbsp;server.</tt></dd></dl>
+
+<dl><dt><a name="SimpleClient-reportETC"><strong>reportETC</strong></a>(self, etc)</dt><dd><tt>Report&nbsp;the&nbsp;ETC&nbsp;for&nbsp;the&nbsp;schedule&nbsp;or&nbsp;run,&nbsp;if&nbsp;the&nbsp;debug&nbsp;flag&nbsp;is&nbsp;on.</tt></dd></dl>
+
+<dl><dt><a name="SimpleClient-runSamples"><strong>runSamples</strong></a>(self, sampleList)</dt><dd><tt>Start&nbsp;a&nbsp;run,&nbsp;using&nbsp;a&nbsp;set&nbsp;of&nbsp;samples,&nbsp;and&nbsp;then&nbsp;wait&nbsp;for&nbsp;it&nbsp;to&nbsp;<br>
+finish&nbsp;(ie.&nbsp;return&nbsp;to&nbsp;IDLE).</tt></dd></dl>
+
+<dl><dt><a name="SimpleClient-scheduleSamples"><strong>scheduleSamples</strong></a>(self, numSamples, protocolName)</dt><dd><tt>Set&nbsp;up&nbsp;some&nbsp;samples&nbsp;and&nbsp;schedule&nbsp;them.</tt></dd></dl>
+
+<dl><dt><a name="SimpleClient-waitForIdle"><strong>waitForIdle</strong></a>(self)</dt><dd><tt>Wait&nbsp;until&nbsp;we&nbsp;reach&nbsp;the&nbsp;IDLE&nbsp;state.</tt></dd></dl>
+
+<dl><dt><a name="SimpleClient-waitForState"><strong>waitForState</strong></a>(self, state<font color="#909090">='IDLE'</font>)</dt><dd><tt>Wait&nbsp;until&nbsp;we&nbsp;reach&nbsp;the&nbsp;specified&nbsp;state.</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-pickAProtocol"><strong>pickAProtocol</strong></a>(protocols)</dt><dd><tt>Print&nbsp;out&nbsp;protocol&nbsp;information&nbsp;from&nbsp;the&nbsp;server&nbsp;and&nbsp;get&nbsp;the&nbsp;user&nbsp;to&nbsp;pick<br>
+one&nbsp;of&nbsp;the&nbsp;choices.<br>
+Returns&nbsp;a&nbsp;protocol&nbsp;label&nbsp;or&nbsp;'Q'&nbsp;(for&nbsp;quit).</tt></dd></dl>
+ <dl><dt><a name="-pickNumSamples"><strong>pickNumSamples</strong></a>()</dt><dd><tt>Return&nbsp;a&nbsp;number&nbsp;between&nbsp;1&nbsp;and&nbsp;4&nbsp;for&nbsp;the&nbsp;number&nbsp;of&nbsp;samples&nbsp;to&nbsp;schedule/run</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>CLIENT_HOST</strong> = 'localhost'<br>
+<strong>CLIENT_PORT</strong> = 8765<br>
+<strong>GATEWAY_HOST</strong> = 'localhost'<br>
+<strong>GATEWAY_PORT</strong> = 8000<br>
+<strong>WAIT_TIME</strong> = 5</td></tr></table>
+</body></html>

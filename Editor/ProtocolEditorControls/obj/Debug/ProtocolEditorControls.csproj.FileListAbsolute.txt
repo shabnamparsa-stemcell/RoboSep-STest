@@ -1,0 +1,3 @@
+C:\projects\Minnie\ProtocolEditor\ProtocolEditorControls\obj\Debug\ResolveAssemblyReference.cache
+C:\projects\Minnie\ProtocolEditor\ProtocolEditorControls\obj\Debug\ResGen.read.1.tlog
+C:\projects\Minnie\ProtocolEditor\ProtocolEditorControls\obj\Debug\ResGen.write.1.tlog

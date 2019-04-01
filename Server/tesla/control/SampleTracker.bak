@@ -1,0 +1,607 @@
+# 
+# SampleTracker.py
+# tesla.control.SampleTracker
+#
+# Sample tracking in the Tesla instrument controller
+# 
+# Copyright (c) Invetech Pty Ltd, 2004
+# 495 Blackburn Rd
+# Mt Waverley, Vic, Australia.
+# Phone (+61 3) 9211 7700
+# Fax   (+61 3) 9211 7701																											 
+# 
+# The copyright to the computer program(s) herein is the
+# property of Invetech Pty Ltd, Australia.
+# The program(s) may be used and/or copied only with
+# the written permission of Invetech Pty Ltd
+# or in accordance with the terms and conditions
+# stipulated in the agreement/contract under which
+# the program(s) have been supplied.
+# 
+
+import os
+import time
+from datetime import datetime
+from datetime import date
+
+import tesla.config
+from tesla.exception import TeslaException
+from tesla.instrument.Instrument import Instrument
+
+
+# -----------------------------------------------------------------------------
+
+class SampleTrackingException(TeslaException):
+    '''Exception from sample tracking'''
+    pass
+
+# -----------------------------------------------------------------------------
+
+class SampleTracker:
+    '''Sample tracking in Telsa instrument controller.
+    Note that we can only have one set of samples in the system at any time.
+    '''
+    
+    def __init__(self, reportBaseDir = tesla.config.SAMPLE_REPORT_DIR):
+	'''Initialise the sample tracker and leave it empty
+        Parameters: reportBaseDir - the base directory for report generation'''
+	self.reportBaseDir = reportBaseDir
+	self.resetTracker()
+
+    def resetTracker(self):
+	'''Clear all sample history out of the tracker'''
+	self.samples = None
+        self.scheduleStarted = False
+
+    def addSamples(self, sampleList):
+	'''Add samples to the tracker'''
+        if self.scheduleStarted:
+            raise SampleTrackingException, "SampleTracker: Schedule already started, cannot add samples"
+
+	self.samples = sampleList[:]
+
+    def hasStarted(self):
+        '''Returns True is a schedule is marked as started'''
+        return self.scheduleStarted
+
+    def scheduleStart(self, etc, startTime = None, operator = None):
+        '''Marks a schedule as started
+        startTime defaults to current system time
+        operator defaults to "Unknown"'''
+        if self.scheduleStarted:
+            raise SampleTrackingException, "SampleTracker: Schedule already started, cannot start schedule"
+        if self.samples == None:
+            raise SampleTrackingException, "SampleTracker: No samples, cannot start schedule"
+
+        if not startTime:
+            startTime = datetime.fromtimestamp(time.time())
+        if not operator:
+            operator = 'Unknown'
+
+        self.startTime = startTime
+        self.etc = etc
+        self.operator = operator
+        self.scheduleStarted = True
+    
+    def scheduleCompleted(self, endTime = None):
+        '''Marks a schedule as successfully complete and logs a report for all samples
+        endTime defaults to current system time'''
+        if not self.scheduleStarted:
+            raise SampleTrackingException, "SampleTracker: Schedule not started, cannot complete schedule"
+        if not endTime:
+            endTime = datetime.fromtimestamp(time.time())
+
+        self.endTime = endTime
+        self.reportSchedule('COMPLETED')
+
+    def scheduleAborted(self, reason, abortTime = None):
+        '''Marks a schedule as unsuccessful and logs a report for all samples
+        reason should contain a description of why the schedule did not complete
+        abortTime defaults to current system time'''
+        if not self.scheduleStarted:
+            raise SampleTrackingException, "SampleTracker: Schedule not started, cannot abort schedule"
+        if not abortTime:
+            abortTime = datetime.fromtimestamp(time.time())
+
+        self.endTime = abortTime
+        self.reportSchedule('ABORTED because '+ reason)
+
+    def reportSchedule(self,finalStatus = 'Unknown'):
+        '''Adds a report for all of the samples in the schedule'''
+        # reports are added to the report file corresponding with the completion time.
+        # to add the report based on start time use "self.startTime"
+        
+        #####################
+        def formatReagentVolume(title, label, volume):
+            '''Formats the reagent title, label and volume for use in reports'''
+            if label == '':
+                label = 'Unlabeled'
+            
+            # Format the reagent title and label
+            result = "            %-26s" % (title + ":")
+            result += "%-20s" % label
+
+            # Append the volume used
+            if volume > 0.0:                
+                result += ' (' + str(float(volume)/1000.0) + ' ml)\n'
+            else:
+                result += ' (Not Used)\n'
+
+            return result
+        #####################
+
+        #####################
+        def formatVessel(title, required):
+            '''Formats the flag for a vessel for use in reports'''
+            # Format the reagent title and label
+            result = "            %-26s" % (title + ":")
+
+            # Append the volume used
+            if required:
+                result += 'Needed\n'
+            else:
+                result += 'Not Needed\n'
+
+            return result
+        #####################
+
+	reportName = self.getFileName(self.endTime)
+
+        reportFile = open(reportName,"a")
+
+        reportFile.write("<html>\n")
+        self.GenReportHeader(reportFile)
+        reportFile.write("<body>\n")
+        self.GenReportPrintHeader(reportFile)
+
+        self.GenReportPrintRunDetails(reportFile,finalStatus)
+        self.GenReportPrintSamplesDetails(reportFile)
+
+        #loop
+        sampleCount=0
+        for sample in self.samples:
+            sampleCount += 1
+            self.GenReportPrintProtocolDetails(reportFile,sample,sampleCount)
+            self.GenReportPrintCmdSeqDetails(reportFile,sample,sampleCount)
+            
+        
+        self.GenReportPrintFooter(reportFile)
+        reportFile.write("</body>\n")
+        reportFile.write("</html>\n")
+
+        """
+        # Add the header for the run
+        reportFile.write("#### End of Run Report ###############################################\n")
+        reportFile.write("Scheduled ETC:      " + str(self.etc) + "\n")
+        reportFile.write("Operator ID:        " + str(self.operator) + "\n")
+        reportFile.write("Actual Start:       " + self.startTime.strftime("%d-%b-%Y %H:%M:%S\n"))
+        reportFile.write("Actual Finish:      " + self.endTime.strftime("%d-%b-%Y %H:%M:%S\n"))
+        reportFile.write("Final Status:       " + str(finalStatus) + "\n\n")
+
+        # Add info for each sample
+        # bdr reportFile.write(formatReagentVolume("Sample",   sample.sample1Label, 0))
+        # bdr reportFile.write(formatReagentVolume("Sample",   sample.sample2Label, 0))
+
+        sampleCount = 0
+        for sample in self.samples:
+            sampleCount += 1
+            reportFile.write("    Sample #" + str(sampleCount) + "\n")
+            # Print each sample's details
+            reportFile.write("        Sample ID:                    " + str(sample.ID) + "\n")
+            reportFile.write("        Sample Label:                 " + sample.label + "\n")
+            reportFile.write("        Protocol ID:                  " + str(sample.protocolID) + "\n")
+            reportFile.write("        Protocol Label:               " + sample.protocolLabel + "\n")
+            reportFile.write("        Sample's Initial Quadrant:    " + str(sample.initialQuadrant) + "\n")
+            reportFile.write("        Sample Volume:                " + str(float(sample.volume)/1000.0) + " ml\n")
+            for quadrant in sample.consumables:
+                reportFile.write("        Quadrant #" + str(quadrant.quadrant + sample.initialQuadrant - 1) + "\n")
+                if quadrant.quadrant == 1:
+                    reportFile.write(formatReagentVolume("Cocktail", sample.cocktailLabel, quadrant.cocktailVolume))
+                    reportFile.write(formatReagentVolume("Particle", sample.particleLabel, quadrant.particleVolume))
+                    reportFile.write(formatReagentVolume("Lysis",    sample.lysisLabel,    quadrant.lysisVolume))
+                    reportFile.write(formatReagentVolume("Antibody", sample.antibodyLabel, quadrant.antibodyVolume))
+                    reportFile.write(formatReagentVolume("Sample",   sample.sample1Label, 0.0))
+                    reportFile.write(formatReagentVolume("BCCM", '', quadrant.bulkBufferVolume))
+                else:
+                    reportFile.write(formatReagentVolume("Cocktail", "", quadrant.cocktailVolume))
+                    reportFile.write(formatReagentVolume("Particle", "", quadrant.particleVolume))
+                    reportFile.write(formatReagentVolume("Lysis",    "", quadrant.lysisVolume))
+                    reportFile.write(formatReagentVolume("Antibody", "", quadrant.antibodyVolume))
+
+                reportFile.write(formatVessel("Waste Vial", quadrant.wasteVesselRequired))
+                reportFile.write(formatVessel("Separation Vial", quadrant.separationVesselRequired))
+                reportFile.write(formatVessel("Sample Vial", quadrant.sampleVesselRequired))
+                reportFile.write(formatVessel("Tip Box", quadrant.tipBoxRequired))
+        """
+        reportFile.write("\n\n")
+        reportFile.close()
+        self.resetTracker()
+	
+    # --- Private methods -----------------------------------------------------
+
+    def getFileName(self,basedOnTime=None):
+	'''Return the filename for the given day'''
+        if not basedOnTime:
+            basedOnTime = datetime.fromtimestamp(time.time())
+
+        # We want the directory path to be BASEDIR/yyyy/Mmm
+        # ie: BASEDIR/2004/Dec
+        theDate = basedOnTime #.date()
+        theYear = theDate.strftime("%Y")
+	theMonth = theDate.strftime("%b")
+	
+	# Create the report file name "Report_25Dec2004.txt"
+	fileName = theDate.strftime("Report_%d%b%Y_%H_%M_%S.html")
+
+        # full path name of report
+        pathName = os.path.join(self.reportBaseDir, theYear, theMonth)
+
+        # If the path doesn't exist, create it
+	if not os.path.exists(pathName):
+	    try:
+		os.makedirs(pathName)
+	    except OSError, msg:
+		raise SampleTrackingException, "Unable to make sample report dir (%s)" % (msg)
+
+	# Create the full path name
+        fullFileName = os.path.join(pathName, fileName)
+        print fullFileName
+	return fullFileName
+    
+    def GenReportHeader(self,reportFile):
+        reportFile.write("<head>\n")
+        reportFile.write("<title>RoboSep End of Run Report</title>\n")
+        reportFile.write("<STYLE Type=\"text/css\">\n")
+        reportFile.write("<!--\n")
+        reportFile.write("td {padding-left : 1em;padding-right : 1em;}\n")
+        reportFile.write("-->\n")
+        reportFile.write("</STYLE>\n")
+        reportFile.write("</head>\n")
+
+    def GenReportPrintHeader(self,reportFile):
+        basedOnTime = datetime.fromtimestamp(time.time())
+        timeStamp = basedOnTime.strftime("%d-%b-%Y_%H:%M:%S")
+        reportFile.write("<table height=70 width=\"900\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\">\n")
+        reportFile.write("<tr>\n")
+        reportFile.write("<td colspan=2 align=center ><strong>RoboSep End of Run Report</strong></td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("<tr>\n")
+        reportFile.write("<td align=center>StemCell Technologies Form No: 3000-FRM-026</td>\n")
+        reportFile.write("<td align=center>Generated: "+timeStamp+"</td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("</table>\n")
+
+    def GenReportPrintFooter(self,reportFile):
+        reportFile.write("<table width=\"900\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n")
+        reportFile.write("<tr><td><hr width=\"100%\"></tr></td>\n")
+        reportFile.write("</table>\n")
+        reportFile.write("<table width=\"900\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n")
+        reportFile.write("<tr>\n")
+        reportFile.write("<td colspan=2 ><font size=\"-2\">3000-FRM-026, Rev. No.: 1</font></td>\n")
+        reportFile.write("<td align=center ><font size=\"-2\">StemCell Technologies Inc</font></td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("<tr>\n")
+        reportFile.write("<td colspan=2 ><font size=\"-2\">Effective Date: 09-Jul-2007</font></td>\n")
+        reportFile.write("<td align=center ><font size=\"-2\">www.stemcell.com</font></td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("</table>\n")
+
+    def GenReportPrintRunDetails(self,reportFile,finalStatus):
+        reportFile.write("<p><strong>Run Details</strong></p>\n")
+        reportFile.write("<table width=\"900\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\">\n")
+        reportFile.write("<tr>\n")
+        reportFile.write("<td width=200 align=right valign=top ><strong>Actual Start</strong></td>\n")
+        reportFile.write("<td colspan=\"4\" align=left valign=top >"+self.startTime.strftime("%d-%b-%Y %H:%M:%S")+"</td>\n")
+        reportFile.write("<td colspan=\"2\" rowspan=\"5\" align=left valign=top >Initial:</td>\n")
+        reportFile.write("<td colspan=\"3\" rowspan=\"5\" align=left valign=top >Date:</td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("<tr>\n")
+        reportFile.write("<td width=200 align=right valign=top ><strong>Actual End</strong></td>\n")
+        reportFile.write("<td colspan=\"4\" align=left valign=top >"+self.endTime.strftime("%d-%b-%Y %H:%M:%S")+"</td>\n")
+        reportFile.write("</tr>\n")
+        elapsedTime=self.endTime-self.startTime
+        minutes, seconds = divmod(elapsedTime.seconds, 60)
+        hours, minutes = divmod(minutes, 60)
+        if hours<10:
+            sHour="0"+str(hours)
+        else:
+            sHour=str(hours)
+        if minutes<10:
+            sMinutes="0"+str(minutes)
+        else:
+            sMinutes=str(minutes)
+        if seconds<10:
+            sSeconds="0"+str(seconds)
+        else:
+            sSeconds=str(seconds)
+        
+        reportFile.write("<tr>\n")
+        reportFile.write("<td width=200 align=right valign=top ><strong>Elapsed Time</strong></td>\n")
+        reportFile.write("<td colspan=\"4\" align=left valign=top >"+sHour+":"+sMinutes+":"+sSeconds+"</td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("<tr>\n")
+        reportFile.write("<td width=200 align=right valign=top ><strong>Final Status</strong></td>\n")
+        reportFile.write("<td colspan=\"4\" align=left valign=top >"+str(finalStatus)+"</td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("<tr>\n")
+        if str(self.operator) == 'Unknown':
+            reportFile.write("<td width=200 height=50 align=right valign=top ><strong>Operator ID</strong></td>\n")
+            reportFile.write("<td colspan=\"4\" align=left valign=top ><font color=gray>Not Provided</font></td>\n")
+        else:
+            reportFile.write("<td width=200 align=right valign=top ><strong>Operator ID</strong></td>\n")
+            reportFile.write("<td colspan=\"4\" align=left valign=top >"+str(self.operator)+"</td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("</table>\n")
+
+    def GenReportPrintSamplesDetails(self,reportFile):
+        
+        reportFile.write("<p><strong>Sample Details</strong></p>\n")
+        reportFile.write("<table width=\"900\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\">\n")
+
+        GRAY_CELL ="<td bgcolor=gray></td>\n"
+        NOT_PROVIDED ="<td height=50 align=left valign=top ><font color=gray>Not Provided</font></td>"
+        NOT_APPLICABLE ="<td align=left valign=top >Not Applicable</td>" 
+        REQUIRED = "<td align=left valign=top >Required</td>"
+        
+        sampleCount=0
+        headerRow="<tr>\n<td width=200></td> \n"
+        sampleIDRow="<tr>\n<td width=200 align=right valign=top ><strong>Sample ID</strong></td>\n"
+        sampleVolRow="<tr>\n<td width=200 align=right ><strong>Sample Volume (mL)</strong></td>\n"
+        initQuadRow="<tr>\n<td width=200 align=right ><strong>Sample Initial Quadrant</strong></td>\n"
+        quadNumRow="<tr>\n<td width=200 align=right ><strong>Number of Quadrants Used</strong></td>\n"
+        magPartRow="<tr>\n<td width=200 align=right ><strong>Magnetic Particle Lot # (Triangle)</strong></td>\n"
+        selCockRow="<tr>\n<td width=200 align=right ><strong>Selection Cocktail Lot # (Square)</strong></td>\n"
+        antibodyRow="<tr>\n<td width=200 align=right ><strong>Antibody Cocktail Lot # (Circle)</strong></td>\n"
+        lysisRow="<tr>\n<td width=200 align=right ><strong>Lysis Buffer Lot #</strong></td>\n"
+        bufferRow="<tr>\n<td width=200 align=right ><strong>Buffer</strong></td>\n"
+        tipRackRow="<tr>\n<td width=200 align=right ><strong>Tip Rack</strong></td>\n"
+        for i in range(4):
+            sampleCount+=1
+            headerRow+="<td align=left >Sample "+str(sampleCount)+"</td>\n"
+            if i >= len(self.samples):
+                sampleIDRow+=GRAY_CELL
+                sampleVolRow+=GRAY_CELL
+                initQuadRow+=GRAY_CELL
+                quadNumRow+=GRAY_CELL
+                magPartRow+=GRAY_CELL
+                selCockRow+=GRAY_CELL
+                antibodyRow+=GRAY_CELL
+                lysisRow+=GRAY_CELL
+                bufferRow+=GRAY_CELL
+                tipRackRow+=GRAY_CELL
+            else:
+                sample = self.samples[i]
+                if sample.sample1Label == '':
+                    sampleIDRow+=NOT_PROVIDED
+                else:
+                    sampleIDRow+="<td height=50 align=left valign=top >"+str(sample.sample1Label) +"</td>\n"
+                sampleVolRow+="<td align=left valign=top >"+"%2.3f" %(float(sample.volume)/1000.0)+"</td>\n"
+                initQuadRow+="<td align=left valign=top >"+str(sample.initialQuadrant)+"</td>\n"
+                quadNumRow+="<td align=left valign=top >"+str(len(sample.consumables))+"</td>\n"
+                if sample.particleLabel == '':
+                    if sample.consumables[0].particleVolume>0:
+                        magPartRow+=NOT_PROVIDED
+                    else:
+                        magPartRow+=NOT_APPLICABLE
+                else:
+                    magPartRow+="<td align=left valign=top >"+str(sample.particleLabel)+"</td>\n"
+                if sample.cocktailLabel == '':
+                    if sample.consumables[0].antibodyVolume>0:
+                        selCockRow+=NOT_PROVIDED
+                    else:
+                        selCockRow+=NOT_APPLICABLE
+                else:
+                    selCockRow+="<td align=left valign=top >"+str(sample.cocktailLabel)+"</td>\n"
+                if sample.antibodyLabel == '':
+                    if sample.consumables[0].cocktailVolume>0:
+                        antibodyRow+=NOT_PROVIDED
+                    else:
+                        antibodyRow+=NOT_APPLICABLE
+                else:
+                    antibodyRow+="<td align=left valign=top >"+str(sample.antibodyLabel)+"</td>\n"
+                if sample.lysisLabel == '':
+                    if sample.consumables[0].lysisVolume>0:
+                        lysisRow+=NOT_PROVIDED
+                    else:
+                        lysisRow+=NOT_APPLICABLE
+                else:
+                    lysisRow+="<td align=left valign=top >"+str(sample.lysisLabel)+"</td>\n"
+                    
+                if sample.consumables[0].bulkBufferVolume > 0:
+                    bufferRow+=REQUIRED
+                else:
+                    bufferRow+=NOT_APPLICABLE
+                tipRackRow+=REQUIRED
+                
+        headerRow+="<td colspan=\"2\" rowspan=\"14\" align=left valign=top >Initial:</td>\n"
+        headerRow+="<td colspan=\"3\" rowspan=\"14\" align=left valign=top >Date:</td>\n"
+        headerRow+="</tr>\n"
+        sampleIDRow+="</tr>\n"
+
+        reportFile.write(headerRow)
+        reportFile.write(sampleIDRow)
+        reportFile.write(sampleVolRow)
+        reportFile.write(initQuadRow)
+        reportFile.write(quadNumRow)
+        reportFile.write(magPartRow)
+        reportFile.write(selCockRow)
+        reportFile.write(antibodyRow)
+        reportFile.write(lysisRow)
+        reportFile.write(bufferRow)
+        reportFile.write(tipRackRow)
+
+
+        reportFile.write("<tr>\n")
+        reportFile.write("<td width=200 align=right ><strong>Sample Tube</strong></td>\n")
+        reportFile.write("<td colspan=\"4\" align=left valign=top >14 mL Falcon Recommended - See PIS</td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("<tr>\n")
+        reportFile.write("<td width=200 align=right ><strong>Separation Tube</strong></td>\n")
+        reportFile.write("<td colspan=\"4\" align=left valign=top >14 mL Falcon Recommended - See PIS</td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("<tr>\n")
+        reportFile.write("<td width=200 align=right ><strong>Waste Tube</strong></td>\n")
+        reportFile.write("<td colspan=\"4\" align=left valign=top >50 mL Falcon Recommended - See PIS</td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("</table>\n")
+
+
+    def GenReportPrintProtocolDetails(self,reportFile,sample,sampleCount):
+        reportFile.write("<p><strong>Protocol Details: Sample "+str(sampleCount)+"</strong></p>\n")
+        reportFile.write("<table width=\"900\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\">\n")
+        reportFile.write("<tr>\n")
+        reportFile.write("<td colspan=\"2\" align=right valign=top ><strong>Type</strong></td>\n")
+        reportFile.write("<td colspan=\"4\" align=left valign=top >"+sample.protocol.type+"</td>\n")
+        reportFile.write("<td colspan=\"2\" align=right valign=top ><strong>Protocol Number</strong></td>\n")
+        reportFile.write("<td colspan=\"4\" align=left valign=top >"+sample.protocol.protocolNumber+"</td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("<tr>\n")
+        reportFile.write("<td colspan=\"2\" align=right valign=top ><strong>Protocol Label</strong></td>\n")
+        reportFile.write("<td colspan=\"4\" align=left valign=top >"+sample.protocol.label+"</td>\n")
+        reportFile.write("<td colspan=\"2\" align=right valign=top ><strong>Date Created</strong></td>\n")
+        YMD = str(sample.protocol.created).split('-')
+        tmpDate = date(int(YMD[0]),int(YMD[1]),int(YMD[2]))
+        reportFile.write("<td colspan=\"4\" align=left valign=top >"+tmpDate.strftime("%d-%b-%Y")+"</td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("<tr>\n")
+        reportFile.write("<td colspan=\"2\" align=right valign=top ><strong>Author</strong></td>\n")
+        reportFile.write("<td colspan=\"4\" align=left valign=top >"+sample.protocol.author+"</td>\n")
+        reportFile.write("<td colspan=\"2\" align=right valign=top ><strong>Date Modified</strong></td>\n")
+        YMD = str(sample.protocol.modified).split('-')
+        tmpDate = date(int(YMD[0]),int(YMD[1]),int(YMD[2]))
+        reportFile.write("<td colspan=\"4\" align=left valign=top >"+tmpDate.strftime("%d-%b-%Y")+"</td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("<tr>\n")
+        reportFile.write("<td colspan=\"2\" align=right valign=top ><strong>File Name</strong></td>\n")
+        reportFile.write("<td width=300 colspan=\"4\" align=left valign=top >"+ sample.protocol.filename+"</td>\n")
+        reportFile.write("<td colspan=\"2\" align=right valign=top ><strong>Version</strong></td>\n")
+        reportFile.write("<td colspan=\"4\" align=left valign=top >"+str(sample.protocol.version)+"</td>\n")
+        reportFile.write("</tr>\n")
+        reportFile.write("</table>\n")
+
+
+    def GenReportPrintCmdSeqDetails(self,reportFile,sample,sampleCount):
+        GRAY_CELL ="<td bgcolor=gray></td>\n"
+        
+        reportFile.write("<p><strong>Command Sequence: Sample "+str(sampleCount)+"</strong></p>\n")
+        reportFile.write("<table width=\"900\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\">\n")
+        reportFile.write("<tr>\n")
+        reportFile.write("<td align=left valign=top><strong>Step</strong></td> \n")
+        reportFile.write("<td align=left valign=top><strong>Command</strong></td> \n")
+        reportFile.write("<td align=left valign=top><strong>Label</strong></td> \n")
+        reportFile.write("<td align=left valign=top><strong>Source</strong></td> \n")
+        reportFile.write("<td align=left valign=top><strong>Destination</strong></td> \n")
+        reportFile.write("<td align=left valign=top><strong>Volume</strong></td> \n")
+        reportFile.write("<td align=left valign=top><strong>Value (mL)</strong></td> \n")
+        reportFile.write("<td align=left valign=top><strong>Tip Rack</strong></td> \n")
+        reportFile.write("</tr>\n")
+        names = sample.protocol.getCustomNames()
+        seqNum=0
+        sampVol = sample.volume/1000
+
+        customNames = sample.protocol.getCustomNames()
+        
+        for cmd in sample.protocol.getCommands():
+            
+            seqNum+=1
+            reportFile.write("<tr>\n")
+            reportFile.write("<td align=left valign=top>"+str(seqNum)+"</td>\n")
+            reportFile.write("<td align=left valign=top>"+cmd.type.replace('Command','')+"</td>\n")
+            reportFile.write("<td align=left valign=top>"+cmd.label+"</td>\n")
+            if cmd.isTransportType() or cmd.isMixType():
+                absVol = cmd.absVolume/1000
+                reportFile.write("<td align=left valign=top><font size=\"-2\">"+self.getVialText(cmd.srcVial,sample.initialQuadrant,customNames)+"</font></td>")
+                reportFile.write("<td align=left valign=top><font size=\"-2\">"+self.getVialText(cmd.destVial,sample.initialQuadrant,customNames)+"</font></td>")
+                bfrTipStr = ""
+                if cmd.useBufferTip:
+                    bfrTipStr = "\rBuffer Tip"                    
+                if cmd.relative:
+                    reportFile.write("<td align=left valign=top><font size=\"-2\">Relative</font></td>")
+                    if cmd.isMixType():
+                        reportFile.write("<td align=left valign=top>"+str(cmd.mixCycles)+"*"+"%2d" % (cmd.proportion*100)+"%"+"</td>")
+                    else:
+                        reportFile.write("<td align=left valign=top>"+"%2.3f" % (cmd.proportion*sampVol)+ "<br>"+ bfrTipStr +"</td>")
+                else:
+                    reportFile.write("<td align=left valign=top><font size=\"-2\">Absolute</font></td>")
+                    if absVol >= 10:
+                        reportFile.write("<td align=left valign=top>"+"Not more than 10mL"+ "<br>" + bfrTipStr +"</td>")
+                    else:
+                        reportFile.write("<td align=left valign=top>"+"%2.3f" % (absVol) + "<br>" + bfrTipStr +"</td>")
+                if cmd.tiprackSpecified:
+                    reportFile.write("<td align=left valign=top>"+str(cmd.tiprack)+"</td>")
+                else:
+                    reportFile.write("<td align=left valign=top>"+str(cmd.srcVial[0]-1+sample.initialQuadrant)+"</td>")   
+
+            elif cmd.isTopUpType() or cmd.isResuspendType():
+                reportFile.write("<td bgcolor=gray><font size=\"-2\">Buffer Bottle</font></td>")
+                reportFile.write("<td align=left valign=top><font size=\"-2\">"+self.getVialText(cmd.destVial,sample.initialQuadrant,customNames)+"</font></td>")
+                if cmd.relative:
+                    reportFile.write("<td align=left valign=top><font size=\"-2\">Relative</font></td>")
+                    if cmd.isTopUpType():
+                        reportFile.write("<td align=left valign=top>"+"Fill up to "+"%2.3f" % (cmd.proportion*sampVol)+"</td>")
+                    else:
+                        reportFile.write("<td align=left valign=top>"+"%2.3f" % (cmd.proportion*sampVol)+"</td>")
+                else:
+                    reportFile.write("<td align=left valign=top><font size=\"-2\">Threshold</font></td>") 
+                    if sampVol < sample.protocol.sampleThreshold/1000:
+                        absVol =(sample.protocol.lowWorkingVolume/1000)
+                    else:
+                        absVol =(sample.protocol.highWorkingVolume/1000)
+                    if absVol >= 10:
+                        reportFile.write("<td align=left valign=top>"+"Not more than 10mL"+"</td>")
+                    else:
+                        reportFile.write("<td align=left valign=top>"+"Not more than "+"%2.3f" % absVol+"</td>")
+                
+                if cmd.tiprackSpecified:
+                    reportFile.write("<td align=left valign=top>"+str(cmd.tiprack)+"</td>")
+                else:
+                    reportFile.write("<td align=left valign=top>"+str(cmd.destVial[0]-1+sample.initialQuadrant)+"</td>") 
+            else:
+                reportFile.write(GRAY_CELL) 
+                reportFile.write(GRAY_CELL) 
+                reportFile.write(GRAY_CELL) 
+                reportFile.write(GRAY_CELL)  
+                reportFile.write(GRAY_CELL)    
+            
+            
+            reportFile.write("</tr>\n")
+        reportFile.write("</table>\n")
+	
+    def getVialText(self, Vial, InitQ,customNames):
+        vialName= 'N/A'
+        if str(Vial[1]) == Instrument.BCCMLabel:
+            vialName=customNames[((Vial[0]-1)*8)+0]
+            if vialName=='':
+                vialName= 'Buffer Bottle'
+        elif str(Vial[1]) == Instrument.WasteLabel:
+            vialName=customNames[((Vial[0]-1)*8)+1]
+            if vialName=='':
+                vialName= 'Waste Tube'
+        elif str(Vial[1]) == Instrument.LysisLabel:
+            vialName=customNames[((Vial[0]-1)*8)+2]
+            if vialName=='':
+                vialName= 'Lysis Buffer Tube'
+        elif str(Vial[1]) == Instrument.CocktailLabel:
+            vialName=customNames[((Vial[0]-1)*8)+3]
+            if vialName=='':
+                vialName= 'Selection Vial (Square)'
+        elif str(Vial[1]) == Instrument.BeadLabel:
+            vialName=customNames[((Vial[0]-1)*8)+4]
+            if vialName=='':
+                vialName= 'Magnetic Particle Vial (Triangle)'
+        elif str(Vial[1]) == Instrument.AntibodyLabel:
+            vialName=customNames[((Vial[0]-1)*8)+5]
+            if vialName=='':
+                vialName= 'Antibody Vial (Circle)'
+        elif str(Vial[1]) == Instrument.SampleLabel:
+            vialName=customNames[((Vial[0]-1)*8)+6]
+            if vialName=='':
+                vialName= 'Sample Tube'
+        elif str(Vial[1]) == Instrument.SupernatentLabel:
+            vialName=customNames[((Vial[0]-1)*8)+7]
+            if vialName=='':
+                vialName= 'Separation Tube'
+            
+        return "Q"+str(Vial[0]-1+InitQ)+", "+vialName
+
+# eof

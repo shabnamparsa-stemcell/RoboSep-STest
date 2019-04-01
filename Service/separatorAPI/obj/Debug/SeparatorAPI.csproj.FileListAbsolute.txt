@@ -1,0 +1,31 @@
+C:\Projects\TESLA\Client\separatorAPI\bin\Debug\SeparatorAPI.dll
+C:\Projects\TESLA\Client\separatorAPI\bin\Debug\SeparatorAPI.pdb
+C:\Projects\TESLA\Client\separatorAPI\bin\Debug\Common.dll
+C:\Projects\TESLA\Client\separatorAPI\bin\Debug\ApplicationLog.dll
+C:\Projects\TESLA\Client\separatorAPI\bin\Debug\Common.pdb
+C:\Projects\TESLA\Client\separatorAPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\Client\separatorAPI\obj\Debug\SeparatorAPI.dll
+C:\Projects\TESLA\Client\separatorAPI\obj\Debug\SeparatorAPI.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separatorAPI\bin\Debug\SeparatorAPI.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separatorAPI\bin\Debug\SeparatorAPI.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separatorAPI\bin\Debug\Common.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separatorAPI\bin\Debug\ApplicationLog.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separatorAPI\bin\Debug\Common.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separatorAPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separatorAPI\obj\Debug\SeparatorAPI.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separatorAPI\obj\Debug\SeparatorAPI.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\separatorAPI\bin\Debug\SeparatorAPI.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separatorAPI\bin\Debug\SeparatorAPI.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\separatorAPI\bin\Debug\Common.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separatorAPI\bin\Debug\ApplicationLog.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separatorAPI\bin\Debug\Common.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\separatorAPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\_2012_09_10_update\Service\separatorAPI\obj\Debug\SeparatorAPI.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separatorAPI\obj\Debug\SeparatorAPI.pdb
+D:\Projects-git\INS-RoboSep-S\Service\separatorAPI\bin\Debug\SeparatorAPI.dll
+D:\Projects-git\INS-RoboSep-S\Service\separatorAPI\bin\Debug\SeparatorAPI.pdb
+D:\Projects-git\INS-RoboSep-S\Service\separatorAPI\bin\Debug\Common.dll
+D:\Projects-git\INS-RoboSep-S\Service\separatorAPI\bin\Debug\ApplicationLog.dll
+D:\Projects-git\INS-RoboSep-S\Service\separatorAPI\bin\Debug\Common.pdb
+D:\Projects-git\INS-RoboSep-S\Service\separatorAPI\obj\Debug\SeparatorAPI.dll
+D:\Projects-git\INS-RoboSep-S\Service\separatorAPI\obj\Debug\SeparatorAPI.pdb

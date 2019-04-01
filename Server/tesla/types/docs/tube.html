@@ -1,0 +1,116 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module tube</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>tube</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/tesla/dev/dev001/control/tesla/types/tube.py">c:\projects\tesla\dev\dev001\control\tesla\types\tube.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;tube.py<br>
+#&nbsp;tesla.types.tube<br>
+#<br>
+#&nbsp;Provides&nbsp;a&nbsp;<a href="#Tube">Tube</a>&nbsp;object&nbsp;for&nbsp;monitoring&nbsp;liquid&nbsp;levels&nbsp;in&nbsp;the&nbsp;Tesla<br>
+#&nbsp;instrument&nbsp;control&nbsp;software<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>(<a href="exceptions.html#StandardError">exceptions.StandardError</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="tube.html#TubeException">TubeException</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="tube.html#Tube">Tube</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Tube">class <strong>Tube</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Define&nbsp;the&nbsp;characteristics&nbsp;for&nbsp;a&nbsp;tube&nbsp;(or&nbsp;any&nbsp;other&nbsp;liquid&nbsp;container)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Tube-__init__"><strong>__init__</strong></a>(self, sector, label, geometry, initialVolume_uL<font color="#909090">=0</font>)</dt><dd><tt>Define&nbsp;a&nbsp;tube&nbsp;with&nbsp;an&nbsp;identifying&nbsp;sector&nbsp;position,&nbsp;label,&nbsp;a&nbsp;start&nbsp;<br>
+volume&nbsp;and&nbsp;a&nbsp;maximum&nbsp;volume</tt></dd></dl>
+
+<dl><dt><a name="Tube-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>A&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;tube</tt></dd></dl>
+
+<dl><dt><a name="Tube-addVolume"><strong>addVolume</strong></a>(self, volume_uL)</dt><dd><tt>Add&nbsp;a&nbsp;volume&nbsp;(in&nbsp;uL)&nbsp;to&nbsp;the&nbsp;tube</tt></dd></dl>
+
+<dl><dt><a name="Tube-empty"><strong>empty</strong></a>(self)</dt><dd><tt>Empty&nbsp;the&nbsp;tube</tt></dd></dl>
+
+<dl><dt><a name="Tube-getBasePosition"><strong>getBasePosition</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;position&nbsp;of&nbsp;the&nbsp;tube&nbsp;base&nbsp;wrt&nbsp;global&nbsp;coordinates</tt></dd></dl>
+
+<dl><dt><a name="Tube-getDeadVolume"><strong>getDeadVolume</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;dead&nbsp;volume&nbsp;unavailable&nbsp;fo&nbsp;raspiration&nbsp;(in&nbsp;uL)</tt></dd></dl>
+
+<dl><dt><a name="Tube-getLabel"><strong>getLabel</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;tube&nbsp;label</tt></dd></dl>
+
+<dl><dt><a name="Tube-getMaxHeight"><strong>getMaxHeight</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;height&nbsp;of&nbsp;the&nbsp;meniscus&nbsp;at&nbsp;full&nbsp;volume</tt></dd></dl>
+
+<dl><dt><a name="Tube-getMaxVolume"><strong>getMaxVolume</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;maximum&nbsp;volume&nbsp;the&nbsp;tube&nbsp;can&nbsp;hold&nbsp;(in&nbsp;uL)</tt></dd></dl>
+
+<dl><dt><a name="Tube-getMeniscus"><strong>getMeniscus</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;current&nbsp;position&nbsp;of&nbsp;meniscus&nbsp;from&nbsp;base&nbsp;of&nbsp;tube</tt></dd></dl>
+
+<dl><dt><a name="Tube-getMeniscusAfterAdding"><strong>getMeniscusAfterAdding</strong></a>(self, addedVolume)</dt><dd><tt>Return&nbsp;the&nbsp;position&nbsp;of&nbsp;meniscus&nbsp;after&nbsp;adding&nbsp;a&nbsp;given&nbsp;volume</tt></dd></dl>
+
+<dl><dt><a name="Tube-getMeniscusAfterRemoving"><strong>getMeniscusAfterRemoving</strong></a>(self, removedVolume)</dt><dd><tt>Return&nbsp;the&nbsp;position&nbsp;of&nbsp;meniscus&nbsp;after&nbsp;removing&nbsp;a&nbsp;given&nbsp;volume</tt></dd></dl>
+
+<dl><dt><a name="Tube-getSector"><strong>getSector</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;tube&nbsp;sector&nbsp;position</tt></dd></dl>
+
+<dl><dt><a name="Tube-getVolume"><strong>getVolume</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;current&nbsp;tube&nbsp;volume&nbsp;(in&nbsp;uL)</tt></dd></dl>
+
+<dl><dt><a name="Tube-removeVolume"><strong>removeVolume</strong></a>(self, volume_uL)</dt><dd><tt>Remove&nbsp;a&nbsp;volume&nbsp;(in&nbsp;uL)&nbsp;from&nbsp;the&nbsp;tube</tt></dd></dl>
+
+<dl><dt><a name="Tube-setVolume"><strong>setVolume</strong></a>(self, volume_uL)</dt><dd><tt>Set&nbsp;the&nbsp;tube&nbsp;volume&nbsp;(in&nbsp;uL).</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TubeException">class <strong>TubeException</strong></a>(<a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Exceptions&nbsp;caused&nbsp;by&nbsp;tube&nbsp;problems;&nbsp;usually&nbsp;trying&nbsp;to&nbsp;overfill&nbsp;the<br>
+tube.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="tube.html#TubeException">TubeException</a></dd>
+<dd><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a></dd>
+<dd><a href="exceptions.html#StandardError">exceptions.StandardError</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="TubeException-__getitem__"><strong>__getitem__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TubeException-__init__"><strong>__init__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TubeException-__str__"><strong>__str__</strong></a>(...)</dt></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

@@ -1,0 +1,165 @@
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\GUI_Console.pdb
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\ApplicationLog.dll
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\Common.dll
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\CommonResources.dll
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\DataAccess.dll
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\GUI_Controls.dll
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\InstrumentControlAPI.dll
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\SeparatorAPI.dll
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\CookComputing.XmlRpc.dll
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\Common.pdb
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\CommonResources.pdb
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\InstrumentControlAPI.pdb
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\InstrumentControlAPI.xml
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\DataAccess.pdb
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\SeparatorAPI.pdb
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\GUI_Controls.pdb
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\fr-FR\CommonResources.resources.dll
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.FileBrowser.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.Form1.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\CWJ_Console.FrmCWJMain.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_About.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_ProtocolList.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_Protocols.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_ProtocolSelect.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_Resources.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_RunProgress.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_RunSamples.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_RunStatsLog.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.Properties.Resources.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_ServiceLogin.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_System.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_UserConsole.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_Splash.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_UserProtocolList.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_VideoHelp.resources
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\ResGen.read.1.tlog
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\ResGen.write.1.tlog
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.pdb
+C:\Projects\TESLA\Client\CWJ_Console\bin\Debug\GUI_Console.dll
+C:\Projects\TESLA\Client\CWJ_Console\obj\x86\Debug\GUI_Console.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\GUI_Console.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\GUI_Console.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\ApplicationLog.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\Common.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\CommonResources.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\DataAccess.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\GUI_Controls.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\InstrumentControlAPI.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\SeparatorAPI.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\CookComputing.XmlRpc.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\Common.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\CommonResources.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\InstrumentControlAPI.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\InstrumentControlAPI.xml
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\DataAccess.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\SeparatorAPI.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\GUI_Controls.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\bin\Debug\fr-FR\CommonResources.resources.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.FileBrowser.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.Form1.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\CWJ_Console.FrmCWJMain.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_About.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_ProtocolList.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_Protocols.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_ProtocolSelect.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_Resources.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_RunProgress.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_RunSamples.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_RunStatsLog.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.Properties.Resources.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_ServiceLogin.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_System.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_UserConsole.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_Splash.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_UserProtocolList.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_VideoHelp.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GenerateResource-ResGen.read.4.tlog
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\CWJ_Console\obj\x86\Debug\GUI_Console.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\GUI_Console.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\GUI_Console.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\ApplicationLog.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\Common.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\CommonResources.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\DataAccess.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\GUI_Controls.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\InstrumentControlAPI.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\SeparatorAPI.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\CookComputing.XmlRpc.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\Common.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\CommonResources.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\InstrumentControlAPI.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\InstrumentControlAPI.xml
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\DataAccess.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\SeparatorAPI.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\fr-FR\CommonResources.resources.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.FileBrowser.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.Form1.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\CWJ_Console.FrmCWJMain.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_About.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_ProtocolList.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_Protocols.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_ProtocolSelect.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_Resources.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_RunProgress.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_RunSamples.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_RunStatsLog.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.Properties.Resources.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_ServiceLogin.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_System.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_UserConsole.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_Splash.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_UserProtocolList.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_VideoHelp.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GenerateResource-ResGen.read.4.tlog
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\obj\x86\Debug\GUI_Console.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\CWJ_Console\bin\Debug\GUI_Controls.pdb
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\GUI_Console.dll
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\GUI_Console.pdb
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\ApplicationLog.dll
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\Common.dll
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\CommonResources.dll
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\DataAccess.dll
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\GUI_Controls.dll
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\InstrumentControlAPI.dll
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\SeparatorAPI.dll
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\CookComputing.XmlRpc.dll
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\Common.pdb
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\CommonResources.pdb
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\InstrumentControlAPI.pdb
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\InstrumentControlAPI.xml
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\DataAccess.pdb
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\SeparatorAPI.pdb
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\GUI_Controls.pdb
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\bin\Debug\fr-FR\CommonResources.resources.dll
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.csprojResolveAssemblyReference.cache
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.FileBrowser.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.Form1.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\CWJ_Console.FrmCWJMain.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_About.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_ProtocolList.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_Protocols.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_ProtocolSelect.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_Resources.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_RunProgress.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_RunSamples.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_RunStatsLog.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.Properties.Resources.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_ServiceLogin.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_System.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_UserConsole.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_Splash.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_UserProtocolList.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.RoboSep_VideoHelp.resources
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.csproj.GenerateResource.Cache
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.dll
+D:\Projects-git\INS-RoboSep-S\Service\CWJ_Console\obj\x86\Debug\GUI_Console.pdb

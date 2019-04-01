@@ -1,0 +1,243 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module interface</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>interface</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/tesla/dev/dev001/control/tesla/interface.py">c:\projects\tesla\dev\dev001\control\tesla\interface.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;interface.py<br>
+#&nbsp;The&nbsp;RoboSep&nbsp;instrument&nbsp;interface&nbsp;that&nbsp;is&nbsp;used&nbsp;by&nbsp;the&nbsp;XML-RPC&nbsp;gateway<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="inspect.html">inspect</a><br>
+<a href="re.html">re</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+<a href="tesla.html">tesla</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+<a href="xmlrpclib.html">xmlrpclib</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="interface.html#InstrumentInterface">InstrumentInterface</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="InstrumentInterface">class <strong>InstrumentInterface</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;published&nbsp;RoboSep&nbsp;instrument&nbsp;XML-RPC&nbsp;interface.<br>
+&nbsp;<br>
+Note&nbsp;that&nbsp;to&nbsp;work&nbsp;with&nbsp;the&nbsp;.NET&nbsp;XML-RPC&nbsp;library&nbsp;(<a href="http://www.xml-rpc.net/">http://www.xml-rpc.net/</a>),<br>
+DateTime&nbsp;values&nbsp;are&nbsp;passed&nbsp;out&nbsp;in&nbsp;a&nbsp;modified&nbsp;ISO&nbsp;8601&nbsp;format&nbsp;which&nbsp;is<br>
+YYYYMMDDTHH:MM::SS&nbsp;(eg.&nbsp;20040309T16:34:13).<br>
+&nbsp;<br>
+Note&nbsp;that&nbsp;any&nbsp;exception&nbsp;caught&nbsp;here&nbsp;has&nbsp;already&nbsp;been&nbsp;logged.&nbsp;We&nbsp;should&nbsp;only<br>
+be&nbsp;logging&nbsp;new&nbsp;exceptions&nbsp;that&nbsp;we&nbsp;are&nbsp;responsible&nbsp;for;&nbsp;eg.&nbsp;handling&nbsp;bad<br>
+input&nbsp;data&nbsp;from&nbsp;client.<br>
+ControlException&nbsp;exceptions&nbsp;(and&nbsp;other&nbsp;exceptions&nbsp;that&nbsp;bubble&nbsp;up&nbsp;from&nbsp;lower&nbsp;<br>
+levels)&nbsp;should&nbsp;not&nbsp;cause&nbsp;the&nbsp;gateway&nbsp;to&nbsp;die;&nbsp;but&nbsp;to&nbsp;simply&nbsp;trigger&nbsp;an&nbsp;<br>
+XML-RPC&nbsp;exception&nbsp;on&nbsp;the&nbsp;client&nbsp;side.<br>
+&nbsp;<br>
+Note&nbsp;that&nbsp;there&nbsp;is&nbsp;one&nbsp;method&nbsp;that&nbsp;is&nbsp;available&nbsp;through&nbsp;this&nbsp;interface<br>
+that&nbsp;are&nbsp;shared&nbsp;with&nbsp;the&nbsp;service&nbsp;interface,&nbsp;and&nbsp;defined&nbsp;in&nbsp;gateway.py:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;halt()<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="InstrumentInterface-__init__"><strong>__init__</strong></a>(self, gatewayURL, controlCentre, interfaceVersion<font color="#909090">='2.1.1'</font>)</dt><dd><tt>Interface&nbsp;constructor,&nbsp;called&nbsp;by&nbsp;the&nbsp;Python&nbsp;application.<br>
+NOTE:&nbsp;This&nbsp;method&nbsp;is&nbsp;not&nbsp;accessible&nbsp;from&nbsp;the&nbsp;XML-RPC&nbsp;interface!<br>
+&nbsp;<br>
+gatewayURL&nbsp;is&nbsp;the&nbsp;URL&nbsp;(including&nbsp;port&nbsp;number)&nbsp;for&nbsp;the&nbsp;XML-RPC&nbsp;server,<br>
+and&nbsp;is&nbsp;reported&nbsp;back&nbsp;as&nbsp;part&nbsp;of&nbsp;<a href="#InstrumentInterface-getServerInfo">getServerInfo</a>().<br>
+An&nbsp;example&nbsp;is:&nbsp;<a href="http://localhost:8000">http://localhost:8000</a><br>
+&nbsp;<br>
+controlCentre&nbsp;is&nbsp;an&nbsp;instance&nbsp;of&nbsp;tesla.control.centre&nbsp;and&nbsp;is&nbsp;the<br>
+"brains"&nbsp;of&nbsp;the&nbsp;control&nbsp;layer.<br>
+&nbsp;<br>
+interfaceVersion&nbsp;is&nbsp;a&nbsp;version&nbsp;number&nbsp;for&nbsp;the&nbsp;interface&nbsp;revision</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-abortRun"><strong>abortRun</strong></a>(self)</dt><dd><tt>Abort/eStop&nbsp;a&nbsp;currently-executing&nbsp;run.&nbsp;There&nbsp;is&nbsp;NO&nbsp;graceful<br>
+termination&nbsp;of&nbsp;the&nbsp;current&nbsp;run;&nbsp;the&nbsp;instrument&nbsp;is&nbsp;simply&nbsp;STOPPED.<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;(boolean)&nbsp;flag,&nbsp;not&nbsp;used</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-calculateConsumables"><strong>calculateConsumables</strong></a>(self, protocolID, sampleVolume)</dt><dd><tt>Return&nbsp;a&nbsp;map&nbsp;of&nbsp;consumables&nbsp;needed&nbsp;for&nbsp;the&nbsp;specified&nbsp;protocol&nbsp;and&nbsp;<br>
+sample&nbsp;volume.<br>
+IN:&nbsp;protocolID&nbsp;=&nbsp;(int)&nbsp;unique&nbsp;protocol&nbsp;ID,&nbsp;obtained&nbsp;from&nbsp;<a href="#InstrumentInterface-getProtocols">getProtocols</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sampleVolume&nbsp;=&nbsp;(double)&nbsp;sammple&nbsp;volume&nbsp;(in&nbsp;uL)<br>
+OUT:&nbsp;A&nbsp;list&nbsp;of&nbsp;ProtocolConsumable&nbsp;objects</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-enterServiceState"><strong>enterServiceState</strong></a>(self)</dt><dd><tt>Changes&nbsp;the&nbsp;instrument&nbsp;state&nbsp;from&nbsp;IDLE&nbsp;to&nbsp;SERVICE<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;(boolean)&nbsp;flag&nbsp;on&nbsp;success&nbsp;of&nbsp;state&nbsp;change</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-execute"><strong>execute</strong></a>(self, objectName, method, arguments)</dt><dd><tt>Execute&nbsp;command&nbsp;given&nbsp;by&nbsp;the&nbsp;arguments<br>
+IN:&nbsp;objectName&nbsp;=&nbsp;(string)&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;hardware&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;(eg.&nbsp;device)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;method&nbsp;=&nbsp;(string)&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;method&nbsp;to&nbsp;execute&nbsp;on&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;arguments&nbsp;=&nbsp;(string)&nbsp;arguments&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;method<br>
+OUT:&nbsp;(string)&nbsp;results&nbsp;of&nbsp;method&nbsp;call</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-exitServiceState"><strong>exitServiceState</strong></a>(self)</dt><dd><tt>Changes&nbsp;the&nbsp;instrument&nbsp;state&nbsp;to&nbsp;SERVICE&nbsp;to&nbsp;IDLE<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;(boolean)&nbsp;flag&nbsp;on&nbsp;success&nbsp;of&nbsp;state&nbsp;change</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-getContainerVolumes"><strong>getContainerVolumes</strong></a>(self)</dt><dd><tt>Returns&nbsp;configured&nbsp;volumes&nbsp;for&nbsp;containers&nbsp;used&nbsp;by&nbsp;the&nbsp;instrument</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-getErrorLog"><strong>getErrorLog</strong></a>(self, numEntries<font color="#909090">=10</font>, entryOffset<font color="#909090">=0</font>)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;entries&nbsp;(as&nbsp;strings)&nbsp;from&nbsp;the&nbsp;instrument&nbsp;error&nbsp;log.&nbsp;<br>
+IN:&nbsp;(int)&nbsp;numEntries,&nbsp;specifies&nbsp;how&nbsp;many&nbsp;entries&nbsp;to&nbsp;return.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(int)&nbsp;entryOffset,&nbsp;specifies&nbsp;which&nbsp;entry&nbsp;to&nbsp;start&nbsp;at.&nbsp;0-indexed.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Defaults&nbsp;to&nbsp;0.<br>
+OUT:&nbsp;A&nbsp;list&nbsp;of&nbsp;(string)&nbsp;error&nbsp;entries</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-getHostConfiguration"><strong>getHostConfiguration</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;map&nbsp;of&nbsp;host&nbsp;configuration&nbsp;information;&nbsp;for&nbsp;debug/diagnostic&nbsp;<br>
+purposes<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;A&nbsp;list&nbsp;of&nbsp;(string)&nbsp;host&nbsp;configuration&nbsp;information.</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-getInstrumentState"><strong>getInstrumentState</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;current&nbsp;instrument&nbsp;state.<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;(string)&nbsp;Instrument&nbsp;state</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-getInstrumentStatus"><strong>getInstrumentStatus</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;instrument&nbsp;status&nbsp;fields&nbsp;-&nbsp;work&nbsp;in&nbsp;progress<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;A&nbsp;list&nbsp;of&nbsp;(string)</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-getProtocols"><strong>getProtocols</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;known&nbsp;separation&nbsp;protocols.<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;A&nbsp;list&nbsp;of&nbsp;ClientProtocol&nbsp;objects</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-getServerInfo"><strong>getServerInfo</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;server&nbsp;information.<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;A&nbsp;list&nbsp;of&nbsp;(string)&nbsp;gateway&nbsp;URL,&nbsp;(string)&nbsp;interface&nbsp;version,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string)&nbsp;uptime&nbsp;in&nbsp;seconds,&nbsp;(string)&nbsp;instrument&nbsp;version&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string)&nbsp;instrument&nbsp;serial&nbsp;number</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-getServiceFunctionList"><strong>getServiceFunctionList</strong></a>(self)</dt><dd><tt>Return&nbsp;all&nbsp;the&nbsp;information&nbsp;the&nbsp;client&nbsp;needs&nbsp;for&nbsp;each&nbsp;function<br>
+in&nbsp;the&nbsp;function&nbsp;list.<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;A&nbsp;list&nbsp;of&nbsp;lists&nbsp;of&nbsp;strings</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-getSubscriberList"><strong>getSubscriberList</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;event&nbsp;server&nbsp;subscriptions.<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;A&nbsp;list&nbsp;of&nbsp;(string)&nbsp;subscribers</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-haltRun"><strong>haltRun</strong></a>(self)</dt><dd><tt>Halt&nbsp;a&nbsp;currently-executing&nbsp;run.&nbsp;The&nbsp;run&nbsp;is&nbsp;stopped&nbsp;as<br>
+gracefully&nbsp;as&nbsp;possible&nbsp;(all&nbsp;axes&nbsp;are&nbsp;sent&nbsp;back&nbsp;to&nbsp;safe<br>
+positions,&nbsp;etc.).<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;(boolean)&nbsp;flag,&nbsp;not&nbsp;used</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-pauseRun"><strong>pauseRun</strong></a>(self)</dt><dd><tt>Pause&nbsp;a&nbsp;currently-executing&nbsp;run.&nbsp;The&nbsp;run&nbsp;can&nbsp;then&nbsp;be&nbsp;resumed<br>
+by&nbsp;calling&nbsp;the&nbsp;<a href="#InstrumentInterface-resumeRun">resumeRun</a>()&nbsp;method,&nbsp;but&nbsp;the&nbsp;validity&nbsp;of&nbsp;the<br>
+chemistries&nbsp;can&nbsp;not&nbsp;be&nbsp;guaranteed&nbsp;(for&nbsp;example,&nbsp;cells&nbsp;may&nbsp;have<br>
+dried&nbsp;out&nbsp;or&nbsp;been&nbsp;separated&nbsp;for&nbsp;too&nbsp;long).<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;(boolean)&nbsp;flag,&nbsp;not&nbsp;used</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-ping"><strong>ping</strong></a>(self)</dt><dd><tt>Are&nbsp;we&nbsp;there?&nbsp;This&nbsp;is&nbsp;for&nbsp;basic&nbsp;keep-alive&nbsp;testing.<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;(boolean)&nbsp;True</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-resumeRun"><strong>resumeRun</strong></a>(self)</dt><dd><tt>Resume&nbsp;a&nbsp;paused&nbsp;run.&nbsp;This&nbsp;will&nbsp;ONLY&nbsp;work&nbsp;if&nbsp;the<br>
+<a href="#InstrumentInterface-pauseRun">pauseRun</a>()&nbsp;method&nbsp;has&nbsp;been&nbsp;callled.<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;(boolean)&nbsp;status,&nbsp;true&nbsp;if&nbsp;the&nbsp;run&nbsp;could&nbsp;be&nbsp;resumed</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-scheduleRun"><strong>scheduleRun</strong></a>(self, samples)</dt><dd><tt>Schedule&nbsp;1&nbsp;-&nbsp;4&nbsp;samples&nbsp;to&nbsp;run.&nbsp;Stores&nbsp;the&nbsp;ETC&nbsp;and&nbsp;batch&nbsp;<a href="__builtin__.html#object">object</a>.<br>
+IN:&nbsp;samples&nbsp;=&nbsp;A&nbsp;list&nbsp;of&nbsp;1&nbsp;-&nbsp;4&nbsp;Sample&nbsp;objects<br>
+OUT:&nbsp;(ISO&nbsp;8601)&nbsp;Estimated&nbsp;Time&nbsp;*of*&nbsp;Completion,&nbsp;aka&nbsp;"ETC"</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-shutdown"><strong>shutdown</strong></a>(self, powerDown<font color="#909090">=True</font>)</dt><dd><tt>Move&nbsp;the&nbsp;instrument&nbsp;to&nbsp;the&nbsp;SHUTTINGDOWN&nbsp;(and&nbsp;then&nbsp;the&nbsp;SHUTDOWN)&nbsp;state.<br>
+IN:&nbsp;(boolean)&nbsp;if&nbsp;true,&nbsp;power&nbsp;down&nbsp;the&nbsp;instrument<br>
+OUT:&nbsp;(boolean)&nbsp;True,&nbsp;not&nbsp;used</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-startRun"><strong>startRun</strong></a>(self, samples, userID<font color="#909090">='unknown'</font>)</dt><dd><tt>Start&nbsp;the&nbsp;scheduled&nbsp;run.<br>
+IN:&nbsp;samples&nbsp;=&nbsp;A&nbsp;list&nbsp;of&nbsp;1&nbsp;-&nbsp;4&nbsp;Sample&nbsp;objects<br>
+&nbsp;&nbsp;&nbsp;&nbsp;userID&nbsp;=&nbsp;(string)&nbsp;optional&nbsp;user/operator&nbsp;ID&nbsp;<br>
+OUT:&nbsp;(ISO&nbsp;8601)&nbsp;Estimated&nbsp;Time&nbsp;*of*&nbsp;Completion,&nbsp;aka&nbsp;"ETC"</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-subscribe"><strong>subscribe</strong></a>(self, serverURL)</dt><dd><tt>Subscribe&nbsp;an&nbsp;XML-RPC&nbsp;server&nbsp;to&nbsp;call&nbsp;events&nbsp;on.&nbsp;(overridding&nbsp;the&nbsp;base<br>
+class&nbsp;<a href="#InstrumentInterface-subscribe">subscribe</a>()&nbsp;method).<br>
+&nbsp;<br>
+The&nbsp;XML-RPC&nbsp;server&nbsp;has&nbsp;to&nbsp;have&nbsp;the&nbsp;following&nbsp;methods:<br>
+*&nbsp;<a href="#InstrumentInterface-ping">ping</a>(void)<br>
+*&nbsp;reportStatus(string&nbsp;status)<br>
+*&nbsp;reportError(int&nbsp;level,&nbsp;string&nbsp;message)<br>
+*&nbsp;reportETC(string&nbsp;ETC)<br>
+&nbsp;<br>
+The&nbsp;ETC&nbsp;string&nbsp;that&nbsp;we&nbsp;pass&nbsp;to&nbsp;reportETC()&nbsp;should&nbsp;be&nbsp;in&nbsp;modified&nbsp;<br>
+ISO-8601&nbsp;format;&nbsp;eg.&nbsp;20040309T16:34:13<br>
+&nbsp;<br>
+The&nbsp;first&nbsp;time&nbsp;a&nbsp;client&nbsp;subscribes,&nbsp;the&nbsp;instrument&nbsp;will&nbsp;be<br>
+initialised&nbsp;(moved&nbsp;to&nbsp;the&nbsp;INIT&nbsp;state),&nbsp;which&nbsp;initialises<br>
+robotic&nbsp;axes,&nbsp;fluidics,&nbsp;etc.<br>
+&nbsp;<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;(boolean)&nbsp;True&nbsp;(always)</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-testSubscriber"><strong>testSubscriber</strong></a>(self, subscriber)</dt><dd><tt>Test&nbsp;the&nbsp;connection&nbsp;to&nbsp;the&nbsp;subscriber&nbsp;by&nbsp;pinging&nbsp;it<br>
+IN:&nbsp;(string)&nbsp;subscriber&nbsp;URL&nbsp;<br>
+OUT:&nbsp;(boolean)&nbsp;success&nbsp;flag</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-turnOff"><strong>turnOff</strong></a>(self)</dt><dd><tt>Move&nbsp;the&nbsp;instrument&nbsp;to&nbsp;its&nbsp;powered&nbsp;off&nbsp;state<br>
+IN:&nbsp;Nothing<br>
+OUT:&nbsp;(boolean)&nbsp;True,&nbsp;not&nbsp;used</tt></dd></dl>
+
+<dl><dt><a name="InstrumentInterface-unsubscribe"><strong>unsubscribe</strong></a>(self, serverURL)</dt><dd><tt>Unsubscribe&nbsp;the&nbsp;specified&nbsp;server.&nbsp;<br>
+IN:&nbsp;(string)&nbsp;serverURL<br>
+OUT:&nbsp;(boolean)&nbsp;unsubscription&nbsp;success&nbsp;flag,&nbsp;false&nbsp;indicates&nbsp;that&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server&nbsp;wasn't&nbsp;subscribed</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x00B00DF0&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'InstrumentInterface' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;(if&nbsp;defined)</tt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>ERROR_LEVEL</strong> = 2<br>
+<strong>INTERFACE_VERSION</strong> = '2.1.1'<br>
+<strong>WARNING_LEVEL</strong> = 1</td></tr></table>
+</body></html>

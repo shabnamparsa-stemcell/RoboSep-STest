@@ -1,0 +1,157 @@
+﻿# ----------------------------------------------------------------------------
+#  errorConfig.txt
+# 
+#  Invetech Pty Ltd
+#  Victoria, 3149, Australia
+#  Phone:   (+61) 3 9211 7700
+#  Fax:     (+61) 3 9211 7701
+# 
+#  The copyright to the computer program(s) herein is the property of 
+#  Invetech Pty Ltd, Australia.
+#  The program(s) may be used and/or copied only with the written permission 
+#  of Invetech Pty Ltd or in accordance with the terms and conditions 
+#  stipulated in the agreement/contract under which the program(s)
+#  have been supplied.
+#  
+#  Copyright © 2004. All Rights Reserved.
+# 
+# ----------------------------------------------------------------------------
+# ROBOSEP ERROR CODES
+# -------------------
+#
+#	--- NOTE: THIS FILE SHOULD BE SAVED WITH UTF-8 ENCODING ---
+#
+# Codes are grouped in logical blocks of up to 1000 messages.
+# Message strings that require parameter substitution at run-time must be compatible with the .NET Framework String.Format() routine.
+#
+# ---
+# Code groups 0000-0999 represent hardware-level errors.
+# ---
+#
+# 0000 - 0099 represent fundamental hardware problems.
+#
+TEC0000=Reserved for future use.
+TEC0001=Unspecified instrument controller error: {0}.
+
+#
+# 0100 - 199: Instrument-level errors
+#
+TEC0100=Placeholder for instrument error.
+TEC0101=Unspecified Instrument hardware layer error: {0}.
+TEC0102=Unspecified workflow dispatch error.
+
+#
+# 0200 - 299: Tip stripper errors
+#
+TEC0200=Can not communicate with tip stripper.
+TEC0210=Unable to engage tip.
+TEC0211=Unable to disengage tip.
+
+#
+# 0300 - 399: Carousel errors
+#
+TEC0300=Can not communicate with carousel.
+TEC0302=Carousel command syntax error.
+TEC0303=Carousel is not homed.
+TEC0304=Carousel initialized but no home sensor being used.
+TEC0305=Carousel parameter out of range.
+TEC0320=Can not home carousel.
+TEC0321=Carousel step loss.
+
+#
+# 0400 - 499: DRD pump errors
+#
+TEC0400=Can not communicate with DRD pump.
+TEC0402=DRD pump command syntax error.
+TEC0403=DRD pump not homed.
+TEC0404=DRD pump initialized but no home sensor being used.
+TEC0405=DRD pump parameter out of range.
+TEC0420=Can not home DRD pump.
+TEC0421=DRD pump step loss.
+
+#
+# 0500 - 599: Z axis errors
+#
+TEC0500=Can not communicate with Z axis.
+TEC0502=Z axis command syntax error.
+TEC0503=Z axis is not homed.
+TEC0504=Z axis initialized but no home sensor being used.
+TEC0505=Z axis parameter out of range.
+TEC0520=Can not home Z axis.
+TEC0521=Z axis step loss.
+
+#
+# 0600 - 699: Theta axis errors
+#
+TEC0600=Can not communicate with theta axis.
+TEC0602=Theta axis command syntax error.
+TEC0603=Theta axis not homed.
+TEC0604=Theta axis initialized but no home sensor being used.
+TEC0605=Theta axis parameter out of range.
+TEC0620=Can not home theta axis.
+TEC0621=Theta axis step loss.
+
+#
+# 0700 - 700: Generic stepper card errors
+#
+TEC0700=Stepper card axis error: {0}.
+
+# ------------------------------------------------------------
+#
+# Code groups 1000 - 1999 represent errors that are not
+# related directly to hardware                 
+#
+TEC1000=Placeholder.
+
+#
+# 1100 - 1199: File, directory & disk errors
+#
+TEC1100=Unable to read hardware.ini file.
+TEC1101=Insufficient disk space ({0} bytes).
+
+#
+# 1200 - 1299: Control center errors
+#
+TEC1200=Incorrect state: {0}.
+TEC1201=In wrong state ({0}) to turn off instrument.
+TEC1202=Not in IDLE state.
+TEC1203=No status code for {0} state.
+
+TEC1210=Initialization sequence failed: {0}.
+
+TEC1220=Scheduler exception: {0}.
+TEC1221=Empty schedule for samples.
+TEC1222=Not able to schedule samples.
+
+TEC1230=Could not start run: {0}
+TEC1231=Unable to pause run.
+
+TEC1240=Could not get reagent volume information: {0}.
+TEC1241=Reagent calculation failure: {0}.
+
+TEC1250=Expected one shutdown sample, not {0}.
+
+#
+# 1300 - 1399: Instrument interface errors
+#
+TEC1300=Instrument communications failure: {0}.
+
+#
+# 1400 - 1499: Service errors
+#
+TEC1400=Not in Service state (in {0} state).
+
+TEC1410=No match for {0} object.
+TEC1411={0} is an invalid call.
+
+
+# ------------------------------------------------------------
+#
+# Code groups 9000 - 9999 are for internal use: debugging,
+# testing, etc.
+#
+
+TEC9998=Control center error testing {0} {1}.
+TEC9999=Instrument interface error testing {0} {1}.
+
+# eof

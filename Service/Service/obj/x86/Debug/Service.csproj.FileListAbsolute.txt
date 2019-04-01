@@ -1,0 +1,296 @@
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Service.exe
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Service.exe.config
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisControlBG.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisPump1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisPump2.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisPump3.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\Carousel2.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CoarseFine1.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CoarseFine2.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ConnectButton0.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ConnectButton1.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\HardwareInfoBG.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\StepSize.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\Theta2.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ThetaDisabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ThetaEnabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\TipStripperDisabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\TipStripperEnabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\VertArm2.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ZDisabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ZEnabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CarouselDecDisabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CarouselDecEnabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CarouselDisabled.PNG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CarouselEnabled.PNG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CarouselIncDisabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CarouselIncEnabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ThetaDecDisabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ThetaDecEnabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ThetaIncDisabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ThetaIncEnabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\TipStripperDisengageDisabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\TipStripperDisengageEnabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\TipStripperEngageEnabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\TipStripperEngageDisabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ZDecDisabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ZDecEnabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ZIncDisabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ZIncEnabled.JPG
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AcceptButton0.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AcceptButton1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AcceptButton2.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AcceptButtonDisable.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisBuffer1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisBuffer2.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisBuffer3.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisCarousel1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisCarousel2.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisCarousel3.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisControls.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisControls2.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisControls3.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisStrip1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisStrip2.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisStrip3.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisTheta1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisTheta2.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\AxisTheta3.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\BackButton0.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\BackButton1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\BackButton2.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\BackButtonDisable.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\Carousel0.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\Carousel1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CarouselCClockwise0.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CarouselCClockwise1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CarouselClockwise0.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CarouselClockwise1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\Checkbox1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\Checkbox2.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CornerBL.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CornerBR.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CornerTL.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CornerTR.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CourseFine0.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CourseFine1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\CourseFine2.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\HelpTab0.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\HelpTab1.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\LED_0.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\LED_1.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\LED_2.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\MainMenuSelection.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\RestoreButton0.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\RestoreButton1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\RestoreButton2.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\RestoreButtonDisable.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ServiceBG.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ServiceButton0.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ServiceButton1.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ServiceButton2.bmp
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\Theta0.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\Theta1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ThetaLeft0.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ThetaLeft1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ThetaRight0.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\ThetaRight1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\VertArm0.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\VertArm1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\VertArmDown0.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\VertArmDown1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\VertArmUp0.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\VertArmUp1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\vertAxis1.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\vertAxis2.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Resources\vertAxis3.png
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\Service.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Service\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Service\obj\x86\Debug\Tesla.Service.RoboSepServiceManualStepControl.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Service\obj\x86\Debug\Tesla.Service.ServiceDialog.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Service\obj\x86\Debug\Tesla.Service.Properties.Resources.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Service\obj\x86\Debug\Tesla.Service.ServiceLogin.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Service\obj\x86\Debug\Tesla.Service.ServiceMenu.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Service\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Service\obj\x86\Debug\GenerateResource-ResGen.read.4.tlog
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Service\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Service\obj\x86\Debug\Service.exe
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Service\obj\x86\Debug\Service.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Service.exe.config
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisControlBG.JPG
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisPump1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisPump2.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisPump3.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\Carousel2.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\ConnectButton0.bmp
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\ConnectButton1.bmp
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\HardwareInfoBG.JPG
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\StepSize.JPG
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\test1.avi
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\test2.avi
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\test3.avi
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\Theta2.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\VertArm2.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\CarouselDisabled.PNG
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\CarouselEnabled.PNG
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AcceptButton0.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AcceptButton1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AcceptButton2.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AcceptButtonDisable.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisBuffer1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisBuffer2.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisBuffer3.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisCarousel1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisCarousel2.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisCarousel3.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisControls.bmp
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisControls2.bmp
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisControls3.bmp
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisStrip1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisStrip2.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisStrip3.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisTheta1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisTheta2.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\AxisTheta3.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\BackButton0.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\BackButton1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\BackButton2.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\BackButtonDisable.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\Carousel0.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\Carousel1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\CarouselCClockwise0.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\CarouselCClockwise1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\CarouselClockwise0.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\CarouselClockwise1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\CornerBL.bmp
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\CornerBR.bmp
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\CornerTL.bmp
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\CornerTR.bmp
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\CourseFine0.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\CourseFine1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\CourseFine2.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\HelpTab0.bmp
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\HelpTab1.bmp
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\MainMenuSelection.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\RestoreButton0.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\RestoreButton1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\RestoreButton2.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\RestoreButtonDisable.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\ServiceBG.bmp
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\Theta0.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\Theta1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\ThetaLeft0.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\ThetaLeft1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\ThetaRight0.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\ThetaRight1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\VertArm0.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\VertArm1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\VertArmDown0.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\VertArmDown1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\VertArmUp0.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\VertArmUp1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\vertAxis1.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\vertAxis2.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Resources\vertAxis3.png
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Service.exe
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\Service.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\Service\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\_2012_09_10_update\Service\Service\obj\x86\Debug\Tesla.Service.RoboSepServiceManualStepControl.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\Service\obj\x86\Debug\Tesla.Service.ServiceDialog.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\Service\obj\x86\Debug\Tesla.Service.Properties.Resources.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\Service\obj\x86\Debug\Tesla.Service.ServiceLogin.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\Service\obj\x86\Debug\Tesla.Service.ServiceMenu.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\Service\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Projects\TESLA\_2012_09_10_update\Service\Service\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Projects\TESLA\_2012_09_10_update\Service\Service\obj\x86\Debug\Service.exe
+C:\Projects\TESLA\_2012_09_10_update\Service\Service\obj\x86\Debug\Service.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\Service\obj\x86\Debug\GUI_Controls.RoboBarcodeRescanPanel.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\Service\obj\x86\Debug\GenerateResource-ResGen.read.4.tlog
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisControlBG.JPG
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisPump1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisPump2.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisPump3.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\Carousel2.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\ConnectButton0.bmp
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\ConnectButton1.bmp
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\HardwareInfoBG.JPG
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\StepSize.JPG
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\test1.avi
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\test2.avi
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\test3.avi
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\Theta2.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\VertArm2.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\CarouselDisabled.PNG
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\CarouselEnabled.PNG
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AcceptButton0.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AcceptButton1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AcceptButton2.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AcceptButtonDisable.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisBuffer1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisBuffer2.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisBuffer3.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisCarousel1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisCarousel2.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisCarousel3.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisControls.bmp
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisControls2.bmp
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisControls3.bmp
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisStrip1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisStrip2.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisStrip3.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisTheta1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisTheta2.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\AxisTheta3.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\BackButton0.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\BackButton1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\BackButton2.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\BackButtonDisable.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\Carousel0.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\Carousel1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\CarouselCClockwise0.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\CarouselCClockwise1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\CarouselClockwise0.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\CarouselClockwise1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\CornerBL.bmp
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\CornerBR.bmp
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\CornerTL.bmp
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\CornerTR.bmp
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\CourseFine0.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\CourseFine1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\CourseFine2.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\HelpTab0.bmp
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\HelpTab1.bmp
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\MainMenuSelection.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\RestoreButton0.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\RestoreButton1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\RestoreButton2.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\RestoreButtonDisable.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\ServiceBG.bmp
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\Theta0.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\Theta1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\ThetaLeft0.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\ThetaLeft1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\ThetaRight0.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\ThetaRight1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\VertArm0.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\VertArm1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\VertArmDown0.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\VertArmDown1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\VertArmUp0.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\VertArmUp1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\vertAxis1.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\vertAxis2.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Resources\vertAxis3.png
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Service.exe.config
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Service.exe
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\Service.pdb
+D:\Projects-git\INS-RoboSep-S\Service\Service\obj\x86\Debug\Service.csprojResolveAssemblyReference.cache
+D:\Projects-git\INS-RoboSep-S\Service\Service\obj\x86\Debug\GUI_Controls.RoboBarcodeRescanPanel.resources
+D:\Projects-git\INS-RoboSep-S\Service\Service\obj\x86\Debug\Tesla.Service.RoboSepServiceManualStepControl.resources
+D:\Projects-git\INS-RoboSep-S\Service\Service\obj\x86\Debug\Tesla.Service.ServiceDialog.resources
+D:\Projects-git\INS-RoboSep-S\Service\Service\obj\x86\Debug\Tesla.Service.Properties.Resources.resources
+D:\Projects-git\INS-RoboSep-S\Service\Service\obj\x86\Debug\Tesla.Service.ServiceLogin.resources
+D:\Projects-git\INS-RoboSep-S\Service\Service\obj\x86\Debug\Tesla.Service.ServiceMenu.resources
+D:\Projects-git\INS-RoboSep-S\Service\Service\obj\x86\Debug\Service.csproj.GenerateResource.Cache
+D:\Projects-git\INS-RoboSep-S\Service\Service\obj\x86\Debug\Service.exe
+D:\Projects-git\INS-RoboSep-S\Service\Service\obj\x86\Debug\Service.pdb

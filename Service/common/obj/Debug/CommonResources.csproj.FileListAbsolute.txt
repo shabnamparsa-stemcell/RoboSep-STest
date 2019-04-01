@@ -1,0 +1,20 @@
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\CommonResources.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\CommonResources.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\fr-FR\CommonResources.resources.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\common\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\common\obj\Debug\fr-FR\CommonResources.resources.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\common\obj\Debug\CommonResources.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\common\obj\Debug\CommonResources.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\CommonResources.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\CommonResources.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\fr-FR\CommonResources.resources.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\common\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\_2012_09_10_update\Service\common\obj\Debug\fr-FR\CommonResources.resources.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\common\obj\Debug\CommonResources.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\common\obj\Debug\CommonResources.pdb
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\CommonResources.dll
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\CommonResources.pdb
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\fr-FR\CommonResources.resources.dll
+D:\Projects-git\INS-RoboSep-S\Service\common\obj\Debug\fr-FR\CommonResources.resources.dll
+D:\Projects-git\INS-RoboSep-S\Service\common\obj\Debug\CommonResources.dll
+D:\Projects-git\INS-RoboSep-S\Service\common\obj\Debug\CommonResources.pdb

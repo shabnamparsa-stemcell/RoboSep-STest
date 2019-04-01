@@ -1,0 +1,131 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ClientProtocol</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ClientProtocol</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/tesla/dev/dev001/control/tesla/types/clientprotocol.py">c:\projects\tesla\dev\dev001\control\tesla\types\clientprotocol.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;<a href="#ClientProtocol">ClientProtocol</a>.py<br>
+#&nbsp;tesla.types.<a href="#ClientProtocol">ClientProtocol</a><br>
+#<br>
+#&nbsp;Provides&nbsp;a&nbsp;client-level&nbsp;protocol&nbsp;object&nbsp;that&nbsp;captures&nbsp;all&nbsp;of&nbsp;the&nbsp;information<br>
+#&nbsp;that&nbsp;a&nbsp;client&nbsp;needs&nbsp;to&nbsp;set&nbsp;up&nbsp;a&nbsp;sample<br>
+#&nbsp;Notes:<br>
+#&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;is&nbsp;a&nbsp;read-only&nbsp;object&nbsp;as&nbsp;far&nbsp;as&nbsp;the&nbsp;client&nbsp;is&nbsp;concerned<br>
+#&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;is&nbsp;a&nbsp;subset&nbsp;of&nbsp;the&nbsp;InstrumentProtocol&nbsp;object&nbsp;that&nbsp;contains&nbsp;all&nbsp;of<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;information&nbsp;required&nbsp;to&nbsp;run&nbsp;a&nbsp;protocol&nbsp;(each&nbsp;Protocol&nbsp;has&nbsp;a<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matching&nbsp;InstrumentProtocol&nbsp;instance)<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="tesla.html">tesla</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="ClientProtocol.html#ClientProtocol">ClientProtocol</a>
+</font></dt><dt><font face="helvetica, arial"><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>(<a href="exceptions.html#StandardError">exceptions.StandardError</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ClientProtocol.html#ClientProtocolException">ClientProtocolException</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ClientProtocol">class <strong>ClientProtocol</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Define&nbsp;the&nbsp;protocol-related&nbsp;information&nbsp;needed&nbsp;by&nbsp;clients&nbsp;for&nbsp;sample<br>
+processing<br>
+We&nbsp;pass&nbsp;a&nbsp;list&nbsp;of&nbsp;<a href="#ClientProtocol">ClientProtocol</a>&nbsp;objects&nbsp;to&nbsp;a&nbsp;client.&nbsp;The&nbsp;client&nbsp;then&nbsp;<br>
+gives&nbsp;us&nbsp;a&nbsp;list&nbsp;of&nbsp;Sample&nbsp;objects&nbsp;for&nbsp;scheduling,&nbsp;with&nbsp;each&nbsp;Sample&nbsp;having&nbsp;<br>
+a&nbsp;Protocol&nbsp;ID<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ClientProtocol-__init__"><strong>__init__</strong></a>(self, protocolClass, label, minVolume_uL, maxVolume_uL<font color="#909090">=14000</font>, numQuadrants<font color="#909090">=1</font>)</dt><dd><tt>Protocol&nbsp;initialisation,&nbsp;primarily&nbsp;designed&nbsp;to&nbsp;be&nbsp;called&nbsp;by&nbsp;<br>
+__new__().&nbsp;Requires&nbsp;a&nbsp;separation&nbsp;class,&nbsp;a&nbsp;(unique)&nbsp;identifying&nbsp;label,&nbsp;<br>
+a&nbsp;minimum&nbsp;sample&nbsp;volume&nbsp;(in&nbsp;uL),&nbsp;a&nbsp;maximum&nbsp;sample&nbsp;volume&nbsp;(in&nbsp;uL),&nbsp;the<br>
+number&nbsp;of&nbsp;quadrants&nbsp;required&nbsp;by&nbsp;the&nbsp;protocol.<br>
+The&nbsp;class&nbsp;members,&nbsp;as&nbsp;used&nbsp;by&nbsp;the&nbsp;interface&nbsp;clients&nbsp;are:<br>
+&nbsp;<br>
+int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID<br>
+string&nbsp;&nbsp;label<br>
+double&nbsp;&nbsp;minVol<br>
+double&nbsp;&nbsp;maxVol<br>
+string&nbsp;&nbsp;protocolClass<br>
+int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numQuadrants</tt></dd></dl>
+
+<dl><dt><a name="ClientProtocol-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Simple&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;protocol.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>LEGAL_CLASSES</strong> = ['Positive', 'Negative', 'Maintenance', 'Shutdown', 'Testing']</dl>
+
+<dl><dt><strong>MAINTENANCE</strong> = 'Maintenance'</dl>
+
+<dl><dt><strong>NEGATIVE</strong> = 'Negative'</dl>
+
+<dl><dt><strong>POSITIVE</strong> = 'Positive'</dl>
+
+<dl><dt><strong>SHUTDOWN</strong> = 'Shutdown'</dl>
+
+<dl><dt><strong>TEST</strong> = 'Testing'</dl>
+
+<dl><dt><strong>known</strong> = {}</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ClientProtocolException">class <strong>ClientProtocolException</strong></a>(<a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;exception&nbsp;for&nbsp;<a href="#ClientProtocol">ClientProtocol</a>&nbsp;instances.&nbsp;This&nbsp;exception&nbsp;is&nbsp;for<br>
+handling&nbsp;bad&nbsp;data&nbsp;during&nbsp;construction&nbsp;of&nbsp;a&nbsp;<a href="#ClientProtocol">ClientProtocol</a>&nbsp;object.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ClientProtocol.html#ClientProtocolException">ClientProtocolException</a></dd>
+<dd><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a></dd>
+<dd><a href="exceptions.html#StandardError">exceptions.StandardError</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="ClientProtocolException-__getitem__"><strong>__getitem__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ClientProtocolException-__init__"><strong>__init__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ClientProtocolException-__str__"><strong>__str__</strong></a>(...)</dt></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

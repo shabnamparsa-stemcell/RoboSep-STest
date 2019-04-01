@@ -1,0 +1,861 @@
+
+Calibration,Robot_ZAxis,,,,,,"Move to maximum limit ",Device: Robot_ZAxis End;,,S
+Calibration,Robot_ZAxis,,,,,,"Return the firmware version for the card attached to this axis.",Device: Robot_ZAxis GetFirmwareVersion;,,S
+Calibration,Robot_ZAxis,,,,,,"Return our internal tracking of the axis position.",Device: Robot_ZAxis GetPositionTracking;,,S
+Calibration,Robot_ZAxis,,,,,,"Obtain the current half step setting.",Device: Robot_ZAxis HalfStep;,,S
+Calibration,Robot_ZAxis,,,,,,"Homing (override)",Device: Robot_ZAxis Home;,,S
+Calibration,Robot_ZAxis,,,,,,"Obtain home Position",Device: Robot_ZAxis HomePosition;,,S
+Calibration,Robot_ZAxis,,,,,,"Obtain the home step value. By default, this is 0, but it may be reconfigured if home optos are not at start of travel.",Device: Robot_ZAxis HomeStep;,,S
+Calibration,Robot_ZAxis,,,,,,"Obtain the current power settings.",Device: Robot_ZAxis HomingPower;,,S
+Calibration,Robot_ZAxis,,,,,,"Obtain the current homing step speed profile.",Device: Robot_ZAxis HomingStepSpeedProfile;,,S
+Calibration,Robot_ZAxis,,,,,,"Obtain the current power settings used when axis is stationary.",Device: Robot_ZAxis IdlePower;,,S
+Calibration,Robot_ZAxis,,,,,,"Move by relative amount. increment: the relative amount by which to move (in mm)",Device: Robot_ZAxis IncrementPosition increment;,,S
+Calibration,Robot_ZAxis,,,,,,"Move motor by given step increment",Device: Robot_ZAxis IncrementStep stepInc bNonBlocking;,,S
+Calibration,Robot_ZAxis,,,,,,"Determine whether motor needs homing",Device: Robot_ZAxis IsHomed;,,S
+Calibration,Robot_ZAxis,,,,,,"Check whether a step setting is valid. step: the step setting to validate.",Device: Robot_ZAxis IsValid step;,,S
+Calibration,Robot_ZAxis,,,,,,"Return the maximum permitted Position",Device: Robot_ZAxis MaxPosition;,,S
+Calibration,Robot_ZAxis,,,,,,"Return the maximum permitted step count",Device: Robot_ZAxis MaxStep;,,S
+Calibration,Robot_ZAxis,,,,,,"Return the minimum permitted Position",Device: Robot_ZAxis MinPosition;,,S
+Calibration,Robot_ZAxis,,,,,,"Obtain the current Position",Device: Robot_ZAxis Position;,,S
+Calibration,Robot_ZAxis,,,,,,"Obtain the current power settings.",Device: Robot_ZAxis Power;,,S
+Calibration,Robot_ZAxis,,,,,,"Resets the velocity profile back to the default.",Device: Robot_ZAxis ResetHalfStep;,,S
+Calibration,Robot_ZAxis,,,,,,"Reset the home step value to the configured setting.",Device: Robot_ZAxis ResetHomeStep;,,S
+Calibration,Robot_ZAxis,,,,,,"Resets the power back to the default.",Device: Robot_ZAxis ResetHomingPower;,,S
+Calibration,Robot_ZAxis,,,,,,"Resets the homing velocity profile back to the default.",Device: Robot_ZAxis ResetHomingStepSpeedProfile;,,S
+Calibration,Robot_ZAxis,,,,,,"Resets the idle power back to the default.",Device: Robot_ZAxis ResetIdlePower;,,S
+Calibration,Robot_ZAxis,,,,,,"Resets the power back to the default.",Device: Robot_ZAxis ResetPower;,,S
+Calibration,Robot_ZAxis,,,,,,"Resets the velocity profile back to the default.",Device: Robot_ZAxis ResetStepSpeedProfile;,,S
+Calibration,Robot_ZAxis,,,,,,"Set the current half step setting.",Device: Robot_ZAxis SetHalfStep newSetting;,,S
+Calibration,Robot_ZAxis,,,,,,"Override the home step value.",Device: Robot_ZAxis SetHomeStep homeStep;,,S
+Calibration,Robot_ZAxis,,,,,,"Set the current power settings.",Device: Robot_ZAxis SetHomingPower newMax newHold newDecay;,,S
+Calibration,Robot_ZAxis,,,,,,"Sets the velocity profile for subsequent moves.",Device: Robot_ZAxis SetHomingStepSpeedProfile newBeginSpeed newEndSpeed newSlope;,,S
+Calibration,Robot_ZAxis,,,,,,"Set the power settings to use when axis is stationary.",Device: Robot_ZAxis SetIdlePower newMax newHold newDecay;,,S
+Calibration,Robot_ZAxis,,,,,,"Move to absolute Position. position: the new setting (in mm)",Device: Robot_ZAxis SetPosition position;,,S
+Calibration,Robot_ZAxis,,,,,,"Set the internal tracking position.",Device: Robot_ZAxis SetPositionTracking newPosition;,,S
+Calibration,Robot_ZAxis,,,,,,"Set the current power settings.",Device: Robot_ZAxis SetPower newMax newHold newDecay;,,S
+Calibration,Robot_ZAxis,,,,,,"Set the current power settings.",Device: Robot_ZAxis SetPowerFromString profile;,,S
+Calibration,Robot_ZAxis,,,,,,"Move motor to a given step.",Device: Robot_ZAxis SetStep step bNonBlocking;,,S
+Calibration,Robot_ZAxis,,,,,,"Sets the velocity profile for subsequent moves.",Device: Robot_ZAxis SetStepSpeedProfile newBeginSpeed newEndSpeed newSlope;,,S
+Calibration,Robot_ZAxis,,,,,,"Sets the velocity profile for subsequent moves using a string as input.",Device: Robot_ZAxis SetStepSpeedProfileFromString profile;,,S
+Calibration,Robot_ZAxis,,,,,,"Obtain the current step value",Device: Robot_ZAxis Step;,,S
+Calibration,Robot_ZAxis,,,,,,"Obtain the current step speed profile.",Device: Robot_ZAxis StepSpeedProfile;,,S
+Calibration,Robot_ZAxis,,,,,,"Obtain setting for the number of steps per mm",Device: Robot_ZAxis StepsPerMm;,,S
+Calibration,Robot_ZAxis,,,,,,"Override this to validate configuration settings as they are read in. Throw a HardwareSettingsError if a problem is encountered",Device: Robot_ZAxis ValidateSettings;,,S
+Calibration,Robot_ZAxis,,,,,,"Wait for an action to complete.",Device: Robot_ZAxis WaitForCompletion;,,S
+Calibration,Robot_ZAxis,,,,,,"Put settings back to normal mode",Device: Robot_ZAxis _CompleteHoming;,,S
+Calibration,Robot_ZAxis,,,,,,"Return a command list defining the current half step",Device: Robot_ZAxis _HalfStepCmd;,,S
+Calibration,Robot_ZAxis,,,,,,"Tell stepper card to home.",Device: Robot_ZAxis _Home;,,S
+Calibration,Robot_ZAxis,,,,,,"Return a command list defining a step increment",Device: Robot_ZAxis _IncrementCmd increment;,,S
+Calibration,Robot_ZAxis,,,,,,"Check whether axis is at home",Device: Robot_ZAxis _IsAtHome;,,S
+Calibration,Robot_ZAxis,,,,,,"Tell stepper card to move using the specified move command, which dicates an absolute (M) or relative (R) movement and the steps to move to (or by, for a relative move). Loss of position checking happens here.",Device: Robot_ZAxis _Move moveCmd;,,S
+Calibration,Robot_ZAxis,,,,,,"Return a command list defining the step to move to",Device: Robot_ZAxis _MoveCmd step;,,S
+Calibration,Robot_ZAxis,,,,,,"Tell stepper card to move using the specified move command, which dicates an absolute (M) or relative (R) movement and the steps to move to (or by, for a relative move), in a non-blocking fashion. Loss of position checking happens here.",Device: Robot_ZAxis _MoveNonBlocking moveCmd;,,S
+Calibration,Robot_ZAxis,,,,,,"Returns a profile tuple from the given profile string for speed or power. profileString should be of the form '%d, %d, %d' ",Device: Robot_ZAxis _ParseProfile profileString;,,S
+Calibration,Robot_ZAxis,,,,,,"Return a command list defining the current power setting",Device: Robot_ZAxis _PowerCmd powerProfile;,,S
+Calibration,Robot_ZAxis,,,,,,"Pass command string to stepper card. Handle exceptions",Device: Robot_ZAxis _ProcessCmdList cmds bNonBlocking;,,S
+Calibration,Robot_ZAxis,,,,,,"Sets the velocity profile (from a tuple) for subsequent moves.",Device: Robot_ZAxis _SetStepSpeedProfile profile;,,S
+Calibration,Robot_ZAxis,,,,,,"Return a command list defining a speed profile setting",Device: Robot_ZAxis _SpeedCmd profile;,,S
+Calibration,Robot_ZAxis,,,,,,"Validate step setting. (NB: Do not call this directly.) step: the step setting to validate. takingAction: If set True, throw an AxisError exception if validation fails. Otherwise, return result",Device: Robot_ZAxis _Validate step takingAction;,,S
+Calibration,Robot_ZAxis,,,,,,"Return a command list defining the absolute step for the current position.",Device: Robot_ZAxis _ZeroCmd zeroOffset;,,S
+Calibration,Robot_ZAxis,,,,,,"Refer to stepper card being controlled",Device: Robot_ZAxis __init__ name card configData moreSettings;,,S
+Calibration,Robot_ZAxis,,,,,,"Simple string representation of the device.",Device: Robot_ZAxis __str__;,,S
+Calibration,Robot_ZAxis,,,,,,"Executes the formatted function call string functionWithArgs on self.",Device: Robot_ZAxis execute functionWithArgs;,,S
+Calibration,Robot_ZAxis,,,,,,"Return the device's identifying name.",Device: Robot_ZAxis getName;,,S
+
+Calibration,Robot_ThetaAxis,,,,,,"Move to maximum limit ",Device: Robot_ThetaAxis End;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Return the firmware version for the card attached to this axis.",Device: Robot_ThetaAxis GetFirmwareVersion;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Return our internal tracking of the axis position.",Device: Robot_ThetaAxis GetPositionTracking;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Obtain the current half step setting.",Device: Robot_ThetaAxis HalfStep;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Homing (override)",Device: Robot_ThetaAxis Home;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Obtain the home step value. By default, this is 0, but it may be reconfigured if home optos are not at start of travel.",Device: Robot_ThetaAxis HomeStep;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Obtain home theta for rotor",Device: Robot_ThetaAxis HomeTheta;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Obtain the current power settings.",Device: Robot_ThetaAxis HomingPower;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Obtain the current homing step speed profile.",Device: Robot_ThetaAxis HomingStepSpeedProfile;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Obtain the current power settings used when axis is stationary.",Device: Robot_ThetaAxis IdlePower;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Move motor by given step increment",Device: Robot_ThetaAxis IncrementStep stepInc bNonBlocking;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Move carousel to relative theta value. thetaInc: the change in setting (in degrees)",Device: Robot_ThetaAxis IncrementTheta thetaInc;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Determine whether motor needs homing",Device: Robot_ThetaAxis IsHomed;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Check whether a step setting is valid. step: the step setting to validate.",Device: Robot_ThetaAxis IsValid step;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Return the maximum permitted step count",Device: Robot_ThetaAxis MaxStep;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Return the maximum permitted value of theta",Device: Robot_ThetaAxis MaxTheta;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Return the minimum permitted value of theta",Device: Robot_ThetaAxis MinTheta;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Obtain the current power settings.",Device: Robot_ThetaAxis Power;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Resets the velocity profile back to the default.",Device: Robot_ThetaAxis ResetHalfStep;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Reset the home step value to the configured setting.",Device: Robot_ThetaAxis ResetHomeStep;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Resets the power back to the default.",Device: Robot_ThetaAxis ResetHomingPower;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Resets the homing velocity profile back to the default.",Device: Robot_ThetaAxis ResetHomingStepSpeedProfile;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Resets the idle power back to the default.",Device: Robot_ThetaAxis ResetIdlePower;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Resets the power back to the default.",Device: Robot_ThetaAxis ResetPower;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Resets the velocity profile back to the default.",Device: Robot_ThetaAxis ResetStepSpeedProfile;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Set the current half step setting.",Device: Robot_ThetaAxis SetHalfStep newSetting;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Override the home step value.",Device: Robot_ThetaAxis SetHomeStep homeStep;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Set the current power settings.",Device: Robot_ThetaAxis SetHomingPower newMax newHold newDecay;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Sets the velocity profile for subsequent moves.",Device: Robot_ThetaAxis SetHomingStepSpeedProfile newBeginSpeed newEndSpeed newSlope;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Set the power settings to use when axis is stationary.",Device: Robot_ThetaAxis SetIdlePower newMax newHold newDecay;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Set the internal tracking position.",Device: Robot_ThetaAxis SetPositionTracking newPosition;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Set the current power settings.",Device: Robot_ThetaAxis SetPower newMax newHold newDecay;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Set the current power settings.",Device: Robot_ThetaAxis SetPowerFromString profile;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Move motor to a given step.",Device: Robot_ThetaAxis SetStep step bNonBlocking;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Sets the velocity profile for subsequent moves.",Device: Robot_ThetaAxis SetStepSpeedProfile newBeginSpeed newEndSpeed newSlope;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Sets the velocity profile for subsequent moves using a string as input.",Device: Robot_ThetaAxis SetStepSpeedProfileFromString profile;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Move carousel to absolute theta value. theta: the new setting (in degrees)",Device: Robot_ThetaAxis SetTheta theta bNonBlocking;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Obtain the current step value",Device: Robot_ThetaAxis Step;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Obtain the current step speed profile.",Device: Robot_ThetaAxis StepSpeedProfile;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Obtain setting for the number of steps per degree",Device: Robot_ThetaAxis StepsPerDegree;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Obtain the current theta value",Device: Robot_ThetaAxis Theta;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Override this to validate configuration settings as they are read in. Throw a HardwareSettingsError if a problem is encountered",Device: Robot_ThetaAxis ValidateSettings;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Wait for an action to complete.",Device: Robot_ThetaAxis WaitForCompletion;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Put settings back to normal mode",Device: Robot_ThetaAxis _CompleteHoming;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Return a command list defining the current half step",Device: Robot_ThetaAxis _HalfStepCmd;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Tell stepper card to home.",Device: Robot_ThetaAxis _Home;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Return a command list defining a step increment",Device: Robot_ThetaAxis _IncrementCmd increment;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Check whether axis is at home",Device: Robot_ThetaAxis _IsAtHome;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Tell stepper card to move using the specified move command, which dicates an absolute (M) or relative (R) movement and the steps to move to (or by, for a relative move). Loss of position checking happens here.",Device: Robot_ThetaAxis _Move moveCmd;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Return a command list defining the step to move to",Device: Robot_ThetaAxis _MoveCmd step;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Tell stepper card to move using the specified move command, which dicates an absolute (M) or relative (R) movement and the steps to move to (or by, for a relative move), in a non-blocking fashion. Loss of position checking happens here.",Device: Robot_ThetaAxis _MoveNonBlocking moveCmd;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Returns a profile tuple from the given profile string for speed or power. profileString should be of the form '%d, %d, %d' ",Device: Robot_ThetaAxis _ParseProfile profileString;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Return a command list defining the current power setting",Device: Robot_ThetaAxis _PowerCmd powerProfile;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Pass command string to stepper card. Handle exceptions",Device: Robot_ThetaAxis _ProcessCmdList cmds bNonBlocking;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Sets the velocity profile (from a tuple) for subsequent moves.",Device: Robot_ThetaAxis _SetStepSpeedProfile profile;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Return a command list defining a speed profile setting",Device: Robot_ThetaAxis _SpeedCmd profile;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Check that theta is withing the valid range. Throw an exception if not",Device: Robot_ThetaAxis _ThetaAxis__ValidateTheta theta;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Validate step setting. (NB: Do not call this directly.) step: the step setting to validate. takingAction: If set True, throw an AxisError exception if validation fails. Otherwise, return result",Device: Robot_ThetaAxis _Validate step takingAction;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Return a command list defining the absolute step for the current position.",Device: Robot_ThetaAxis _ZeroCmd zeroOffset;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Refer to stepper card being controlled",Device: Robot_ThetaAxis __init__ name card configData moreSettings;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Simple string representation of the device.",Device: Robot_ThetaAxis __str__;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Executes the formatted function call string functionWithArgs on self.",Device: Robot_ThetaAxis execute functionWithArgs;,,S
+Calibration,Robot_ThetaAxis,,,,,,"Return the device's identifying name.",Device: Robot_ThetaAxis getName;,,S
+
+Calibration,Carousel,,,,,,"Move to maximum limit ",Device: Carousel End;,,S
+Calibration,Carousel,,,,,,"Return the firmware version for the card attached to this axis.",Device: Carousel GetFirmwareVersion;,,S
+Calibration,Carousel,,,,,,"Return our internal tracking of the axis position.",Device: Carousel GetPositionTracking;,,S
+Calibration,Carousel,,,,,,"Obtain the current half step setting.",Device: Carousel HalfStep;,,S
+Calibration,Carousel,,,,,,"Homing (override)",Device: Carousel Home;,,S
+Calibration,Carousel,,,,,,"Obtain the home step value. By default, this is 0, but it may be reconfigured if home optos are not at start of travel.",Device: Carousel HomeStep;,,S
+Calibration,Carousel,,,,,,"Obtain home theta for rotor",Device: Carousel HomeTheta;,,S
+Calibration,Carousel,,,,,,"Obtain the current power settings.",Device: Carousel HomingPower;,,S
+Calibration,Carousel,,,,,,"Obtain the current homing step speed profile.",Device: Carousel HomingStepSpeedProfile;,,S
+Calibration,Carousel,,,,,,"Obtain the current power settings used when axis is stationary.",Device: Carousel IdlePower;,,S
+Calibration,Carousel,,,,,,"Move motor by given step increment",Device: Carousel IncrementStep stepInc bNonBlocking;,,S
+Calibration,Carousel,,,,,,"Move carousel to relative theta value. thetaInc: the change in setting (in degrees)",Device: Carousel IncrementTheta thetaInc;,,S
+Calibration,Carousel,,,,,,"Determine whether motor needs homing",Device: Carousel IsHomed;,,S
+Calibration,Carousel,,,,,,"Check whether a step setting is valid. step: the step setting to validate.",Device: Carousel IsValid step;,,S
+Calibration,Carousel,,,,,,"Return the maximum permitted step count",Device: Carousel MaxStep;,,S
+Calibration,Carousel,,,,,,"Return the maximum permitted value of theta",Device: Carousel MaxTheta;,,S
+Calibration,Carousel,,,,,,"Return the minimum permitted value of theta",Device: Carousel MinTheta;,,S
+Calibration,Carousel,,,,,,"Obtain the current power settings.",Device: Carousel Power;,,S
+Calibration,Carousel,,,,,,"Resets the velocity profile back to the default.",Device: Carousel ResetHalfStep;,,S
+Calibration,Carousel,,,,,,"Reset the home step value to the configured setting.",Device: Carousel ResetHomeStep;,,S
+Calibration,Carousel,,,,,,"Resets the power back to the default.",Device: Carousel ResetHomingPower;,,S
+Calibration,Carousel,,,,,,"Resets the homing velocity profile back to the default.",Device: Carousel ResetHomingStepSpeedProfile;,,S
+Calibration,Carousel,,,,,,"Resets the idle power back to the default.",Device: Carousel ResetIdlePower;,,S
+Calibration,Carousel,,,,,,"Resets the power back to the default.",Device: Carousel ResetPower;,,S
+Calibration,Carousel,,,,,,"Resets the velocity profile back to the default.",Device: Carousel ResetStepSpeedProfile;,,S
+Calibration,Carousel,,,,,,"Set the current half step setting.",Device: Carousel SetHalfStep newSetting;,,S
+Calibration,Carousel,,,,,,"Override the home step value.",Device: Carousel SetHomeStep homeStep;,,S
+Calibration,Carousel,,,,,,"Set the current power settings.",Device: Carousel SetHomingPower newMax newHold newDecay;,,S
+Calibration,Carousel,,,,,,"Sets the velocity profile for subsequent moves.",Device: Carousel SetHomingStepSpeedProfile newBeginSpeed newEndSpeed newSlope;,,S
+Calibration,Carousel,,,,,,"Set the power settings to use when axis is stationary.",Device: Carousel SetIdlePower newMax newHold newDecay;,,S
+Calibration,Carousel,,,,,,"Set the internal tracking position.",Device: Carousel SetPositionTracking newPosition;,,S
+Calibration,Carousel,,,,,,"Set the current power settings.",Device: Carousel SetPower newMax newHold newDecay;,,S
+Calibration,Carousel,,,,,,"Set the current power settings.",Device: Carousel SetPowerFromString profile;,,S
+Calibration,Carousel,,,,,,"Move motor to a given step.",Device: Carousel SetStep step bNonBlocking;,,S
+Calibration,Carousel,,,,,,"Sets the velocity profile for subsequent moves.",Device: Carousel SetStepSpeedProfile newBeginSpeed newEndSpeed newSlope;,,S
+Calibration,Carousel,,,,,,"Sets the velocity profile for subsequent moves using a string as input.",Device: Carousel SetStepSpeedProfileFromString profile;,,S
+Calibration,Carousel,,,,,,"Move carousel to absolute theta value. theta: the new setting (in degrees)",Device: Carousel SetTheta theta bNonBlocking;,,S
+Calibration,Carousel,,,,,,"Obtain the current step value",Device: Carousel Step;,,S
+Calibration,Carousel,,,,,,"Obtain the current step speed profile.",Device: Carousel StepSpeedProfile;,,S
+Calibration,Carousel,,,,,,"Obtain setting for the number of steps per degree",Device: Carousel StepsPerDegree;,,S
+Calibration,Carousel,,,,,,"Obtain the current theta value",Device: Carousel Theta;,,S
+Calibration,Carousel,,,,,,"Override this to validate configuration settings as they are read in. Throw a HardwareSettingsError if a problem is encountered",Device: Carousel ValidateSettings;,,S
+Calibration,Carousel,,,,,,"Wait for an action to complete.",Device: Carousel WaitForCompletion;,,S
+Calibration,Carousel,,,,,,"Put settings back to normal mode",Device: Carousel _CompleteHoming;,,S
+Calibration,Carousel,,,,,,"Return a command list defining the current half step",Device: Carousel _HalfStepCmd;,,S
+Calibration,Carousel,,,,,,"Tell stepper card to home.",Device: Carousel _Home;,,S
+Calibration,Carousel,,,,,,"Return a command list defining a step increment",Device: Carousel _IncrementCmd increment;,,S
+Calibration,Carousel,,,,,,"Check whether axis is at home",Device: Carousel _IsAtHome;,,S
+Calibration,Carousel,,,,,,"Tell stepper card to move using the specified move command, which dicates an absolute (M) or relative (R) movement and the steps to move to (or by, for a relative move). Loss of position checking happens here.",Device: Carousel _Move moveCmd;,,S
+Calibration,Carousel,,,,,,"Return a command list defining the step to move to",Device: Carousel _MoveCmd step;,,S
+Calibration,Carousel,,,,,,"Tell stepper card to move using the specified move command, which dicates an absolute (M) or relative (R) movement and the steps to move to (or by, for a relative move), in a non-blocking fashion. Loss of position checking happens here.",Device: Carousel _MoveNonBlocking moveCmd;,,S
+Calibration,Carousel,,,,,,"Returns a profile tuple from the given profile string for speed or power. profileString should be of the form '%d, %d, %d' ",Device: Carousel _ParseProfile profileString;,,S
+Calibration,Carousel,,,,,,"Return a command list defining the current power setting",Device: Carousel _PowerCmd powerProfile;,,S
+Calibration,Carousel,,,,,,"Pass command string to stepper card. Handle exceptions",Device: Carousel _ProcessCmdList cmds bNonBlocking;,,S
+Calibration,Carousel,,,,,,"Sets the velocity profile (from a tuple) for subsequent moves.",Device: Carousel _SetStepSpeedProfile profile;,,S
+Calibration,Carousel,,,,,,"Return a command list defining a speed profile setting",Device: Carousel _SpeedCmd profile;,,S
+Calibration,Carousel,,,,,,"Check that theta is withing the valid range. Throw an exception if not",Device: Carousel _ThetaAxis__ValidateTheta theta;,,S
+Calibration,Carousel,,,,,,"Validate step setting. (NB: Do not call this directly.) step: the step setting to validate. takingAction: If set True, throw an AxisError exception if validation fails. Otherwise, return result",Device: Carousel _Validate step takingAction;,,S
+Calibration,Carousel,,,,,,"Return a command list defining the absolute step for the current position.",Device: Carousel _ZeroCmd zeroOffset;,,S
+Calibration,Carousel,,,,,,"Refer to stepper card being controlled",Device: Carousel __init__ name card configData moreSettings;,,S
+Calibration,Carousel,,,,,,"Simple string representation of the device.",Device: Carousel __str__;,,S
+Calibration,Carousel,,,,,,"Executes the formatted function call string functionWithArgs on self.",Device: Carousel execute functionWithArgs;,,S
+Calibration,Carousel,,,,,,"Return the device's identifying name.",Device: Carousel getName;,,S
+
+Calibration,TipStripper,,,,,,"Disengage Tip Stripper",Device: TipStripper Disengage;,,S
+Calibration,TipStripper,,,,,,"Engage Tip Stripper",Device: TipStripper Engage;,,S
+Calibration,TipStripper,,,,,,"Determine current engagement state of Tip Stripper",Device: TipStripper IsEngaged;,,S
+Calibration,TipStripper,,,,,,"The port being used to communicate with Tip Stripper. Returns (Engage,Disengage) ports",Device: TipStripper PortsUsed;,,S
+Calibration,TipStripper,,,,,,"Traverse Tip Stripper betwen engaged and diengaged positions",Device: TipStripper _TipStripper__Traverse onPort offPort;,,S
+Calibration,TipStripper,,,,,,"Refer to stepper card being controlled",Device: TipStripper __init__ name card configData moreSettings;,,S
+Calibration,TipStripper,,,,,,"Simple string representation of the device.",Device: TipStripper __str__;,,S
+Calibration,TipStripper,,,,,,"Executes the formatted function call string functionWithArgs on self.",Device: TipStripper execute functionWithArgs;,,S
+Calibration,TipStripper,,,,,,"Return the device's identifying name.",Device: TipStripper getName;,,S
+
+Calibration,Pump,,,,,,"The number of steps used in offsetting backlash.",Device: Pump BacklashSteps;,,S
+Calibration,Pump,,,,,,"Returns the ul conversion for dual piston mode.",Device: Pump DualPistonModeUlPerStep;,,S
+Calibration,Pump,,,,,,"Move to maximum limit",Device: Pump End;,,S
+Calibration,Pump,,,,,,"Returns the estimated volume displaced (in ul) by a full stroke (ie across both pistons). NB: the point at which the piston modes actually switch is not known. It is assumed to be in the middle of the mid-range",Device: Pump FullStrokeVolume;,,S
+Calibration,Pump,,,,,,"Return the firmware version for the card attached to this axis.",Device: Pump GetFirmwareVersion;,,S
+Calibration,Pump,,,,,,"Return our internal tracking of the axis position.",Device: Pump GetPositionTracking;,,S
+Calibration,Pump,,,,,,"Obtain the current half step setting.",Device: Pump HalfStep;,,S
+Calibration,Pump,,,,,,"Homing (override)",Device: Pump Home;,,S
+Calibration,Pump,,,,,,"Obtain the home step value. By default, this is 0, but it may be reconfigured if home optos are not at start of travel.",Device: Pump HomeStep;,,S
+Calibration,Pump,,,,,,"Obtain the current power settings.",Device: Pump HomingPower;,,S
+Calibration,Pump,,,,,,"Obtain the current homing step speed profile.",Device: Pump HomingStepSpeedProfile;,,S
+Calibration,Pump,,,,,,"Obtain the current power settings used when axis is stationary.",Device: Pump IdlePower;,,S
+Calibration,Pump,,,,,,"Move motor by given step increment",Device: Pump IncrementStep stepInc bNonBlocking;,,S
+Calibration,Pump,,,,,,"Aspirate/Dispense a given volume (in ul).",Device: Pump IncrementVolume volumeInc;,,S
+Calibration,Pump,,,,,,"Determine whether motor needs homing",Device: Pump IsHomed;,,S
+Calibration,Pump,,,,,,"Indicates whether piston is currently in dual piston range ",Device: Pump IsUsingDualPistonMode;,,S
+Calibration,Pump,,,,,,"Indicates whether piston is currently in single piston range ",Device: Pump IsUsingSinglePistonMode;,,S
+Calibration,Pump,,,,,,"Check whether a step setting is valid. step: the step setting to validate.",Device: Pump IsValid step;,,S
+Calibration,Pump,,,,,,"Returns the maximum volume (in ul) available when in dual piston mode.",Device: Pump MaxDualPistonModeVolume;,,S
+Calibration,Pump,,,,,,"Returns the maximum volume (in ul) available when in Single piston mode.",Device: Pump MaxSinglePistonModeVolume;,,S
+Calibration,Pump,,,,,,"Return the maximum permitted step count",Device: Pump MaxStep;,,S
+Calibration,Pump,,,,,,"Returns the maximum volume (in ul) available in current piston mode. NB: the backlash volume is *not* taken into account.",Device: Pump MaxVolume;,,S
+Calibration,Pump,,,,,,"Aspirate/Dispense a given volume (in ul).",Device: Pump ParkValve;,,S
+Calibration,Pump,,,,,,"Obtain the current power settings.",Device: Pump Power;,,S
+Calibration,Pump,,,,,,"Resets the velocity profile back to the default.",Device: Pump ResetHalfStep;,,S
+Calibration,Pump,,,,,,"Reset the home step value to the configured setting.",Device: Pump ResetHomeStep;,,S
+Calibration,Pump,,,,,,"Resets the power back to the default.",Device: Pump ResetHomingPower;,,S
+Calibration,Pump,,,,,,"Resets the homing velocity profile back to the default.",Device: Pump ResetHomingStepSpeedProfile;,,S
+Calibration,Pump,,,,,,"Resets the idle power back to the default.",Device: Pump ResetIdlePower;,,S
+Calibration,Pump,,,,,,"Resets the power back to the default.",Device: Pump ResetPower;,,S
+Calibration,Pump,,,,,,"Resets the velocity profile back to the default.",Device: Pump ResetStepSpeedProfile;,,S
+Calibration,Pump,,,,,,"Set the flow rate.",Device: Pump SetFlowRate newVolumeRate;,,S
+Calibration,Pump,,,,,,"Set the current half step setting.",Device: Pump SetHalfStep newSetting;,,S
+Calibration,Pump,,,,,,"Override the home step value.",Device: Pump SetHomeStep homeStep;,,S
+Calibration,Pump,,,,,,"Set the current power settings.",Device: Pump SetHomingPower newMax newHold newDecay;,,S
+Calibration,Pump,,,,,,"Sets the velocity profile for subsequent moves.",Device: Pump SetHomingStepSpeedProfile newBeginSpeed newEndSpeed newSlope;,,S
+Calibration,Pump,,,,,,"Set the power settings to use when axis is stationary.",Device: Pump SetIdlePower newMax newHold newDecay;,,S
+Calibration,Pump,,,,,,"Set the internal tracking position.",Device: Pump SetPositionTracking newPosition;,,S
+Calibration,Pump,,,,,,"Set the current power settings.",Device: Pump SetPower newMax newHold newDecay;,,S
+Calibration,Pump,,,,,,"Set the current power settings.",Device: Pump SetPowerFromString profile;,,S
+Calibration,Pump,,,,,,"Move motor to a given step.",Device: Pump SetStep step bNonBlocking;,,S
+Calibration,Pump,,,,,,"Sets the velocity profile for subsequent moves.",Device: Pump SetStepSpeedProfile newBeginSpeed newEndSpeed newSlope;,,S
+Calibration,Pump,,,,,,"Sets the velocity profile for subsequent moves using a string as input.",Device: Pump SetStepSpeedProfileFromString profile;,,S
+Calibration,Pump,,,,,,"Aspirate/Dispense to the given volume (in ul). A DRDPump exception is thrown if maximum volume of current piston mode is exceeded. NB: backlash is not taken into account. This must be catered for by the caller",Device: Pump SetVolume newVolume;,,S
+Calibration,Pump,,,,,,"Returns the ul conversion for single piston mode.",Device: Pump SinglePistonModeUlPerStep;,,S
+Calibration,Pump,,,,,,"Obtain the current step value",Device: Pump Step;,,S
+Calibration,Pump,,,,,,"Obtain the current step speed profile.",Device: Pump StepSpeedProfile;,,S
+Calibration,Pump,,,,,,"Reset the flow rate to the default aspiration rate for the current piston mode.",Device: Pump UseDefaultAspirationFlowRate;,,S
+Calibration,Pump,,,,,,"Reset the flow rate to the default dispense rate for the current piston mode.",Device: Pump UseDefaultDispenseFlowRate;,,S
+Calibration,Pump,,,,,,"Positions pump to start of dual piston mode. Throws an exception if valve has not been set. NB: Backlash is not taken into account",Device: Pump UseDualPistonMode;,,S
+Calibration,Pump,,,,,,"Reset the flow rate to the generic aspiration rate, regardless of piston mode.",Device: Pump UseGenericAspirationFlowRate;,,S
+Calibration,Pump,,,,,,"Reset the flow rate to the generic dispense rate, regardless of piston mode.",Device: Pump UseGenericDispenseFlowRate;,,S
+Calibration,Pump,,,,,,"Positions pump to start of single piston mode. Throws an exception if valve has not been set. NB: Backlash is not taken into account",Device: Pump UseSinglePistonMode;,,S
+Calibration,Pump,,,,,,"Override this to validate configuration settings as they are read in. Throw a HardwareSettingsError if a problem is encountered",Device: Pump ValidateSettings;,,S
+Calibration,Pump,,,,,,"Returns the volume (in ul) that is currently aspirated.",Device: Pump Volume;,,S
+Calibration,Pump,,,,,,"Wait for an action to complete.",Device: Pump WaitForCompletion;,,S
+Calibration,Pump,,,,,,"Returns the backlash volume for the current piston mode setting.",Device: Pump _BacklashVolume;,,S
+Calibration,Pump,,,,,,"Returns the step represented by the given aspirated volume. NB: the backlash volume is *not* taken into account. ",Device: Pump _CalculatedStep volume;,,S
+Calibration,Pump,,,,,,"Returns the aspirated volume represented by the given step. NB: the backlash volume is *not* taken into account. ",Device: Pump _CalculatedVolume step;,,S
+Calibration,Pump,,,,,,"Override the standard end homing method.",Device: Pump _CompleteHoming;,,S
+Calibration,Pump,,,,,,"Return a command list defining the current half step",Device: Pump _HalfStepCmd;,,S
+Calibration,Pump,,,,,,"Override the standard homing method.",Device: Pump _Home;,,S
+Calibration,Pump,,,,,,"Return the homing power command for DRD Pump (differs from simple stepper cards assumed by Axis).",Device: Pump _HomingPowerCmd;,,S
+Calibration,Pump,,,,,,"Return a command list defining a step increment",Device: Pump _IncrementCmd increment;,,S
+Calibration,Pump,,,,,,"Check whether axis is at home",Device: Pump _IsAtHome;,,S
+Calibration,Pump,,,,,,"Override the standard move method.",Device: Pump _Move stepCmd;,,S
+Calibration,Pump,,,,,,"Return a command list defining the step to move to",Device: Pump _MoveCmd step;,,S
+Calibration,Pump,,,,,,"Tell stepper card to move using the specified move command, which dicates an absolute (M) or relative (R) movement and the steps to move to (or by, for a relative move), in a non-blocking fashion. Loss of position checking happens here.",Device: Pump _MoveNonBlocking moveCmd;,,S
+Calibration,Pump,,,,,,"Returns a profile tuple from the given profile string for speed or power. profileString should be of the form '%d, %d, %d' ",Device: Pump _ParseProfile profileString;,,S
+Calibration,Pump,,,,,,"Return the power command for DRD Pump (differs from simple stepper cards assumed by Axis).",Device: Pump _PowerCmd;,,S
+Calibration,Pump,,,,,,"Return the power off command for DRD Pump.",Device: Pump _PowerOffCmd;,,S
+Calibration,Pump,,,,,,"Return the power on command for DRD Pump.",Device: Pump _PowerOnCmd;,,S
+Calibration,Pump,,,,,,"Pass command string to stepper card. Handle exceptions",Device: Pump _ProcessCmdList cmds bNonBlocking;,,S
+Calibration,Pump,,,,,,"Sets the velocity profile (from a tuple) for subsequent moves.",Device: Pump _SetStepSpeedProfile profile;,,S
+Calibration,Pump,,,,,,"Move valve to given position. position should be either 1 or 2",Device: Pump _SetValvePosition position;,,S
+Calibration,Pump,,,,,,"Return a command list defining a speed profile setting",Device: Pump _SpeedCmd profile;,,S
+Calibration,Pump,,,,,,"Positions pump to start of given piston mode.",Device: Pump _UsePistonMode pistonMode;,,S
+Calibration,Pump,,,,,,"Validate step setting. (NB: Do not call this directly.) step: the step setting to validate. takingAction: If set True, throw an AxisError exception if validation fails. Otherwise, return result",Device: Pump _Validate step takingAction;,,S
+Calibration,Pump,,,,,,"Obtain current valve position. Returns None if valve has not been set",Device: Pump _ValidateValve;,,S
+Calibration,Pump,,,,,,"Obtain current valve position. Returns None if valve has not been set",Device: Pump _ValvePosition;,,S
+Calibration,Pump,,,,,,"Return a command list defining the absolute step for the current position.",Device: Pump _ZeroCmd zeroOffset;,,S
+Calibration,Pump,,,,,,"Driver for DRD pump. name: the name to use when tracking use card: the card associated with the pump configData: a dictionary of configuration values with which to override the default settings. moreSettings: Refer to stepper card being controlled ",Device: Pump __init__ name card configData moreSettings;,,S
+Calibration,Pump,,,,,,"Simple string representation of the device.",Device: Pump __str__;,,S
+Calibration,Pump,,,,,,"Executes the formatted function call string functionWithArgs on self.",Device: Pump execute functionWithArgs;,,S
+Calibration,Pump,,,,,,"Return the device's identifying name.",Device: Pump getName;,,S
+
+Calibration,Instrument,,,,,,"Return the Container instance for the bulk bottle.",Subsystem: Instrument BulkBottle;,,S
+Calibration,Instrument,,,,,,"Cleaning up at the end of a run. This (currently) means that we: * home all axes * move the carousel a short distance from home so that the carousel tab is clear of the opto (for easy removal of the carousel) ",Subsystem: Instrument CleanUp;,,S
+Calibration,Instrument,,,,,,"Clears the root quadrant to sample ID mapping. This should be called prior to running a batch",Subsystem: Instrument ClearRootQuadrantMapping;,,S
+Calibration,Instrument,,,,,,"Return the Container instance at the given position. sector : the sector to look up (1-4 on the carousel, 0 is not on the carousel) name: mnemonic associated with the container",Subsystem: Instrument ContainerAt sector name;,,S
+Calibration,Instrument,,,,,,"Run a demo mode for the instrument. You can specify a number of iterations.",Subsystem: Instrument Demo iterations id;,,S
+Calibration,Instrument,,,,,,"Flush out the hydraulic line to the given waste vial. If homeAtEnd is true, the Z axis is homed at the end of the flush. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument Flush wasteVial homeAtEnd id;,,S
+Calibration,Instrument,,,,,,"Home all axes. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument HomeAll id;,,S
+Calibration,Instrument,,,,,,"Incubate for a specified number of seconds. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument Incubate period_secs id;,,S
+Calibration,Instrument,,,,,,"Initialise the high-level instrument components.",Subsystem: Instrument Initialise;,,S
+Calibration,Instrument,,,,,,"Set up the standard containers on the instrument on startup. (They are initially assumed to be empty). Returns a map of the tubes, with the map key being the sector number and the map value being a map of tubes for that sector. The sector tube map has keys corresponding to tube name and each map value is the corresponding Tube instance.",Subsystem: Instrument InitialiseContainers;,,S
+Calibration,Instrument,,,,,,"Mix fluid in the given vial. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument Mix vial id;,,S
+Calibration,Instrument,,,,,,"Move to aspirate a specific volume from the given vial.",Subsystem: Instrument MoveToAspirate vial volume_ul;,,S
+Calibration,Instrument,,,,,,"Move to dispense a volume (in uL) into the given vial. The dispense can be free air if usingFreeAirDispense is True. ",Subsystem: Instrument MoveToDispense vial volume_uL usingFreeAirDispense;,,S
+Calibration,Instrument,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: Instrument NullTrace message;,,S
+Calibration,Instrument,,,,,,"Prime the hydraulic line, using the given waste vial. If homeAtEnd is true, the Z axis is homed at the end of the prime. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument Prime wasteVial homeAtEnd id;,,S
+Calibration,Instrument,,,,,,"Print a debug message",Subsystem: Instrument PrintTrace message;,,S
+Calibration,Instrument,,,,,,"Resuspend the given vial. This is essentially the same as TopUpVial, except that the vial is assumed to be empty. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument ResuspendVial dstVial srcVial usingFreeAirDispense id;,,S
+Calibration,Instrument,,,,,,"Incubate for a specified number of seconds. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument Separate period_secs id;,,S
+Calibration,Instrument,,,,,,"Top up the given vial from the given src. By default (srcVial = None), the vial is topped up from the BCCM. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument TopUpVial dstVial srcVial usingFreeAirDispense id;,,S
+Calibration,Instrument,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: Instrument Trace message;,,S
+Calibration,Instrument,,,,,,"Transport a given volume of fluid (in uL) from srcVial to dstVial. If usingFreeAirDispense is True, we will do a free air dispense for all dispenses involved in this transport workflow. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument Transport dstVial srcVial volume_ul usingFreeAirDispense id;,,S
+Calibration,Instrument,,,,,,"Aspirate the given volume from the given vial using the given tip",Subsystem: Instrument _Aspirate volume vial tipCapacity;,,S
+Calibration,Instrument,,,,,,"Dispense the given volume to the given vial using the given tip. NB: The given volume is assumed to be the volume aspirated previously. Uses a free air dispense if usingFreeAirDispense = True.",Subsystem: Instrument _Dispense volume vial usingFreeAirDispense;,,S
+Calibration,Instrument,,,,,,"Determine the height at which to place the robot in preparation to aspirate.",Subsystem: Instrument _Instrument__CalculateAspirationHeightFor vial volumeToTransport_uL tipLength;,,S
+Calibration,Instrument,,,,,,"Determine the height at which to place the robot in preparation to dispense.",Subsystem: Instrument _Instrument__CalculateDispenseHeightFor vial volumeToTransport_uL tipLength usingFreeAirDispense;,,S
+Calibration,Instrument,,,,,,"Ensure that the given height does not cause tip to get too close to the base",Subsystem: Instrument _Instrument__ClipHeight height vial tipLength;,,S
+Calibration,Instrument,,,,,," Determine the sector and location reference for the given vial.",Subsystem: Instrument _Instrument__LocationOf vial;,,S
+Calibration,Instrument,,,,,,"Determine the tip capacity (in uL) for the specified tip ID.",Subsystem: Instrument _Instrument__TipCapacityOf tipId;,,S
+Calibration,Instrument,,,,,,"Determine whether the current tip (or the one given) is allowed to enter a given vial.",Subsystem: Instrument _Instrument__TipIsForbiddenToEnter vial tipId;,,S
+Calibration,Instrument,,,,,,"Determine what tip to use when mixing the fluid currently in the given vial. Returns a tuple of sector and tip.",Subsystem: Instrument _Instrument__TipToMixWith vial;,,S
+Calibration,Instrument,,,,,,"Determine what tip to use for a given vial.",Subsystem: Instrument _Instrument__TipToUseFor vial;,,S
+Calibration,Instrument,,,,,,"Strip the current tip and pick up the designated one, if it is not already in use",Subsystem: Instrument _Instrument__UseTip sector chosenTip;,,S
+Calibration,Instrument,,,,,,"Perform a wicking extract by a given offset.",Subsystem: Instrument _Instrument__WickingExtract offset;,,S
+Calibration,Instrument,,,,,,"Set up the instrument components: - the TeslaPlatform, which handles mechanical actions. - the TeslaPump, which handles fluidics ",Subsystem: Instrument __init__ name;,,S
+Calibration,Instrument,,,,,,"Simple string representation of the Subsystem.",Subsystem: Instrument __str__;,,S
+Calibration,Instrument,,,,,,"Set the volume of the reagent containers to zero.",Subsystem: Instrument emptyReagentContainers;,,S
+Calibration,Instrument,,,,,,"Set the volume of the waste containers to zero.",Subsystem: Instrument emptyWasteContainers;,,S
+Calibration,Instrument,,,,,,"Executes the formatted function call string functionWithArgs on self.",Subsystem: Instrument execute functionWithArgs;,,S
+Calibration,Instrument,,,,,,"Return the volume (in uL) of the container at a location, specified by sector and container name.",Subsystem: Instrument getContainerVolume sector containerName;,,S
+Calibration,Instrument,,,,,,"Return the Subsystem's identifying name.",Subsystem: Instrument getName;,,S
+Calibration,Instrument,,,,,,"Return the Tesla platform instance, primarily for testing purposes.",Subsystem: Instrument getPlatform;,,S
+Calibration,Instrument,,,,,,"Return the DRD pump instance, primarily for testing purposes.",Subsystem: Instrument getPump;,,S
+Calibration,Instrument,,,,,,"Set the fluid volume (in uL) in a container, specified by sector and name, as per ContainerAt(). Doesn't return anything.",Subsystem: Instrument setContainerVolume sector containerName volume_uL;,,S
+Calibration,Instrument,,,,,,"Set the fluid volume as a percentage of maximum volume. percentageLevel is a value between 0 and 1.",Subsystem: Instrument setContainerVolumePercentage sector containerName percentageLevel;,,S
+
+Calibration,TeslaPlatform,,,,,,"Return the sector and storage position of the currently loaded tip. If not tip is currently loaded, the storage position will be None, but the sector for the last tip used is retained.",Subsystem: TeslaPlatform CurrentTipID;,,S
+Calibration,TeslaPlatform,,,,,,"Return the length of the currently loaded tip.",Subsystem: TeslaPlatform CurrentTipLength;,,S
+Calibration,TeslaPlatform,,,,,,"Home *just* the Z axis.",Subsystem: TeslaPlatform HomeZAxis;,,S
+Calibration,TeslaPlatform,,,,,,"Perform initialisation of the Platform components",Subsystem: TeslaPlatform Initialise;,,S
+Calibration,TeslaPlatform,,,,,,"Move the carousel to a safe position (away from the opto for easy removal)",Subsystem: TeslaPlatform MoveCarouselToSafePosition;,,S
+Calibration,TeslaPlatform,,,,,,"Move the dispenser to a given position: - Raise the robot arm to travel position. - Move the carousel and robot to the given referencePoint. - Lower the robot so that the current tip is at the given finalZPosition.",Subsystem: TeslaPlatform MoveTo sector referencePoint finalZPosition;,,S
+Calibration,TeslaPlatform,,,,,,"Move carousel and robot so that the robot arm is above a given position. sector: the sector of the carousel to access (nominally 90 degrees). referencePoint: a reference to the list of positions the carousel and robot need to be set at. index: 0, or 1: this indicates which rendezvous position to use. The first is used by default. ",Subsystem: TeslaPlatform MoveToPosition sector referencePoint positionIndex;,,S
+Calibration,TeslaPlatform,,,,,,"Move to a specific sector and tip number. Note that this moves both the carousel and the theta axis. This is mainly for testing purposes.",Subsystem: TeslaPlatform MoveToSectorAndTip sector tipNbr;,,S
+Calibration,TeslaPlatform,,,,,,"Give the number of sectors on the platform",Subsystem: TeslaPlatform NbrSectors;,,S
+Calibration,TeslaPlatform,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: TeslaPlatform NullTrace message;,,S
+Calibration,TeslaPlatform,,,,,,"Pickup a tip from the given position. - Check that the given tipNbr is valid - Move to pick up the tip - Engage the tip - Update the travel position It is assumed that there is no tip currently in place",Subsystem: TeslaPlatform PickupTip sector tipNbr;,,S
+Calibration,TeslaPlatform,,,,,,"Print a debug message",Subsystem: TeslaPlatform PrintTrace message;,,S
+Calibration,TeslaPlatform,,,,,,"Obtain the calibrated offset for the Robot Z-Axis",Subsystem: TeslaPlatform RobotZOffset;,,S
+Calibration,TeslaPlatform,,,,,,"Set the position for the Robot's Z Axis when rotating the Theta axis",Subsystem: TeslaPlatform SetTravelPosition zTravelPosition;,,S
+Calibration,TeslaPlatform,,,,,,"Strip the current tip. - Check that the given tipNbr is valid - Move to the current tip's original pickup point - Move Z-Axis to the strip position - Engage the tip stripper - Set high power for strip action - Move Z-Axis up to stripped position - Home the Z axis - Disengage the Tip Stripper - Move the Z-Axis to the travel position (without tip) It is assumed that there is a tip currently in place",Subsystem: TeslaPlatform StripTip;,,S
+Calibration,TeslaPlatform,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: TeslaPlatform Trace message;,,S
+Calibration,TeslaPlatform,,,,,,"Obtain the travel position for the Robot's Z Axis when rotating the Theta axis",Subsystem: TeslaPlatform TravelPosition;,,S
+Calibration,TeslaPlatform,,,,,,"Load the intercept points for the robot and carousel. NB: since there are two intercept points, a set of 2x2=4 values, separated by commas, is expected If one point is given, then it is assumed to be for the zTheta robot only. ",Subsystem: TeslaPlatform _LoadReferencePoints referenceData;,,S
+Calibration,TeslaPlatform,,,,,,"Obtain the carousel and robot theta settings needed to intersect at the given position on the carousel. Returns (rTheta, cTheta) - the required theta settings of robot and carousel respectively (NB: for tips, this is taken to be the position where the TipStripper may rendezvous also) If the reference is not on the carousel, then only the robot coordinate is returned ",Subsystem: TeslaPlatform _ObtainRendezvous sector referencePoint index;,,S
+Calibration,TeslaPlatform,,,,,,"Initialise the Tesla Platform tip references",Subsystem: TeslaPlatform _TeslaPlatform__InitialiseTipReference;,,S
+Calibration,TeslaPlatform,,,,,,"Set the power profile in the Z-Axis to 'high', so that a tip may be picked up.",Subsystem: TeslaPlatform _TeslaPlatform__SetPickupTipState isTrue;,,S
+Calibration,TeslaPlatform,,,,,,"Set or reset the power and speed profile in the Z-Axis to strip or standard settings.",Subsystem: TeslaPlatform _TeslaPlatform__SetStripTipState isTrue;,,S
+Calibration,TeslaPlatform,,,,,,"Set or reset the power and speed profile in the Z-Axis to pickup or standard settings.",Subsystem: TeslaPlatform _TeslaPlatform__SetZPowerAndSpeed powerProfile velocityProfile;,,S
+Calibration,TeslaPlatform,,,,,,"Load in the configuration data for the Platform.",Subsystem: TeslaPlatform __init__ name;,,S
+Calibration,TeslaPlatform,,,,,,"Simple string representation of the Subsystem.",Subsystem: TeslaPlatform __str__;,,S
+Calibration,TeslaPlatform,,,,,,"Executes the formatted function call string functionWithArgs on self.",Subsystem: TeslaPlatform execute functionWithArgs;,,S
+Calibration,TeslaPlatform,,,,,,"Returns the carousel instance.",Subsystem: TeslaPlatform getCarousel;,,S
+Calibration,TeslaPlatform,,,,,,"Return the Subsystem's identifying name.",Subsystem: TeslaPlatform getName;,,S
+Calibration,TeslaPlatform,,,,,,"Returns the Z/theta robot instance.",Subsystem: TeslaPlatform getRobot;,,S
+Calibration,TeslaPlatform,,,,,,"Return a reference to the TeslaPlatform's tip stripper instance. This is mainly for testing purposes.",Subsystem: TeslaPlatform getTipStripper;,,S
+
+Calibration,ZThetaRobot,,,,,,"Home all robot components. Ensure that Z axis is homed first ",Subsystem: ZThetaRobot Home;,,S
+Calibration,ZThetaRobot,,,,,,"Home the Theta axis. Ensure that the arm is at a safe height",Subsystem: ZThetaRobot HomeTheta;,,S
+Calibration,ZThetaRobot,,,,,,"Home the Z axis",Subsystem: ZThetaRobot HomeZ;,,S
+Calibration,ZThetaRobot,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: ZThetaRobot NullTrace message;,,S
+Calibration,ZThetaRobot,,,,,,"If a travel position is specified, then move Z axis to it.",Subsystem: ZThetaRobot PrepareZForTravel;,,S
+Calibration,ZThetaRobot,,,,,,"Print a debug message",Subsystem: ZThetaRobot PrintTrace message;,,S
+Calibration,ZThetaRobot,,,,,,"Rotate arm to given position, after ensuring that it is in the travel position.",Subsystem: ZThetaRobot SetTheta degrees bNonBlocking;,,S
+Calibration,ZThetaRobot,,,,,,"Move the Z-axis position to the given value.",Subsystem: ZThetaRobot SetZPosition zPosition;,,S
+Calibration,ZThetaRobot,,,,,,"Define the Z-axis position to adopt prior to rotating the theta axis.",Subsystem: ZThetaRobot SetZTravelPosition zTravelPosition;,,S
+Calibration,ZThetaRobot,,,,,,"Obtain the Theta-axis interface.",Subsystem: ZThetaRobot Theta;,,S
+Calibration,ZThetaRobot,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: ZThetaRobot Trace message;,,S
+Calibration,ZThetaRobot,,,,,,"Wait for completion for the non blocking move on the theta axis",Subsystem: ZThetaRobot WaitForThetaCompletion;,,S
+Calibration,ZThetaRobot,,,,,,"Obtain the Z-axis interface.",Subsystem: ZThetaRobot Z;,,S
+Calibration,ZThetaRobot,,,,,,"Returns the current Z position.",Subsystem: ZThetaRobot ZPosition;,,S
+Calibration,ZThetaRobot,,,,,,"Obtain the current Z-axis travel position. Returns 'None' if the travel position has not been specified.",Subsystem: ZThetaRobot ZTravelPosition;,,S
+Calibration,ZThetaRobot,,,,,,"Load in the configuration data for the robot",Subsystem: ZThetaRobot __init__ name;,,S
+Calibration,ZThetaRobot,,,,,,"Simple string representation of the Subsystem.",Subsystem: ZThetaRobot __str__;,,S
+Calibration,ZThetaRobot,,,,,,"Executes the formatted function call string functionWithArgs on self.",Subsystem: ZThetaRobot execute functionWithArgs;,,S
+Calibration,ZThetaRobot,,,,,,"Return the Subsystem's identifying name.",Subsystem: ZThetaRobot getName;,,S
+
+Calibration,Carousel,,,,,,"Home carousel.",Subsystem: Carousel Home;,,S
+Calibration,Carousel,,,,,,"Move the carousel to a position that is clear of the home opto for each removal of the carousel.",Subsystem: Carousel MoveToSafePosition;,,S
+Calibration,Carousel,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: Carousel NullTrace message;,,S
+Calibration,Carousel,,,,,,"Print a debug message",Subsystem: Carousel PrintTrace message;,,S
+Calibration,Carousel,,,,,," Move carousel to given position, as specified in rotational degrees. Check to see which direction is shortest, and increment the angle rather than move to the absolute position (this allows us to avoid problems sensing the home position at 360 degrees!). ",Subsystem: Carousel SetTheta theta;,,S
+Calibration,Carousel,,,,,," Obtain current carousel position.",Subsystem: Carousel Theta;,,S
+Calibration,Carousel,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: Carousel Trace message;,,S
+Calibration,Carousel,,,,,,"Return a reference to the theta axis.",Subsystem: Carousel _ThetaAxis;,,S
+Calibration,Carousel,,,,,,"Load in the configuration data for the Carousel. NB: since the carousel card also drives the TipStripper, this is also configured and may be accessed via the TipStripper() method. ",Subsystem: Carousel __init__ name;,,S
+Calibration,Carousel,,,,,,"Simple string representation of the Subsystem.",Subsystem: Carousel __str__;,,S
+Calibration,Carousel,,,,,,"Executes the formatted function call string functionWithArgs on self.",Subsystem: Carousel execute functionWithArgs;,,S
+Calibration,Carousel,,,,,,"Return the Subsystem's identifying name.",Subsystem: Carousel getName;,,S
+
+Calibration,TeslaPump,,,,,,"Aspirate from the vial, choosing a technique according to volume, and capacity. Return the volume aspirated at the tip. (This may vary from given sub-transport volume)",Subsystem: TeslaPump Aspirate volume capacity;,,S
+Calibration,TeslaPump,,,,,,"Aspirate the given volume using the mixing profile",Subsystem: TeslaPump AspirateMix volume seqNbr;,,S
+Calibration,TeslaPump,,,,,,"Aspirate an air slug prior to mixing. NB: The subsequent dispense occurs after the mix, so this is a bit different to standard aspirate/dispense cycle.",Subsystem: TeslaPump AspiratePreMixAirSlug volume;,,S
+Calibration,TeslaPump,,,,,,"Dispense to the vial, choosing a technique according to previous aspiration. The volume dispensed at the tip is assumed to be the volume retruned by the previous aspiration call",Subsystem: TeslaPump Dispense;,,S
+Calibration,TeslaPump,,,,,,"Dispense using the mixing profile",Subsystem: TeslaPump DispenseMix;,,S
+Calibration,TeslaPump,,,,,,"Dispense the air slug after mixing.",Subsystem: TeslaPump DispensePreMixAirSlug volume;,,S
+Calibration,TeslaPump,,,,,,"flush the pump.",Subsystem: TeslaPump Flush;,,S
+Calibration,TeslaPump,,,,,,"Initialise the pump",Subsystem: TeslaPump Initialise;,,S
+Calibration,TeslaPump,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: TeslaPump NullTrace message;,,S
+Calibration,TeslaPump,,,,,,"Park valve valve to idle (ie non-energised) position.",Subsystem: TeslaPump ParkValve;,,S
+Calibration,TeslaPump,,,,,,"Prime the pump. Return the volume dispensed to tip",Subsystem: TeslaPump Prime;,,S
+Calibration,TeslaPump,,,,,,"Print a debug message",Subsystem: TeslaPump PrintTrace message;,,S
+Calibration,TeslaPump,,,,,,"Set valve so that piston accesses reservoir.",Subsystem: TeslaPump SetValveToReservoir;,,S
+Calibration,TeslaPump,,,,,,"Set valve so that piston accesses dispense tip.",Subsystem: TeslaPump SetValveToTip;,,S
+Calibration,TeslaPump,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: TeslaPump Trace message;,,S
+Calibration,TeslaPump,,,,,,"Aspirate from the vial using technique 1 (refer IDD for description):",Subsystem: TeslaPump _TeslaPump__Aspirate_1 volume aspData;,,S
+Calibration,TeslaPump,,,,,,"Aspirate from the vial using technique 2",Subsystem: TeslaPump _TeslaPump__Aspirate_2 volume aspData;,,S
+Calibration,TeslaPump,,,,,,"Aspirate from the vial using technique 3",Subsystem: TeslaPump _TeslaPump__Aspirate_3 volume aspData;,,S
+Calibration,TeslaPump,,,,,,"Aspirate from the vial using technique 4",Subsystem: TeslaPump _TeslaPump__Aspirate_4 volume aspData;,,S
+Calibration,TeslaPump,,,,,,"Aspirate from the reservoir when flushing",Subsystem: TeslaPump _TeslaPump__Aspirate_Flush volume aspData;,,S
+Calibration,TeslaPump,,,,,,"Dispense to the vial using technique 1",Subsystem: TeslaPump _TeslaPump__Dispense_1 dispenseList dispData;,,S
+Calibration,TeslaPump,,,,,,"Dispense to the vial using technique 2",Subsystem: TeslaPump _TeslaPump__Dispense_2 dispenseList dispData;,,S
+Calibration,TeslaPump,,,,,,"Dispense to the vial using technique 3",Subsystem: TeslaPump _TeslaPump__Dispense_3 dispenseList dispData;,,S
+Calibration,TeslaPump,,,,,,"Dispense to the vial using technique 4",Subsystem: TeslaPump _TeslaPump__Dispense_4 dispenseList dispData;,,S
+Calibration,TeslaPump,,,,,,"Dispense to the vial when flushing",Subsystem: TeslaPump _TeslaPump__Dispense_Flush dispenseList dispData;,,S
+Calibration,TeslaPump,,,,,,"Indicate that aspiration is the next operation expected.",Subsystem: TeslaPump _TeslaPump__MakeReadyForAspiration;,,S
+Calibration,TeslaPump,,,,,,"Set up the air slug between hydraulic fluid and tip fluid.",Subsystem: TeslaPump _TeslaPump__SetupAirSlug aspData dispData;,,S
+Calibration,TeslaPump,,,,,,"Ensure that aspiration is the next operation expected.",Subsystem: TeslaPump _TeslaPump__VerifyReadinessForAspiration;,,S
+Calibration,TeslaPump,,,,,,"Ensure that dispense is the next operation expected.",Subsystem: TeslaPump _TeslaPump__VerifyReadinessForDispense;,,S
+Calibration,TeslaPump,,,,,,"Load in the configuration data for the pump.",Subsystem: TeslaPump __init__ name;,,S
+Calibration,TeslaPump,,,,,,"Simple string representation of the Subsystem.",Subsystem: TeslaPump __str__;,,S
+Calibration,TeslaPump,,,,,,"Executes the formatted function call string functionWithArgs on self.",Subsystem: TeslaPump execute functionWithArgs;,,S
+Calibration,TeslaPump,,,,,,"Return the Subsystem's identifying name.",Subsystem: TeslaPump getName;,,S
+
+
+Scripting,Robot_ZAxis,,,,,,"Move to maximum limit ",Device: Robot_ZAxis End;,,S
+Scripting,Robot_ZAxis,,,,,,"Return the firmware version for the card attached to this axis.",Device: Robot_ZAxis GetFirmwareVersion;,,S
+Scripting,Robot_ZAxis,,,,,,"Return our internal tracking of the axis position.",Device: Robot_ZAxis GetPositionTracking;,,S
+Scripting,Robot_ZAxis,,,,,,"Obtain the current half step setting.",Device: Robot_ZAxis HalfStep;,,S
+Scripting,Robot_ZAxis,,,,,,"Homing (override)",Device: Robot_ZAxis Home;,,S
+Scripting,Robot_ZAxis,,,,,,"Obtain home Position",Device: Robot_ZAxis HomePosition;,,S
+Scripting,Robot_ZAxis,,,,,,"Obtain the home step value. By default, this is 0, but it may be reconfigured if home optos are not at start of travel.",Device: Robot_ZAxis HomeStep;,,S
+Scripting,Robot_ZAxis,,,,,,"Obtain the current power settings.",Device: Robot_ZAxis HomingPower;,,S
+Scripting,Robot_ZAxis,,,,,,"Obtain the current homing step speed profile.",Device: Robot_ZAxis HomingStepSpeedProfile;,,S
+Scripting,Robot_ZAxis,,,,,,"Obtain the current power settings used when axis is stationary.",Device: Robot_ZAxis IdlePower;,,S
+Scripting,Robot_ZAxis,,,,,,"Move by relative amount. increment: the relative amount by which to move (in mm)",Device: Robot_ZAxis IncrementPosition &;,increment;,S
+Scripting,Robot_ZAxis,,,,,,"Move motor by given step increment",Device: Robot_ZAxis IncrementStep & &;,stepInc;bNonBlocking;,S
+Scripting,Robot_ZAxis,,,,,,"Determine whether motor needs homing",Device: Robot_ZAxis IsHomed;,,S
+Scripting,Robot_ZAxis,,,,,,"Check whether a step setting is valid. step: the step setting to validate.",Device: Robot_ZAxis IsValid &;,step;,S
+Scripting,Robot_ZAxis,,,,,,"Return the maximum permitted Position",Device: Robot_ZAxis MaxPosition;,,S
+Scripting,Robot_ZAxis,,,,,,"Return the maximum permitted step count",Device: Robot_ZAxis MaxStep;,,S
+Scripting,Robot_ZAxis,,,,,,"Return the minimum permitted Position",Device: Robot_ZAxis MinPosition;,,S
+Scripting,Robot_ZAxis,,,,,,"Obtain the current Position",Device: Robot_ZAxis Position;,,S
+Scripting,Robot_ZAxis,,,,,,"Obtain the current power settings.",Device: Robot_ZAxis Power;,,S
+Scripting,Robot_ZAxis,,,,,,"Resets the velocity profile back to the default.",Device: Robot_ZAxis ResetHalfStep;,,S
+Scripting,Robot_ZAxis,,,,,,"Reset the home step value to the configured setting.",Device: Robot_ZAxis ResetHomeStep;,,S
+Scripting,Robot_ZAxis,,,,,,"Resets the power back to the default.",Device: Robot_ZAxis ResetHomingPower;,,S
+Scripting,Robot_ZAxis,,,,,,"Resets the homing velocity profile back to the default.",Device: Robot_ZAxis ResetHomingStepSpeedProfile;,,S
+Scripting,Robot_ZAxis,,,,,,"Resets the idle power back to the default.",Device: Robot_ZAxis ResetIdlePower;,,S
+Scripting,Robot_ZAxis,,,,,,"Resets the power back to the default.",Device: Robot_ZAxis ResetPower;,,S
+Scripting,Robot_ZAxis,,,,,,"Resets the velocity profile back to the default.",Device: Robot_ZAxis ResetStepSpeedProfile;,,S
+Scripting,Robot_ZAxis,,,,,,"Set the current half step setting.",Device: Robot_ZAxis SetHalfStep &;,newSetting;,S
+Scripting,Robot_ZAxis,,,,,,"Override the home step value.",Device: Robot_ZAxis SetHomeStep &;,homeStep;,S
+Scripting,Robot_ZAxis,,,,,,"Set the current power settings.",Device: Robot_ZAxis SetHomingPower & & &;,newMax;newHold;newDecay;,S
+Scripting,Robot_ZAxis,,,,,,"Sets the velocity profile for subsequent moves.",Device: Robot_ZAxis SetHomingStepSpeedProfile & & &;,newBeginSpeed;newEndSpeed;newSlope;,S
+Scripting,Robot_ZAxis,,,,,,"Set the power settings to use when axis is stationary.",Device: Robot_ZAxis SetIdlePower & & &;,newMax;newHold;newDecay;,S
+Scripting,Robot_ZAxis,,,,,,"Move to absolute Position. position: the new setting (in mm)",Device: Robot_ZAxis SetPosition &;,position;,S
+Scripting,Robot_ZAxis,,,,,,"Set the internal tracking position.",Device: Robot_ZAxis SetPositionTracking &;,newPosition;,S
+Scripting,Robot_ZAxis,,,,,,"Set the current power settings.",Device: Robot_ZAxis SetPower & & &;,newMax;newHold;newDecay;,S
+Scripting,Robot_ZAxis,,,,,,"Set the current power settings.",Device: Robot_ZAxis SetPowerFromString &;,profile;,S
+Scripting,Robot_ZAxis,,,,,,"Move motor to a given step.",Device: Robot_ZAxis SetStep & &;,step;bNonBlocking;,S
+Scripting,Robot_ZAxis,,,,,,"Sets the velocity profile for subsequent moves.",Device: Robot_ZAxis SetStepSpeedProfile & & &;,newBeginSpeed;newEndSpeed;newSlope;,S
+Scripting,Robot_ZAxis,,,,,,"Sets the velocity profile for subsequent moves using a string as input.",Device: Robot_ZAxis SetStepSpeedProfileFromString &;,profile;,S
+Scripting,Robot_ZAxis,,,,,,"Obtain the current step value",Device: Robot_ZAxis Step;,,S
+Scripting,Robot_ZAxis,,,,,,"Obtain the current step speed profile.",Device: Robot_ZAxis StepSpeedProfile;,,S
+Scripting,Robot_ZAxis,,,,,,"Obtain setting for the number of steps per mm",Device: Robot_ZAxis StepsPerMm;,,S
+Scripting,Robot_ZAxis,,,,,,"Override this to validate configuration settings as they are read in. Throw a HardwareSettingsError if a problem is encountered",Device: Robot_ZAxis ValidateSettings;,,S
+Scripting,Robot_ZAxis,,,,,,"Wait for an action to complete.",Device: Robot_ZAxis WaitForCompletion;,,S
+Scripting,Robot_ZAxis,,,,,,"Put settings back to normal mode",Device: Robot_ZAxis _CompleteHoming;,,S
+Scripting,Robot_ZAxis,,,,,,"Return a command list defining the current half step",Device: Robot_ZAxis _HalfStepCmd;,,S
+Scripting,Robot_ZAxis,,,,,,"Tell stepper card to home.",Device: Robot_ZAxis _Home;,,S
+Scripting,Robot_ZAxis,,,,,,"Return a command list defining a step increment",Device: Robot_ZAxis _IncrementCmd &;,increment;,S
+Scripting,Robot_ZAxis,,,,,,"Check whether axis is at home",Device: Robot_ZAxis _IsAtHome;,,S
+Scripting,Robot_ZAxis,,,,,,"Tell stepper card to move using the specified move command, which dicates an absolute (M) or relative (R) movement and the steps to move to (or by, for a relative move). Loss of position checking happens here.",Device: Robot_ZAxis _Move &;,moveCmd;,S
+Scripting,Robot_ZAxis,,,,,,"Return a command list defining the step to move to",Device: Robot_ZAxis _MoveCmd &;,step;,S
+Scripting,Robot_ZAxis,,,,,,"Tell stepper card to move using the specified move command, which dicates an absolute (M) or relative (R) movement and the steps to move to (or by, for a relative move), in a non-blocking fashion. Loss of position checking happens here.",Device: Robot_ZAxis _MoveNonBlocking &;,moveCmd;,S
+Scripting,Robot_ZAxis,,,,,,"Returns a profile tuple from the given profile string for speed or power. profileString should be of the form '%d, %d, %d' ",Device: Robot_ZAxis _ParseProfile &;,profileString;,S
+Scripting,Robot_ZAxis,,,,,,"Return a command list defining the current power setting",Device: Robot_ZAxis _PowerCmd &;,powerProfile;,S
+Scripting,Robot_ZAxis,,,,,,"Pass command string to stepper card. Handle exceptions",Device: Robot_ZAxis _ProcessCmdList & &;,cmds;bNonBlocking;,S
+Scripting,Robot_ZAxis,,,,,,"Sets the velocity profile (from a tuple) for subsequent moves.",Device: Robot_ZAxis _SetStepSpeedProfile &;,profile;,S
+Scripting,Robot_ZAxis,,,,,,"Return a command list defining a speed profile setting",Device: Robot_ZAxis _SpeedCmd &;,profile;,S
+Scripting,Robot_ZAxis,,,,,,"Validate step setting. (NB: Do not call this directly.) step: the step setting to validate. takingAction: If set True, throw an AxisError exception if validation fails. Otherwise, return result",Device: Robot_ZAxis _Validate & &;,step;takingAction;,S
+Scripting,Robot_ZAxis,,,,,,"Return a command list defining the absolute step for the current position.",Device: Robot_ZAxis _ZeroCmd &;,zeroOffset;,S
+Scripting,Robot_ZAxis,,,,,,"Refer to stepper card being controlled",Device: Robot_ZAxis __init__ & & & &;,name;card;configData;moreSettings;,S
+Scripting,Robot_ZAxis,,,,,,"Simple string representation of the device.",Device: Robot_ZAxis __str__;,,S
+Scripting,Robot_ZAxis,,,,,,"Executes the formatted function call string functionWithArgs on self.",Device: Robot_ZAxis execute &;,functionWithArgs;,S
+Scripting,Robot_ZAxis,,,,,,"Return the device's identifying name.",Device: Robot_ZAxis getName;,,S
+
+Scripting,Robot_ThetaAxis,,,,,,"Move to maximum limit ",Device: Robot_ThetaAxis End;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Return the firmware version for the card attached to this axis.",Device: Robot_ThetaAxis GetFirmwareVersion;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Return our internal tracking of the axis position.",Device: Robot_ThetaAxis GetPositionTracking;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Obtain the current half step setting.",Device: Robot_ThetaAxis HalfStep;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Homing (override)",Device: Robot_ThetaAxis Home;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Obtain the home step value. By default, this is 0, but it may be reconfigured if home optos are not at start of travel.",Device: Robot_ThetaAxis HomeStep;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Obtain home theta for rotor",Device: Robot_ThetaAxis HomeTheta;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Obtain the current power settings.",Device: Robot_ThetaAxis HomingPower;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Obtain the current homing step speed profile.",Device: Robot_ThetaAxis HomingStepSpeedProfile;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Obtain the current power settings used when axis is stationary.",Device: Robot_ThetaAxis IdlePower;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Move motor by given step increment",Device: Robot_ThetaAxis IncrementStep & &;,stepInc;bNonBlocking;,S
+Scripting,Robot_ThetaAxis,,,,,,"Move carousel to relative theta value. thetaInc: the change in setting (in degrees)",Device: Robot_ThetaAxis IncrementTheta &;,thetaInc;,S
+Scripting,Robot_ThetaAxis,,,,,,"Determine whether motor needs homing",Device: Robot_ThetaAxis IsHomed;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Check whether a step setting is valid. step: the step setting to validate.",Device: Robot_ThetaAxis IsValid &;,step;,S
+Scripting,Robot_ThetaAxis,,,,,,"Return the maximum permitted step count",Device: Robot_ThetaAxis MaxStep;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Return the maximum permitted value of theta",Device: Robot_ThetaAxis MaxTheta;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Return the minimum permitted value of theta",Device: Robot_ThetaAxis MinTheta;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Obtain the current power settings.",Device: Robot_ThetaAxis Power;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Resets the velocity profile back to the default.",Device: Robot_ThetaAxis ResetHalfStep;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Reset the home step value to the configured setting.",Device: Robot_ThetaAxis ResetHomeStep;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Resets the power back to the default.",Device: Robot_ThetaAxis ResetHomingPower;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Resets the homing velocity profile back to the default.",Device: Robot_ThetaAxis ResetHomingStepSpeedProfile;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Resets the idle power back to the default.",Device: Robot_ThetaAxis ResetIdlePower;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Resets the power back to the default.",Device: Robot_ThetaAxis ResetPower;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Resets the velocity profile back to the default.",Device: Robot_ThetaAxis ResetStepSpeedProfile;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Set the current half step setting.",Device: Robot_ThetaAxis SetHalfStep &;,newSetting;,S
+Scripting,Robot_ThetaAxis,,,,,,"Override the home step value.",Device: Robot_ThetaAxis SetHomeStep &;,homeStep;,S
+Scripting,Robot_ThetaAxis,,,,,,"Set the current power settings.",Device: Robot_ThetaAxis SetHomingPower & & &;,newMax;newHold;newDecay;,S
+Scripting,Robot_ThetaAxis,,,,,,"Sets the velocity profile for subsequent moves.",Device: Robot_ThetaAxis SetHomingStepSpeedProfile & & &;,newBeginSpeed;newEndSpeed;newSlope;,S
+Scripting,Robot_ThetaAxis,,,,,,"Set the power settings to use when axis is stationary.",Device: Robot_ThetaAxis SetIdlePower & & &;,newMax;newHold;newDecay;,S
+Scripting,Robot_ThetaAxis,,,,,,"Set the internal tracking position.",Device: Robot_ThetaAxis SetPositionTracking &;,newPosition;,S
+Scripting,Robot_ThetaAxis,,,,,,"Set the current power settings.",Device: Robot_ThetaAxis SetPower & & &;,newMax;newHold;newDecay;,S
+Scripting,Robot_ThetaAxis,,,,,,"Set the current power settings.",Device: Robot_ThetaAxis SetPowerFromString &;,profile;,S
+Scripting,Robot_ThetaAxis,,,,,,"Move motor to a given step.",Device: Robot_ThetaAxis SetStep & &;,step;bNonBlocking;,S
+Scripting,Robot_ThetaAxis,,,,,,"Sets the velocity profile for subsequent moves.",Device: Robot_ThetaAxis SetStepSpeedProfile & & &;,newBeginSpeed;newEndSpeed;newSlope;,S
+Scripting,Robot_ThetaAxis,,,,,,"Sets the velocity profile for subsequent moves using a string as input.",Device: Robot_ThetaAxis SetStepSpeedProfileFromString &;,profile;,S
+Scripting,Robot_ThetaAxis,,,,,,"Move carousel to absolute theta value. theta: the new setting (in degrees)",Device: Robot_ThetaAxis SetTheta & &;,theta;bNonBlocking;,S
+Scripting,Robot_ThetaAxis,,,,,,"Obtain the current step value",Device: Robot_ThetaAxis Step;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Obtain the current step speed profile.",Device: Robot_ThetaAxis StepSpeedProfile;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Obtain setting for the number of steps per degree",Device: Robot_ThetaAxis StepsPerDegree;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Obtain the current theta value",Device: Robot_ThetaAxis Theta;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Override this to validate configuration settings as they are read in. Throw a HardwareSettingsError if a problem is encountered",Device: Robot_ThetaAxis ValidateSettings;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Wait for an action to complete.",Device: Robot_ThetaAxis WaitForCompletion;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Put settings back to normal mode",Device: Robot_ThetaAxis _CompleteHoming;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Return a command list defining the current half step",Device: Robot_ThetaAxis _HalfStepCmd;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Tell stepper card to home.",Device: Robot_ThetaAxis _Home;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Return a command list defining a step increment",Device: Robot_ThetaAxis _IncrementCmd &;,increment;,S
+Scripting,Robot_ThetaAxis,,,,,,"Check whether axis is at home",Device: Robot_ThetaAxis _IsAtHome;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Tell stepper card to move using the specified move command, which dicates an absolute (M) or relative (R) movement and the steps to move to (or by, for a relative move). Loss of position checking happens here.",Device: Robot_ThetaAxis _Move &;,moveCmd;,S
+Scripting,Robot_ThetaAxis,,,,,,"Return a command list defining the step to move to",Device: Robot_ThetaAxis _MoveCmd &;,step;,S
+Scripting,Robot_ThetaAxis,,,,,,"Tell stepper card to move using the specified move command, which dicates an absolute (M) or relative (R) movement and the steps to move to (or by, for a relative move), in a non-blocking fashion. Loss of position checking happens here.",Device: Robot_ThetaAxis _MoveNonBlocking &;,moveCmd;,S
+Scripting,Robot_ThetaAxis,,,,,,"Returns a profile tuple from the given profile string for speed or power. profileString should be of the form '%d, %d, %d' ",Device: Robot_ThetaAxis _ParseProfile &;,profileString;,S
+Scripting,Robot_ThetaAxis,,,,,,"Return a command list defining the current power setting",Device: Robot_ThetaAxis _PowerCmd &;,powerProfile;,S
+Scripting,Robot_ThetaAxis,,,,,,"Pass command string to stepper card. Handle exceptions",Device: Robot_ThetaAxis _ProcessCmdList & &;,cmds;bNonBlocking;,S
+Scripting,Robot_ThetaAxis,,,,,,"Sets the velocity profile (from a tuple) for subsequent moves.",Device: Robot_ThetaAxis _SetStepSpeedProfile &;,profile;,S
+Scripting,Robot_ThetaAxis,,,,,,"Return a command list defining a speed profile setting",Device: Robot_ThetaAxis _SpeedCmd &;,profile;,S
+Scripting,Robot_ThetaAxis,,,,,,"Check that theta is withing the valid range. Throw an exception if not",Device: Robot_ThetaAxis _ThetaAxis__ValidateTheta &;,theta;,S
+Scripting,Robot_ThetaAxis,,,,,,"Validate step setting. (NB: Do not call this directly.) step: the step setting to validate. takingAction: If set True, throw an AxisError exception if validation fails. Otherwise, return result",Device: Robot_ThetaAxis _Validate & &;,step;takingAction;,S
+Scripting,Robot_ThetaAxis,,,,,,"Return a command list defining the absolute step for the current position.",Device: Robot_ThetaAxis _ZeroCmd &;,zeroOffset;,S
+Scripting,Robot_ThetaAxis,,,,,,"Refer to stepper card being controlled",Device: Robot_ThetaAxis __init__ & & & &;,name;card;configData;moreSettings;,S
+Scripting,Robot_ThetaAxis,,,,,,"Simple string representation of the device.",Device: Robot_ThetaAxis __str__;,,S
+Scripting,Robot_ThetaAxis,,,,,,"Executes the formatted function call string functionWithArgs on self.",Device: Robot_ThetaAxis execute &;,functionWithArgs;,S
+Scripting,Robot_ThetaAxis,,,,,,"Return the device's identifying name.",Device: Robot_ThetaAxis getName;,,S
+
+Scripting,Carousel,,,,,,"Move to maximum limit ",Device: Carousel End;,,S
+Scripting,Carousel,,,,,,"Return the firmware version for the card attached to this axis.",Device: Carousel GetFirmwareVersion;,,S
+Scripting,Carousel,,,,,,"Return our internal tracking of the axis position.",Device: Carousel GetPositionTracking;,,S
+Scripting,Carousel,,,,,,"Obtain the current half step setting.",Device: Carousel HalfStep;,,S
+Scripting,Carousel,,,,,,"Homing (override)",Device: Carousel Home;,,S
+Scripting,Carousel,,,,,,"Obtain the home step value. By default, this is 0, but it may be reconfigured if home optos are not at start of travel.",Device: Carousel HomeStep;,,S
+Scripting,Carousel,,,,,,"Obtain home theta for rotor",Device: Carousel HomeTheta;,,S
+Scripting,Carousel,,,,,,"Obtain the current power settings.",Device: Carousel HomingPower;,,S
+Scripting,Carousel,,,,,,"Obtain the current homing step speed profile.",Device: Carousel HomingStepSpeedProfile;,,S
+Scripting,Carousel,,,,,,"Obtain the current power settings used when axis is stationary.",Device: Carousel IdlePower;,,S
+Scripting,Carousel,,,,,,"Move motor by given step increment",Device: Carousel IncrementStep & &;,stepInc;bNonBlocking;,S
+Scripting,Carousel,,,,,,"Move carousel to relative theta value. thetaInc: the change in setting (in degrees)",Device: Carousel IncrementTheta &;,thetaInc;,S
+Scripting,Carousel,,,,,,"Determine whether motor needs homing",Device: Carousel IsHomed;,,S
+Scripting,Carousel,,,,,,"Check whether a step setting is valid. step: the step setting to validate.",Device: Carousel IsValid &;,step;,S
+Scripting,Carousel,,,,,,"Return the maximum permitted step count",Device: Carousel MaxStep;,,S
+Scripting,Carousel,,,,,,"Return the maximum permitted value of theta",Device: Carousel MaxTheta;,,S
+Scripting,Carousel,,,,,,"Return the minimum permitted value of theta",Device: Carousel MinTheta;,,S
+Scripting,Carousel,,,,,,"Obtain the current power settings.",Device: Carousel Power;,,S
+Scripting,Carousel,,,,,,"Resets the velocity profile back to the default.",Device: Carousel ResetHalfStep;,,S
+Scripting,Carousel,,,,,,"Reset the home step value to the configured setting.",Device: Carousel ResetHomeStep;,,S
+Scripting,Carousel,,,,,,"Resets the power back to the default.",Device: Carousel ResetHomingPower;,,S
+Scripting,Carousel,,,,,,"Resets the homing velocity profile back to the default.",Device: Carousel ResetHomingStepSpeedProfile;,,S
+Scripting,Carousel,,,,,,"Resets the idle power back to the default.",Device: Carousel ResetIdlePower;,,S
+Scripting,Carousel,,,,,,"Resets the power back to the default.",Device: Carousel ResetPower;,,S
+Scripting,Carousel,,,,,,"Resets the velocity profile back to the default.",Device: Carousel ResetStepSpeedProfile;,,S
+Scripting,Carousel,,,,,,"Set the current half step setting.",Device: Carousel SetHalfStep &;,newSetting;,S
+Scripting,Carousel,,,,,,"Override the home step value.",Device: Carousel SetHomeStep &;,homeStep;,S
+Scripting,Carousel,,,,,,"Set the current power settings.",Device: Carousel SetHomingPower & & &;,newMax;newHold;newDecay;,S
+Scripting,Carousel,,,,,,"Sets the velocity profile for subsequent moves.",Device: Carousel SetHomingStepSpeedProfile & & &;,newBeginSpeed;newEndSpeed;newSlope;,S
+Scripting,Carousel,,,,,,"Set the power settings to use when axis is stationary.",Device: Carousel SetIdlePower & & &;,newMax;newHold;newDecay;,S
+Scripting,Carousel,,,,,,"Set the internal tracking position.",Device: Carousel SetPositionTracking &;,newPosition;,S
+Scripting,Carousel,,,,,,"Set the current power settings.",Device: Carousel SetPower & & &;,newMax;newHold;newDecay;,S
+Scripting,Carousel,,,,,,"Set the current power settings.",Device: Carousel SetPowerFromString &;,profile;,S
+Scripting,Carousel,,,,,,"Move motor to a given step.",Device: Carousel SetStep & &;,step;bNonBlocking;,S
+Scripting,Carousel,,,,,,"Sets the velocity profile for subsequent moves.",Device: Carousel SetStepSpeedProfile & & &;,newBeginSpeed;newEndSpeed;newSlope;,S
+Scripting,Carousel,,,,,,"Sets the velocity profile for subsequent moves using a string as input.",Device: Carousel SetStepSpeedProfileFromString &;,profile;,S
+Scripting,Carousel,,,,,,"Move carousel to absolute theta value. theta: the new setting (in degrees)",Device: Carousel SetTheta & &;,theta;bNonBlocking;,S
+Scripting,Carousel,,,,,,"Obtain the current step value",Device: Carousel Step;,,S
+Scripting,Carousel,,,,,,"Obtain the current step speed profile.",Device: Carousel StepSpeedProfile;,,S
+Scripting,Carousel,,,,,,"Obtain setting for the number of steps per degree",Device: Carousel StepsPerDegree;,,S
+Scripting,Carousel,,,,,,"Obtain the current theta value",Device: Carousel Theta;,,S
+Scripting,Carousel,,,,,,"Override this to validate configuration settings as they are read in. Throw a HardwareSettingsError if a problem is encountered",Device: Carousel ValidateSettings;,,S
+Scripting,Carousel,,,,,,"Wait for an action to complete.",Device: Carousel WaitForCompletion;,,S
+Scripting,Carousel,,,,,,"Put settings back to normal mode",Device: Carousel _CompleteHoming;,,S
+Scripting,Carousel,,,,,,"Return a command list defining the current half step",Device: Carousel _HalfStepCmd;,,S
+Scripting,Carousel,,,,,,"Tell stepper card to home.",Device: Carousel _Home;,,S
+Scripting,Carousel,,,,,,"Return a command list defining a step increment",Device: Carousel _IncrementCmd &;,increment;,S
+Scripting,Carousel,,,,,,"Check whether axis is at home",Device: Carousel _IsAtHome;,,S
+Scripting,Carousel,,,,,,"Tell stepper card to move using the specified move command, which dicates an absolute (M) or relative (R) movement and the steps to move to (or by, for a relative move). Loss of position checking happens here.",Device: Carousel _Move &;,moveCmd;,S
+Scripting,Carousel,,,,,,"Return a command list defining the step to move to",Device: Carousel _MoveCmd &;,step;,S
+Scripting,Carousel,,,,,,"Tell stepper card to move using the specified move command, which dicates an absolute (M) or relative (R) movement and the steps to move to (or by, for a relative move), in a non-blocking fashion. Loss of position checking happens here.",Device: Carousel _MoveNonBlocking &;,moveCmd;,S
+Scripting,Carousel,,,,,,"Returns a profile tuple from the given profile string for speed or power. profileString should be of the form '%d, %d, %d' ",Device: Carousel _ParseProfile &;,profileString;,S
+Scripting,Carousel,,,,,,"Return a command list defining the current power setting",Device: Carousel _PowerCmd &;,powerProfile;,S
+Scripting,Carousel,,,,,,"Pass command string to stepper card. Handle exceptions",Device: Carousel _ProcessCmdList & &;,cmds;bNonBlocking;,S
+Scripting,Carousel,,,,,,"Sets the velocity profile (from a tuple) for subsequent moves.",Device: Carousel _SetStepSpeedProfile &;,profile;,S
+Scripting,Carousel,,,,,,"Return a command list defining a speed profile setting",Device: Carousel _SpeedCmd &;,profile;,S
+Scripting,Carousel,,,,,,"Check that theta is withing the valid range. Throw an exception if not",Device: Carousel _ThetaAxis__ValidateTheta &;,theta;,S
+Scripting,Carousel,,,,,,"Validate step setting. (NB: Do not call this directly.) step: the step setting to validate. takingAction: If set True, throw an AxisError exception if validation fails. Otherwise, return result",Device: Carousel _Validate & &;,step;takingAction;,S
+Scripting,Carousel,,,,,,"Return a command list defining the absolute step for the current position.",Device: Carousel _ZeroCmd &;,zeroOffset;,S
+Scripting,Carousel,,,,,,"Refer to stepper card being controlled",Device: Carousel __init__ & & & &;,name;card;configData;moreSettings;,S
+Scripting,Carousel,,,,,,"Simple string representation of the device.",Device: Carousel __str__;,,S
+Scripting,Carousel,,,,,,"Executes the formatted function call string functionWithArgs on self.",Device: Carousel execute &;,functionWithArgs;,S
+Scripting,Carousel,,,,,,"Return the device's identifying name.",Device: Carousel getName;,,S
+
+Scripting,TipStripper,,,,,,"Disengage Tip Stripper",Device: TipStripper Disengage;,,S
+Scripting,TipStripper,,,,,,"Engage Tip Stripper",Device: TipStripper Engage;,,S
+Scripting,TipStripper,,,,,,"Determine current engagement state of Tip Stripper",Device: TipStripper IsEngaged;,,S
+Scripting,TipStripper,,,,,,"The port being used to communicate with Tip Stripper. Returns (Engage,Disengage) ports",Device: TipStripper PortsUsed;,,S
+Scripting,TipStripper,,,,,,"Traverse Tip Stripper betwen engaged and diengaged positions",Device: TipStripper _TipStripper__Traverse & &;,onPort;offPort;,S
+Scripting,TipStripper,,,,,,"Refer to stepper card being controlled",Device: TipStripper __init__ & & & &;,name;card;configData;moreSettings;,S
+Scripting,TipStripper,,,,,,"Simple string representation of the device.",Device: TipStripper __str__;,,S
+Scripting,TipStripper,,,,,,"Executes the formatted function call string functionWithArgs on self.",Device: TipStripper execute &;,functionWithArgs;,S
+Scripting,TipStripper,,,,,,"Return the device's identifying name.",Device: TipStripper getName;,,S
+
+Scripting,Pump,,,,,,"The number of steps used in offsetting backlash.",Device: Pump BacklashSteps;,,S
+Scripting,Pump,,,,,,"Returns the ul conversion for dual piston mode.",Device: Pump DualPistonModeUlPerStep;,,S
+Scripting,Pump,,,,,,"Move to maximum limit",Device: Pump End;,,S
+Scripting,Pump,,,,,,"Returns the estimated volume displaced (in ul) by a full stroke (ie across both pistons). NB: the point at which the piston modes actually switch is not known. It is assumed to be in the middle of the mid-range",Device: Pump FullStrokeVolume;,,S
+Scripting,Pump,,,,,,"Return the firmware version for the card attached to this axis.",Device: Pump GetFirmwareVersion;,,S
+Scripting,Pump,,,,,,"Return our internal tracking of the axis position.",Device: Pump GetPositionTracking;,,S
+Scripting,Pump,,,,,,"Obtain the current half step setting.",Device: Pump HalfStep;,,S
+Scripting,Pump,,,,,,"Homing (override)",Device: Pump Home;,,S
+Scripting,Pump,,,,,,"Obtain the home step value. By default, this is 0, but it may be reconfigured if home optos are not at start of travel.",Device: Pump HomeStep;,,S
+Scripting,Pump,,,,,,"Obtain the current power settings.",Device: Pump HomingPower;,,S
+Scripting,Pump,,,,,,"Obtain the current homing step speed profile.",Device: Pump HomingStepSpeedProfile;,,S
+Scripting,Pump,,,,,,"Obtain the current power settings used when axis is stationary.",Device: Pump IdlePower;,,S
+Scripting,Pump,,,,,,"Move motor by given step increment",Device: Pump IncrementStep & &;,stepInc;bNonBlocking;,S
+Scripting,Pump,,,,,,"Aspirate/Dispense a given volume (in ul).",Device: Pump IncrementVolume &;,volumeInc;,S
+Scripting,Pump,,,,,,"Determine whether motor needs homing",Device: Pump IsHomed;,,S
+Scripting,Pump,,,,,,"Indicates whether piston is currently in dual piston range ",Device: Pump IsUsingDualPistonMode;,,S
+Scripting,Pump,,,,,,"Indicates whether piston is currently in single piston range ",Device: Pump IsUsingSinglePistonMode;,,S
+Scripting,Pump,,,,,,"Check whether a step setting is valid. step: the step setting to validate.",Device: Pump IsValid &;,step;,S
+Scripting,Pump,,,,,,"Returns the maximum volume (in ul) available when in dual piston mode.",Device: Pump MaxDualPistonModeVolume;,,S
+Scripting,Pump,,,,,,"Returns the maximum volume (in ul) available when in Single piston mode.",Device: Pump MaxSinglePistonModeVolume;,,S
+Scripting,Pump,,,,,,"Return the maximum permitted step count",Device: Pump MaxStep;,,S
+Scripting,Pump,,,,,,"Returns the maximum volume (in ul) available in current piston mode. NB: the backlash volume is *not* taken into account.",Device: Pump MaxVolume;,,S
+Scripting,Pump,,,,,,"Aspirate/Dispense a given volume (in ul).",Device: Pump ParkValve;,,S
+Scripting,Pump,,,,,,"Obtain the current power settings.",Device: Pump Power;,,S
+Scripting,Pump,,,,,,"Resets the velocity profile back to the default.",Device: Pump ResetHalfStep;,,S
+Scripting,Pump,,,,,,"Reset the home step value to the configured setting.",Device: Pump ResetHomeStep;,,S
+Scripting,Pump,,,,,,"Resets the power back to the default.",Device: Pump ResetHomingPower;,,S
+Scripting,Pump,,,,,,"Resets the homing velocity profile back to the default.",Device: Pump ResetHomingStepSpeedProfile;,,S
+Scripting,Pump,,,,,,"Resets the idle power back to the default.",Device: Pump ResetIdlePower;,,S
+Scripting,Pump,,,,,,"Resets the power back to the default.",Device: Pump ResetPower;,,S
+Scripting,Pump,,,,,,"Resets the velocity profile back to the default.",Device: Pump ResetStepSpeedProfile;,,S
+Scripting,Pump,,,,,,"Set the flow rate.",Device: Pump SetFlowRate &;,newVolumeRate;,S
+Scripting,Pump,,,,,,"Set the current half step setting.",Device: Pump SetHalfStep &;,newSetting;,S
+Scripting,Pump,,,,,,"Override the home step value.",Device: Pump SetHomeStep &;,homeStep;,S
+Scripting,Pump,,,,,,"Set the current power settings.",Device: Pump SetHomingPower & & &;,newMax;newHold;newDecay;,S
+Scripting,Pump,,,,,,"Sets the velocity profile for subsequent moves.",Device: Pump SetHomingStepSpeedProfile & & &;,newBeginSpeed;newEndSpeed;newSlope;,S
+Scripting,Pump,,,,,,"Set the power settings to use when axis is stationary.",Device: Pump SetIdlePower & & &;,newMax;newHold;newDecay;,S
+Scripting,Pump,,,,,,"Set the internal tracking position.",Device: Pump SetPositionTracking &;,newPosition;,S
+Scripting,Pump,,,,,,"Set the current power settings.",Device: Pump SetPower & & &;,newMax;newHold;newDecay;,S
+Scripting,Pump,,,,,,"Set the current power settings.",Device: Pump SetPowerFromString &;,profile;,S
+Scripting,Pump,,,,,,"Move motor to a given step.",Device: Pump SetStep & &;,step;bNonBlocking;,S
+Scripting,Pump,,,,,,"Sets the velocity profile for subsequent moves.",Device: Pump SetStepSpeedProfile & & &;,newBeginSpeed;newEndSpeed;newSlope;,S
+Scripting,Pump,,,,,,"Sets the velocity profile for subsequent moves using a string as input.",Device: Pump SetStepSpeedProfileFromString &;,profile;,S
+Scripting,Pump,,,,,,"Aspirate/Dispense to the given volume (in ul). A DRDPump exception is thrown if maximum volume of current piston mode is exceeded. NB: backlash is not taken into account. This must be catered for by the caller",Device: Pump SetVolume &;,newVolume;,S
+Scripting,Pump,,,,,,"Returns the ul conversion for single piston mode.",Device: Pump SinglePistonModeUlPerStep;,,S
+Scripting,Pump,,,,,,"Obtain the current step value",Device: Pump Step;,,S
+Scripting,Pump,,,,,,"Obtain the current step speed profile.",Device: Pump StepSpeedProfile;,,S
+Scripting,Pump,,,,,,"Reset the flow rate to the default aspiration rate for the current piston mode.",Device: Pump UseDefaultAspirationFlowRate;,,S
+Scripting,Pump,,,,,,"Reset the flow rate to the default dispense rate for the current piston mode.",Device: Pump UseDefaultDispenseFlowRate;,,S
+Scripting,Pump,,,,,,"Positions pump to start of dual piston mode. Throws an exception if valve has not been set. NB: Backlash is not taken into account",Device: Pump UseDualPistonMode;,,S
+Scripting,Pump,,,,,,"Reset the flow rate to the generic aspiration rate, regardless of piston mode.",Device: Pump UseGenericAspirationFlowRate;,,S
+Scripting,Pump,,,,,,"Reset the flow rate to the generic dispense rate, regardless of piston mode.",Device: Pump UseGenericDispenseFlowRate;,,S
+Scripting,Pump,,,,,,"Positions pump to start of single piston mode. Throws an exception if valve has not been set. NB: Backlash is not taken into account",Device: Pump UseSinglePistonMode;,,S
+Scripting,Pump,,,,,,"Override this to validate configuration settings as they are read in. Throw a HardwareSettingsError if a problem is encountered",Device: Pump ValidateSettings;,,S
+Scripting,Pump,,,,,,"Returns the volume (in ul) that is currently aspirated.",Device: Pump Volume;,,S
+Scripting,Pump,,,,,,"Wait for an action to complete.",Device: Pump WaitForCompletion;,,S
+Scripting,Pump,,,,,,"Returns the backlash volume for the current piston mode setting.",Device: Pump _BacklashVolume;,,S
+Scripting,Pump,,,,,,"Returns the step represented by the given aspirated volume. NB: the backlash volume is *not* taken into account. ",Device: Pump _CalculatedStep &;,volume;,S
+Scripting,Pump,,,,,,"Returns the aspirated volume represented by the given step. NB: the backlash volume is *not* taken into account. ",Device: Pump _CalculatedVolume &;,step;,S
+Scripting,Pump,,,,,,"Override the standard end homing method.",Device: Pump _CompleteHoming;,,S
+Scripting,Pump,,,,,,"Return a command list defining the current half step",Device: Pump _HalfStepCmd;,,S
+Scripting,Pump,,,,,,"Override the standard homing method.",Device: Pump _Home;,,S
+Scripting,Pump,,,,,,"Return the homing power command for DRD Pump (differs from simple stepper cards assumed by Axis).",Device: Pump _HomingPowerCmd;,,S
+Scripting,Pump,,,,,,"Return a command list defining a step increment",Device: Pump _IncrementCmd &;,increment;,S
+Scripting,Pump,,,,,,"Check whether axis is at home",Device: Pump _IsAtHome;,,S
+Scripting,Pump,,,,,,"Override the standard move method.",Device: Pump _Move &;,stepCmd;,S
+Scripting,Pump,,,,,,"Return a command list defining the step to move to",Device: Pump _MoveCmd &;,step;,S
+Scripting,Pump,,,,,,"Tell stepper card to move using the specified move command, which dicates an absolute (M) or relative (R) movement and the steps to move to (or by, for a relative move), in a non-blocking fashion. Loss of position checking happens here.",Device: Pump _MoveNonBlocking &;,moveCmd;,S
+Scripting,Pump,,,,,,"Returns a profile tuple from the given profile string for speed or power. profileString should be of the form '%d, %d, %d' ",Device: Pump _ParseProfile &;,profileString;,S
+Scripting,Pump,,,,,,"Return the power command for DRD Pump (differs from simple stepper cards assumed by Axis).",Device: Pump _PowerCmd;,,S
+Scripting,Pump,,,,,,"Return the power off command for DRD Pump.",Device: Pump _PowerOffCmd;,,S
+Scripting,Pump,,,,,,"Return the power on command for DRD Pump.",Device: Pump _PowerOnCmd;,,S
+Scripting,Pump,,,,,,"Pass command string to stepper card. Handle exceptions",Device: Pump _ProcessCmdList & &;,cmds;bNonBlocking;,S
+Scripting,Pump,,,,,,"Sets the velocity profile (from a tuple) for subsequent moves.",Device: Pump _SetStepSpeedProfile &;,profile;,S
+Scripting,Pump,,,,,,"Move valve to given position. position should be either 1 or 2",Device: Pump _SetValvePosition &;,position;,S
+Scripting,Pump,,,,,,"Return a command list defining a speed profile setting",Device: Pump _SpeedCmd &;,profile;,S
+Scripting,Pump,,,,,,"Positions pump to start of given piston mode.",Device: Pump _UsePistonMode &;,pistonMode;,S
+Scripting,Pump,,,,,,"Validate step setting. (NB: Do not call this directly.) step: the step setting to validate. takingAction: If set True, throw an AxisError exception if validation fails. Otherwise, return result",Device: Pump _Validate & &;,step;takingAction;,S
+Scripting,Pump,,,,,,"Obtain current valve position. Returns None if valve has not been set",Device: Pump _ValidateValve;,,S
+Scripting,Pump,,,,,,"Obtain current valve position. Returns None if valve has not been set",Device: Pump _ValvePosition;,,S
+Scripting,Pump,,,,,,"Return a command list defining the absolute step for the current position.",Device: Pump _ZeroCmd &;,zeroOffset;,S
+Scripting,Pump,,,,,,"Driver for DRD pump. name: the name to use when tracking use card: the card associated with the pump configData: a dictionary of configuration values with which to override the default settings. moreSettings: Refer to stepper card being controlled ",Device: Pump __init__ & & & &;,name;card;configData;moreSettings;,S
+Scripting,Pump,,,,,,"Simple string representation of the device.",Device: Pump __str__;,,S
+Scripting,Pump,,,,,,"Executes the formatted function call string functionWithArgs on self.",Device: Pump execute &;,functionWithArgs;,S
+Scripting,Pump,,,,,,"Return the device's identifying name.",Device: Pump getName;,,S
+
+Scripting,Instrument,,,,,,"Return the Container instance for the bulk bottle.",Subsystem: Instrument BulkBottle;,,S
+Scripting,Instrument,,,,,,"Cleaning up at the end of a run. This (currently) means that we: * home all axes * move the carousel a short distance from home so that the carousel tab is clear of the opto (for easy removal of the carousel) ",Subsystem: Instrument CleanUp;,,S
+Scripting,Instrument,,,,,,"Clears the root quadrant to sample ID mapping. This should be called prior to running a batch",Subsystem: Instrument ClearRootQuadrantMapping;,,S
+Scripting,Instrument,,,,,,"Return the Container instance at the given position. sector : the sector to look up (1-4 on the carousel, 0 is not on the carousel) name: mnemonic associated with the container",Subsystem: Instrument ContainerAt & &;,sector;name;,S
+Scripting,Instrument,,,,,,"Run a demo mode for the instrument. You can specify a number of iterations.",Subsystem: Instrument Demo & &;,iterations;id;,S
+Scripting,Instrument,,,,,,"Flush out the hydraulic line to the given waste vial. If homeAtEnd is true, the Z axis is homed at the end of the flush. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument Flush & & &;,wasteVial;homeAtEnd;id;,S
+Scripting,Instrument,,,,,,"Home all axes. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument HomeAll &;,id;,S
+Scripting,Instrument,,,,,,"Incubate for a specified number of seconds. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument Incubate & &;,period_secs;id;,S
+Scripting,Instrument,,,,,,"Initialise the high-level instrument components.",Subsystem: Instrument Initialise;,,S
+Scripting,Instrument,,,,,,"Set up the standard containers on the instrument on startup. (They are initially assumed to be empty). Returns a map of the tubes, with the map key being the sector number and the map value being a map of tubes for that sector. The sector tube map has keys corresponding to tube name and each map value is the corresponding Tube instance.",Subsystem: Instrument InitialiseContainers;,,S
+Scripting,Instrument,,,,,,"Mix fluid in the given vial. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument Mix & &;,vial;id;,S
+Scripting,Instrument,,,,,,"Move to aspirate a specific volume from the given vial.",Subsystem: Instrument MoveToAspirate & &;,vial;volume_ul;,S
+Scripting,Instrument,,,,,,"Move to dispense a volume (in uL) into the given vial. The dispense can be free air if usingFreeAirDispense is True. ",Subsystem: Instrument MoveToDispense & & &;,vial;volume_uL;usingFreeAirDispense;,S
+Scripting,Instrument,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: Instrument NullTrace &;,message;,S
+Scripting,Instrument,,,,,,"Prime the hydraulic line, using the given waste vial. If homeAtEnd is true, the Z axis is homed at the end of the prime. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument Prime & & &;,wasteVial;homeAtEnd;id;,S
+Scripting,Instrument,,,,,,"Print a debug message",Subsystem: Instrument PrintTrace &;,message;,S
+Scripting,Instrument,,,,,,"Resuspend the given vial. This is essentially the same as TopUpVial, except that the vial is assumed to be empty. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument ResuspendVial & & & &;,dstVial;srcVial;usingFreeAirDispense;id;,S
+Scripting,Instrument,,,,,,"Incubate for a specified number of seconds. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument Separate & &;,period_secs;id;,S
+Scripting,Instrument,,,,,,"Top up the given vial from the given src. By default (srcVial = None), the vial is topped up from the BCCM. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument TopUpVial & & & &;,dstVial;srcVial;usingFreeAirDispense;id;,S
+Scripting,Instrument,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: Instrument Trace &;,message;,S
+Scripting,Instrument,,,,,,"Transport a given volume of fluid (in uL) from srcVial to dstVial. If usingFreeAirDispense is True, we will do a free air dispense for all dispenses involved in this transport workflow. id is a unique identifier (eg. sample ID) for tracking the caller. kw is a dictionary of optional parameters & values.",Subsystem: Instrument Transport & & & & &;,dstVial;srcVial;volume_ul;usingFreeAirDispense;id;,S
+Scripting,Instrument,,,,,,"Aspirate the given volume from the given vial using the given tip",Subsystem: Instrument _Aspirate & & &;,volume;vial;tipCapacity;,S
+Scripting,Instrument,,,,,,"Dispense the given volume to the given vial using the given tip. NB: The given volume is assumed to be the volume aspirated previously. Uses a free air dispense if usingFreeAirDispense = True.",Subsystem: Instrument _Dispense & & &;,volume;vial;usingFreeAirDispense;,S
+Scripting,Instrument,,,,,,"Determine the height at which to place the robot in preparation to aspirate.",Subsystem: Instrument _Instrument__CalculateAspirationHeightFor & & &;,vial;volumeToTransport_uL;tipLength;,S
+Scripting,Instrument,,,,,,"Determine the height at which to place the robot in preparation to dispense.",Subsystem: Instrument _Instrument__CalculateDispenseHeightFor & & & &;,vial;volumeToTransport_uL;tipLength;usingFreeAirDispense;,S
+Scripting,Instrument,,,,,,"Ensure that the given height does not cause tip to get too close to the base",Subsystem: Instrument _Instrument__ClipHeight & & &;,height;vial;tipLength;,S
+Scripting,Instrument,,,,,," Determine the sector and location reference for the given vial.",Subsystem: Instrument _Instrument__LocationOf &;,vial;,S
+Scripting,Instrument,,,,,,"Determine the tip capacity (in uL) for the specified tip ID.",Subsystem: Instrument _Instrument__TipCapacityOf &;,tipId;,S
+Scripting,Instrument,,,,,,"Determine whether the current tip (or the one given) is allowed to enter a given vial.",Subsystem: Instrument _Instrument__TipIsForbiddenToEnter & &;,vial;tipId;,S
+Scripting,Instrument,,,,,,"Determine what tip to use when mixing the fluid currently in the given vial. Returns a tuple of sector and tip.",Subsystem: Instrument _Instrument__TipToMixWith &;,vial;,S
+Scripting,Instrument,,,,,,"Determine what tip to use for a given vial.",Subsystem: Instrument _Instrument__TipToUseFor &;,vial;,S
+Scripting,Instrument,,,,,,"Strip the current tip and pick up the designated one, if it is not already in use",Subsystem: Instrument _Instrument__UseTip & &;,sector;chosenTip;,S
+Scripting,Instrument,,,,,,"Perform a wicking extract by a given offset.",Subsystem: Instrument _Instrument__WickingExtract &;,offset;,S
+Scripting,Instrument,,,,,,"Set up the instrument components: - the TeslaPlatform, which handles mechanical actions. - the TeslaPump, which handles fluidics ",Subsystem: Instrument __init__ &;,name;,S
+Scripting,Instrument,,,,,,"Simple string representation of the Subsystem.",Subsystem: Instrument __str__;,,S
+Scripting,Instrument,,,,,,"Set the volume of the reagent containers to zero.",Subsystem: Instrument emptyReagentContainers;,,S
+Scripting,Instrument,,,,,,"Set the volume of the waste containers to zero.",Subsystem: Instrument emptyWasteContainers;,,S
+Scripting,Instrument,,,,,,"Executes the formatted function call string functionWithArgs on self.",Subsystem: Instrument execute &;,functionWithArgs;,S
+Scripting,Instrument,,,,,,"Return the volume (in uL) of the container at a location, specified by sector and container name.",Subsystem: Instrument getContainerVolume & &;,sector;containerName;,S
+Scripting,Instrument,,,,,,"Return the Subsystem's identifying name.",Subsystem: Instrument getName;,,S
+Scripting,Instrument,,,,,,"Return the Tesla platform instance, primarily for testing purposes.",Subsystem: Instrument getPlatform;,,S
+Scripting,Instrument,,,,,,"Return the DRD pump instance, primarily for testing purposes.",Subsystem: Instrument getPump;,,S
+Scripting,Instrument,,,,,,"Set the fluid volume (in uL) in a container, specified by sector and name, as per ContainerAt(). Doesn't return anything.",Subsystem: Instrument setContainerVolume & & &;,sector;containerName;volume_uL;,S
+Scripting,Instrument,,,,,,"Set the fluid volume as a percentage of maximum volume. percentageLevel is a value between 0 and 1.",Subsystem: Instrument setContainerVolumePercentage & & &;,sector;containerName;percentageLevel;,S
+
+Scripting,TeslaPlatform,,,,,,"Return the sector and storage position of the currently loaded tip. If not tip is currently loaded, the storage position will be None, but the sector for the last tip used is retained.",Subsystem: TeslaPlatform CurrentTipID;,,S
+Scripting,TeslaPlatform,,,,,,"Return the length of the currently loaded tip.",Subsystem: TeslaPlatform CurrentTipLength;,,S
+Scripting,TeslaPlatform,,,,,,"Home *just* the Z axis.",Subsystem: TeslaPlatform HomeZAxis;,,S
+Scripting,TeslaPlatform,,,,,,"Perform initialisation of the Platform components",Subsystem: TeslaPlatform Initialise;,,S
+Scripting,TeslaPlatform,,,,,,"Move the carousel to a safe position (away from the opto for easy removal)",Subsystem: TeslaPlatform MoveCarouselToSafePosition;,,S
+Scripting,TeslaPlatform,,,,,,"Move the dispenser to a given position: - Raise the robot arm to travel position. - Move the carousel and robot to the given referencePoint. - Lower the robot so that the current tip is at the given finalZPosition.",Subsystem: TeslaPlatform MoveTo & & &;,sector;referencePoint;finalZPosition;,S
+Scripting,TeslaPlatform,,,,,,"Move carousel and robot so that the robot arm is above a given position. sector: the sector of the carousel to access (nominally 90 degrees). referencePoint: a reference to the list of positions the carousel and robot need to be set at. index: 0, or 1: this indicates which rendezvous position to use. The first is used by default. ",Subsystem: TeslaPlatform MoveToPosition & & &;,sector;referencePoint;positionIndex;,S
+Scripting,TeslaPlatform,,,,,,"Move to a specific sector and tip number. Note that this moves both the carousel and the theta axis. This is mainly for testing purposes.",Subsystem: TeslaPlatform MoveToSectorAndTip & &;,sector;tipNbr;,S
+Scripting,TeslaPlatform,,,,,,"Give the number of sectors on the platform",Subsystem: TeslaPlatform NbrSectors;,,S
+Scripting,TeslaPlatform,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: TeslaPlatform NullTrace &;,message;,S
+Scripting,TeslaPlatform,,,,,,"Pickup a tip from the given position. - Check that the given tipNbr is valid - Move to pick up the tip - Engage the tip - Update the travel position It is assumed that there is no tip currently in place",Subsystem: TeslaPlatform PickupTip & &;,sector;tipNbr;,S
+Scripting,TeslaPlatform,,,,,,"Print a debug message",Subsystem: TeslaPlatform PrintTrace &;,message;,S
+Scripting,TeslaPlatform,,,,,,"Obtain the calibrated offset for the Robot Z-Axis",Subsystem: TeslaPlatform RobotZOffset;,,S
+Scripting,TeslaPlatform,,,,,,"Set the position for the Robot's Z Axis when rotating the Theta axis",Subsystem: TeslaPlatform SetTravelPosition &;,zTravelPosition;,S
+Scripting,TeslaPlatform,,,,,,"Strip the current tip. - Check that the given tipNbr is valid - Move to the current tip's original pickup point - Move Z-Axis to the strip position - Engage the tip stripper - Set high power for strip action - Move Z-Axis up to stripped position - Home the Z axis - Disengage the Tip Stripper - Move the Z-Axis to the travel position (without tip) It is assumed that there is a tip currently in place",Subsystem: TeslaPlatform StripTip;,,S
+Scripting,TeslaPlatform,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: TeslaPlatform Trace &;,message;,S
+Scripting,TeslaPlatform,,,,,,"Obtain the travel position for the Robot's Z Axis when rotating the Theta axis",Subsystem: TeslaPlatform TravelPosition;,,S
+Scripting,TeslaPlatform,,,,,,"Load the intercept points for the robot and carousel. NB: since there are two intercept points, a set of 2x2=4 values, separated by commas, is expected If one point is given, then it is assumed to be for the zTheta robot only. ",Subsystem: TeslaPlatform _LoadReferencePoints &;,referenceData;,S
+Scripting,TeslaPlatform,,,,,,"Obtain the carousel and robot theta settings needed to intersect at the given position on the carousel. Returns (rTheta, cTheta) - the required theta settings of robot and carousel respectively (NB: for tips, this is taken to be the position where the TipStripper may rendezvous also) If the reference is not on the carousel, then only the robot coordinate is returned ",Subsystem: TeslaPlatform _ObtainRendezvous & & &;,sector;referencePoint;index;,S
+Scripting,TeslaPlatform,,,,,,"Initialise the Tesla Platform tip references",Subsystem: TeslaPlatform _TeslaPlatform__InitialiseTipReference;,,S
+Scripting,TeslaPlatform,,,,,,"Set the power profile in the Z-Axis to 'high', so that a tip may be picked up.",Subsystem: TeslaPlatform _TeslaPlatform__SetPickupTipState &;,isTrue;,S
+Scripting,TeslaPlatform,,,,,,"Set or reset the power and speed profile in the Z-Axis to strip or standard settings.",Subsystem: TeslaPlatform _TeslaPlatform__SetStripTipState &;,isTrue;,S
+Scripting,TeslaPlatform,,,,,,"Set or reset the power and speed profile in the Z-Axis to pickup or standard settings.",Subsystem: TeslaPlatform _TeslaPlatform__SetZPowerAndSpeed & &;,powerProfile;velocityProfile;,S
+Scripting,TeslaPlatform,,,,,,"Load in the configuration data for the Platform.",Subsystem: TeslaPlatform __init__ &;,name;,S
+Scripting,TeslaPlatform,,,,,,"Simple string representation of the Subsystem.",Subsystem: TeslaPlatform __str__;,,S
+Scripting,TeslaPlatform,,,,,,"Executes the formatted function call string functionWithArgs on self.",Subsystem: TeslaPlatform execute &;,functionWithArgs;,S
+Scripting,TeslaPlatform,,,,,,"Returns the carousel instance.",Subsystem: TeslaPlatform getCarousel;,,S
+Scripting,TeslaPlatform,,,,,,"Return the Subsystem's identifying name.",Subsystem: TeslaPlatform getName;,,S
+Scripting,TeslaPlatform,,,,,,"Returns the Z/theta robot instance.",Subsystem: TeslaPlatform getRobot;,,S
+Scripting,TeslaPlatform,,,,,,"Return a reference to the TeslaPlatform's tip stripper instance. This is mainly for testing purposes.",Subsystem: TeslaPlatform getTipStripper;,,S
+
+Scripting,ZThetaRobot,,,,,,"Home all robot components. Ensure that Z axis is homed first ",Subsystem: ZThetaRobot Home;,,S
+Scripting,ZThetaRobot,,,,,,"Home the Theta axis. Ensure that the arm is at a safe height",Subsystem: ZThetaRobot HomeTheta;,,S
+Scripting,ZThetaRobot,,,,,,"Home the Z axis",Subsystem: ZThetaRobot HomeZ;,,S
+Scripting,ZThetaRobot,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: ZThetaRobot NullTrace &;,message;,S
+Scripting,ZThetaRobot,,,,,,"If a travel position is specified, then move Z axis to it.",Subsystem: ZThetaRobot PrepareZForTravel;,,S
+Scripting,ZThetaRobot,,,,,,"Print a debug message",Subsystem: ZThetaRobot PrintTrace &;,message;,S
+Scripting,ZThetaRobot,,,,,,"Rotate arm to given position, after ensuring that it is in the travel position.",Subsystem: ZThetaRobot SetTheta & &;,degrees;bNonBlocking;,S
+Scripting,ZThetaRobot,,,,,,"Move the Z-axis position to the given value.",Subsystem: ZThetaRobot SetZPosition &;,zPosition;,S
+Scripting,ZThetaRobot,,,,,,"Define the Z-axis position to adopt prior to rotating the theta axis.",Subsystem: ZThetaRobot SetZTravelPosition &;,zTravelPosition;,S
+Scripting,ZThetaRobot,,,,,,"Obtain the Theta-axis interface.",Subsystem: ZThetaRobot Theta;,,S
+Scripting,ZThetaRobot,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: ZThetaRobot Trace &;,message;,S
+Scripting,ZThetaRobot,,,,,,"Wait for completion for the non blocking move on the theta axis",Subsystem: ZThetaRobot WaitForThetaCompletion;,,S
+Scripting,ZThetaRobot,,,,,,"Obtain the Z-axis interface.",Subsystem: ZThetaRobot Z;,,S
+Scripting,ZThetaRobot,,,,,,"Returns the current Z position.",Subsystem: ZThetaRobot ZPosition;,,S
+Scripting,ZThetaRobot,,,,,,"Obtain the current Z-axis travel position. Returns 'None' if the travel position has not been specified.",Subsystem: ZThetaRobot ZTravelPosition;,,S
+Scripting,ZThetaRobot,,,,,,"Load in the configuration data for the robot",Subsystem: ZThetaRobot __init__ &;,name;,S
+Scripting,ZThetaRobot,,,,,,"Simple string representation of the Subsystem.",Subsystem: ZThetaRobot __str__;,,S
+Scripting,ZThetaRobot,,,,,,"Executes the formatted function call string functionWithArgs on self.",Subsystem: ZThetaRobot execute &;,functionWithArgs;,S
+Scripting,ZThetaRobot,,,,,,"Return the Subsystem's identifying name.",Subsystem: ZThetaRobot getName;,,S
+
+Scripting,Carousel,,,,,,"Home carousel.",Subsystem: Carousel Home;,,S
+Scripting,Carousel,,,,,,"Move the carousel to a position that is clear of the home opto for each removal of the carousel.",Subsystem: Carousel MoveToSafePosition;,,S
+Scripting,Carousel,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: Carousel NullTrace &;,message;,S
+Scripting,Carousel,,,,,,"Print a debug message",Subsystem: Carousel PrintTrace &;,message;,S
+Scripting,Carousel,,,,,," Move carousel to given position, as specified in rotational degrees. Check to see which direction is shortest, and increment the angle rather than move to the absolute position (this allows us to avoid problems sensing the home position at 360 degrees!). ",Subsystem: Carousel SetTheta &;,theta;,S
+Scripting,Carousel,,,,,," Obtain current carousel position.",Subsystem: Carousel Theta;,,S
+Scripting,Carousel,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: Carousel Trace &;,message;,S
+Scripting,Carousel,,,,,,"Return a reference to the theta axis.",Subsystem: Carousel _ThetaAxis;,,S
+Scripting,Carousel,,,,,,"Load in the configuration data for the Carousel. NB: since the carousel card also drives the TipStripper, this is also configured and may be accessed via the TipStripper() method. ",Subsystem: Carousel __init__ &;,name;,S
+Scripting,Carousel,,,,,,"Simple string representation of the Subsystem.",Subsystem: Carousel __str__;,,S
+Scripting,Carousel,,,,,,"Executes the formatted function call string functionWithArgs on self.",Subsystem: Carousel execute &;,functionWithArgs;,S
+Scripting,Carousel,,,,,,"Return the Subsystem's identifying name.",Subsystem: Carousel getName;,,S
+
+Scripting,TeslaPump,,,,,,"Aspirate from the vial, choosing a technique according to volume, and capacity. Return the volume aspirated at the tip. (This may vary from given sub-transport volume)",Subsystem: TeslaPump Aspirate & &;,volume;capacity;,S
+Scripting,TeslaPump,,,,,,"Aspirate the given volume using the mixing profile",Subsystem: TeslaPump AspirateMix & &;,volume;seqNbr;,S
+Scripting,TeslaPump,,,,,,"Aspirate an air slug prior to mixing. NB: The subsequent dispense occurs after the mix, so this is a bit different to standard aspirate/dispense cycle.",Subsystem: TeslaPump AspiratePreMixAirSlug &;,volume;,S
+Scripting,TeslaPump,,,,,,"Dispense to the vial, choosing a technique according to previous aspiration. The volume dispensed at the tip is assumed to be the volume retruned by the previous aspiration call",Subsystem: TeslaPump Dispense;,,S
+Scripting,TeslaPump,,,,,,"Dispense using the mixing profile",Subsystem: TeslaPump DispenseMix;,,S
+Scripting,TeslaPump,,,,,,"Dispense the air slug after mixing.",Subsystem: TeslaPump DispensePreMixAirSlug &;,volume;,S
+Scripting,TeslaPump,,,,,,"flush the pump.",Subsystem: TeslaPump Flush;,,S
+Scripting,TeslaPump,,,,,,"Initialise the pump",Subsystem: TeslaPump Initialise;,,S
+Scripting,TeslaPump,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: TeslaPump NullTrace &;,message;,S
+Scripting,TeslaPump,,,,,,"Park valve valve to idle (ie non-energised) position.",Subsystem: TeslaPump ParkValve;,,S
+Scripting,TeslaPump,,,,,,"Prime the pump. Return the volume dispensed to tip",Subsystem: TeslaPump Prime;,,S
+Scripting,TeslaPump,,,,,,"Print a debug message",Subsystem: TeslaPump PrintTrace &;,message;,S
+Scripting,TeslaPump,,,,,,"Set valve so that piston accesses reservoir.",Subsystem: TeslaPump SetValveToReservoir;,,S
+Scripting,TeslaPump,,,,,,"Set valve so that piston accesses dispense tip.",Subsystem: TeslaPump SetValveToTip;,,S
+Scripting,TeslaPump,,,,,,"Don't do anything with the message; used when we don't want debugging traces.",Subsystem: TeslaPump Trace &;,message;,S
+Scripting,TeslaPump,,,,,,"Aspirate from the vial using technique 1 (refer IDD for description):",Subsystem: TeslaPump _TeslaPump__Aspirate_1 & &;,volume;aspData;,S
+Scripting,TeslaPump,,,,,,"Aspirate from the vial using technique 2",Subsystem: TeslaPump _TeslaPump__Aspirate_2 & &;,volume;aspData;,S
+Scripting,TeslaPump,,,,,,"Aspirate from the vial using technique 3",Subsystem: TeslaPump _TeslaPump__Aspirate_3 & &;,volume;aspData;,S
+Scripting,TeslaPump,,,,,,"Aspirate from the vial using technique 4",Subsystem: TeslaPump _TeslaPump__Aspirate_4 & &;,volume;aspData;,S
+Scripting,TeslaPump,,,,,,"Aspirate from the reservoir when flushing",Subsystem: TeslaPump _TeslaPump__Aspirate_Flush & &;,volume;aspData;,S
+Scripting,TeslaPump,,,,,,"Dispense to the vial using technique 1",Subsystem: TeslaPump _TeslaPump__Dispense_1 & &;,dispenseList;dispData;,S
+Scripting,TeslaPump,,,,,,"Dispense to the vial using technique 2",Subsystem: TeslaPump _TeslaPump__Dispense_2 & &;,dispenseList;dispData;,S
+Scripting,TeslaPump,,,,,,"Dispense to the vial using technique 3",Subsystem: TeslaPump _TeslaPump__Dispense_3 & &;,dispenseList;dispData;,S
+Scripting,TeslaPump,,,,,,"Dispense to the vial using technique 4",Subsystem: TeslaPump _TeslaPump__Dispense_4 & &;,dispenseList;dispData;,S
+Scripting,TeslaPump,,,,,,"Dispense to the vial when flushing",Subsystem: TeslaPump _TeslaPump__Dispense_Flush & &;,dispenseList;dispData;,S
+Scripting,TeslaPump,,,,,,"Indicate that aspiration is the next operation expected.",Subsystem: TeslaPump _TeslaPump__MakeReadyForAspiration;,,S
+Scripting,TeslaPump,,,,,,"Set up the air slug between hydraulic fluid and tip fluid.",Subsystem: TeslaPump _TeslaPump__SetupAirSlug & &;,aspData;dispData;,S
+Scripting,TeslaPump,,,,,,"Ensure that aspiration is the next operation expected.",Subsystem: TeslaPump _TeslaPump__VerifyReadinessForAspiration;,,S
+Scripting,TeslaPump,,,,,,"Ensure that dispense is the next operation expected.",Subsystem: TeslaPump _TeslaPump__VerifyReadinessForDispense;,,S
+Scripting,TeslaPump,,,,,,"Load in the configuration data for the pump.",Subsystem: TeslaPump __init__ &;,name;,S
+Scripting,TeslaPump,,,,,,"Simple string representation of the Subsystem.",Subsystem: TeslaPump __str__;,,S
+Scripting,TeslaPump,,,,,,"Executes the formatted function call string functionWithArgs on self.",Subsystem: TeslaPump execute &;,functionWithArgs;,S
+Scripting,TeslaPump,,,,,,"Return the Subsystem's identifying name.",Subsystem: TeslaPump getName;,,S

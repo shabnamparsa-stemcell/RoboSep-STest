@@ -1,0 +1,191 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Platform</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Platform</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/p4tesla/tesla/dev/dev001/control/tesla/instrument/platform.py">c:\projects\p4tesla\tesla\dev\dev001\control\tesla\instrument\platform.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;<a href="#Platform">Platform</a>.py<br>
+#&nbsp;tesla.instrument.<a href="#Platform">Platform</a>.<a href="#Platform">Platform</a><br>
+#<br>
+#&nbsp;Operates&nbsp;a&nbsp;platform&nbsp;containing&nbsp;a&nbsp;Carousel,&nbsp;and&nbsp;a&nbsp;Z-Theta&nbsp;robot,<br>
+#&nbsp;and&nbsp;allows&nbsp;them&nbsp;to&nbsp;interact<br>
+#<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="copy.html">copy</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Platform.html#Platform">Platform</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>(<a href="exceptions.html#StandardError">exceptions.StandardError</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Platform.html#PlatformError">PlatformError</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Platform">class <strong>Platform</strong></a>(<a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Operates&nbsp;a&nbsp;platform&nbsp;containing&nbsp;a&nbsp;Carousel,&nbsp;and&nbsp;a&nbsp;Z-Theta&nbsp;robot,&nbsp;and&nbsp;<br>
+allows&nbsp;them&nbsp;to&nbsp;interact.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Platform.html#Platform">Platform</a></dd>
+<dd><a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Platform-Initialise"><strong>Initialise</strong></a>(self)</dt><dd><tt>Perform&nbsp;initialisation&nbsp;of&nbsp;the&nbsp;<a href="#Platform">Platform</a>&nbsp;components</tt></dd></dl>
+
+<dl><dt><a name="Platform-MoveToPosition"><strong>MoveToPosition</strong></a>(self, sector, referencePoint, positionIndex<font color="#909090">=0</font>)</dt><dd><tt>Move&nbsp;carousel&nbsp;and&nbsp;robot&nbsp;so&nbsp;that&nbsp;the&nbsp;robot&nbsp;arm&nbsp;is&nbsp;above&nbsp;a&nbsp;given&nbsp;position.<br>
+sector:&nbsp;the&nbsp;sector&nbsp;of&nbsp;the&nbsp;carousel&nbsp;to&nbsp;access&nbsp;(nominally&nbsp;90&nbsp;degrees).<br>
+referencePoint:&nbsp;a&nbsp;reference&nbsp;to&nbsp;the&nbsp;list&nbsp;of&nbsp;positions&nbsp;the&nbsp;carousel&nbsp;and&nbsp;robot&nbsp;need&nbsp;to&nbsp;be&nbsp;set&nbsp;at.<br>
+index:&nbsp;0,&nbsp;or&nbsp;1:&nbsp;this&nbsp;indicates&nbsp;which&nbsp;rendezvous&nbsp;position&nbsp;to&nbsp;use.&nbsp;The&nbsp;first&nbsp;is&nbsp;used&nbsp;by&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="Platform-NbrSectors"><strong>NbrSectors</strong></a>(self)</dt><dd><tt>Give&nbsp;the&nbsp;number&nbsp;of&nbsp;sectors&nbsp;on&nbsp;the&nbsp;platform</tt></dd></dl>
+
+<dl><dt><a name="Platform-RobotZOffset"><strong>RobotZOffset</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;calibrated&nbsp;offset&nbsp;for&nbsp;the&nbsp;Robot&nbsp;Z-Axis</tt></dd></dl>
+
+<dl><dt><a name="Platform-SetTravelPosition"><strong>SetTravelPosition</strong></a>(self, zTravelPosition)</dt><dd><tt>Set&nbsp;the&nbsp;position&nbsp;for&nbsp;the&nbsp;Robot's&nbsp;Z&nbsp;Axis&nbsp;when&nbsp;rotating&nbsp;the&nbsp;Theta&nbsp;axis</tt></dd></dl>
+
+<dl><dt><a name="Platform-TravelPosition"><strong>TravelPosition</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;travel&nbsp;position&nbsp;for&nbsp;the&nbsp;Robot's&nbsp;Z&nbsp;Axis&nbsp;when&nbsp;rotating&nbsp;the&nbsp;Theta&nbsp;axis</tt></dd></dl>
+
+<dl><dt><a name="Platform-__init__"><strong>__init__</strong></a>(self, name, otherConfigData<font color="#909090">={}</font>, referenceData<font color="#909090">={}</font>)</dt><dd><tt>Load&nbsp;in&nbsp;the&nbsp;configuration&nbsp;data&nbsp;for&nbsp;the&nbsp;<a href="#Platform">Platform</a>.</tt></dd></dl>
+
+<dl><dt><a name="Platform-getCarousel"><strong>getCarousel</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;carousel&nbsp;instance.</tt></dd></dl>
+
+<dl><dt><a name="Platform-getRobot"><strong>getRobot</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;Z/theta&nbsp;robot&nbsp;instance.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>CarouselThetaOffsetLabel</strong> = 'carouselreferencepointoffset_degrees'</dl>
+
+<dl><dt><strong>NbrSectorsLabel</strong> = 'numberofsectorsoncarousel'</dl>
+
+<dl><dt><strong>RobotThetaOffsetLabel</strong> = 'robotthetareferencepointoffset_degrees'</dl>
+
+<dl><dt><strong>SectorOffsetLabel</strong> = 'homingsector'</dl>
+
+<dl><dt><strong>SectorSenseLabel</strong> = 'sectororderingsense'</dl>
+
+<dl><dt><strong>SectorSizeLabel</strong> = 'sizeofcarouselsector_degrees'</dl>
+
+<dl><dt><strong>configData</strong> = {'homingsector': '1', 'sectororderingsense': '-1'}</dl>
+
+<dl><dt><strong>mandatoryData</strong> = ('numberofsectorsoncarousel', 'sizeofcarouselsector_degrees', 'carouselreferencepointoffset_degrees', 'robotthetareferencepointoffset_degrees')</dl>
+
+<hr>
+Methods inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><a name="Platform-NullTrace"><strong>NullTrace</strong></a>(self, message)</dt><dd><tt>Don't&nbsp;do&nbsp;anything&nbsp;with&nbsp;the&nbsp;message;&nbsp;used&nbsp;when&nbsp;we&nbsp;don't&nbsp;want&nbsp;debugging<br>
+traces.</tt></dd></dl>
+
+<dl><dt><a name="Platform-PrintTrace"><strong>PrintTrace</strong></a>(self, message)</dt><dd><tt>Print&nbsp;a&nbsp;debug&nbsp;message</tt></dd></dl>
+
+<dl><dt><a name="Platform-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Simple&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;<a href="tesla.instrument.Subsystem.html#Subsystem">Subsystem</a>.</tt></dd></dl>
+
+<dl><dt><a name="Platform-execute"><strong>execute</strong></a>(self, functionWithArgs)</dt><dd><tt>Executes&nbsp;the&nbsp;formatted&nbsp;function&nbsp;call&nbsp;string&nbsp;functionWithArgs&nbsp;on<br>
+self.</tt></dd></dl>
+
+<dl><dt><a name="Platform-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;<a href="tesla.instrument.Subsystem.html#Subsystem">Subsystem</a>'s&nbsp;identifying&nbsp;name.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><a name="Platform-registerInstance"><strong>registerInstance</strong></a>(instance)</dt><dd><tt>Register&nbsp;our&nbsp;instance&nbsp;with&nbsp;the&nbsp;Instance&nbsp;list.&nbsp;Note&nbsp;that&nbsp;this&nbsp;is&nbsp;a&nbsp;<br>
+static&nbsp;method.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><strong>SectionName</strong> = 'Base Subsystem'</dl>
+
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x0094CC50&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'Subsystem' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>instanceList</strong> = []</dl>
+
+<dl><dt><strong>mandatorySettings</strong> = ()</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="PlatformError">class <strong>PlatformError</strong></a>(<a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Exception&nbsp;for&nbsp;errors&nbsp;related&nbsp;to&nbsp;<a href="#Platform">Platform</a>&nbsp;operation<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Platform.html#PlatformError">PlatformError</a></dd>
+<dd><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a></dd>
+<dd><a href="exceptions.html#StandardError">exceptions.StandardError</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="PlatformError-__getitem__"><strong>__getitem__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="PlatformError-__init__"><strong>__init__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="PlatformError-__str__"><strong>__str__</strong></a>(...)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-Lock"><strong>Lock</strong></a> = allocate_lock(...)</dt><dd><tt>allocate_lock()&nbsp;-&gt;&nbsp;lock&nbsp;object<br>
+(allocate()&nbsp;is&nbsp;an&nbsp;obsolete&nbsp;synonym)<br>
+&nbsp;<br>
+Create&nbsp;a&nbsp;new&nbsp;lock&nbsp;object.&nbsp;&nbsp;See&nbsp;LockType.__doc__&nbsp;for&nbsp;information&nbsp;about&nbsp;locks.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>gHardwareData</strong> = &lt;tesla.hardware.config.HardwareConfiguration instance at 0x008635D0&gt;</td></tr></table>
+</body></html>

@@ -1,0 +1,328 @@
+(lp1
+(iipl.types.Bunch
+Bunch
+p2
+(dp3
+S'name'
+p4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\home_axes.xml'
+p5
+sS'time'
+p6
+I1302800909
+sba(iipl.types.Bunch
+Bunch
+p7
+(dp8
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human B Cell Negative Selection from WB 19954HLA.xml'
+p9
+sg6
+I1220655802
+sba(iipl.types.Bunch
+Bunch
+p10
+(dp11
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human B Cell WB Positive Selection 18184HLA.xml'
+p12
+sg6
+I1220655880
+sba(iipl.types.Bunch
+Bunch
+p13
+(dp14
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD138 WB Positive Selection 18387-high purity.xml'
+p15
+sg6
+I1218755436
+sba(iipl.types.Bunch
+Bunch
+p16
+(dp17
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD14 Buffy Coat Positive Selection 18088-high purity.xml'
+p18
+sg6
+I1220570616
+sba(iipl.types.Bunch
+Bunch
+p19
+(dp20
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD15 WB Positive Selection 18681-high purity.xml'
+p21
+sg6
+I1218755508
+sba(iipl.types.Bunch
+Bunch
+p22
+(dp23
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD15 WB Positive Selection 18681HLA.xml'
+p24
+sg6
+I1220656268
+sba(iipl.types.Bunch
+Bunch
+p25
+(dp26
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD19 WB Positive Selection 18084-chimerism.xml'
+p27
+sg6
+I1218740358
+sba(iipl.types.Bunch
+Bunch
+p28
+(dp29
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD19 WB Positive Selection 18084-high purity.xml'
+p30
+sg6
+I1218744832
+sba(iipl.types.Bunch
+Bunch
+p31
+(dp32
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD2 WB Positive Selection 18687-chimerism.xml'
+p33
+sg6
+I1218736524
+sba(iipl.types.Bunch
+Bunch
+p34
+(dp35
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD2 WB Positive Selection 18687-high purity.xml'
+p36
+sg6
+I1218746458
+sba(iipl.types.Bunch
+Bunch
+p37
+(dp38
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD2 WB Positive Selection 18687HLA.xml'
+p39
+sg6
+I1220655938
+sba(iipl.types.Bunch
+Bunch
+p40
+(dp41
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD20 WB Positive Selection 18685-high purity.xml'
+p42
+sg6
+I1218747498
+sba(iipl.types.Bunch
+Bunch
+p43
+(dp44
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD25 WB Bright Positive Selection 18231-large volume.xml'
+p45
+sg6
+I1218668964
+sba(iipl.types.Bunch
+Bunch
+p46
+(dp47
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD25 WB Bright Positive Selection 18231-small volume.xml'
+p48
+sg6
+I1218666506
+sba(iipl.types.Bunch
+Bunch
+p49
+(dp50
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD3 WB Positive Selection 18081-chimerism.xml'
+p51
+sg6
+I1218745656
+sba(iipl.types.Bunch
+Bunch
+p52
+(dp53
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD3 WB Positive Selection 18081-high purity.xml'
+p54
+sg6
+I1218735504
+sba(iipl.types.Bunch
+Bunch
+p55
+(dp56
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD3 WB Positive Selection 18081HLA.xml'
+p57
+sg6
+I1220655992
+sba(iipl.types.Bunch
+Bunch
+p58
+(dp59
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD33 WB Positive Selection 18287-high purity.xml'
+p60
+sg6
+I1218666528
+sba(iipl.types.Bunch
+Bunch
+p61
+(dp62
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD33 WB Positive Selection 18287HLA.xml'
+p63
+sg6
+I1220656288
+sba(iipl.types.Bunch
+Bunch
+p64
+(dp65
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD34 Buffy Coat Positive Selection 18086-high purity.xml'
+p66
+sg6
+I1220570496
+sba(iipl.types.Bunch
+Bunch
+p67
+(dp68
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD4 WB Positive Selection 18082-high purity.xml'
+p69
+sg6
+I1218745256
+sba(iipl.types.Bunch
+Bunch
+p70
+(dp71
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD45 WB Depletion 18289-high recovery.xml'
+p72
+sg6
+I1220396258
+sba(iipl.types.Bunch
+Bunch
+p73
+(dp74
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD56 Buffy Coat Positive Selection 18085-high purity.xml'
+p75
+sg6
+I1220570538
+sba(iipl.types.Bunch
+Bunch
+p76
+(dp77
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD56 Buffy Coat Positive Selection 18085HLA.xml'
+p78
+sg6
+I1220656344
+sba(iipl.types.Bunch
+Bunch
+p79
+(dp80
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD56 WB Positive Selection 18085-high purity.xml'
+p81
+sg6
+I1218738690
+sba(iipl.types.Bunch
+Bunch
+p82
+(dp83
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD66b WB Positive Selection 18682-high purity.xml'
+p84
+sg6
+I1218754618
+sba(iipl.types.Bunch
+Bunch
+p85
+(dp86
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD8 WB Positive Selection 18083-high purity.xml'
+p87
+sg6
+I1218666072
+sba(iipl.types.Bunch
+Bunch
+p88
+(dp89
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Lymphoid WB Positive Selection 18684-high purity.xml'
+p90
+sg6
+I1218747768
+sba(iipl.types.Bunch
+Bunch
+p91
+(dp92
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Lymphoid WB Positive Selection 18684HLA.xml'
+p93
+sg6
+I1220656374
+sba(iipl.types.Bunch
+Bunch
+p94
+(dp95
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Myeloid WB Positive Selection 18683-high purity.xml'
+p96
+sg6
+I1218748066
+sba(iipl.types.Bunch
+Bunch
+p97
+(dp98
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Myeloid WB Positive Selection 18683HLA.xml'
+p99
+sg6
+I1220656424
+sba(iipl.types.Bunch
+Bunch
+p100
+(dp101
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human T Cell Negative Selection from WB 19951HLA.xml'
+p102
+sg6
+I1220656500
+sba(iipl.types.Bunch
+Bunch
+p103
+(dp104
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Total Lymphocyte Negative Selection from WB 19961HLA.xml'
+p105
+sg6
+I1220656522
+sba(iipl.types.Bunch
+Bunch
+p106
+(dp107
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\prime.xml'
+p108
+sg6
+I1302800909
+sba(iipl.types.Bunch
+Bunch
+p109
+(dp110
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\shutdown.xml'
+p111
+sg6
+I1302800909
+sba.

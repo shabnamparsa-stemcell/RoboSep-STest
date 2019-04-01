@@ -1,0 +1,6 @@
+C:\projects\Minnie\ProtocolEditor\common\bin\Debug\Common.dll
+C:\projects\Minnie\ProtocolEditor\common\bin\Debug\Common.pdb
+C:\projects\Minnie\ProtocolEditor\common\bin\Debug\ApplicationLog.dll
+C:\projects\Minnie\ProtocolEditor\common\obj\Debug\ResolveAssemblyReference.cache
+C:\projects\Minnie\ProtocolEditor\common\obj\Debug\Common.dll
+C:\projects\Minnie\ProtocolEditor\common\obj\Debug\Common.pdb

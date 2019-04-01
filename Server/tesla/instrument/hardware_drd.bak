@@ -1,0 +1,471 @@
+#Changes for low volume dispense - in Aspiration and Dispense compensation values
+# Released 1/13/2006 - bdr 
+#          03/03/2006 - RL  new variables for universal pump config
+#                           [Pump]->drdpump_calculatedspeedprofile_b= 600
+#                           [Pump]->drdpump_home_command = H0
+#                           [Aspiration_1]->usablevolume = 3000
+#                           [Aspiration_2]->usablevolume = 3000
+#                           [Aspiration_3]->usablevolume = 3000
+#                           [Aspiration_AirSlug]->usablevolume = 3000
+#                           [Aspiration_Flush]->usablevolume = 3000
+#                           [Aspiration_Mix]->usablevolume = 3000
+#                           [Dispense_1]->usablevolume = 3000
+#                           [Dispense_2]->usablevolume = 3000
+#                           [Dispense_3]->usablevolume = 3000
+#                           [Dispense_4]->usablevolume = 3000
+#                           [Dispense_AirSlug]->usablevolume = 3000
+#                           [Dispense_Flush]->usablevolume = 3000
+#                           [Dispense_Mix]->usablevolume = 3000
+#          03/27/2006 - RL  [Tesla]->wickingextractoffset_aspirate_bccm_mm = 30
+#
+#		   - to support hard offsets from carousel top to vial/tube bottoms
+#          03/27/2006 - RL  [Tesla]->wickingextractoffset_aspirate_bccm_mm = 30
+#          06/13/2007 - BDR decreased z_strippedposition_5mltip_mm by 3 mm
+#
+
+#DRD pump configuration
+										 
+[TipStripper]
+steppercarddisengageport = 24
+steppercardengageport = 25
+maxtraversetime_msec = 800
+
+[Calibration]
+minsample1_theta=-30
+maxsample1_theta=-20
+minsample1_carousel=-15
+maxsample1_carousel=-5
+minsample1_z=130
+maxsample1_z=150
+defsample1_theta=-23
+defsample1_carousel=-11.6
+defsample1_z=95
+
+minsample2_theta=75
+maxsample2_theta=85
+minsample2_carousel=-100
+maxsample2_carousel=-90
+minsample2_z=130
+maxsample2_z=150
+defsample2_theta=79
+defsample2_carousel=-96
+defsample2_z=95
+
+min1mlstrip_theta=-15
+max1mlstrip_theta=-5
+min1mlstrip_carousel=-999
+max1mlstrip_carousel=999
+min1mlstrip_z=90
+max1mlstrip_z=124
+def1mlstrip_theta=-11
+def1mlstrip_carousel=0
+def1mlstrip_z=80
+
+min5mlstrip_theta=-27
+max5mlstrip_theta=-15
+min5mlstrip_carousel=-999
+max5mlstrip_carousel=999
+min5mlstrip_z=100
+max5mlstrip_z=124
+def5mlstrip_theta=-22
+def5mlstrip_carousel=0
+def5mlstrip_z=80
+
+minbccm_theta=130
+maxbccm_theta=150
+minbccm_carousel=-999
+maxbccm_carousel=999
+minbccm_z=100
+maxbccm_z=200
+defbccm_theta=140
+defbccm_carousel=0
+defbccm_z=70
+
+thetatorealdeg = 1.52
+armlength_mm = 140
+tooltojigz_mm = -1.27
+1mlstriptoolz_mm = -0.5
+5mlstriptoolz_mm = -1
+bccmtoolz_mm = 90.5
+samplevialdistance = 115.5
+separationvialdistance = 85
+wastevialdistance = 0
+lysisbuffervialdistance = 94.838
+cocktailvialdistance = 118.75
+particlevialdistance = 118.75
+antibodyvialdistance = 118.75
+position1distance = 96.61
+position2distance = 96.61
+position3distance = 96.61
+position4distance = 113.50
+position5distance = 113.50
+samplevialtosampledeg = 0
+separationvialtosampledeg = -20.71
+wastevialtosampledeg = 24.03
+lysisbuffervialtosampledeg = 37.82
+cocktailvialtosampledeg = 40
+particlevialtosampledeg = 47.24
+antibodyvialtosampledeg = 32.76
+position1tosampledeg = 22.53
+position2tosampledeg = 17.13
+position3tosampledeg = 11.72
+position4tosampledeg = 21.67
+position5tosampledeg = 12.58
+lysisvialoffset_degrees = 8.4
+calbaseoffset_14mlvial_mm = 85.2
+calbaseoffset_beadvial_mm = 58
+tip4offset_degrees = -3.7
+tip2offset_degrees = -11.7
+calz_strippedpositionoffset_1mltip_mm = -5
+tip5offset_degrees = -12.8
+calbaseoffset_50mlvial_mm = 97.55
+calbaseoffset_antibodyvial_mm = 58
+particlevialoffset_degrees = 22.5
+tip1offset_degrees = -6.3
+calz_prepickupposition_1mltip_mm = -10
+separationvialoffset_degrees = -54.0
+calz_pickupposition_1mltip_mm = -2.5
+calz_pickupposition_5mltip_mm = 2
+calbaseoffset_cocktailvial_mm = 58
+antibodyvialoffset_degrees = 8.0
+cocktailvialoffset_degrees = 15.2
+wastevialoffset_degrees = -43.3
+tip3offset_degrees = -17.1
+calz_prepickupposition_5mltip_mm = -15
+z_calibrationjigoffset_mm = 130
+calz_strippedpositionoffset_5mltip_mm = -7
+samplevialoffset_degrees = -25.1
+calibration_log_level=1
+calibration_log_filter=0
+
+[Platform]
+z_striptip_powerprofile = 200, 200, 0
+z_pickupposition_5mltip_mm = 136.0
+carouselreferencepointoffset_degrees = 105.061253063
+z_strippedposition_1mltip_mm = 93.6
+z_pickuptip_idlepowerprofile = 200, 200, 0
+homingsector = 4
+z_travelposition_mm = 0
+numberofsectorsoncarousel = 4
+z_pickupposition_1mltip_mm = 131.5
+sectororderingsense = -1
+sizeofcarouselsector_degrees = 90
+z_prepickupposition_1mltip_mm = 124.0
+z_pickuptip_powerprofile = 200, 200, 0
+z_postpickupposition_mm = 0
+z_traveloffset_1mltip_mm = -91.0
+z_pickuptip_velocityprofile = 750, 750, 1
+z_stripposition_5mltip_mm = 117.7
+z_traveloffset_notip_mm = 0
+z_strippedposition_5mltip_mm = 107.7
+z_striptip_velocityprofile = 750, 750, 1
+z_stripposition_1mltip_mm = 98.6
+z_prepickupposition_5mltip_mm = 119.0
+z_traveloffset_5mltip_mm = -99.5
+robotthetareferencepointoffset_degrees = 0
+
+[Pump]
+singlepistonmode_standarddispenseflowrate_ulpersec = 2000
+genericaspirationflowrate_ulpersec = 2000
+hydraulicbottlecapacity = 250000
+dualpistonmode_calibration_ulperstep = 0.1728
+hydraulicbottlethreshold = 100000
+maxvolume_singlepistonmode_ul = 3600
+dualpistonmode_start_step = 0
+dualpistonmode_standardaspirationflowrate_ulpersec = 285
+valvepositionwhenhoming = 1
+singlepistonmode_start_step = 1850
+usinghomingovershootcorrection = 0
+maxvolume_dualpistonmode_ul = 265
+steppercardport = COM1
+singlepistonmode_end_step = 4700
+dualpistonmode_standarddispenseflowrate_ulpersec = 285
+numberofhomingovershootcorrectiontries = 40
+standardpowerprofile = 85,21,0
+halfstepexponent = 0
+backlashsteps = 150
+homingpowerprofile = 140,100,0
+hydraulicbottlelevel = 250000
+genericdispenseflowrate_ulpersec = 2000
+valvepositionwhenparked = 2
+numberofprimingcycles = 2
+steppercardvalveport = 0
+singlepistonmode_calibration_ulperstep = 1.33
+standardvelocityprofile = 421, 1883, 10
+homingvelocityprofile = 421, 1883, 10
+idlepowerprofile = 140, 50, 0
+dualpistonmode_end_step = 1650
+steppercardaddress = X1
+valvepositionwhenaccessingtip = 2
+singlepistonmode_standardaspirationflowrate_ulpersec = 2000
+homestep = 0
+drdpump_calculatedspeedprofile_b= 600
+drdpump_home_command = H0
+pumptype = DRD
+
+[Carousel]
+numberofhomingovershootcorrectiontries = 5
+calibration_stepsperdegree = 57.14
+standardpowerprofile = 200,200,0
+halfstepexponent = 4
+homingvelocityprofile = 1500, 1500, 1
+standardvelocityprofile = 400, 8000, 5
+idlepowerprofile = 140, 50, 0
+usinghomingovershootcorrection = 0
+maximumangle_degrees = 360
+steppercardaddress = Y1
+minimumangle_degrees = -360
+steppercardport = COM1
+homingpowerprofile = 200,200,0
+homingtheta_degrees = 0
+homestep = 0
+
+[Dispense_AirSlug]
+compensation_scalingfactor = 1.0
+usablevolume = 3000
+backlash_steps = 150
+backlashflowrate_stepspersec = 1000
+flowrate_ulpersec = 300
+compensation_offset = 0.0
+
+[Aspiration_1]
+compensation_scalingfactor = 1.03
+usablevolume = 3000
+overaspirationvolume_ul = 10
+backlashflowrate_stepspersec = 500
+overaspirationmultiple = 2
+largetipvolumelimit = 180
+flowrate_ulpersec = 65
+smalltipvolumelimit = 180
+compensation_offset = 4.75
+backlash_steps = 150
+
+[Aspiration_3]
+compensation_scalingfactor = 1.02
+usablevolume = 3000
+overaspirationvolume_ul = 0
+backlashflowrate_stepspersec = 1000
+overaspirationmultiple = 1.0
+largetipvolumelimit = 3000
+flowrate_ulpersec = 600
+smalltipvolumelimit = 1000
+compensation_offset = 6.6
+backlash_steps = 150
+
+[Aspiration_2]
+compensation_scalingfactor = 1.01
+usablevolume = 3000
+overaspirationvolume_ul = 10
+backlashflowrate_stepspersec = 1000
+overaspirationmultiple = 1
+largetipvolumelimit = 454
+flowrate_ulpersec = 100
+smalltipvolumelimit = 454
+compensation_offset = 6.6
+backlash_steps = 150
+
+[Aspiration_4]
+compensation_scalingfactor = 1.0259
+usablevolume = 3000
+overaspirationvolume_ul = 0
+backlashflowrate_stepspersec = 1000
+overaspirationmultiple = 1.0
+largetipvolumelimit = 5000
+flowrate_ulpersec = 850
+smalltipvolumelimit = 1000
+compensation_offset = 12.719
+backlash_steps = 150
+
+[Robot_ThetaAxis]
+numberofhomingovershootcorrectiontries = 5
+calibration_stepsperdegree = 26.1
+standardpowerprofile = 150,150,0
+halfstepexponent = 4
+homingvelocityprofile = 900, 900, 1
+standardvelocityprofile = 300, 3750, 7
+idlepowerprofile = 140, 50, 0
+usinghomingovershootcorrection = 0
+maximumangle_degrees = 160
+steppercardaddress = Y0
+minimumangle_degrees = -33
+steppercardport = COM1
+homingpowerprofile = 140,100,0
+homingtheta_degrees = 0.0
+homestep = 0
+
+[Dispense_Flush]
+compensation_scalingfactor = 1.0
+usablevolume = 3000
+flowrate_ulpersec = 3000
+compensation_offset = 0.0
+
+[LidSensor]
+sensorport = 4
+ignorelidsensor = 0
+
+[Dispense_4]
+compensation_scalingfactor = 1.0259
+usablevolume = 3000
+backlashflowrate_stepspersec = 1000
+largetipvolumelimit = 5000
+flowrate_ulpersec = 1200
+smalltipvolumelimit = 1000
+backlash_steps = 150
+compensation_offset = 12.719
+
+[Dispense_2]
+compensation_scalingfactor = 1.01
+usablevolume = 3000
+backlashflowrate_stepspersec = 1000
+largetipvolumelimit = 454
+flowrate_ulpersec = 100
+smalltipvolumelimit = 454
+backlash_steps = 150
+compensation_offset = 6.6
+
+[Dispense_3]
+compensation_scalingfactor = 1.02
+usablevolume = 3000
+backlashflowrate_stepspersec = 1000
+largetipvolumelimit = 3000
+flowrate_ulpersec = 800
+smalltipvolumelimit = 1000
+backlash_steps = 150
+compensation_offset = 6.6
+
+[Dispense_1]
+compensation_scalingfactor = 1.03
+usablevolume = 3000
+backlashflowrate_stepspersec = 500
+largetipvolumelimit = 180
+flowrate_ulpersec = 65
+smalltipvolumelimit = 180
+backlash_steps = 150
+compensation_offset = 4.75
+
+[Aspiration_AirSlug]
+compensation_scalingfactor = 1.0
+usablevolume = 3000
+overaspirationvolume_ul = 0
+backlashflowrate_stepspersec = 1000
+overaspirationmultiple = 1.0
+airslugvolume_ul = 200
+flowrate_ulpersec = 75
+compensation_offset = 0.0
+backlash_steps = 150
+
+[ReferencePoints]
+striptip_5ml_position4_degrees = -21.888888888888889, -3.7000000000000002
+wastevial_50ml_degrees = 28.494252873563216, -43.299999999999997
+tip_1ml_position3_degrees = -11.007662835249045, -17.063353168005264
+calibrationjigzaxisfeature_degrees = -30, -25.5
+cocktailvial_degrees = -25.873563218390807, 14.473223660836169
+antibodyvial_degrees = -25.873563218390807, 7.1228561424602503
+lysisbuffervial_50ml_degrees = -9.74329501915709, 8.4000000000000004
+bccm_bulkcontainer_degrees = 140.908045977
+striptip_1ml_position3_degrees = -10.816091954022991, -17.100000000000001
+separationvial_14ml_degrees = -2.7701149425287381, -53.325166258659806
+tip_5ml_position5_degrees = -22.233716475095786, -13.020651032898513
+tip_5ml_position4_degrees = -21.850574712643681, -3.93769688519113
+striptip_5ml_position5_degrees = -21.888888888888889, -12.800000000000001
+calibrationjigslot_degrees = -29, -6
+tip_1ml_position2_degrees = -10.816091954022991, -11.673083654529592
+samplevial_14ml_degrees = -23.383141762452109, -26.356317816237677
+particlevial_degrees = -25.107279693486593, 22.033601679737117
+tip_1ml_position1_degrees = -11.007662835249045, -6.2653132660101676
+striptip_1ml_position2_degrees = -10.816091954022991, -11.699999999999999
+striptip_1ml_position1_degrees = -10.816091954022991, -6.2999999999999998
+
+[Aspiration_Flush]
+compensation_scalingfactor = 1.0
+usablevolume = 3000
+overaspirationvolume_ul = 0
+overaspirationmultiple = 1.0
+flowrate_ulpersec = 3000
+flushsteps = 2000
+compensation_offset = 0.0
+
+[Tesla]
+mixingpremixairslug_ul = 200
+wickingextractoffset_aspirate_mm = 10
+transportflushenabled = 0
+aspirationdepthundermeniscus_mm = 2
+numberofmixingcycles = 3
+zparkposition_mm = 100.0
+wickingextractoffset_dispense_mm = 10
+deadvolume_14mlvial_ul = 100
+wickingextractoffset_aspirate_reagent_mm = 27
+wickingextractoffset_aspirate_bccm_mm = 30
+deadvolume_50mlvial_ul = 5000
+baseoffset_antibodyvial_mm = 192.0
+deadvolume_beadvial_ul = 100
+mixingvolumemaximum_ul = 3600
+baseoffset_bulkcontainer_mm = 217.8
+wickingextractoffset_mix_mm = 30
+wickingdispensedepthundermeniscus_mm = 3
+deadvolume_bulkcontainer_ul = 75000
+capacity_5mltip_ul = 5000
+thetaparkposition_degrees = 104.0
+deadvolume_antibodyvial_ul = 100
+wickingextractvelocityprofile = 500, 1000, 5
+mixingdispenseoffset_mm = 0.0
+deadvolume_cocktailvial_ul = 100
+baseoffset_14mlvial_mm = 220.2
+baseoffset_50mlvial_mm = 231.55
+volumeaftertopup_ul = 10000
+mixingpistonsettlingdelay_msec = 1000
+minimumallowedvialbasetotipclearance_mm = 2
+mixingtipposition_5ml = 5
+mixingvolumepercentage = 50
+minimumallowed5mltipvolume_ul = 100
+mixingpause_msec = 0
+capacity_1mltip_ul = 1100
+mixingtipposition_1ml = 3
+baseoffset_beadvial_mm = 192.0
+baseoffset_cocktailvial_mm = 192.0
+mixingvolume_fixedsmallvialvolume = 600
+mixingvolume_fixedsmallvialmixvolume = 1100
+
+[Robot_ZAxis]
+prehomingposition_mm = 1
+minimumposition_mm = 0.0
+standardpowerprofile = 170,170,0
+halfstepexponent = 3
+homingvelocityprofile = 1000, 5000, 5
+standardvelocityprofile = 3000, 15000,5
+numberofhomingovershootcorrectiontries = 5
+usinghomingovershootcorrection = 0
+homingposition_mm = 0.0
+idlepowerprofile = 140, 50, 0
+steppercardaddress = X0
+steppercardport = COM1
+homingpowerprofile = 170,170,0
+calibration_stepspermm = 80
+maximumposition_mm = 148.0
+homestep = 0
+
+[Dispense_Mix]
+compensation_scalingfactor = 1
+usablevolume = 3000
+backlash_steps = 150
+backlashflowrate_stepspersec = 1000
+flowrate_ulpersec = 2000
+compensation_offset = 0
+
+[Aspiration_Mix]
+compensation_scalingfactor = 1
+usablevolume = 3000
+overaspirationvolume_ul = 0
+backlashflowrate_stepspersec = 1000
+overaspirationmultiple = 1.0
+flowrate_ulpersec = 1200
+compensation_offset = 0
+backlash_steps = 150
+
+[PagerSystem]
+port=COM3
+pagerid=99
+systemid=0
+
+[ConsoleConfig]
+TimedStart=0

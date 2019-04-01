@@ -1,0 +1,43 @@
+RoboSep UI Log File
+Created: 20130730_182810.255
+
+20130730_182810.265	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20130730_182810.285	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20130730_182816.324	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20130730_182816.464	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20130730_182818.206	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20130730_182818.407	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130730_182822.913	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130730_182824.896	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130730_182835.752	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130730_182838.225	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20130730_182838.235	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20130730_182838.315	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20130730_182838.496	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20130730_182838.586	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20130730_182838.636	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20130730_182839.087	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130730_182840.018	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130730_182850.914	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20130730_182853.828	clt	ServiceMenu.listboxTeachingSubMenu_SelectedIndexChanged()	Info	ServiceMenu	Prepare to start script: 6. Barcode Reader
+20130730_182854.008	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	None
+20130730_182914.527	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = False, sequenceComplete = True, Return value/Error = Execute(Subsystem: TeslaPlatform, MoveTo, 1 'barcode_offset_degrees' 0) threw an exception: Server returned a fault exception.
+    FaultCode: 1,
+    FaultString: tesla.instrument.Platform.PlatformError:'barcode_offset_degrees' is not a reference point.
+
+20130730_182914.437	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: TeslaPlatform MoveTo 1 'barcode_offset_degrees' 0;
+20130730_182914.417	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20130730_182856.532	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: Instrument HomeAll 0;
+20130730_182856.351	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	Running script: 6. Barcode Reader
+20130730_182856.351	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20130730_182856.341	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: Calibration startCalibration;
+20130730_182854.669	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20130730_182854.008	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	None
+20130730_182853.828	clt	ServiceMenu.listboxTeachingSubMenu_SelectedIndexChanged()	Info	ServiceMenu	Prepare to start script: 6. Barcode Reader
+20130730_182914.527	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Command failed to execute. Command sequence aborted.
+Execute(Subsystem: TeslaPlatform, MoveTo, 1 'barcode_offset_degrees' 0) threw an exception: Server returned a fault exception.
+    FaultCode: 1,
+    FaultString: tesla.instrument.Platform.PlatformError:'barcode_offset_degrees' is not a reference point.
+20130730_182932.945	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Carousel

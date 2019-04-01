@@ -1,0 +1,434 @@
+<?xml version="1.0" standalone="yes"?>
+<RunDataSet1 xmlns="http://tempuri.org/RunDataSet1.xsd">
+	<RunDetails>
+		<operatorID>Charles1</operatorID>
+		<startDate>2013-10-18T08:32:26</startDate>
+		<endDate>2013-10-18T09:27:09</endDate>
+		<finalStatus>COMPLETED</finalStatus>
+		<instrumentID>0003</instrumentID>
+	</RunDetails>
+	<RunSummary>
+		<sampleNo>1</sampleNo>
+		<sampleID>Not Provided</sampleID>
+		<protocol>Human CD4+ T Cell Pre-Enrichment for Regulatory T Cells 18062-large volume</protocol>
+		<sampleVolume_ML>6.000</sampleVolume_ML>
+		<magneticParticlesLotID>Not Provided</magneticParticlesLotID>
+		<selectionCocktailLotID>Not Provided</selectionCocktailLotID>
+		<antibodyCocktailLotID>Not Provided</antibodyCocktailLotID>
+		<tipRack>Required</tipRack>
+		<bufferLotID>Not Provided</bufferLotID>
+		<sampleTube>Required</sampleTube>
+		<separationTube>Required</separationTube>
+		<negativeFractionTube>-</negativeFractionTube>
+		<wasteTube>Required</wasteTube>
+		<quadrantNo>1</quadrantNo>
+		<quadrantInitial>1</quadrantInitial>
+		<quadrantRequired>2</quadrantRequired>
+	</RunSummary>
+	<RunSummary>
+		<sampleNo>1</sampleNo>
+		<sampleID>Not Provided</sampleID>
+		<protocol>Human CD4+ T Cell Pre-Enrichment for Regulatory T Cells 18062-large volume</protocol>
+		<sampleVolume_ML></sampleVolume_ML>
+		<magneticParticlesLotID>-</magneticParticlesLotID>
+		<selectionCocktailLotID>-</selectionCocktailLotID>
+		<antibodyCocktailLotID>-</antibodyCocktailLotID>
+		<tipRack>Required</tipRack>
+		<bufferLotID>-</bufferLotID>
+		<sampleTube>-</sampleTube>
+		<separationTube>Required</separationTube>
+		<negativeFractionTube>Required</negativeFractionTube>
+		<wasteTube>Required</wasteTube>
+		<quadrantNo>2</quadrantNo>
+		<quadrantInitial>0</quadrantInitial>
+		<quadrantRequired>0</quadrantRequired>
+	</RunSummary>
+	<RunSummary>
+		<sampleNo>2</sampleNo>
+		<sampleID>Not Provided</sampleID>
+		<protocol>Human Memory CD8 T Cell Negative Selection 19159-small volume</protocol>
+		<sampleVolume_ML>3.000</sampleVolume_ML>
+		<magneticParticlesLotID>Not Provided</magneticParticlesLotID>
+		<selectionCocktailLotID>Not Provided</selectionCocktailLotID>
+		<antibodyCocktailLotID>-</antibodyCocktailLotID>
+		<tipRack>Required</tipRack>
+		<bufferLotID>Not Provided</bufferLotID>
+		<sampleTube>Required</sampleTube>
+		<separationTube>Required</separationTube>
+		<negativeFractionTube>-</negativeFractionTube>
+		<wasteTube>Required</wasteTube>
+		<quadrantNo>3</quadrantNo>
+		<quadrantInitial>3</quadrantInitial>
+		<quadrantRequired>2</quadrantRequired>
+	</RunSummary>
+	<RunSummary>
+		<sampleNo>2</sampleNo>
+		<sampleID>Not Provided</sampleID>
+		<protocol>Human Memory CD8 T Cell Negative Selection 19159-small volume</protocol>
+		<sampleVolume_ML></sampleVolume_ML>
+		<magneticParticlesLotID>-</magneticParticlesLotID>
+		<selectionCocktailLotID>-</selectionCocktailLotID>
+		<antibodyCocktailLotID>-</antibodyCocktailLotID>
+		<tipRack>-</tipRack>
+		<bufferLotID>-</bufferLotID>
+		<sampleTube>Required</sampleTube>
+		<separationTube>Required</separationTube>
+		<negativeFractionTube>-</negativeFractionTube>
+		<wasteTube>-</wasteTube>
+		<quadrantNo>4</quadrantNo>
+		<quadrantInitial>0</quadrantInitial>
+		<quadrantRequired>0</quadrantRequired>
+	</RunSummary>
+	<RunSample>
+		<sampleNo>1</sampleNo>
+		<quadrantNo>1</quadrantNo>
+		<protocolName>Human CD4+ T Cell Pre-Enrichment for Regulatory T Cells 18062-large volume</protocolName>
+		<type>HumanNegative</type>
+		<author>STI</author>
+		<fileName>C:\Program Files (x86)\STI\RoboSep\protocols\Human CD4+ T Cell Pre-Enrichment for Regulatory T Cells 18062-large volume.xml</fileName>
+		<dateCreated>2005-06-21T00:00:00</dateCreated>
+		<dateModified>2010-06-21T00:00:00</dateModified>
+		<protocolNo>18062-0001</protocolNo>
+		<version>22</version>
+	</RunSample>
+	<CommandSequence>
+		<step>1</step>
+		<command>Transport</command>
+		<description>Add cocktail to sample</description>
+		<source>Q1, Selection Vial (Square)</source>
+		<destination>Q1, Sample Tube</destination>
+		<volume_ML>&gt;0.300</volume_ML>
+		<tipRack>1</tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>2</step>
+		<command>Mix</command>
+		<description>Mix cocktail and sample</description>
+		<source>Q1, Sample Tube</source>
+		<destination></destination>
+		<volume_ML>3*50%</volume_ML>
+		<tipRack>1</tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>3</step>
+		<command>Incubate</command>
+		<description>Incubate cocktail and sample</description>
+		<source></source>
+		<destination></destination>
+		<volume_ML></volume_ML>
+		<tipRack></tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>4</step>
+		<command>Mix</command>
+		<description>Mix particles</description>
+		<source>Q1, Magnetic Particle Vial (Triangle)</source>
+		<destination></destination>
+		<volume_ML>3*50%</volume_ML>
+		<tipRack>1</tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>5</step>
+		<command>Transport</command>
+		<description>Add particles to sample</description>
+		<source>Q1, Magnetic Particle Vial (Triangle)</source>
+		<destination>Q1, Sample Tube</destination>
+		<volume_ML>&gt;0.600</volume_ML>
+		<tipRack>1</tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>6</step>
+		<command>Mix</command>
+		<description>Mix particles and sample</description>
+		<source>Q1, Sample Tube</source>
+		<destination></destination>
+		<volume_ML>3*50%</volume_ML>
+		<tipRack>1</tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>7</step>
+		<command>Incubate</command>
+		<description>Incubate particles and sample</description>
+		<source></source>
+		<destination></destination>
+		<volume_ML></volume_ML>
+		<tipRack></tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>8</step>
+		<command>TopUpVial</command>
+		<description>Top up sample with buffer</description>
+		<volume_ML>&lt;= 10mL</volume_ML>
+		<tipRack>1</tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>9</step>
+		<command>Mix</command>
+		<description>Mix sample after top up</description>
+		<source>Q1, Sample Tube</source>
+		<destination></destination>
+		<volume_ML>3*50%</volume_ML>
+		<tipRack>1</tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>10</step>
+		<command>Transport</command>
+		<description>Transfer sample to magnet</description>
+		<source>Q1, Sample Tube</source>
+		<destination>Q1, Separation Tube</destination>
+		<volume_ML>&lt;= 10mL</volume_ML>
+		<tipRack>1</tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>11</step>
+		<command>Separate</command>
+		<description>Separation #1</description>
+		<source></source>
+		<destination></destination>
+		<volume_ML></volume_ML>
+		<tipRack></tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>12</step>
+		<command>Transport</command>
+		<description>Transfer supernantant #1 to second quadrant</description>
+		<source>Q1, Separation Tube</source>
+		<destination>Q2, Separation Tube</destination>
+		<volume_ML>&lt;= 10mLBuffer Tip</volume_ML>
+		<tipRack>1</tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>13</step>
+		<command>Separate</command>
+		<description>Separation #2</description>
+		<source></source>
+		<destination></destination>
+		<volume_ML></volume_ML>
+		<tipRack></tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>14</step>
+		<command>Transport</command>
+		<description>Transfer supernatant #2 to negative fraction tube</description>
+		<source>Q2, Separation Tube</source>
+		<destination>Q2, Negative Fraction Tube</destination>
+		<volume_ML>&lt;= 10mL</volume_ML>
+		<tipRack>2</tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>15</step>
+		<command>Transport</command>
+		<description>Add blocking solution to sample</description>
+		<source>Q1, Antibody Vial (Circle)</source>
+		<destination>Q2, Negative Fraction Tube</destination>
+		<volume_ML>&gt;0.000</volume_ML>
+		<tipRack>1</tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>16</step>
+		<command>Mix</command>
+		<description>Mix blocking solution and sample</description>
+		<source>Q2, Negative Fraction Tube</source>
+		<destination></destination>
+		<volume_ML>3*50%</volume_ML>
+		<tipRack>2</tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>17</step>
+		<command>Incubate</command>
+		<description>Incubate blocking solution and sample</description>
+		<source></source>
+		<destination></destination>
+		<volume_ML></volume_ML>
+		<tipRack></tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>18</step>
+		<command>Transport</command>
+		<description>Top up sample with buffer</description>
+		<source>Q1, Buffer Bottle</source>
+		<destination>Q2, Negative Fraction Tube</destination>
+		<volume_ML>&lt;= 10mL</volume_ML>
+		<tipRack>2</tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>19</step>
+		<command>Mix</command>
+		<description>Mix sample after top up</description>
+		<source>Q2, Negative Fraction Tube</source>
+		<destination></destination>
+		<volume_ML>3*50%</volume_ML>
+		<tipRack>2</tipRack>
+		<quadrantNo>1</quadrantNo>
+	</CommandSequence>
+	<RunSample>
+		<sampleNo>2</sampleNo>
+		<quadrantNo>3</quadrantNo>
+		<protocolName>Human Memory CD8 T Cell Negative Selection 19159-small volume</protocolName>
+		<type>HumanNegative</type>
+		<author>STI</author>
+		<fileName>C:\Program Files (x86)\STI\RoboSep\protocols\Human Memory CD8 T Cell Negative Selection 19159-small volume.xml</fileName>
+		<dateCreated>2011-06-24T00:00:00</dateCreated>
+		<dateModified>2011-06-30T00:00:00</dateModified>
+		<protocolNo>19159-0201</protocolNo>
+		<version>1</version>
+	</RunSample>
+	<CommandSequence>
+		<step>1</step>
+		<command>Transport</command>
+		<description>Add cocktail to sample</description>
+		<source>Q3, Selection Vial (Square)</source>
+		<destination>Q3, Sample Tube</destination>
+		<volume_ML>&gt;0.150</volume_ML>
+		<tipRack>3</tipRack>
+		<quadrantNo>3</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>2</step>
+		<command>Mix</command>
+		<description>Mix cocktail and sample</description>
+		<source>Q3, Sample Tube</source>
+		<destination></destination>
+		<volume_ML>3*50%</volume_ML>
+		<tipRack>3</tipRack>
+		<quadrantNo>3</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>3</step>
+		<command>Incubate</command>
+		<description>Incubate cocktail and sample</description>
+		<source></source>
+		<destination></destination>
+		<volume_ML></volume_ML>
+		<tipRack></tipRack>
+		<quadrantNo>3</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>4</step>
+		<command>Mix</command>
+		<description>Mix particles</description>
+		<source>Q3, Magnetic Particle Vial (Triangle)</source>
+		<destination></destination>
+		<volume_ML>&gt;0.000</volume_ML>
+		<tipRack>3</tipRack>
+		<quadrantNo>3</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>5</step>
+		<command>Transport</command>
+		<description>Add particles to sample</description>
+		<source>Q3, Magnetic Particle Vial (Triangle)</source>
+		<destination>Q3, Sample Tube</destination>
+		<volume_ML>&gt;0.450</volume_ML>
+		<tipRack>3</tipRack>
+		<quadrantNo>3</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>6</step>
+		<command>Mix</command>
+		<description>Mix particles and sample</description>
+		<source>Q3, Sample Tube</source>
+		<destination></destination>
+		<volume_ML>3*50%</volume_ML>
+		<tipRack>3</tipRack>
+		<quadrantNo>3</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>7</step>
+		<command>Incubate</command>
+		<description>Incubate particles and sample</description>
+		<source></source>
+		<destination></destination>
+		<volume_ML></volume_ML>
+		<tipRack></tipRack>
+		<quadrantNo>3</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>8</step>
+		<command>TopUpVial</command>
+		<description>Top up sample with buffer</description>
+		<volume_ML>&lt;= 5.000</volume_ML>
+		<tipRack>3</tipRack>
+		<quadrantNo>3</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>9</step>
+		<command>Mix</command>
+		<description>Mix sample after top up</description>
+		<source>Q3, Sample Tube</source>
+		<destination></destination>
+		<volume_ML>3*50%</volume_ML>
+		<tipRack>3</tipRack>
+		<quadrantNo>3</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>10</step>
+		<command>Transport</command>
+		<description>Transfer sample to magnet</description>
+		<source>Q3, Sample Tube</source>
+		<destination>Q3, Separation Tube</destination>
+		<volume_ML>&lt;= 10mL</volume_ML>
+		<tipRack>3</tipRack>
+		<quadrantNo>3</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>11</step>
+		<command>Separate</command>
+		<description>Separation #1</description>
+		<source></source>
+		<destination></destination>
+		<volume_ML></volume_ML>
+		<tipRack></tipRack>
+		<quadrantNo>3</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>12</step>
+		<command>Transport</command>
+		<description>Transfer supernatant #1 to second magnet</description>
+		<source>Q3, Separation Tube</source>
+		<destination>Q4, Separation Tube</destination>
+		<volume_ML>&lt;= 10mL</volume_ML>
+		<tipRack>3</tipRack>
+		<quadrantNo>3</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>13</step>
+		<command>Separate</command>
+		<description>Separation #2</description>
+		<source></source>
+		<destination></destination>
+		<volume_ML></volume_ML>
+		<tipRack></tipRack>
+		<quadrantNo>3</quadrantNo>
+	</CommandSequence>
+	<CommandSequence>
+		<step>14</step>
+		<command>Transport</command>
+		<description>Transfer supernatant #2 to negative fraction tube</description>
+		<source>Q4, Separation Tube</source>
+		<destination>Q4, Sample Tube</destination>
+		<volume_ML>&lt;= 10mLBuffer Tip</volume_ML>
+		<tipRack>4</tipRack>
+		<quadrantNo>3</quadrantNo>
+	</CommandSequence>
+</RunDataSet1>
+
+

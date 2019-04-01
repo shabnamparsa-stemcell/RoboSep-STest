@@ -1,0 +1,66 @@
+RoboSep UI Log File
+Created: 20130730_190932.415
+
+20130730_190932.415	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20130730_190932.435	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20130730_190936.741	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20130730_190936.831	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20130730_190938.344	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20130730_190938.514	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130730_190943.060	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130730_190944.472	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130730_190946.946	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130730_190948.338	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20130730_190948.368	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20130730_190948.408	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20130730_190948.548	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20130730_190948.578	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20130730_190948.628	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20130730_190948.979	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130730_190949.610	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130730_190951.743	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20130730_190956.370	clt	ServiceMenu.listboxTeachingSubMenu_SelectedIndexChanged()	Info	ServiceMenu	Prepare to start script: 6. Barcode Reader
+20130730_190956.470	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	None
+20130730_191016.959	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = False, sequenceComplete = True, Return value/Error = Execute(Subsystem: Carousel, SetTheta, 'barcode_offset_degrees') threw an exception: Server returned a fault exception.
+    FaultCode: 1,
+    FaultString: exceptions.TypeError:unsupported operand type(s) for -: 'str' and 'float'
+
+20130730_191016.929	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: Carousel SetTheta 'barcode_offset_degrees';
+20130730_191016.909	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20130730_190958.603	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: Instrument HomeAll 0;
+20130730_190958.463	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20130730_190958.453	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	Running script: 6. Barcode Reader
+20130730_190958.443	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: Calibration startCalibration;
+20130730_190957.131	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20130730_190956.470	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	None
+20130730_190956.370	clt	ServiceMenu.listboxTeachingSubMenu_SelectedIndexChanged()	Info	ServiceMenu	Prepare to start script: 6. Barcode Reader
+20130730_191016.959	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Command failed to execute. Command sequence aborted.
+Execute(Subsystem: Carousel, SetTheta, 'barcode_offset_degrees') threw an exception: Server returned a fault exception.
+    FaultCode: 1,
+    FaultString: exceptions.TypeError:unsupported operand type(s) for -: 'str' and 'float'
+20130730_191756.180	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130730_191756.280	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130730_191757.972	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20130730_191804.101	clt	ServiceMenu.listboxTeachingSubMenu_SelectedIndexChanged()	Info	ServiceMenu	Prepare to start script: 6. Barcode Reader
+20130730_191804.191	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	None
+20130730_191827.565	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = False, sequenceComplete = True, Return value/Error = Execute(Subsystem: Carousel, SetTheta, 'barcode_offset_degrees') threw an exception: Server returned a fault exception.
+    FaultCode: 1,
+    FaultString: exceptions.ValueError:invalid literal for float(): barcode_offset_degrees
+
+20130730_191827.535	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: Carousel SetTheta 'barcode_offset_degrees';
+20130730_191827.505	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20130730_191806.424	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: Instrument HomeAll 0;
+20130730_191806.254	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	Running script: 6. Barcode Reader
+20130730_191806.244	clt	InstrumentComms.ReportCommandCompleteHandler()	Debug	InstrumentComms	Command Complete : commandSucceeded = True, sequenceComplete = True, Return value/Error = 
+
+20130730_191806.234	clt	InstrumentComms.executeCommandSequence()	Debug	InstrumentComms	Subsystem: Calibration startCalibration;
+20130730_191804.782	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20130730_191804.191	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	None
+20130730_191804.101	clt	ServiceMenu.listboxTeachingSubMenu_SelectedIndexChanged()	Info	ServiceMenu	Prepare to start script: 6. Barcode Reader
+20130730_191827.565	clt	InstrumentComms.ReportCommandCompleteHandler()	Error	InstrumentComms	Command failed to execute. Command sequence aborted.
+Execute(Subsystem: Carousel, SetTheta, 'barcode_offset_degrees') threw an exception: Server returned a fault exception.
+    FaultCode: 1,
+    FaultString: exceptions.ValueError:invalid literal for float(): barcode_offset_degrees

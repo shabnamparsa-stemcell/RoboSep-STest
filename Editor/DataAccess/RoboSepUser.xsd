@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="RoboSepUser" targetNamespace="STI" elementFormDefault="qualified" xmlns="STI"
+	xmlns:mstns="STI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="RoboSepUser">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="ProtocolFile" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepUser xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="STI">
+  <UserName>Jodie</UserName>
+  <ProtocolFile>transfer 5ml from buffer to sample.xml</ProtocolFile>
+  <ProtocolFile>Human B Cell Negative Selection 19054 w SiCOOH-10min rel top.xml</ProtocolFile>
+  <ProtocolFile>Human B Cell Negative Selection 19054 w SiCOOH-10min.xml</ProtocolFile>
+  <ProtocolFile>Human B Cell Negative Selection 19054-high purity.xml</ProtocolFile>
+  <ProtocolFile>Human Monocyte Negative Selection 19058-high recovery.xml</ProtocolFile>
+  <ProtocolFile>Human CD8 Memory T cell Dex - 50_150-5mL top-up; 2x2,5 sep.xml</ProtocolFile>
+  <ProtocolFile>Human CD8 Memory T cell Dex - 50_150-5mL top-up; 2x5 sep.xml</ProtocolFile>
+  <ProtocolFile>Human CD8 Memory T cell Dex - 50_200-5mL top-up; 2x2,5 sep.xml</ProtocolFile>
+  <ProtocolFile>Human CD8 Memory T cell Dex - 50_200-5mL top-up; 2x5 sep.xml</ProtocolFile>
+  <ProtocolFile>Mouse Neutrophil Negative Selection High Recovery - 50 b, 150 d part.xml</ProtocolFile>
+  <ProtocolFile>Mouse Neutrophil Negative Selection High Recovery - 50 b, 150 d part, 1x5' seps.xml</ProtocolFile>
+  <ProtocolFile>separation only.xml</ProtocolFile>
+  <ProtocolFile>Mouse Neutrophil Bone Marrow 19709 - custom with antibody added no wash.xml</ProtocolFile>
+  <ProtocolFile>Mouse Neutrophil Bone Marrow 19709 - custom.xml</ProtocolFile>
+  <ProtocolFile>Mouse NK 19755 2x5min Sep.xml</ProtocolFile>
+  <ProtocolFile>Mouse Neutrophil Bone Marrow 19709 - custom with antibody, 50b, no wash.xml</ProtocolFile>
+  <ProtocolFile>Human B Cell Negative Selection 19054-JY 10+10.xml</ProtocolFile>
+  <ProtocolFile>Human memory B cell positive selection -- JY 0_75_75+2_5_5+5+5 Q2 sample tube.xml</ProtocolFile>
+  <ProtocolFile>Human memory B cell positive selection -- JY 0_75_75+2_5_5+5+5.xml</ProtocolFile>
+  <ProtocolFile>Human naive B Cell Negative Selection from 27- 1_5 100 2_5 5min.xml</ProtocolFile>
+  <ProtocolFile>SPE Human CD8 Pos Sel 18053 - no incubation.xml</ProtocolFile>
+</RoboSepUser>

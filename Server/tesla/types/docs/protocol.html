@@ -1,0 +1,183 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Protocol</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Protocol</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/tesla/dev/dev001/control/tesla/types/protocol.py">c:\projects\tesla\dev\dev001\control\tesla\types\protocol.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;<a href="#Protocol">Protocol</a>.py<br>
+#&nbsp;tesla.types.<a href="#Protocol">Protocol</a>.py<br>
+#<br>
+#&nbsp;<a href="#Protocol">Protocol</a>&nbsp;type&nbsp;for&nbsp;the&nbsp;Tesla&nbsp;instrument&nbsp;control&nbsp;software<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="copy.html">copy</a><br>
+<a href="datetime.html">datetime</a><br>
+</td><td width="25%" valign=top><a href="handyxml.html">handyxml</a><br>
+<a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="tesla.html">tesla</a><br>
+<a href="_xmlplus.html">_xmlplus</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>(<a href="exceptions.html#StandardError">exceptions.StandardError</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Protocol.html#ProtocolException">ProtocolException</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Protocol.html#Protocol">Protocol</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Protocol">class <strong>Protocol</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;instrument&nbsp;protocol&nbsp;class&nbsp;(not&nbsp;to&nbsp;be&nbsp;confused&nbsp;with&nbsp;the&nbsp;simpler<br>
+ClientProtocol&nbsp;class,&nbsp;which&nbsp;is&nbsp;used&nbsp;for&nbsp;transporting&nbsp;client-visible<br>
+protocol&nbsp;information&nbsp;across&nbsp;the&nbsp;XML-RPC&nbsp;interface.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Protocol-__init__"><strong>__init__</strong></a>(self, fileName, *args, **kwargs)</dt><dd><tt>'Constructor&nbsp;for&nbsp;the&nbsp;<a href="#Protocol">Protocol</a>&nbsp;class;&nbsp;the&nbsp;filename&nbsp;specifies&nbsp;an<br>
+XML&nbsp;file&nbsp;describing&nbsp;the&nbsp;protocol.</tt></dd></dl>
+
+<dl><dt><a name="Protocol-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Basic&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;<a href="#Protocol">Protocol</a>&nbsp;class.</tt></dd></dl>
+
+<dl><dt><a name="Protocol-getCommand"><strong>getCommand</strong></a>(self, sequenceNumber)</dt><dd><tt>Return&nbsp;the&nbsp;specific&nbsp;command&nbsp;from&nbsp;our&nbsp;list&nbsp;of&nbsp;protocol&nbsp;commands.</tt></dd></dl>
+
+<dl><dt><a name="Protocol-getCommands"><strong>getCommands</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;list&nbsp;of&nbsp;protocol&nbsp;commands</tt></dd></dl>
+
+<dl><dt><a name="Protocol-getVolumes"><strong>getVolumes</strong></a>(self, sampleVolume_uL)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;ProtocolConsumable&nbsp;objects,&nbsp;holding&nbsp;volume&nbsp;<br>
+information.&nbsp;Each&nbsp;ProtocolConsumable&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;contains&nbsp;the&nbsp;volumes&nbsp;<br>
+required&nbsp;for&nbsp;a&nbsp;RELATIVE&nbsp;quadrant&nbsp;on&nbsp;the&nbsp;instrument;&nbsp;you&nbsp;would&nbsp;make<br>
+this&nbsp;absolute&nbsp;by&nbsp;referring&nbsp;it&nbsp;back&nbsp;to&nbsp;a&nbsp;Sample&nbsp;<a href="__builtin__.html#object">object</a>'s&nbsp;initialQuadrant<br>
+field.<br>
+The&nbsp;sampleVolume_uL&nbsp;parameter&nbsp;specifies&nbsp;the&nbsp;sample&nbsp;volume&nbsp;(in&nbsp;uL)&nbsp;to<br>
+do&nbsp;the&nbsp;various&nbsp;volume&nbsp;calculations&nbsp;with.</tt></dd></dl>
+
+<dl><dt><a name="Protocol-getWorkingVolume"><strong>getWorkingVolume</strong></a>(self, sampleVolume_uL)</dt><dd><tt>For&nbsp;the&nbsp;specified&nbsp;sample&nbsp;volume&nbsp;(in&nbsp;uL),&nbsp;return&nbsp;the&nbsp;working<br>
+volume&nbsp;(uL)&nbsp;as&nbsp;defined&nbsp;for&nbsp;this&nbsp;protocol.</tt></dd></dl>
+
+<dl><dt><a name="Protocol-importFromXML"><strong>importFromXML</strong></a>(self, fileName)</dt><dd><tt>Import&nbsp;the&nbsp;protocol&nbsp;definition&nbsp;from&nbsp;the&nbsp;appropriate&nbsp;XML&nbsp;file.</tt></dd></dl>
+
+<dl><dt><a name="Protocol-matches"><strong>matches</strong></a>(self, ID<font color="#909090">=None</font>, label<font color="#909090">=None</font>)</dt><dd><tt>Returns&nbsp;True&nbsp;if&nbsp;this&nbsp;protocol&nbsp;has&nbsp;the&nbsp;specified&nbsp;ID&nbsp;or&nbsp;label?&nbsp;False<br>
+otherwise.</tt></dd></dl>
+
+<dl><dt><a name="Protocol-parseCommandsNode"><strong>parseCommandsNode</strong></a>(self, node)</dt><dd><tt>Parse&nbsp;the&nbsp;protocol&nbsp;commands&nbsp;from&nbsp;the&nbsp;supplied&nbsp;XML&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="Protocol-parseConstraintsNode"><strong>parseConstraintsNode</strong></a>(self, node)</dt><dd><tt>Parse&nbsp;the&nbsp;chemistry&nbsp;constraint&nbsp;members&nbsp;from&nbsp;the&nbsp;supplied&nbsp;XML&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="Protocol-parseHeaderNode"><strong>parseHeaderNode</strong></a>(self, node)</dt><dd><tt>Parse&nbsp;the&nbsp;header&nbsp;members&nbsp;from&nbsp;the&nbsp;supplied&nbsp;XML&nbsp;node.</tt></dd></dl>
+
+<hr>
+Properties defined here:<br>
+<dl><dt><strong>ID</strong></dt>
+<dd><tt><a href="#Protocol">Protocol</a>&nbsp;ID</tt></dd>
+<dd><dl><dt><strong><em>get</em></strong> <em>lambda</em> self</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>cmds</strong></dt>
+<dd><tt>Return&nbsp;copy&nbsp;of&nbsp;protocol&nbsp;commands&nbsp;list</tt></dd>
+<dd><dl><dt><a name="Protocol-<em>get</em>"><strong><em>get</em></strong></a> = <a href="#Protocol-getCommands">getCommands</a>(self)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>label</strong></dt>
+<dd><tt><a href="#Protocol">Protocol</a>&nbsp;label</tt></dd>
+<dd><dl><dt><strong><em>get</em></strong> <em>lambda</em> self</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>numCmds</strong></dt>
+<dd><tt>Number&nbsp;of&nbsp;protocol&nbsp;commands</tt></dd>
+<dd><dl><dt><strong><em>get</em></strong> <em>lambda</em> self</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>numQuadrants</strong></dt>
+<dd><tt>Number&nbsp;of&nbsp;used&nbsp;quadrants</tt></dd>
+<dd><dl><dt><strong><em>get</em></strong> <em>lambda</em> self</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>sourceFile</strong></dt>
+<dd><tt><a href="#Protocol">Protocol</a>&nbsp;XML&nbsp;source&nbsp;file</tt></dd>
+<dd><dl><dt><strong><em>get</em></strong> <em>lambda</em> self</dt></dl>
+</dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>DEFAULT_LOW_WORKING_VOLUME</strong> = 5000</dl>
+
+<dl><dt><strong>DEFAULT_SAMPLE_THRESHOLD</strong> = 4000</dl>
+
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x00B17B50&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'Protocol' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;(if&nbsp;defined)</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ProtocolException">class <strong>ProtocolException</strong></a>(<a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Exceptions&nbsp;related&nbsp;to&nbsp;processing&nbsp;protocols<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Protocol.html#ProtocolException">ProtocolException</a></dd>
+<dd><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a></dd>
+<dd><a href="exceptions.html#StandardError">exceptions.StandardError</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="ProtocolException-__getitem__"><strong>__getitem__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ProtocolException-__init__"><strong>__init__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ProtocolException-__str__"><strong>__str__</strong></a>(...)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>EMPTY</strong> = 0<br>
+<strong>NOT_NEEDED</strong> = -1<br>
+<strong>gHardwareData</strong> = &lt;tesla.hardware.config.HardwareConfiguration instance at 0x00A7B5A8&gt;</td></tr></table>
+</body></html>

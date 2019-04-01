@@ -1,0 +1,22 @@
+RoboSep UI Log File
+Created: 20151105_124808.254
+
+20151105_124808.404	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20151105_124808.454	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20151105_124820.261	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20151105_124820.641	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20151105_124825.919	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20151105_124826.750	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20151105_124835.112	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20151105_124835.142	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20151105_124835.473	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20151105_124835.703	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20151105_124835.753	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20151105_124835.823	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20151105_124836.384	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20151105_124838.137	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20151105_124843.534	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20151105_124900.479	clt	ServiceMenu.button_Barcode_Click()	Info	ServiceMenu	clicked
+20151105_124901.821	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20151105_124903.563	clt	Keyboard.button_Cancel1_Click()	Info	Keyboard	Cancel button clicked
+20151105_124906.247	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Closing ServiceMenu

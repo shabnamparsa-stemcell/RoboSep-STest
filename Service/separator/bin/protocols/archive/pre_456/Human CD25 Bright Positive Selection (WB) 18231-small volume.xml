@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepProtocol xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="HumanPositive" xmlns="STI">
+  <header label="Human CD25 Bright Positive Selection (WB) 18231-small volume" version="12" description="25 uL/mL cocktail, 50 uL/mL particles, 15 and 10 min incubations, 4x5 min separations" protocolNum1="18231" protocolNum2="0001">
+    <date created="2005-04-21" modified="2007-03-19" />
+    <author name="STI" />
+  </header>
+  <constraints>
+    <quadrants number="1" />
+    <sampleVolume min_uL="500" max_uL="4000" />
+    <workingVolume sampleThreshold_uL="2000" lowVolume_uL="2500" highVolume_uL="5000" />
+  </constraints>
+  <commands number="23">
+    <TransportCommand seq="1" label="Add cocktail to sample" extensionTime="0" freeAirDispense="false">
+      <vials src="TPC0103" dest="TPC0106" />
+      <relativeVolume proportion="0.025" />
+    </TransportCommand>
+    <MixCommand seq="2" label="Mix cocktail and sample" extensionTime="0">
+      <vials src="TPC0106" dest="TPC0106" />
+    </MixCommand>
+    <IncubateCommand seq="3" label="Incubate cocktail and sample" extensionTime="300">
+      <processingTime duration="720" />
+    </IncubateCommand>
+    <TransportCommand seq="4" label="Add particle to sample" extensionTime="0" freeAirDispense="false">
+      <vials src="TPC0104" dest="TPC0106" />
+      <relativeVolume proportion="0.05" />
+    </TransportCommand>
+    <MixCommand seq="5" label="Mix particle and sample" extensionTime="0">
+      <vials src="TPC0106" dest="TPC0106" />
+    </MixCommand>
+    <IncubateCommand seq="6" label="Incubate particle and sample" extensionTime="300">
+      <processingTime duration="600" />
+    </IncubateCommand>
+    <TopUpVialCommand seq="7" label="Top up sample with buffer" extensionTime="300" freeAirDispense="true">
+      <vials src="TPC0001" dest="TPC0106" />
+    </TopUpVialCommand>
+    <MixCommand seq="8" label="Mix sample after top up" extensionTime="0">
+      <vials src="TPC0106" dest="TPC0106" />
+    </MixCommand>
+    <TransportCommand seq="9" label="Transfer sample to magnet" extensionTime="0" freeAirDispense="false">
+      <vials src="TPC0106" dest="TPC0107" />
+      <absoluteVolume value_uL="10000" />
+    </TransportCommand>
+    <SeparateCommand seq="10" label="Separation #1" extensionTime="300">
+      <processingTime duration="300" />
+    </SeparateCommand>
+    <TransportCommand seq="11" label="Remove supernatant #1 to depleted fraction vial" extensionTime="120" freeAirDispense="false">
+      <vials src="TPC0107" dest="TPC0102" />
+      <absoluteVolume value_uL="10000" />
+    </TransportCommand>
+    <ResuspendVialCommand seq="12" label="Resuspend positive fraction with buffer" extensionTime="300" freeAirDispense="true">
+      <vials src="TPC0001" dest="TPC0107" />
+    </ResuspendVialCommand>
+    <MixCommand seq="13" label="Mix after resuspend" extensionTime="0">
+      <vials src="TPC0107" dest="TPC0107" />
+    </MixCommand>
+    <SeparateCommand seq="14" label="Separation #2" extensionTime="300">
+      <processingTime duration="300" />
+    </SeparateCommand>
+    <TransportCommand seq="15" label="Remove supernatant #2 to depleted fraction vial" extensionTime="120" freeAirDispense="false">
+      <vials src="TPC0107" dest="TPC0102" />
+      <absoluteVolume value_uL="10000" />
+    </TransportCommand>
+    <ResuspendVialCommand seq="16" label="Resuspend positive fraction with buffer" extensionTime="300" freeAirDispense="true">
+      <vials src="TPC0001" dest="TPC0107" />
+    </ResuspendVialCommand>
+    <MixCommand seq="17" label="Mix after resuspend #2" extensionTime="0">
+      <vials src="TPC0107" dest="TPC0107" />
+    </MixCommand>
+    <SeparateCommand seq="18" label="Separation #3" extensionTime="300">
+      <processingTime duration="300" />
+    </SeparateCommand>
+    <TransportCommand seq="19" label="Remove supernatant #3 to depleted fraction vial" extensionTime="120" freeAirDispense="false">
+      <vials src="TPC0107" dest="TPC0102" />
+      <absoluteVolume value_uL="10000" />
+    </TransportCommand>
+    <ResuspendVialCommand seq="20" label="Resuspend positive fraction with buffer" extensionTime="300" freeAirDispense="true">
+      <vials src="TPC0001" dest="TPC0107" />
+    </ResuspendVialCommand>
+    <MixCommand seq="21" label="Mix after resuspend 3" extensionTime="0">
+      <vials src="TPC0107" dest="TPC0107" />
+    </MixCommand>
+    <SeparateCommand seq="22" label="separation #4" extensionTime="300">
+      <processingTime duration="300" />
+    </SeparateCommand>
+    <TransportCommand seq="23" label="remove supernatant #4 to depleted fraction vial" extensionTime="0" freeAirDispense="false">
+      <vials src="TPC0107" dest="TPC0102" />
+      <absoluteVolume value_uL="10000" />
+    </TransportCommand>
+  </commands>
+  <customNames />
+</RoboSepProtocol>

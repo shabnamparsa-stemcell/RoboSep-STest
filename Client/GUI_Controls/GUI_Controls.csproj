@@ -1,0 +1,1451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35E0CB7F-0BB6-411F-9BFD-35852A3F63BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GUI_Controls</RootNamespace>
+    <AssemblyName>GUI_Controls</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ApplicationLog, Version=1.0.0.26191, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\shared\ApplicationLog.dll</HintPath>
+    </Reference>
+    <Reference Include="GUI_Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Button_Tab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CheckBox_Circle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CheckBox_Square.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CircularProgressControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CircularProgressControl.designer.cs">
+      <DependentUpon>CircularProgressControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GroupListView2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GroupListView2.Designer.cs">
+      <DependentUpon>GroupListView2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressCircle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProgressCircle.designer.cs">
+      <DependentUpon>ProgressCircle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoboMessagePanel4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoboMessagePanel4.Designer.cs">
+      <DependentUpon>RoboMessagePanel4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoboMessagePanel5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoboMessagePanel5.Designer.cs">
+      <DependentUpon>RoboMessagePanel5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoboMessagePanel6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoboMessagePanel6.Designer.cs">
+      <DependentUpon>RoboMessagePanel6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScrollPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Button_Cancel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Button_Circle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Button_Filter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Button_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Button_Home2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Button_Keyboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Button_Keyboard.designer.cs">
+      <DependentUpon>Button_Keyboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Button_Quadrant.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Button_Quadrant2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Button_Rectangle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Button_Scroll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Button_MainMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Button_SmallPink.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DragScrollListView2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DragScrollListView2.Designer.cs">
+      <DependentUpon>DragScrollListView2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DragScrollListView3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DragScrollListView3.Designer.cs">
+      <DependentUpon>DragScrollListView3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarcodeListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FlashTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FlashTextBox.Designer.cs">
+      <DependentUpon>FlashTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GroupListView.designer.cs">
+      <DependentUpon>GroupListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HorizontalTabs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HorizontalTabs.Designer.cs">
+      <DependentUpon>HorizontalTabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewEmbedCtrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="nameHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="nameHeader.Designer.cs">
+      <DependentUpon>nameHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Protocol_SearchBar2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Protocol_SearchBar2.Designer.cs">
+      <DependentUpon>Protocol_SearchBar2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Protocol_SearchBar3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Protocol_SearchBar3.Designer.cs">
+      <DependentUpon>Protocol_SearchBar3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoboMessagePanel2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoboMessagePanel2.Designer.cs">
+      <DependentUpon>RoboMessagePanel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoboMessagePanel3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoboMessagePanel3.Designer.cs">
+      <DependentUpon>RoboMessagePanel3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ScrollBar.Designer.cs">
+      <DependentUpon>ScrollBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScrollIndicator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ScrollIndicator.Designer.cs">
+      <DependentUpon>ScrollIndicator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SizableLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SizableLabel.Designer.cs">
+      <DependentUpon>SizableLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DragScrollListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DragScrollListView.designer.cs">
+      <DependentUpon>DragScrollListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextBoxScroll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserDetails.cs" />
+    <Compile Include="GUIButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUIButton.designer.cs">
+      <DependentUpon>GUIButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Keyboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keyboard.designer.cs">
+      <DependentUpon>Keyboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uiLog.cs" />
+    <Compile Include="MultiList_RoboPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MultiList_RoboPanel.designer.cs">
+      <DependentUpon>MultiList_RoboPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumberPad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NumberPad.Designer.cs">
+      <DependentUpon>NumberPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProgressBar.Designer.cs">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressElement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProgressElement.Designer.cs">
+      <DependentUpon>ProgressElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocol_SearchBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Protocol_SearchBar.Designer.cs">
+      <DependentUpon>Protocol_SearchBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuadrantSelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuadrantSelectionDialog.Designer.cs">
+      <DependentUpon>QuadrantSelectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoboMessagePanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoboMessagePanel.Designer.cs">
+      <DependentUpon>RoboMessagePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoboPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RoboPanel.Designer.cs">
+      <DependentUpon>RoboPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tabs.designer.cs">
+      <DependentUpon>Tabs.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Button_Cancel.resx">
+      <DependentUpon>Button_Cancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Button_Home.resx">
+      <DependentUpon>Button_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Button_Home2.resx">
+      <DependentUpon>Button_Home2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Button_Keyboard.resx">
+      <DependentUpon>Button_Keyboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Button_Quadrant.resx">
+      <DependentUpon>Button_Quadrant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Button_Quadrant2.resx">
+      <DependentUpon>Button_Quadrant2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Button_Rectangle.resx">
+      <DependentUpon>Button_Rectangle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Button_MainMenu.resx">
+      <DependentUpon>Button_MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Button_Tab.resx">
+      <DependentUpon>Button_Tab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckBox.resx">
+      <DependentUpon>CheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckBox_Circle.resx">
+      <DependentUpon>CheckBox_Circle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckBox_Square.resx">
+      <DependentUpon>CheckBox_Square.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DragScrollListView.resx">
+      <DependentUpon>DragScrollListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupListView.resx">
+      <DependentUpon>GroupListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupListView2.resx">
+      <DependentUpon>GroupListView2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIButton.resx">
+      <DependentUpon>GUIButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HorizontalTabs.resx">
+      <DependentUpon>HorizontalTabs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keyboard.resx">
+      <DependentUpon>Keyboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiList_RoboPanel.resx">
+      <DependentUpon>MultiList_RoboPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nameHeader.resx">
+      <DependentUpon>nameHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumberPad.resx">
+      <DependentUpon>NumberPad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBar.resx">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressCircle.resx">
+      <DependentUpon>ProgressCircle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressElement.resx">
+      <DependentUpon>ProgressElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protocol_SearchBar.resx">
+      <DependentUpon>Protocol_SearchBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protocol_SearchBar2.resx">
+      <DependentUpon>Protocol_SearchBar2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protocol_SearchBar3.resx">
+      <DependentUpon>Protocol_SearchBar3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuadrantSelectionDialog.resx">
+      <DependentUpon>QuadrantSelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboMessagePanel.resx">
+      <DependentUpon>RoboMessagePanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboMessagePanel2.resx">
+      <DependentUpon>RoboMessagePanel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboMessagePanel3.resx">
+      <DependentUpon>RoboMessagePanel3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboMessagePanel4.resx">
+      <DependentUpon>RoboMessagePanel4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboMessagePanel5.resx">
+      <DependentUpon>RoboMessagePanel5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoboMessagePanel6.resx">
+      <DependentUpon>RoboMessagePanel6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SizableLabel.resx">
+      <DependentUpon>SizableLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextBoxScroll.resx">
+      <DependentUpon>TextBoxScroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_PANEL_BORDER.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_SearchBar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bigRectButton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_ABBORT0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_ABBORT1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_ABBORT2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_ABBORT3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_ACCEPT0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_ACCEPT1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_ACCEPT2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_ACCEPT3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_DOWN_Disable.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_DOWN0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_DOWN1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_DOWN2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_DOWN3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Filter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Filter2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_HOMECANCEL0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_HOMECANCEL1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_HUMAN0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_HUMAN1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_HUMAN2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_HUMAN3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_MOUSE0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_MOUSE1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_MOUSE2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_MOUSE3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_NEGATIVE0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_NEGATIVE1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_NEGATIVE2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_NEGATIVE3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_POSITIVE0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_POSITIVE1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_POSITIVE2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_POSITIVE3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_PROMPTBUTTON0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_PROMPTBUTTON3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_QUADRANTCANCEL.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECT_Disable.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECT_MED0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECT_MED1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECT_MED2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECT_MED3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECT0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECT1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECT2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECT3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECT21.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECT31.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_RESOURCE_LIST0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_RESOURCE_LIST1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_RESOURCE_LIST2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_RESOURCE_LIST3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_RESOURCE_Selected.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_SERVICE0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_SERVICE1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_SERVICE2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_SERVICE3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_UP_Disable.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_UP0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_UP1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_UP2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_UP3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\BC_antibody.png" />
+    <Content Include="Resources\BC_cocktail.png" />
+    <Content Include="Resources\BC_GroupCollapsed_OVER.png" />
+    <Content Include="Resources\BC_GroupCollapsed_CLICK.png" />
+    <Content Include="Resources\BC_GroupCollapsed_STD.png" />
+    <Content Include="Resources\BC_GroupEmpty_OVER.png" />
+    <Content Include="Resources\BC_GroupEmpty_CLICK.png" />
+    <Content Include="Resources\BC_GroupEmpty_STD.png" />
+    <Content Include="Resources\BC_GroupExpanded_OVER.png" />
+    <Content Include="Resources\BC_GroupExpanded_CLICK.png" />
+    <Content Include="Resources\BC_GroupExpanded_STD.png" />
+    <Content Include="Resources\BC_magnetic.png" />
+    <Content Include="Resources\BC_sample_tube.png" />
+    <Content Include="Resources\CarouselNumber_1.png" />
+    <Content Include="Resources\CarouselNumber_2.png" />
+    <Content Include="Resources\CarouselNumber_3.png" />
+    <Content Include="Resources\CarouselNumber_4.png" />
+    <Content Include="Resources\carousel_52x52_CLICK.png" />
+    <Content Include="Resources\carousel_52x52_DISABLE.png" />
+    <Content Include="Resources\carousel_52x52_OVER.png" />
+    <Content Include="Resources\carousel_52x52_STD.png" />
+    <Content Include="Resources\Carousel_Section_Antibody.png" />
+    <Content Include="Resources\Carousel_Section_AntibodyV.png" />
+    <Content Include="Resources\Carousel_Section_MagneticParticleV.png" />
+    <Content Include="Resources\Carousel_Section_MagnetV.png" />
+    <Content Include="Resources\Carousel_Section_NegativeFractionV.png" />
+    <Content Include="Resources\Carousel_Section_NegativeSelectionV.png" />
+    <None Include="Resources\Carousel_Section_SampleV.bmp" />
+    <None Include="Resources\Carousel_Section_TipRackV.bmp" />
+    <None Include="Resources\Carousel_Section_WasteV.bmp" />
+    <Content Include="Resources\S_32x32_square.png" />
+    <Content Include="Resources\S_32x32_square_checked.png" />
+    <Content Include="Resources\TabButton_CLICK.png" />
+    <Content Include="Resources\TabButton_OVER.png" />
+    <Content Include="Resources\TabButton_STD.png" />
+    <Content Include="Resources\WaitAnimation.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Carousel_Section_AntibodyE.png" />
+    <Content Include="Resources\Carousel_Section_AntibodySelect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Carousel_Section_Magnet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Carousel_Section_MagnetE.png" />
+    <Content Include="Resources\Carousel_Section_MagneticParticle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Carousel_Section_MagneticParticleE.png" />
+    <Content Include="Resources\Carousel_Section_MagneticParticleSelect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Carousel_Section_MagnetSelect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Carousel_Section_NegativeFraction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Carousel_Section_NegativeFractionE.png" />
+    <Content Include="Resources\Carousel_Section_NegativeFractionSelect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Carousel_Section_NegativeSelection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Carousel_Section_NegativeSelectionE.png" />
+    <Content Include="Resources\Carousel_Section_NegativeSelectionSelect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Carousel_Section_Sample.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Carousel_Section_SampleE.png" />
+    <Content Include="Resources\Carousel_Section_SampleSelect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Carousel_Section_TipRack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Carousel_Section_TipRackE.png" />
+    <Content Include="Resources\Carousel_Section_TipRackSelect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Carousel_Section_Waste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Carousel_Section_WasteE.png" />
+    <Content Include="Resources\Carousel_Section_WasteSelect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckBox.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CHECKBOX0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CHECKBOX1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Dashboard.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Dashboard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame_Background.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEX_SAMPLE0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEX_SAMPLE1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEX_SAMPLE2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEX_SAMPLE3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KeybaordButton_L0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KeybaordButton_L1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KeybaordButton_M0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KeybaordButton_M1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KeybaordButton_R0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KeybaordButton_R1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KEYBOARD_ENTER0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KEYBOARD_ENTER1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PillButton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Quadrant.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Quadrant1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Quadrant2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Quadrant3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Quadrant4.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboMessagePanel_BL.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboMessagePanel_BR.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboMessagePanel_TL.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboMessagePanel_TR.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboPANEL_CORNER_BL.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboPANEL_CORNER_BOTTOMLEFT.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboPANEL_CORNER_BOTTOMRIGHT.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboPANEL_CORNER_BR.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboPANEL_CORNER_TL.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboPANEL_CORNER_TOPLEFT.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboPANEL_CORNER_TOPRIGHT.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboPANEL_CORNER_TR.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmallPink.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spacer_ProtocolSelect.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tab_Bottom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tab_bottom1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tab_bottom2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tab_bottom3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TAB_HELPVIDEO1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TAB_HELPVIDEO2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tab_mid1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tab_mid2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tab_mid3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tab_Middle.jpg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TAB_REPORTS1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TAB_REPORTS2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TAB_REPORTS3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TAB_ROBOSEP1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TAB_ROBOSEP2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TAB_RUNSTAT1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TAB_RUNSTAT2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TAB_RUNSTAT3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tab_Top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tab_Top1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tab_Top2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tab_Top3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TAB_VIDLOG1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TAB_VIDLOG2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TAB_VIDLOG3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextBox_Login.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TOGGLE_QUADRANT0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TOGGLE_QUADRANT1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TOGGLE_QUADRANT2.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboSep_Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboSep_Splash_640x480.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboSep_SplashAnim_640x480.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Quadrant_Grey2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Quadrant_Purple.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboSep_SplashAnim_640x480a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SampleTube.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuadrantAll.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fileBrowser.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fbBack.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fbBack3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fbButton0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fbButton3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fbRefresh.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fbRefresh3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fbUp.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fbUp3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_HUMAN2a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_HUMAN3a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_NEGATIVE2a - Copy.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_NEGATIVE2a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_NEGATIVE3a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_POSITIVE2a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUTTON_POSITIVE3a.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderPurple.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoboFolder32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fbDir.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fbDir3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECTG0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECTG1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECTG2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_RECTG3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KeybaordButton_Wide.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KeybaordButton_Wide3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserIcon01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KeybaordButton.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KeybaordButton1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnLong_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnLong_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuadrantNumber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_HeaderSml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabRIGHT_INACTIVE_ADJACENT.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabLEFT_ACTIVE_ADJACENT.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabRIGHT_INACTIVE_ADJACENT1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabRIGHT_ACTIVE_ADJACENT1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabLEFT_ACTIVE_ADJACENT1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabRIGHT_ACTIVE_ADJACENT2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabRIGHT_INACTIVE1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabRIGHT_INACTIVE_ADJACENT2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\connecting_animation.gif" />
+    <Content Include="Resources\exporting_animation.gif" />
+    <Content Include="Resources\GE_BTN07S_select_CLICK.png" />
+    <Content Include="Resources\GE_BTN08S_unselect_STD.png" />
+    <Content Include="Resources\home_header640x40_bg.png" />
+    <Content Include="Resources\Message_Error.png" />
+    <Content Include="Resources\Message_Information.png" />
+    <Content Include="Resources\Message_Question.png" />
+    <Content Include="Resources\Message_Warning.png" />
+    <Content Include="Resources\purpleHeaderBackground.png" />
+    <Content Include="Resources\RE_BTN01N_magnetic.png" />
+    <Content Include="Resources\RE_BTN01N_magnetic_1.png" />
+    <Content Include="Resources\RE_BTN02N_cocktail.png" />
+    <Content Include="Resources\RE_BTN02N_cocktail_1.png" />
+    <Content Include="Resources\RE_BTN03N_sample_tube.png" />
+    <Content Include="Resources\RE_BTN03N_sample_tube_1.png" />
+    <Content Include="Resources\RE_BTN10N_antibody.png" />
+    <Content Include="Resources\RE_BTN10N_antibody_1.png" />
+    <Content Include="Resources\scan_N_CLICK.png" />
+    <Content Include="Resources\scan_N_DISABLE.png" />
+    <Content Include="Resources\scan_N_OVER.png" />
+    <Content Include="Resources\scan_N_STD.png" />
+    <Content Include="Resources\TabBG_ACTIVE.png" />
+    <Content Include="Resources\TabBG_INACTIVE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabLEFT_INACTIVE_ADJACENT.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabLEFT_INACTIVE_ADJACENT1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnLG_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnLG_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabLEFT_INACTIVE1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabRIGHT_ACTIVE_ADJACENT.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabRIGHT_INACTIVE2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterHuman_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterMouse_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterNeg_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterPos_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnLG_HIGHLIGHT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnLG_HIGHLIGHT_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GradientBG.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MessagePanelBody_BG.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MessagePanelHeader_BG.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnsmall_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnsmall_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnKeyboard_C0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnKeyboard_C1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnKeyboard_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnKeyboard_L0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnKeyboard_L1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnKeyboard_R0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnKeyboard_R1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnKeyboard_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnShift_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnShift_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnEnter_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnEnter_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnCaps_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnCaps_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WindowClose_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WindowClose_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnSpace_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnSpace_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnEnterThick_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnEnterThick_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_OVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterHuman_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterHuman_OVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterMouse_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterMouse_OVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterNeg_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterNeg_OVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterPos_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterPos_OVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\common\Common.csproj">
+      <Project>{12FBE96F-1212-4E24-9CCB-A9666F4C5203}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollDOWN_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollDOWN_OVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollDOWN_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollUP_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollUP_OVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollUP_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollRIGHT_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollRIGHT_OVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollRIGHT_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollLEFT_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollLEFT_OVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollLEFT_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modeFILTER_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modeFILTER_OVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modeFILTER_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modeSCROLL_CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modeSCROLL_OVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modeSCROLL_STD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\carousel_34x34.png" />
+    <None Include="Resources\Home2_CLICK_54x54.png" />
+    <None Include="Resources\Home2_OVER_54x54.png" />
+    <None Include="Resources\Home2_STD_54x54.png" />
+    <Content Include="Resources\Contract_CLICK_65x65.png" />
+    <Content Include="Resources\Contract_OVER_65x65.png" />
+    <Content Include="Resources\Contract_STD_65x65.png" />
+    <Content Include="Resources\Expand_CLICK_65x65.png" />
+    <Content Include="Resources\Expand_OVER_65x65.png" />
+    <Content Include="Resources\Expand_STD_65x65.png" />
+    <None Include="Resources\GE_BTN01M_home_CLICK.png" />
+    <None Include="Resources\GE_BTN01M_home_OVER.png" />
+    <None Include="Resources\GE_BTN01M_home_STD.png" />
+    <Content Include="Resources\GE_BTN02M_main_menu_CLICK.png" />
+    <Content Include="Resources\GE_BTN02M_main_menu_OVER.png" />
+    <Content Include="Resources\GE_BTN02M_main_menu_STD.png" />
+    <Content Include="Resources\GE_BTN03M_up_arrow_CLICK.png" />
+    <Content Include="Resources\GE_BTN03M_up_arrow_OVER.png" />
+    <Content Include="Resources\GE_BTN03M_up_arrow_STD.png" />
+    <Content Include="Resources\GE_BTN04M_down_arrow_CLICK.png" />
+    <Content Include="Resources\GE_BTN04M_down_arrow_OVER.png" />
+    <Content Include="Resources\GE_BTN04M_down_arrow_STD.png" />
+    <Content Include="Resources\GE_BTN05M_left_arrow_CLICK.png" />
+    <Content Include="Resources\GE_BTN05M_left_arrow_OVER.png" />
+    <Content Include="Resources\GE_BTN05M_left_arrow_STD.png" />
+    <Content Include="Resources\GE_BTN06M_right_arrow_CLICK.png" />
+    <Content Include="Resources\GE_BTN06M_right_arrow_OVER.png" />
+    <Content Include="Resources\GE_BTN06M_right_arrow_STD.png" />
+    <Content Include="Resources\GE_BTN11M_sort_ascend_CLICK.png" />
+    <Content Include="Resources\GE_BTN11M_sort_ascend_OVER.png" />
+    <Content Include="Resources\GE_BTN11M_sort_ascend_STD.png" />
+    <Content Include="Resources\GE_BTN12M_sort_descend_CLICK.png" />
+    <Content Include="Resources\GE_BTN12M_sort_descend_OVER.png" />
+    <Content Include="Resources\GE_BTN12M_sort_descend_STD.png" />
+    <Content Include="Resources\GE_BTN13L_cancel_CLICK.png" />
+    <Content Include="Resources\GE_BTN13L_cancel_OVER.png" />
+    <Content Include="Resources\GE_BTN13L_cancel_STD.png" />
+    <Content Include="Resources\GE_BTN16L_settings_CLICK.png" />
+    <Content Include="Resources\GE_BTN16L_settings_OVER.png" />
+    <Content Include="Resources\GE_BTN16L_settings_STD.png" />
+    <Content Include="Resources\GE_BTN20L_ok_CLICK.png" />
+    <Content Include="Resources\GE_BTN20L_ok_OVER.png" />
+    <Content Include="Resources\GE_BTN20L_ok_STD.png" />
+    <Content Include="Resources\human_CLICK_65x65.bmp" />
+    <Content Include="Resources\human_INACTIVE_65x65.bmp" />
+    <Content Include="Resources\human_STD_65x65.bmp" />
+    <Content Include="Resources\mouse_CLICK_65x65.bmp" />
+    <Content Include="Resources\mouse_INACTIVE_65x65.bmp" />
+    <Content Include="Resources\mouse_STD_65x65.bmp" />
+    <Content Include="Resources\NavigateDown_CLICK.png" />
+    <Content Include="Resources\NavigateDown_CLICK_65x65.bmp" />
+    <Content Include="Resources\NavigateDown_DISABLE.png" />
+    <Content Include="Resources\NavigateDown_DISABLE_65x65.bmp" />
+    <Content Include="Resources\NavigateDown_OVER.png" />
+    <Content Include="Resources\NavigateDown_STD.png" />
+    <Content Include="Resources\NavigateDown_STD_65x65.bmp" />
+    <Content Include="Resources\NavigateLeft_CLICK.png" />
+    <Content Include="Resources\NavigateLeft_CLICK_65x65.bmp" />
+    <Content Include="Resources\NavigateLeft_OVER.png" />
+    <Content Include="Resources\NavigateLeft_STD.png" />
+    <Content Include="Resources\NavigateLeft_STD_65x65.bmp" />
+    <Content Include="Resources\NavigateRight_CLICK.png" />
+    <Content Include="Resources\NavigateRight_CLICK_65x65.bmp" />
+    <Content Include="Resources\NavigateRight_OVER.png" />
+    <Content Include="Resources\NavigateRight_STD.png" />
+    <Content Include="Resources\NavigateRight_STD_65x65.bmp" />
+    <Content Include="Resources\NavigateUp_CLICK.png" />
+    <Content Include="Resources\NavigateUp_CLICK_65x65.bmp" />
+    <Content Include="Resources\NavigateUp_DISABLE.png" />
+    <Content Include="Resources\NavigateUp_DISABLE_65x65.bmp" />
+    <Content Include="Resources\NavigateUp_OVER.png" />
+    <Content Include="Resources\NavigateUp_STD.png" />
+    <Content Include="Resources\NavigateUp_STD_65x65.bmp" />
+    <Content Include="Resources\Neg_CLICK_65x65.bmp" />
+    <Content Include="Resources\Neg_INACTIVE_65x65.bmp" />
+    <Content Include="Resources\Neg_STD_65x65.bmp" />
+    <Content Include="Resources\Pos_CLICK_65x65.bmp" />
+    <Content Include="Resources\Pos_INACTIVE_65x65.bmp" />
+    <Content Include="Resources\Pos_STD_65x65.bmp" />
+    <Content Include="Resources\PR_BTN01M_human_CLICK.png" />
+    <Content Include="Resources\PR_BTN01M_human_OVER.png" />
+    <Content Include="Resources\PR_BTN01M_human_STD.png" />
+    <Content Include="Resources\PR_BTN02M_mouse_CLICK.png" />
+    <Content Include="Resources\PR_BTN02M_mouse_OVER.png" />
+    <Content Include="Resources\PR_BTN02M_mouse_STD.png" />
+    <Content Include="Resources\PR_BTN03M_positive_CLICK.png" />
+    <Content Include="Resources\PR_BTN03M_positive_OVER.png" />
+    <Content Include="Resources\PR_BTN03M_positive_STD.png" />
+    <Content Include="Resources\PR_BTN04M_negative_CLICK.png" />
+    <Content Include="Resources\PR_BTN04M_negative_OVER.png" />
+    <Content Include="Resources\PR_BTN04M_negative_STD.png" />
+    <Content Include="Resources\QuadrantNumber_DISABLED.png" />
+    <Content Include="Resources\QuadrantNumber_REQUIRED.png" />
+    <Content Include="Resources\QuadrantNumber_UNSELECTED.png" />
+    <Content Include="Resources\sortAscend_CLICK.png" />
+    <Content Include="Resources\sortAscend_OVER.png" />
+    <Content Include="Resources\sortAscend_STD.png" />
+    <Content Include="Resources\sortDescend_CLICK.png" />
+    <Content Include="Resources\sortDescend_OVER.png" />
+    <Content Include="Resources\sortDescend_STD.png" />
+    <Content Include="Resources\TabRIGHT_ACTIVE.png" />
+    <Content Include="Resources\TabLEFT_ACTIVE.png" />
+    <Content Include="Resources\TabRIGHT_INACTIVE.png" />
+    <Content Include="Resources\uploading_animation.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

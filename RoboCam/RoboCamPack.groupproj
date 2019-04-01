@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{07404D21-B82A-47BC-B768-F83934583E13}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="RotateTrans\RotateTrans.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="RoboCam.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="RotateTrans">
+			<MSBuild Projects="RotateTrans\RotateTrans.dproj"/>
+		</Target>
+		<Target Name="RotateTrans:Clean">
+			<MSBuild Targets="Clean" Projects="RotateTrans\RotateTrans.dproj"/>
+		</Target>
+		<Target Name="RotateTrans:Make">
+			<MSBuild Targets="Make" Projects="RotateTrans\RotateTrans.dproj"/>
+		</Target>
+		<Target Name="RoboCam">
+			<MSBuild Projects="RoboCam.dproj"/>
+		</Target>
+		<Target Name="RoboCam:Clean">
+			<MSBuild Targets="Clean" Projects="RoboCam.dproj"/>
+		</Target>
+		<Target Name="RoboCam:Make">
+			<MSBuild Targets="Make" Projects="RoboCam.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="RotateTrans;RoboCam"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="RotateTrans:Clean;RoboCam:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="RotateTrans:Make;RoboCam:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

@@ -1,0 +1,12 @@
+RoboSep UI Log File
+Created: 20131121_202129.860
+
+20131121_202129.991	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20131121_202130.021	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20131121_202140.766	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20131121_202140.896	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20131121_202146.044	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20131121_202146.645	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131121_202233.923	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20131121_202233.923	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as StandardUser
+20131121_202234.293	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar

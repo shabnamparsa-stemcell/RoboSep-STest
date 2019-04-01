@@ -1,0 +1,8 @@
+C:\projects\Minnie\ProtocolEditor\DataAccess\bin\Debug\DataAccess.dll
+C:\projects\Minnie\ProtocolEditor\DataAccess\bin\Debug\DataAccess.pdb
+C:\projects\Minnie\ProtocolEditor\DataAccess\bin\Debug\Common.dll
+C:\projects\Minnie\ProtocolEditor\DataAccess\bin\Debug\ApplicationLog.dll
+C:\projects\Minnie\ProtocolEditor\DataAccess\bin\Debug\Common.pdb
+C:\projects\Minnie\ProtocolEditor\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+C:\projects\Minnie\ProtocolEditor\DataAccess\obj\Debug\DataAccess.dll
+C:\projects\Minnie\ProtocolEditor\DataAccess\obj\Debug\DataAccess.pdb

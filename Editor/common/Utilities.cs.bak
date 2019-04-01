@@ -1,0 +1,131 @@
+//
+// 2011-09-05 to 2011-09-19 sp various changes
+//     - add support to read levels from parameter file entries instead of fixed code 
+//     - change fixed application path folder to variable obtained during program execution 
+//
+//----------------------------------------------------------------------------
+
+using System;
+
+using System.Runtime.InteropServices;
+
+// added 2011-09-06-2011-09-19 sp 
+// support for parameters from software.ini
+using System.Text;
+using System.IO;
+using System.Globalization;
+
+namespace Tesla.Common
+{
+    /// <summary>
+    /// Summary description for Utilities.
+    /// </summary>
+    public class Utilities
+    {
+        public Utilities()
+        {
+        }
+
+        [DllImport("kernel32.dll")]
+        public static extern bool Beep(int freq, int duration);
+
+
+        // added 2011-09-06 sp 
+        // importing methods from system DLLS
+        [DllImport("kernel32")]
+        private static extern int GetPrivateProfileInt(String Section, String Key, int Default, String FilePath);
+        [DllImport("kernel32")]
+        private static extern int GetPrivateProfileString(String Section, String Key, String Default, StringBuilder retVal, int Size, String FilePath);
+
+        // added 2011-09-06 sp 
+        // get the installed directory path for RoboSep 
+        public static String GetApplicationInstallPath()
+        {
+            String installDir = "";
+            // find the registry key (first on a 32 bit installed system, and if not found try the location setup on a 64 bit system)
+            Microsoft.Win32.RegistryKey robosepRegKey = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("SOFTWARE\\STI");
+            if (robosepRegKey == null)
+            {
+                robosepRegKey = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("SOFTWARE\\WOW6432NODE\\STI");
+            }
+            if (robosepRegKey != null)
+            {
+                try
+                {
+                    installDir = robosepRegKey.GetValue("ROBOSEPPATH").ToString();
+                }
+                catch (Exception)
+                {
+                    installDir = "Install_Path_Not_Found";
+                }
+            }
+            return (installDir);
+            //*/
+        }
+
+        // added 2011-09-06 sp 
+        // get the current working directory (less the bin directory) 
+        public static String GetApplicationParentPath()
+        {
+            String workingDir = Directory.GetCurrentDirectory();
+            int lastIndex = workingDir.LastIndexOfAny(("bin").ToCharArray());
+            if (lastIndex >= 2)
+                workingDir = workingDir.Substring(0, lastIndex - 2);
+            return (workingDir);
+        }
+
+        // added 2011-09-19 sp 
+        // get the default working application path using either the installed directory or the program execution path
+        public static String GetDefaultAppPath()
+        {
+            // return (GetApplicationInstallPath());
+            return (GetApplicationParentPath());
+        }
+
+        // added 2011-09-06 sp 
+        // Gets the file location for the software INI file specification
+        public static String GetSoftwareIniFile()
+        {
+            String sw_INI_File = GetDefaultAppPath() + ("config\\software.ini");
+            return (sw_INI_File);
+        }
+
+
+        // added 2011-09-06 sp 
+        // Gets an integer value from the software INI file referenced by Key and Section
+        public static int GetSoftwareConfigInt(String Section, String Key, int Default)
+        {
+            int value = GetPrivateProfileInt(Section, Key, Default, GetSoftwareIniFile());
+            return (value);
+        }
+
+
+        // added 2011-09-06 sp 
+        // Gets a String value from the software file referenced by Key and Section
+        public static String GetSoftwareConfigString(String Section, String Key, String Default)
+        {
+            int numChars = 256;
+            StringBuilder buffer = new StringBuilder(numChars);
+            GetPrivateProfileString(Section, Key, Default, buffer, numChars, GetSoftwareIniFile());
+            return (buffer.ToString());
+        }
+
+
+        // added 2011-09-06 sp 
+        // Gets a double precision numeric value from the software INI file referenced by Key and Section
+        public static Double GetSoftwareConfigDouble(String Section, String Key, Double Default)
+        {
+            Double value;
+            int numChars = 256;
+            StringBuilder buffer = new StringBuilder(numChars);
+            GetPrivateProfileString(Section, Key, Default.ToString(), buffer, numChars, GetSoftwareIniFile());
+
+            NumberStyles style = NumberStyles.Number;
+            CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
+            if (!Double.TryParse(buffer.ToString(), style, culture, out value))
+                value = Default;
+            return (value);
+        }
+
+    }
+}

@@ -1,0 +1,38 @@
+RoboSep UI Log File
+Created: 20131116_154601.650
+
+20131116_154601.970	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20131116_154602.036	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20131116_154605.525	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20131116_154605.713	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20131116_154610.660	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20131116_154614.061	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131116_154618.691	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20131116_154619.949	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20131116_154619.949	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as StandardUser
+20131116_154620.279	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20131116_154624.567	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131116_154625.824	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20131116_154757.120	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20131116_154757.131	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as StandardUser
+20131116_154757.208	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20131116_154801.912	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20131116_154801.912	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as StandardUser
+20131116_154801.978	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20131116_154802.881	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20131116_154802.881	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as StandardUser
+20131116_154802.892	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20131116_154810.490	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131116_154812.790	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20131116_155123.222	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131116_155125.623	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20131116_155140.765	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131116_155143.469	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20131116_155144.156	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20131116_155144.165	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as StandardUser
+20131116_155144.174	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20131116_155144.513	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20131116_155144.550	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20131116_155144.590	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20131116_155145.247	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20131116_155149.203	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu

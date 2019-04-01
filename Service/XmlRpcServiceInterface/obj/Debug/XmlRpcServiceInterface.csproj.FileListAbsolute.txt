@@ -1,0 +1,23 @@
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\XmlRpcServiceInterface.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\XmlRpcServiceInterface.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\XmlRpcServiceInterface\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\XmlRpcServiceInterface\obj\Debug\Tesla.InstrumentControl.ServiceXmlRpcProxy.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\XmlRpcServiceInterface\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\XmlRpcServiceInterface\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\XmlRpcServiceInterface\obj\Debug\XmlRpcServiceInterface.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\XmlRpcServiceInterface\obj\Debug\XmlRpcServiceInterface.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\XmlRpcServiceInterface.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\XmlRpcServiceInterface.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\XmlRpcServiceInterface\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\_2012_09_10_update\Service\XmlRpcServiceInterface\obj\Debug\Tesla.InstrumentControl.ServiceXmlRpcProxy.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\XmlRpcServiceInterface\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Projects\TESLA\_2012_09_10_update\Service\XmlRpcServiceInterface\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Projects\TESLA\_2012_09_10_update\Service\XmlRpcServiceInterface\obj\Debug\XmlRpcServiceInterface.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\XmlRpcServiceInterface\obj\Debug\XmlRpcServiceInterface.pdb
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\XmlRpcServiceInterface.dll
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\XmlRpcServiceInterface.pdb
+D:\Projects-git\INS-RoboSep-S\Service\XmlRpcServiceInterface\obj\Debug\XmlRpcServiceInterface.csprojResolveAssemblyReference.cache
+D:\Projects-git\INS-RoboSep-S\Service\XmlRpcServiceInterface\obj\Debug\Tesla.InstrumentControl.ServiceXmlRpcProxy.resources
+D:\Projects-git\INS-RoboSep-S\Service\XmlRpcServiceInterface\obj\Debug\XmlRpcServiceInterface.csproj.GenerateResource.Cache
+D:\Projects-git\INS-RoboSep-S\Service\XmlRpcServiceInterface\obj\Debug\XmlRpcServiceInterface.dll
+D:\Projects-git\INS-RoboSep-S\Service\XmlRpcServiceInterface\obj\Debug\XmlRpcServiceInterface.pdb

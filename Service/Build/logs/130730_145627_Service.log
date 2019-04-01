@@ -1,0 +1,41 @@
+RoboSep UI Log File
+Created: 20130730_145627.440
+
+20130730_145627.503	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20130730_145627.529	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20130730_145635.804	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20130730_145637.846	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20130730_145641.123	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20130730_145641.426	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130730_145646.770	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130730_145649.009	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130730_145651.351	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130730_145653.226	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20130730_145653.226	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20130730_145653.411	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20130730_145653.693	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20130730_145653.761	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20130730_145653.829	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20130730_145654.489	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130730_145655.840	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130730_145702.203	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20130730_145709.173	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Disconnecting
+20130730_145702.373	clt	InstrumentComms.ConnectionRoutine()	Debug	InstrumentComms	Connecting to Instrument
+20130730_145702.213	clt	InstrumentComms.connectToInstrument()	Debug	InstrumentComms	Connect To Instrument : IP => 127.0.0.1
+20130730_145702.203	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20130730_145655.840	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130730_145654.489	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130730_145653.829	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20130730_145653.761	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20130730_145653.693	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20130730_145653.411	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20130730_145711.747	clt	InstrumentComms.ConnectionRoutine()	Error	InstrumentComms	Error connecting to instrument, check IP address
+20130730_145807.267	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20130730_145811.323	clt	ServiceMenu.listboxTeachingSubMenu_SelectedIndexChanged()	Info	ServiceMenu	Prepare to start script: 3. Z heights
+20130730_145811.443	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	None
+20130730_145813.556	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	Running script: 3. Z heights
+20130730_145818.473	clt	RoboSepServiceManualStepControl.btnAbort_Click()	Info	RoboSepServiceManualStepControl	clicked
+20130730_145818.643	clt	ServiceDialog.SetScriptDoneText()	Info	ServiceDialog	reset text
+20130730_145831.742	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130730_145831.842	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130730_150203.697	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Closing ServiceMenu

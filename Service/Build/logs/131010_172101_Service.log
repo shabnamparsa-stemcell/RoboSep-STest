@@ -1,0 +1,10 @@
+RoboSep UI Log File
+Created: 20131010_172101.568
+
+20131010_172101.588	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20131010_172101.598	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20131010_172103.901	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20131010_172103.992	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20131010_172105.604	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20131010_172105.994	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131010_172112.934	clt	Keyboard.button_Cancel1_Click()	Info	Keyboard	Cancel button clicked

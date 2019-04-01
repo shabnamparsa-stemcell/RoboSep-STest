@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+//============================================================================
+// SeparatorDataSource.xsd
+//
+// Invetech Pty Ltd
+// Victoria, 3149, Australia
+// Phone:   (+61) 3 9211 7700
+// Fax:     (+61) 3 9211 7701
+//
+// The copyright to the computer program(s) herein is the property of 
+// Invetech Pty Ltd, Australia.
+// The program(s) may be used and/or copied only with the written permission 
+// of Invetech Pty Ltd or in accordance with the terms and conditions 
+// stipulated in the agreement/contract under which the program(s)
+// have been supplied.
+// 
+// Copyright © 2004. All Rights Reserved.
+//
+//	03/29/06 - Short Description for Sample Volume Dialog - RL
+//============================================================================
+-->
+<xs:schema id="SeparatorDataSource" targetNamespace="http://tempuri.org/SeparatorDataSource.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/SeparatorDataSource.xsd"
+	xmlns:mstns="http://tempuri.org/SeparatorDataSource.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="SeparatorDataSource" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="SeparationProtocol">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SeparationProtocolId" type="xs:int" msdata:ReadOnly="true" msdata:AutoIncrement="true"
+								msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" />
+							<xs:element name="SeparationProtocolProtocolId" type="xs:int" minOccurs="0" />
+							<xs:element name="SeparationProtocolMinimumVolume" minOccurs="0" type="xs:double" />
+							<xs:element name="SeparationProtocolMaximumVolume" minOccurs="0" type="xs:double" />
+							<xs:element name="SeparationProtocolClass" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Sample">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SampleId" type="xs:string" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1"
+								msdata:AutoIncrementStep="1" msdata:ReadOnly="true" />
+							<xs:element name="SampleSeparationProtocolId" type="xs:int" minOccurs="0" />
+							<xs:element name="SampleLabel" type="xs:string" minOccurs="0" />
+							<xs:element name="SampleVolume" type="xs:double" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="MaintenanceProtocol">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MaintenanceProtocolId" type="xs:int" msdata:ReadOnly="true" msdata:AutoIncrement="true"
+								msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" />
+							<xs:element name="MaintenanceProtocolProtocolId" type="xs:int" minOccurs="0" />
+							<xs:element name="MaintenanceProtocolTaskId" type="xs:int" minOccurs="0" />
+							<xs:element name="MaintenanceProtocolTaskDescription" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Protocol">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ProtocolId" type="xs:int" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1"
+								msdata:AutoIncrementStep="1" msdata:ReadOnly="true" />
+							<xs:element name="ProtocolInstrumentControlId" type="xs:int" minOccurs="0" />
+							<xs:element name="ProtocolLabel" type="xs:string" minOccurs="0" />
+							<xs:element name="ProtocolDescription" type="xs:string" minOccurs="0" />
+							<xs:element name="ProtocolQuadrantCount" minOccurs="0" type="xs:int" />
+							<xs:element name="ProtocolUsageCount" type="xs:int" minOccurs="0" />
+							<xs:element name="ProtocolUsageTime" type="xs:dateTime" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ShutdownProtocol">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ShutdownProtocolId" type="xs:int" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1"
+								msdata:AutoIncrementStep="1" msdata:ReadOnly="true" />
+							<xs:element name="ShutdownProtocolProtocolId" type="xs:int" minOccurs="0" />
+							<xs:element name="ShutdownProtocolDescription" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="ProtocolPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Protocol" />
+			<xs:field xpath="mstns:ProtocolId" />
+		</xs:key>
+		<xs:key name="SamplePrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Sample" />
+			<xs:field xpath="mstns:SampleId" />
+		</xs:key>
+		<xs:key name="MaintenanceProtocolPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:MaintenanceProtocol" />
+			<xs:field xpath="mstns:MaintenanceProtocolId" />
+		</xs:key>
+		<xs:key name="SeparationProtocolPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:SeparationProtocol" />
+			<xs:field xpath="mstns:SeparationProtocolId" />
+		</xs:key>
+		<xs:keyref name="FK_Sample_SeparationProtocol" refer="SeparationProtocolPrimaryKey">
+			<xs:selector xpath=".//mstns:Sample" />
+			<xs:field xpath="mstns:SampleSeparationProtocolId" />
+		</xs:keyref>
+		<xs:keyref name="FK_MaintenanceProtocol_Protocol" refer="ProtocolPrimaryKey">
+			<xs:selector xpath=".//mstns:MaintenanceProtocol" />
+			<xs:field xpath="mstns:MaintenanceProtocolProtocolId" />
+		</xs:keyref>
+		<xs:keyref name="FK_SeparationProtocol_Protocol" refer="ProtocolPrimaryKey">
+			<xs:selector xpath=".//mstns:SeparationProtocol" />
+			<xs:field xpath="mstns:SeparationProtocolProtocolId" />
+		</xs:keyref>
+		<xs:keyref name="FK_ShutdownProtocol_Protocol" refer="ProtocolPrimaryKey">
+			<xs:selector xpath=".//mstns:ShutdownProtocol" />
+			<xs:field xpath="mstns:ShutdownProtocolProtocolId" />
+		</xs:keyref>
+		<xs:key name="ShutdownProtocolPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:ShutdownProtocol" />
+			<xs:field xpath="mstns:ShutdownProtocolId" />
+		</xs:key>
+	</xs:element>
+</xs:schema>

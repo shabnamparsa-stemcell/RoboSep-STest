@@ -1,0 +1,15 @@
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\DataAccess.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\Build\Debug\DataAccess.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\DataAccess\obj\Debug\DataAccess.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\DataAccess\obj\Debug\DataAccess.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\DataAccess.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\Build\Debug\DataAccess.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\_2012_09_10_update\Service\DataAccess\obj\Debug\DataAccess.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\DataAccess\obj\Debug\DataAccess.pdb
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\DataAccess.dll
+D:\Projects-git\INS-RoboSep-S\Service\Build\Debug\DataAccess.pdb
+D:\Projects-git\INS-RoboSep-S\Service\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Projects-git\INS-RoboSep-S\Service\DataAccess\obj\Debug\DataAccess.dll
+D:\Projects-git\INS-RoboSep-S\Service\DataAccess\obj\Debug\DataAccess.pdb

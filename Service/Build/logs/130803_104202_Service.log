@@ -1,0 +1,26 @@
+RoboSep UI Log File
+Created: 20130803_104202.377
+
+20130803_104202.417	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20130803_104202.447	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20130803_104210.618	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20130803_104210.879	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20130803_104214.134	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20130803_104214.404	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130803_104216.767	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130803_104218.069	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130803_104222.746	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130803_104224.248	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20130803_104224.248	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20130803_104224.418	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20130803_104224.609	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20130803_104224.659	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20130803_104224.769	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20130803_104225.400	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130803_104226.902	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130803_104238.879	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20130803_104243.025	clt	ServiceMenu.listboxSubMenu_SelectedIndexChanged()	Info	ServiceMenu	Prepare to start script: 1. Theta Axis
+20130803_104243.095	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	None
+20130803_104245.198	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	Running script: 1. Theta Axis
+20130803_104251.347	clt	RoboSepServiceManualStepControl.btnAbort_Click()	Info	RoboSepServiceManualStepControl	clicked
+20130803_104251.547	clt	ServiceDialog.SetScriptDoneText()	Info	ServiceDialog	reset text

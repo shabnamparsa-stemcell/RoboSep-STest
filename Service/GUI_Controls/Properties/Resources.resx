@@ -1,0 +1,1031 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BUTTON_NEGATIVE2a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_NEGATIVE2a.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_NEGATIVE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_NEGATIVE1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Quadrant_Purple" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quadrant_Purple.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TOGGLE_QUADRANT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TOGGLE_QUADRANT2.BMP;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_HUMAN0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_HUMAN0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_WasteSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_WasteSelect.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_HUMAN2a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_HUMAN2a.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_PROTOCOLEDITOR0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_PROTOCOLEDITOR0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_RECT_MED2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_RECT_MED2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_PROTOCOLS3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_PROTOCOLS3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_Home1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_Home1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TAB_VIDLOG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TAB_VIDLOG1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_Antibody" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_Antibody1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_ADDPROFILE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_ADDPROFILE1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KeybaordButton_L1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KeybaordButton_L1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_NEGATIVE2a - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_NEGATIVE2a - Copy.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_PROTOCOLLIST2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_PROTOCOLLIST2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_NegativeSelectionG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_NegativeSelectionG.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_SHUTDOWN0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_SHUTDOWN0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_LOG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_LOG1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dashboard_HexDashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dashboard_HexDashboard.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_SERVICE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_SERVICE1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_HOMECANCEL0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_HOMECANCEL0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fbBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fbBack.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_MagnetSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_MagnetSelect.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Qselect40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Qselect40.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TAB_HELPVIDEO1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TAB_HELPVIDEO1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_MOUSE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_MOUSE1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboMessagePanel_BR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboMessagePanel_BR.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_RECT_MED0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_RECT_MED0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TOGGLE_QUADRANT0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TOGGLE_QUADRANT0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboSep_SplashAnim_640x480a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboSep_SplashAnim_640x480a.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fileBrowser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fileBrowser.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboPANEL_CORNER_TL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboPANEL_CORNER_TL.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_HUMAN3a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_HUMAN3a.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_TipRackSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_TipRackSelect.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_SHUTDOWN2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_SHUTDOWN2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SHUTDOWN0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SHUTDOWN0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Quadrant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quadrant.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_ACCEPT3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_ACCEPT3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_REMOVEPROTOCOL3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_REMOVEPROTOCOL3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_SELECTPROTOCOL_ALLMY3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_SELECTPROTOCOL_ALLMY3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboSep_SplashAnim_640x480" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboSep_SplashAnim_640x480.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboPANEL_CORNER_BL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboPANEL_CORNER_BL.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_DOWN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_DOWN1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_MagnetG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_MagnetG.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TAB_VIDLOG3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TAB_VIDLOG3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_NEGATIVE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_NEGATIVE0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SHUTDOWN3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SHUTDOWN3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tab_Top1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tab_Top1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_ACCEPT0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_ACCEPT0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HexButton3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HexButton3.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_RESOURCE_LIST3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_RESOURCE_LIST3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SERVICE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SERVICE1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Quadrant2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quadrant2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_PROTOCOLS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_PROTOCOLS1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_RUN2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_RUN2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_SampleSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_SampleSelect.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_SAVELIST0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_SAVELIST0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SYSTEM1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SYSTEM1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_DOWN_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_DOWN_Disable.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_NEGATIVE3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_NEGATIVE3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KeybaordButton_L0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KeybaordButton_L0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboMessagePanel_BL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboMessagePanel_BL.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_POSITIVE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_POSITIVE0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SAMPLE3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SAMPLE3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_RECT_MED3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_RECT_MED3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_RECT_MED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_RECT_MED1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Qselect20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Qselect20.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TAB_RUNSTAT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TAB_RUNSTAT1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_RECT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_RECT21.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bigRectButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bigRectButton.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboMessagePanel_TR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboMessagePanel_TR.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_ADDPROFILE3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_ADDPROFILE3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_HOMECANCEL1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_HOMECANCEL1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_PROTOCOLEDITOR3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_PROTOCOLEDITOR3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BG_HEXGRID" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG_HEXGRID.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_MagneticParticleSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_MagneticParticleSelect.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboPANEL_CORNER_BOTTOMLEFT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboPANEL_CORNER_BOTTOMLEFT.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_RUN3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_RUN3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_RECT_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_RECT_Disable.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_MagneticParticleG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_MagneticParticleG.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_MOUSE3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_MOUSE3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_SAVELIST1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_SAVELIST1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_MYPROFILE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_MYPROFILE0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HexButton0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HexButton0.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_RESOURCE_LIST0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_RESOURCE_LIST0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_RUN0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_RUN0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboPANEL_CORNER_TOPLEFT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboPANEL_CORNER_TOPLEFT.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_PROMPTBUTTON3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_PROMPTBUTTON3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_ABBORT3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_ABBORT3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_POSITIVE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_POSITIVE1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHECKBOX0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CHECKBOX0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_USBLOAD1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_USBLOAD1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Close_Dashboard1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close_Dashboard.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_SELECTPROTOCOL_ALLMY1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_SELECTPROTOCOL_ALLMY1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Frame_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frame_Background.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SAMPLE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SAMPLE1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboPANEL_CORNER_BOTTOMRIGHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboPANEL_CORNER_BOTTOMRIGHT.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_LOG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_LOG2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_PROMPTBUTTON0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_PROMPTBUTTON0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SYSTEM0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SYSTEM0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tab_bottom1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tab_bottom1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SHUTDOWN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SHUTDOWN1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tab_Top3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tab_Top3.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TAB_RUNSTAT3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TAB_RUNSTAT3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_Filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_Filter.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboMessagePanel_TL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboMessagePanel_TL.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_HELP3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_HELP3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_MYPROFILE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_MYPROFILE1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Close_Dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close_Dashboard.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_SERVICE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_SERVICE2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SYSTEM3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SYSTEM3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_ADDPROFILE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_ADDPROFILE2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_POSITIVE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_POSITIVE2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_CANCEL0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_CANCEL0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tab_mid3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tab_mid3.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_HELP2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_HELP2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tab_Middle_jpg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tab_Middle.jpg.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KeybaordButton_M1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KeybaordButton_M1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BG_PANEL_BORDER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG_PANEL_BORDER.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_PROTOCOLEDITOR2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_PROTOCOLEDITOR2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Quadrant4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quadrant4.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_PROTOCOLEDITOR1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_PROTOCOLEDITOR1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Qselect32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Qselect32.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_RUN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_RUN1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_ACCEPT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_ACCEPT1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_UP_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_UP_Disable.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_HUMAN3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_HUMAN3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fbBack3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fbBack3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_RESOURCE_Selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_RESOURCE_Selected.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Qselect10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Qselect10.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TAB_VIDLOG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TAB_VIDLOG2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_NegativeFraction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_NegativeFraction1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KEYBOARD_ENTER0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KEYBOARD_ENTER0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tab_bottom3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tab_bottom3.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_MYPROFILE3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_MYPROFILE3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_ABBORT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_ABBORT2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_ABBORT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_ABBORT1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CheckBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CheckBox.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_HELP0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_HELP0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_Home3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_Home3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KeybaordButton_M0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KeybaordButton_M0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_NegativeFractionG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_NegativeFractionG.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BG_Resources" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG_Resources.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_PROTOCOLLIST3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_PROTOCOLLIST3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dashboard_Sampling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dashboard_Sampling.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Folder.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tab_Top2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tab_Top2.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_PROTOCOLS2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_PROTOCOLS2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SampleTube" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SampleTube.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_UP1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_UP1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Qselect42" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Qselect42.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TAB_REPORTS2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TAB_REPORTS2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HexButton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HexButton2.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_MOUSE31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_MOUSE3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_PROTOCOLLIST0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_PROTOCOLLIST0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_PROTOCOLS0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_PROTOCOLS0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_Sample" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_Sample1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SYSTEM2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SYSTEM2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHECKBOX1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CHECKBOX1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomeButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomeButton.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Quadrant_Grey2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quadrant_Grey2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_CANCEL1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_CANCEL1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_SHUTDOWN3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_SHUTDOWN3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_UP2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_UP2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tab_mid2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tab_mid2.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_REMOVEPROTOCOL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_REMOVEPROTOCOL2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BG_ProtocolSelection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG_ProtocolSelection.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_TipRack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_TipRack1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_Switch2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_Switch2.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboSep_Splash_640x480" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboSep_Splash_640x480.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Qselect11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Qselect11.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Qselect22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Qselect22.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_MOUSE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_MOUSE0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_UP0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_UP0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fbUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fbUp.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TOGGLE_QUADRANT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TOGGLE_QUADRANT1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_NegativeSelection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_NegativeSelection1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_RESOURCE_LIST2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_RESOURCE_LIST2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Quadrant3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quadrant3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BG_SearchBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG_SearchBar.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Qselect21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Qselect21.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_HUMAN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_HUMAN1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_RESOURCE_LIST1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_RESOURCE_LIST1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_REMOVEPROTOCOL0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_REMOVEPROTOCOL0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WasteTube" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WasteTube.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_NEGATIVE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_NEGATIVE2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TAB_ROBOSEP2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TAB_ROBOSEP2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_NEGATIVE3a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_NEGATIVE3a.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Qselect30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Qselect30.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_NegativeFractionSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_NegativeFractionSelect.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_Switch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_Switch.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QuadrantAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuadrantAll.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TAB_HELPVIDEO2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TAB_HELPVIDEO2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_NegativeSelectionSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_NegativeSelectionSelect.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fbRefresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fbRefresh.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_RECT0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_RECT0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_USBLOAD2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_USBLOAD2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_MYPROFILE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_MYPROFILE2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_ABBORT0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_ABBORT0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tab_Bottom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tab_Bottom.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboPANEL_CORNER_BR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboPANEL_CORNER_BR.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_MOUSE21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_MOUSE2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_PROTOCOLLIST1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_PROTOCOLLIST1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_SampleG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_SampleG.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_Home2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_Home2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1ml" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1ml.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_POSITIVE3a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_POSITIVE3a.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_HELP1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_HELP1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_RECT3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_RECT31.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_QUADRANTCANCEL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_QUADRANTCANCEL.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SmallPink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SmallPink.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_POSITIVE2a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_POSITIVE2a.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_MOUSE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_MOUSE2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SAMPLE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SAMPLE2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_SELECTPROTOCOL_ALLMY0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_SELECTPROTOCOL_ALLMY0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_TipRackG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_TipRackG.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Qselect31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Qselect31.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_ADDPROFILE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_ADDPROFILE0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PillButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PillButton.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SERVICE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SERVICE2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_SHUTDOWN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_SHUTDOWN1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KeybaordButton_R1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KeybaordButton_R1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spacer_ProtocolSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spacer_ProtocolSelect.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fbUp3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fbUp3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_Filter2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_Filter2.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fbRefresh3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fbRefresh3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TipRack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TipRack.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_DOWN2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_DOWN2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_USBLOAD3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_USBLOAD3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KEYBOARD_ENTER1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KEYBOARD_ENTER1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_DOWN3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_DOWN3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BG_Resources1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG_Resources.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_Waste" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_Waste1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TAB_REPORTS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TAB_REPORTS1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_SAVELIST3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_SAVELIST3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_AntibodyG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_AntibodyG.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_AntibodySelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_AntibodySelect.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_Magnet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_Magnet2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Quadrant1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quadrant1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_WasteG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_WasteG.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_LOG3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_LOG3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TAB_REPORTS3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TAB_REPORTS3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_SERVICE3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_SERVICE3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tab_Top" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tab_Top.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BG_EditProtocolList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG_EditProtocolList.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_Home0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_Home0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tab_mid1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tab_mid1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_DOWN0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_DOWN0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fbButton0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fbButton0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KeybaordButton_R0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KeybaordButton_R0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_LOG0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_LOG0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fbButton3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fbButton3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_SERVICE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_SERVICE0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Qselect41" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Qselect41.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextBox_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TextBox_Login.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SAMPLE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SAMPLE0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Qselect12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Qselect12.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_UP3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_UP3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_POSITIVE3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_POSITIVE3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_REMOVEPROTOCOL1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_REMOVEPROTOCOL1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Carousel_Section_MagneticParticle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carousel_Section_MagneticParticle1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_ACCEPT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_ACCEPT2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TAB_ROBOSEP1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TAB_ROBOSEP1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_RECT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_RECT1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_HUMAN2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_HUMAN2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboPANEL_CORNER_TOPRIGHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboPANEL_CORNER_TOPRIGHT.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_SAVELIST2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_SAVELIST2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUTTON_SELECTPROTOCOL_ALLMY2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUTTON_SELECTPROTOCOL_ALLMY2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tab_bottom2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tab_bottom2.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HexButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HexButton1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_USBLOAD0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_USBLOAD0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SERVICE3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SERVICE3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SERVICE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SERVICE0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TAB_RUNSTAT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TAB_RUNSTAT2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEX_SHUTDOWN2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEX_SHUTDOWN2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoboPANEL_CORNER_TR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoboPANEL_CORNER_TR.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_PACKAGE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_PACKAGE0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_PACKAGE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_PACKAGE1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_PACKAGE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_PACKAGE2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_PACKAGE3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_PACKAGE3.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnCaps_CLICK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnCaps_CLICK.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnCaps_STD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnCaps_STD.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEnterThick_CLICK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnEnterThick_CLICK.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEnterThick_STD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnEnterThick_STD.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEnter_CLICK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnEnter_CLICK.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEnter_STD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnEnter_STD.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnKeyboard_C0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnKeyboard_C0.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnKeyboard_C1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnKeyboard_C1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnKeyboard_CLICK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnKeyboard_CLICK.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnKeyboard_L0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnKeyboard_L0.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnKeyboard_L1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnKeyboard_L1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnKeyboard_R0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnKeyboard_R0.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnKeyboard_R1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnKeyboard_R1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnKeyboard_STD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnKeyboard_STD.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnShift_CLICK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnShift_CLICK.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnShift_STD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnShift_STD.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSpace_CLICK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSpace_CLICK.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSpace_STD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSpace_STD.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MessagePanelHeader_BG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MessagePanelHeader_BG.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WindowClose_CLICK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WindowClose_CLICK.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WindowClose_STD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WindowClose_STD.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

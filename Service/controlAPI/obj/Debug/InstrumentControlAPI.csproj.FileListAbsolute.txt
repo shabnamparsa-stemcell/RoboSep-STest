@@ -1,0 +1,51 @@
+C:\Projects\TESLA\Client\controlAPI\bin\Debug\InstrumentControlAPI.dll
+C:\Projects\TESLA\Client\controlAPI\bin\Debug\InstrumentControlAPI.pdb
+C:\Projects\TESLA\Client\controlAPI\bin\Debug\InstrumentControlAPI.xml
+C:\Projects\TESLA\Client\controlAPI\bin\Debug\ApplicationLog.dll
+C:\Projects\TESLA\Client\controlAPI\bin\Debug\Common.dll
+C:\Projects\TESLA\Client\controlAPI\bin\Debug\CookComputing.XmlRpc.dll
+C:\Projects\TESLA\Client\controlAPI\bin\Debug\Common.pdb
+C:\Projects\TESLA\Client\controlAPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\Client\controlAPI\obj\Debug\Tesla.InstrumentControl.InstrumentControlXmlRpcProxy.resources
+C:\Projects\TESLA\Client\controlAPI\obj\Debug\ResGen.read.1.tlog
+C:\Projects\TESLA\Client\controlAPI\obj\Debug\ResGen.write.1.tlog
+C:\Projects\TESLA\Client\controlAPI\obj\Debug\InstrumentControlAPI.dll
+C:\Projects\TESLA\Client\controlAPI\obj\Debug\InstrumentControlAPI.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\controlAPI\bin\Debug\InstrumentControlAPI.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\controlAPI\bin\Debug\InstrumentControlAPI.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\controlAPI\bin\Debug\InstrumentControlAPI.xml
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\controlAPI\bin\Debug\ApplicationLog.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\controlAPI\bin\Debug\Common.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\controlAPI\bin\Debug\CookComputing.XmlRpc.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\controlAPI\bin\Debug\Common.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\controlAPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\controlAPI\obj\Debug\Tesla.InstrumentControl.InstrumentControlXmlRpcProxy.resources
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\controlAPI\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\controlAPI\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\controlAPI\obj\Debug\InstrumentControlAPI.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\controlAPI\obj\Debug\InstrumentControlAPI.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\controlAPI\bin\Debug\InstrumentControlAPI.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\controlAPI\bin\Debug\InstrumentControlAPI.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\controlAPI\bin\Debug\InstrumentControlAPI.xml
+C:\Projects\TESLA\_2012_09_10_update\Service\controlAPI\bin\Debug\ApplicationLog.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\controlAPI\bin\Debug\Common.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\controlAPI\bin\Debug\CookComputing.XmlRpc.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\controlAPI\bin\Debug\Common.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\controlAPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\_2012_09_10_update\Service\controlAPI\obj\Debug\Tesla.InstrumentControl.InstrumentControlXmlRpcProxy.resources
+C:\Projects\TESLA\_2012_09_10_update\Service\controlAPI\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Projects\TESLA\_2012_09_10_update\Service\controlAPI\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Projects\TESLA\_2012_09_10_update\Service\controlAPI\obj\Debug\InstrumentControlAPI.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\controlAPI\obj\Debug\InstrumentControlAPI.pdb
+D:\Projects-git\INS-RoboSep-S\Service\controlAPI\bin\Debug\InstrumentControlAPI.dll
+D:\Projects-git\INS-RoboSep-S\Service\controlAPI\bin\Debug\InstrumentControlAPI.pdb
+D:\Projects-git\INS-RoboSep-S\Service\controlAPI\bin\Debug\InstrumentControlAPI.xml
+D:\Projects-git\INS-RoboSep-S\Service\controlAPI\bin\Debug\ApplicationLog.dll
+D:\Projects-git\INS-RoboSep-S\Service\controlAPI\bin\Debug\Common.dll
+D:\Projects-git\INS-RoboSep-S\Service\controlAPI\bin\Debug\CookComputing.XmlRpc.dll
+D:\Projects-git\INS-RoboSep-S\Service\controlAPI\bin\Debug\Common.pdb
+D:\Projects-git\INS-RoboSep-S\Service\controlAPI\obj\Debug\InstrumentControlAPI.csprojResolveAssemblyReference.cache
+D:\Projects-git\INS-RoboSep-S\Service\controlAPI\obj\Debug\Tesla.InstrumentControl.InstrumentControlXmlRpcProxy.resources
+D:\Projects-git\INS-RoboSep-S\Service\controlAPI\obj\Debug\InstrumentControlAPI.csproj.GenerateResource.Cache
+D:\Projects-git\INS-RoboSep-S\Service\controlAPI\obj\Debug\InstrumentControlAPI.dll
+D:\Projects-git\INS-RoboSep-S\Service\controlAPI\obj\Debug\InstrumentControlAPI.pdb

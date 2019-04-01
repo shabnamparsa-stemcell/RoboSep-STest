@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87C166A4-4486-4B81-B121-5ED97BAC69B9}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>EditorLauncher.ico</ApplicationIcon>
+    <AssemblyKeyContainerName />
+    <AssemblyName>ProtocolEditor</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Tesla.ProtocolEditor</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccAuxPath />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="common\Common.csproj">
+      <Name>Common</Name>
+      <Project>{12FBE96F-1212-4E24-9CCB-A9666F4C5203}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="DataAccess\DataAccess.csproj">
+      <Name>DataAccess</Name>
+      <Project>{9A5BCDC0-ACCC-4A8C-8014-7F0254A87187}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="ProtocolEditorControls\ProtocolEditorControls.csproj">
+      <Name>ProtocolEditorControls</Name>
+      <Project>{0B17E0D8-1283-4B80-97C4-BB1FAB34E053}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="ProtocolEditorModel.csproj">
+      <Name>ProtocolEditorModel</Name>
+      <Project>{01A4634D-EAE7-464D-90CC-70E796C020F6}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutThisProtocolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProtocolCustomize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProtocolDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProtocolEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProtocolFeatureSwitch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProtocolFeatureSwitch.Designer.cs">
+      <DependentUpon>ProtocolFeatureSwitch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProtocolMultipleSamples.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProtocolPrintingUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProtocolReagentBarcodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProtocolReagentBarcodes.Designer.cs">
+      <DependentUpon>ProtocolReagentBarcodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProtocolResultVialSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProtocolTypeSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProtocolTypeSelect.Designer.cs">
+      <DependentUpon>ProtocolTypeSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProtocolValidation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProtocolVolWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemplateFileDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <None Include="Button-Info-icon.png" />
+    <Content Include="EditorLauncher.ico" />
+    <Content Include="tesla.ico" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutThisProtocolWindow.resx">
+      <DependentUpon>AboutThisProtocolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProtocolCustomize.resx">
+      <DependentUpon>ProtocolCustomize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProtocolDetails.resx">
+      <DependentUpon>ProtocolDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProtocolEditor.resx">
+      <DependentUpon>ProtocolEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProtocolFeatureSwitch.resx">
+      <DependentUpon>ProtocolFeatureSwitch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProtocolMultipleSamples.resx">
+      <DependentUpon>ProtocolMultipleSamples.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProtocolReagentBarcodes.resx">
+      <DependentUpon>ProtocolReagentBarcodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProtocolResultVialSelection.resx">
+      <DependentUpon>ProtocolResultVialSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProtocolTypeSelect.resx">
+      <DependentUpon>ProtocolTypeSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProtocolValidation.resx">
+      <DependentUpon>ProtocolValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProtocolVolWarning.resx">
+      <DependentUpon>ProtocolVolWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateFileDialog.resx">
+      <DependentUpon>TemplateFileDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProtocolEditor.mdx" />
+    <None Include="ProtocolEditorModel.mdx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

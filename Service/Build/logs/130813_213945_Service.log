@@ -1,0 +1,40 @@
+RoboSep UI Log File
+Created: 20130813_213945.328
+
+20130813_213945.381	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20130813_213945.402	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20130813_213948.639	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20130813_213948.782	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20130813_213950.591	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20130813_213950.773	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130813_213954.036	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130813_213955.529	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130813_213958.762	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130813_214000.287	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20130813_214000.296	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20130813_214000.442	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20130813_214000.623	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20130813_214000.649	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20130813_214000.709	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20130813_214001.165	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130813_214002.182	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130813_214003.560	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Closing ServiceMenu
+20130813_214014.251	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130813_214014.355	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130813_214015.321	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20130813_214020.134	clt	ServiceMenu.listboxTeachingSubMenu_SelectedIndexChanged()	Info	ServiceMenu	Prepare to start script: 6. Barcode Reader
+20130813_214020.238	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Z
+20130813_214102.649	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	Running script: 6. Barcode Reader
+20130813_214130.359	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	TipStripper
+20130813_214131.821	clt	RoboSepServiceManualStepControl.btnTipStripperEngage_Click()	Info	RoboSepServiceManualStepControl	moveAxis engage
+20130813_214136.107	clt	RoboSepServiceManualStepControl.btnTipStripperDisengage_Click()	Info	RoboSepServiceManualStepControl	moveAxis disengage
+20130813_214139.823	clt	RoboSepServiceManualStepControl.btnTipStripperEngage_Click()	Info	RoboSepServiceManualStepControl	moveAxis engage
+20130813_214146.252	clt	RoboSepServiceManualStepControl.btnTipStripperDisengage_Click()	Info	RoboSepServiceManualStepControl	moveAxis disengage
+20130813_214150.999	clt	RoboSepServiceManualStepControl.btnTipStripperEngage_Click()	Info	RoboSepServiceManualStepControl	moveAxis engage
+20130813_214208.534	clt	RoboSepServiceManualStepControl.btnTipStripperDisengage_Click()	Info	RoboSepServiceManualStepControl	moveAxis disengage
+20130813_214212.880	clt	RoboSepServiceManualStepControl.btnTipStripperEngage_Click()	Info	RoboSepServiceManualStepControl	moveAxis engage
+20130813_214216.656	clt	RoboSepServiceManualStepControl.btnTipStripperDisengage_Click()	Info	RoboSepServiceManualStepControl	moveAxis disengage
+20130813_214222.304	clt	RoboSepServiceManualStepControl.btnTipStripperEngage_Click()	Info	RoboSepServiceManualStepControl	moveAxis engage
+20130813_214225.328	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	Carousel
+20130813_214230.496	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	TipStripper
+20130813_214234.381	clt	RoboSepServiceManualStepControl.btnTipStripperDisengage_Click()	Info	RoboSepServiceManualStepControl	moveAxis disengage

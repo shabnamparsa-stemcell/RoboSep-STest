@@ -1,0 +1,156 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Carousel</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Carousel</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/p4tesla/tesla/dev/dev001/control/tesla/instrument/carousel.py">c:\projects\p4tesla\tesla\dev\dev001\control\tesla\instrument\carousel.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;<a href="#Carousel">Carousel</a>.py<br>
+#&nbsp;tesla.instrument.<a href="#Carousel">Carousel</a><br>
+#<br>
+#&nbsp;Drives&nbsp;the&nbsp;Tesla&nbsp;carousel&nbsp;subsystem<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Carousel.html#Carousel">Carousel</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>(<a href="exceptions.html#StandardError">exceptions.StandardError</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Carousel.html#CarouselError">CarouselError</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Carousel">class <strong>Carousel</strong></a>(<a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;to&nbsp;drive&nbsp;the&nbsp;Tesla&nbsp;<a href="#Carousel">Carousel</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Carousel.html#Carousel">Carousel</a></dd>
+<dd><a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Carousel-Home"><strong>Home</strong></a>(self)</dt><dd><tt>Home&nbsp;carousel.</tt></dd></dl>
+
+<dl><dt><a name="Carousel-MoveToSafePosition"><strong>MoveToSafePosition</strong></a>(self)</dt><dd><tt>Move&nbsp;the&nbsp;carousel&nbsp;to&nbsp;a&nbsp;position&nbsp;that&nbsp;is&nbsp;clear&nbsp;of&nbsp;the&nbsp;home&nbsp;opto&nbsp;for<br>
+each&nbsp;removal&nbsp;of&nbsp;the&nbsp;carousel.</tt></dd></dl>
+
+<dl><dt><a name="Carousel-SetTheta"><strong>SetTheta</strong></a>(self, theta)</dt><dd><tt>Move&nbsp;carousel&nbsp;to&nbsp;given&nbsp;position,&nbsp;as&nbsp;specified&nbsp;in&nbsp;rotational&nbsp;<br>
+degrees.<br>
+Check&nbsp;to&nbsp;see&nbsp;which&nbsp;direction&nbsp;is&nbsp;shortest,&nbsp;and&nbsp;increment&nbsp;the&nbsp;angle&nbsp;<br>
+rather&nbsp;than&nbsp;move&nbsp;to&nbsp;the&nbsp;absolute&nbsp;position&nbsp;(this&nbsp;allows&nbsp;us&nbsp;to&nbsp;avoid<br>
+problems&nbsp;sensing&nbsp;the&nbsp;home&nbsp;position&nbsp;at&nbsp;360&nbsp;degrees!).</tt></dd></dl>
+
+<dl><dt><a name="Carousel-Theta"><strong>Theta</strong></a>(self)</dt><dd><tt>Obtain&nbsp;current&nbsp;carousel&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="Carousel-__init__"><strong>__init__</strong></a>(self, name)</dt><dd><tt>Load&nbsp;in&nbsp;the&nbsp;configuration&nbsp;data&nbsp;for&nbsp;the&nbsp;<a href="#Carousel">Carousel</a>.<br>
+NB:&nbsp;since&nbsp;the&nbsp;carousel&nbsp;card&nbsp;also&nbsp;drives&nbsp;the&nbsp;TipStripper,&nbsp;this&nbsp;is&nbsp;also&nbsp;<br>
+configured&nbsp;and&nbsp;may&nbsp;be&nbsp;accessed&nbsp;via&nbsp;the&nbsp;TipStripper()&nbsp;method.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>BoardAddressLabel</strong> = 'steppercardaddress'</dl>
+
+<dl><dt><strong>PortLabel</strong> = 'steppercardport'</dl>
+
+<dl><dt><strong>SectionName</strong> = 'Carousel'</dl>
+
+<dl><dt><strong>TagOffsetLabel</strong> = 'tag_offset'</dl>
+
+<dl><dt><strong>mandatorySettings</strong> = ('steppercardport', 'steppercardaddress')</dl>
+
+<hr>
+Methods inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><a name="Carousel-NullTrace"><strong>NullTrace</strong></a>(self, message)</dt><dd><tt>Don't&nbsp;do&nbsp;anything&nbsp;with&nbsp;the&nbsp;message;&nbsp;used&nbsp;when&nbsp;we&nbsp;don't&nbsp;want&nbsp;debugging<br>
+traces.</tt></dd></dl>
+
+<dl><dt><a name="Carousel-PrintTrace"><strong>PrintTrace</strong></a>(self, message)</dt><dd><tt>Print&nbsp;a&nbsp;debug&nbsp;message</tt></dd></dl>
+
+<dl><dt><a name="Carousel-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Simple&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;<a href="tesla.instrument.Subsystem.html#Subsystem">Subsystem</a>.</tt></dd></dl>
+
+<dl><dt><a name="Carousel-execute"><strong>execute</strong></a>(self, functionWithArgs)</dt><dd><tt>Executes&nbsp;the&nbsp;formatted&nbsp;function&nbsp;call&nbsp;string&nbsp;functionWithArgs&nbsp;on<br>
+self.</tt></dd></dl>
+
+<dl><dt><a name="Carousel-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;<a href="tesla.instrument.Subsystem.html#Subsystem">Subsystem</a>'s&nbsp;identifying&nbsp;name.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><a name="Carousel-registerInstance"><strong>registerInstance</strong></a>(instance)</dt><dd><tt>Register&nbsp;our&nbsp;instance&nbsp;with&nbsp;the&nbsp;Instance&nbsp;list.&nbsp;Note&nbsp;that&nbsp;this&nbsp;is&nbsp;a&nbsp;<br>
+static&nbsp;method.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x008CCE70&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'Subsystem' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>instanceList</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CarouselError">class <strong>CarouselError</strong></a>(<a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Exception&nbsp;for&nbsp;errors&nbsp;related&nbsp;to&nbsp;invalid&nbsp;<a href="#Carousel">Carousel</a>&nbsp;settings<br>
+hardware&nbsp;exceptions&nbsp;are&nbsp;translated<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Carousel.html#CarouselError">CarouselError</a></dd>
+<dd><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a></dd>
+<dd><a href="exceptions.html#StandardError">exceptions.StandardError</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="CarouselError-__getitem__"><strong>__getitem__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="CarouselError-__init__"><strong>__init__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="CarouselError-__str__"><strong>__str__</strong></a>(...)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>gHardwareData</strong> = &lt;tesla.hardware.config.HardwareConfiguration instance at 0x008635D0&gt;</td></tr></table>
+</body></html>

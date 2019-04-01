@@ -1,0 +1,65 @@
+RoboSep UI Log File
+Created: 20111214_165314.903
+
+20111214_165314.910	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20111214_165314.968	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20111214_165316.519	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20111214_165316.539	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	Info	RoboSep_UserConsole	Loading User Console
+20111214_165316.569	clt	RoboSep_Splash.RoboSep_Splash()	Info	RoboSep_Splash	Initializing Splash Page
+20111214_165316.705	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	General	RoboSep_UserConsole	Starting GUI Thread
+20111214_165316.914	clt	RoboSep_UserConsole.AttemptSeparatorConnection()	Info	RoboSep_UserConsole	Connecting...
+20111214_165317.523	clt	RoboSep_UserDB.Robosep_UserDB()()	Debug	RoboSep_UserDB	Initializing UserDB
+20111214_165317.562	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_165317.608	clt	RoboSep_UserDB.LoadAllProtocols()	Debug	RoboSep_UserDB	161protocols loaded
+20111214_165317.612	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111214_165317.935	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111214_165317.948	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111214_165318.582	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111214_165318.593	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111214_165348.164	clt	RoboSep_UserConsole.ProgressSplash()	Info	RoboSep_UserConsole	Stopping Splash page
+20111214_165348.222	clt	RoboSep_About.RoboSep_About()	Info	RoboSep_About	Initializing About user control
+20111214_165348.311	clt	RoboSep_RunSamples.RoboSep_RunSamples()	Info	RoboSep_RunSamples	Initializing Run Samples user control
+20111214_165348.394	clt	RoboSep_Splash.close()	Info	RoboSep_Splash	Closing Splash Page
+20111214_165911.076	clt	RoboSep_RunSamples.btn_home_Click()	Info	RoboSep_RunSamples	Home button clicked
+20111214_165912.033	clt	RoboSep_Protocols.LoadUsers()	Info	RoboSep_Protocols	Reloading Auto Complete for User Textbox
+20111214_165912.042	clt	RoboSep_Protocols.RoboSep_Protocols()	Info	RoboSep_Protocols	Initializing Protocols user control
+20111214_165912.150	clt	Form_Home.hex_protocols_Click()	Info	Form_Home	Protocols button clicked
+20111214_165914.646	clt	RoboSep_Protocols.btn_home_Click()	Info	RoboSep_Protocols	Home button clicked
+20111214_165915.428	clt	Form_Home.hex_protocols_Click()	Info	Form_Home	Protocols button clicked
+20111214_165916.458	clt	RoboSep_Protocols.btn_home_Click()	Info	RoboSep_Protocols	Home button clicked
+20111214_165917.049	clt	RoboSep_System.RoboSep_System()	Info	RoboSep_System	Initializing System user control
+20111214_165917.112	clt	Form_Home.hex_system_Click()	Info	Form_Home	System button clicked
+20111214_165917.747	clt	RoboSep_System.label_keybaord_Click()	Info	RoboSep_System	Touch Keyboard enabled = False
+20111214_165918.131	clt	RoboSep_System.label_keybaord_Click()	Info	RoboSep_System	Touch Keyboard enabled = True
+20111214_165918.790	clt	RoboSep_System.btn_home_Click()	Info	RoboSep_System	Home button clicked
+20111214_165919.969	clt	Form_Home.hex_protocols_Click()	Info	Form_Home	Protocols button clicked
+20111214_165921.404	clt	RoboSep_Protocols.dropDownMenu_Click()	Info	RoboSep_Protocols	Selecting User from Dropdown
+20111214_165921.435	clt	Form_UserSelect.Form_UserSelect()	Info	Form_UserSelect	Creating new User Select window
+20111214_165922.711	clt	Form_UserSelect.button_Cancel1_Click()	Info	Form_UserSelect	User Select window closed without selection
+20111214_165924.451	clt	RoboSep_Protocols.button_FullList_Click()	Info	RoboSep_Protocols	Full List selected
+20111214_165930.640	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111214_165930.692	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111214_165930.703	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 1 steps
+20111214_165930.736	clt	RoboSep_Protocols.LoadUserToServer()	Info	RoboSep_Protocols	Saving user profile
+20111214_165930.703	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 1 steps
+20111214_165930.692	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111214_165930.640	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111214_165924.451	clt	RoboSep_Protocols.button_FullList_Click()	Info	RoboSep_Protocols	Full List selected
+20111214_165922.711	clt	Form_UserSelect.button_Cancel1_Click()	Info	Form_UserSelect	User Select window closed without selection
+20111214_165921.435	clt	Form_UserSelect.Form_UserSelect()	Info	Form_UserSelect	Creating new User Select window
+20111214_165921.404	clt	RoboSep_Protocols.dropDownMenu_Click()	Info	RoboSep_Protocols	Selecting User from Dropdown
+20111214_165919.969	clt	Form_Home.hex_protocols_Click()	Info	Form_Home	Protocols button clicked
+20111214_165918.790	clt	RoboSep_System.btn_home_Click()	Info	RoboSep_System	Home button clicked
+20111214_165930.752	clt	RoboSep_UserDB.loadUserProtocols()	Error	RoboSep_UserDB	Failed to load protocol list
+20111214_165931.186	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111214_165931.198	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111214_165931.186	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111214_165930.752	clt	RoboSep_UserDB.loadUserProtocols()	Error	RoboSep_UserDB	Failed to load protocol list
+20111214_165930.736	clt	RoboSep_Protocols.LoadUserToServer()	Info	RoboSep_Protocols	Saving user profile
+20111214_165930.703	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 1 steps
+20111214_165930.692	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111214_165930.640	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111214_165924.451	clt	RoboSep_Protocols.button_FullList_Click()	Info	RoboSep_Protocols	Full List selected
+20111214_165922.711	clt	Form_UserSelect.button_Cancel1_Click()	Info	Form_UserSelect	User Select window closed without selection
+20111214_165921.435	clt	Form_UserSelect.Form_UserSelect()	Info	Form_UserSelect	Creating new User Select window
+20111214_165931.291	clt	RoboSep_UserDB.loadUserProtocols()	Error	RoboSep_UserDB	Failed to load Full Listprotocol list

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepProtocol xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Positive" xmlns="STI">
+  <header label="STI Tip Test" version="7" description="5 mL in sample tube, 1 mL in reagent tubes, full buffer bottle" protocolNum1="" protocolNum2="">
+    <date created="2005-08-31" modified="2006-07-17" />
+    <author name="JD" />
+  </header>
+  <constraints>
+    <quadrants number="1" />
+    <sampleVolume min_uL="1000" max_uL="10000" />
+    <workingVolume sampleThreshold_uL="2000" lowVolume_uL="5000" highVolume_uL="10000" />
+  </constraints>
+  <commands number="13">
+    <MixCommand seq="1" label="1st 5 mL tip" extensionTime="215">
+      <vials src="TPC0106" dest="TPC0001" />
+    </MixCommand>
+    <TransportCommand seq="2" label="2nd 5 mLtip" extensionTime="215" freeAirDispense="true">
+      <vials src="TPC0001" dest="TPC0106" />
+      <absoluteVolume value_uL="500" />
+    </TransportCommand>
+    <TransportCommand seq="3" label="1st 1 mL tip" extensionTime="215" freeAirDispense="true">
+      <vials src="TPC0103" dest="TPC0106" />
+      <absoluteVolume value_uL="500" />
+    </TransportCommand>
+    <TransportCommand seq="4" label="2nd 1 mL tip" extensionTime="215" freeAirDispense="true">
+      <vials src="TPC0104" dest="TPC0106" />
+      <absoluteVolume value_uL="500" />
+    </TransportCommand>
+    <TransportCommand seq="5" label="3rd 1 mL tip" extensionTime="215" freeAirDispense="true">
+      <vials src="TPC0105" dest="TPC0106" />
+      <absoluteVolume value_uL="500" />
+    </TransportCommand>
+    <MixCommand seq="6" label="1st 5 mL tip" extensionTime="215">
+      <vials src="TPC0106" dest="TPC0001" />
+    </MixCommand>
+    <TransportCommand seq="7" label="2nd 5 mLtip" extensionTime="215" freeAirDispense="true">
+      <vials src="TPC0001" dest="TPC0106" />
+      <absoluteVolume value_uL="500" />
+    </TransportCommand>
+    <MixCommand seq="8" label="1st 5 mL tip" extensionTime="215">
+      <vials src="TPC0106" dest="TPC0001" />
+    </MixCommand>
+    <TransportCommand seq="9" label="2nd 5 mLtip" extensionTime="215" freeAirDispense="true">
+      <vials src="TPC0001" dest="TPC0106" />
+      <absoluteVolume value_uL="500" />
+    </TransportCommand>
+    <MixCommand seq="10" label="1st 5 mL tip" extensionTime="215">
+      <vials src="TPC0106" dest="TPC0001" />
+    </MixCommand>
+    <TransportCommand seq="11" label="2nd 5 mLtip" extensionTime="215" freeAirDispense="true">
+      <vials src="TPC0001" dest="TPC0106" />
+      <absoluteVolume value_uL="500" />
+    </TransportCommand>
+    <MixCommand seq="12" label="1st 5 mL tip" extensionTime="215">
+      <vials src="TPC0106" dest="TPC0001" />
+    </MixCommand>
+    <TransportCommand seq="13" label="2nd 5 mLtip" extensionTime="215" freeAirDispense="true">
+      <vials src="TPC0001" dest="TPC0106" />
+      <absoluteVolume value_uL="500" />
+    </TransportCommand>
+  </commands>
+  <customNames />
+</RoboSepProtocol>

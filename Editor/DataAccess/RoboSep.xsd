@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+//============================================================================
+// RoboSep.xsd
+//
+// Invetech Pty Ltd
+// Victoria, 3149, Australia
+// Phone:   (+61) 3 9211 7700
+// Fax:     (+61) 3 9211 7701
+//
+// The copyright to the computer program(s) herein is the property of 
+// Invetech Pty Ltd, Australia.
+// The program(s) may be used and/or copied only with the written permission 
+// of Invetech Pty Ltd or in accordance with the terms and conditions 
+// stipulated in the agreement/contract under which the program(s)
+// have been supplied.
+// 
+// Copyright © 2004. All Rights Reserved.
+//
+//============================================================================
+-->
+<xs:schema id="RoboSep" targetNamespace="RoboSep" elementFormDefault="qualified" attributeFormDefault="qualified"
+	xmlns="RoboSep" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mstns="RoboSep" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="RoboSep" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Sample">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SampleId" type="xs:int" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1"
+								msdata:AutoIncrementStep="1" msdata:ReadOnly="true" />
+							<xs:element name="SampleProtocolId" type="xs:int" minOccurs="0" />
+							<xs:element name="SampleLabel" type="xs:string" minOccurs="0" />
+							<xs:element name="SampleReagentId" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Protocol">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ProtocolId" type="xs:int" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1"
+								msdata:AutoIncrementStep="1" msdata:ReadOnly="true" />
+							<xs:element name="ProtocolReference" type="xs:int" minOccurs="0" />
+							<xs:element name="ProtocolLabel" type="xs:string" minOccurs="0" />
+							<xs:element name="ProtocolDescription" type="xs:string" minOccurs="0" />
+							<!-- CR -->
+							<xs:element name="ProtocolQuadrantCount" minOccurs="0" type="xs:positiveInteger" />
+							<xs:element name="ProtocolUsageCount" type="xs:nonNegativeInteger" minOccurs="0" />
+							<xs:element name="ProtocolUsageTime" type="xs:dateTime" minOccurs="0" />
+							<xs:element name="ProtocolType" type="xs:string" minOccurs="0" />
+							<xs:element name="ProtocolMinimumVolume" type="xs:nonNegativeInteger" minOccurs="0" />
+							<xs:element name="ProtocolMaximumVolume" type="xs:positiveInteger" minOccurs="0" />
+							<xs:element name="ProtocolVersion" type="xs:decimal" minOccurs="0" />
+							<xs:element name="ProtocolCreated" type="xs:date" minOccurs="0" />
+							<xs:element name="ProtocolModified" type="xs:date" minOccurs="0" />
+							<xs:element name="ProtocolAuthor" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Separator">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SeparatorId" type="xs:int" minOccurs="0" />
+							<xs:element name="SeparatorSerialNumber" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Reagent">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ReagentId" type="xs:int" minOccurs="0" />
+							<xs:element name="ReagentVolume" type="xs:double" minOccurs="0" />
+							<xs:element name="ReagentName" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Location">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LocationId" type="xs:int" minOccurs="0" />
+							<xs:element name="LocationReference" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Receptacle">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ReceptacleId" type="xs:int" minOccurs="0" />
+							<xs:element name="ReceptacleLocationId" type="xs:int" minOccurs="0" />
+							<xs:element name="ReceptacleReagentId" type="xs:int" minOccurs="0" />
+							<xs:element name="ReceptacleCapacity" type="xs:double" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Command">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CommandId" type="xs:int" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1"
+								msdata:AutoIncrementStep="1" msdata:ReadOnly="true" />
+							<xs:element name="CommandSequenceNumber" type="xs:int" minOccurs="0" />
+							<xs:element name="CommandLabel" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Commands">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CommandsId" type="xs:int" minOccurs="0" />
+							<xs:element name="CommandsProtocolId" type="xs:int" minOccurs="0" />
+							<xs:element name="CommandsCommandId" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Resource">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ResourceId" type="xs:int" minOccurs="0" />
+							<xs:element name="ResourceLocationId" type="xs:int" minOccurs="0" />
+							<xs:element name="ResourceName" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Consumable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ConsumableId" type="xs:int" minOccurs="0" />
+							<xs:element name="ConsumableProtocolId" type="xs:int" minOccurs="0" />
+							<xs:element name="ConsumableResourceId" type="xs:int" minOccurs="0" />
+							<xs:element name="ConsumableIsRequired" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ConsumableIsConfigured" type="xs:boolean" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Batch">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="BatchId" type="xs:int" minOccurs="0" />
+							<xs:element name="BatchStart" type="xs:dateTime" minOccurs="0" />
+							<xs:element name="BatchEnd" type="xs:dateTime" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BatchProtocols">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="BatchProtocolsId" type="xs:int" minOccurs="0" />
+							<xs:element name="BatchProtocolsProtocolId" type="xs:int" minOccurs="0" />
+							<xs:element name="BatchProtocolsBatchId" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ServiceCommand">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ServiceCommandId" type="xs:int" msdata:ReadOnly="true" msdata:AutoIncrement="true"
+								msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" />
+							<xs:element name="ServiceCommandCommandId" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="HomeAllCommand">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="HomeAllCommandId" type="xs:int" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1"
+								msdata:AutoIncrementStep="1" msdata:ReadOnly="true" />
+							<xs:element name="HomeAllCommandServiceCommandId" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="WaitCommand">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="WaitCommandId" type="xs:int" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1"
+								msdata:AutoIncrementStep="1" />
+							<xs:element name="WaitCommandCommandId" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="IncubateCommand">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="IncubateCommandId" type="xs:int" msdata:ReadOnly="true" msdata:AutoIncrement="true"
+								msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" />
+							<xs:element name="IncubateCommandWaitCommandId" type="xs:int" minOccurs="0" />
+							<xs:element name="IncubateCommandTimeDuration" type="xs:nonNegativeInteger" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="ProtocolPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Protocol" />
+			<xs:field xpath="mstns:ProtocolId" />
+		</xs:key>
+		<xs:key name="SamplePrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Sample" />
+			<xs:field xpath="mstns:SampleId" />
+		</xs:key>
+		<xs:keyref name="FK_Sample_Protocol" refer="ProtocolPrimaryKey">
+			<xs:selector xpath=".//mstns:Sample" />
+			<xs:field xpath="mstns:SampleProtocolId" />
+		</xs:keyref>
+		<xs:key name="SeparatorPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Separator" />
+			<xs:field xpath="mstns:SeparatorId" />
+		</xs:key>
+		<xs:key name="ReagentPrimaryKey">
+			<xs:selector xpath=".//mstns:Reagent" />
+			<xs:field xpath="mstns:ReagentId" />
+		</xs:key>
+		<xs:key name="LocationPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Location" />
+			<xs:field xpath="mstns:LocationId" />
+		</xs:key>
+		<xs:key name="ResourcePrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Resource" />
+			<xs:field xpath="mstns:ResourceId" />
+		</xs:key>
+		<xs:key name="ReceptaclePrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Receptacle" />
+			<xs:field xpath="mstns:ReceptacleId" />
+		</xs:key>
+		<xs:key name="CommandsPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Commands" />
+			<xs:field xpath="mstns:CommandsId" />
+		</xs:key>
+		<xs:key name="CommandPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Command" />
+			<xs:field xpath="mstns:CommandId" />
+		</xs:key>
+		<xs:key name="BatchPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Batch" />
+			<xs:field xpath="mstns:BatchId" />
+		</xs:key>
+		<xs:key name="BatchProtocolsPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:BatchProtocols" />
+			<xs:field xpath="mstns:BatchProtocolsId" />
+		</xs:key>
+		<xs:key name="ServiceCommandPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:ServiceCommand" />
+			<xs:field xpath="mstns:ServiceCommandId" />
+		</xs:key>
+		<xs:keyref name="FK_ServiceCommand_Command" refer="CommandPrimaryKey">
+			<xs:selector xpath=".//mstns:ServiceCommand" />
+			<xs:field xpath="mstns:ServiceCommandCommandId" />
+		</xs:keyref>
+		<xs:key name="HomeAllCommandPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:HomeAllCommand" />
+			<xs:field xpath="mstns:HomeAllCommandId" />
+		</xs:key>
+		<xs:keyref name="FK_HomeAllCommand_ServiceCommand" refer="ServiceCommandPrimaryKey">
+			<xs:selector xpath=".//mstns:HomeAllCommand" />
+			<xs:field xpath="mstns:HomeAllCommandServiceCommandId" />
+		</xs:keyref>
+		<xs:keyref name="FK_Commands_Protocol" refer="ProtocolPrimaryKey">
+			<xs:selector xpath=".//mstns:Commands" />
+			<xs:field xpath="mstns:CommandsProtocolId" />
+		</xs:keyref>
+		<xs:keyref name="FK_Commands_Command" refer="CommandPrimaryKey">
+			<xs:selector xpath=".//mstns:Commands" />
+			<xs:field xpath="mstns:CommandsCommandId" />
+		</xs:keyref>
+		<xs:key name="WaitCommandPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:WaitCommand" />
+			<xs:field xpath="mstns:WaitCommandId" />
+		</xs:key>
+		<xs:keyref name="FK_WaitCommand_Command" refer="CommandPrimaryKey">
+			<xs:selector xpath=".//mstns:WaitCommand" />
+			<xs:field xpath="mstns:WaitCommandCommandId" />
+		</xs:keyref>
+		<xs:key name="IncubateCommandPrimaryKey" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:IncubateCommand" />
+			<xs:field xpath="mstns:IncubateCommandId" />
+		</xs:key>
+		<xs:keyref name="FK_IncubateCommand_WaitCommand" refer="WaitCommandPrimaryKey">
+			<xs:selector xpath=".//mstns:IncubateCommand" />
+			<xs:field xpath="mstns:IncubateCommandWaitCommandId" />
+		</xs:keyref>
+	</xs:element>
+</xs:schema>

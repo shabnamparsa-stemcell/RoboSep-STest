@@ -1,0 +1,220 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Calibration</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Calibration</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/tesla/dev/dev001/control/tesla/instrument/calibration.py">c:\projects\tesla\dev\dev001\control\tesla\instrument\calibration.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;<a href="#Calibration">Calibration</a>.py<br>
+#&nbsp;tesla.instrument.<a href="#Calibration">Calibration</a><br>
+#<br>
+#&nbsp;Class&nbsp;to&nbsp;aid&nbsp;in&nbsp;hardware&nbsp;configuration&nbsp;settings&nbsp;during&nbsp;calibration<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="tesla.html">tesla</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>(<a href="tesla.hardware.Component.html#Component">tesla.hardware.Component.Component</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Calibration.html#Calibration">Calibration</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Calibration">class <strong>Calibration</strong></a>(<a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;to&nbsp;aid&nbsp;in&nbsp;hardware&nbsp;configuration&nbsp;settings&nbsp;during&nbsp;calibration<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Calibration.html#Calibration">Calibration</a></dd>
+<dd><a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a></dd>
+<dd><a href="tesla.hardware.Component.html#Component">tesla.hardware.Component.Component</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Calibration-__init__"><strong>__init__</strong></a>(self, name, instrument)</dt><dd><tt>Initialise&nbsp;the&nbsp;<a href="#Calibration">Calibration</a>&nbsp;class</tt></dd></dl>
+
+<dl><dt><a name="Calibration-calibrate1mlTipAngle"><strong>calibrate1mlTipAngle</strong></a>(self)</dt><dd><tt>Store&nbsp;the&nbsp;current&nbsp;theta&nbsp;angle&nbsp;to&nbsp;temp&nbsp;var&nbsp;m_1mlTipAngle</tt></dd></dl>
+
+<dl><dt><a name="Calibration-calibrate1mlTipStripPosition"><strong>calibrate1mlTipStripPosition</strong></a>(self)</dt><dd><tt>Store&nbsp;the&nbsp;current&nbsp;theta&nbsp;and&nbsp;z&nbsp;positions&nbsp;to&nbsp;temp&nbsp;vars<br>
+m_1mlStripTipAngle&nbsp;and&nbsp;m_stripZHeight1ml</tt></dd></dl>
+
+<dl><dt><a name="Calibration-calibrate5mlTipAngle"><strong>calibrate5mlTipAngle</strong></a>(self)</dt><dd><tt>Store&nbsp;the&nbsp;current&nbsp;theta&nbsp;angle&nbsp;to&nbsp;temp&nbsp;var&nbsp;m_5mlTipAngle</tt></dd></dl>
+
+<dl><dt><a name="Calibration-calibrate5mlTipStripPosition"><strong>calibrate5mlTipStripPosition</strong></a>(self)</dt><dd><tt>Store&nbsp;the&nbsp;current&nbsp;theta&nbsp;and&nbsp;z&nbsp;positions&nbsp;to&nbsp;temp&nbsp;vars<br>
+m_5mlStripTipAngle&nbsp;and&nbsp;m_stripZHeight5ml</tt></dd></dl>
+
+<dl><dt><a name="Calibration-calibrateBCCMPosition"><strong>calibrateBCCMPosition</strong></a>(self)</dt><dd><tt>Store&nbsp;the&nbsp;current&nbsp;theta&nbsp;and&nbsp;z&nbsp;positions&nbsp;to&nbsp;temp&nbsp;vars&nbsp;m_bccmAngle<br>
+and&nbsp;m_bccmHeight</tt></dd></dl>
+
+<dl><dt><a name="Calibration-calibrateCarouselAngle1"><strong>calibrateCarouselAngle1</strong></a>(self)</dt><dd><tt>Store&nbsp;the&nbsp;current&nbsp;carousel&nbsp;angle&nbsp;to&nbsp;temp&nbsp;var&nbsp;m_jigCarouselAngle1</tt></dd></dl>
+
+<dl><dt><a name="Calibration-calibrateCarouselAngle2"><strong>calibrateCarouselAngle2</strong></a>(self)</dt><dd><tt>Store&nbsp;the&nbsp;current&nbsp;carousel&nbsp;angle&nbsp;to&nbsp;temp&nbsp;var&nbsp;m_jigCarouselAngle2</tt></dd></dl>
+
+<dl><dt><a name="Calibration-calibrateLysisVialAngle"><strong>calibrateLysisVialAngle</strong></a>(self)</dt><dd><tt>Store&nbsp;the&nbsp;current&nbsp;theta&nbsp;angle&nbsp;to&nbsp;temp&nbsp;var&nbsp;m_lysisVialAngle</tt></dd></dl>
+
+<dl><dt><a name="Calibration-calibrateReagentVialAngle"><strong>calibrateReagentVialAngle</strong></a>(self)</dt><dd><tt>Store&nbsp;the&nbsp;current&nbsp;theta&nbsp;angle&nbsp;to&nbsp;temp&nbsp;var&nbsp;m_reagentVialAngle</tt></dd></dl>
+
+<dl><dt><a name="Calibration-calibrateSampleVialAngle"><strong>calibrateSampleVialAngle</strong></a>(self)</dt><dd><tt>Store&nbsp;the&nbsp;current&nbsp;theta&nbsp;angle&nbsp;to&nbsp;temp&nbsp;var&nbsp;m_sampleVialAngle</tt></dd></dl>
+
+<dl><dt><a name="Calibration-calibrateSeparationVialAngle"><strong>calibrateSeparationVialAngle</strong></a>(self)</dt><dd><tt>Store&nbsp;the&nbsp;current&nbsp;theta&nbsp;angle&nbsp;to&nbsp;temp&nbsp;var&nbsp;m_separationVialAngle</tt></dd></dl>
+
+<dl><dt><a name="Calibration-calibrateWasteVialAngle"><strong>calibrateWasteVialAngle</strong></a>(self)</dt><dd><tt>Store&nbsp;the&nbsp;current&nbsp;theta&nbsp;angle&nbsp;to&nbsp;temp&nbsp;var&nbsp;m_wasteVialAngle</tt></dd></dl>
+
+<dl><dt><a name="Calibration-calibrateZHeights"><strong>calibrateZHeights</strong></a>(self)</dt><dd><tt>Stores&nbsp;the&nbsp;current&nbsp;z&nbsp;height&nbsp;to&nbsp;temp&nbsp;var&nbsp;m_jigZHeight</tt></dd></dl>
+
+<dl><dt><a name="Calibration-convertTupleToString"><strong>convertTupleToString</strong></a>(self, val)</dt><dd><tt>Convert&nbsp;a&nbsp;tuple&nbsp;to&nbsp;a&nbsp;string,&nbsp;with&nbsp;an&nbsp;empty&nbsp;tuple&nbsp;returning&nbsp;an&nbsp;empty<br>
+string,&nbsp;instead&nbsp;of&nbsp;'()'.<br>
+Returns&nbsp;a&nbsp;string.</tt></dd></dl>
+
+<dl><dt><a name="Calibration-endCalibration"><strong>endCalibration</strong></a>(self)</dt><dd><tt>Do&nbsp;final&nbsp;calibration&nbsp;calculations&nbsp;(if&nbsp;required)&nbsp;and&nbsp;write&nbsp;the<br>
+results&nbsp;into&nbsp;the&nbsp;hardware&nbsp;configuration&nbsp;file.</tt></dd></dl>
+
+<dl><dt><a name="Calibration-getCalibration"><strong>getCalibration</strong></a>(self, section, key)</dt><dd><tt>Genertic&nbsp;get&nbsp;calibration&nbsp;value&nbsp;method</tt></dd></dl>
+
+<dl><dt><a name="Calibration-setCalibration"><strong>setCalibration</strong></a>(self, section, key, value)</dt><dd><tt>Generic&nbsp;set&nbsp;calibration&nbsp;value&nbsp;method</tt></dd></dl>
+
+<dl><dt><a name="Calibration-startCalibration"><strong>startCalibration</strong></a>(self)</dt><dd><tt>Resets&nbsp;the&nbsp;calibration&nbsp;class&nbsp;internal&nbsp;variables</tt></dd></dl>
+
+<dl><dt><a name="Calibration-wait"><strong>wait</strong></a>(self, delay_ms)</dt><dd><tt>Waits&nbsp;for&nbsp;delay_ms&nbsp;milliseconds</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>AntibodyVialOffsetLabel</strong> = 'antibodyvialoffset_degrees'</dl>
+
+<dl><dt><strong>BaseOffset14mlVialLabel</strong> = 'calbaseoffset_14mlvial_mm'</dl>
+
+<dl><dt><strong>BaseOffset50mlVialLabel</strong> = 'calbaseoffset_50mlvial_mm'</dl>
+
+<dl><dt><strong>BaseOffsetAntibodyVialLabel</strong> = 'calbaseoffset_antibodyvial_mm'</dl>
+
+<dl><dt><strong>BaseOffsetBeadVialLabel</strong> = 'calbaseoffset_beadvial_mm'</dl>
+
+<dl><dt><strong>BaseOffsetCoctailVialLabel</strong> = 'calbaseoffset_cocktailvial_mm'</dl>
+
+<dl><dt><strong>CalZPickup1mlLabel</strong> = 'calz_pickupposition_1mltip_mm'</dl>
+
+<dl><dt><strong>CalZPickup5mlLabel</strong> = 'calz_pickupposition_5mltip_mm'</dl>
+
+<dl><dt><strong>CalZPrePickup1mlLabel</strong> = 'calz_prepickupposition_1mltip_mm'</dl>
+
+<dl><dt><strong>CalZPrePickup5mlLabel</strong> = 'calz_prepickupposition_5mltip_mm'</dl>
+
+<dl><dt><strong>CalZStripped1mlLabel</strong> = 'calz_strippedpositionoffset_1mltip_mm'</dl>
+
+<dl><dt><strong>CalZStripped5mlLabel</strong> = 'calz_strippedpositionoffset_5mltip_mm'</dl>
+
+<dl><dt><strong>CalibrationJigSlotLabel</strong> = 'calibrationjigslot_degrees'</dl>
+
+<dl><dt><strong>CalibrationLabel</strong> = 'Calibration'</dl>
+
+<dl><dt><strong>CocktailVialOffsetLabel</strong> = 'cocktailvialoffset_degrees'</dl>
+
+<dl><dt><strong>LysisVialOffsetLabel</strong> = 'lysisvialoffset_degrees'</dl>
+
+<dl><dt><strong>ParticleVialOffsetLabel</strong> = 'particlevialoffset_degrees'</dl>
+
+<dl><dt><strong>PlatformLabel</strong> = 'Platform'</dl>
+
+<dl><dt><strong>ReferencePointsLabel</strong> = 'ReferencePoints'</dl>
+
+<dl><dt><strong>SampleVialOffsetLabel</strong> = 'samplevialoffset_degrees'</dl>
+
+<dl><dt><strong>SeparationVialOffsetLabel</strong> = 'separationvialoffset_degrees'</dl>
+
+<dl><dt><strong>Tip1OffsetLabel</strong> = 'tip1offset_degrees'</dl>
+
+<dl><dt><strong>Tip2OffsetLabel</strong> = 'tip2offset_degrees'</dl>
+
+<dl><dt><strong>Tip3OffsetLabel</strong> = 'tip3offset_degrees'</dl>
+
+<dl><dt><strong>Tip4OffsetLabel</strong> = 'tip4offset_degrees'</dl>
+
+<dl><dt><strong>Tip5OffsetLabel</strong> = 'tip5offset_degrees'</dl>
+
+<dl><dt><strong>WasteVialOffsetLabel</strong> = 'wastevialoffset_degrees'</dl>
+
+<hr>
+Methods inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><a name="Calibration-NullTrace"><strong>NullTrace</strong></a>(self, message)</dt><dd><tt>Don't&nbsp;do&nbsp;anything&nbsp;with&nbsp;the&nbsp;message;&nbsp;used&nbsp;when&nbsp;we&nbsp;don't&nbsp;want&nbsp;debugging<br>
+traces.</tt></dd></dl>
+
+<dl><dt><a name="Calibration-PrintTrace"><strong>PrintTrace</strong></a>(self, message)</dt><dd><tt>Print&nbsp;a&nbsp;debug&nbsp;message</tt></dd></dl>
+
+<dl><dt><a name="Calibration-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Simple&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;<a href="tesla.instrument.Subsystem.html#Subsystem">Subsystem</a>.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><a name="Calibration-registerInstance"><strong>registerInstance</strong></a>(instance)</dt><dd><tt>Register&nbsp;our&nbsp;instance&nbsp;with&nbsp;the&nbsp;Instance&nbsp;list.&nbsp;Note&nbsp;that&nbsp;this&nbsp;is&nbsp;a&nbsp;<br>
+static&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="Calibration-reset"><strong>reset</strong></a>()</dt><dd><tt>Reset&nbsp;the&nbsp;subsystem&nbsp;instance&nbsp;list</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><strong>SectionName</strong> = 'Base Subsystem'</dl>
+
+<dl><dt><strong>instanceList</strong> = []</dl>
+
+<dl><dt><strong>mandatorySettings</strong> = ()</dl>
+
+<hr>
+Methods inherited from <a href="tesla.hardware.Component.html#Component">tesla.hardware.Component.Component</a>:<br>
+<dl><dt><a name="Calibration-execute"><strong>execute</strong></a>(self, functionWithArgs)</dt><dd><tt>Executes&nbsp;the&nbsp;formatted&nbsp;function&nbsp;call&nbsp;string&nbsp;functionWithArgs&nbsp;on<br>
+self.</tt></dd></dl>
+
+<dl><dt><a name="Calibration-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;device's&nbsp;identifying&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="Calibration-getServiceMethods"><strong>getServiceMethods</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;methods&nbsp;that&nbsp;are&nbsp;published&nbsp;to&nbsp;the&nbsp;service&nbsp;interface</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.hardware.Component.html#Component">tesla.hardware.Component.Component</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x008C2710&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'Component' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>gHardwareData</strong> = &lt;tesla.hardware.config.HardwareConfiguration instance at 0x00892B48&gt;</td></tr></table>
+</body></html>

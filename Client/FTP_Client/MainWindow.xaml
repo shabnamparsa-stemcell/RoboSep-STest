@@ -1,0 +1,8 @@
+﻿<Window x:Class="FTP_Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FTP Client" Height="310" Width="365" IsTabStop="False" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ContentControl Content="{Binding clientView}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsTabStop="False" />
+    </Grid>
+</Window>

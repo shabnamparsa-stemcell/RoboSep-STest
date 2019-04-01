@@ -1,0 +1,101 @@
+﻿# ----------------------------------------------------------------------------
+#  ProtocolConfig.txt
+# 
+#  Invetech Pty Ltd
+#  Victoria, 3149, Australia
+#  Phone:   (+61) 3 9211 7700
+#  Fax:     (+61) 3 9211 7701
+# 
+#  The copyright to the computer program(s) herein is the property of 
+#  Invetech Pty Ltd, Australia.
+#  The program(s) may be used and/or copied only with the written permission 
+#  of Invetech Pty Ltd or in accordance with the terms and conditions 
+#  stipulated in the agreement/contract under which the program(s)
+#  have been supplied.
+#  
+#  Copyright © 2004. All Rights Reserved.
+# 
+# ----------------------------------------------------------------------------
+# ROBOSEP PROTOCOL CONFIGURATION CODES
+# ------------------------------------
+#
+#	--- NOTE: THIS FILE SHOULD BE SAVED WITH UTF-8 ENCODING ---
+#
+# Codes for resources used in protocols are grouped in logical 
+# blocks for each carousel quadrant and a separate group for 
+# global resources.
+# This provides a mapping between source/destination vials
+# and clear text names for use by the protocol editor.
+#
+
+#
+# 0000 - 0099: Global instrument resources
+#
+TPC0000=RESERVED
+TPC0001=BCCMContainer
+
+#
+# 0100 - 0199: Carousel Quadrant 1 resources
+#
+TPC0100=RESERVED
+TPC0101=WasteVial
+TPC0102=LysisVial
+TPC0103=CocktailVial
+TPC0104=ParticleVial
+TPC0105=AntibodyVial
+TPC0106=SampleVial
+TPC0107=SeparationVial
+# TPC0108=TipBox
+TPC0108=VialBpos
+TPC0109=VialBneg
+TPC0110=NegativeFractionTube
+
+#
+# 0200 - 0299: Carousel Quadrant 2 resources
+#
+TPC0200=RESERVED
+TPC0201=WasteVial
+TPC0202=LysisVial
+TPC0203=CocktailVial
+TPC0204=ParticleVial
+TPC0205=AntibodyVial
+TPC0206=SampleVial
+TPC0207=SeparationVial
+# TPC0208=TipBox
+TPC0208=VialBpos
+TPC0209=VialBneg
+TPC0210=NegativeFractionTube
+
+#
+# 0300 - 0399: Carousel Quadrant 3 resources
+#
+TPC0300=RESERVED
+TPC0301=WasteVial
+TPC0302=LysisVial
+TPC0303=CocktailVial
+TPC0304=ParticleVial
+TPC0305=AntibodyVial
+TPC0306=SampleVial
+TPC0307=SeparationVial
+# TPC0308=TipBox
+TPC0308=VialBpos
+TPC0309=VialBneg
+TPC0310=NegativeFractionTube
+
+#
+# 0400 - 0499: Carousel Quadrant 4 resources
+#
+TPC0400=RESERVED
+TPC0401=WasteVial
+TPC0402=LysisVial
+TPC0403=CocktailVial
+TPC0404=ParticleVial
+TPC0405=AntibodyVial
+TPC0406=SampleVial
+TPC0407=SeparationVial
+# TPC0408=TipBox
+TPC0408=VialBpos
+TPC0409=VialBneg
+TPC0410=NegativeFractionTube
+
+# eof

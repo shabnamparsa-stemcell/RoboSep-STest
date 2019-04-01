@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="STI">
+  <UserName>Stone</UserName>
+  <ProtocolFile>Human B Cell Negative Selection 19054HLA.xml</ProtocolFile>
+  <ProtocolFile>Human B Cell Negative Selection from WB 19954HLA.xml</ProtocolFile>
+  <ProtocolFile>Human B Cell Negative Selection without CD43 19154-high purity.xml</ProtocolFile>
+  <ProtocolFile>Human B Cell Negative Selection without CD43 19154-high recovery.xml</ProtocolFile>
+  <ProtocolFile>Human B Cell Positive Selection 18454HLA.xml</ProtocolFile>
+  <ProtocolFile>Human B Cell WB Positive Selection 18184HLA.xml</ProtocolFile>
+</RoboSepUser>

@@ -1,0 +1,52 @@
+﻿# ----------------------------------------------------------------------------
+#  SeparatorFonts.txt
+# 
+#  Invetech Pty Ltd
+#  Victoria, 3149, Australia
+#  Phone:   (+61) 3 9211 7700
+#  Fax:     (+61) 3 9211 7701
+# 
+#  The copyright to the computer program(s) herein is the property of 
+#  Invetech Pty Ltd, Australia.
+#  The program(s) may be used and/or copied only with the written permission 
+#  of Invetech Pty Ltd or in accordance with the terms and conditions 
+#  stipulated in the agreement/contract under which the program(s)
+#  have been supplied.
+#  
+#  Copyright © 2004. All Rights Reserved.
+# 
+# ----------------------------------------------------------------------------
+#
+#	--- NOTE: THIS FILE SHOULD BE SAVED WITH UTF-8 ENCODING ---
+#
+# ----------------------------------------------------------------------------
+# Separator fonts - Defaults
+# ----------------------------------------------------------------------------
+FontFamily.Default=Arial
+Int16.Default=12
+Int16.Small=10
+Int16.Smaller=8
+
+# ----------------------------------------------------------------------------
+# Separator fonts & sizes - Sample Processing
+# ----------------------------------------------------------------------------
+Int16.SampleProcessingPageTitle=16
+
+# ----------------------------------------------------------------------------
+# Separator fonts & sizes - Sample Processing, Run subpage
+# ----------------------------------------------------------------------------
+Int16.SampleGridColumnHeader=12
+Int16.RunProgressInfo=12
+
+# ----------------------------------------------------------------------------
+# Separator fonts & sizes - Sample Processing, Configuration subpage
+# ----------------------------------------------------------------------------
+Int16.ConfigurationQuadrantPrompt=14
+Int16.ConfigurationQuadrantLocation=18
+
+# ----------------------------------------------------------------------------
+# Separator fonts & sizes - Instrument Tasks, Maintenance subpage
+# ----------------------------------------------------------------------------
+Int16.MaintenanceSubpageTitle=14
+
+

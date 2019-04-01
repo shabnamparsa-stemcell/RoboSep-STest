@@ -1,0 +1,210 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module TeslaPump</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>TeslaPump</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/p4tesla/tesla/dev/dev001/control/tesla/instrument/teslapump.py">c:\projects\p4tesla\tesla\dev\dev001\control\tesla\instrument\teslapump.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;<a href="#TeslaPump">TeslaPump</a>.py<br>
+#&nbsp;tesla.instrument.<a href="#TeslaPump">TeslaPump</a><br>
+#<br>
+#&nbsp;Provides&nbsp;the&nbsp;level3&nbsp;workflows&nbsp;required&nbsp;to&nbsp;drive&nbsp;the&nbsp;DRD&nbsp;pump&nbsp;in&nbsp;the&nbsp;Tesla&nbsp;<br>
+#&nbsp;instrument.<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="math.html">math</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="TeslaPump.html#TeslaPump">TeslaPump</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>(<a href="exceptions.html#StandardError">exceptions.StandardError</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="TeslaPump.html#TeslaPumpError">TeslaPumpError</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TeslaPump">class <strong>TeslaPump</strong></a>(<a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;to&nbsp;drive&nbsp;the&nbsp;Tesla&nbsp;pump<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="TeslaPump.html#TeslaPump">TeslaPump</a></dd>
+<dd><a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="TeslaPump-Aspirate"><strong>Aspirate</strong></a>(self, volume, capacity)</dt><dd><tt>Aspirate&nbsp;from&nbsp;the&nbsp;vial,&nbsp;choosing&nbsp;a&nbsp;technique&nbsp;according&nbsp;to&nbsp;volume,&nbsp;and&nbsp;capacity.<br>
+Return&nbsp;the&nbsp;volume&nbsp;aspirated&nbsp;at&nbsp;the&nbsp;tip.&nbsp;(This&nbsp;may&nbsp;vary&nbsp;from&nbsp;given&nbsp;sub-transport&nbsp;volume)</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-AspirateMix"><strong>AspirateMix</strong></a>(self, volume, seqNbr)</dt><dd><tt>Aspirate&nbsp;the&nbsp;given&nbsp;volume&nbsp;using&nbsp;the&nbsp;mixing&nbsp;profile</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-AspiratePreMixAirSlug"><strong>AspiratePreMixAirSlug</strong></a>(self, volume)</dt><dd><tt>Aspirate&nbsp;an&nbsp;air&nbsp;slug&nbsp;prior&nbsp;to&nbsp;mixing.<br>
+NB:&nbsp;The&nbsp;subsequent&nbsp;dispense&nbsp;occurs&nbsp;after&nbsp;the&nbsp;mix,&nbsp;so&nbsp;this&nbsp;is&nbsp;a&nbsp;bit&nbsp;different&nbsp;to&nbsp;standard&nbsp;aspirate/dispense&nbsp;cycle.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-Dispense"><strong>Dispense</strong></a>(self)</dt><dd><tt>Dispense&nbsp;to&nbsp;the&nbsp;vial,&nbsp;choosing&nbsp;a&nbsp;technique&nbsp;according&nbsp;to&nbsp;previous&nbsp;aspiration.<br>
+The&nbsp;volume&nbsp;dispensed&nbsp;at&nbsp;the&nbsp;tip&nbsp;is&nbsp;assumed&nbsp;to&nbsp;be&nbsp;the&nbsp;volume&nbsp;retruned&nbsp;by&nbsp;the&nbsp;previous&nbsp;aspiration&nbsp;call</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-DispenseMix"><strong>DispenseMix</strong></a>(self)</dt><dd><tt>Dispense&nbsp;using&nbsp;the&nbsp;mixing&nbsp;profile</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-DispensePreMixAirSlug"><strong>DispensePreMixAirSlug</strong></a>(self, volume)</dt><dd><tt>Dispense&nbsp;the&nbsp;air&nbsp;slug&nbsp;after&nbsp;mixing.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-FlushAspirate"><strong>FlushAspirate</strong></a>(self)</dt><dd><tt>Aspirate&nbsp;the&nbsp;flush&nbsp;volume</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-FlushAspirateAirSlug"><strong>FlushAspirateAirSlug</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TeslaPump-FlushDispense"><strong>FlushDispense</strong></a>(self)</dt><dd><tt>Dispense&nbsp;the&nbsp;flush&nbsp;volume</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-Initialise"><strong>Initialise</strong></a>(self)</dt><dd><tt>Initialise&nbsp;the&nbsp;pump</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-ParkValve"><strong>ParkValve</strong></a>(self)</dt><dd><tt>Park&nbsp;valve&nbsp;valve&nbsp;to&nbsp;idle&nbsp;(ie&nbsp;non-energised)&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-Prime"><strong>Prime</strong></a>(self)</dt><dd><tt>Prime&nbsp;the&nbsp;pump.&nbsp;Return&nbsp;the&nbsp;volume&nbsp;dispensed&nbsp;to&nbsp;tip</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-SetValveToReservoir"><strong>SetValveToReservoir</strong></a>(self)</dt><dd><tt>Set&nbsp;valve&nbsp;so&nbsp;that&nbsp;piston&nbsp;accesses&nbsp;reservoir.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-SetValveToTip"><strong>SetValveToTip</strong></a>(self)</dt><dd><tt>Set&nbsp;valve&nbsp;so&nbsp;that&nbsp;piston&nbsp;accesses&nbsp;dispense&nbsp;tip.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-__init__"><strong>__init__</strong></a>(self, name)</dt><dd><tt>Load&nbsp;in&nbsp;the&nbsp;configuration&nbsp;data&nbsp;for&nbsp;the&nbsp;pump.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>Aspiration_1Label</strong> = 'aspiration_1'</dl>
+
+<dl><dt><strong>Aspiration_2Label</strong> = 'aspiration_2'</dl>
+
+<dl><dt><strong>Aspiration_3Label</strong> = 'aspiration_3'</dl>
+
+<dl><dt><strong>Aspiration_4Label</strong> = 'aspiration_4'</dl>
+
+<dl><dt><strong>Aspiration_MixLabel</strong> = 'aspiration_mix'</dl>
+
+<dl><dt><strong>BoardAddressLabel</strong> = 'steppercardaddress'</dl>
+
+<dl><dt><strong>Dispense_1Label</strong> = 'dispense_1'</dl>
+
+<dl><dt><strong>Dispense_2Label</strong> = 'dispense_2'</dl>
+
+<dl><dt><strong>Dispense_3Label</strong> = 'dispense_3'</dl>
+
+<dl><dt><strong>Dispense_4Label</strong> = 'dispense_4'</dl>
+
+<dl><dt><strong>Dispense_MixLabel</strong> = 'dispense_mix'</dl>
+
+<dl><dt><strong>MaxVolumeDualModeLabel</strong> = 'maxvolume_dualpistonmode_ul'</dl>
+
+<dl><dt><strong>MaxVolumeSingleModeLabel</strong> = 'maxvolume_singlepistonmode_ul'</dl>
+
+<dl><dt><strong>PortLabel</strong> = 'steppercardport'</dl>
+
+<dl><dt><strong>PrimeIterationsLabel</strong> = 'numberofprimingcycles'</dl>
+
+<dl><dt><strong>SectionName</strong> = 'Pump'</dl>
+
+<dl><dt><strong>ValveTipPositionLabel</strong> = 'valvepositionwhenaccessingtip'</dl>
+
+<dl><dt><strong>cFlushingID</strong> = -2</dl>
+
+<dl><dt><strong>cMixingID</strong> = -1</dl>
+
+<hr>
+Methods inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><a name="TeslaPump-NullTrace"><strong>NullTrace</strong></a>(self, message)</dt><dd><tt>Don't&nbsp;do&nbsp;anything&nbsp;with&nbsp;the&nbsp;message;&nbsp;used&nbsp;when&nbsp;we&nbsp;don't&nbsp;want&nbsp;debugging<br>
+traces.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-PrintTrace"><strong>PrintTrace</strong></a>(self, message)</dt><dd><tt>Print&nbsp;a&nbsp;debug&nbsp;message</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Simple&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;<a href="tesla.instrument.Subsystem.html#Subsystem">Subsystem</a>.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-execute"><strong>execute</strong></a>(self, functionWithArgs)</dt><dd><tt>Executes&nbsp;the&nbsp;formatted&nbsp;function&nbsp;call&nbsp;string&nbsp;functionWithArgs&nbsp;on<br>
+self.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPump-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;<a href="tesla.instrument.Subsystem.html#Subsystem">Subsystem</a>'s&nbsp;identifying&nbsp;name.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><a name="TeslaPump-registerInstance"><strong>registerInstance</strong></a>(instance)</dt><dd><tt>Register&nbsp;our&nbsp;instance&nbsp;with&nbsp;the&nbsp;Instance&nbsp;list.&nbsp;Note&nbsp;that&nbsp;this&nbsp;is&nbsp;a&nbsp;<br>
+static&nbsp;method.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x00969BF0&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'Subsystem' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>instanceList</strong> = []</dl>
+
+<dl><dt><strong>mandatorySettings</strong> = ()</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TeslaPumpError">class <strong>TeslaPumpError</strong></a>(<a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Exception&nbsp;for&nbsp;errors&nbsp;related&nbsp;to&nbsp;invalid&nbsp;pump&nbsp;settings.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="TeslaPump.html#TeslaPumpError">TeslaPumpError</a></dd>
+<dd><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a></dd>
+<dd><a href="exceptions.html#StandardError">exceptions.StandardError</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="TeslaPumpError-__getitem__"><strong>__getitem__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TeslaPumpError-__init__"><strong>__init__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TeslaPumpError-__str__"><strong>__str__</strong></a>(...)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>gHardwareData</strong> = &lt;tesla.hardware.config.HardwareConfiguration instance at 0x008635D0&gt;</td></tr></table>
+</body></html>

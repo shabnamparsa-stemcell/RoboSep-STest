@@ -1,0 +1,57 @@
+RoboSep UI Log File
+Created: 20111206_095353.793
+
+20111206_095353.796	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20111206_095353.856	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20111206_095356.123	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = FalseLiquid Sensor = False
+20111206_095356.140	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	Info	RoboSep_UserConsole	Loading User Console
+20111206_095356.162	clt	RoboSep_Splash.RoboSep_Splash()	Info	RoboSep_Splash	Initializing Splash Page
+20111206_095356.222	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	General	RoboSep_UserConsole	Starting GUI Thread
+20111206_095356.224	clt	RoboSep_UserConsole.AttemptSeparatorConnection()	Info	RoboSep_UserConsole	Connecting...
+20111206_095356.969	clt	RoboSep_UserDB.Robosep_UserDB()()	Debug	RoboSep_UserDB	Initializing UserDB
+20111206_095357.090	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111206_095357.297	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111206_095357.309	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111206_095357.795	clt	RoboSep_UserDB.LoadAllProtocols()	Debug	RoboSep_UserDB	160protocols loaded
+20111206_095357.799	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111206_095358.098	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111206_095358.112	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111206_095426.664	clt	RoboSep_UserConsole.ProgressSplash()	Info	RoboSep_UserConsole	Stopping Splash page
+20111206_095426.721	clt	RoboSep_About.RoboSep_About()	Info	RoboSep_About	Initializing About user control
+20111206_095426.808	clt	RoboSep_RunSamples.RoboSep_RunSamples()	Info	RoboSep_RunSamples	Initializing Run Samples user control
+20111206_095426.886	clt	RoboSep_Splash.close()	Info	RoboSep_Splash	Closing Splash Page
+20111206_095440.886	clt	RoboSep_RunSamples.btn_home_Click()	Info	RoboSep_RunSamples	Home button clicked
+20111206_095445.950	clt	Form_Home.hex_service_Click()	Info	Form_Home	Service button clicked
+20111206_095452.176	clt	RoboSep_ServiceLogin.btn_home_Click()	Info	RoboSep_ServiceLogin	Home button clicked
+20111206_095454.176	clt	RoboSep_System.RoboSep_System()	Info	RoboSep_System	Initializing System user control
+20111206_095454.237	clt	Form_Home.hex_system_Click()	Info	Form_Home	System button clicked
+20111206_095455.433	clt	RoboSep_System.checkBox_lidSensor_Click()	Info	RoboSep_System	Lid Sensor enabled = True
+20111206_095455.968	clt	RoboSep_System.checkBox_liquidSensor_Click()	Info	RoboSep_System	Liquid Level Sensor enabled = True
+20111206_095456.624	clt	RoboSep_System.checkBox_liquidSensor_Click()	Info	RoboSep_System	Liquid Level Sensor enabled = False
+20111206_095457.257	clt	RoboSep_System.checkBox_lidSensor_Click()	Info	RoboSep_System	Lid Sensor enabled = False
+20111206_095457.700	clt	RoboSep_System.checkBox_keyboard_Click()	Info	RoboSep_System	Touch Keyboard enabled = False
+20111206_095458.196	clt	RoboSep_System.checkBox_keyboard_Click()	Info	RoboSep_System	Touch Keyboard enabled = True
+20111206_095459.272	clt	RoboSep_System.checkBox_lidSensor_Click()	Info	RoboSep_System	Lid Sensor enabled = True
+20111206_095459.600	clt	RoboSep_System.checkBox_liquidSensor_Click()	Info	RoboSep_System	Liquid Level Sensor enabled = True
+20111206_095505.221	clt	RoboSep_System.button_Service_Click()	Info	RoboSep_System	Service Menu button clicked
+20111206_095506.980	clt	RoboSep_ServiceLogin.btn_home_Click()	Info	RoboSep_ServiceLogin	Home button clicked
+20111206_095507.473	clt	Form_Home.hex_system_Click()	Info	Form_Home	System button clicked
+20111206_095520.067	clt	RoboSep_System.btn_home_Click()	Info	RoboSep_System	Home button clicked
+20111206_095520.721	clt	Form_Home.hex_sampling_Click()	Info	Form_Home	Run Sample button clicked
+20111206_095521.255	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111206_095521.344	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111206_095521.482	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111206_095521.529	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111206_095522.790	clt	RoboSep_ProtocolSelect.button_SelectionMode_Click()	Info	RoboSep_ProtocolSelect	Change Protocol selection mode toAll Protocols
+20111206_095528.241	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111206_095528.253	clt	RoboSep_UserDB.XML_SaveUserProfile()	Debug	RoboSep_UserDB	Saved User Profile Jason with 5protocols
+20111206_095528.309	clt	RoboSep_ProtocolSelect.button_Accept_Click()	Info	RoboSep_ProtocolSelect	Protocol Selected from All Protocols list
+20111206_095528.342	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111206_095528.351	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111206_095529.241	clt	RoboSep_UserDB.loadUserProtocols()	Debug	RoboSep_UserDB	Loaded 4 protocol from User Jason
+20111206_095533.445	clt	RoboSep_ProtocolSelect.button_SelectionMode_Click()	Info	RoboSep_ProtocolSelect	Change Protocol selection mode toUser Protocols
+20111206_095539.892	clt	RoboSep_ProtocolSelect.button_SelectionMode_Click()	Info	RoboSep_ProtocolSelect	Change Protocol selection mode toAll Protocols
+20111206_095604.870	clt	RoboSep_ProtocolSelect.button_SelectionMode_Click()	Info	RoboSep_ProtocolSelect	Change Protocol selection mode toUser Protocols
+20111206_095605.567	clt	RoboSep_ProtocolSelect.button_SelectionMode_Click()	Info	RoboSep_ProtocolSelect	Change Protocol selection mode toAll Protocols
+20111206_095606.148	clt	RoboSep_ProtocolSelect.button_SelectionMode_Click()	Info	RoboSep_ProtocolSelect	Change Protocol selection mode toUser Protocols
+20111206_095632.502	clt	RoboSep_ProtocolSelect.button_Cancel1_Click()	Info	RoboSep_ProtocolSelect	Protocol Selection cancel clicked

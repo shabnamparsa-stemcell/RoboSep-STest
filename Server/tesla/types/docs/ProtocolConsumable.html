@@ -1,0 +1,92 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ProtocolConsumable</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ProtocolConsumable</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/tesla/dev/dev001/control/tesla/types/protocolconsumable.py">c:\projects\tesla\dev\dev001\control\tesla\types\protocolconsumable.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;<a href="#ProtocolConsumable">ProtocolConsumable</a>.py<br>
+#&nbsp;tesla.types.<a href="#ProtocolConsumable">ProtocolConsumable</a><br>
+#<br>
+#&nbsp;Provides&nbsp;a&nbsp;user-level&nbsp;object&nbsp;defining&nbsp;the&nbsp;consumables&nbsp;required&nbsp;in&nbsp;a&nbsp;specific<br>
+#&nbsp;quadrant&nbsp;for&nbsp;a&nbsp;sample&nbsp;and&nbsp;protocol<br>
+#&nbsp;Samples/protocols&nbsp;requiring&nbsp;more&nbsp;than&nbsp;one&nbsp;quadrant&nbsp;would&nbsp;have&nbsp;a&nbsp;set&nbsp;of&nbsp;these<br>
+#&nbsp;objects,&nbsp;one&nbsp;for&nbsp;each&nbsp;quadrant<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="ProtocolConsumable.html#ProtocolConsumable">ProtocolConsumable</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ProtocolConsumable">class <strong>ProtocolConsumable</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Provides&nbsp;a&nbsp;user-level&nbsp;object&nbsp;defining&nbsp;the&nbsp;consumables&nbsp;required&nbsp;in&nbsp;a&nbsp;<br>
+specific&nbsp;quadrant&nbsp;for&nbsp;a&nbsp;sample&nbsp;and&nbsp;protocol.<br>
+Samples/protocols&nbsp;requiring&nbsp;more&nbsp;than&nbsp;one&nbsp;quadrant&nbsp;would&nbsp;have&nbsp;a&nbsp;set&nbsp;of&nbsp;<br>
+these&nbsp;objects,&nbsp;one&nbsp;for&nbsp;each&nbsp;quadrant.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ProtocolConsumable-__init__"><strong>__init__</strong></a>(self, quadrant, cocktailVolume_uL<font color="#909090">=-1</font>, particleVolume_uL<font color="#909090">=-1</font>, lysisVolume_uL<font color="#909090">=-1</font>, antibodyVolume_uL<font color="#909090">=-1</font>, bulkBufferVolume_uL<font color="#909090">=-1</font>, wasteVesselRequired<font color="#909090">=False</font>, separationVesselRequired<font color="#909090">=False</font>, sampleVesselRequired<font color="#909090">=False</font>, tipBoxRequired<font color="#909090">=False</font>)</dt><dd><tt>Construct&nbsp;the&nbsp;consumable&nbsp;object<br>
+int&nbsp;quadrant&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quadrant&nbsp;for&nbsp;these&nbsp;consumables<br>
+double&nbsp;cocktailVolume_uL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Volume&nbsp;(in&nbsp;uL)&nbsp;of&nbsp;cocktail<br>
+double&nbsp;particleVolume_uL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Volume&nbsp;(in&nbsp;uL)&nbsp;of&nbsp;particles/beads<br>
+double&nbsp;lysisVolume_uL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Volume&nbsp;(in&nbsp;uL)&nbsp;of&nbsp;lysis&nbsp;buffer<br>
+double&nbsp;antibodyVolume_uL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Volume&nbsp;(in&nbsp;uL)&nbsp;of&nbsp;antibody&nbsp;cocktail<br>
+double&nbsp;bulkBufferVolume_uL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Volume&nbsp;of&nbsp;bulk&nbsp;buffer&nbsp;required.<br>
+bool&nbsp;wasteVesselRequired&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do&nbsp;we&nbsp;need&nbsp;a&nbsp;waste&nbsp;vessel<br>
+bool&nbsp;separationVesselRequired&nbsp;&nbsp;&nbsp;Do&nbsp;we&nbsp;need&nbsp;a&nbsp;separation&nbsp;vessel<br>
+bool&nbsp;sampleVesselRequired&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do&nbsp;we&nbsp;need&nbsp;a&nbsp;sample&nbsp;vessel<br>
+bool&nbsp;tipBoxRequired&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do&nbsp;we&nbsp;need&nbsp;a&nbsp;tip&nbsp;box&nbsp;for&nbsp;this&nbsp;quadrant<br>
+&nbsp;<br>
+Setting&nbsp;the&nbsp;volume&nbsp;to&nbsp;NOT_NEEDED&nbsp;(-1)&nbsp;indicates&nbsp;that&nbsp;the&nbsp;consumable<br>
+is&nbsp;not&nbsp;needed.<br>
+Setting&nbsp;the&nbsp;volume&nbsp;to&nbsp;EMPTY&nbsp;(0)&nbsp;indicates&nbsp;that&nbsp;just&nbsp;the&nbsp;empty&nbsp;<br>
+consumable&nbsp;is&nbsp;needed.<br>
+By&nbsp;default,&nbsp;none&nbsp;of&nbsp;the&nbsp;containers&nbsp;are&nbsp;needed&nbsp;except&nbsp;for&nbsp;the&nbsp;waste<br>
+container,&nbsp;which&nbsp;can&nbsp;(should!)&nbsp;be&nbsp;empty.</tt></dd></dl>
+
+<dl><dt><a name="ProtocolConsumable-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>String&nbsp;representation&nbsp;of&nbsp;the&nbsp;protocol&nbsp;consumables</tt></dd></dl>
+
+<dl><dt><a name="ProtocolConsumable-getPrettyString"><strong>getPrettyString</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;pretty&nbsp;formatted&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;<br>
+<a href="#ProtocolConsumable">ProtocolConsumable</a>&nbsp;object&nbsp;(nicer&nbsp;anyway&nbsp;than&nbsp;the&nbsp;truncated&nbsp;version<br>
+from&nbsp;__repr__.</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>EMPTY</strong> = 0<br>
+<strong>NOT_NEEDED</strong> = -1<br>
+<strong>NUM_QUADRANTS</strong> = 4</td></tr></table>
+</body></html>

@@ -1,0 +1,75 @@
+C:\Projects\TESLA\Client\separator\bin\Debug\Separator.exe.config
+C:\Projects\TESLA\Client\separator\bin\Debug\Separator.exe
+C:\Projects\TESLA\Client\separator\bin\Debug\Separator.pdb
+C:\Projects\TESLA\Client\separator\bin\Debug\ApplicationLog.dll
+C:\Projects\TESLA\Client\separator\bin\Debug\Common.dll
+C:\Projects\TESLA\Client\separator\bin\Debug\CommonResources.dll
+C:\Projects\TESLA\Client\separator\bin\Debug\CookComputing.XmlRpc.dll
+C:\Projects\TESLA\Client\separator\bin\Debug\InstrumentControlAPI.dll
+C:\Projects\TESLA\Client\separator\bin\Debug\SeparatorAPI.dll
+C:\Projects\TESLA\Client\separator\bin\Debug\System.Runtime.Remoting.dll
+C:\Projects\TESLA\Client\separator\bin\Debug\GUI_Controls.dll
+C:\Projects\TESLA\Client\separator\bin\Debug\DataAccess.dll
+C:\Projects\TESLA\Client\separator\bin\Debug\CommonResources.pdb
+C:\Projects\TESLA\Client\separator\bin\Debug\InstrumentControlAPI.pdb
+C:\Projects\TESLA\Client\separator\bin\Debug\InstrumentControlAPI.xml
+C:\Projects\TESLA\Client\separator\bin\Debug\SeparatorAPI.pdb
+C:\Projects\TESLA\Client\separator\bin\Debug\Common.pdb
+C:\Projects\TESLA\Client\separator\bin\Debug\GUI_Console.pdb
+C:\Projects\TESLA\Client\separator\bin\Debug\GUI_Controls.pdb
+C:\Projects\TESLA\Client\separator\bin\Debug\DataAccess.pdb
+C:\Projects\TESLA\Client\separator\bin\Debug\fr-FR\CommonResources.resources.dll
+C:\Projects\TESLA\Client\separator\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\Client\separator\obj\Debug\Separator.exe
+C:\Projects\TESLA\Client\separator\obj\Debug\Separator.pdb
+C:\Projects\TESLA\Client\separator\bin\Debug\GUI_Console.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\Separator.exe.config
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\Separator.exe
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\Separator.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\ApplicationLog.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\Common.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\CommonResources.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\CookComputing.XmlRpc.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\GUI_Console.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\InstrumentControlAPI.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\SeparatorAPI.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\System.Runtime.Remoting.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\GUI_Controls.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\DataAccess.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\CommonResources.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\InstrumentControlAPI.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\InstrumentControlAPI.xml
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\SeparatorAPI.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\Common.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\GUI_Console.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\GUI_Controls.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\DataAccess.pdb
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\bin\Debug\fr-FR\CommonResources.resources.dll
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\obj\Debug\Separator.exe
+C:\Documents and Settings\Roy\Desktop\CW_Service\Service\separator\obj\Debug\Separator.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\Separator.exe.config
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\Separator.exe
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\Separator.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\ApplicationLog.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\Common.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\CommonResources.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\CookComputing.XmlRpc.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\GUI_Console.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\InstrumentControlAPI.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\SeparatorAPI.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\System.Runtime.Remoting.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\GUI_Controls.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\DataAccess.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\CommonResources.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\InstrumentControlAPI.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\InstrumentControlAPI.xml
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\SeparatorAPI.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\Common.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\GUI_Console.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\DataAccess.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\fr-FR\CommonResources.resources.dll
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\obj\Debug\Separator.exe
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\obj\Debug\Separator.pdb
+C:\Projects\TESLA\_2012_09_10_update\Service\separator\bin\Debug\GUI_Controls.pdb

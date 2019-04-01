@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepUser xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="STI">
+  <UserName>training</UserName>
+  <ProtocolFile>19232 - Stage 2 small volume DX1 TAC.xml</ProtocolFile>
+  <ProtocolFile>19232 - Stage 2 small volume PBS.xml</ProtocolFile>
+</RoboSepUser>

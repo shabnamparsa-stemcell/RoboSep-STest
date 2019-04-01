@@ -1,0 +1,23 @@
+RoboSep UI Log File
+Created: 20130804_145603.833
+
+20130804_145603.923	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20130804_145603.953	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20130804_145859.361	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20130804_145859.586	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20130804_145904.378	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20130804_145904.723	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130804_145909.440	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130804_145911.378	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated
+20130804_145913.917	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20130804_145916.305	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20130804_145916.320	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20130804_145916.485	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20130804_145916.681	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20130804_145916.741	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20130804_145916.906	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20130804_145917.582	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20130804_145919.505	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20130804_145923.891	clt	ServiceMenu.btnConnect_Click()	Info	ServiceMenu	Connecting
+20130804_145935.262	clt	ServiceMenu.listboxSubMenu_SelectedIndexChanged()	Info	ServiceMenu	Prepare to start script: 1. Theta Axis
+20130804_145935.428	clt	RoboSepServiceManualStepControl.setAxisEnable()	General	RoboSepServiceManualStepControl	None

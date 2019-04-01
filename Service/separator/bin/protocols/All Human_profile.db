@@ -1,0 +1,634 @@
+(lp1
+(iipl.types.Bunch
+Bunch
+p2
+(dp3
+S'name'
+p4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human APC Positive Selection 18451-high purity.xml'
+p5
+sS'time'
+p6
+I1218671962
+sba(iipl.types.Bunch
+Bunch
+p7
+(dp8
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human B Cell Negative Selection 19054-high purity.xml'
+p9
+sg6
+I1216768050
+sba(iipl.types.Bunch
+Bunch
+p10
+(dp11
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human B Cell Negative Selection 19054-high recovery.xml'
+p12
+sg6
+I1216768054
+sba(iipl.types.Bunch
+Bunch
+p13
+(dp14
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human B Cell Negative Selection 19054HLA.xml'
+p15
+sg6
+I1220659438
+sba(iipl.types.Bunch
+Bunch
+p16
+(dp17
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human B Cell Negative Selection without CD43 19154-high purity.xml'
+p18
+sg6
+I1216767950
+sba(iipl.types.Bunch
+Bunch
+p19
+(dp20
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human B Cell Negative Selection without CD43 19154-high recovery.xml'
+p21
+sg6
+I1216767956
+sba(iipl.types.Bunch
+Bunch
+p22
+(dp23
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human B Cell Positive Selection 18454HLA.xml'
+p24
+sg6
+I1220898244
+sba(iipl.types.Bunch
+Bunch
+p25
+(dp26
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Basophil Negative Selection 19069-high purity.xml'
+p27
+sg6
+I1216768058
+sba(iipl.types.Bunch
+Bunch
+p28
+(dp29
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Biotin Positive Selection 18553-high purity.xml'
+p30
+sg6
+I1218671210
+sba(iipl.types.Bunch
+Bunch
+p31
+(dp32
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD138 Positive Selection 18357-bone marrow.xml'
+p33
+sg6
+I1218672190
+sba(iipl.types.Bunch
+Bunch
+p34
+(dp35
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD138 Positive Selection 18357-high purity.xml'
+p36
+sg6
+I1218668650
+sba(iipl.types.Bunch
+Bunch
+p37
+(dp38
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD138 Positive Selection 18357-high recovery.xml'
+p39
+sg6
+I1218672096
+sba(iipl.types.Bunch
+Bunch
+p40
+(dp41
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD14 Positive Selection 18058-high purity.xml'
+p42
+sg6
+I1218670504
+sba(iipl.types.Bunch
+Bunch
+p43
+(dp44
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD14 Positive Selection 18058-high recovery.xml'
+p45
+sg6
+I1218670634
+sba(iipl.types.Bunch
+Bunch
+p46
+(dp47
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD19 Positive Selection 18054-high purity.xml'
+p48
+sg6
+I1239812372
+sba(iipl.types.Bunch
+Bunch
+p49
+(dp50
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD19 Positive Selection 18054-high recovery.xml'
+p51
+sg6
+I1218670342
+sba(iipl.types.Bunch
+Bunch
+p52
+(dp53
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD2 Positive Selection 18657-high purity.xml'
+p54
+sg6
+I1218668750
+sba(iipl.types.Bunch
+Bunch
+p55
+(dp56
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD2 Positive Selection 18657-high recovery.xml'
+p57
+sg6
+I1219862182
+sba(iipl.types.Bunch
+Bunch
+p58
+(dp59
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD2 Positive Selection 18657HLA.xml'
+p60
+sg6
+I1220659506
+sba(iipl.types.Bunch
+Bunch
+p61
+(dp62
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD25 Buffy Coat Bright Positive Selection 18231-high purity.xml'
+p63
+sg6
+I1220574072
+sba(iipl.types.Bunch
+Bunch
+p64
+(dp65
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD25 Depletion 18231-high purity.xml'
+p66
+sg6
+I1218672690
+sba(iipl.types.Bunch
+Bunch
+p67
+(dp68
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD3 Positive Selection 18051-high purity.xml'
+p69
+sg6
+I1218671068
+sba(iipl.types.Bunch
+Bunch
+p70
+(dp71
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD3 Positive Selection 18051-high recovery.xml'
+p72
+sg6
+I1218664272
+sba(iipl.types.Bunch
+Bunch
+p73
+(dp74
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD3 Positive Selection 18051HLA.xml'
+p75
+sg6
+I1220659564
+sba(iipl.types.Bunch
+Bunch
+p76
+(dp77
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD33 Positive Selection 18257-high purity.xml'
+p78
+sg6
+I1218655570
+sba(iipl.types.Bunch
+Bunch
+p79
+(dp80
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD33 Positive Selection 18257-high recovery.xml'
+p81
+sg6
+I1219775892
+sba(iipl.types.Bunch
+Bunch
+p82
+(dp83
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD34 Cord Blood Positive Selection 18096-high purity.xml'
+p84
+sg6
+I1218663930
+sba(iipl.types.Bunch
+Bunch
+p85
+(dp86
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD34 Cord Blood Positive Selection 18096-high recovery.xml'
+p87
+sg6
+I1220570808
+sba(iipl.types.Bunch
+Bunch
+p88
+(dp89
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD34 Positive Selection 18056-high purity.xml'
+p90
+sg6
+I1215545836
+sba(iipl.types.Bunch
+Bunch
+p91
+(dp92
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD34 Positive Selection 18056-high recovery.xml'
+p93
+sg6
+I1218662110
+sba(iipl.types.Bunch
+Bunch
+p94
+(dp95
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD4 Positive Selection 18052-high purity.xml'
+p96
+sg6
+I1218659588
+sba(iipl.types.Bunch
+Bunch
+p97
+(dp98
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD4 Positive Selection 18052-high recovery.xml'
+p99
+sg6
+I1218670986
+sba(iipl.types.Bunch
+Bunch
+p100
+(dp101
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD4+ T Cell Negative Selection 19052.xml'
+p102
+sg6
+I1219863898
+sba(iipl.types.Bunch
+Bunch
+p103
+(dp104
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD45 Depletion 18259-high purity.xml'
+p105
+sg6
+I1219775970
+sba(iipl.types.Bunch
+Bunch
+p106
+(dp107
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD45 Depletion 18259-high recovery.xml'
+p108
+sg6
+I1218657256
+sba(iipl.types.Bunch
+Bunch
+p109
+(dp110
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD56 Positive Selection 18055-high purity.xml'
+p111
+sg6
+I1215545856
+sba(iipl.types.Bunch
+Bunch
+p112
+(dp113
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD56 Positive Selection 18055-high recovery.xml'
+p114
+sg6
+I1218664440
+sba(iipl.types.Bunch
+Bunch
+p115
+(dp116
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD8 Positive Selection 18053-high purity.xml'
+p117
+sg6
+I1219775930
+sba(iipl.types.Bunch
+Bunch
+p118
+(dp119
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD8 Positive Selection 18053-high recovery.xml'
+p120
+sg6
+I1218670720
+sba(iipl.types.Bunch
+Bunch
+p121
+(dp122
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD8+ T Cell Negative Selection 19053-high purity.xml'
+p123
+sg6
+I1233862316
+sba(iipl.types.Bunch
+Bunch
+p124
+(dp125
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human CD8+ T Cell Negative Selection 19053-high recovery.xml'
+p126
+sg6
+I1215542006
+sba(iipl.types.Bunch
+Bunch
+p127
+(dp128
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Do-it-Yourself Positive Selection 18099-high purity.xml'
+p129
+sg6
+I1218047720
+sba(iipl.types.Bunch
+Bunch
+p130
+(dp131
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Eosinophil Enrichment Negative Selection 19256-high purity.xml'
+p132
+sg6
+I1216767978
+sba(iipl.types.Bunch
+Bunch
+p133
+(dp134
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human EpCAM Positive Selection 18356-high purity.xml'
+p135
+sg6
+I1218656072
+sba(iipl.types.Bunch
+Bunch
+p136
+(dp137
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human EpCAM Positive Selection 18356-high recovery.xml'
+p138
+sg6
+I1218672290
+sba(iipl.types.Bunch
+Bunch
+p139
+(dp140
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human FITC Positive Selection 18552-high purity.xml'
+p141
+sg6
+I1220898378
+sba(iipl.types.Bunch
+Bunch
+p142
+(dp143
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human GlyA Depletion 18352-high purity.xml'
+p144
+sg6
+I1218656130
+sba(iipl.types.Bunch
+Bunch
+p145
+(dp146
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Memory CD4+ T Cell Negative Selection 19157-high recovery.xml'
+p147
+sg6
+I1216767984
+sba(iipl.types.Bunch
+Bunch
+p148
+(dp149
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Monocyte Negative Selection 19058-high recovery.xml'
+p150
+sg6
+I1216767990
+sba(iipl.types.Bunch
+Bunch
+p151
+(dp152
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Monocyte Negative Selection 19059-high recovery.xml'
+p153
+sg6
+I1285164758
+sba(iipl.types.Bunch
+Bunch
+p154
+(dp155
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Myeloid Positive Selection 18653-high purity.xml'
+p156
+sg6
+I1218669214
+sba(iipl.types.Bunch
+Bunch
+p157
+(dp158
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human NK Negative Selection 19055-high recovery.xml'
+p159
+sg6
+I1218740504
+sba(iipl.types.Bunch
+Bunch
+p160
+(dp161
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Naive CD4+ T Cell Negative Selection 19155-high purity.xml'
+p162
+sg6
+I1216916130
+sba(iipl.types.Bunch
+Bunch
+p163
+(dp164
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Naive CD4+ T Cell Negative Selection 19155-high recovery.xml'
+p165
+sg6
+I1216768004
+sba(iipl.types.Bunch
+Bunch
+p166
+(dp167
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Neutrophil Negative Selection 19257-high purity.xml'
+p168
+sg6
+I1216768008
+sba(iipl.types.Bunch
+Bunch
+p169
+(dp170
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human PE Positive Selection 18551-high purity.xml'
+p171
+sg6
+I1218671846
+sba(iipl.types.Bunch
+Bunch
+p172
+(dp173
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Progenitor Negative Selection 19056-high purity.xml'
+p174
+sg6
+I1216768028
+sba(iipl.types.Bunch
+Bunch
+p175
+(dp176
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Progenitor Negative Selection 19056-high recovery.xml'
+p177
+sg6
+I1216768032
+sba(iipl.types.Bunch
+Bunch
+p178
+(dp179
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Progenitor Negative Selection with CD41 Depletion 19057-high purity.xml'
+p180
+sg6
+I1216768072
+sba(iipl.types.Bunch
+Bunch
+p181
+(dp182
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human Progenitor Negative Selection with CD41 Depletion 19057-high recovery.xml'
+p183
+sg6
+I1216768080
+sba(iipl.types.Bunch
+Bunch
+p184
+(dp185
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human T Cell Negative Selection 19051-high purity.xml'
+p186
+sg6
+I1216768038
+sba(iipl.types.Bunch
+Bunch
+p187
+(dp188
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human T Cell Negative Selection 19051-high recovery.xml'
+p189
+sg6
+I1216768042
+sba(iipl.types.Bunch
+Bunch
+p190
+(dp191
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human T Cell Negative Selection 19051HLA.xml'
+p192
+sg6
+I1220660060
+sba(iipl.types.Bunch
+Bunch
+p193
+(dp194
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human pDC enrichment 19062-large volume.xml'
+p195
+sg6
+I1220898366
+sba(iipl.types.Bunch
+Bunch
+p196
+(dp197
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human pDC enrichment 19062-small volume.xml'
+p198
+sg6
+I1220898356
+sba(iipl.types.Bunch
+Bunch
+p199
+(dp200
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human panDC pre-Enrichment Negative Selection 19251-high purity.xml'
+p201
+sg6
+I1216764420
+sba(iipl.types.Bunch
+Bunch
+p202
+(dp203
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\Human panDC pre-Enrichment Negative Selection 19251-high recovery.xml'
+p204
+sg6
+I1216768024
+sba(iipl.types.Bunch
+Bunch
+p205
+(dp206
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\home_axes.xml'
+p207
+sg6
+I1317073841
+sba(iipl.types.Bunch
+Bunch
+p208
+(dp209
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\prime.xml'
+p210
+sg6
+I1317073841
+sba(iipl.types.Bunch
+Bunch
+p211
+(dp212
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\shutdown.xml'
+p213
+sg6
+I1317073841
+sba.

@@ -1,0 +1,58 @@
+(lp1
+(iipl.types.Bunch
+Bunch
+p2
+(dp3
+S'name'
+p4
+VC:\u005CProgram Files (x86)\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman CD33 Positive Selection 18257-high purity.xml
+p5
+sS'time'
+p6
+I1240950866
+sba(iipl.types.Bunch
+Bunch
+p7
+(dp8
+g4
+VC:\u005CProgram Files (x86)\u005CSTI\u005CRoboSep\u005Cprotocols\u005CJason Super Protocol.xml
+p9
+sg6
+I1319565454
+sba(iipl.types.Bunch
+Bunch
+p10
+(dp11
+g4
+VC:\u005CProgram Files (x86)\u005CSTI\u005CRoboSep\u005Cprotocols\u005CSPE Human CD8 Pos Sel 18053 - no incubation.xml
+p12
+sg6
+I1214852734
+sba(iipl.types.Bunch
+Bunch
+p13
+(dp14
+g4
+S'C:\\Program Files (x86)\\STI\\RoboSep\\protocols\\home_axes.xml'
+p15
+sg6
+I1319577748
+sba(iipl.types.Bunch
+Bunch
+p16
+(dp17
+g4
+S'C:\\Program Files (x86)\\STI\\RoboSep\\protocols\\prime.xml'
+p18
+sg6
+I1319577748
+sba(iipl.types.Bunch
+Bunch
+p19
+(dp20
+g4
+S'C:\\Program Files (x86)\\STI\\RoboSep\\protocols\\shutdown.xml'
+p21
+sg6
+I1319577748
+sba.

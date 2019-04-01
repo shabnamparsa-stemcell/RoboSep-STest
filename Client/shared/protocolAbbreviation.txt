@@ -1,0 +1,28 @@
+<part ID><species><antigen/cell target><+/- selection><hi/low,etx>
+
+separator=^
+delimiter=|
+
+
+|bright^brite| 
+|buffy^buf|
+|cord blood^CB|
+|depletion^depl|
+|do-it-yourself^DIY|
+|enrichment^En|
+|high^hi|
+|human^hu|
+|large^lg|
+|low^lo|
+|lysis^lys|
+|mouse^ms|
+|negative^-|
+|positive^+|
+|progenitor^progen|
+|purity^pur|
+|recovery^recov|
+|regulatory^reg|
+|selection^sel|
+|small^sm|
+|volume^vol|
+|whole blood^WB|

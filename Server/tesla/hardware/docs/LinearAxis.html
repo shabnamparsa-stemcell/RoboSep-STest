@@ -1,0 +1,248 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module LinearAxis</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>LinearAxis</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/tesla/dev/dev001/control/tesla/hardware/linearaxis.py">c:\projects\tesla\dev\dev001\control\tesla\hardware\linearaxis.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;<a href="#LinearAxis">LinearAxis</a>.py<br>
+#&nbsp;tesla.hardware.<a href="#LinearAxis">LinearAxis</a><br>
+#<br>
+#&nbsp;Drives&nbsp;a&nbsp;stepper&nbsp;card&nbsp;(via&nbsp;SimpleStep&nbsp;module)&nbsp;along&nbsp;a&nbsp;linear&nbsp;strut<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#&nbsp;<br>
+#&nbsp;Notes:&nbsp;Using&nbsp;Python&nbsp;2.3.3&nbsp;(final)</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="tesla.hardware.Axis.html#Axis">tesla.hardware.Axis.Axis</a>(<a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="LinearAxis.html#LinearAxis">LinearAxis</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="LinearAxis">class <strong>LinearAxis</strong></a>(<a href="tesla.hardware.Axis.html#Axis">tesla.hardware.Axis.Axis</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;to&nbsp;drive&nbsp;a&nbsp;SimpleStep&nbsp;stepper&nbsp;card&nbsp;as&nbsp;a&nbsp;linear&nbsp;strut&nbsp;(ie&nbsp;may&nbsp;move&nbsp;in&nbsp;a&nbsp;straight&nbsp;line)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="LinearAxis.html#LinearAxis">LinearAxis</a></dd>
+<dd><a href="tesla.hardware.Axis.html#Axis">tesla.hardware.Axis.Axis</a></dd>
+<dd><a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a></dd>
+<dd><a href="tesla.hardware.Component.html#Component">tesla.hardware.Component.Component</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="LinearAxis-End"><strong>End</strong></a>(self)</dt><dd><tt>Move&nbsp;to&nbsp;maximum&nbsp;limit</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-HomePosition"><strong>HomePosition</strong></a>(self)</dt><dd><tt>Obtain&nbsp;home&nbsp;Position</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-IncrementPosition"><strong>IncrementPosition</strong></a>(self, increment)</dt><dd><tt>Move&nbsp;by&nbsp;relative&nbsp;amount.<br>
+increment:&nbsp;the&nbsp;relative&nbsp;amount&nbsp;by&nbsp;which&nbsp;to&nbsp;move&nbsp;(in&nbsp;mm)</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-MaxPosition"><strong>MaxPosition</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;maximum&nbsp;permitted&nbsp;Position</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-MinPosition"><strong>MinPosition</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;minimum&nbsp;permitted&nbsp;Position</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-Position"><strong>Position</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;Position</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-SetPosition"><strong>SetPosition</strong></a>(self, position)</dt><dd><tt>Move&nbsp;to&nbsp;absolute&nbsp;Position.<br>
+position:&nbsp;the&nbsp;new&nbsp;setting&nbsp;(in&nbsp;mm)</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-StepsPerMm"><strong>StepsPerMm</strong></a>(self)</dt><dd><tt>Obtain&nbsp;setting&nbsp;for&nbsp;the&nbsp;number&nbsp;of&nbsp;steps&nbsp;per&nbsp;mm</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-__init__"><strong>__init__</strong></a>(self, name, card, configData<font color="#909090">={}</font>, moreSettings<font color="#909090">={}</font>)</dt><dd><tt>Refer&nbsp;to&nbsp;stepper&nbsp;card&nbsp;being&nbsp;controlled</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>DefaultSettings</strong> = {'homingposition_mm': '0.0', 'minimumposition_mm': '0'}</dl>
+
+<dl><dt><strong>HomingPositionLabel</strong> = 'homingposition_mm'</dl>
+
+<dl><dt><strong>MandatoryValues</strong> = ('calibration_stepspermm', 'maximumposition_mm')</dl>
+
+<dl><dt><strong>MaxPositionLabel</strong> = 'maximumposition_mm'</dl>
+
+<dl><dt><strong>MinPositionLabel</strong> = 'minimumposition_mm'</dl>
+
+<dl><dt><strong>MotorStepsPerMmLabel</strong> = 'calibration_stepspermm'</dl>
+
+<hr>
+Methods inherited from <a href="tesla.hardware.Axis.html#Axis">tesla.hardware.Axis.Axis</a>:<br>
+<dl><dt><a name="LinearAxis-GetFirmwareVersion"><strong>GetFirmwareVersion</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;firmware&nbsp;version&nbsp;for&nbsp;the&nbsp;card&nbsp;attached&nbsp;to&nbsp;this&nbsp;axis.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-GetPositionTracking"><strong>GetPositionTracking</strong></a>(self)</dt><dd><tt>Return&nbsp;our&nbsp;internal&nbsp;tracking&nbsp;of&nbsp;the&nbsp;axis&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-HalfStep"><strong>HalfStep</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;half&nbsp;step&nbsp;setting.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-Home"><strong>Home</strong></a>(self)</dt><dd><tt>Homing&nbsp;(override)</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-HomeBackOffSteps"><strong>HomeBackOffSteps</strong></a>(self)</dt><dd><tt>Obtain&nbsp;number&nbsp;of&nbsp;steps&nbsp;to&nbsp;back&nbsp;off&nbsp;during&nbsp;home&nbsp;when&nbsp;the&nbsp;home<br>
+flag&nbsp;is&nbsp;already&nbsp;obscured</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-HomeStep"><strong>HomeStep</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;home&nbsp;step&nbsp;value.<br>
+By&nbsp;default,&nbsp;this&nbsp;is&nbsp;0,&nbsp;but&nbsp;it&nbsp;may&nbsp;be&nbsp;reconfigured&nbsp;if&nbsp;home&nbsp;optos&nbsp;are&nbsp;not<br>
+at&nbsp;start&nbsp;of&nbsp;travel.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-HomingPower"><strong>HomingPower</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;power&nbsp;settings.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-HomingStepSpeedProfile"><strong>HomingStepSpeedProfile</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;homing&nbsp;step&nbsp;speed&nbsp;profile.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-IdlePower"><strong>IdlePower</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;power&nbsp;settings&nbsp;used&nbsp;when&nbsp;axis&nbsp;is&nbsp;stationary.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-IncrementStep"><strong>IncrementStep</strong></a>(self, stepInc, bNonBlocking<font color="#909090">=False</font>)</dt><dd><tt>Move&nbsp;motor&nbsp;by&nbsp;given&nbsp;step&nbsp;increment</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-IsHomed"><strong>IsHomed</strong></a>(self)</dt><dd><tt>Determine&nbsp;whether&nbsp;motor&nbsp;needs&nbsp;homing</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-IsValid"><strong>IsValid</strong></a>(self, step)</dt><dd><tt>Check&nbsp;whether&nbsp;a&nbsp;step&nbsp;setting&nbsp;is&nbsp;valid.<br>
+step:&nbsp;the&nbsp;step&nbsp;setting&nbsp;to&nbsp;validate.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-MaxStep"><strong>MaxStep</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;maximum&nbsp;permitted&nbsp;step&nbsp;count</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-Power"><strong>Power</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;power&nbsp;settings.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-ResetHalfStep"><strong>ResetHalfStep</strong></a>(self)</dt><dd><tt>Resets&nbsp;the&nbsp;velocity&nbsp;profile&nbsp;back&nbsp;to&nbsp;the&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-ResetHomeStep"><strong>ResetHomeStep</strong></a>(self)</dt><dd><tt>Reset&nbsp;the&nbsp;home&nbsp;step&nbsp;value&nbsp;to&nbsp;the&nbsp;configured&nbsp;setting.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-ResetHomingPower"><strong>ResetHomingPower</strong></a>(self)</dt><dd><tt>Resets&nbsp;the&nbsp;power&nbsp;back&nbsp;to&nbsp;the&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-ResetHomingStepSpeedProfile"><strong>ResetHomingStepSpeedProfile</strong></a>(self)</dt><dd><tt>Resets&nbsp;the&nbsp;homing&nbsp;velocity&nbsp;profile&nbsp;back&nbsp;to&nbsp;the&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-ResetIdlePower"><strong>ResetIdlePower</strong></a>(self)</dt><dd><tt>Resets&nbsp;the&nbsp;idle&nbsp;power&nbsp;back&nbsp;to&nbsp;the&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-ResetPower"><strong>ResetPower</strong></a>(self)</dt><dd><tt>Resets&nbsp;the&nbsp;power&nbsp;back&nbsp;to&nbsp;the&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-ResetStepSpeedProfile"><strong>ResetStepSpeedProfile</strong></a>(self)</dt><dd><tt>Resets&nbsp;the&nbsp;velocity&nbsp;profile&nbsp;back&nbsp;to&nbsp;the&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-SetHalfStep"><strong>SetHalfStep</strong></a>(self, newSetting)</dt><dd><tt>Set&nbsp;the&nbsp;current&nbsp;half&nbsp;step&nbsp;setting.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-SetHomeStep"><strong>SetHomeStep</strong></a>(self, homeStep)</dt><dd><tt>Override&nbsp;the&nbsp;home&nbsp;step&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-SetHomingPower"><strong>SetHomingPower</strong></a>(self, newMax, newHold, newDecay)</dt><dd><tt>Set&nbsp;the&nbsp;current&nbsp;power&nbsp;settings.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-SetHomingStepSpeedProfile"><strong>SetHomingStepSpeedProfile</strong></a>(self, newBeginSpeed, newEndSpeed, newSlope)</dt><dd><tt>Sets&nbsp;the&nbsp;velocity&nbsp;profile&nbsp;for&nbsp;subsequent&nbsp;moves.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-SetIdlePower"><strong>SetIdlePower</strong></a>(self, newMax, newHold, newDecay)</dt><dd><tt>Set&nbsp;the&nbsp;power&nbsp;settings&nbsp;to&nbsp;use&nbsp;when&nbsp;axis&nbsp;is&nbsp;stationary.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-SetIdlePowerFromString"><strong>SetIdlePowerFromString</strong></a>(self, profile)</dt><dd><tt>Set&nbsp;the&nbsp;current&nbsp;idle&nbsp;power&nbsp;settings.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-SetPositionTracking"><strong>SetPositionTracking</strong></a>(self, newPosition)</dt><dd><tt>Set&nbsp;the&nbsp;internal&nbsp;tracking&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-SetPower"><strong>SetPower</strong></a>(self, newMax, newHold, newDecay)</dt><dd><tt>Set&nbsp;the&nbsp;current&nbsp;power&nbsp;settings.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-SetPowerFromString"><strong>SetPowerFromString</strong></a>(self, profile)</dt><dd><tt>Set&nbsp;the&nbsp;current&nbsp;power&nbsp;settings.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-SetStep"><strong>SetStep</strong></a>(self, step, bNonBlocking<font color="#909090">=False</font>)</dt><dd><tt>Move&nbsp;motor&nbsp;to&nbsp;a&nbsp;given&nbsp;step.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-SetStepSpeedProfile"><strong>SetStepSpeedProfile</strong></a>(self, newBeginSpeed, newEndSpeed, newSlope)</dt><dd><tt>Sets&nbsp;the&nbsp;velocity&nbsp;profile&nbsp;for&nbsp;subsequent&nbsp;moves.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-SetStepSpeedProfileFromString"><strong>SetStepSpeedProfileFromString</strong></a>(self, profile)</dt><dd><tt>Sets&nbsp;the&nbsp;velocity&nbsp;profile&nbsp;for&nbsp;subsequent&nbsp;moves&nbsp;using&nbsp;a&nbsp;string&nbsp;as&nbsp;input.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-Step"><strong>Step</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;step&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-StepSpeedProfile"><strong>StepSpeedProfile</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;step&nbsp;speed&nbsp;profile.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-ValidateSettings"><strong>ValidateSettings</strong></a>(self)</dt><dd><tt>Override&nbsp;this&nbsp;to&nbsp;validate&nbsp;configuration&nbsp;settings&nbsp;as&nbsp;they&nbsp;are&nbsp;read&nbsp;in.<br>
+Throw&nbsp;a&nbsp;HardwareSettingsError&nbsp;if&nbsp;a&nbsp;problem&nbsp;is&nbsp;encountered</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-WaitForCompletion"><strong>WaitForCompletion</strong></a>(self)</dt><dd><tt>Wait&nbsp;for&nbsp;an&nbsp;action&nbsp;to&nbsp;complete.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-getDeviceUsage"><strong>getDeviceUsage</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;number&nbsp;of&nbsp;full&nbsp;traverses&nbsp;of&nbsp;the&nbsp;axis</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-getHomeStatus"><strong>getHomeStatus</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;stepper&nbsp;home&nbsp;flag&nbsp;state</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-getStepperStatus"><strong>getStepperStatus</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;stepper&nbsp;card&nbsp;status&nbsp;character&nbsp;for&nbsp;this&nbsp;axis</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-homeIfNotHome"><strong>homeIfNotHome</strong></a>(self)</dt><dd><tt>If&nbsp;the&nbsp;home&nbsp;flag&nbsp;is&nbsp;not&nbsp;obscured&nbsp;then&nbsp;perform&nbsp;a&nbsp;home&nbsp;action</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-removePower"><strong>removePower</strong></a>(self)</dt><dd><tt>Turns&nbsp;off&nbsp;the&nbsp;power&nbsp;to&nbsp;axis</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.hardware.Axis.html#Axis">tesla.hardware.Axis.Axis</a>:<br>
+<dl><dt><strong>HomeBackOffStepsLabel</strong> = 'homebackoffsteps'</dl>
+
+<dl><dt><strong>HomeStepLabel</strong> = 'homestep'</dl>
+
+<dl><dt><strong>HomingOvershootLabel</strong> = 'numberofhomingovershootcorrectiontries'</dl>
+
+<dl><dt><strong>HomingOvershootOnLabel</strong> = 'usinghomingovershootcorrection'</dl>
+
+<dl><dt><strong>MotorHalfStepLabel</strong> = 'halfstepexponent'</dl>
+
+<dl><dt><strong>MotorHomingPowerLabel</strong> = 'homingpowerprofile'</dl>
+
+<dl><dt><strong>MotorHomingStepVelocityLabel</strong> = 'homingvelocityprofile'</dl>
+
+<dl><dt><strong>MotorIdlePowerLabel</strong> = 'idlepowerprofile'</dl>
+
+<dl><dt><strong>MotorPowerLabel</strong> = 'standardpowerprofile'</dl>
+
+<dl><dt><strong>MotorStepVelocityLabel</strong> = 'standardvelocityprofile'</dl>
+
+<dl><dt><strong>m_homeBackOffSteps</strong> = 2000</dl>
+
+<hr>
+Methods inherited from <a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a>:<br>
+<dl><dt><a name="LinearAxis-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Simple&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;device.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a>:<br>
+<dl><dt><a name="LinearAxis-registerDevice"><strong>registerDevice</strong></a>(deviceInstance)</dt><dd><tt>Register&nbsp;our&nbsp;device&nbsp;with&nbsp;the&nbsp;Device&nbsp;list.&nbsp;Note&nbsp;that&nbsp;this&nbsp;is&nbsp;a&nbsp;<br>
+static&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-registerLogger"><strong>registerLogger</strong></a>(loggerInstance)</dt><dd><tt>Register&nbsp;an&nbsp;instance&nbsp;of&nbsp;a&nbsp;Tesla&nbsp;logger&nbsp;with&nbsp;the&nbsp;devices.&nbsp;Note&nbsp;that<br>
+this&nbsp;is&nbsp;a&nbsp;static&nbsp;method.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a>:<br>
+<dl><dt><strong>deviceList</strong> = []</dl>
+
+<dl><dt><strong>logger</strong> = None</dl>
+
+<hr>
+Methods inherited from <a href="tesla.hardware.Component.html#Component">tesla.hardware.Component.Component</a>:<br>
+<dl><dt><a name="LinearAxis-execute"><strong>execute</strong></a>(self, functionWithArgs)</dt><dd><tt>Executes&nbsp;the&nbsp;formatted&nbsp;function&nbsp;call&nbsp;string&nbsp;functionWithArgs&nbsp;on<br>
+self.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;device's&nbsp;identifying&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="LinearAxis-getServiceMethods"><strong>getServiceMethods</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;methods&nbsp;that&nbsp;are&nbsp;published&nbsp;to&nbsp;the&nbsp;service&nbsp;interface</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.hardware.Component.html#Component">tesla.hardware.Component.Component</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x008CE610&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'Component' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

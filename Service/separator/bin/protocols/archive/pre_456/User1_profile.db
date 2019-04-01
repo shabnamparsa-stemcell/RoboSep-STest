@@ -1,0 +1,76 @@
+(lp1
+(iipl.types.Bunch
+Bunch
+p2
+(dp3
+S'name'
+p4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CMouse PE Positive Selection 18554-base.xml
+p5
+sS'time'
+p6
+I1179366802
+sba(iipl.types.Bunch
+Bunch
+p7
+(dp8
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman PE Positive Selection 18551-base.xml
+p9
+sg6
+I1179366802
+sba(iipl.types.Bunch
+Bunch
+p10
+(dp11
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman CD4 Positive Selection 18052-high purity.xml
+p12
+sg6
+I1179366800
+sba(iipl.types.Bunch
+Bunch
+p13
+(dp14
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman CD8 Positive Selection 18053-high purity.xml
+p15
+sg6
+I1179366802
+sba(iipl.types.Bunch
+Bunch
+p16
+(dp17
+g4
+VC:\u005CProgram Files\u005CSTI\u005CRoboSep\u005Cprotocols\u005CHuman CD19 Positive Selection 18054-high purity.xml
+p18
+sg6
+I1179366800
+sba(iipl.types.Bunch
+Bunch
+p19
+(dp20
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\home_axes.xml'
+p21
+sg6
+I1179366802
+sba(iipl.types.Bunch
+Bunch
+p22
+(dp23
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\prime.xml'
+p24
+sg6
+I1179366802
+sba(iipl.types.Bunch
+Bunch
+p25
+(dp26
+g4
+S'C:\\Program Files\\STI\\RoboSep\\protocols\\shutdown.xml'
+p27
+sg6
+I1179366802
+sba.

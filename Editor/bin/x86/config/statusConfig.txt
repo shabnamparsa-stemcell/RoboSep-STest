@@ -1,0 +1,84 @@
+﻿# ----------------------------------------------------------------------------
+#  StatusConfig.txt
+# 
+#  Invetech Pty Ltd
+#  Victoria, 3149, Australia
+#  Phone:   (+61) 3 9211 7700
+#  Fax:     (+61) 3 9211 7701
+# 
+#  The copyright to the computer program(s) herein is the property of 
+#  Invetech Pty Ltd, Australia.
+#  The program(s) may be used and/or copied only with the written permission 
+#  of Invetech Pty Ltd or in accordance with the terms and conditions 
+#  stipulated in the agreement/contract under which the program(s)
+#  have been supplied.
+#  
+#  Copyright © 2004. All Rights Reserved.
+# 
+# ----------------------------------------------------------------------------
+# ROBOSEP STATUS CODES
+# --------------------
+#
+#	--- NOTE: THIS FILE SHOULD BE SAVED WITH UTF-8 ENCODING ---
+#
+# Codes are grouped in logical blocks of up to 1000 messages.
+# Message strings that require parameter substitution at run-time must be compatible with the .NET Framework String.Format() routine.
+#
+# -----------------------------------------------------------------------------
+# Code groups 0000-0999 represent Instrument Control FSM state names.
+# -----------------------------------------------------------------------------
+TSC0000=Reserved for future use.
+TSC0001=RESET
+TSC0002=INIT
+TSC0003=IDLE
+TSC0004=RUNNING
+TSC0005=PAUSED
+TSC0006=HALTED
+TSC0007=SHUTTINGDOWN
+TSC0008=SHUTDOWN
+TSC0009=ERROR
+TSC0010=ESTOP
+TSC0011=OFF
+TSC0012=SERVICE
+TSC0013=PAUSECOMMAND
+
+# -----------------------------------------------------------------------------
+# Code groups 1000-1999 represent Control layer status messages
+# -----------------------------------------------------------------------------
+TSC1000=Unspecified Dispatcher status: {0}.
+TSC1001=Action: {0}
+TSC1002=ProtocolManager: {0}
+
+# 
+# Code groups 1100 - 1199 are for sample & protocol management
+#
+TSC1100=More than one maintenance sample. Using just {0}.
+TSC1101=Mixed separation and maintenance samples. Using just {0}.
+
+# -----------------------------------------------------------------------------
+# Code groups 2000-2999 represent Separator layer status messages
+# -----------------------------------------------------------------------------
+TSC2000=Supplied sample volume {0} is not in the range [{1}..{2}] defined by the protocol.
+
+# -----------------------------------------------------------------------------
+# Code groups 3000-3999 represent UI run log messages
+# -----------------------------------------------------------------------------
+TSC3000=Carousel unloaded.
+TSC3001=Batch run halted.
+TSC3002=Batch run completed successfully.
+TSC3003=Batch run paused: {0} {1}
+TSC3004=Processing.
+TSC3005=Shutdown initiated.
+TSC3006=Instrument error: {0}
+TSC3007=Selecting protocol: {0}
+TSC3008=Deselecting protocol: {0}
+
+# ------------------------------------------------------------
+#
+# Code groups 9000 - 9999 are for internal use: debugging,
+# testing, etc.
+#
+
+TSC9999=Status code {0} testing {1} {2}
+
+# eof

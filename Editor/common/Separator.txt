@@ -1,0 +1,342 @@
+﻿# ----------------------------------------------------------------------------
+#  Separator.txt
+# 
+#  Invetech Pty Ltd
+#  Victoria, 3149, Australia
+#  Phone:   (+61) 3 9211 7700
+#  Fax:     (+61) 3 9211 7701
+# 
+#  The copyright to the computer program(s) herein is the property of 
+#  Invetech Pty Ltd, Australia.
+#  The program(s) may be used and/or copied only with the written permission 
+#  of Invetech Pty Ltd or in accordance with the terms and conditions 
+#  stipulated in the agreement/contract under which the program(s)
+#  have been supplied.
+#  
+#  Copyright © 2004. All Rights Reserved.
+# 
+#  Notes:
+#    03/24/05 - halt terms changed to abort
+#    05/24/05 - added confirm abort messages
+#
+#    2011-09-08 sp change text display of "lysis buffer" to"Negative fraction"
+# 
+# ----------------------------------------------------------------------------
+#
+#	--- NOTE: THIS FILE SHOULD BE SAVED WITH UTF-8 ENCODING ---
+#
+# * NOTE: PLEASE MAINTAIN STRING RESOURCES IN SeparatorResourceManager ORDER *
+#
+# ----------------------------------------------------------------------------
+# Separator states
+# ----------------------------------------------------------------------------
+SeparatorState.Initialising=
+SeparatorState.SeparatorUnloaded=Unloaded
+SeparatorState.NoSample=Selected						 
+SeparatorState.Selected=Selected
+SeparatorState.Configured=Configured
+SeparatorState.Ready=Ready
+SeparatorState.Running=Running
+SeparatorState.Paused=Paused
+SeparatorState.BatchHalted=Cancelled
+SeparatorState.BatchComplete=Finished
+SeparatorState.ShuttingDown=Running
+SeparatorState.Shutdown=	
+SeparatorState.PauseCommand=PauseCommand
+
+# ----------------------------------------------------------------------------
+# Separator state descriptions
+# ----------------------------------------------------------------------------
+SeparatorState.SeparatorUnloaded.Description=Choose one or more Protocols via the Selection screen.
+SeparatorState.NoSample.Description=Enter the Sample volume for all Protocols via the Selection screen.
+SeparatorState.Selected.Description=Configure the Selected protocols via the Configuration screen.
+SeparatorState.Configured.Description=Load consumables for all Protocols via the Configuration screen.
+SeparatorState.Ready.Description=Press Start to run the listed Protocols.
+SeparatorState.Running.Description=Running...
+SeparatorState.Paused.Description=Paused
+SeparatorState.BatchHalted.Description=Batch run cancelled.  Press Unload to continue.
+SeparatorState.BatchComplete.Description=Run complete.  Please unload the carousel.
+SeparatorState.ShuttingDown.Description=Shutdown in progress.
+SeparatorState.Shutdown.Description=
+SeparatorState.PausedCommand.Description=Paused
+
+# ----------------------------------------------------------------------------
+# Log message TraceLevel strings
+# ----------------------------------------------------------------------------
+String.TraceLevelVerbose=Debug
+String.TraceLevelInfo=Information             
+String.TraceLevelWarning=Warning
+String.TraceLevelError=Error
+
+# ----------------------------------------------------------------------------
+# Separator strings - General
+# ----------------------------------------------------------------------------
+String.Error=Error
+String.OK=OK
+String.Cancel=Cancel
+String.Yes=Yes
+String.No=No
+String.Or=or
+String.Press=Press
+String.Confirm=Confirm
+String.Ignore=Ignore
+String.ConsoleVersion=Console version
+
+# ----------------------------------------------------------------------------
+# Separator strings - Initialisation
+# ----------------------------------------------------------------------------
+String.InitialisationFailure=Instrument failed to initialise within the timeout period.
+String.InitialSplashText=Loading...
+String.ErrorSplashText=Error! Closing...
+
+# ----------------------------------------------------------------------------
+# Separator strings - Units
+# ----------------------------------------------------------------------------
+String.MicroLitres=µL
+String.MilliLitres=mL
+
+# ----------------------------------------------------------------------------
+# Separator strings - Protocol classes
+# ----------------------------------------------------------------------------
+String.ProtocolClassPositiveText=Positive
+String.ProtocolClassHumanPositiveText=Human Positive
+String.ProtocolClassMousePositiveText=Mouse Positive
+String.ProtocolClassNegativeText=Negative
+String.ProtocolClassHumanNegativeText=Human Negative
+String.ProtocolClassMouseNegativeText=Mouse Negative
+String.ProtocolClassWholeBloodPositiveText=Whole Blood Positive 
+String.ProtocolClassWholeBloodNegativeText=Whole Blood Negative 
+String.ProtocolClassMaintenanceText=Maintenance
+String.ProtocolClassShutdownText=Shutdown
+
+# ----------------------------------------------------------------------------
+# Separator strings - Protocol configuration
+# ----------------------------------------------------------------------------
+String.EnterSampleVolume=Enter a sample volume in the range [{0}..{1}].
+String.EmptyResource=Empty
+String.TubeResource=Tube
+String.VialResource=Vial
+String.FullTipsBoxResource=Full Tips Box
+String.ReagentLotId=Reagent Lot ID
+String.SampleTubeId=Sample Tube ID
+
+# ----------------------------------------------------------------------------
+# Separator strings - Batch run
+# ----------------------------------------------------------------------------
+String.HydraulicFluidLevelWarningCaption=Hydraulic Fluid
+String.HydraulicFluidLevelWarning=The hydraulic fluid bottle should be refilled before running the next batch of protocols. Please clean tip head to ensure consistent tip stripping.\nRefill hydraulic fluid and click 'Confirm', or 'Ignore' to dismiss this reminder for this run.
+String.MaintenanceAndSeparationIncompatibleWarningCaption=Maintenance Protocol Selection
+String.MaintenanceAndSeparationIncompatibleWarning=Maintenance and Separation protocols are not compatible.\nSelecting a Maintenance protocol will deselect all Separation protocols.
+String.SeparationAndMaintenanceIncompatibleWarningCaption=Separation Protocol Selection
+String.SeparationAndMaintenanceIncompatibleWarning=Separation protocols are not compatible with Maintenance protocols.\nSelecting a Separation protocol will deselect all Maintenance protocols.
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing page (& items common to its subpages)
+# ----------------------------------------------------------------------------
+String.SampleProcessingText=Sample Processing
+String.MessagesText=Messages
+String.CancelText=Cancel
+String.ProtocolNameText=Protocol Name
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Run subpage - bdr
+# ----------------------------------------------------------------------------
+String.RunSamplesText=Samples
+String.RunProgressText=Run Progress
+String.RunOperatorIdText=User ID
+String.RunHaltText=Abort
+String.RunHaltingText=Aborting...
+String.RunAbortingText=Cannot continue with lid open...Aborting
+String.RunPauseText=Pause
+String.RunPausingText=Pausing...
+String.RunResumeText=Resume
+String.RunStartText=Load
+String.RunContinue=Continue...
+String.RunStartingText=Starting...
+String.RunUnloadText=Unload
+String.RunUnloadingText=Unloading...
+String.RunSchedulingText=Scheduling...
+String.RunResumingText=Resuming...
+String.RunSamplesSelectProtocolPromptText=< Select Protocol >
+String.RunProgressTimeRemainingText=Time remaining
+String.RunMessagesRunOrSelectText=to continue
+# String.RunMessagesRunOrSelectText=to begin - bdr
+String.RunMessagesEndTimeSpanText=\nWARNING: Batch end times span {0} minutes (exceeds {1} minute threshold).
+String.RunMessagesSelectProtocolText="Select Protocol" to choose a separation protocol.
+String.RunProtocolNameColumnHeaderText=Protocol Name
+String.RunSampleVolumeColumnHeaderText=Volume
+String.RunProtocolTypeColumnHeaderText=Type
+String.RunDeleteSelectionColumnHeaderText=Clear
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Protocols subpage
+# ----------------------------------------------------------------------------
+String.ProtocolsSelectionText=Protocols
+String.ProtocolsMessagesSelectProtocolText=Choose a protocol.  There are {0} available quadrants.
+String.ProtocolsProtocolNameColumnText=Protocol Name
+String.ProtocolsQuadrantsColumnText=Quadrants
+String.ProtocolsTypeColumnText=Type
+String.ProtocolsMRUColumnText=Used
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Sample Volume dialog
+# ----------------------------------------------------------------------------
+String.SampleVolumeText=Sample Volume
+String.SampleVolumePromptText=Enter a volume in the range \n {0} to {1}.
+String.SampleVolumeOutOfRangeText=Entered value is out of range.  Please clear and try again.
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, User ID dialog
+# ----------------------------------------------------------------------------
+String.UserIdText=User ID
+String.UserIdPromptText=Please enter your User ID (up to 6 digits).
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, RoboSep Keypad
+# ----------------------------------------------------------------------------
+String.KeypadCancelText=Cancel
+String.KeypadClearText=Clear
+String.KeypadEnterText=Enter
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Configuration subpage
+# ----------------------------------------------------------------------------
+String.ConfigurationReagentsResourcesText=Reagents & Resources
+String.ConfigurationLocationText=Location
+String.ConfigurationLoadedText=Loaded
+String.ConfigurationRunText=Run
+String.ConfigurationMessagesLoadedRunConfirmationText=Press {0} when all protocol resources are loaded.
+String.ConfigurationQuadrantNumberPromptText=Quadrant(s):
+String.ConfigurationNoneRequired=There are no required resources.
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Reagent Lot ID dialog
+# ----------------------------------------------------------------------------
+String.ReagentLotIdText=Reagent Lot ID
+String.ReagentLotIdIdPromptText=Please enter the 5-digit identifier.
+String.ReagentLotIdInvalidText=Entered ID is not in the correct format.  Please clear and try again.
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Sample Tube Lot ID dialog - bdr
+ ----------------------------------------------------------------------------
+String.SampleTubeIdText=Sample Tube ID 
+String.SampleTubeIdPromptText=Please enter a maximum 48-character identifier.
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Pause/Resume dialog - bdr
+# ----------------------------------------------------------------------------
+String.PauseLidUpCaption=Close lid before running...
+String.PauseLidUpMessage=Running protocols cannot proceed until the lid is in the closed position. Close the lid and press 'Resume'  to continue.
+String.PauseRetryMessage=The lid is still not closed. Running protocols cannot proceed until the lid is in the closed position. Close the lid and press 'Resume'  to continue.
+String.PausePausingMessage=The instrument is pausing. Please wait while the instrument reaches a safe state to pause. This can take up to {0} seconds.
+String.PausePausedMessage=The instrument is paused. Make sure the lid is closed and press 'Resume' to continue running the protocols, or 'Abort' to cancel the protocols.
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Run Confirm dialog - bdr
+# ----------------------------------------------------------------------------
+String.ReadyToRunCaption=Confirm Ready to Run.
+String.ReadyToRunConfirm=Confirm start running protocols?\nBe sure to remove all lids from tubes, vials and bottles.\nEnsure that buffer bottle filled to required level.
+
+# ----------------------------------------------------------------------------
+# Separator strings - Sample Processing, Abort Confirm dialog - bdr
+# ----------------------------------------------------------------------------
+String.AbortRunCaption=Confirm Abort Run.
+String.AbortRunConfirm=Confirm abort running protocols?
+
+# ----------------------------------------------------------------------------
+# Separator strings - Instrument Tasks page
+# ----------------------------------------------------------------------------
+String.InstrumentTasksText=Instrument Tasks
+
+# ----------------------------------------------------------------------------
+# Separator strings - Instrument Tasks, Maintenance subpage
+# ----------------------------------------------------------------------------
+String.MaintenanceText=Maintenance
+String.MaintenancePanelText=Maintenance
+String.ShutdownPanelText=Shutdown
+
+# ----------------------------------------------------------------------------
+# Separator strings - Instrument Tasks, Message Log subpage
+# ----------------------------------------------------------------------------
+String.MessageLogText=Run Log
+String.MessageLogTimeColumnText=Time
+String.MessageLogSeverityColumnText=Severity
+String.MessageLogMessageColumnText=Message
+
+# ----------------------------------------------------------------------------
+# Separator strings - Instrument Tasks, About subpage
+# ----------------------------------------------------------------------------
+String.AboutText=About
+String.ButtonTextExit=Exit Program 
+String.AboutSoftwareGroupText=Software
+String.AboutSoftwareUiText=User Interface
+String.AboutSoftareInstrumentControlText=Instrument Control
+String.AboutInstrumentGroupText=Instrument
+String.AboutInstrumentSerialNumberText=Serial Number
+String.AboutInstrumentServiceConnectionText=Service Connection
+String.AboutInstrumentConnectNetworkCableText=< Connect network cable; re-start application. >
+
+# ----------------------------------------------------------------------------
+# Separator strings - Exceptions
+# ----------------------------------------------------------------------------
+String.ExInstrumentCommunicationsFailure=Instrument communications failure.  
+String.ExFailedToConnectToInstrumentControl=Failed to connect to Instrument Control server.
+String.ExFailedToSubscribeToInstrumentControl=Failed to subscribe for Instrument Control Events.
+String.ExFailedToCreateSeparatorEventSink=Failed to create Separator Event Sink.
+String.ExFailedToConnectToSeparator=Failed to connect to Separator server.
+String.ExMissingMandatoryProtocol=Mandatory protocol missing.
+
+# ----------------------------------------------------------------------------
+# Separator strings - Relative Quadrant Locations
+# ----------------------------------------------------------------------------
+String.SampleTube=Sample Tube
+String.VialA=Magnetic Particle Vial (Triangle)
+# 2011-09-08 sp remove reference  Selection Vial
+# String.VialB=Selection Vial (Square)
+String.VialB=Cocktail Vial (Square)
+String.VialC=Antibody Vial (Circle)
+String.SeparationTube=Separation Tube
+String.WasteTube=Waste Tube
+# 2011-09-08 sp remove reference to lysis buffer
+# String.LysisBufferTube=Lysis Buffer Tube
+String.LysisBufferTube=Negative Fraction Tube
+String.TipRack=Tip Rack
+String.QuadrantBuffer=Buffer Bottle
+String.QuadrantBuffer34=Buffer Bottle 3/4
+String.QuadrantBuffer56=Buffer Bottle 5/6
+#CR
+# 2011-09-08 sp remove reference +/- Selection Vial
+# String.VialBpos=Positive Selection Vial (Square)
+# String.VialBneg=Negative Selection Vial (Square)
+String.VialBpos=Cocktail Vial (Square)
+String.VialBneg=Cocktail Vial (Square)
+String.NegativeFractionTube=Negative Fraction Tube
+# 2011-09-08 sp remove reference to lysis buffer
+# String.LysisBufferNegativeFractionTube=Lysis Buffer / Negative Fraction Tube 
+String.LysisBufferNegativeFractionTube=Negative Fraction Tube 
+
+# ----------------------------------------------------------------------------
+# Separator strings - Error Messages
+# ----------------------------------------------------------------------------
+String.ErrorFatal=An unrecoverable error occurred.  
+String.ErrorTerminate=The application will be terminated.
+String.ErrorTerminateQuestion=Do you want to abort the current run?
+String.ErrorReportError=Please send a copy of the log file to StemCell Technologies.
+String.ErrorCantSchedule=The chosen combination of protocols cannot be scheduled. Try removing a protocol to resolve the problem.
+
+
+# ----------------------------------------------------------------------------
+# RoboSep Type
+# ----------------------------------------------------------------------------
+String.RoboSepS=RoboSep-S
+String.RoboSepS_1_0=RoboSep-S 1.0
+String.RoboSepS_1_1=RoboSep-S 1.1
+String.RoboSepS_1_2=RoboSep-S 1.2
+String.RoboSep16=RoboSep-16
+String.RoboSep16_1_2=RoboSep-16 1.2
+
+# ----------------------------------------------------------------------------
+# RoboSep Reagent Barcode
+# ----------------------------------------------------------------------------
+String.ReagentCustom=Custom Vial
+String.ReagentNotUsed=Not Used

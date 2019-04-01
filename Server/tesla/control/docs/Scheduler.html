@@ -1,0 +1,279 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Scheduler</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Scheduler</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/tesla/dev/dev001/control/tesla/control/scheduler.py">c:\projects\tesla\dev\dev001\control\tesla\control\scheduler.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;Scheduler.py<br>
+#&nbsp;tesla.control.Scheduler<br>
+#<br>
+#&nbsp;Schedule&nbsp;samples&nbsp;and&nbsp;protocols&nbsp;in&nbsp;the&nbsp;Tesla&nbsp;instrument&nbsp;controller<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="tesla.html">tesla</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>(<a href="exceptions.html#StandardError">exceptions.StandardError</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Scheduler.html#SchedulerException">SchedulerException</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="ipl.scheduler.Scheduler.html#TimeBlock">ipl.scheduler.Scheduler.TimeBlock</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Scheduler.html#SchedulerBlock">SchedulerBlock</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Scheduler.html#SampleScheduler">SampleScheduler</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SampleScheduler">class <strong>SampleScheduler</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Adapter&nbsp;that&nbsp;takes&nbsp;the&nbsp;generic&nbsp;scheduler&nbsp;component&nbsp;and&nbsp;makes&nbsp;it<br>
+easy&nbsp;to&nbsp;use&nbsp;for&nbsp;sample/protocol&nbsp;scheduling.<br>
+&nbsp;<br>
+To&nbsp;use&nbsp;this&nbsp;class:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pm&nbsp;=&nbsp;ProtocolManager()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;logger&nbsp;=&nbsp;tesla.logger.Logger(...)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scheduler&nbsp;=&nbsp;<a href="#SampleScheduler">SampleScheduler</a>(pm,&nbsp;logger)<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scheduler.<a href="#SampleScheduler-schedule">schedule</a>(sampleList)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sampleSchedule&nbsp;=&nbsp;scheduler.<a href="#SampleScheduler-getSchedule">getSchedule</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;timeToCompletion&nbsp;=&nbsp;scheduler.<a href="#SampleScheduler-getETC">getETC</a>()<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"Processing&nbsp;should&nbsp;be&nbsp;complete&nbsp;by&nbsp;%s"&nbsp;%&nbsp;(timeToCompletion)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dispatcher.processSchedule(sampleSchedule)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="SampleScheduler-__init__"><strong>__init__</strong></a>(self, protocolManager, logger)</dt><dd><tt>Constructor&nbsp;for&nbsp;the&nbsp;sample/protocol&nbsp;scheduler.&nbsp;Two&nbsp;parameters:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;an&nbsp;instance&nbsp;of&nbsp;the&nbsp;protocol&nbsp;manager<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;an&nbsp;instance&nbsp;of&nbsp;the&nbsp;Tesla&nbsp;event/error&nbsp;logger<br>
+&nbsp;<br>
+Note&nbsp;that&nbsp;we&nbsp;pass&nbsp;in&nbsp;a&nbsp;Logger&nbsp;instance,&nbsp;but&nbsp;only&nbsp;for&nbsp;recording&nbsp;<br>
+information&nbsp;to&nbsp;help&nbsp;us&nbsp;with&nbsp;tracing&nbsp;errors&nbsp;and&nbsp;debugging.&nbsp;Any&nbsp;critical<br>
+error&nbsp;still&nbsp;needs&nbsp;to&nbsp;throw&nbsp;an&nbsp;exception&nbsp;or&nbsp;return&nbsp;a&nbsp;value&nbsp;that&nbsp;indicates<br>
+failure&nbsp;(eg.&nbsp;<a href="#SampleScheduler-schedule">schedule</a>()&nbsp;returns&nbsp;True&nbsp;or&nbsp;False,&nbsp;depending&nbsp;on&nbsp;the&nbsp;status<br>
+of&nbsp;the&nbsp;scheduling&nbsp;effort).<br>
+To&nbsp;enable&nbsp;debugging,&nbsp;set&nbsp;the&nbsp;TESLA_SCHEDULER_DEBUG&nbsp;environment&nbsp;<br>
+variable,&nbsp;as&nbsp;defined&nbsp;in&nbsp;the&nbsp;tesla.config&nbsp;module.</tt></dd></dl>
+
+<dl><dt><a name="SampleScheduler-appendBlocks"><strong>appendBlocks</strong></a>(self, sampleList)</dt><dd><tt>For&nbsp;each&nbsp;sample&nbsp;in&nbsp;the&nbsp;sampleList&nbsp;parameter,&nbsp;unravel&nbsp;it's&nbsp;list&nbsp;of<br>
+blocks&nbsp;for&nbsp;scheduling&nbsp;and&nbsp;append&nbsp;them&nbsp;to&nbsp;the&nbsp;scheduler's&nbsp;block&nbsp;list,&nbsp;<br>
+in&nbsp;readiness&nbsp;for&nbsp;scheduling.</tt></dd></dl>
+
+<dl><dt><a name="SampleScheduler-calculateDuration"><strong>calculateDuration</strong></a>(self)</dt><dd><tt>For&nbsp;the&nbsp;scheduled&nbsp;block&nbsp;list,&nbsp;calculate&nbsp;and&nbsp;return&nbsp;it's&nbsp;duration&nbsp;<br>
+(which&nbsp;is&nbsp;in&nbsp;seconds,&nbsp;relative&nbsp;to&nbsp;T&nbsp;=&nbsp;0).</tt></dd></dl>
+
+<dl><dt><a name="SampleScheduler-dumpBlocks"><strong>dumpBlocks</strong></a>(self)</dt><dd><tt>Dump&nbsp;(to&nbsp;stdout)&nbsp;the&nbsp;list&nbsp;of&nbsp;blocks&nbsp;that&nbsp;we&nbsp;want&nbsp;to&nbsp;schedule.&nbsp;This&nbsp;is<br>
+really&nbsp;just&nbsp;for&nbsp;debugging&nbsp;purposes.</tt></dd></dl>
+
+<dl><dt><a name="SampleScheduler-getBlockList"><strong>getBlockList</strong></a>(self, sample)</dt><dd><tt>Get&nbsp;a&nbsp;list&nbsp;of&nbsp;ScheduleBlock&nbsp;objects&nbsp;for&nbsp;the&nbsp;protocol&nbsp;associated&nbsp;with<br>
+this&nbsp;Sample&nbsp;<a href="__builtin__.html#object">object</a>.</tt></dd></dl>
+
+<dl><dt><a name="SampleScheduler-getCommandTimes"><strong>getCommandTimes</strong></a>(self, command, sample<font color="#909090">=None</font>)</dt><dd><tt>Return&nbsp;a&nbsp;tuple&nbsp;of&nbsp;(open,&nbsp;used,&nbsp;free)&nbsp;times&nbsp;that&nbsp;it&nbsp;will&nbsp;take&nbsp;the&nbsp;<br>
+specified&nbsp;command/workflow&nbsp;to&nbsp;execute&nbsp;with&nbsp;the&nbsp;current&nbsp;sample.&nbsp;This&nbsp;<br>
+is&nbsp;what&nbsp;we&nbsp;feed&nbsp;into&nbsp;our&nbsp;ScheduleBlock&nbsp;for&nbsp;this&nbsp;command.<br>
+Note&nbsp;that&nbsp;we&nbsp;don't&nbsp;use&nbsp;the&nbsp;sample&nbsp;parameter&nbsp;(yet).</tt></dd></dl>
+
+<dl><dt><a name="SampleScheduler-getCommandTypeTimes"><strong>getCommandTypeTimes</strong></a>(self, commandType)</dt><dd><tt>Return&nbsp;a&nbsp;tuple&nbsp;of&nbsp;(open,&nbsp;used,&nbsp;free)&nbsp;times&nbsp;that&nbsp;it&nbsp;will&nbsp;take&nbsp;the&nbsp;<br>
+specified&nbsp;command&nbsp;to&nbsp;execute.</tt></dd></dl>
+
+<dl><dt><a name="SampleScheduler-getDuration"><strong>getDuration</strong></a>(self, padding<font color="#909090">=0</font>)</dt><dd><tt>Return&nbsp;the&nbsp;duration&nbsp;of&nbsp;our&nbsp;schedule&nbsp;(in&nbsp;seconds).<br>
+If&nbsp;padding&nbsp;is&nbsp;set&nbsp;to&nbsp;a&nbsp;positive&nbsp;integer,&nbsp;then&nbsp;this&nbsp;is&nbsp;added&nbsp;to&nbsp;the&nbsp;<br>
+duration.</tt></dd></dl>
+
+<dl><dt><a name="SampleScheduler-getETC"><strong>getETC</strong></a>(self, padding<font color="#909090">=0</font>)</dt><dd><tt>Return&nbsp;the&nbsp;estimated&nbsp;time&nbsp;to&nbsp;completion&nbsp;of&nbsp;the&nbsp;last&nbsp;schedule.&nbsp;The<br>
+time&nbsp;format&nbsp;is&nbsp;modified&nbsp;ISO&nbsp;8601,&nbsp;as&nbsp;documented&nbsp;in&nbsp;tesla.interface.<br>
+Returns&nbsp;the&nbsp;time&nbsp;*now*&nbsp;if&nbsp;there&nbsp;is&nbsp;no&nbsp;schedule&nbsp;(ie.&nbsp;duration&nbsp;=&nbsp;0).<br>
+If&nbsp;padding&nbsp;is&nbsp;set&nbsp;to&nbsp;a&nbsp;positive&nbsp;integer,&nbsp;then&nbsp;this&nbsp;is&nbsp;added&nbsp;to&nbsp;the&nbsp;ETC.</tt></dd></dl>
+
+<dl><dt><a name="SampleScheduler-getSchedule"><strong>getSchedule</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;Schedule&nbsp;<a href="__builtin__.html#object">object</a>,&nbsp;suitable&nbsp;for&nbsp;dispatching&nbsp;to&nbsp;the&nbsp;hardware<br>
+layer.&nbsp;Returns&nbsp;None&nbsp;if&nbsp;there&nbsp;is&nbsp;no&nbsp;schedule.</tt></dd></dl>
+
+<dl><dt><a name="SampleScheduler-getSchedulerTimes"><strong>getSchedulerTimes</strong></a>(self, timeFile<font color="#909090">=None</font>)</dt><dd><tt>Return&nbsp;a&nbsp;map&nbsp;of&nbsp;the&nbsp;scheduler&nbsp;times&nbsp;for&nbsp;each&nbsp;workflow&nbsp;command.&nbsp;If&nbsp;<br>
+timeFile&nbsp;is&nbsp;defined,&nbsp;we&nbsp;try&nbsp;to&nbsp;read&nbsp;in&nbsp;the&nbsp;data&nbsp;from&nbsp;that&nbsp;file&nbsp;(which<br>
+contains&nbsp;a&nbsp;Pythonic&nbsp;map&nbsp;definition;&nbsp;otherwise,&nbsp;we&nbsp;use&nbsp;the&nbsp;default&nbsp;times<br>
+defined&nbsp;in&nbsp;the&nbsp;tesla.control.schedulerTimes&nbsp;module.</tt></dd></dl>
+
+<dl><dt><a name="SampleScheduler-reset"><strong>reset</strong></a>(self)</dt><dd><tt>Reset&nbsp;the&nbsp;scheduler&nbsp;and&nbsp;associated&nbsp;members.</tt></dd></dl>
+
+<dl><dt><a name="SampleScheduler-schedule"><strong>schedule</strong></a>(self, sampleList)</dt><dd><tt>Schedule&nbsp;the&nbsp;protocol&nbsp;commands&nbsp;associated&nbsp;with&nbsp;samples&nbsp;in&nbsp;our&nbsp;<br>
+sample&nbsp;list.<br>
+Returns&nbsp;True&nbsp;if&nbsp;the&nbsp;scheduling&nbsp;is&nbsp;successful,&nbsp;False&nbsp;otherwise.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="SampleScheduler-findSample"><strong>findSample</strong></a>(sampleList, batchID)</dt><dd><tt>Return&nbsp;the&nbsp;sample&nbsp;that&nbsp;corresponds&nbsp;to&nbsp;the&nbsp;batch&nbsp;ID&nbsp;(which&nbsp;should&nbsp;be<br>
+the&nbsp;same&nbsp;as&nbsp;our&nbsp;sample&nbsp;ID.&nbsp;Throws&nbsp;an&nbsp;exception&nbsp;if&nbsp;we&nbsp;can't&nbsp;find&nbsp;one,&nbsp;as<br>
+this&nbsp;is&nbsp;a&nbsp;serious&nbsp;error.<br>
+Note&nbsp;--&nbsp;this&nbsp;is&nbsp;a&nbsp;static&nbsp;method!</tt></dd></dl>
+
+<dl><dt><a name="SampleScheduler-getSampleInfo"><strong>getSampleInfo</strong></a>(sampleList)</dt><dd><tt>For&nbsp;the&nbsp;supplied&nbsp;sample&nbsp;list,&nbsp;create&nbsp;a&nbsp;nice&nbsp;string&nbsp;for&nbsp;debugging&nbsp;info.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>MAX_ITERATIONS</strong> = 800</dl>
+
+<dl><dt><strong>NUM_SCHEDULES</strong> = 5</dl>
+
+<dl><dt><strong>SEARCH_SPACE_MULTIPLIER</strong> = 2</dl>
+
+<dl><dt><strong>START_DELAY</strong> = 1000</dl>
+
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x00955E10&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'SampleScheduler' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>mixTimes</strong> = ()</dl>
+
+<dl><dt><strong>schedulerTimes</strong> = {'Demo': (0, 200, 0), 'Flush': (0, 38, 0), 'HomeAll': (0, 32, 0), 'Mix': (320, 105, 0), 'Park': (0, 15, 0), 'Prime': (0, 54, 0), 'ResuspendVial': (400, 130, 0), 'TopUpVial': (670, 222, 0), 'Transport': (400, 130, 0)}</dl>
+
+<dl><dt><strong>transportTimesLargeTip</strong> = ()</dl>
+
+<dl><dt><strong>transportTimesSmallTip</strong> = ()</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SchedulerBlock">class <strong>SchedulerBlock</strong></a>(<a href="ipl.scheduler.Scheduler.html#TimeBlock">ipl.scheduler.Scheduler.TimeBlock</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;is&nbsp;an&nbsp;enhanced&nbsp;version&nbsp;of&nbsp;<a href="ipl.scheduler.Scheduler.html#TimeBlock">TimeBlock</a>&nbsp;with&nbsp;a&nbsp;nicer&nbsp;constructor&nbsp;and&nbsp;<br>
+some&nbsp;helper&nbsp;functions&nbsp;that&nbsp;hide&nbsp;us&nbsp;from&nbsp;the&nbsp;internals&nbsp;(in&nbsp;case&nbsp;they<br>
+change).<br>
+This&nbsp;is&nbsp;for&nbsp;use&nbsp;by&nbsp;the&nbsp;<a href="#SampleScheduler">SampleScheduler</a>&nbsp;class&nbsp;(and&nbsp;perhaps&nbsp;unit&nbsp;testing).<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Scheduler.html#SchedulerBlock">SchedulerBlock</a></dd>
+<dd><a href="ipl.scheduler.Scheduler.html#TimeBlock">ipl.scheduler.Scheduler.TimeBlock</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="SchedulerBlock-__init__"><strong>__init__</strong></a>(self, openPeriod, usedPeriod, freePeriod, startTime<font color="#909090">=0</font>)</dt><dd><tt>Construct&nbsp;a&nbsp;block&nbsp;with&nbsp;the&nbsp;three&nbsp;schedule&nbsp;periods&nbsp;and&nbsp;an&nbsp;optional<br>
+start&nbsp;time&nbsp;(which&nbsp;isn't&nbsp;used?).</tt></dd></dl>
+
+<dl><dt><a name="SchedulerBlock-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>String&nbsp;representation&nbsp;of&nbsp;the&nbsp;<a href="#SchedulerBlock">SchedulerBlock</a>&nbsp;<a href="__builtin__.html#object">object</a>,&nbsp;to&nbsp;aid&nbsp;debugging.</tt></dd></dl>
+
+<dl><dt><a name="SchedulerBlock-getPeriods"><strong>getPeriods</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;tuple&nbsp;of&nbsp;(open,&nbsp;used&nbsp;and&nbsp;free)&nbsp;times</tt></dd></dl>
+
+<dl><dt><a name="SchedulerBlock-getStartTime"><strong>getStartTime</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;start&nbsp;time&nbsp;(in&nbsp;seconds)</tt></dd></dl>
+
+<dl><dt><a name="SchedulerBlock-setFreePeriod"><strong>setFreePeriod</strong></a>(self, period_secs)</dt><dd><tt>Set&nbsp;the&nbsp;free&nbsp;period&nbsp;(in&nbsp;seconds)</tt></dd></dl>
+
+<dl><dt><a name="SchedulerBlock-setOpenPeriod"><strong>setOpenPeriod</strong></a>(self, period_secs)</dt><dd><tt>Set&nbsp;the&nbsp;open&nbsp;period&nbsp;(in&nbsp;seconds)</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="ipl.scheduler.Scheduler.html#TimeBlock">ipl.scheduler.Scheduler.TimeBlock</a>:<br>
+<dl><dt><a name="SchedulerBlock-__del__"><strong>__del__</strong></a>(self, destroy<font color="#909090">=&lt;built-in function delete_TimeBlock&gt;</font>)</dt></dl>
+
+<dl><dt><strong>__getattr__</strong> <em>lambda</em> self, name</dt></dl>
+
+<dl><dt><strong>__setattr__</strong> <em>lambda</em> self, name, value</dt></dl>
+
+<hr>
+Properties inherited from <a href="ipl.scheduler.Scheduler.html#TimeBlock">ipl.scheduler.Scheduler.TimeBlock</a>:<br>
+<dl><dt><strong>m_FreePeriod</strong></dt>
+<dd><dl><dt><a name="SchedulerBlock-<em>get</em>"><strong><em>get</em></strong></a> = TimeBlock_m_FreePeriod_get(...)</dt></dl>
+</dd>
+<dd><dl><dt><a name="SchedulerBlock-<em>set</em>"><strong><em>set</em></strong></a> = TimeBlock_m_FreePeriod_set(...)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>m_OpenPeriod</strong></dt>
+<dd><dl><dt><a name="SchedulerBlock-<em>get</em>"><strong><em>get</em></strong></a> = TimeBlock_m_OpenPeriod_get(...)</dt></dl>
+</dd>
+<dd><dl><dt><a name="SchedulerBlock-<em>set</em>"><strong><em>set</em></strong></a> = TimeBlock_m_OpenPeriod_set(...)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>m_StartTime</strong></dt>
+<dd><dl><dt><a name="SchedulerBlock-<em>get</em>"><strong><em>get</em></strong></a> = TimeBlock_m_StartTime_get(...)</dt></dl>
+</dd>
+<dd><dl><dt><a name="SchedulerBlock-<em>set</em>"><strong><em>set</em></strong></a> = TimeBlock_m_StartTime_set(...)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>m_UsedPeriod</strong></dt>
+<dd><dl><dt><a name="SchedulerBlock-<em>get</em>"><strong><em>get</em></strong></a> = TimeBlock_m_UsedPeriod_get(...)</dt></dl>
+</dd>
+<dd><dl><dt><a name="SchedulerBlock-<em>set</em>"><strong><em>set</em></strong></a> = TimeBlock_m_UsedPeriod_set(...)</dt></dl>
+</dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ipl.scheduler.Scheduler.html#TimeBlock">ipl.scheduler.Scheduler.TimeBlock</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x00955CF0&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__swig_getmethods__</strong> = {'m_FreePeriod': &lt;built-in function TimeBlock_m_FreePeriod_get&gt;, 'm_OpenPeriod': &lt;built-in function TimeBlock_m_OpenPeriod_get&gt;, 'm_StartTime': &lt;built-in function TimeBlock_m_StartTime_get&gt;, 'm_UsedPeriod': &lt;built-in function TimeBlock_m_UsedPeriod_get&gt;}</dl>
+
+<dl><dt><strong>__swig_setmethods__</strong> = {'m_FreePeriod': &lt;built-in function TimeBlock_m_FreePeriod_set&gt;, 'm_OpenPeriod': &lt;built-in function TimeBlock_m_OpenPeriod_set&gt;, 'm_StartTime': &lt;built-in function TimeBlock_m_StartTime_set&gt;, 'm_UsedPeriod': &lt;built-in function TimeBlock_m_UsedPeriod_set&gt;}</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'TimeBlock' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;(if&nbsp;defined)</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SchedulerException">class <strong>SchedulerException</strong></a>(<a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Tesla&nbsp;scheduling&nbsp;exception&nbsp;class<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Scheduler.html#SchedulerException">SchedulerException</a></dd>
+<dd><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a></dd>
+<dd><a href="exceptions.html#StandardError">exceptions.StandardError</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="SchedulerException-__getitem__"><strong>__getitem__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="SchedulerException-__init__"><strong>__init__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="SchedulerException-__str__"><strong>__str__</strong></a>(...)</dt></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

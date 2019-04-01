@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RoboSepService"
+    targetNamespace="STI"
+    elementFormDefault="qualified"
+    xmlns="STI"
+    xmlns:mstns="STI"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="RoboSepService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="superScripts" />
+        <xs:element ref="maintenanceScripts" />
+        <xs:element ref="userScripts" />
+      </xs:sequence>
+      <xs:attribute name="LoggingLevel" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="userScripts">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element ref="script" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="maintenanceScripts">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element ref="script" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="superScripts">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element ref="script" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="script">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element ref="command" />
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="command">
+    <xs:complexType>
+      <xs:attribute name="Description" type="xs:string"/>
+      <xs:attribute name="ServerCommand" type="xs:string"/>
+      <xs:attribute name="IsManualStep" type="xs:boolean" use="required"/>
+      <xs:attribute name="IsMessageOnly" type="xs:boolean" use="required"/>
+      <xs:attribute name="IsBackStop" type="xs:boolean" use="required"/>
+      <!-- the followig are for setting default for current/corse/fine/min/max -->
+      <xs:attribute name="AxisName" type="xs:string"/>
+      <xs:attribute name="AxisCoarse" type="xs:double" use="required"/>
+      <xs:attribute name="AxisFine" type="xs:double" use="required"/>
+      <xs:attribute name="AxisMin" type="xs:double" use="required"/>
+      <xs:attribute name="AxisMax" type="xs:double" use="required"/>
+      <xs:attribute name="AxisUnits" type="xs:string"/>
+      <xs:attribute name="VideoFilename" type="xs:string"/>
+      <xs:attribute name="RunBarcodeApp" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

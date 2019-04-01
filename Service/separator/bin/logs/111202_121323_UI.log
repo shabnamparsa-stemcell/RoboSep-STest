@@ -1,0 +1,64 @@
+RoboSep UI Log File
+Created: 20111202_121323.034
+
+20111202_121323.037	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20111202_121323.084	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20111202_121324.845	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = FalseLiquid Sensor = False
+20111202_121324.875	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	Info	RoboSep_UserConsole	Loading User Console
+20111202_121324.897	clt	RoboSep_Splash.RoboSep_Splash()	Info	RoboSep_Splash	Initializing Splash Page
+20111202_121324.956	clt	RoboSep_UserConsole.RoboSep_UserConsole_Load()	General	RoboSep_UserConsole	Starting GUI Thread
+20111202_121324.960	clt	RoboSep_UserConsole.AttemptSeparatorConnection()	Info	RoboSep_UserConsole	Connecting...
+20111202_121325.872	clt	RoboSep_UserDB.Robosep_UserDB()()	Debug	RoboSep_UserDB	Initializing UserDB
+20111202_121325.966	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111202_121326.694	clt	RoboSep_UserDB.LoadAllProtocols()	Debug	RoboSep_UserDB	160protocols loaded
+20111202_121326.698	clt	RoboSep_UserDB.XML_SaveUserConfig()	Info	RoboSep_UserDB	set user.db file to : User1.udb
+20111202_121327.021	clt	RoboSep_UserDB.GetProtocolsPath()	Debug	RoboSep_UserDB	output: C:\Program Files (x86)\STI\RoboSep\protocols\
+20111202_121327.061	clt	RoboSep_UserDB.XML_LoadRoboSepUserObject()	Debug	RoboSep_UserDB	Loaded Robosep User
+20111202_121327.527	clt	RoboSep_UserConsole.AtReportInstrumentInformation()	Info	RoboSep_UserConsole	Get system information for About menu
+20111202_121327.539	clt	RoboSep_UserConsole.AtBatchDurationUpdate()	Info	RoboSep_UserConsole	Estimated run completion = 01:00
+20111202_121356.944	clt	RoboSep_UserConsole.ProgressSplash()	Info	RoboSep_UserConsole	Stopping Splash page
+20111202_121357.002	clt	RoboSep_About.RoboSep_About()	Info	RoboSep_About	Initializing About user control
+20111202_121357.088	clt	RoboSep_RunSamples.RoboSep_RunSamples()	Info	RoboSep_RunSamples	Initializing Run Samples user control
+20111202_121357.171	clt	RoboSep_Splash.close()	Info	RoboSep_Splash	Closing Splash Page
+20111202_121359.353	clt	RoboSep_RunSamples.btn_home_Click()	Info	RoboSep_RunSamples	Home button clicked
+20111202_121400.288	clt	RoboSep_Protocols.LoadUsers()	Info	RoboSep_Protocols	Reloading Auto Complete for User Textbox
+20111202_121400.296	clt	RoboSep_Protocols.RoboSep_Protocols()	Info	RoboSep_Protocols	Initializing Protocols user control
+20111202_121400.414	clt	Form_Home.hex_protocols_Click()	Info	Form_Home	Protocols button clicked
+20111202_121401.413	clt	RoboSep_Protocols.button_FullList_Click()	Info	RoboSep_Protocols	Full List selected
+20111202_121408.427	clt	RoboSep_Protocols.btn_home_Click()	Info	RoboSep_Protocols	Home button clicked
+20111202_121412.595	clt	Form_Home.btn_close_Click()	Info	Form_Home	Close Window button clicked
+20111202_121414.058	clt	RoboSep_Protocols.button_AllHuman_Click()	Info	RoboSep_Protocols	All Human selected
+20111202_121529.557	clt	RoboSep_Protocols.btn_home_Click()	Info	RoboSep_Protocols	Home button clicked
+20111202_121532.519	clt	RoboSep_System.RoboSep_System()	Info	RoboSep_System	Initializing System user control
+20111202_121532.588	clt	Form_Home.hex_system_Click()	Info	Form_Home	System button clicked
+20111202_121534.205	clt	RoboSep_System.btn_home_Click()	Info	RoboSep_System	Home button clicked
+20111202_121536.120	clt	Form_Home.hex_protocols_Click()	Info	Form_Home	Protocols button clicked
+20111202_121538.062	clt	RoboSep_Protocols.button_AllMouse_Click()	Info	RoboSep_Protocols	All Mouse selected
+20111202_121539.764	clt	RoboSep_Protocols.btn_home_Click()	Info	RoboSep_Protocols	Home button clicked
+20111202_121541.486	clt	Form_Home.hex_sampling_Click()	Info	Form_Home	Run Sample button clicked
+20111202_121542.097	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111202_121542.256	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111202_121542.287	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111202_121542.408	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111202_121559.253	clt	RoboSep_ProtocolSelect.button_Cancel1_Click()	Info	RoboSep_ProtocolSelect	Protocol Selection cancel clicked
+20111202_121600.724	clt	RoboSep_RunSamples.btn_home_Click()	Info	RoboSep_RunSamples	Home button clicked
+20111202_121601.641	clt	Form_Home.hex_protocols_Click()	Info	Form_Home	Protocols button clicked
+20111202_121603.382	clt	RoboSep_Protocols.button_AllMouse_Click()	Info	RoboSep_Protocols	All Mouse selected
+20111202_121607.951	clt	RoboSep_Protocols.button_WholeBlood_Click()	Info	RoboSep_Protocols	Whole Blood
+20111202_121609.302	clt	RoboSep_Protocols.btn_home_Click()	Info	RoboSep_Protocols	Home button clicked
+20111202_121610.658	clt	Form_Home.hex_sampling_Click()	Info	Form_Home	Run Sample button clicked
+20111202_121611.472	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111202_121611.592	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111202_121611.764	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111202_121611.833	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111202_121615.245	clt	RoboSep_ProtocolSelect.button_Cancel1_Click()	Info	RoboSep_ProtocolSelect	Protocol Selection cancel clicked
+20111202_121616.780	clt	RoboSep_RunSamples.btn_home_Click()	Info	RoboSep_RunSamples	Home button clicked
+20111202_121621.866	clt	Form_Home.hex_protocols_Click()	Info	Form_Home	Protocols button clicked
+20111202_121622.935	clt	RoboSep_Protocols.button_AllHuman_Click()	Info	RoboSep_Protocols	All Human selected
+20111202_121624.142	clt	RoboSep_Protocols.btn_home_Click()	Info	RoboSep_Protocols	Home button clicked
+20111202_121624.869	clt	Form_Home.hex_sampling_Click()	Info	Form_Home	Run Sample button clicked
+20111202_121625.272	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111202_121625.420	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111202_121625.504	clt	RoboSep_ProtocolSelect.RoboSep_ProtocolSelect()	Info	RoboSep_ProtocolSelect	New Protocol Select user control generated
+20111202_121625.601	clt	RoboSep_RunSamples.Protocol_Selection()	Info	RoboSep_RunSamples	Opening protocol selection for quadrant 1
+20111202_121628.798	clt	RoboSep_ProtocolSelect.button_Cancel1_Click()	Info	RoboSep_ProtocolSelect	Protocol Selection cancel clicked

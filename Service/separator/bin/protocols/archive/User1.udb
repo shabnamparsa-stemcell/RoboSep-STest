@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoboSepUser xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="STI">
+  <UserName>User1</UserName>
+  <ProtocolFile>OQ4 100 uL dispense Sample to Separation.xml</ProtocolFile>
+  <ProtocolFile>OQ4 1000 dispense Sample to Separation.xml</ProtocolFile>
+  <ProtocolFile>OQ4 1000 uL dispense Sel to Sample.xml</ProtocolFile>
+  <ProtocolFile>OQ4 10000 uL dispense Sample to Separation.xml</ProtocolFile>
+  <ProtocolFile>OQ4 13 uL dispense Mag to Sample.xml</ProtocolFile>
+  <ProtocolFile>OQ4 180 uL dispense Mag to Sample.xml</ProtocolFile>
+  <ProtocolFile>OQ4 181 uL dispense Mag to Sample.xml</ProtocolFile>
+  <ProtocolFile>OQ4 3000 uL dispense Sample to Separation.xml</ProtocolFile>
+  <ProtocolFile>OQ4 3001 uL dispense Sample to Separation.xml</ProtocolFile>
+  <ProtocolFile>OQ4 454 uL dispense Mag to Sample.xml</ProtocolFile>
+  <ProtocolFile>OQ4 455 uL dispense Mag to Sample.xml</ProtocolFile>
+  <ProtocolFile>OQ4 5000 uL dispense Sample to Separation.xml</ProtocolFile>
+  <ProtocolFile>OQ4 5001 uL dispense Sample to Separation.xml</ProtocolFile>
+  <ProtocolFile>SPE Human CD8 Pos Sel 18053 - no incubation.xml</ProtocolFile>
+</RoboSepUser>

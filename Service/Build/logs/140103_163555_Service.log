@@ -1,0 +1,5 @@
+RoboSep UI Log File
+Created: 20140103_163555.166
+
+20140103_163555.275	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20140103_163555.365	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded

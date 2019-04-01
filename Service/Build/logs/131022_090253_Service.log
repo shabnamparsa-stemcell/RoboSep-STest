@@ -1,0 +1,24 @@
+RoboSep UI Log File
+Created: 20131022_090253.564
+
+20131022_090253.574	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Creating new ServiceLogin
+20131022_090253.593	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Service Login Form loaded
+20131022_090313.188	clt	RoboSep_UserConsole.RoboSep_UserConsole()	General	RoboSep_UserConsole	Initializing User Console
+20131022_090313.277	clt	Form_Home.Form_Home()	Info	Form_Home	Creating new Form_Home
+20131022_090314.710	clt	RoboSep_UserConsole.grabSystemOptions()	Info	RoboSep_UserConsole	Get Sys Options: Lid Sensor = TrueLiquid Sensor = True
+20131022_090315.132	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131022_090318.671	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20131022_090320.442	clt	Keyboard.Keyboard()	Info	Keyboard	New Touch Keyboard generated w/ Autocomplete
+20131022_090324.598	clt	Keyboard.textbox_input_KeyDown()	Info	Keyboard	Keboard output: ''
+20131022_090338.593	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Attempt login
+20131022_090338.603	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login as SuperUser
+20131022_090338.683	clt	ServiceLogin.ServiceLogin()	Info	ServiceLogin	Login successful
+20131022_090338.833	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Creating new RoboSepServiceManualStepControl
+20131022_090338.873	clt	RoboSepServiceManualStepControl.RoboSepServiceManualStepControl()	Info	RoboSepServiceManualStepControl	Service Manual Step Control generated
+20131022_090338.913	clt	ServiceDialog.ServiceDialog()	Info	ServiceDialog	Creating new ServiceDialog
+20131022_090339.544	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20131022_090340.766	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20131022_090352.933	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Closing ServiceMenu
+20131022_090417.569	clt	ServiceDialog.btnServiceMenu_Click()	Info	ServiceDialog	clicked
+20131022_090417.669	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Creating new ServiceMenu
+20131022_090427.250	clt	ServiceMenu.ServiceMenu()	Info	ServiceMenu	Closing ServiceMenu

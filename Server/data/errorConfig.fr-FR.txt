@@ -1,0 +1,157 @@
+﻿# ----------------------------------------------------------------------------
+#  errorConfig.fr-FR.txt
+# 
+#  Invetech Pty Ltd
+#  Victoria, 3149, Australia
+#  Phone:   (+61) 3 9211 7700
+#  Fax:     (+61) 3 9211 7701
+# 
+#  The copyright to the computer program(s) herein is the property of 
+#  Invetech Pty Ltd, Australia.
+#  The program(s) may be used and/or copied only with the written permission 
+#  of Invetech Pty Ltd or in accordance with the terms and conditions 
+#  stipulated in the agreement/contract under which the program(s)
+#  have been supplied.
+#  
+#  Copyright © 2004. All Rights Reserved.
+# 
+# ----------------------------------------------------------------------------
+# ROBOSEP ERROR CODES
+# -------------------
+#
+#	--- NOTE: THIS FILE SHOULD BE SAVED WITH UTF-8 ENCODING ---
+#
+# Codes are grouped in logical blocks of up to 1000 messages.
+# Message strings that require parameter substitution at run-time must be compatible with the .NET Framework String.Format() routine.
+#
+# ---
+# Code groups 0000-0999 represent hardware-level errors.
+# ---
+#
+# 0000 - 0099 represent fundamental hardware problems.
+#
+TEC0000=Réservé pour le futur usage.
+TEC0001=Erreur de contrôleur non spécifiée d'instrument: {0}.
+
+#
+# 0100 - 199: Instrument-level errors
+#
+TEC0100=Placeholder pour l'erreur d'instrument.
+TEC0101=Erreur non spécifiée de couche de matériel d'instrument: {0}.
+TEC0102=Erreur non spécifiée d'expédition de déroulement des opérations.
+
+#
+# 0200 - 299: Tip stripper errors
+#
+TEC0200=Ne peut pas communiquer avec le décolleur de bout.
+TEC0210=Incapable d'engager le bout.
+TEC0211=Incapable de désengager le bout.
+
+#
+# 0300 - 399: Carousel errors
+#
+TEC0300=Ne peut pas communiquer avec le carrousel.
+TEC0302=Erreur de syntaxe de commande de carrousel.
+TEC0303=Le carrousel pas homed.
+TEC0304=Carrousel initialisé mais aucune sonde à la maison étant employée.
+TEC0305=Paramètre de carrousel hors de gamme.
+TEC0320=Ne peut pas le carrousel à la maison.
+TEC0321=Perte d'étape de carrousel.
+
+#
+# 0400 - 499: DRD pump errors
+#
+TEC0400=Ne peut pas communiquer avec la pompe de DRD.
+TEC0402=Erreur de syntaxe de commande de pompe de DRD.
+TEC0403=Pompe de DRD homed.
+TEC0404=Pompe de DRD initialisée mais aucune sonde à la maison étant employée.
+TEC0405=Paramètre de pompe de DRD hors de gamme.
+TEC0420=Ne peut pas la pompe à la maison de DRD.
+TEC0421=Perte d'étape de pompe de DRD.
+
+#
+# 0500 - 599: Z axis errors
+#
+TEC0500=Ne peut pas communiquer avec l'axe de Z.
+TEC0502=Erreur de syntaxe de commande d'axe de Z.
+TEC0503=L'axe de Z pas homed.
+TEC0504=Axe de Z initialisé mais aucune sonde à la maison étant employée.
+TEC0505=Paramètre d'axe de Z hors de gamme.
+TEC0520=Can not home Z axis.
+TEC0521=Perte d'étape d'axe de Z.
+
+#
+# 0600 - 699: Theta axis errors
+#
+TEC0600=Ne peut pas communiquer avec l'axe de thêta.
+TEC0602=Erreur de syntaxe de commande d'axe de thêta.
+TEC0603=Axe de thêta homed.
+TEC0604=Axe de thêta initialisé mais aucune sonde à la maison étant employée.
+TEC0605=Paramètre d'axe de thêta hors de gamme.
+TEC0620=Ne peut pas l'axe à la maison de thêta.
+TEC0621=Perte d'étape d'axe de thêta.
+
+#
+# 0700 - 700: Generic stepper card errors
+#
+TEC0700=Erreur de pas d'axe de carte: {0}
+
+# ------------------------------------------------------------
+#
+# Code groups 1000 - 1999 represent errors that are not
+# related directly to hardware                 
+#
+TEC1000=Placeholder.
+
+#
+# 1100 - 1199: File, directory & disk errors
+#
+TEC1100=Incapable de lire le dossier de hardware.ini.
+TEC1101=Espace disque insuffisant ({0} bytes).
+
+#
+# 1200 - 1299: Control centre errors
+#
+TEC1200=État incorrect: {0}.
+TEC1201=Dans l'état faux ({0}) à éteindre équipez.
+TEC1202=Pas dans l'état À VIDE.
+TEC1203=Aucun code de statut pour {0} états.
+
+TEC1210=L'ordre d'initialisation a échoué: {0}.
+
+TEC1220=Exception de programmateur: {0}.
+TEC1221=Programme vide pour des échantillons.
+TEC1222=Non capable programmer des échantillons.
+
+TEC1230=N'a pas pu commencer la course: {0}.
+TEC1231=Incapable de faire une pause course.
+
+TEC1240=Could not get reagent volume information: {0}.
+TEC1241=Reagent calculation failure: {0}.
+
+TEC1250=Prévu un échantillon d'arrêt, pas {0}.
+
+#
+# 1300 - 1399: Instrument interface errors
+#
+TEC1300=Panne de communications d'instrument: {0}.
+
+#
+# 1400 - 1499: Service errors
+#
+TEC1400=Pas dans l'état de service (dans {0} états).
+
+TEC1410=Aucune allumette pour {0} objets.
+TEC1411={0} est un appel inadmissible.
+
+
+# ------------------------------------------------------------
+#
+# Code groups 9000 - 9999 are for internal use: debugging,
+# testing, etc.
+#
+
+TEC9998=Essai des erreurs de centre de commande {0} {1}.
+TEC9999=Équipez l'essai des erreurs d'interface {0} {1}.
+
+# eof

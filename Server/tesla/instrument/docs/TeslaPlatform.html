@@ -1,0 +1,331 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module TeslaPlatform</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>TeslaPlatform</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/p4tesla/tesla/dev/dev001/control/tesla/instrument/teslaplatform.py">c:\projects\p4tesla\tesla\dev\dev001\control\tesla\instrument\teslaplatform.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;<a href="#TeslaPlatform">TeslaPlatform</a>.py<br>
+#&nbsp;instrument.<a href="tesla.instrument.Platform.html#Platform">Platform</a>.<a href="#TeslaPlatform">TeslaPlatform</a><br>
+#<br>
+#&nbsp;Adds&nbsp;the&nbsp;<a href="#Tip">Tip</a>&nbsp;Stripper&nbsp;control&nbsp;to&nbsp;the&nbsp;base&nbsp;<a href="tesla.instrument.Platform.html#Platform">Platform</a><br>
+#<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="copy.html">copy</a><br>
+</td><td width="25%" valign=top><a href="tesla.html">tesla</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="tesla.instrument.Platform.html#Platform">tesla.instrument.Platform.Platform</a>(<a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="TeslaPlatform.html#TeslaPlatform">TeslaPlatform</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="tesla.instrument.Platform.html#PlatformError">tesla.instrument.Platform.PlatformError</a>(<a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="TeslaPlatform.html#TeslaPlatformError">TeslaPlatformError</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="TeslaPlatform.html#Tip">Tip</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TeslaPlatform">class <strong>TeslaPlatform</strong></a>(<a href="tesla.instrument.Platform.html#Platform">tesla.instrument.Platform.Platform</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Adds&nbsp;the&nbsp;<a href="#Tip">Tip</a>&nbsp;Stripper&nbsp;control&nbsp;to&nbsp;the&nbsp;base&nbsp;<a href="tesla.instrument.Platform.html#Platform">Platform</a>,<br>
+thereby&nbsp;encompassing&nbsp;all&nbsp;mechanical&nbsp;components&nbsp;of&nbsp;the&nbsp;Tesla&nbsp;instrument<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="TeslaPlatform.html#TeslaPlatform">TeslaPlatform</a></dd>
+<dd><a href="tesla.instrument.Platform.html#Platform">tesla.instrument.Platform.Platform</a></dd>
+<dd><a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="TeslaPlatform-CurrentTipID"><strong>CurrentTipID</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;sector&nbsp;and&nbsp;storage&nbsp;position&nbsp;of&nbsp;the&nbsp;currently&nbsp;loaded&nbsp;tip.<br>
+If&nbsp;not&nbsp;tip&nbsp;is&nbsp;currently&nbsp;loaded,&nbsp;the&nbsp;storage&nbsp;position&nbsp;will&nbsp;be&nbsp;None,&nbsp;but&nbsp;the&nbsp;sector&nbsp;for&nbsp;the&nbsp;last&nbsp;tip&nbsp;used&nbsp;is&nbsp;retained.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-CurrentTipLength"><strong>CurrentTipLength</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;length&nbsp;of&nbsp;the&nbsp;currently&nbsp;loaded&nbsp;tip.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-HomeZAxis"><strong>HomeZAxis</strong></a>(self)</dt><dd><tt>Home&nbsp;*just*&nbsp;the&nbsp;Z&nbsp;axis.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-Initialise"><strong>Initialise</strong></a>(self)</dt><dd><tt>Perform&nbsp;initialisation&nbsp;of&nbsp;the&nbsp;<a href="tesla.instrument.Platform.html#Platform">Platform</a>&nbsp;components</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-MoveCarouselToSafePosition"><strong>MoveCarouselToSafePosition</strong></a>(self)</dt><dd><tt>Move&nbsp;the&nbsp;carousel&nbsp;to&nbsp;a&nbsp;safe&nbsp;position&nbsp;(away&nbsp;from&nbsp;the&nbsp;opto&nbsp;for&nbsp;easy<br>
+removal)</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-MoveTo"><strong>MoveTo</strong></a>(self, sector, referencePoint, finalZPosition)</dt><dd><tt>Move&nbsp;the&nbsp;dispenser&nbsp;to&nbsp;a&nbsp;given&nbsp;position:<br>
+-&nbsp;Raise&nbsp;the&nbsp;robot&nbsp;arm&nbsp;to&nbsp;travel&nbsp;position.<br>
+-&nbsp;Move&nbsp;the&nbsp;carousel&nbsp;and&nbsp;robot&nbsp;to&nbsp;the&nbsp;given&nbsp;referencePoint.<br>
+-&nbsp;Lower&nbsp;the&nbsp;robot&nbsp;so&nbsp;that&nbsp;the&nbsp;current&nbsp;tip&nbsp;is&nbsp;at&nbsp;the&nbsp;given&nbsp;finalZPosition.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-MoveToSectorAndTip"><strong>MoveToSectorAndTip</strong></a>(self, sector, tipNbr)</dt><dd><tt>Move&nbsp;to&nbsp;a&nbsp;specific&nbsp;sector&nbsp;and&nbsp;tip&nbsp;number.&nbsp;Note&nbsp;that&nbsp;this&nbsp;moves&nbsp;both&nbsp;<br>
+the&nbsp;carousel&nbsp;and&nbsp;the&nbsp;theta&nbsp;axis.<br>
+This&nbsp;is&nbsp;mainly&nbsp;for&nbsp;testing&nbsp;purposes.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-PickupTip"><strong>PickupTip</strong></a>(self, sector, tipNbr)</dt><dd><tt>Pickup&nbsp;a&nbsp;tip&nbsp;from&nbsp;the&nbsp;given&nbsp;position.<br>
+-&nbsp;Check&nbsp;that&nbsp;the&nbsp;given&nbsp;tipNbr&nbsp;is&nbsp;valid<br>
+-&nbsp;Move&nbsp;to&nbsp;pick&nbsp;up&nbsp;the&nbsp;tip<br>
+-&nbsp;Engage&nbsp;the&nbsp;tip<br>
+-&nbsp;Update&nbsp;the&nbsp;travel&nbsp;position<br>
+It&nbsp;is&nbsp;assumed&nbsp;that&nbsp;there&nbsp;is&nbsp;no&nbsp;tip&nbsp;currently&nbsp;in&nbsp;place</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-StripTip"><strong>StripTip</strong></a>(self)</dt><dd><tt>Strip&nbsp;the&nbsp;current&nbsp;tip.<br>
+-&nbsp;Check&nbsp;that&nbsp;the&nbsp;given&nbsp;tipNbr&nbsp;is&nbsp;valid<br>
+-&nbsp;Move&nbsp;Z-Axis&nbsp;to&nbsp;home&nbsp;and&nbsp;check&nbsp;for&nbsp;home<br>
+-&nbsp;Move&nbsp;to&nbsp;the&nbsp;current&nbsp;tip's&nbsp;original&nbsp;pickup&nbsp;point<br>
+-&nbsp;Move&nbsp;Z-Axis&nbsp;to&nbsp;the&nbsp;strip&nbsp;position<br>
+-&nbsp;Engage&nbsp;the&nbsp;tip&nbsp;stripper<br>
+-&nbsp;Set&nbsp;high&nbsp;power&nbsp;for&nbsp;strip&nbsp;action<br>
+-&nbsp;Move&nbsp;Z-Axis&nbsp;up&nbsp;to&nbsp;stripped&nbsp;position<br>
+-&nbsp;Home&nbsp;the&nbsp;Z&nbsp;axis<br>
+-&nbsp;Disengage&nbsp;the&nbsp;<a href="#Tip">Tip</a>&nbsp;Stripper<br>
+-&nbsp;Move&nbsp;the&nbsp;Z-Axis&nbsp;to&nbsp;the&nbsp;travel&nbsp;position&nbsp;(without&nbsp;tip)<br>
+It&nbsp;is&nbsp;assumed&nbsp;that&nbsp;there&nbsp;is&nbsp;a&nbsp;tip&nbsp;currently&nbsp;in&nbsp;place</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-__init__"><strong>__init__</strong></a>(self, name)</dt><dd><tt>Load&nbsp;in&nbsp;the&nbsp;configuration&nbsp;data&nbsp;for&nbsp;the&nbsp;<a href="tesla.instrument.Platform.html#Platform">Platform</a>.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-getTipStripper"><strong>getTipStripper</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;reference&nbsp;to&nbsp;the&nbsp;<a href="#TeslaPlatform">TeslaPlatform</a>'s&nbsp;tip&nbsp;stripper&nbsp;instance.<br>
+This&nbsp;is&nbsp;mainly&nbsp;for&nbsp;testing&nbsp;purposes.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>BulkLabel</strong> = 'bccm_bulkcontainer_degrees'</dl>
+
+<dl><dt><strong>LysisBuffer_Label</strong> = 'lysisbuffervial_50ml_degrees'</dl>
+
+<dl><dt><strong>PickupPosition1mLTipLabel</strong> = 'z_pickupposition_1mltip_mm'</dl>
+
+<dl><dt><strong>PickupPosition5mLTipLabel</strong> = 'z_pickupposition_5mltip_mm'</dl>
+
+<dl><dt><strong>PickupTipIdlePowerProfileLabel</strong> = 'z_pickuptip_idlepowerprofile'</dl>
+
+<dl><dt><strong>PickupTipPowerProfileLabel</strong> = 'z_pickuptip_powerprofile'</dl>
+
+<dl><dt><strong>PickupTipVelocityProfileLabel</strong> = 'z_pickuptip_velocityprofile'</dl>
+
+<dl><dt><strong>PostPickupPositionLabel</strong> = 'z_postpickupposition_mm'</dl>
+
+<dl><dt><strong>PrePickupPosition1mLTipLabel</strong> = 'z_prepickupposition_1mltip_mm'</dl>
+
+<dl><dt><strong>PrePickupPosition5mLTipLabel</strong> = 'z_prepickupposition_5mltip_mm'</dl>
+
+<dl><dt><strong>ReagentVialA_Label</strong> = 'reagentviala_degrees'</dl>
+
+<dl><dt><strong>ReagentVialB_Label</strong> = 'reagentvialb_degrees'</dl>
+
+<dl><dt><strong>ReagentVialC_Label</strong> = 'reagentvialc_degrees'</dl>
+
+<dl><dt><strong>Sample_Label</strong> = 'samplevial_14ml_degrees'</dl>
+
+<dl><dt><strong>SectionName</strong> = 'Platform'</dl>
+
+<dl><dt><strong>Separation_Label</strong> = 'separationvial_14ml_degrees'</dl>
+
+<dl><dt><strong>StripPosition1mLTipLabel</strong> = 'z_stripposition_1mltip_mm'</dl>
+
+<dl><dt><strong>StripPosition5mLTipLabel</strong> = 'z_stripposition_5mltip_mm'</dl>
+
+<dl><dt><strong>StripTip1_1ml_Label</strong> = 'striptip_1ml_position1_degrees'</dl>
+
+<dl><dt><strong>StripTip2_1ml_Label</strong> = 'striptip_1ml_position2_degrees'</dl>
+
+<dl><dt><strong>StripTip3_1ml_Label</strong> = 'striptip_1ml_position3_degrees'</dl>
+
+<dl><dt><strong>StripTip4_5ml_Label</strong> = 'striptip_5ml_position4_degrees'</dl>
+
+<dl><dt><strong>StripTip5_5ml_Label</strong> = 'striptip_5ml_position5_degrees'</dl>
+
+<dl><dt><strong>StripTipPowerProfileLabel</strong> = 'z_striptip_powerprofile'</dl>
+
+<dl><dt><strong>StripTipVelocityProfileLabel</strong> = 'z_striptip_velocityprofile'</dl>
+
+<dl><dt><strong>StrippedPosition1mLTipLabel</strong> = 'z_strippedposition_1mltip_mm'</dl>
+
+<dl><dt><strong>StrippedPosition5mLTipLabel</strong> = 'z_strippedposition_5mltip_mm'</dl>
+
+<dl><dt><strong>Tip1_1ml_Label</strong> = 'tip_1ml_position1_degrees'</dl>
+
+<dl><dt><strong>Tip2_1ml_Label</strong> = 'tip_1ml_position2_degrees'</dl>
+
+<dl><dt><strong>Tip3_1ml_Label</strong> = 'tip_1ml_position3_degrees'</dl>
+
+<dl><dt><strong>Tip4_5ml_Label</strong> = 'tip_5ml_position4_degrees'</dl>
+
+<dl><dt><strong>Tip5_5ml_Label</strong> = 'tip_5ml_position5_degrees'</dl>
+
+<dl><dt><strong>TipStripperSectionName</strong> = 'TipStripper'</dl>
+
+<dl><dt><strong>TravelOffset1mLTipLabel</strong> = 'z_traveloffset_1mltip_mm'</dl>
+
+<dl><dt><strong>TravelOffset5mLTipLabel</strong> = 'z_traveloffset_5mltip_mm'</dl>
+
+<dl><dt><strong>TravelOffsetNoTipLabel</strong> = 'z_traveloffset_notip_mm'</dl>
+
+<dl><dt><strong>TravelPositionLabel</strong> = 'z_travelposition_mm'</dl>
+
+<dl><dt><strong>Waste_Label</strong> = 'wastevial_50ml_degrees'</dl>
+
+<dl><dt><strong>configData</strong> = {'carouselreferencepointoffset_degrees': '-18', 'numberofsectorsoncarousel': '4', 'robotthetareferencepointoffset_degrees': '36', 'sizeofcarouselsector_degrees': '90', 'z_pickupposition_1mltip_mm': '143', 'z_pickupposition_5mltip_mm': '144', 'z_pickuptip_idlepowerprofile': '200, 200, 0', 'z_pickuptip_powerprofile': '170, 170, 0', 'z_pickuptip_velocityprofile': '500, 20000, 20', 'z_postpickupposition_mm': '10', ...}</dl>
+
+<dl><dt><strong>referencePointData</strong> = {'bccm_bulkcontainer_degrees': '89', 'lysisbuffervial_50ml_degrees': '-12.5,  -12,    35.5,  -81', 'reagentviala_degrees': '-24,      2,    47.2,  -76.8', 'reagentvialb_degrees': '-24,    -4.5,   47.2,  -84', 'reagentvialc_degrees': '-24,    -11.75, 47.2,  -91', 'samplevial_14ml_degrees': '-22.55, -45,    45.75,-123.5', 'separationvial_14ml_degrees': '-7.1,   -75.5,  30.3, -135', 'striptip_1ml_position1_degrees': '-14,    -26.6', 'striptip_1ml_position2_degrees': '-14,    -31.95', 'striptip_1ml_position3_degrees': '-14,    -37.3', ...}</dl>
+
+<dl><dt><strong>tipReferenceMap</strong> = {}</dl>
+
+<dl><dt><strong>tipStripReferenceMap</strong> = {}</dl>
+
+<hr>
+Methods inherited from <a href="tesla.instrument.Platform.html#Platform">tesla.instrument.Platform.Platform</a>:<br>
+<dl><dt><a name="TeslaPlatform-MoveToPosition"><strong>MoveToPosition</strong></a>(self, sector, referencePoint, positionIndex<font color="#909090">=0</font>)</dt><dd><tt>Move&nbsp;carousel&nbsp;and&nbsp;robot&nbsp;so&nbsp;that&nbsp;the&nbsp;robot&nbsp;arm&nbsp;is&nbsp;above&nbsp;a&nbsp;given&nbsp;position.<br>
+sector:&nbsp;the&nbsp;sector&nbsp;of&nbsp;the&nbsp;carousel&nbsp;to&nbsp;access&nbsp;(nominally&nbsp;90&nbsp;degrees).<br>
+referencePoint:&nbsp;a&nbsp;reference&nbsp;to&nbsp;the&nbsp;list&nbsp;of&nbsp;positions&nbsp;the&nbsp;carousel&nbsp;and&nbsp;robot&nbsp;need&nbsp;to&nbsp;be&nbsp;set&nbsp;at.<br>
+index:&nbsp;0,&nbsp;or&nbsp;1:&nbsp;this&nbsp;indicates&nbsp;which&nbsp;rendezvous&nbsp;position&nbsp;to&nbsp;use.&nbsp;The&nbsp;first&nbsp;is&nbsp;used&nbsp;by&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-NbrSectors"><strong>NbrSectors</strong></a>(self)</dt><dd><tt>Give&nbsp;the&nbsp;number&nbsp;of&nbsp;sectors&nbsp;on&nbsp;the&nbsp;platform</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-RobotZOffset"><strong>RobotZOffset</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;calibrated&nbsp;offset&nbsp;for&nbsp;the&nbsp;Robot&nbsp;Z-Axis</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-SetTravelPosition"><strong>SetTravelPosition</strong></a>(self, zTravelPosition)</dt><dd><tt>Set&nbsp;the&nbsp;position&nbsp;for&nbsp;the&nbsp;Robot's&nbsp;Z&nbsp;Axis&nbsp;when&nbsp;rotating&nbsp;the&nbsp;Theta&nbsp;axis</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-TravelPosition"><strong>TravelPosition</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;travel&nbsp;position&nbsp;for&nbsp;the&nbsp;Robot's&nbsp;Z&nbsp;Axis&nbsp;when&nbsp;rotating&nbsp;the&nbsp;Theta&nbsp;axis</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-getCarousel"><strong>getCarousel</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;carousel&nbsp;instance.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-getRobot"><strong>getRobot</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;Z/theta&nbsp;robot&nbsp;instance.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.instrument.Platform.html#Platform">tesla.instrument.Platform.Platform</a>:<br>
+<dl><dt><strong>CarouselThetaOffsetLabel</strong> = 'carouselreferencepointoffset_degrees'</dl>
+
+<dl><dt><strong>NbrSectorsLabel</strong> = 'numberofsectorsoncarousel'</dl>
+
+<dl><dt><strong>RobotThetaOffsetLabel</strong> = 'robotthetareferencepointoffset_degrees'</dl>
+
+<dl><dt><strong>SectorOffsetLabel</strong> = 'homingsector'</dl>
+
+<dl><dt><strong>SectorSenseLabel</strong> = 'sectororderingsense'</dl>
+
+<dl><dt><strong>SectorSizeLabel</strong> = 'sizeofcarouselsector_degrees'</dl>
+
+<dl><dt><strong>mandatoryData</strong> = ('numberofsectorsoncarousel', 'sizeofcarouselsector_degrees', 'carouselreferencepointoffset_degrees', 'robotthetareferencepointoffset_degrees')</dl>
+
+<hr>
+Methods inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><a name="TeslaPlatform-NullTrace"><strong>NullTrace</strong></a>(self, message)</dt><dd><tt>Don't&nbsp;do&nbsp;anything&nbsp;with&nbsp;the&nbsp;message;&nbsp;used&nbsp;when&nbsp;we&nbsp;don't&nbsp;want&nbsp;debugging<br>
+traces.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-PrintTrace"><strong>PrintTrace</strong></a>(self, message)</dt><dd><tt>Print&nbsp;a&nbsp;debug&nbsp;message</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Simple&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;Subsystem.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-execute"><strong>execute</strong></a>(self, functionWithArgs)</dt><dd><tt>Executes&nbsp;the&nbsp;formatted&nbsp;function&nbsp;call&nbsp;string&nbsp;functionWithArgs&nbsp;on<br>
+self.</tt></dd></dl>
+
+<dl><dt><a name="TeslaPlatform-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;Subsystem's&nbsp;identifying&nbsp;name.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><a name="TeslaPlatform-registerInstance"><strong>registerInstance</strong></a>(instance)</dt><dd><tt>Register&nbsp;our&nbsp;instance&nbsp;with&nbsp;the&nbsp;Instance&nbsp;list.&nbsp;Note&nbsp;that&nbsp;this&nbsp;is&nbsp;a&nbsp;<br>
+static&nbsp;method.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.instrument.Subsystem.html#Subsystem">tesla.instrument.Subsystem.Subsystem</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x009681F0&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'Subsystem' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>instanceList</strong> = []</dl>
+
+<dl><dt><strong>mandatorySettings</strong> = ()</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TeslaPlatformError">class <strong>TeslaPlatformError</strong></a>(<a href="tesla.instrument.Platform.html#PlatformError">tesla.instrument.Platform.PlatformError</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Exception&nbsp;for&nbsp;errors&nbsp;related&nbsp;to&nbsp;Tesla&nbsp;<a href="tesla.instrument.Platform.html#Platform">Platform</a>&nbsp;operation<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="TeslaPlatform.html#TeslaPlatformError">TeslaPlatformError</a></dd>
+<dd><a href="tesla.instrument.Platform.html#PlatformError">tesla.instrument.Platform.PlatformError</a></dd>
+<dd><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a></dd>
+<dd><a href="exceptions.html#StandardError">exceptions.StandardError</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="TeslaPlatformError-__getitem__"><strong>__getitem__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TeslaPlatformError-__init__"><strong>__init__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TeslaPlatformError-__str__"><strong>__str__</strong></a>(...)</dt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Tip">class <strong>Tip</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Structure&nbsp;used&nbsp;to&nbsp;record&nbsp;data&nbsp;for&nbsp;tip&nbsp;geometry<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Tip-__init__"><strong>__init__</strong></a>(self, offset, pickupPosition, prePickupPosition, stripPosition, strippedPosition)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-Lock"><strong>Lock</strong></a> = allocate_lock(...)</dt><dd><tt>allocate_lock()&nbsp;-&gt;&nbsp;lock&nbsp;object<br>
+(allocate()&nbsp;is&nbsp;an&nbsp;obsolete&nbsp;synonym)<br>
+&nbsp;<br>
+Create&nbsp;a&nbsp;new&nbsp;lock&nbsp;object.&nbsp;&nbsp;See&nbsp;LockType.__doc__&nbsp;for&nbsp;information&nbsp;about&nbsp;locks.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>gHardwareData</strong> = &lt;tesla.hardware.config.HardwareConfiguration instance at 0x008635D0&gt;</td></tr></table>
+</body></html>

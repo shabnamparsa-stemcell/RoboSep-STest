@@ -1,0 +1,384 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module DrdPump</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>DrdPump</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C|/projects/p4tesla/tesla/dev/dev001/control/tesla/hardware/drdpump.py">c:\projects\p4tesla\tesla\dev\dev001\control\tesla\hardware\drdpump.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;DrdPump.py<br>
+#&nbsp;Tesla.Hardware.DrdPump<br>
+#<br>
+#&nbsp;Drives&nbsp;a&nbsp;stepper&nbsp;card&nbsp;for&nbsp;a&nbsp;DRD&nbsp;pump<br>
+#&nbsp;<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;2004<br>
+#&nbsp;495&nbsp;Blackburn&nbsp;Rd<br>
+#&nbsp;Mt&nbsp;Waverley,&nbsp;Vic,&nbsp;Australia.<br>
+#&nbsp;Phone&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7700<br>
+#&nbsp;Fax&nbsp;&nbsp;&nbsp;(+61&nbsp;3)&nbsp;9211&nbsp;7701<br>
+#&nbsp;<br>
+#&nbsp;The&nbsp;copyright&nbsp;to&nbsp;the&nbsp;computer&nbsp;program(s)&nbsp;herein&nbsp;is&nbsp;the<br>
+#&nbsp;property&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd,&nbsp;Australia.<br>
+#&nbsp;The&nbsp;program(s)&nbsp;may&nbsp;be&nbsp;used&nbsp;and/or&nbsp;copied&nbsp;only&nbsp;with<br>
+#&nbsp;the&nbsp;written&nbsp;permission&nbsp;of&nbsp;Invetech&nbsp;Operations&nbsp;Pty&nbsp;Ltd<br>
+#&nbsp;or&nbsp;in&nbsp;accordance&nbsp;with&nbsp;the&nbsp;terms&nbsp;and&nbsp;conditions<br>
+#&nbsp;stipulated&nbsp;in&nbsp;the&nbsp;agreement/contract&nbsp;under&nbsp;which<br>
+#&nbsp;the&nbsp;program(s)&nbsp;have&nbsp;been&nbsp;supplied.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="tesla.hardware.Axis.html#Axis">tesla.hardware.Axis.Axis</a>(<a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="DrdPump.html#DRDPump">DRDPump</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="tesla.hardware.Axis.html#AxisError">tesla.hardware.Axis.AxisError</a>(<a href="tesla.hardware.config.html#HardwareError">tesla.hardware.config.HardwareError</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="DrdPump.html#DRDPumpError">DRDPumpError</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="DrdPump.html#PistonModeSettings">PistonModeSettings</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DRDPump">class <strong>DRDPump</strong></a>(<a href="tesla.hardware.Axis.html#Axis">tesla.hardware.Axis.Axis</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;to&nbsp;drive&nbsp;the&nbsp;SimpleStep&nbsp;stepper&nbsp;card&nbsp;on&nbsp;a&nbsp;DRD&nbsp;pump.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="DrdPump.html#DRDPump">DRDPump</a></dd>
+<dd><a href="tesla.hardware.Axis.html#Axis">tesla.hardware.Axis.Axis</a></dd>
+<dd><a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="DRDPump-BacklashSteps"><strong>BacklashSteps</strong></a>(self)</dt><dd><tt>The&nbsp;number&nbsp;of&nbsp;steps&nbsp;used&nbsp;in&nbsp;offsetting&nbsp;backlash.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-DualPistonModeUlPerStep"><strong>DualPistonModeUlPerStep</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;ul&nbsp;conversion&nbsp;for&nbsp;dual&nbsp;piston&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-FullStrokeVolume"><strong>FullStrokeVolume</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;estimated&nbsp;volume&nbsp;displaced&nbsp;(in&nbsp;ul)&nbsp;by&nbsp;a&nbsp;full&nbsp;stroke&nbsp;(ie&nbsp;across&nbsp;both&nbsp;pistons).<br>
+NB:&nbsp;the&nbsp;point&nbsp;at&nbsp;which&nbsp;the&nbsp;piston&nbsp;modes&nbsp;actually&nbsp;switch&nbsp;is&nbsp;not&nbsp;known.&nbsp;It&nbsp;is&nbsp;assumed&nbsp;to&nbsp;be&nbsp;in<br>
+the&nbsp;middle&nbsp;of&nbsp;the&nbsp;mid-range</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-IncrementVolume"><strong>IncrementVolume</strong></a>(self, volumeInc)</dt><dd><tt>Aspirate/Dispense&nbsp;a&nbsp;given&nbsp;volume&nbsp;(in&nbsp;ul).</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-IsUsingDualPistonMode"><strong>IsUsingDualPistonMode</strong></a>(self)</dt><dd><tt>Indicates&nbsp;whether&nbsp;piston&nbsp;is&nbsp;currently&nbsp;in&nbsp;dual&nbsp;piston&nbsp;range</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-IsUsingSinglePistonMode"><strong>IsUsingSinglePistonMode</strong></a>(self)</dt><dd><tt>Indicates&nbsp;whether&nbsp;piston&nbsp;is&nbsp;currently&nbsp;in&nbsp;single&nbsp;piston&nbsp;range</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-MaxDualPistonModeVolume"><strong>MaxDualPistonModeVolume</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;maximum&nbsp;volume&nbsp;(in&nbsp;ul)&nbsp;available&nbsp;when&nbsp;in&nbsp;dual&nbsp;piston&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-MaxSinglePistonModeVolume"><strong>MaxSinglePistonModeVolume</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;maximum&nbsp;volume&nbsp;(in&nbsp;ul)&nbsp;available&nbsp;when&nbsp;in&nbsp;Single&nbsp;piston&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-MaxVolume"><strong>MaxVolume</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;maximum&nbsp;volume&nbsp;(in&nbsp;ul)&nbsp;available&nbsp;in&nbsp;current&nbsp;piston&nbsp;mode.<br>
+NB:&nbsp;the&nbsp;backlash&nbsp;volume&nbsp;is&nbsp;*not*&nbsp;taken&nbsp;into&nbsp;account.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-ParkValve"><strong>ParkValve</strong></a>(self)</dt><dd><tt>Aspirate/Dispense&nbsp;a&nbsp;given&nbsp;volume&nbsp;(in&nbsp;ul).</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-PartialStrokeVolume"><strong>PartialStrokeVolume</strong></a>(self, steps)</dt><dd><tt>Returns&nbsp;the&nbsp;estimated&nbsp;volume&nbsp;displaced&nbsp;(in&nbsp;ul)&nbsp;by&nbsp;a&nbsp;partial&nbsp;stroke&nbsp;(ie&nbsp;optionally<br>
+across&nbsp;both&nbsp;pistons).&nbsp;NB:&nbsp;the&nbsp;point&nbsp;at&nbsp;which&nbsp;the&nbsp;piston&nbsp;modes&nbsp;actually&nbsp;switch&nbsp;is&nbsp;not<br>
+known.&nbsp;It&nbsp;is&nbsp;assumed&nbsp;to&nbsp;be&nbsp;in&nbsp;the&nbsp;middle&nbsp;of&nbsp;the&nbsp;mid-range</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SetFlowRate"><strong>SetFlowRate</strong></a>(self, newVolumeRate)</dt><dd><tt>Set&nbsp;the&nbsp;flow&nbsp;rate.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SetVolume"><strong>SetVolume</strong></a>(self, newVolume)</dt><dd><tt>Aspirate/Dispense&nbsp;to&nbsp;the&nbsp;given&nbsp;volume&nbsp;(in&nbsp;ul).<br>
+A&nbsp;<a href="#DRDPump">DRDPump</a>&nbsp;exception&nbsp;is&nbsp;thrown&nbsp;if&nbsp;maximum&nbsp;volume&nbsp;of&nbsp;current&nbsp;piston&nbsp;mode&nbsp;is&nbsp;exceeded.<br>
+NB:&nbsp;backlash&nbsp;is&nbsp;not&nbsp;taken&nbsp;into&nbsp;account.&nbsp;This&nbsp;must&nbsp;be&nbsp;catered&nbsp;for&nbsp;by&nbsp;the&nbsp;caller</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SinglePistonModeUlPerStep"><strong>SinglePistonModeUlPerStep</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;ul&nbsp;conversion&nbsp;for&nbsp;single&nbsp;piston&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-UseDefaultAspirationFlowRate"><strong>UseDefaultAspirationFlowRate</strong></a>(self)</dt><dd><tt>Reset&nbsp;the&nbsp;flow&nbsp;rate&nbsp;to&nbsp;the&nbsp;default&nbsp;aspiration&nbsp;rate&nbsp;for&nbsp;the&nbsp;current&nbsp;piston&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-UseDefaultDispenseFlowRate"><strong>UseDefaultDispenseFlowRate</strong></a>(self)</dt><dd><tt>Reset&nbsp;the&nbsp;flow&nbsp;rate&nbsp;to&nbsp;the&nbsp;default&nbsp;dispense&nbsp;rate&nbsp;for&nbsp;the&nbsp;current&nbsp;piston&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-UseDualPistonMode"><strong>UseDualPistonMode</strong></a>(self)</dt><dd><tt>Positions&nbsp;pump&nbsp;to&nbsp;start&nbsp;of&nbsp;dual&nbsp;piston&nbsp;mode.<br>
+Throws&nbsp;an&nbsp;exception&nbsp;if&nbsp;valve&nbsp;has&nbsp;not&nbsp;been&nbsp;set.<br>
+NB:&nbsp;Backlash&nbsp;is&nbsp;not&nbsp;taken&nbsp;into&nbsp;account</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-UseGenericAspirationFlowRate"><strong>UseGenericAspirationFlowRate</strong></a>(self)</dt><dd><tt>Reset&nbsp;the&nbsp;flow&nbsp;rate&nbsp;to&nbsp;the&nbsp;generic&nbsp;aspiration&nbsp;rate,&nbsp;regardless&nbsp;of&nbsp;piston&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-UseGenericDispenseFlowRate"><strong>UseGenericDispenseFlowRate</strong></a>(self)</dt><dd><tt>Reset&nbsp;the&nbsp;flow&nbsp;rate&nbsp;to&nbsp;the&nbsp;generic&nbsp;dispense&nbsp;rate,&nbsp;regardless&nbsp;of&nbsp;piston&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-UseSinglePistonMode"><strong>UseSinglePistonMode</strong></a>(self)</dt><dd><tt>Positions&nbsp;pump&nbsp;to&nbsp;start&nbsp;of&nbsp;single&nbsp;piston&nbsp;mode.<br>
+Throws&nbsp;an&nbsp;exception&nbsp;if&nbsp;valve&nbsp;has&nbsp;not&nbsp;been&nbsp;set.<br>
+NB:&nbsp;Backlash&nbsp;is&nbsp;not&nbsp;taken&nbsp;into&nbsp;account</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-UseSinglePistonModeWithoutStartMove"><strong>UseSinglePistonModeWithoutStartMove</strong></a>(self)</dt><dd><tt>Positions&nbsp;pump&nbsp;to&nbsp;start&nbsp;of&nbsp;single&nbsp;piston&nbsp;mode.<br>
+Throws&nbsp;an&nbsp;exception&nbsp;if&nbsp;valve&nbsp;has&nbsp;not&nbsp;been&nbsp;set.<br>
+NB:&nbsp;Backlash&nbsp;is&nbsp;not&nbsp;taken&nbsp;into&nbsp;account</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-Volume"><strong>Volume</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;volume&nbsp;(in&nbsp;ul)&nbsp;that&nbsp;is&nbsp;currently&nbsp;aspirated.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-__init__"><strong>__init__</strong></a>(self, name, card, configData<font color="#909090">={}</font>, moreSettings<font color="#909090">={}</font>)</dt><dd><tt>Driver&nbsp;for&nbsp;DRD&nbsp;pump.<br>
+name:&nbsp;the&nbsp;name&nbsp;to&nbsp;use&nbsp;when&nbsp;tracking&nbsp;use<br>
+card:&nbsp;the&nbsp;card&nbsp;associated&nbsp;with&nbsp;the&nbsp;pump<br>
+configData:&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;configuration&nbsp;values&nbsp;with&nbsp;which&nbsp;to&nbsp;override&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;default&nbsp;settings.<br>
+moreSettings:&nbsp;Refer&nbsp;to&nbsp;stepper&nbsp;card&nbsp;being&nbsp;controlled</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>BacklashStepLabel</strong> = 'backlashsteps'</dl>
+
+<dl><dt><strong>DefaultSettings</strong> = {'backlashsteps': '150', 'dualpistonmode_calibration_ulperstep': '0.1728', 'dualpistonmode_end_step': '1650', 'dualpistonmode_standardaspirationflowrate_ulpersec': '100', 'dualpistonmode_standarddispenseflowrate_ulpersec': '100', 'dualpistonmode_start_step': '0', 'genericaspirationflowrate_ulpersec': '750', 'genericdispenseflowrate_ulpersec': '750', 'homingvelocityprofile': '42000, 44874, 10', 'singlepistonmode_calibration_ulperstep': '1.33', ...}</dl>
+
+<dl><dt><strong>DualPistonModeAspirationRateUlPerSecLabel</strong> = 'dualpistonmode_standardaspirationflowrate_ulpersec'</dl>
+
+<dl><dt><strong>DualPistonModeDispenseRateUlPerSecLabel</strong> = 'dualpistonmode_standarddispenseflowrate_ulpersec'</dl>
+
+<dl><dt><strong>DualPistonModeEndLabel</strong> = 'dualpistonmode_end_step'</dl>
+
+<dl><dt><strong>DualPistonModeStartLabel</strong> = 'dualpistonmode_start_step'</dl>
+
+<dl><dt><strong>DualPistonModeVolumePerStepLabel</strong> = 'dualpistonmode_calibration_ulperstep'</dl>
+
+<dl><dt><strong>GenericAspirationFlowRateUlPerSecLabel</strong> = 'genericaspirationflowrate_ulpersec'</dl>
+
+<dl><dt><strong>GenericDispenseFlowRateUlPerSecLabel</strong> = 'genericdispenseflowrate_ulpersec'</dl>
+
+<dl><dt><strong>MandatoryValues</strong> = ()</dl>
+
+<dl><dt><strong>SinglePistonModeAspirationRateUlPerSecLabel</strong> = 'singlepistonmode_standardaspirationflowrate_ulpersec'</dl>
+
+<dl><dt><strong>SinglePistonModeDispenseRateUlPerSecLabel</strong> = 'singlepistonmode_standarddispenseflowrate_ulpersec'</dl>
+
+<dl><dt><strong>SinglePistonModeEndLabel</strong> = 'singlepistonmode_end_step'</dl>
+
+<dl><dt><strong>SinglePistonModeStartLabel</strong> = 'singlepistonmode_start_step'</dl>
+
+<dl><dt><strong>SinglePistonModeVolumePerStepLabel</strong> = 'singlepistonmode_calibration_ulperstep'</dl>
+
+<dl><dt><strong>ValveHomingPositionLabel</strong> = 'valvepositionwhenhoming'</dl>
+
+<dl><dt><strong>ValveParkingPositionLabel</strong> = 'valvepositionwhenparked'</dl>
+
+<dl><dt><strong>ValvePortLabel</strong> = 'steppercardvalveport'</dl>
+
+<hr>
+Methods inherited from <a href="tesla.hardware.Axis.html#Axis">tesla.hardware.Axis.Axis</a>:<br>
+<dl><dt><a name="DRDPump-End"><strong>End</strong></a>(self)</dt><dd><tt>Move&nbsp;to&nbsp;maximum&nbsp;limit</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-GetFirmwareVersion"><strong>GetFirmwareVersion</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;firmware&nbsp;version&nbsp;for&nbsp;the&nbsp;card&nbsp;attached&nbsp;to&nbsp;this&nbsp;axis.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-GetPositionTracking"><strong>GetPositionTracking</strong></a>(self)</dt><dd><tt>Return&nbsp;our&nbsp;internal&nbsp;tracking&nbsp;of&nbsp;the&nbsp;axis&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-HalfStep"><strong>HalfStep</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;half&nbsp;step&nbsp;setting.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-Home"><strong>Home</strong></a>(self)</dt><dd><tt>Homing&nbsp;(override)</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-HomeBackOffSteps"><strong>HomeBackOffSteps</strong></a>(self)</dt><dd><tt>Obtain&nbsp;number&nbsp;of&nbsp;steps&nbsp;to&nbsp;back&nbsp;off&nbsp;during&nbsp;home&nbsp;when&nbsp;the&nbsp;home<br>
+flag&nbsp;is&nbsp;already&nbsp;obscured</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-HomeStep"><strong>HomeStep</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;home&nbsp;step&nbsp;value.<br>
+By&nbsp;default,&nbsp;this&nbsp;is&nbsp;0,&nbsp;but&nbsp;it&nbsp;may&nbsp;be&nbsp;reconfigured&nbsp;if&nbsp;home&nbsp;optos&nbsp;are&nbsp;not<br>
+at&nbsp;start&nbsp;of&nbsp;travel.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-HomingPower"><strong>HomingPower</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;power&nbsp;settings.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-HomingStepSpeedProfile"><strong>HomingStepSpeedProfile</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;homing&nbsp;step&nbsp;speed&nbsp;profile.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-IdlePower"><strong>IdlePower</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;power&nbsp;settings&nbsp;used&nbsp;when&nbsp;axis&nbsp;is&nbsp;stationary.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-IncrementStep"><strong>IncrementStep</strong></a>(self, stepInc, bNonBlocking<font color="#909090">=False</font>)</dt><dd><tt>Move&nbsp;motor&nbsp;by&nbsp;given&nbsp;step&nbsp;increment</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-IsHomed"><strong>IsHomed</strong></a>(self)</dt><dd><tt>Determine&nbsp;whether&nbsp;motor&nbsp;needs&nbsp;homing</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-IsValid"><strong>IsValid</strong></a>(self, step)</dt><dd><tt>Check&nbsp;whether&nbsp;a&nbsp;step&nbsp;setting&nbsp;is&nbsp;valid.<br>
+step:&nbsp;the&nbsp;step&nbsp;setting&nbsp;to&nbsp;validate.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-MaxStep"><strong>MaxStep</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;maximum&nbsp;permitted&nbsp;step&nbsp;count</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-Power"><strong>Power</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;power&nbsp;settings.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-ResetHalfStep"><strong>ResetHalfStep</strong></a>(self)</dt><dd><tt>Resets&nbsp;the&nbsp;velocity&nbsp;profile&nbsp;back&nbsp;to&nbsp;the&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-ResetHomeStep"><strong>ResetHomeStep</strong></a>(self)</dt><dd><tt>Reset&nbsp;the&nbsp;home&nbsp;step&nbsp;value&nbsp;to&nbsp;the&nbsp;configured&nbsp;setting.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-ResetHomingPower"><strong>ResetHomingPower</strong></a>(self)</dt><dd><tt>Resets&nbsp;the&nbsp;power&nbsp;back&nbsp;to&nbsp;the&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-ResetHomingStepSpeedProfile"><strong>ResetHomingStepSpeedProfile</strong></a>(self)</dt><dd><tt>Resets&nbsp;the&nbsp;homing&nbsp;velocity&nbsp;profile&nbsp;back&nbsp;to&nbsp;the&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-ResetIdlePower"><strong>ResetIdlePower</strong></a>(self)</dt><dd><tt>Resets&nbsp;the&nbsp;idle&nbsp;power&nbsp;back&nbsp;to&nbsp;the&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-ResetPower"><strong>ResetPower</strong></a>(self)</dt><dd><tt>Resets&nbsp;the&nbsp;power&nbsp;back&nbsp;to&nbsp;the&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-ResetStepSpeedProfile"><strong>ResetStepSpeedProfile</strong></a>(self)</dt><dd><tt>Resets&nbsp;the&nbsp;velocity&nbsp;profile&nbsp;back&nbsp;to&nbsp;the&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SetHalfStep"><strong>SetHalfStep</strong></a>(self, newSetting)</dt><dd><tt>Set&nbsp;the&nbsp;current&nbsp;half&nbsp;step&nbsp;setting.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SetHomeStep"><strong>SetHomeStep</strong></a>(self, homeStep)</dt><dd><tt>Override&nbsp;the&nbsp;home&nbsp;step&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SetHomingPower"><strong>SetHomingPower</strong></a>(self, newMax, newHold, newDecay)</dt><dd><tt>Set&nbsp;the&nbsp;current&nbsp;power&nbsp;settings.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SetHomingStepSpeedProfile"><strong>SetHomingStepSpeedProfile</strong></a>(self, newBeginSpeed, newEndSpeed, newSlope)</dt><dd><tt>Sets&nbsp;the&nbsp;velocity&nbsp;profile&nbsp;for&nbsp;subsequent&nbsp;moves.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SetIdlePower"><strong>SetIdlePower</strong></a>(self, newMax, newHold, newDecay)</dt><dd><tt>Set&nbsp;the&nbsp;power&nbsp;settings&nbsp;to&nbsp;use&nbsp;when&nbsp;axis&nbsp;is&nbsp;stationary.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SetIdlePowerFromString"><strong>SetIdlePowerFromString</strong></a>(self, profile)</dt><dd><tt>Set&nbsp;the&nbsp;current&nbsp;idle&nbsp;power&nbsp;settings.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SetPositionTracking"><strong>SetPositionTracking</strong></a>(self, newPosition)</dt><dd><tt>Set&nbsp;the&nbsp;internal&nbsp;tracking&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SetPower"><strong>SetPower</strong></a>(self, newMax, newHold, newDecay)</dt><dd><tt>Set&nbsp;the&nbsp;current&nbsp;power&nbsp;settings.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SetPowerFromString"><strong>SetPowerFromString</strong></a>(self, profile)</dt><dd><tt>Set&nbsp;the&nbsp;current&nbsp;power&nbsp;settings.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SetStep"><strong>SetStep</strong></a>(self, step, bNonBlocking<font color="#909090">=False</font>)</dt><dd><tt>Move&nbsp;motor&nbsp;to&nbsp;a&nbsp;given&nbsp;step.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SetStepSpeedProfile"><strong>SetStepSpeedProfile</strong></a>(self, newBeginSpeed, newEndSpeed, newSlope)</dt><dd><tt>Sets&nbsp;the&nbsp;velocity&nbsp;profile&nbsp;for&nbsp;subsequent&nbsp;moves.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-SetStepSpeedProfileFromString"><strong>SetStepSpeedProfileFromString</strong></a>(self, profile)</dt><dd><tt>Sets&nbsp;the&nbsp;velocity&nbsp;profile&nbsp;for&nbsp;subsequent&nbsp;moves&nbsp;using&nbsp;a&nbsp;string&nbsp;as&nbsp;input.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-Step"><strong>Step</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;step&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-StepSpeedProfile"><strong>StepSpeedProfile</strong></a>(self)</dt><dd><tt>Obtain&nbsp;the&nbsp;current&nbsp;step&nbsp;speed&nbsp;profile.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-ValidateSettings"><strong>ValidateSettings</strong></a>(self)</dt><dd><tt>Override&nbsp;this&nbsp;to&nbsp;validate&nbsp;configuration&nbsp;settings&nbsp;as&nbsp;they&nbsp;are&nbsp;read&nbsp;in.<br>
+Throw&nbsp;a&nbsp;HardwareSettingsError&nbsp;if&nbsp;a&nbsp;problem&nbsp;is&nbsp;encountered</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-WaitForCompletion"><strong>WaitForCompletion</strong></a>(self)</dt><dd><tt>Wait&nbsp;for&nbsp;an&nbsp;action&nbsp;to&nbsp;complete.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-getDeviceUsage"><strong>getDeviceUsage</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;number&nbsp;of&nbsp;full&nbsp;traverses&nbsp;of&nbsp;the&nbsp;axis</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-getHomeStatus"><strong>getHomeStatus</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;stepper&nbsp;home&nbsp;flag&nbsp;state</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-getStepperStatus"><strong>getStepperStatus</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;stepper&nbsp;card&nbsp;status&nbsp;character&nbsp;for&nbsp;this&nbsp;axis</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-homeIfNotHome"><strong>homeIfNotHome</strong></a>(self)</dt><dd><tt>If&nbsp;the&nbsp;home&nbsp;flag&nbsp;is&nbsp;not&nbsp;obscured&nbsp;then&nbsp;perform&nbsp;a&nbsp;home&nbsp;action</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.hardware.Axis.html#Axis">tesla.hardware.Axis.Axis</a>:<br>
+<dl><dt><strong>HomeBackOffStepsLabel</strong> = 'homebackoffsteps'</dl>
+
+<dl><dt><strong>HomeStepLabel</strong> = 'homestep'</dl>
+
+<dl><dt><strong>HomingOvershootLabel</strong> = 'numberofhomingovershootcorrectiontries'</dl>
+
+<dl><dt><strong>HomingOvershootOnLabel</strong> = 'usinghomingovershootcorrection'</dl>
+
+<dl><dt><strong>MotorHalfStepLabel</strong> = 'halfstepexponent'</dl>
+
+<dl><dt><strong>MotorHomingPowerLabel</strong> = 'homingpowerprofile'</dl>
+
+<dl><dt><strong>MotorHomingStepVelocityLabel</strong> = 'homingvelocityprofile'</dl>
+
+<dl><dt><strong>MotorIdlePowerLabel</strong> = 'idlepowerprofile'</dl>
+
+<dl><dt><strong>MotorPowerLabel</strong> = 'standardpowerprofile'</dl>
+
+<dl><dt><strong>MotorStepVelocityLabel</strong> = 'standardvelocityprofile'</dl>
+
+<dl><dt><strong>m_homeBackOffSteps</strong> = 2000</dl>
+
+<hr>
+Methods inherited from <a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a>:<br>
+<dl><dt><a name="DRDPump-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Simple&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;device.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-execute"><strong>execute</strong></a>(self, functionWithArgs)</dt><dd><tt>Executes&nbsp;the&nbsp;formatted&nbsp;function&nbsp;call&nbsp;string&nbsp;functionWithArgs&nbsp;on<br>
+self.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;device's&nbsp;identifying&nbsp;name.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a>:<br>
+<dl><dt><a name="DRDPump-registerDevice"><strong>registerDevice</strong></a>(deviceInstance)</dt><dd><tt>Register&nbsp;our&nbsp;device&nbsp;with&nbsp;the&nbsp;Device&nbsp;list.&nbsp;Note&nbsp;that&nbsp;this&nbsp;is&nbsp;a&nbsp;<br>
+static&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="DRDPump-registerLogger"><strong>registerLogger</strong></a>(loggerInstance)</dt><dd><tt>Register&nbsp;an&nbsp;instance&nbsp;of&nbsp;a&nbsp;Tesla&nbsp;logger&nbsp;with&nbsp;the&nbsp;devices.&nbsp;Note&nbsp;that<br>
+this&nbsp;is&nbsp;a&nbsp;static&nbsp;method.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="tesla.hardware.Device.html#Device">tesla.hardware.Device.Device</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x008F9F30&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'Device' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>deviceList</strong> = []</dl>
+
+<dl><dt><strong>logger</strong> = None</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DRDPumpError">class <strong>DRDPumpError</strong></a>(<a href="tesla.hardware.Axis.html#AxisError">tesla.hardware.Axis.AxisError</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Error&nbsp;associated&nbsp;with&nbsp;DRD&nbsp;pump&nbsp;handling<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="DrdPump.html#DRDPumpError">DRDPumpError</a></dd>
+<dd><a href="tesla.hardware.Axis.html#AxisError">tesla.hardware.Axis.AxisError</a></dd>
+<dd><a href="tesla.hardware.config.html#HardwareError">tesla.hardware.config.HardwareError</a></dd>
+<dd><a href="tesla.exception.html#TeslaException">tesla.exception.TeslaException</a></dd>
+<dd><a href="exceptions.html#StandardError">exceptions.StandardError</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="DRDPumpError-__getitem__"><strong>__getitem__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="DRDPumpError-__init__"><strong>__init__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="DRDPumpError-__str__"><strong>__str__</strong></a>(...)</dt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="PistonModeSettings">class <strong>PistonModeSettings</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Records&nbsp;settings&nbsp;for&nbsp;a&nbsp;particular&nbsp;piston&nbsp;mode<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="PistonModeSettings-CalculatedSpeedProfile"><strong>CalculatedSpeedProfile</strong></a>(self, ulPerSec)</dt><dd><tt>Returns&nbsp;the&nbsp;speed&nbsp;profile&nbsp;to&nbsp;use&nbsp;for&nbsp;a&nbsp;given&nbsp;displacement&nbsp;rate&nbsp;in&nbsp;this&nbsp;mode.<br>
+NB:&nbsp;The&nbsp;formula&nbsp;used&nbsp;was&nbsp;provided&nbsp;by&nbsp;a&nbsp;juju&nbsp;man,&nbsp;and&nbsp;the&nbsp;resulting&nbsp;(B,E,S)&nbsp;profile&nbsp;bears&nbsp;no&nbsp;resemblance&nbsp;to&nbsp;steps/sec!</tt></dd></dl>
+
+<dl><dt><a name="PistonModeSettings-CalculatedStep"><strong>CalculatedStep</strong></a>(self, volume, tolerance<font color="#909090">=1</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;step&nbsp;represented&nbsp;by&nbsp;the&nbsp;given&nbsp;aspirated&nbsp;volume&nbsp;in&nbsp;this&nbsp;mode.<br>
+The&nbsp;tolerance&nbsp;is&nbsp;used&nbsp;to&nbsp;apply&nbsp;a&nbsp;clip&nbsp;to&nbsp;the&nbsp;result,<br>
+so&nbsp;that&nbsp;small&nbsp;overruns&nbsp;of&nbsp;valid&nbsp;range&nbsp;are&nbsp;treated&nbsp;as&nbsp;rounding&nbsp;errors.</tt></dd></dl>
+
+<dl><dt><a name="PistonModeSettings-CalculatedVolume"><strong>CalculatedVolume</strong></a>(self, step)</dt><dd><tt>Returns&nbsp;the&nbsp;displacement&nbsp;volume&nbsp;represented&nbsp;by&nbsp;the&nbsp;given&nbsp;step&nbsp;in&nbsp;this&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="PistonModeSettings-InRange"><strong>InRange</strong></a>(self, step)</dt><dd><tt>Returns&nbsp;whether&nbsp;the&nbsp;step&nbsp;is&nbsp;within&nbsp;the&nbsp;current&nbsp;range.</tt></dd></dl>
+
+<dl><dt><a name="PistonModeSettings-MaxVolume"><strong>MaxVolume</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;maximum&nbsp;volume&nbsp;(in&nbsp;uL)&nbsp;available&nbsp;in&nbsp;this&nbsp;piston&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="PistonModeSettings-__init__"><strong>__init__</strong></a>(self, ulPerStep, startStep, endStep, defaultAspirationRate, defaultDispenseRate)</dt><dd><tt>Store&nbsp;valid&nbsp;range,&nbsp;and&nbsp;conversion&nbsp;factor&nbsp;for&nbsp;a&nbsp;particular&nbsp;piston&nbsp;mode</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object at 0x008F9BF0&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'PistonModeSettings' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;(if&nbsp;defined)</tt></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

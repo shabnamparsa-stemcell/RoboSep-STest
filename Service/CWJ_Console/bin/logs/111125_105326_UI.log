@@ -1,0 +1,9 @@
+RoboSep UI Log File
+Created: 20111125_105326.214
+
+20111125_105326.227	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111125_105329.720	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111125_105329.754	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 1 steps
+20111125_105336.272	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111125_105336.309	clt	ProgressBar.ResetProgress()	Debug	ProgressBar	Reset Progress on ProgressBar
+20111125_105336.316	clt	ProgressBar.setElements()	Debug	ProgressBar	ProgressBar set 1 steps

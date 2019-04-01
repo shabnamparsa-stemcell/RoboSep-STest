@@ -1,0 +1,1 @@
+The DLL edtFTPnet.dll is retrieved from the folder VSS/RoboSep Minie/Vendors/edtftpnet-2.2.2/bin
