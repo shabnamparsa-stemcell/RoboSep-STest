@@ -816,6 +816,63 @@ class DebuggerWindow(wx.Frame):
         print( 'Position = ,' + str(position) + ',' )
         self.svrLog.logDebug('', self.logPrefix, funcReference, 'position=%d' % position )
         self.SetOperatingDefaults(axis)
+        
+    def DumpParameters(self):
+        dmplist = [];
+        dmplist.extend(['ZAxis=' + self.ZAxis])
+        dmplist.extend(['ZAxisPower=' + self.ZAxisPower])
+        dmplist.extend(['ZAxisSpeedBegin=' + self.ZAxisSpeedBegin])
+        dmplist.extend(['ZAxisSpeedSlope=' + self.ZAxisSpeedSlope])
+        dmplist.extend(['ZAxisSpeedEnd=' + self.ZAxisSpeedEnd])
+        dmplist.extend(['ZAxisSpeedHomeBegin=' + self.ZAxisSpeedHomeBegin])
+        dmplist.extend(['ZAxisSpeedHomeSlope=' + self.ZAxisSpeedHomeSlope])
+        dmplist.extend(['ZAxisSpeedHomeEnd=' + self.ZAxisSpeedHomeEnd])
+        dmplist.extend(['ZAxisHalfStep=' + self.ZAxisHalfStep])
+        dmplist.extend(['ZAxisBackOffHome=' + str(self.ZAxisBackOffHome)])
+        dmplist.extend(['ZAxisHome=' + self.ZAxisHome])
+    
+        dmplist.extend(['PumpAxis=' + self.PumpAxis])
+        dmplist.extend(['PumpPower=' + self.PumpPower])
+        dmplist.extend(['PumpSpeedBegin=' + self.PumpSpeedBegin])
+        dmplist.extend(['PumpSpeedSlope=' + self.PumpSpeedSlope])
+        dmplist.extend(['PumpSpeedEnd=' + self.PumpSpeedEnd])
+        dmplist.extend(['PumpSpeedHomeBegin=' + self.PumpSpeedHomeBegin])
+        dmplist.extend(['PumpSpeedHomeSlope=' + self.PumpSpeedHomeSlope])
+        dmplist.extend(['PumpSpeedHomeEnd=' + self.PumpSpeedHomeEnd])
+        dmplist.extend(['PumpHalfStep=' + self.PumpHalfStep])
+        dmplist.extend(['PumpBackOffHome=' + str(self.PumpBackOffHome)])
+        dmplist.extend(['PumpHome=' + self.PumpHome])
+    
+        dmplist.extend(['ThetaArm=' + self.ThetaArm])
+        dmplist.extend(['ThetaArmPower=' + self.ThetaArmPower])
+        dmplist.extend(['ThetaArmSpeedBegin=' + self.ThetaArmSpeedBegin])
+        dmplist.extend(['ThetaArmSpeedSlope=' + self.ThetaArmSpeedSlope])
+        dmplist.extend(['ThetaArmSpeedEnd=' + self.ThetaArmSpeedEnd])
+        dmplist.extend(['ThetaArmSpeedHomeBegin=' + self.ThetaArmSpeedHomeBegin])
+        dmplist.extend(['ThetaArmSpeedHomeSlope=' + self.ThetaArmSpeedHomeSlope])
+        dmplist.extend(['ThetaArmSpeedHomeEnd=' + self.ThetaArmSpeedHomeEnd])
+        dmplist.extend(['ThetaArmHalfStep=' + self.ThetaArmHalfStep])
+        dmplist.extend(['ThetaArmBackOffHome=' + str(self.ThetaArmBackOffHome)])
+        dmplist.extend(['ThetaArmHome=' + self.ThetaArmHome])
+    
+        dmplist.extend(['Carousel=' + self.Carousel])
+        dmplist.extend(['CarouselPower=' + self.CarouselPower])
+        dmplist.extend(['CarouselSpeedBegin=' + self.CarouselSpeedBegin])
+        dmplist.extend(['CarouselSpeedSlope=' + self.CarouselSpeedSlope])
+        dmplist.extend(['CarouselSpeedEnd=' + self.CarouselSpeedEnd])
+        dmplist.extend(['CarouselSpeedHomeBegin=' + self.CarouselSpeedHomeBegin])
+        dmplist.extend(['CarouselSpeedHomeSlope=' + self.CarouselSpeedHomeSlope])
+        dmplist.extend(['CarouselSpeedHomeEnd=' + self.CarouselSpeedHomeEnd])
+        dmplist.extend(['CarouselHalfStep=' + self.CarouselHalfStep])
+        dmplist.extend(['CarouselBackOffHome=' + str(self.CarouselBackOffHome)])
+        dmplist.extend(['CarouselHome=' + self.CarouselHome])
+        dmplist.extend(['CarouselHomeSwitch=' + self.CarouselHomeSwitch])
+    
+        dmplist.extend(['PowerOff=' + self.PowerOff])
+        dmplist.extend(['ZPowerOff=' + self.PowerOff])
+        
+        return dmplist;
+
 #
 #
 #    def OnAbout(self,e):
@@ -876,7 +933,9 @@ def GetSSTracerInstance():
 
     if ssTracer == None:
         ssTracer = SSDebugger()
-
+        ssTracer.LoadDebbugerParameter();
+        dmpmsg = ssTracer.DumpDebbugerParameter();
+        print dmpmsg;
     return ssTracer
 
 
@@ -980,6 +1039,62 @@ class SSDebugger:
 
     def GetAspiHeight(self):
         return self.frame.AspiHeight;
+        
+    def LoadDebbugerParameter(self):
+        self.frame.ZAxis                = tesla.config.ZAxis
+        self.frame.ZAxisPower           = tesla.config.ZAxisPower
+        self.frame.ZAxisSpeedBegin      = tesla.config.ZAxisSpeedBegin
+        self.frame.ZAxisSpeedSlope      = tesla.config.ZAxisSpeedSlope
+        self.frame.ZAxisSpeedEnd        = tesla.config.ZAxisSpeedEnd
+        self.frame.ZAxisSpeedHomeBegin  = tesla.config.ZAxisSpeedHomeBegin
+        self.frame.ZAxisSpeedHomeSlope  = tesla.config.ZAxisSpeedHomeSlope
+        self.frame.ZAxisSpeedHomeEnd    = tesla.config.ZAxisSpeedHomeEnd
+        self.frame.ZAxisHalfStep        = tesla.config.ZAxisHalfStep
+        self.frame.ZAxisBackOffHome     = tesla.config.ZAxisBackOffHome
+        self.frame.ZAxisHome            = tesla.config.ZAxisHome
+    
+        self.frame.PumpAxis             = tesla.config.PumpAxis
+        self.frame.PumpPower            = tesla.config.PumpPower
+        self.frame.PumpSpeedBegin       = tesla.config.PumpSpeedBegin
+        self.frame.PumpSpeedSlope       = tesla.config.PumpSpeedSlope
+        self.frame.PumpSpeedEnd         = tesla.config.PumpSpeedEnd
+        self.frame.PumpSpeedHomeBegin   = tesla.config.PumpSpeedHomeBegin
+        self.frame.PumpSpeedHomeSlope   = tesla.config.PumpSpeedHomeSlope
+        self.frame.PumpSpeedHomeEnd     = tesla.config.PumpSpeedHomeEnd
+        self.frame.PumpHalfStep         = tesla.config.PumpHalfStep
+        self.frame.PumpBackOffHome      = int(tesla.config.PumpBackOffHome)
+        self.frame.PumpHome             = tesla.config.PumpHome
+    
+        self.frame.ThetaArm             = tesla.config.ThetaArm
+        self.frame.ThetaArmPower        = tesla.config.ThetaArmPower
+        self.frame.ThetaArmSpeedBegin   = tesla.config.ThetaArmSpeedBegin
+        self.frame.ThetaArmSpeedSlope   = tesla.config.ThetaArmSpeedSlope
+        self.frame.ThetaArmSpeedEnd     = tesla.config.ThetaArmSpeedEnd
+        self.frame.ThetaArmSpeedHomeBegin = tesla.config.ThetaArmSpeedHomeBegin
+        self.frame.ThetaArmSpeedHomeSlope = tesla.config.ThetaArmSpeedHomeSlope
+        self.frame.ThetaArmSpeedHomeEnd   = tesla.config.ThetaArmSpeedHomeEnd
+        self.frame.ThetaArmHalfStep     = tesla.config.ThetaArmHalfStep
+        self.frame.ThetaArmBackOffHome  = int(tesla.config.ThetaArmBackOffHome)
+        self.frame.ThetaArmHome         = tesla.config.ThetaArmHome
+    
+        self.frame.Carousel             = tesla.config.Carousel
+        self.frame.CarouselPower        = tesla.config.CarouselPower
+        self.frame.CarouselSpeedBegin   = tesla.config.CarouselSpeedBegin
+        self.frame.CarouselSpeedSlope   = tesla.config.CarouselSpeedSlope
+        self.frame.CarouselSpeedEnd     = tesla.config.CarouselSpeedEnd
+        self.frame.CarouselSpeedHomeBegin = tesla.config.CarouselSpeedHomeBegin
+        self.frame.CarouselSpeedHomeSlope = tesla.config.CarouselSpeedHomeSlope
+        self.frame.CarouselSpeedHomeEnd = tesla.config.CarouselSpeedHomeEnd
+        self.frame.CarouselHalfStep     = tesla.config.CarouselHalfStep
+        self.frame.CarouselBackOffHome  = int(tesla.config.CarouselBackOffHome)
+        self.frame.CarouselHome         = tesla.config.CarouselHome
+        self.frame.CarouselHomeSwitch   = tesla.config.CarouselHomeSwitch
+    
+        self.frame.PowerOff             = tesla.config.PowerOff
+        self.frame.ZPowerOff            = tesla.config.ZPowerOff
+
+    def DumpDebbugerParameter(self): 
+        return self.frame.DumpParameters();
 
 def logMessages(message=''):
     import random
