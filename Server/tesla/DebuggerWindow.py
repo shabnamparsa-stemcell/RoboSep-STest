@@ -869,7 +869,7 @@ class DebuggerWindow(wx.Frame):
         dmplist.extend(['CarouselHomeSwitch=' + self.CarouselHomeSwitch])
     
         dmplist.extend(['PowerOff=' + self.PowerOff])
-        dmplist.extend(['ZPowerOff=' + self.PowerOff])
+        dmplist.extend(['ZPowerOff=' + self.ZPowerOff])
         
         return dmplist;
 
@@ -935,7 +935,13 @@ def GetSSTracerInstance():
         ssTracer = SSDebugger()
         ssTracer.LoadDebbugerParameter();
         dmpmsg = ssTracer.DumpDebbugerParameter();
-        print dmpmsg;
+        funcReference = __name__ + '.logDebuggerMode'  # 2011-11-29 -- sp
+        print('\n');
+        for iter in range(0,len(dmpmsg)):
+            ssTracer.frame.svrLog.logDebug('', 'debugger test', funcReference, dmpmsg[iter] )
+            print(dmpmsg[iter]);
+        print('\n');
+        # print dmpmsg;
     return ssTracer
 
 
