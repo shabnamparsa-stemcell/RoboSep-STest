@@ -930,18 +930,16 @@ def getSSDebuggerInstance():
 
 def GetSSTracerInstance():
     global ssTracer
-
+    
     if ssTracer == None:
         ssTracer = SSDebugger()
         ssTracer.LoadDebbugerParameter();
         dmpmsg = ssTracer.DumpDebbugerParameter();
-        funcReference = __name__ + '.logDebuggerMode'  # 2011-11-29 -- sp
-        print('\n');
+        #dumpParam = open("C:\Program Files\STI\RoboSep\logs\debuggerparamdump.txt","w")
+        dumpParam = open("C:\debuggerparamdump.txt","w")        
         for iter in range(0,len(dmpmsg)):
-            ssTracer.frame.svrLog.logDebug('', 'debugger test', funcReference, dmpmsg[iter] )
-            print(dmpmsg[iter]);
-        print('\n');
-        # print dmpmsg;
+            dumpParam.write(dmpmsg[iter]+'\n')
+        dumpParam.close();
     return ssTracer
 
 
