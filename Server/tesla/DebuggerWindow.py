@@ -866,7 +866,7 @@ class DebuggerWindow(wx.Frame):
         dmplist.extend(['CarouselHalfStep=' + self.CarouselHalfStep])
         dmplist.extend(['CarouselBackOffHome=' + str(self.CarouselBackOffHome)])
         dmplist.extend(['CarouselHome=' + self.CarouselHome])
-        dmplist.extend(['CarouselHomeSwitch=' + self.CarouselHomeSwitch])
+        dmplist.extend(['CarouselHomeSwitch=' + str(self.CarouselHomeSwitch)])
     
         dmplist.extend(['PowerOff=' + self.PowerOff])
         dmplist.extend(['ZPowerOff=' + self.ZPowerOff])
