@@ -551,7 +551,7 @@ class TeslaPlatform (Platform):
 	self.robot.HomeZ()
 
 
-    def StripTip(self):
+    def StripTip(self, boDelay=False):
         """Strip the current tip.
             - Check that the given tipNbr is valid
             - Move Z-Axis to home and check for home
@@ -570,6 +570,9 @@ class TeslaPlatform (Platform):
         funcReference = __name__ + '.StripTip'          # 2011-11-29 sp -- added logging
         self.svrLog.logDebug('X', self.logPrefix, funcReference, 'Start stripTip, axis=X0')   # 2011-11-29 sp -- added logging
 
+        self.__logger.logInfo( "StripTip boDelay=%s"%(boDelay))               
+        self.svrLog.logInfo('', self.logPrefix, funcReference, "StripTip boDelay=%s"%(boDelay))
+        
 	if self.__m_CurrentTip == None:
             # No tip present. Ignore call.
             pass
@@ -592,7 +595,10 @@ class TeslaPlatform (Platform):
 
                 # Initially move to the pickup point before lowering the tip.
                 # This gives a better insert position
-                self.MoveTo(self.__m_CurrentTipSector, pickupReferencePoint, tipData.m_StripPosition)
+                if boDelay:
+                    self.DelayMoveTo(self.__m_CurrentTipSector, pickupReferencePoint, tipData.m_StripPosition)
+                else:
+                    self.MoveTo(self.__m_CurrentTipSector, pickupReferencePoint, tipData.m_StripPosition)
                 #raw_input('Press <Enter> to Start!!! u are after self.moveTo...... ') #add by shabnam
                 # Now move to the strip reference point, for better meshing with the stripper
                 # (NB: We're talking fractions of a mm here)
@@ -616,15 +622,34 @@ class TeslaPlatform (Platform):
                     if tesla.config.SS_FORCE_EMULATION == 1:
                         isStripperArmFailed = False
                     else:
-                        self.__logger.logDebug(  "Tip strip could fail because stripper arm didn't come out all the way.")
-                        self.svrLog.logError('', self.logPrefix, funcReference, "Tip strip could fail because stripper arm didn't come out all the way.")   # 2011-11-29 sp -- added logging
-                        if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
-                            self.ExtLogger.SetCmdListLog("Tip strip could fail because stripper arm didn't come out all the way.", self.tipStripper.m_Card.prefix)
-                            self.ExtLogger.CheckSystemAvail()
-                            # self.ExtLogger.DumpHistory()
-                        #raise AxisError ('Tip strip failed')
-                        isStripperArmFailed = False #REMOVE this if raise error
+                        # 2012-01-30 sp -- replace environment variable with configuration variable
+                        #if os.environ.has_key('SS_OLDPCB'):
+                        if tesla.config.SS_OLDPCB == 1:
+                            self.__logger.logDebug(  "Tip strip could fail because stripper arm didn't come out all the way.")
+                            self.svrLog.logError('', self.logPrefix, funcReference, "Tip strip could fail because stripper arm didn't come out all the way.")   # 2011-11-29 sp -- added logging
+                            if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
+                                self.ExtLogger.SetCmdListLog("Tip strip could fail because stripper arm didn't come out all the way.", self.tipStripper.m_Card.prefix)
+                                self.ExtLogger.CheckSystemAvail()
+                                # self.ExtLogger.DumpHistory()
+                            #raise AxisError ('Tip strip failed')
+                            isStripperArmFailed = False #REMOVE this if raise error
+                           
+                            # raw_input('\n##### Tip Stripper Arm Failed!!!! #####\a')
+                           
+                        else:   
+                            print ('\n### New PCB Strip ARM ####\n')
+                            self.__logger.logDebug(  "Tip strip failed because stripper arm didn't come out all the way.")
+                            self.svrLog.logError('', self.logPrefix, funcReference, "Tip strip failed because stripper arm didn't come out all the way.")   # 2011-11-29 sp -- added logging
+                            if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
+                                self.ExtLogger.SetCmdListLog("Tip strip failed because stripper arm didn't come out all the way.", self.tipStripper.m_Card.prefix)
+                                self.ExtLogger.CheckSystemAvail()
+                                self.ExtLogger.DumpHistory()
+                            raise AxisError ('Tip strip failed')
+                            #isStripperArmFailed = False #REMOVE this if raise error
 
+                            # raw_input('\n##### Tip Stripper Arm Failed!!!! #####\a')
+
+                
                 # Commence the actual strip                
                 self.__SetStripTipState(True)
                 self.robot.SetZPosition(tipData.m_StrippedPosition, 1)
@@ -685,153 +710,6 @@ class TeslaPlatform (Platform):
             self.ExtLogger.SetCmdListLog("", 'X0')
         self.svrLog.logDebug('X', self.logPrefix, funcReference, 'Completed stripTip, axis=X0')   # 2011-11-29 sp -- added logging
 
-    def DelayStripTip(self):
-        """Strip the current tip.
-            - Check that the given tipNbr is valid
-            - Move Z-Axis to home and check for home
-            - Move to the current tip's original pickup point
-            - Move Z-Axis to the strip position
-            - Engage the tip stripper
-            - Set high power for strip action
-            - Move Z-Axis up to stripped position
-	    - Home the Z axis
-            - Disengage the Tip Stripper
-            - Move the Z-Axis to the travel position (without tip)
-            It is assumed that there is a tip currently in place"""
-        if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
-            self.ExtLogger.SetCmdListLog("", 'X0')
-            self.ExtLogger.SetCmdListLog("---->> Start Tesla.StripTip()", 'X0')
-        funcReference = __name__ + '.DelayStripTip'          # 2011-11-29 sp -- added logging
-        self.svrLog.logDebug('X', self.logPrefix, funcReference, 'Start stripTip, axis=X0')   # 2011-11-29 sp -- added logging
-
-	if self.__m_CurrentTip == None:
-            # No tip present. Ignore call.
-            pass
-
-        else:
-            isStripperArmFailed = True
-            try:
-                tipData = self.__m_CurrentTip[1]
-                pickupReferencePoint = TeslaPlatform.tipReferenceMap[self.__m_CurrentTipID][0]
-                stripReferencePoint = TeslaPlatform.tipStripReferenceMap[self.__m_CurrentTipID]
-
-                # Move z axis to home
-                # 2012-01-30 sp -- replace environment variable with configuration variable
-                #if os.environ.has_key('SS_CHATTER'):
-                if tesla.config.SS_CHATTER == 1:
-                   self.robot.moveToHomeAndCheck_debug()
-                else:
-                   self.robot.moveToHomeAndCheck() 
-
-
-                # Initially move to the pickup point before lowering the tip.
-                # This gives a better insert position
-                self.DelayMoveTo(self.__m_CurrentTipSector, pickupReferencePoint, tipData.m_StripPosition)
-                
-                # Now move to the strip reference point, for better meshing with the stripper
-                # (NB: We're talking fractions of a mm here)
-                (rTheta, cTheta) = self._ObtainRendezvous(self.__m_CurrentTipSector, stripReferencePoint, 0)
-
-                future = Future( self.tipStripper.Engage )
-                self.robot.Theta().SetTheta(rTheta)
-                print "...Move to strip psn theta = ", rTheta
-
-                future()
-                
-                # Oct 19 2006 - tip strip detection changes - RL
-                #stripper can't be both home and limit
-                print "self.__tipStripperSensorDelay",self.__tipStripperSensorDelay
-                time.sleep(self.__tipStripperSensorDelay) # commented by shabnam 
-                isStripperArmFailed = self.tipStripper.getHomeStatus() == self.tipStripper.getLimitStatus()
-
-                if isStripperArmFailed:
-                    # 2012-01-30 sp -- replace environment variable with configuration variable
-                    #if os.environ.has_key('SS_FORCE_EMULATION'):
-                    if tesla.config.SS_FORCE_EMULATION == 1:
-                        isStripperArmFailed = False
-                    else:
-                        # 2012-01-30 sp -- replace environment variable with configuration variable
-                        #if os.environ.has_key('SS_OLDPCB'):
-                        if tesla.config.SS_OLDPCB == 1:
-                            self.__logger.logDebug(  "Tip strip could fail because stripper arm didn't come out all the way.")
-                            self.svrLog.logError('', self.logPrefix, funcReference, "Tip strip could fail because stripper arm didn't come out all the way.")   # 2011-11-29 sp -- added logging
-                            if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
-                                self.ExtLogger.SetCmdListLog("Tip strip could fail because stripper arm didn't come out all the way.", self.tipStripper.m_Card.prefix)
-                                self.ExtLogger.CheckSystemAvail()
-                                # self.ExtLogger.DumpHistory()
-                            #raise AxisError ('Tip strip failed')
-                            isStripperArmFailed = False #REMOVE this if raise error
-                           
-                            # raw_input('\n##### Tip Stripper Arm Failed!!!! #####\a')
-                           
-                        else:   
-                            print ('\n### New PCB Strip ARM ####\n')
-                            self.__logger.logDebug(  "Tip strip failed because stripper arm didn't come out all the way.")
-                            self.svrLog.logError('', self.logPrefix, funcReference, "Tip strip failed because stripper arm didn't come out all the way.")   # 2011-11-29 sp -- added logging
-                            if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
-                                self.ExtLogger.SetCmdListLog("Tip strip failed because stripper arm didn't come out all the way.", self.tipStripper.m_Card.prefix)
-                                self.ExtLogger.CheckSystemAvail()
-                                self.ExtLogger.DumpHistory()
-                            raise AxisError ('Tip strip failed')
-                            #isStripperArmFailed = False #REMOVE this if raise error
-
-                            # raw_input('\n##### Tip Stripper Arm Failed!!!! #####\a')
-
-                # Commence the actual strip                
-                self.__SetStripTipState(True)
-                self.robot.SetZPosition(tipData.m_StrippedPosition, 1)
-
-                # Update the current tip
-                #comment for tip strip failure detection
-                #self.__m_CurrentTipID = None
-                #self.__m_CurrentTip = None
-#                self.robot.SetZTravelPosition(float(self._m_Settings[TeslaPlatform.TravelPositionLabel]))
-            finally:
-                # Ensure that the tip is stripped by disengaging *after* homing
-                self.__SetStripTipState(False)
-                #comment for tip strip failure detection
-                #future = Future( self.robot.moveToHomeAndCheck )
-                #self.tipStripper.Disengage()
-                #future()
-
-                # Oct 19 2006 - tip strip detection changes - RL
-                #uncomment for tip strip failure detection
-
-                try:
-                    if not isStripperArmFailed:
-                        # 2012-01-30 sp -- replace environment variable with configuration variable
-                        #if os.environ.has_key('SS_CHATTER'):
-                        if tesla.config.SS_CHATTER == 1:
-                            #self.robot.moveToHomeAndCheck_debug(True)
-                            future =Future(self.robot.moveToHomeAndCheck_debug, True)
-                        else:
-                            #self.robot.moveToHomeAndCheck(True) # commented by shabnam
-                            future =Future(self.robot.moveToHomeAndCheck, True)# added by shabnam
-                        self.tipStripper.Disengage() # added by shabnam 
-                        future() #added by shabnam 							
-                        # Update the current tip
-                        self.__m_CurrentTipID = None
-                        self.__m_CurrentTip = None
-                finally:
-                    #self.tipStripper.Disengage()
-                    # 2012-01-30 sp -- replace environment variable with configuration variable
-                    #if os.environ.has_key('SS_CHATTER'):
-                    if tesla.config.SS_CHATTER == 1:
-                       data = self.robot.moveToHomeAndCheck(False)
-                       self.__logger.logInfo( "moveToHomeAndCheck After StripTip (To Start Point:%d, To Home:%d)"%(data[0],data[1]))                                      
-                       self.svrLog.logInfo('', self.logPrefix, funcReference, "moveToHomeAndCheck After StripTip (To Start Point:%d, To Home:%d)"%(data[0],data[1]))   # 2011-11-29 sp -- added logging
-                    else:
-                       self.robot.moveToHomeAndCheck(False)    
-
-
-
-        # On successful strip, move to travel plane
-        self.robot.PrepareZForTravel( 2 )            
-        
-        if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
-            self.ExtLogger.SetCmdListLog("---->> Finish Tesla.StripTip()", 'X0')
-            self.ExtLogger.SetCmdListLog("", 'X0')
-        self.svrLog.logDebug('X', self.logPrefix, funcReference, 'Completed stripTip, axis=X0')   # 2011-11-29 sp -- added logging
 
     def CurrentTipID (self):
         """Return the sector and storage position of the currently loaded tip.

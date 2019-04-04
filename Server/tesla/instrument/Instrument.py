@@ -625,7 +625,7 @@ class Instrument(Subsystem):
                 #    May/04/2009 - 50 mL TipStrip Method Changes - CWJ 
                 if ( destVial.getLabel() == self.LysisLabel ) :
                     print '\nCWJ - Lysis Vial Delay TipStip\n'
-                    self.__m_Platform.DelayStripTip() 
+                    self.__m_Platform.StripTip(True) 
                 else :                
                     self.__m_Platform.StripTip() #    03/14/07 - tip strip only if necessary code -RL
             else:
