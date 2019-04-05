@@ -1,561 +1,127 @@
-2019-04-04T10:37:21 INFO Application log initialised
-2019-04-04T10:37:21 DEBUG Remoting Address = 127.0.0.1
-2019-04-04T10:37:21 DEBUG ICS Server URL       = http://127.0.0.1:8000
-2019-04-04T10:37:21 DEBUG ICS EventSink URL    = http://127.0.0.1:8001/InstrumentControlEventSink
-2019-04-04T10:37:21 DEBUG Separator Server URL =  tcp://127.0.0.1:3149/Separator
-2019-04-04T10:37:21 DEBUG Configured address = 127.0.0.1
-2019-04-04T10:37:22 INFO Initializing User Console
-2019-04-04T10:37:22 DEBUG Initializing UserDB
-2019-04-04T10:37:22 INFO Application config path: C:\Program Files\STI\RoboSep\config\
-2019-04-04T10:37:22 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-04T10:37:23 INFO XSD Path : c:\Program Files\STI\RoboSep\
-2019-04-04T10:37:23 DEBUG 223protocols loaded
-2019-04-04T10:37:23 ERROR Failed to convert variable '00/00/0000' to valid date.
-2019-04-04T10:37:23 ERROR WarrantyExpireDate in GUI.ini file is invalid.
-2019-04-04T10:37:23 DEBUG Creating new Form_Home
-2019-04-04T10:37:23 INFO Command to launch service 'dns-sd.exe -R "Orca1" _robosep._tcp . 5899' for Network ORCA.
-2019-04-04T10:37:23 INFO Service 'dns-sd.exe' for network ORCA has been launched. ProcessID='2480'. Path='C:\Windows\system32'
-2019-04-04T10:37:23 INFO Loading User Console
-2019-04-04T10:37:23 ERROR Starting GUI Thread
-2019-04-04T10:37:23 INFO set user.db file to : User1.udb
-2019-04-04T10:37:23 INFO Connecting...
-2019-04-04T10:37:23 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 1 tcp://127.0.0.1:3149/Separator
-2019-04-04T10:37:23 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 2
-2019-04-04T10:37:24 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-04T10:37:24 DEBUG Loaded Robosep User
-2019-04-04T10:37:24 INFO Current user ID : 'UserName'.
-2019-04-04T10:37:24 DEBUG Instrument Control API Ping() returned True
-2019-04-04T10:37:24 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 3
-2019-04-04T10:37:24 INFO Get system information for About menu
+2019-04-05T09:09:13 INFO Application log initialised
+2019-04-05T09:09:13 DEBUG Remoting Address = 127.0.0.1
+2019-04-05T09:09:13 DEBUG ICS Server URL       = http://127.0.0.1:8000
+2019-04-05T09:09:13 DEBUG ICS EventSink URL    = http://127.0.0.1:8001/InstrumentControlEventSink
+2019-04-05T09:09:13 DEBUG Separator Server URL =  tcp://127.0.0.1:3149/Separator
+2019-04-05T09:09:13 DEBUG Configured address = 127.0.0.1
+2019-04-05T09:09:13 INFO Initializing User Console
+2019-04-05T09:09:13 DEBUG Initializing UserDB
+2019-04-05T09:09:13 INFO Application config path: C:\Program Files\STI\RoboSep\config\
+2019-04-05T09:09:13 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-04-05T09:09:13 INFO XSD Path : c:\Program Files\STI\RoboSep\
+2019-04-05T09:09:14 DEBUG 223protocols loaded
+2019-04-05T09:09:14 ERROR Failed to convert variable '00/00/0000' to valid date.
+2019-04-05T09:09:14 ERROR WarrantyExpireDate in GUI.ini file is invalid.
+2019-04-05T09:09:14 DEBUG Creating new Form_Home
+2019-04-05T09:09:14 INFO Command to launch service 'dns-sd.exe -R "Orca1" _robosep._tcp . 5899' for Network ORCA.
+2019-04-05T09:09:14 INFO Service 'dns-sd.exe' for network ORCA has been launched. ProcessID='1668'. Path='C:\Windows\system32'
+2019-04-05T09:09:14 INFO Loading User Console
+2019-04-05T09:09:14 ERROR Starting GUI Thread
+2019-04-05T09:09:14 INFO set user.db file to : User1.udb
+2019-04-05T09:09:14 INFO Connecting...
+2019-04-05T09:09:14 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 1 tcp://127.0.0.1:3149/Separator
+2019-04-05T09:09:14 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 2
+2019-04-05T09:09:14 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-04-05T09:09:14 DEBUG Loaded Robosep User
+2019-04-05T09:09:14 INFO Current user ID : 'SAP'.
+2019-04-05T09:09:14 DEBUG Instrument Control API Ping() returned True
+2019-04-05T09:09:14 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 3
+2019-04-05T09:09:15 INFO Get system information for About menu
 --------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Initialising. 
-2019-04-04T10:37:24 INFO Estimated run completion = 01:00
+2019-04-05T09:09:15 INFO Estimated run completion = 01:00
 ---------Now update the display
-2019-04-04T10:37:49 DEBUG Carousel state changed to: SeparatorUnloaded
+2019-04-05T09:09:40 DEBUG Carousel state changed to: SeparatorUnloaded
 --------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=SeparatorUnloaded. 
 ------------------------------ SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:37:49 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:37:49 INFO Stopping Splash page
-2019-04-04T10:37:50 ERROR Failed to convert variable '00/0/0000' to valid date.
-2019-04-04T10:37:50 ERROR Failed to convert variable '00/0/0000' to valid date.
-2019-04-04T10:37:50 ERROR Failed to convert variable '00/0/0000' to valid date.
-2019-04-04T10:37:50 ERROR Failed to convert variable '00/00/0000' to valid date.
-2019-04-04T10:37:50 ERROR Failed to convert variable '00/00/0000' to valid date.
-2019-04-04T10:37:50 INFO Initializing About user control
-2019-04-04T10:37:50 INFO Generating Robosep Resources user control
-2019-04-04T10:37:50 INFO Initializing Run Samples user control
-2019-04-04T10:37:50 INFO PauseResumeDialog form created
-2019-04-04T10:37:55 INFO New Protocol Select user control generated
-2019-04-04T10:37:55 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-04T10:37:55 DEBUG Loaded Robosep User
-2019-04-04T10:37:55 INFO Opening protocol selection for quadrant 1
-2019-04-04T10:37:56 INFO Protocol Selection home button clicked
----------No reloading of user protocols is required.
-2019-04-04T10:37:56 INFO Protocol Selection home button exit
-2019-04-04T10:37:57 DEBUG Home button clicked
-2019-04-04T10:37:59 INFO Initializing Protocol List user control
-2019-04-04T10:37:59 INFO Generating New UserProtocol user control
-2019-04-04T10:37:59 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-04T10:37:59 DEBUG Loaded Robosep User
-2019-04-04T10:37:59 DEBUG Hiding Home window
-2019-04-04T10:37:59 INFO Protocols button clicked
----------Add protocol EasySep Direct Human 19669 - 2_5ml test to my protocol list.
----------Add protocol EasySep Direct Human CD4 T Cell Isolation 19662 - whole blood to my protocol list.
----------Add protocol EasySep Direct Human Monocyte Isolation 19669 - buffy coat to my protocol list.
----------Add protocol EasySep Direct Human PBMC Isolation 19654 - buffy coat to my protocol list.
----------Add protocol EasySep Direct Human PBMC Isolation 19654 - buffy coat-CJ to my protocol list.
---------- Save dirty user protocols list.
-2019-04-04T10:47:13 INFO saving 5protocols to user UserName
-2019-04-04T10:47:13 INFO set user.db file to : User1.udb
-2019-04-04T10:47:13 DEBUG Saved User Profile UserName with 5 protocols
-2019-04-04T10:47:13 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-04T10:47:13 DEBUG Loaded Robosep User
----------Changes have been made in the user protocol list, reloading of user protocols is required.
-Dialog size: width = 340, height = 186
---------- Reload user protocols from the server. Current ThreadID = 9 ----------
-2019-04-04T10:47:13 INFO Save user protocol list
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:13 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:14 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:14 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:14 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:14 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:14 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:14 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:14 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:15 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:15 INFO Get system information for About menu
---------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=SeparatorUnloaded. 
------------------------------- SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:47:15 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:47:15 INFO Estimated run completion = 01:00
----------Now update the display
------------------------------- SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:47:15 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:47:15 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-04T10:47:15 DEBUG Loaded Robosep User
-2019-04-04T10:47:15 DEBUG Home button clicked
-2019-04-04T10:47:22 DEBUG Loaded 5 protocol from User UserName
-2019-04-04T10:47:22 INFO Initializing Protocols user control
-2019-04-04T10:47:22 INFO Loading user profile
-2019-04-04T10:47:22 DEBUG Loaded 5 protocol from User UserName
-2019-04-04T10:47:22 INFO Start thread for loading profile
-2019-04-04T10:47:22 INFO set user.db file to : User1.udb
-2019-04-04T10:47:22 DEBUG Saved User Profile UserName with 5 protocols
-Dialog size: width = 340, height = 186
-2019-04-04T10:47:22 INFO User 'UserName' is selected to run RoboSep-S
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:22 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:22 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:22 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:22 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:22 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:23 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:23 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:23 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:23 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:23 INFO Get system information for About menu
---------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=SeparatorUnloaded. 
------------------------------- SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:47:23 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:47:23 INFO Estimated run completion = 01:00
----------Now update the display
------------------------------- SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:47:23 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
---------- RoboSep_UserSelect: HandleUserProtocolsReloadedBeforeExiting is called. ThreadID = 9, ----------
-2019-04-04T10:47:25 INFO Run Sample button clicked
-2019-04-04T10:47:25 DEBUG Hiding Home window
-2019-04-04T10:47:25 DEBUG System running, opening RunProgress
-2019-04-04T10:47:26 INFO New Protocol Select user control generated
-2019-04-04T10:47:26 DEBUG Loaded 5 protocol from User UserName
-2019-04-04T10:47:26 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-04T10:47:26 DEBUG Loaded Robosep User
-2019-04-04T10:47:26 INFO Opening protocol selection for quadrant 1
-2019-04-04T10:47:27 INFO Protocol Selection home button clicked
----------No reloading of user protocols is required.
-2019-04-04T10:47:28 INFO Protocol Selection home button exit
-2019-04-04T10:47:30 DEBUG Home button clicked
-2019-04-04T10:47:37 INFO Creating new User Select window
-2019-04-04T10:47:40 INFO User Select window closed without selection
-2019-04-04T10:47:41 DEBUG Loaded 5 protocol from User UserName
-2019-04-04T10:47:41 INFO Loading user profile
-2019-04-04T10:47:41 DEBUG Loaded 5 protocol from User UserName
-2019-04-04T10:47:41 INFO Start thread for loading profile
-2019-04-04T10:47:41 INFO set user.db file to : User1.udb
-2019-04-04T10:47:41 DEBUG Saved User Profile UserName with 5 protocols
-Dialog size: width = 340, height = 186
-2019-04-04T10:47:41 INFO User 'UserName' is selected to run RoboSep-S
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:41 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:42 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:42 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:42 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:42 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:42 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:42 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:42 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:43 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:47:43 INFO Get system information for About menu
---------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=SeparatorUnloaded. 
------------------------------- SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:47:43 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:47:43 INFO Estimated run completion = 01:00
----------Now update the display
------------------------------- SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:47:43 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
---------- RoboSep_UserSelect: HandleUserProtocolsReloadedBeforeExiting is called. ThreadID = 9, ----------
-2019-04-04T10:47:45 INFO Creating new User Select window
-2019-04-04T10:47:48 INFO User Select window closed without selection
-2019-04-04T10:47:49 DEBUG Home button clicked
-2019-04-04T10:47:54 INFO New user login screen
-2019-04-04T10:47:56 INFO New Touch Keyboard generated w/ Autocomplete
-2019-04-04T10:48:00 INFO Keyboard output: 'SAP'
-2019-04-04T10:48:00 INFO Generating touch keybaord
-Dialog size: width = 297, height = 255
-2019-04-04T10:48:02 INFO saving user preferences for user SAP
-2019-04-04T10:48:02 INFO Opening new user login screen
-2019-04-04T10:48:07 DEBUG Home button clicked
-2019-04-04T10:48:10 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-04T10:48:10 DEBUG Loaded Robosep User
-2019-04-04T10:48:10 DEBUG Hiding Home window
-2019-04-04T10:48:10 INFO Protocols button clicked
----------No updating user protocol files is required.
-2019-04-04T10:48:15 INFO Save user protocol list
-2019-04-04T10:48:15 DEBUG Home button clicked
-2019-04-04T10:48:22 INFO User 'SAP' is selected to run RoboSep-S
-2019-04-04T10:48:24 INFO User 'SAP' is selected to run RoboSep-S
-2019-04-04T10:48:25 INFO Run Sample button clicked
-2019-04-04T10:48:25 DEBUG Hiding Home window
-2019-04-04T10:48:25 DEBUG System running, opening RunProgress
-2019-04-04T10:48:28 INFO New Protocol Select user control generated
-2019-04-04T10:48:28 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-04T10:48:28 DEBUG Loaded Robosep User
-2019-04-04T10:48:28 INFO Opening protocol selection for quadrant 1
-2019-04-04T10:48:29 INFO Protocol Selection home button clicked
----------No reloading of user protocols is required.
-2019-04-04T10:48:29 INFO Protocol Selection home button exit
-2019-04-04T10:48:30 DEBUG Home button clicked
-2019-04-04T10:48:31 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-04T10:48:31 DEBUG Loaded Robosep User
-2019-04-04T10:48:31 DEBUG Hiding Home window
-2019-04-04T10:48:31 INFO Protocols button clicked
----------Add protocol EasySep Direct Human 19669 - 2_5ml test to my protocol list.
----------Add protocol EasySep Direct Human CD4 T Cell Isolation 19662 - whole blood to my protocol list.
----------Add protocol EasySep Direct Human Monocyte Isolation 19669 - buffy coat to my protocol list.
----------Add protocol EasySep Direct Human PBMC Isolation 19654 - buffy coat to my protocol list.
----------Add protocol EasySep Direct Human PBMC Isolation 19654 - buffy coat-CJ to my protocol list.
---------- Save dirty user protocols list.
-2019-04-04T10:48:42 INFO saving 5protocols to user SAP
-2019-04-04T10:48:42 INFO set user.db file to : User1.udb
-2019-04-04T10:48:42 DEBUG Saved User Profile SAP with 5 protocols
-2019-04-04T10:48:42 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-04T10:48:42 DEBUG Loaded Robosep User
----------Changes have been made in the user protocol list, reloading of user protocols is required.
-Dialog size: width = 340, height = 186
---------- Reload user protocols from the server. Current ThreadID = 9 ----------
-2019-04-04T10:48:42 INFO Save user protocol list
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:48:42 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:48:42 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:48:42 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:48:42 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:48:43 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:48:43 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:48:43 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:48:43 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:48:43 INFO ------------** AtReportStatus in SampleProcessing TSC1002
-2019-04-04T10:48:43 INFO Get system information for About menu
---------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=SeparatorUnloaded. 
------------------------------- SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:48:43 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:48:43 INFO Estimated run completion = 01:00
----------Now update the display
------------------------------- SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:48:43 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T10:48:43 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-04T10:48:43 DEBUG Loaded Robosep User
-2019-04-04T10:48:43 DEBUG Home button clicked
-2019-04-04T10:48:44 INFO Run Sample button clicked
-2019-04-04T10:48:44 DEBUG Hiding Home window
-2019-04-04T10:48:44 DEBUG System running, opening RunProgress
-2019-04-04T10:48:45 INFO New Protocol Select user control generated
-2019-04-04T10:48:45 DEBUG Loaded 5 protocol from User SAP
-2019-04-04T10:48:45 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-04T10:48:45 DEBUG Loaded Robosep User
-2019-04-04T10:48:45 INFO Opening protocol selection for quadrant 1
-2019-04-04T10:48:48 INFO Protocol Selection play button clicked
+2019-04-05T09:09:40 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+2019-04-05T09:09:40 INFO Stopping Splash page
+2019-04-05T09:09:40 ERROR Failed to convert variable '00/0/0000' to valid date.
+2019-04-05T09:09:40 ERROR Failed to convert variable '00/0/0000' to valid date.
+2019-04-05T09:09:40 ERROR Failed to convert variable '00/0/0000' to valid date.
+2019-04-05T09:09:40 ERROR Failed to convert variable '00/00/0000' to valid date.
+2019-04-05T09:09:40 ERROR Failed to convert variable '00/00/0000' to valid date.
+2019-04-05T09:09:40 INFO Initializing About user control
+2019-04-05T09:09:40 INFO Generating Robosep Resources user control
+2019-04-05T09:09:40 INFO Initializing Run Samples user control
+2019-04-05T09:09:40 INFO PauseResumeDialog form created
+2019-04-05T09:09:42 INFO New Protocol Select user control generated
+2019-04-05T09:09:42 DEBUG Loaded 5 protocol from User SAP
+2019-04-05T09:09:42 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-04-05T09:09:42 DEBUG Loaded Robosep User
+2019-04-05T09:09:42 INFO Opening protocol selection for quadrant 1
+2019-04-05T09:09:44 INFO Protocol Selection play button clicked
 ---------No reloading of user protocols is required.
 ---------No need to reload my protocol list.
----------Select the protocol EasySep Direct Human Monocyte Isolation 19669 - buffy coat before exiting.
+---------Select the protocol EasySep Direct Human PBMC Isolation 19654 - buffy coat-CJ before exiting.
 ---------Protocol Select: SelectProtocol called.
 ----------Protocol Select: Called RoboSep_RunSamples.getInstance().addToRun
 ---------Called SelectProtocol
-2019-04-04T10:48:48 DEBUG Adding protocol 'EasySep Direct Human Monocyte Isolation 19669 - buffy coat' to run at quadrant0
-2019-04-04T10:48:48 DEBUG Opening New Number Pad window
-2019-04-04T10:48:51 DEBUG Volume: 5.000
-RunSamples 24: mySeparator.SelectProtocol: QuadrantId=Quadrant1, selectedProtocol.Id=29
-2019-04-04T10:48:51 INFO Estimated run completion = 01:00
+2019-04-05T09:09:44 DEBUG Adding protocol 'EasySep Direct Human PBMC Isolation 19654 - buffy coat-CJ' to run at quadrant0
+2019-04-05T09:09:44 DEBUG Opening New Number Pad window
+2019-04-05T09:09:46 DEBUG Volume: 5.000
+RunSamples 24: mySeparator.SelectProtocol: QuadrantId=Quadrant1, selectedProtocol.Id=5
+2019-04-05T09:09:46 INFO Estimated run completion = 01:00
 --------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Selected. 
 ------------------SeparatorGateway AtSeparatorStateUpdate Selected undefined???
 ----------Protocol Select: After RoboSep_RunSamples.getInstance().addToRun
-2019-04-04T10:48:51 INFO Adding protocol to current run
-2019-04-04T10:48:51 INFO Protocol Selection home button exit after sTime seconds.
+2019-04-05T09:09:46 INFO Adding protocol to current run
+2019-04-05T09:09:46 INFO Protocol Selection home button exit after sTime seconds.
 ------------------------------ SetGuiState:  SeparatorState.Selected -------------------------
-2019-04-04T10:48:51 INFO SetGuiState:  SeparatorState.Selected -------------------------
+2019-04-05T09:09:46 INFO SetGuiState:  SeparatorState.Selected -------------------------
 ---------Now update the display
 ------------------------------ SetGuiState:  SeparatorState.Selected -------------------------
-2019-04-04T10:48:51 INFO SetGuiState:  SeparatorState.Selected -------------------------
+2019-04-05T09:09:46 INFO SetGuiState:  SeparatorState.Selected -------------------------
 RunSamples 32 : setSampleVolume QuadrantId=Quadrant1, Volume=5
-2019-04-04T10:48:52 INFO Quad: 1 Sample Vol 0.005
+2019-04-05T09:09:46 INFO Quad: 1 Sample Vol 0.005
 RunSamples 33 : setSampleVolume QuadrantId=Quadrant1 completed.
 ---------AtProtocolConsumablesUpdate: given 'consumables' are not null.
 ---------AtProtocolConsumablesUpdate: update the protocol table (using the newly received sample volumes).
 ---------Now update the display
-2019-04-04T10:48:52 DEBUG >> Enter to (ScheduleRun)
-2019-04-04T10:48:52 DEBUG Requesting ETC update (ScheduleRun)
-2019-04-04T10:48:52 INFO Sample 0: Protocol ID:1487031555, Volume:5000.000[uL]
-2019-04-04T10:48:52 DEBUG ETC update: 2019-04-04T11:10:15
-2019-04-04T10:48:53 DEBUG >> Leave (ScheduleRun)
-2019-04-04T10:48:53 DEBUG Time remaining (ScheduleRun ETC):	0.0148471846851852
-2019-04-04T10:48:53 INFO Estimated run completion = 22:00
+2019-04-05T09:09:47 DEBUG >> Enter to (ScheduleRun)
+2019-04-05T09:09:47 DEBUG Requesting ETC update (ScheduleRun)
+2019-04-05T09:09:47 INFO Sample 0: Protocol ID:633635150, Volume:5000.000[uL]
+2019-04-05T09:09:47 DEBUG ETC update: 2019-04-05T09:28:15
+2019-04-05T09:09:48 DEBUG >> Leave (ScheduleRun)
+2019-04-05T09:09:48 DEBUG Time remaining (ScheduleRun ETC):	0.0128224937002315
+2019-04-05T09:09:48 INFO Estimated run completion = 19:00
 --------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Ready. 
 ------------------------------ SetGuiState:  SeparatorState.Ready -------------------------
-2019-04-04T10:48:53 INFO SetGuiState:  SeparatorState.Ready -------------------------
-2019-04-04T10:57:51 INFO Run Samples button clicked
-2019-04-04T10:57:51 INFO Scheduling Run
+2019-04-05T09:09:48 INFO SetGuiState:  SeparatorState.Ready -------------------------
+2019-04-05T09:09:48 INFO Run Samples button clicked
+2019-04-05T09:09:48 INFO Scheduling Run
 ---------Run Samples: getConsumables called : iProtocolSelectCount = 1
 GetProtocolConsumables called. selectedProtocolIndexNumber = 0.
 myChosenProtocols.GetKey returns QuadrantId = Quadrant1.
-protocolName=EasySep Direct Human Monocyte Isolation 19669 - buffy coat. initialQuadrant=Quadrant1.
-2019-04-04T10:57:51 DEBUG Getting Consumables for 1 quadrants
-.............................EasySep Direct Human Monocyte Isolation 19669 - buffy coat 0 0
-2019-04-04T10:57:51 DEBUG QuadrantManager::StartRun
-2019-04-04T10:57:51 DEBUG protocol: EasySep Direct Human Monocyte Isolation 19669 - buffy coat.xml is acquired.
-2019-04-04T10:57:51 DEBUG >> Starting acquiring protocol command list[0]
-2019-04-04T10:57:51 DEBUG >>>> Entering to getProtocolCommandList[0]
-2019-04-04T10:57:51 DEBUG ++++++getProtocolCommandList() before lock
-2019-04-04T10:57:51 DEBUG ------Entering to getProtocolCommandList at ControlProxy
-2019-04-04T10:57:51 DEBUG >>>>>>> Entering to getProtocolCommandList at XMLRpcProxy
-2019-04-04T10:57:51 DEBUG >>>>>>> Leaving getProtocolCommandList at XMLRpcProxy
-2019-04-04T10:57:51 DEBUG ------Leaving getProtocolCommandList at ControlProxy
-2019-04-04T10:57:51 DEBUG ++++++getProtocolCommandList() After lock
-2019-04-04T10:57:51 DEBUG >>>> Leaving getProtocolCommandList[0]
-2019-04-04T10:57:51 DEBUG >>>> Entering to ConvertCmdStringListToIntList
-2019-04-04T10:57:51 DEBUG >>>> Leaving ConvertCmdStringListToIntList
-2019-04-04T10:57:51 DEBUG >> finishing acquiring protocol command list[0]
-2019-04-04T10:57:51 DEBUG protocol: EasySep Direct Human Monocyte Isolation 19669 - buffy coat.xml commands: 15
-2019-04-04T10:57:51 DEBUG ProgressBar set 1 steps
-2019-04-04T10:57:51 DEBUG ProgressBar set 15 steps
-2019-04-04T10:57:51 DEBUG Run progress info set.
-2019-04-04T10:57:51 DEBUG Displaying quadrant 0 resources
-2019-04-04T10:57:51 DEBUG Loading resources from sharing protocols
-2019-04-04T10:57:51 INFO Resource window is foreground
-2019-04-04T10:57:54 INFO Ensure lid is closed for barcode scanning = True
-FirstColumnWidth=146, SecondColumnWidth=367, ThirdColumnWidth=46
-bsp.Width = 562. Before: GroupListView.Width = 553
-bsp.Width = 562. After: GroupListView.Width = 559
-GroupListControl_ControlAdded.
-CollapseAll called.
-glv_GroupCollapsed called.
-SetScrollPanelMinimumHeight 1: this.height= 270. 
-SetScrollPanelMinimumHeight 2: this.height= 270. 
-2019-04-04T10:57:54 INFO Ensure lid is closed for barcode scanning = True
-glv_GroupExpanded called.
-value_ValueChanged called: newValue = 0.
-value_ValueChanged called: newValue = 0.
-2019-04-04T10:57:54 INFO Barcode scanner initialization OK.
-2019-04-04T10:57:54 INFO Scan barcode for Quadrant: 1. Vial: 2 .
-2019-04-04T10:58:06 INFO Scan barcode for Quadrant: 1. Vial: 3 .
-2019-04-04T10:58:08 INFO Call Freeaxis.
-2019-04-04T10:58:56 INFO Ensure lid is closed for barcode scanning = True
-value_ValueChanged called: newValue = 0.
-2019-04-04T10:58:56 INFO Scan barcode for Quadrant: 1. Vial: 2 .
-2019-04-04T10:59:08 INFO Scan barcode for Quadrant: 1. Vial: 3 .
-2019-04-04T11:00:21 INFO Call Freeaxis.
-Saving barcode: DEVICE_IO_ERROR  for quadrant 1, Vial Magnetic Particles
-Saving barcode: DEVICE_IO_ERROR  for quadrant 1, Vial Cocktail
-Saving barcode: ---  for quadrant 1, Vial Sample Tube
-2019-04-04T11:00:31 INFO Call Freeaxis.
-2019-04-04T11:00:32 INFO The hydraulic fluid level is low.
-2019-04-04T11:00:34 INFO User clicks the 'Ignore' button for the warning message 'The hydraulic fluid level is low.
-2019-04-04T11:00:36 INFO Run Protocols button clicked
-2019-04-04T11:00:36 DEBUG QuadrantManager::StartRun
-2019-04-04T11:00:36 DEBUG Requesting ETC update (StartRun)
-2019-04-04T11:00:36 INFO Sample 2: Protocol ID:1487031555, Volume:5000.000[uL]
-2019-04-04T11:00:36 WARNING Start Separation run
-2019-04-04T11:00:36 INFO  **INITIALIZING RUN
-2019-04-04T11:00:36 DEBUG Carousel state changed to: Running
---------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Running. 
------------------------------- SetGuiState:  SeparatorState.Running -------------------------
-2019-04-04T11:00:36 INFO SetGuiState:  SeparatorState.Running -------------------------
-2019-04-04T11:01:31 DEBUG ETC update: 2019-04-04T11:22:40
-2019-04-04T11:01:31 DEBUG Time remaining (StartRun ETC):	0.014682107193287
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:01:31 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==Transport==
-2019-04-04T11:01:31 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Transport
-2019-04-04T11:01:31 INFO Progress Update, Next step Transport
-2019-04-04T11:01:31 INFO Estimated run completion = 22:00
-CWJ--> ** AtReportStatus ID: -1, Seq: -3, Quad: 1
-2019-04-04T11:01:31 DEBUG Progress bar ProgressBar to step 0
-2019-04-04T11:01:31 INFO Progress Update: Q = 0 Step = 0 ID = 0 CMD = Transport
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:02:09 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==Mix==
-2019-04-04T11:02:09 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Mix
-2019-04-04T11:02:09 INFO Progress Update, Next step Mix
-CWJ--> ** AtReportStatus ID: 2, Seq: 1, Quad: 1
-2019-04-04T11:02:09 DEBUG Progress bar ProgressBar to step 1
-2019-04-04T11:02:09 INFO Progress Update: Q = 0 Step = 1 ID = 0 CMD = Mix
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:02:48 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==Incubate==
-2019-04-04T11:02:48 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Incubate
-2019-04-04T11:02:48 INFO Progress Update, Next step Incubate
-CWJ--> ** AtReportStatus ID: 2, Seq: 2, Quad: 1
-2019-04-04T11:02:48 DEBUG Progress bar ProgressBar to step 2
-2019-04-04T11:02:48 INFO Progress Update: Q = 0 Step = 2 ID = 0 CMD = Incubate
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:07:48 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==TopUpVial==
-2019-04-04T11:07:48 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  TopUp Vial
-2019-04-04T11:07:48 INFO Progress Update, Next step TopUp Vial
-CWJ--> ** AtReportStatus ID: 2, Seq: 3, Quad: 1
-2019-04-04T11:07:48 DEBUG Progress bar ProgressBar to step 3
-2019-04-04T11:07:48 INFO Progress Update: Q = 0 Step = 3 ID = 0 CMD = TopUpVial
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:08:23 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==Mix==
-2019-04-04T11:08:23 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Mix
-2019-04-04T11:08:23 INFO Progress Update, Next step Mix
-CWJ--> ** AtReportStatus ID: 2, Seq: 4, Quad: 1
-2019-04-04T11:08:24 DEBUG Progress bar ProgressBar to step 4
-2019-04-04T11:08:24 INFO Progress Update: Q = 0 Step = 4 ID = 0 CMD = Mix
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:09:04 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==MixTrans==
-2019-04-04T11:09:04 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Mix Transport
-2019-04-04T11:09:04 INFO Progress Update, Next step Mix Transport
-CWJ--> ** AtReportStatus ID: 2, Seq: 5, Quad: 1
-2019-04-04T11:09:05 DEBUG Progress bar ProgressBar to step 5
-2019-04-04T11:09:05 INFO Progress Update: Q = 0 Step = 5 ID = 0 CMD = MixTrans
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:09:59 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==MixTrans==
-2019-04-04T11:09:59 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Mix Transport
-2019-04-04T11:09:59 INFO Progress Update, Next step Mix Transport
-CWJ--> ** AtReportStatus ID: 2, Seq: 6, Quad: 1
-2019-04-04T11:09:59 DEBUG Progress bar ProgressBar to step 6
-2019-04-04T11:09:59 INFO Progress Update: Q = 0 Step = 6 ID = 0 CMD = MixTrans
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:11:27 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==Separate==
-2019-04-04T11:11:27 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Separate
-2019-04-04T11:11:27 INFO Progress Update, Next step Separate
-CWJ--> ** AtReportStatus ID: 2, Seq: 7, Quad: 1
-2019-04-04T11:11:27 DEBUG Progress bar ProgressBar to step 7
-2019-04-04T11:11:27 INFO Progress Update: Q = 0 Step = 7 ID = 0 CMD = Separate
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:15:27 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==TopUpVial==
-2019-04-04T11:15:27 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  TopUp Vial
-2019-04-04T11:15:27 INFO Progress Update, Next step TopUp Vial
-CWJ--> ** AtReportStatus ID: 2, Seq: 8, Quad: 1
-2019-04-04T11:15:27 DEBUG Progress bar ProgressBar to step 8
-2019-04-04T11:15:27 INFO Progress Update: Q = 0 Step = 8 ID = 0 CMD = TopUpVial
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:16:21 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==Mix==
-2019-04-04T11:16:21 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Mix
-2019-04-04T11:16:21 INFO Progress Update, Next step Mix
-CWJ--> ** AtReportStatus ID: 2, Seq: 9, Quad: 1
-2019-04-04T11:16:21 DEBUG Progress bar ProgressBar to step 9
-2019-04-04T11:16:21 INFO Progress Update: Q = 0 Step = 9 ID = 0 CMD = Mix
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:17:02 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==Transport==
-2019-04-04T11:17:02 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Transport
-2019-04-04T11:17:02 INFO Progress Update, Next step Transport
-CWJ--> ** AtReportStatus ID: 2, Seq: 10, Quad: 1
-2019-04-04T11:17:02 DEBUG Progress bar ProgressBar to step 10
-2019-04-04T11:17:02 INFO Progress Update: Q = 0 Step = 10 ID = 0 CMD = Transport
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:17:39 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==TopUpVial==
-2019-04-04T11:17:39 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  TopUp Vial
-2019-04-04T11:17:39 INFO Progress Update, Next step TopUp Vial
-CWJ--> ** AtReportStatus ID: 2, Seq: 11, Quad: 1
-2019-04-04T11:17:40 DEBUG Progress bar ProgressBar to step 11
-2019-04-04T11:17:40 INFO Progress Update: Q = 0 Step = 11 ID = 0 CMD = TopUpVial
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:18:14 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==Mix==
-2019-04-04T11:18:14 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Mix
-2019-04-04T11:18:14 INFO Progress Update, Next step Mix
-CWJ--> ** AtReportStatus ID: 2, Seq: 12, Quad: 1
-2019-04-04T11:18:15 DEBUG Progress bar ProgressBar to step 12
-2019-04-04T11:18:15 INFO Progress Update: Q = 0 Step = 12 ID = 0 CMD = Mix
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:18:55 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==Separate==
-2019-04-04T11:18:55 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Separate
-2019-04-04T11:18:55 INFO Progress Update, Next step Separate
-CWJ--> ** AtReportStatus ID: 2, Seq: 13, Quad: 1
-2019-04-04T11:18:56 DEBUG Progress bar ProgressBar to step 13
-2019-04-04T11:18:56 INFO Progress Update: Q = 0 Step = 13 ID = 0 CMD = Separate
-------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-04T11:22:55 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-==Transport==
-2019-04-04T11:22:55 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Transport
-2019-04-04T11:22:55 INFO Progress Update, Next step Transport
-CWJ--> ** AtReportStatus ID: 2, Seq: 14, Quad: 1
-2019-04-04T11:22:56 DEBUG Progress bar ProgressBar to step 14
-2019-04-04T11:22:56 INFO Progress Update: Q = 0 Step = 14 ID = 0 CMD = Transport
-2019-04-04T11:23:21 DEBUG ProgressBar COMPLETED! 
-2019-04-04T11:23:37 INFO Estimated run completion = 01:00
-2019-04-04T11:23:37 DEBUG Carousel state changed to: BatchComplete
---------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=BatchComplete. 
------------------------------- SetGuiState:  SeparatorState.BatchComplete -------------------------
-2019-04-04T11:23:37 INFO SetGuiState:  SeparatorState.BatchComplete -------------------------
-2019-04-04T11:23:37 DEBUG ProgressBar COMPLETED! 
-2019-04-04T11:23:37 DEBUG ProgressBar COMPLETED! 
-2019-04-04T11:23:37 INFO >> enter GenerateReport()!
-Column Name = operatorID, Value = SAP
-Column Name = startDate, Value = 4/4/2019 11:00:36 AM
-Column Name = endDate, Value = 4/4/2019 11:23:35 AM
-Column Name = finalStatus, Value = COMPLETED
-Column Name = instrumentID, Value = 0001
-2019-04-04T11:23:42 INFO [BEEP] 1 60 True
-2019-04-04T11:23:46 INFO Unload is called.
-2019-04-04T11:23:46 INFO Unload message dialog is up!
-2019-04-04T11:23:47 INFO [BEEP] 2 60 True
----------Now update the display
------------------------------- SetGuiState:  SeparatorState.BatchComplete -------------------------
-2019-04-04T11:23:48 INFO SetGuiState:  SeparatorState.BatchComplete -------------------------
---------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=SeparatorUnloaded. 
------------------------------- SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-04T11:23:48 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-UnloadCompleted called. Current ThreadID = 9
-2019-04-04T11:23:48 INFO UnloadCompleted called. Current ThreadID = 9
-2019-04-04T11:23:48 DEBUG ProgressBar set 1 steps
-2019-04-04T11:23:48 INFO WaitngMsg disappear - UnloadCompleted() 
-------------------leaveRunProgress is called.
-2019-04-04T11:23:48 INFO leaveRunProgress is called.
-2019-04-04T11:23:48 INFO Quadrant info Cleared
-2019-04-04T11:23:48 INFO Quadrant info Cleared
-2019-04-04T11:23:48 INFO Quadrant info Cleared
-2019-04-04T11:23:48 INFO Quadrant info Cleared
-2019-04-04T11:23:48 INFO Quadrant info Cleared
-2019-04-04T11:23:48 INFO Clearing all selected protocols
-------------------switch to Resources screen to highlight end of run items.
-2019-04-04T11:23:50 INFO switch to Resources screen to highlight end of run items.
-2019-04-04T11:23:50 DEBUG Displaying quadrant 0 resources
-------------------show Resources screen.
-2019-04-04T11:23:51 INFO show Resources screen.
-------------------clear progress bars
-2019-04-04T11:23:51 INFO clear progress bars
-------------------leaveRunProgress returns.
-2019-04-04T11:23:51 INFO leaveRunProgress returns.
-2019-04-04T11:23:51 INFO Estimated run completion = 01:00
-2019-04-04T11:23:51 INFO Estimated run completion = 01:00
-2019-04-04T11:23:52 INFO Unload is called.
-2019-04-04T11:23:52 DEBUG ProgressBar set 1 steps
-2019-04-04T11:23:52 DEBUG Cancel button clicked
-2019-04-04T11:23:53 DEBUG Home button clicked
-2019-04-04T11:23:54 INFO >> GenerateReport() is done: C:\Program Files\STI\RoboSep\reports\2019\Apr\Report_04Apr2019_11_23_35.pdf
-2019-04-04T11:23:54 INFO Initializing System user control
-2019-04-04T11:23:54 DEBUG Hiding Home window
-2019-04-04T11:23:54 INFO System button clicked
-2019-04-04T11:23:56 WARNING Shutdown Software clicked
-2019-04-04T11:23:58 INFO Application log finalised
+protocolName=EasySep Direct Human PBMC Isolation 19654 - buffy coat-CJ. initialQuadrant=Quadrant1.
+2019-04-05T09:09:48 DEBUG Getting Consumables for 1 quadrants
+.............................EasySep Direct Human PBMC Isolation 19654 - buffy coat-CJ 0 0
+2019-04-05T09:09:48 DEBUG QuadrantManager::StartRun
+2019-04-05T09:09:48 DEBUG protocol: EasySep Direct Human PBMC Isolation 19654 - buffy coat-CJ.xml is acquired.
+2019-04-05T09:09:48 DEBUG >> Starting acquiring protocol command list[0]
+2019-04-05T09:09:48 DEBUG >>>> Entering to getProtocolCommandList[0]
+2019-04-05T09:09:48 DEBUG ++++++getProtocolCommandList() before lock
+2019-04-05T09:09:48 DEBUG ------Entering to getProtocolCommandList at ControlProxy
+2019-04-05T09:09:48 DEBUG >>>>>>> Entering to getProtocolCommandList at XMLRpcProxy
+2019-04-05T09:09:48 DEBUG >>>>>>> Leaving getProtocolCommandList at XMLRpcProxy
+2019-04-05T09:09:48 DEBUG ------Leaving getProtocolCommandList at ControlProxy
+2019-04-05T09:09:48 DEBUG ++++++getProtocolCommandList() After lock
+2019-04-05T09:09:48 DEBUG >>>> Leaving getProtocolCommandList[0]
+2019-04-05T09:09:48 DEBUG >>>> Entering to ConvertCmdStringListToIntList
+2019-04-05T09:09:48 DEBUG >>>> Leaving ConvertCmdStringListToIntList
+2019-04-05T09:09:48 DEBUG >> finishing acquiring protocol command list[0]
+2019-04-05T09:09:48 DEBUG protocol: EasySep Direct Human PBMC Isolation 19654 - buffy coat-CJ.xml commands: 9
+2019-04-05T09:09:48 DEBUG ProgressBar set 1 steps
+2019-04-05T09:09:49 DEBUG ProgressBar set 9 steps
+2019-04-05T09:09:49 DEBUG Run progress info set.
+2019-04-05T09:09:49 DEBUG Displaying quadrant 0 resources
+2019-04-05T09:09:49 DEBUG Loading resources from sharing protocols
+2019-04-05T09:09:49 INFO Resource window is foreground
+2019-04-05T09:09:56 INFO Unload is called.
+2019-04-05T09:09:56 DEBUG ProgressBar set 1 steps
+2019-04-05T09:09:56 DEBUG Cancel button clicked
+2019-04-05T09:11:38 DEBUG Home button clicked
+2019-04-05T09:11:39 INFO Initializing System user control
+2019-04-05T09:11:39 DEBUG Hiding Home window
+2019-04-05T09:11:39 INFO System button clicked
+2019-04-05T09:11:40 WARNING Shutdown Software clicked
+2019-04-05T09:11:42 INFO Application log finalised
