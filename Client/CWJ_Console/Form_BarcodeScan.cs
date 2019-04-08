@@ -1344,8 +1344,14 @@ namespace GUI_Console
 
         private bool IsVialBarcodeValid(string code1, string code2)
         {
-            int vialBarcodeCharsCheckLength = code2.Length; // 5 
-            bool result = false;
+            int vialBarcodeCharsCheckLength;
+            
+            if (code2.Length < 7)
+                vialBarcodeCharsCheckLength = 5;
+            else
+                vialBarcodeCharsCheckLength = code2.Length;
+
+            bool result = false; 
             if (code1.Trim().Length >= vialBarcodeCharsCheckLength && code2.Trim().Length >= vialBarcodeCharsCheckLength)
             {
                 if (code1.Trim().Substring(0, vialBarcodeCharsCheckLength) == code2.Trim().Substring(0, vialBarcodeCharsCheckLength))
