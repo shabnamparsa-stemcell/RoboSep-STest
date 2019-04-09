@@ -197,6 +197,9 @@ def GetConfigEnvironment():
     global SS_CUSTOM_HOME;      #CWJ Add 2015-08-06
     global SS_USE460_PUMPHOMING;#CWJ Add 2015-08-06
     global SS_BAD_H_TEST;       #CWJ Add 2015-08-06
+    global SS_ENABLE_STRIP_ARM_POSITION_CHECK;
+    global SS_XY_MICRO_LC;
+    
     'Debugger parameters'
     global ZAxis
     global ZAxisPower
@@ -283,6 +286,9 @@ def GetConfigEnvironment():
     SS_CUSTOM_HOME          = 0; #CWJ Add 2015-08-06
     SS_USE460_PUMPHOMING    = 0; #CWJ Add 2015-08-06
     SS_BAD_H_TEST           = 0; #CWJ Add 2015-08-06
+    
+    SS_ENABLE_STRIP_ARM_POSITION_CHECK = 1;
+    SS_XY_MICRO_LC = 0;
 
     ZAxis = 'X0'
     ZAxisPower = 'P140,50,0'
@@ -381,7 +387,10 @@ def GetConfigEnvironment():
             SS_CUSTOM_HOME        = int(cfg.get( 'environment', 'SS_CUSTOM_HOME' ) )
             SS_USE460_PUMPHOMING  = int(cfg.get( 'environment', 'SS_USE460_PUMPHOMING' ) )
             SS_BAD_H_TEST         = int(cfg.get( 'environment', 'SS_BAD_H_TEST' ) )
+            SS_ENABLE_STRIP_ARM_POSITION_CHECK = int( cfg.get( 'environment', 'SS_ENABLE_STRIP_ARM_POSITION_CHECK' ) )
+            SS_XY_MICRO_LC = int( cfg.get( 'environment', 'SS_XY_MICRO_LC' ) )
             
+
             ZAxis                 = str(cfg.get( 'debugger', 'ZAxis'))
             ZAxisPower            = str(cfg.get( 'debugger', 'ZAxisPower'))
             ZAxisSpeedBegin       = str(cfg.get( 'debugger', 'ZAxisSpeedBegin'))
@@ -460,14 +469,17 @@ def GetConfigEnvironment():
             configEnvironmentSettingMsg += '| SS_CHATTER=%d' % SS_CHATTER
             configEnvironmentSettingMsg += '| SS_ASPIRATEDOWN=%d' % SS_ASPIRATEDOWN
             configEnvironmentSettingMsg += '| SS_DISPENSEDOWN=%d' % SS_DISPENSEDOWN
-            configEnvironmentSettingMsg += '| SS_OLDPCB=%d' % SS_OLDPCB
+            configEnvironmentSettingMsg += '| SS_OLDPCB=%d' % SS_OLDPCB 
             configEnvironmentSettingMsg += '| SS_DEBUGGER_LOG=%d' % SS_DEBUGGER_LOG
             configEnvironmentSettingMsg += '| SS_EXT_LOGGER=%d' % SS_EXT_LOGGER
             configEnvironmentSettingMsg += '| OVERWRITE_WITH_BARCODES=%d' % OVERWRITE_WITH_BARCODES
             configEnvironmentSettingMsg += '| SS_TIMEOUT=%d' % SS_TIMEOUT
             configEnvironmentSettingMsg += '| SS_CUSTOM_HOME=%d' % SS_CUSTOM_HOME
             configEnvironmentSettingMsg += '| SS_USE460_PUMPHOMING=%d' % SS_USE460_PUMPHOMING
-            configEnvironmentSettingMsg += '| SS_BAD_H_TEST=%d' % SS_BAD_H_TEST                                    
+            configEnvironmentSettingMsg += '| SS_BAD_H_TEST=%d' % SS_BAD_H_TEST
+            configEnvironmentSettingMsg += '| SS_ENABLE_STRIP_ARM_POSITION_CHECK=%d' % SS_ENABLE_STRIP_ARM_POSITION_CHECK
+            configEnvironmentSettingMsg += '| SS_XY_MICRO_LC=%d' % SS_XY_MICRO_LC
+            
 #        except Exception, msg:
         except Exception:
             configEnvironmentMsg = 'Error reading from configuration file [%s]...Default settings used: ' % (SERVER_CONFIG_PATH)

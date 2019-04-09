@@ -614,6 +614,42 @@ class TeslaPlatform (Platform):
                 #stripper can't be both home and limit
                 print "self.__tipStripperSensorDelay",self.__tipStripperSensorDelay
                 time.sleep(self.__tipStripperSensorDelay) #commented by shabnam
+
+
+                tipStripWarningMsg = "Tip strip could fail because stripper arm didn't come out all the way."
+                tipStripFailedMsg = "Tip strip failed because stripper arm didn't come out all the way."
+
+                if tesla.config.SS_FORCE_EMULATION == 1:
+                    isStripperArmFailed = False
+                elif tesla.config.SS_XY_MICRO_LC == 1: #2019-04-09 new logic for new board without i27
+                    #Michael: Error messages (when I26==1, even though tip stripper is extended out) will be displayed/logged depending on SS_EnableStripArmPositionCheck. 
+                    #tipStripper.getHomeStatus(self): checks I26
+                    i26 = self.tipStripper.getHomeStatus()
+                    isStripperArmFailed = i26 == 1 #ERROR case!
+                    ###isStripperArmFailed = True #force emulation tip strip fail
+                    if isStripperArmFailed: 
+                        boRaiseError = tesla.config.SS_ENABLE_STRIP_ARM_POSITION_CHECK == 1
+                        if boRaiseError:
+                            msg = tipStripFailedMsg
+                        else:
+                            msg = tipStripWarningMsg
+
+                        print ('\n### Strip ARM Failed with SSXYMicroLC ####\n')
+                        self.__logger.logDebug(msg)
+                        self.svrLog.logError('', self.logPrefix, funcReference, msg)   
+                        if( tesla.config.SS_EXT_LOGGER == 1 ):  
+                            self.ExtLogger.SetCmdListLog(msg, self.tipStripper.m_Card.prefix)
+                            self.ExtLogger.CheckSystemAvail()
+                            if boRaiseError:
+                                self.ExtLogger.DumpHistory()
+                        if boRaiseError:
+                            raise AxisError ('Tip strip failed')
+                        else:
+                            isStripperArmFailed = False
+                            
+                else: #else stick with old logic (before 2019-04-09)
+
+
                 isStripperArmFailed = self.tipStripper.getHomeStatus() == self.tipStripper.getLimitStatus()
 
                 if isStripperArmFailed:
