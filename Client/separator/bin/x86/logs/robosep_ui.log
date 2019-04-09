@@ -1,144 +1,166 @@
-2019-04-09T08:23:28 INFO Application log initialised
-2019-04-09T08:23:28 DEBUG Remoting Address = 127.0.0.1
-2019-04-09T08:23:28 DEBUG ICS Server URL       = http://127.0.0.1:8000
-2019-04-09T08:23:28 DEBUG ICS EventSink URL    = http://127.0.0.1:8001/InstrumentControlEventSink
-2019-04-09T08:23:28 DEBUG Separator Server URL =  tcp://127.0.0.1:3149/Separator
-2019-04-09T08:23:28 DEBUG Configured address = 127.0.0.1
-2019-04-09T08:23:28 INFO Initializing User Console
-2019-04-09T08:23:28 DEBUG Initializing UserDB
-2019-04-09T08:23:28 INFO Application config path: C:\Program Files\STI\RoboSep\config\
-2019-04-09T08:23:28 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-09T08:23:28 INFO XSD Path : c:\Program Files\STI\RoboSep\
-2019-04-09T08:23:28 DEBUG 223protocols loaded
-2019-04-09T08:23:29 ERROR Failed to convert variable '00/00/0000' to valid date.
-2019-04-09T08:23:29 ERROR WarrantyExpireDate in GUI.ini file is invalid.
-2019-04-09T08:23:29 DEBUG Creating new Form_Home
-2019-04-09T08:23:29 INFO Command to launch service 'dns-sd.exe -R "Orca1" _robosep._tcp . 5899' for Network ORCA.
-2019-04-09T08:23:29 INFO Service 'dns-sd.exe' for network ORCA has been launched. ProcessID='3256'. Path='C:\Windows\system32'
-2019-04-09T08:23:29 INFO Loading User Console
-2019-04-09T08:23:29 ERROR Starting GUI Thread
-2019-04-09T08:23:29 INFO Connecting...
-2019-04-09T08:23:29 INFO set user.db file to : User1.udb
-2019-04-09T08:23:29 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 1 tcp://127.0.0.1:3149/Separator
-2019-04-09T08:23:29 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 2
-2019-04-09T08:23:29 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-09T08:23:29 DEBUG Loaded Robosep User
-2019-04-09T08:23:29 INFO Current user ID : 'SAP'.
-2019-04-09T08:23:29 DEBUG Instrument Control API Ping() returned True
-2019-04-09T08:23:29 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 3
-2019-04-09T08:23:29 INFO Get system information for About menu
-2019-04-09T08:23:29 INFO Estimated run completion = 01:00
-2019-04-09T08:23:53 DEBUG Carousel state changed to: SeparatorUnloaded
-2019-04-09T08:23:53 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-09T08:23:53 INFO Stopping Splash page
-2019-04-09T08:23:54 ERROR Failed to convert variable '00/0/0000' to valid date.
-2019-04-09T08:23:54 ERROR Failed to convert variable '00/0/0000' to valid date.
-2019-04-09T08:23:54 ERROR Failed to convert variable '00/0/0000' to valid date.
-2019-04-09T08:23:54 ERROR Failed to convert variable '00/00/0000' to valid date.
-2019-04-09T08:23:54 ERROR Failed to convert variable '00/00/0000' to valid date.
-2019-04-09T08:23:54 INFO Initializing About user control
-2019-04-09T08:23:54 INFO Generating Robosep Resources user control
-2019-04-09T08:23:54 INFO Initializing Run Samples user control
-2019-04-09T08:23:54 INFO PauseResumeDialog form created
-2019-04-09T08:23:57 DEBUG Home button clicked
-2019-04-09T08:23:58 INFO Initializing System user control
-2019-04-09T08:23:58 DEBUG Hiding Home window
-2019-04-09T08:23:58 INFO System button clicked
-2019-04-09T08:23:59 INFO Adding Maintenance Protocol
-2019-04-09T08:23:59 INFO Selected Basic prime
-2019-04-09T08:23:59 INFO Invoking maintenance action Prime
-2019-04-09T08:23:59 INFO Estimated run completion = 01:00
-2019-04-09T08:24:00 INFO Basic Prime Maintenance button clicked
-2019-04-09T08:24:00 INFO SetGuiState:  SeparatorState.Selected -------------------------
-2019-04-09T08:24:00 INFO SetGuiState:  SeparatorState.Selected -------------------------
-2019-04-09T08:24:00 DEBUG >> Enter to (ScheduleRun)
-2019-04-09T08:24:00 DEBUG Requesting ETC update (ScheduleRun)
-2019-04-09T08:24:00 INFO Sample 0: Protocol ID:309666504, Volume:0.000[uL]
-2019-04-09T08:24:00 DEBUG ETC update: 2019-04-09T08:25:08
-2019-04-09T08:24:01 INFO Run Samples button clicked
-2019-04-09T08:24:01 DEBUG >>Scheduler in progress
-2019-04-09T08:24:01 DEBUG >> Leave (ScheduleRun)
-2019-04-09T08:24:01 DEBUG Time remaining (ScheduleRun ETC):	0.000785403603009259
-2019-04-09T08:24:01 INFO Estimated run completion = 02:00
-2019-04-09T08:24:01 INFO SetGuiState:  SeparatorState.Ready -------------------------
-2019-04-09T08:24:01 INFO ---->> ISeparator busy
-2019-04-09T08:24:01 INFO ---->> ISeparator busy
-2019-04-09T08:24:01 INFO Scheduling Run
-2019-04-09T08:24:01 DEBUG Getting Consumables for 1 quadrants
-2019-04-09T08:24:01 DEBUG QuadrantManager::StartRun
-2019-04-09T08:24:01 INFO output: C:\Program Files\STI\RoboSep\protocols\
-2019-04-09T08:24:01 DEBUG returned 4commands
-2019-04-09T08:24:01 DEBUG protocol: prime.xml commands: 4
-2019-04-09T08:24:01 DEBUG ProgressBar set 1 steps
-2019-04-09T08:24:01 DEBUG ProgressBar set 4 steps
-2019-04-09T08:24:01 DEBUG Run progress info set.
-2019-04-09T08:24:01 DEBUG Displaying quadrant 0 resources
-2019-04-09T08:24:01 DEBUG Loading resources from sharing protocols
-2019-04-09T08:24:01 INFO Resource window is foreground
-2019-04-09T08:24:03 INFO Ensure lid is closed for barcode scanning = True
-2019-04-09T08:24:03 INFO The hydraulic fluid level is low.
-2019-04-09T08:24:04 INFO User clicks the 'Ignore' button for the warning message 'The hydraulic fluid level is low.
-2019-04-09T08:24:10 INFO Run Protocols button clicked
-2019-04-09T08:24:10 DEBUG QuadrantManager::StartRun
-2019-04-09T08:24:10 DEBUG Requesting ETC update (StartRun)
-2019-04-09T08:24:10 INFO Sample 0: Protocol ID:309666504, Volume:0.000[uL]
-2019-04-09T08:24:10 WARNING Start Separation run
-2019-04-09T08:24:10 INFO  **INITIALIZING RUN
-2019-04-09T08:24:10 DEBUG Carousel state changed to: Running
-2019-04-09T08:24:10 INFO SetGuiState:  SeparatorState.Running -------------------------
-2019-04-09T08:24:10 DEBUG ETC update: 2019-04-09T08:25:18
-2019-04-09T08:24:10 DEBUG Time remaining (StartRun ETC):	0.000780697655092593
-2019-04-09T08:24:10 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-09T08:24:10 INFO Estimated run completion = 02:00
-2019-04-09T08:24:10 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Home All
-2019-04-09T08:24:10 INFO Progress Update, Next step Home All
-2019-04-09T08:24:14 DEBUG Progress bar ProgressBar to step 0
-2019-04-09T08:24:14 INFO Progress Update: Q = 0 Step = 0 ID = 0 CMD = HomeAll
-2019-04-09T08:24:35 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-09T08:24:35 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Prime
-2019-04-09T08:24:35 INFO Progress Update, Next step Prime
-2019-04-09T08:24:36 DEBUG Progress bar ProgressBar to step 1
-2019-04-09T08:24:36 INFO Progress Update: Q = 0 Step = 1 ID = 0 CMD = Prime
-2019-04-09T08:25:02 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-09T08:25:02 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Prime
-2019-04-09T08:25:02 INFO Progress Update, Next step Prime
-2019-04-09T08:25:03 DEBUG Progress bar ProgressBar to step 2
-2019-04-09T08:25:03 INFO Progress Update: Q = 0 Step = 2 ID = 0 CMD = Prime
-2019-04-09T08:25:29 INFO ------------** AtReportStatus in SampleProcessing TSC1001
-2019-04-09T08:25:29 INFO <<<<<<<<<<<<<<<<<<< AtReportStatus:  Flush
-2019-04-09T08:25:29 INFO Progress Update, Next step Flush
-2019-04-09T08:25:30 DEBUG Progress bar ProgressBar to step 3
-2019-04-09T08:25:30 INFO Progress Update: Q = 0 Step = 3 ID = 0 CMD = Flush
-2019-04-09T08:25:40 DEBUG ProgressBar COMPLETED! 
-2019-04-09T08:25:43 INFO Estimated run completion = 01:00
-2019-04-09T08:25:43 DEBUG Carousel state changed to: BatchComplete
-2019-04-09T08:25:43 INFO SetGuiState:  SeparatorState.BatchComplete -------------------------
-2019-04-09T08:25:44 DEBUG ProgressBar COMPLETED! 
-2019-04-09T08:25:44 DEBUG ProgressBar COMPLETED! 
-2019-04-09T08:25:44 INFO >> enter GenerateReport()!
-2019-04-09T08:25:47 INFO Unload is called.
-2019-04-09T08:25:47 INFO Unload message dialog is up!
-2019-04-09T08:25:48 INFO [BEEP] 1 60 True
-2019-04-09T08:25:50 INFO SetGuiState:  SeparatorState.BatchComplete -------------------------
-2019-04-09T08:25:50 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
-2019-04-09T08:25:50 INFO UnloadCompleted called. Current ThreadID = 10
-2019-04-09T08:25:50 DEBUG ProgressBar set 1 steps
-2019-04-09T08:25:50 INFO WaitngMsg disappear - UnloadCompleted() 
-2019-04-09T08:25:50 INFO leaveRunProgress is called.
-2019-04-09T08:25:50 INFO Quadrant info Cleared
-2019-04-09T08:25:50 INFO Quadrant info Cleared
-2019-04-09T08:25:50 INFO Quadrant info Cleared
-2019-04-09T08:25:50 INFO Quadrant info Cleared
-2019-04-09T08:25:50 INFO Quadrant info Cleared
-2019-04-09T08:25:50 INFO Clearing all selected protocols
-2019-04-09T08:25:52 INFO show Run Samples screen.
-2019-04-09T08:25:52 INFO clear progress bars
-2019-04-09T08:25:52 INFO leaveRunProgress returns.
-2019-04-09T08:25:52 INFO Estimated run completion = 01:00
-2019-04-09T08:25:52 INFO Estimated run completion = 01:00
-2019-04-09T08:25:54 INFO >> GenerateReport() is done: C:\Program Files\STI\RoboSep\reports\2019\Apr\Report_09Apr2019_08_25_41.pdf
-2019-04-09T08:26:19 DEBUG Home button clicked
-2019-04-09T08:26:21 DEBUG Hiding Home window
-2019-04-09T08:26:21 INFO System button clicked
-2019-04-09T08:26:22 WARNING Shutdown Software clicked
-2019-04-09T08:26:24 INFO Application log finalised
+2019-04-08T09:02:45 INFO Application log initialised
+2019-04-08T09:02:45 DEBUG Remoting Address = 127.0.0.1
+2019-04-08T09:02:45 DEBUG ICS Server URL       = http://127.0.0.1:8000
+2019-04-08T09:02:45 DEBUG ICS EventSink URL    = http://127.0.0.1:8001/InstrumentControlEventSink
+2019-04-08T09:02:45 DEBUG Separator Server URL =  tcp://127.0.0.1:3149/Separator
+2019-04-08T09:02:45 DEBUG Configured address = 127.0.0.1
+2019-04-08T09:02:46 INFO Initializing User Console
+2019-04-08T09:02:46 DEBUG Initializing UserDB
+2019-04-08T09:02:46 INFO Application config path: C:\Program Files\STI\RoboSep\config\
+2019-04-08T09:02:46 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-04-08T09:02:46 INFO XSD Path : c:\Program Files\STI\RoboSep\
+2019-04-08T09:02:46 DEBUG 223protocols loaded
+2019-04-08T09:02:46 ERROR Failed to convert variable '00/00/0000' to valid date.
+2019-04-08T09:02:46 ERROR WarrantyExpireDate in GUI.ini file is invalid.
+2019-04-08T09:02:46 DEBUG Creating new Form_Home
+2019-04-08T09:02:46 INFO Command to launch service 'dns-sd.exe -R "Orca1" _robosep._tcp . 5899' for Network ORCA.
+2019-04-08T09:02:46 INFO Service 'dns-sd.exe' for network ORCA has been launched. ProcessID='2992'. Path='C:\Windows\system32'
+2019-04-08T09:02:46 INFO Loading User Console
+2019-04-08T09:02:46 ERROR Starting GUI Thread
+2019-04-08T09:02:46 INFO set user.db file to : User1.udb
+2019-04-08T09:02:46 INFO Connecting...
+2019-04-08T09:02:46 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 1 tcp://127.0.0.1:3149/Separator
+2019-04-08T09:02:46 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 2
+2019-04-08T09:02:47 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-04-08T09:02:47 DEBUG Loaded Robosep User
+2019-04-08T09:02:47 INFO Current user ID : 'SAP'.
+2019-04-08T09:02:47 DEBUG Instrument Control API Ping() returned True
+2019-04-08T09:02:47 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 3
+2019-04-08T09:02:47 INFO Get system information for About menu
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Initialising. 
+2019-04-08T09:02:47 INFO Estimated run completion = 01:00
+---------Now update the display
+2019-04-08T09:03:12 DEBUG Carousel state changed to: SeparatorUnloaded
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=SeparatorUnloaded. 
+------------------------------ SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+2019-04-08T09:03:12 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+2019-04-08T09:03:12 INFO Stopping Splash page
+2019-04-08T09:03:13 ERROR Failed to convert variable '00/0/0000' to valid date.
+2019-04-08T09:03:13 ERROR Failed to convert variable '00/0/0000' to valid date.
+2019-04-08T09:03:13 ERROR Failed to convert variable '00/0/0000' to valid date.
+2019-04-08T09:03:13 ERROR Failed to convert variable '00/00/0000' to valid date.
+2019-04-08T09:03:13 ERROR Failed to convert variable '00/00/0000' to valid date.
+2019-04-08T09:03:13 INFO Initializing About user control
+2019-04-08T09:03:13 INFO Generating Robosep Resources user control
+2019-04-08T09:03:13 INFO Initializing Run Samples user control
+2019-04-08T09:03:13 INFO PauseResumeDialog form created
+2019-04-08T09:03:15 INFO New Protocol Select user control generated
+2019-04-08T09:03:15 DEBUG Loaded 5 protocol from User SAP
+2019-04-08T09:03:15 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-04-08T09:03:15 DEBUG Loaded Robosep User
+2019-04-08T09:03:15 INFO Opening protocol selection for quadrant 1
+2019-04-08T09:03:47 INFO Protocol Selection play button clicked
+---------No reloading of user protocols is required.
+---------No need to reload my protocol list.
+---------Select the protocol EasySep Direct Human Monocyte Isolation 19669 - buffy coat before exiting.
+---------Protocol Select: SelectProtocol called.
+----------Protocol Select: Called RoboSep_RunSamples.getInstance().addToRun
+---------Called SelectProtocol
+2019-04-08T09:03:47 DEBUG Adding protocol 'EasySep Direct Human Monocyte Isolation 19669 - buffy coat' to run at quadrant0
+2019-04-08T09:03:47 DEBUG Opening New Number Pad window
+2019-04-08T09:03:49 DEBUG Volume: 5.000
+RunSamples 24: mySeparator.SelectProtocol: QuadrantId=Quadrant1, selectedProtocol.Id=2
+2019-04-08T09:03:49 INFO Estimated run completion = 01:00
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Selected. 
+------------------SeparatorGateway AtSeparatorStateUpdate Selected undefined???
+----------Protocol Select: After RoboSep_RunSamples.getInstance().addToRun
+2019-04-08T09:03:49 INFO Adding protocol to current run
+2019-04-08T09:03:49 INFO Protocol Selection home button exit after sTime seconds.
+------------------------------ SetGuiState:  SeparatorState.Selected -------------------------
+2019-04-08T09:03:49 INFO SetGuiState:  SeparatorState.Selected -------------------------
+---------Now update the display
+------------------------------ SetGuiState:  SeparatorState.Selected -------------------------
+2019-04-08T09:03:49 INFO SetGuiState:  SeparatorState.Selected -------------------------
+RunSamples 32 : setSampleVolume QuadrantId=Quadrant1, Volume=5
+2019-04-08T09:03:49 INFO Quad: 1 Sample Vol 0.005
+RunSamples 33 : setSampleVolume QuadrantId=Quadrant1 completed.
+---------AtProtocolConsumablesUpdate: given 'consumables' are not null.
+---------AtProtocolConsumablesUpdate: update the protocol table (using the newly received sample volumes).
+---------Now update the display
+2019-04-08T09:03:49 DEBUG >> Enter to (ScheduleRun)
+2019-04-08T09:03:49 DEBUG Requesting ETC update (ScheduleRun)
+2019-04-08T09:03:49 INFO Sample 0: Protocol ID:1487031555, Volume:5000.000[uL]
+2019-04-08T09:03:49 DEBUG ETC update: 2019-04-08T09:25:12
+2019-04-08T09:03:50 INFO Run Samples button clicked
+2019-04-08T09:03:50 DEBUG >>Scheduler in progress
+2019-04-08T09:03:50 DEBUG >> Leave (ScheduleRun)
+2019-04-08T09:03:50 DEBUG Time remaining (ScheduleRun ETC):	0.0148391449953704
+2019-04-08T09:03:50 INFO Estimated run completion = 22:00
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Ready. 
+------------------------------ SetGuiState:  SeparatorState.Ready -------------------------
+2019-04-08T09:03:51 INFO SetGuiState:  SeparatorState.Ready -------------------------
+2019-04-08T09:03:51 INFO ---->> ISeparator busy
+2019-04-08T09:03:51 INFO ---->> ISeparator busy
+2019-04-08T09:03:51 INFO Scheduling Run
+---------Run Samples: getConsumables called : iProtocolSelectCount = 1
+GetProtocolConsumables called. selectedProtocolIndexNumber = 0.
+myChosenProtocols.GetKey returns QuadrantId = Quadrant1.
+protocolName=EasySep Direct Human Monocyte Isolation 19669 - buffy coat. initialQuadrant=Quadrant1.
+2019-04-08T09:03:51 DEBUG Getting Consumables for 1 quadrants
+.............................EasySep Direct Human Monocyte Isolation 19669 - buffy coat 0 0
+2019-04-08T09:03:51 DEBUG QuadrantManager::StartRun
+2019-04-08T09:03:51 DEBUG protocol: EasySep Direct Human Monocyte Isolation 19669 - buffy coat.xml is acquired.
+2019-04-08T09:03:51 DEBUG >> Starting acquiring protocol command list[0]
+2019-04-08T09:03:51 DEBUG >>>> Entering to getProtocolCommandList[0]
+2019-04-08T09:03:51 DEBUG ++++++getProtocolCommandList() before lock
+2019-04-08T09:03:51 DEBUG ------Entering to getProtocolCommandList at ControlProxy
+2019-04-08T09:03:51 DEBUG >>>>>>> Entering to getProtocolCommandList at XMLRpcProxy
+2019-04-08T09:03:51 DEBUG >>>>>>> Leaving getProtocolCommandList at XMLRpcProxy
+2019-04-08T09:03:51 DEBUG ------Leaving getProtocolCommandList at ControlProxy
+2019-04-08T09:03:51 DEBUG ++++++getProtocolCommandList() After lock
+2019-04-08T09:03:51 DEBUG >>>> Leaving getProtocolCommandList[0]
+2019-04-08T09:03:51 DEBUG >>>> Entering to ConvertCmdStringListToIntList
+2019-04-08T09:03:51 DEBUG >>>> Leaving ConvertCmdStringListToIntList
+2019-04-08T09:03:51 DEBUG >> finishing acquiring protocol command list[0]
+2019-04-08T09:03:51 DEBUG protocol: EasySep Direct Human Monocyte Isolation 19669 - buffy coat.xml commands: 15
+2019-04-08T09:03:51 DEBUG ProgressBar set 1 steps
+2019-04-08T09:03:51 DEBUG ProgressBar set 15 steps
+2019-04-08T09:03:51 DEBUG Run progress info set.
+2019-04-08T09:03:51 DEBUG Displaying quadrant 0 resources
+2019-04-08T09:03:51 DEBUG Loading resources from sharing protocols
+2019-04-08T09:03:51 INFO Resource window is foreground
+FirstColumnWidth=146, SecondColumnWidth=367, ThirdColumnWidth=46
+bsp.Width = 562. Before: GroupListView.Width = 553
+bsp.Width = 562. After: GroupListView.Width = 559
+GroupListControl_ControlAdded.
+CollapseAll called.
+glv_GroupCollapsed called.
+SetScrollPanelMinimumHeight 1: this.height= 270. 
+SetScrollPanelMinimumHeight 2: this.height= 270. 
+2019-04-08T09:03:57 INFO Ensure lid is closed for barcode scanning = True
+glv_GroupExpanded called.
+value_ValueChanged called: newValue = 0.
+value_ValueChanged called: newValue = 0.
+2019-04-08T09:03:57 INFO Barcode scanner initialization OK.
+2019-04-08T09:03:57 INFO Scan barcode for Quadrant: 1. Vial: 2 .
+2019-04-08T09:04:09 INFO Scan barcode for Quadrant: 1. Vial: 3 .
+2019-04-08T09:04:11 INFO Call Freeaxis.
+2019-04-08T09:04:21 INFO Call Freeaxis.
+2019-04-08T09:04:21 INFO Scan barcode window closed
+FirstColumnWidth=146, SecondColumnWidth=367, ThirdColumnWidth=46
+bsp.Width = 562. Before: GroupListView.Width = 553
+bsp.Width = 562. After: GroupListView.Width = 559
+GroupListControl_ControlAdded.
+CollapseAll called.
+glv_GroupCollapsed called.
+SetScrollPanelMinimumHeight 1: this.height= 270. 
+SetScrollPanelMinimumHeight 2: this.height= 270. 
+2019-04-08T09:05:01 INFO Ensure lid is closed for barcode scanning = True
+glv_GroupExpanded called.
+value_ValueChanged called: newValue = 0.
+value_ValueChanged called: newValue = 0.
+2019-04-08T09:05:01 INFO Barcode scanner initialization OK.
+2019-04-08T09:05:01 INFO Scan barcode for Quadrant: 1. Vial: 2 .
+2019-04-08T09:05:13 INFO Scan barcode for Quadrant: 1. Vial: 3 .
+2019-04-08T09:05:58 INFO Call Freeaxis.
+2019-04-08T09:06:10 INFO Call Freeaxis.
+2019-04-08T09:06:10 INFO Scan barcode window closed
+2019-04-08T09:06:13 INFO Unload is called.
+2019-04-08T09:06:13 DEBUG ProgressBar set 1 steps
+2019-04-08T09:06:13 DEBUG Cancel button clicked
+2019-04-08T09:06:14 DEBUG Home button clicked
+2019-04-08T09:06:15 INFO Initializing System user control
+2019-04-08T09:06:15 DEBUG Hiding Home window
+2019-04-08T09:06:15 INFO System button clicked
+2019-04-08T09:06:16 WARNING Shutdown Software clicked
+2019-04-08T09:06:18 INFO Application log finalised

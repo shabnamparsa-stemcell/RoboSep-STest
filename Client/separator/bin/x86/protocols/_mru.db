@@ -80,8 +80,8 @@
     <ProtocolLabel>Basic prime</ProtocolLabel>
     <ProtocolDescription />
     <ProtocolQuadrantCount>1</ProtocolQuadrantCount>
-    <ProtocolUsageCount>8</ProtocolUsageCount>
-    <ProtocolUsageTime>2019-04-09T08:24:10.5780448-07:00</ProtocolUsageTime>
+    <ProtocolUsageCount>1</ProtocolUsageCount>
+    <ProtocolUsageTime>2019-04-05T08:21:02.0116953-07:00</ProtocolUsageTime>
   </Protocol>
   <Protocol>
     <ProtocolId>5</ProtocolId>
@@ -89,8 +89,8 @@
     <ProtocolLabel>EasySep Direct Human PBMC Isolation 19654 - buffy coat-CJ</ProtocolLabel>
     <ProtocolDescription>100 uL/mL cocktail, 250 uL/mL particle, 5 min incubation(s), 8 min separation(s), RSSCustVial: 2600;4100;26</ProtocolDescription>
     <ProtocolQuadrantCount>1</ProtocolQuadrantCount>
-    <ProtocolUsageCount>3</ProtocolUsageCount>
-    <ProtocolUsageTime>2019-04-08T10:27:12.0935076-07:00</ProtocolUsageTime>
+    <ProtocolUsageCount>2</ProtocolUsageCount>
+    <ProtocolUsageTime>2019-04-04T13:45:47.1511482-07:00</ProtocolUsageTime>
   </Protocol>
   <Protocol>
     <ProtocolId>6</ProtocolId>
