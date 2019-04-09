@@ -615,7 +615,6 @@ class TeslaPlatform (Platform):
                 print "self.__tipStripperSensorDelay",self.__tipStripperSensorDelay
                 time.sleep(self.__tipStripperSensorDelay) #commented by shabnam
 
-
                 tipStripWarningMsg = "Tip strip could fail because stripper arm didn't come out all the way."
                 tipStripFailedMsg = "Tip strip failed because stripper arm didn't come out all the way."
 
@@ -649,41 +648,40 @@ class TeslaPlatform (Platform):
                             
                 else: #else stick with old logic (before 2019-04-09)
 
+                    isStripperArmFailed = self.tipStripper.getHomeStatus() == self.tipStripper.getLimitStatus()
 
-                isStripperArmFailed = self.tipStripper.getHomeStatus() == self.tipStripper.getLimitStatus()
-
-                if isStripperArmFailed:
-                    # 2012-01-30 sp -- replace environment variable with configuration variable
-                    #if os.environ.has_key('SS_FORCE_EMULATION'):
-                    if tesla.config.SS_FORCE_EMULATION == 1:
-                        isStripperArmFailed = False
-                    else:
+                    if isStripperArmFailed:
                         # 2012-01-30 sp -- replace environment variable with configuration variable
-                        #if os.environ.has_key('SS_OLDPCB'):
-                        if tesla.config.SS_OLDPCB == 1:
-                            self.__logger.logDebug(  "Tip strip could fail because stripper arm didn't come out all the way.")
-                            self.svrLog.logError('', self.logPrefix, funcReference, "Tip strip could fail because stripper arm didn't come out all the way.")   # 2011-11-29 sp -- added logging
-                            if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
-                                self.ExtLogger.SetCmdListLog("Tip strip could fail because stripper arm didn't come out all the way.", self.tipStripper.m_Card.prefix)
-                                self.ExtLogger.CheckSystemAvail()
-                                # self.ExtLogger.DumpHistory()
-                            #raise AxisError ('Tip strip failed')
-                            isStripperArmFailed = False #REMOVE this if raise error
+                        #if os.environ.has_key('SS_FORCE_EMULATION'):
+                        if tesla.config.SS_FORCE_EMULATION == 1:
+                            isStripperArmFailed = False
+                        else: 
+                            # 2012-01-30 sp -- replace environment variable with configuration variable
+                            #if os.environ.has_key('SS_OLDPCB'):
+                            if tesla.config.SS_OLDPCB == 1:
+                                self.__logger.logDebug(  "Tip strip could fail because stripper arm didn't come out all the way.")
+                                self.svrLog.logError('', self.logPrefix, funcReference, "Tip strip could fail because stripper arm didn't come out all the way.")   # 2011-11-29 sp -- added logging
+                                if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
+                                    self.ExtLogger.SetCmdListLog("Tip strip could fail because stripper arm didn't come out all the way.", self.tipStripper.m_Card.prefix)
+                                    self.ExtLogger.CheckSystemAvail()
+                                    # self.ExtLogger.DumpHistory()
+                                #raise AxisError ('Tip strip failed')
+                                isStripperArmFailed = False #REMOVE this if raise error
                            
-                            # raw_input('\n##### Tip Stripper Arm Failed!!!! #####\a')
+                                # raw_input('\n##### Tip Stripper Arm Failed!!!! #####\a')
                            
-                        else:   
-                            print ('\n### New PCB Strip ARM ####\n')
-                            self.__logger.logDebug(  "Tip strip failed because stripper arm didn't come out all the way.")
-                            self.svrLog.logError('', self.logPrefix, funcReference, "Tip strip failed because stripper arm didn't come out all the way.")   # 2011-11-29 sp -- added logging
-                            if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
-                                self.ExtLogger.SetCmdListLog("Tip strip failed because stripper arm didn't come out all the way.", self.tipStripper.m_Card.prefix)
-                                self.ExtLogger.CheckSystemAvail()
-                                self.ExtLogger.DumpHistory()
-                            raise AxisError ('Tip strip failed')
-                            #isStripperArmFailed = False #REMOVE this if raise error
+                            else:   
+                                print ('\n### New PCB Strip ARM ####\n')
+                                self.__logger.logDebug(  "Tip strip failed because stripper arm didn't come out all the way.")
+                                self.svrLog.logError('', self.logPrefix, funcReference, "Tip strip failed because stripper arm didn't come out all the way.")   # 2011-11-29 sp -- added logging
+                                if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
+                                    self.ExtLogger.SetCmdListLog("Tip strip failed because stripper arm didn't come out all the way.", self.tipStripper.m_Card.prefix)
+                                    self.ExtLogger.CheckSystemAvail()
+                                    self.ExtLogger.DumpHistory()
+                                raise AxisError ('Tip strip failed')
+                                #isStripperArmFailed = False #REMOVE this if raise error
 
-                            # raw_input('\n##### Tip Stripper Arm Failed!!!! #####\a')
+                                # raw_input('\n##### Tip Stripper Arm Failed!!!! #####\a')
 
                 
                 # Commence the actual strip                
