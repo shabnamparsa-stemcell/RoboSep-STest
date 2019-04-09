@@ -310,6 +310,7 @@ namespace Report_Crystal
 
             bool bAdjust1 = false, bAdjust2 = false, bAdjust3 = false;
             Font theFont;
+            int refWidth = 0;
 
             for (int i = 0; i < icryRptDoc.ReportDefinition.Sections.Count; i++)
             {
@@ -451,6 +452,25 @@ namespace Report_Crystal
                                     break;
                             }
                         } // end for
+                        for (int n = 0; n < subrobjs.Count; n++)
+                        {
+                            ReportObject subrobj = subrobjs[n];
+                            if (subrobj == null)
+                                continue;
+
+                            switch (subrobj.Name)
+                            {
+                                case "TB_RS_SampleVol_mL":
+                                    refWidth = subrobj.Width;
+                                    break;
+                                case "TB_RS_MagneticParticles":
+                                case "TB_RS_Selection_Cocktail":
+                                case "TB_RS_Antibody_Cocktail":
+                                    subrobj.Width = refWidth;
+                                    break;
+                            }
+                        } // end for
+
                         bAdjust3 = true; 
                     } // end if sub report
 
