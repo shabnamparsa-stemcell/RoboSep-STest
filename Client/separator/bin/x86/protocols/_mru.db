@@ -80,8 +80,8 @@
     <ProtocolLabel>Basic prime</ProtocolLabel>
     <ProtocolDescription />
     <ProtocolQuadrantCount>1</ProtocolQuadrantCount>
-    <ProtocolUsageCount>1</ProtocolUsageCount>
-    <ProtocolUsageTime>2019-04-05T08:21:02.0116953-07:00</ProtocolUsageTime>
+    <ProtocolUsageCount>2</ProtocolUsageCount>
+    <ProtocolUsageTime>2019-04-09T09:50:56.0565937-07:00</ProtocolUsageTime>
   </Protocol>
   <Protocol>
     <ProtocolId>5</ProtocolId>
