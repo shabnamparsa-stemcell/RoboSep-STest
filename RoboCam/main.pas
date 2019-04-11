@@ -282,8 +282,9 @@ const ROBO_STEP_NONE           = 0;
       ROBO_STEP_TOPUPTRANS     = 15;
       ROBO_STEP_TOPUPTRANSSEPTRANS    = 16;
       ROBO_STEP_TOPUPMIXTRANSSEPTRANS = 17;
+      ROBO_STEP_ENDOFPROTOCOL         = 18;
 
-const RoboStepString : array[0..17] of String = ('None',
+const RoboStepString : array[0..18] of String = ('None',
                                                 'HomeAll',
                                                 'Transport',
                                                 'Mix',
@@ -300,7 +301,8 @@ const RoboStepString : array[0..17] of String = ('None',
                                                 'ResMix',
                                                 'TopUpTrans',
                                                 'TopUpTransSepTrans',
-                                                'TopUpMixTransSepTrans');
+                                                'TopUpMixTransSepTrans',
+                                                'EndOfProtocol');
 const PRIORITY_CAPTURE = 2;
       PRIORITY_NORMAL  = 1;
 procedure SetPriorityLevel(P: byte);
