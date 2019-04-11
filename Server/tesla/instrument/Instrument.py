@@ -794,26 +794,36 @@ class Instrument(Subsystem):
 	id is a unique identifier (eg. sample ID) for tracking the caller.
 	kw is a dictionary of optional parameters & values.'''
         funcReference = __name__ + '.Incubate'  # 2011-11-25 sp -- added logging
-        self.svrLog.logDebug('', self.logPrefix, funcReference, 'start Incubate; sample=%s |time=%d' % (id, period_secs))   # 2011-11-25 sp -- added logging
-        CamMgr = RoboTrace.GetRoboCamMgrInstance();
-        CamMgr.SetProcStep(4);
-	CamMgr.SetCurrentProtocolID(id)
-        if kw.has_key('seq'):   #CWJ Mod
-           seq = kw['seq']      #CWJ Mod
-	   CamMgr.SetCurrentProtocolSeq(seq)
-	time.sleep(4)				#CWJ Add
+        cmdName = 'Incubate'
+        ProcStep = 4
+        self.WaitCommandHelper(funcReference, cmdName, ProcStep, period_secs, id, **kw)
         
 
     def Separate(self, period_secs, id = None, **kw):         #CWJ MOD
         '''Separate for a specified number of seconds.        #CWJ Mod
         id is a unique identifier (eg. sample ID) for tracking the caller.
         kw is a dictionary of optional parameters & values.'''
-    
+
         funcReference = __name__ + '.Separate'  # 2011-11-25 sp -- added logging
-        self.svrLog.logDebug('', self.logPrefix, funcReference, 'start Separate; sample=%s |time=%d' % (id, period_secs))   # 2011-11-25 sp -- added logging
+        cmdName = 'Separate'
+        ProcStep = 10
+        self.WaitCommandHelper(funcReference, cmdName, ProcStep, period_secs, id, **kw)
+
+    def EndOfProtocol(self, period_secs, id = None, **kw):
+        '''Incubate for a specified number of seconds.
+	id is a unique identifier (eg. sample ID) for tracking the caller.
+	kw is a dictionary of optional parameters & values.'''
+        funcReference = __name__ + '.Incubate'  # 2011-11-25 sp -- added logging
+        cmdName = 'EndOfProtocol'
+        ProcStep = 18
+        self.WaitCommandHelper(funcReference, cmdName, ProcStep, period_secs, id, **kw)
+
+    def WaitCommandHelper(self, funcReference, cmdName, ProcStep, period_secs, id = None, **kw):
+    
+        self.svrLog.logDebug('', self.logPrefix, funcReference, 'start %s; sample=%s |time=%d' % (cmdName, id, period_secs))   # 2011-11-25 sp -- added logging
 
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
-        CamMgr.SetProcStep(10);
+        CamMgr.SetProcStep(ProcStep);
         CamMgr.SetCurrentProtocolID(id)
         if kw.has_key('seq'):   #CWJ Mod
             seq = kw['seq']      #CWJ Mod

@@ -57,7 +57,7 @@ class Command(object):
     LEGAL_COMMANDS = [  'Transport', 'Mix', 'Incubate', 'Separate', 'TopUpVial',
 		        'ResuspendVial', 'Flush', 'Prime', 'HomeAll', 'Park', 
                         'Demo', 'Pause','PumpLife','MixTrans', 'TopUpMixTrans' , 'ResusMixSepTrans','ResusMix',
-                        'TopUpTrans', 'TopUpTransSepTrans', 'TopUpMixTransSepTrans']
+                        'TopUpTrans', 'TopUpTransSepTrans', 'TopUpMixTransSepTrans', 'EndOfProtocol']
    
     workingVols = {}
 
@@ -119,6 +119,8 @@ class Command(object):
 	return isinstance(self, WaitCommand)
     def isSeparateType(self):
 	return isinstance(self, SeparateCommand)
+    def isEndOfProtocolType(self):
+	return isinstance(self, EndOfProtocolCommand)
 
     def isVolumeType(self):
 	'''Return True if this is a volume command.'''
@@ -186,7 +188,7 @@ class Command(object):
 	'''Returns True if the command is just a 'wait'-type command, such as
 	an Incubate or Separate command'''
         cmdType = cmdType.split('Command')[0]
-	return cmdType in ['Incubate', 'Separate']
+	return cmdType in ['Incubate', 'Separate', 'EndOfProtocol']
     
     isLegalCommandType = staticmethod(isLegalCommandType)
     isWaitCommand = staticmethod(isWaitCommand)    
@@ -294,6 +296,9 @@ class IncubateCommand(WaitCommand):
 
 class SeparateCommand(WaitCommand):
     '''Separate  command'''
+    pass
+
+class EndOfProtocolCommand(WaitCommand):
     pass
 
 # RL - pause command - 03/29/06

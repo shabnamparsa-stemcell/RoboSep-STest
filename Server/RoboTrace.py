@@ -330,7 +330,7 @@ class RoboCamMgr :
     RoboStepString  = ['None', 'HomeAll', 'Transport', 'Mix', 'Incubate', 'TopUp',
                        'ReSuspend', 'Flush', 'Prime', 'Pause','Separate',
                        'MixTrans', 'TopUpMixTrans', 'ResusMixSepTrans', 'ResusMix',
-                       'TopUpTrans', 'TopUpTransSepTrans', 'TopUpMixTransSepTrans'];
+                       'TopUpTrans', 'TopUpTransSepTrans', 'TopUpMixTransSepTrans','EndOfProtocol'];
     RoboEventString = ['None', 'Pause', 'RESUME', 'Halt', 'E-Stop'];
     DemoState       = 'None';
     def __init__(self):

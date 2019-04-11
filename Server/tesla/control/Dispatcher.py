@@ -165,6 +165,7 @@ class Dispatcher(object):
         except Incubate should cause pushback.'''
         if event[:len( 'Incubate' )] == 'Incubate' or \
                 event[:len( 'Separate' )] == 'Separate' or \
+                event[:len( 'EndOfProtocol' )] == 'EndOfProtocol' or \
                 event[:len( 'Pause' )] == 'Pause' or \
                 event[:len( 'Flush' )] == 'Flush':
             return False
@@ -208,7 +209,7 @@ class Dispatcher(object):
 
             # After executing, log when it completed, except if it's a Wait class
             # command: in that case, we store the data to report later
-            if cmdName in ['Incubate', 'Separate', 'Pause']:
+            if cmdName in ['Incubate', 'Separate', 'Pause', 'EndOfProtocol']:
                 #time.sleep(10)
                 time.sleep(3) #used to be 10, don't know why, let's try 3
                 duration = event.split('(')[1].split(',')[0]

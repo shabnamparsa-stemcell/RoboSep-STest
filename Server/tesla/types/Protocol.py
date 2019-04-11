@@ -37,7 +37,7 @@ from ipl.utils.validation import validateNumber
 import tesla.config
 from tesla.hardware.config import gHardwareData, LoadSettings
 from tesla.exception import TeslaException
-from tesla.types.Command import Command, CommandFactory, CommandException 
+from tesla.types.Command import Command, EndOfProtocolCommand, CommandFactory, CommandException 
 from tesla.types.Command import TopUpTransSepTransCommand,  TopUpMixTransSepTransCommand, ResusMixSepTransCommand,ResusMixCommand
 from tesla.types.Command import TopUpTransCommand,TopUpTransSepTransCommand,TopUpMixTransCommand,TopUpMixTransSepTransCommand,MixTransCommand
 from tesla.types.ProtocolConsumable import ProtocolConsumable, EMPTY, NOT_NEEDED
@@ -111,6 +111,20 @@ class Protocol(object):
         #do cmd sub here!!
         if not int(self.ApplyCommandSubstitutionLogic) == 0:
             self.__do_cmd_sub__()
+
+        #2019-04-09 RL insert extra no op end command here so pause/err msg with last command will show
+        self.__append_no_op_cmd()
+
+    def __append_no_op_cmd(self):
+        #make sure no op cmd is only added once by checking last command label to see if match 'End of Run'
+        no_op_cmd_label = 'End of Run'
+        lastCmd = self.__cmds[len(self.__cmds)-1]
+        if lastCmd.isEndOfProtocolType() and lastCmd.label==no_op_cmd_label:
+            return
+        else:
+            newCmd = EndOfProtocolCommand(len(self.__cmds)+1, 'EndOfProtocolCommand', no_op_cmd_label)
+            self.__cmds.append(newCmd)
+        
 
     def __do_cmd_sub__(self):
         debug_print = False
