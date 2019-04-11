@@ -48,7 +48,8 @@ namespace Tesla.Common.ProtocolCommand
         ResusMixCommand,
         TopUpTransCommand,
         TopUpTransSepTransCommand,
-        TopUpMixTransSepTransCommand
+        TopUpMixTransSepTransCommand,
+        EndOfProtocolCommand
 	}
 
 	public enum VolumeType

@@ -4,155 +4,15 @@
         <name>InstrumentControlAPI</name>
     </assembly>
     <members>
-        <member name="T:Tesla.InstrumentControl.InstrumentControlEventSink">
+        <member name="T:Tesla.InstrumentControl.InstrumentControlXmlRpcProxy">
             <summary>
-            Event handlers for IInstrumentControlEvents 
+            XML-RPC client that provides access to the InstrumentControl layer.
             </summary>
             <remarks>
-            TCP/IP server.  Created at run-time in response to the initial 
-            InstrumentControl call (typically a call to the ping() method).
-            Implicitly a Singleton because the singleton attribute is set when the service
-            is registered.  
+            Application and other exceptions should not be caught here - they should be 
+            allowed to bubble up to the parent so that it can decide what to do if there
+            is any problem with communication in either direction.
             </remarks>
-        </member>
-        <member name="T:Tesla.InstrumentControl.IInstrumentControlEvents">
-            <summary>
-            Public events API for the InstrumentControl subsystem.
-            </summary>
-            <seealso>
-            IInstrumentControl
-            </seealso>
-            <comments>
-            We use Camel-case naming here (rather than the preferred Pascal-case naming) as that was 
-            the way in which the events API methods were specified.
-            </comments>
-        </member>
-        <member name="M:Tesla.InstrumentControl.IInstrumentControlEvents.ping">
-            <summary>
-            Echo test (clients may call this method to test connectivity with this XML-RPC event sink).
-            </summary>
-            <returns>
-            True.
-            </returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.IInstrumentControlEvents.runComplete">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.IInstrumentControlEvents.reportETC(System.DateTime)">
-            <summary>
-            
-            </summary>
-            <param name="estimatedTimeOfBatchRunCompletion"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.IInstrumentControlEvents.reportStatus(System.String,System.String,System.Int32,System.String[])">
-            <summary>
-            
-            </summary>
-            <param name="state"></param>
-            <param name="statusCode"></param>
-            <param name="statusMessageValuesCount"></param>
-            <param name="statusMessageValues"></param>
-        </member>
-        <member name="M:Tesla.InstrumentControl.IInstrumentControlEvents.reportError(System.Int32,System.String,System.Int32,System.String[])">
-            <summary>
-            
-            </summary>
-            <param name="severityLevel"></param>
-            <param name="errorCode"></param>
-            <param name="errorMessageValuesCount"></param>
-            <param name="errorMessageValues"></param>
-        </member>
-        <member name="E:Tesla.InstrumentControl.IInstrumentControlEvents.ReportRunComplete">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="E:Tesla.InstrumentControl.IInstrumentControlEvents.ReportETC">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="E:Tesla.InstrumentControl.IInstrumentControlEvents.ReportStatus">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="E:Tesla.InstrumentControl.IInstrumentControlEvents.ReportError">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlEventSink.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlEventSink.InitializeLifetimeService">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlEventSink.ping">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlEventSink.runComplete">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlEventSink.reportETC(System.DateTime)">
-            <summary>
-            
-            </summary>
-            <param name="estimatedTimeOfBatchRunCompletion"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlEventSink.reportStatus(System.String,System.String,System.Int32,System.String[])">
-            <summary>
-            
-            </summary>
-            <param name="state"></param>
-            <param name="statusCode"></param>
-            <param name="statusMessageValuesCount"></param>
-            <param name="statusMessageValues"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlEventSink.reportError(System.Int32,System.String,System.Int32,System.String[])">
-            <summary>
-            
-            </summary>
-            <param name="severityLevel"></param>
-            <param name="errorCode"></param>
-            <param name="errorMessageValuesCount"></param>
-            <param name="errorMessageValues"></param>
-            <returns></returns>
-        </member>
-        <member name="E:Tesla.InstrumentControl.InstrumentControlEventSink.ReportRunComplete">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="E:Tesla.InstrumentControl.InstrumentControlEventSink.ReportETC">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="E:Tesla.InstrumentControl.InstrumentControlEventSink.ReportStatus">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="E:Tesla.InstrumentControl.InstrumentControlEventSink.ReportError">
-            <summary>
-            
-            </summary>
         </member>
         <member name="T:Tesla.InstrumentControl.IInstrumentControl">
             <summary>
@@ -339,394 +199,6 @@
             
             </summary>
             <returns></returns>
-        </member>
-        <member name="T:Tesla.InstrumentControl.RunCompleteDelegate">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Tesla.InstrumentControl.ReportEstimatedTimeOfCompletionDelegate">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Tesla.InstrumentControl.ReportStatusDelegate">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Tesla.InstrumentControl.ReportErrorDelegate">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Tesla.InstrumentControl.InstrumentControlProxy">
-            <summary>
-            Access to the InstrumentControl layer.
-            </summary>
-            <remarks>
-            Singleton.
-            Wraps the XmlRpc proxy so we can present non-XML-RPC types to callers.  We 
-            expose only those members of IInstrumentControl that are useful to clients.
-            </remarks>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.GetInstance">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.Subscribe">
-            <summary>
-            Make the connection to the Instrument Control XML-RPC server.
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.Unsubscribe">
-            <summary>
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.Halt">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.GetServerInfo(System.String@,System.String@,System.String@,System.String@,System.String@,System.String@)">
-            <summary>
-            Retrieve Instrument Control server information including version number.
-            </summary>
-            <param name="gatewayURL"></param>
-            <param name="gatewayInterfaceVersion"></param>
-            <param name="serverUptime_seconds"></param>
-            <param name="instrumentControlVersion"></param>
-            <param name="instrumentSerialNumber"></param>
-            <param name="serviceConnection"></param>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.ScheduleRun(Tesla.Common.Protocol.IProtocol[],System.Int32[],System.Int32[],System.Double[])">
-            <summary>
-            
-            </summary>
-            <param name="selectedProtocols"></param>
-            <param name="selectedProtocolIDs"></param>
-            <param name="sampleIDs"></param>
-            <param name="sampleVolumes"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.StartRun(System.String,Tesla.Common.Protocol.IProtocol[],System.Int32[],System.Int32[],System.Double[],Tesla.Common.Separator.ReagentLotIdentifiers[][],System.Boolean,System.Int32[],System.Int32[])">
-            <summary>
-            
-            </summary>
-            <param name="batchRunUserId"></param>
-            <param name="selectedProtocols"></param>
-            <param name="selectedProtocolIDs"></param>
-            <param name="sampleIDs"></param>
-            <param name="sampleVolumes"></param>
-            <param name="protocolReagentLotIds"></param>
-            <param name="isSharing"></param>
-            <param name="sharedSectorsTranslation"></param>
-            <param name="sharedSectorsProtocolIndex"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.ParkArm">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.ParkPump">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.HaltRun">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.AbortRun">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.PauseRun">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.ResumeRun">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.GetProtocols">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.GetCustomNames">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.CalculateConsumables(System.Int32,System.Double,System.Collections.Hashtable[]@)">
-            <summary>
-            
-            </summary>
-            <param name="protocolId"></param>
-            <param name="sampleVolume_ul"></param>
-            <param name="result"></param>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.ReloadProtocols">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.GetInstrumentState">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.GetContainerVolumes(System.Double@)">
-            <summary>
-            
-            </summary>
-            <param name="bulkBufferDeadVolume"></param>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.IsLidClosed">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.isPauseCommand">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.getPauseCommandCaption">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.IsHydraulicFluidLow">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.ConfirmHydraulicFluidRefilled">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.GetBatchEndTimeSpanAndWarningThreshold_minutes(System.Int32@,System.Int32@)">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="E:Tesla.InstrumentControl.InstrumentControlProxy.ReportError">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Tesla.InstrumentControl.XmlRpcContainer">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcContainer.bulkBufferDeadVolume">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Tesla.InstrumentControl.XmlRpcProtocol">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcProtocol.ID">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcProtocol.label">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcProtocol.description">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcProtocol.minVol">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcProtocol.maxVol">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcProtocol.protocolClass">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcProtocol.numQuadrants">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Tesla.InstrumentControl.XmlRpcConsumables">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.particleVolume">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.lysisVolume">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.antibodyVolume">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.cocktailVolume">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.bulkBufferVolume">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.wasteVesselRequired">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.separationVesselRequired">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.sampleVesselRequired">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.sampleVesselVolumeRequired">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.tipBoxRequired">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Tesla.InstrumentControl.XmlRpcSample">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcSample.ID">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcSample.label">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcSample.protocolID">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcSample.volume_uL">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcSample.initialQuadrant">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcSample.cocktailLabel">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcSample.particleLabel">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcSample.lysisLabel">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcSample.antibodyLabel">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcSample.sample1Label">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcSample.sample2Label">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcSample.bufferLabel">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Tesla.InstrumentControl.XmlRpcMaintenanceTask">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcMaintenanceTask.taskID">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Tesla.InstrumentControl.XmlRpcMaintenanceTask.taskDescription">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Tesla.InstrumentControl.InstrumentControlXmlRpcProxy">
-            <summary>
-            XML-RPC client that provides access to the InstrumentControl layer.
-            </summary>
-            <remarks>
-            Application and other exceptions should not be caught here - they should be 
-            allowed to bubble up to the parent so that it can decide what to do if there
-            is any problem with communication in either direction.
-            </remarks>
         </member>
         <member name="M:Tesla.InstrumentControl.InstrumentControlXmlRpcProxy.#ctor(System.String)">
             <summary>
@@ -921,6 +393,534 @@
             
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:Tesla.InstrumentControl.InstrumentControlProxy">
+            <summary>
+            Access to the InstrumentControl layer.
+            </summary>
+            <remarks>
+            Singleton.
+            Wraps the XmlRpc proxy so we can present non-XML-RPC types to callers.  We 
+            expose only those members of IInstrumentControl that are useful to clients.
+            </remarks>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.GetInstance">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.Subscribe">
+            <summary>
+            Make the connection to the Instrument Control XML-RPC server.
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.Unsubscribe">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.Halt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.GetServerInfo(System.String@,System.String@,System.String@,System.String@,System.String@,System.String@)">
+            <summary>
+            Retrieve Instrument Control server information including version number.
+            </summary>
+            <param name="gatewayURL"></param>
+            <param name="gatewayInterfaceVersion"></param>
+            <param name="serverUptime_seconds"></param>
+            <param name="instrumentControlVersion"></param>
+            <param name="instrumentSerialNumber"></param>
+            <param name="serviceConnection"></param>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.ScheduleRun(Tesla.Common.Protocol.IProtocol[],System.Int32[],System.Int32[],System.Double[])">
+            <summary>
+            
+            </summary>
+            <param name="selectedProtocols"></param>
+            <param name="selectedProtocolIDs"></param>
+            <param name="sampleIDs"></param>
+            <param name="sampleVolumes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.StartRun(System.String,Tesla.Common.Protocol.IProtocol[],System.Int32[],System.Int32[],System.Double[],Tesla.Common.Separator.ReagentLotIdentifiers[][],System.Boolean,System.Int32[],System.Int32[])">
+            <summary>
+            
+            </summary>
+            <param name="batchRunUserId"></param>
+            <param name="selectedProtocols"></param>
+            <param name="selectedProtocolIDs"></param>
+            <param name="sampleIDs"></param>
+            <param name="sampleVolumes"></param>
+            <param name="protocolReagentLotIds"></param>
+            <param name="isSharing"></param>
+            <param name="sharedSectorsTranslation"></param>
+            <param name="sharedSectorsProtocolIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.ParkArm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.ParkPump">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.HaltRun">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.AbortRun">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.PauseRun">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.ResumeRun">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.GetProtocols">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.GetCustomNames">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.CalculateConsumables(System.Int32,System.Double,System.Collections.Hashtable[]@)">
+            <summary>
+            
+            </summary>
+            <param name="protocolId"></param>
+            <param name="sampleVolume_ul"></param>
+            <param name="result"></param>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.ReloadProtocols">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.GetInstrumentState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.GetContainerVolumes(System.Double@)">
+            <summary>
+            
+            </summary>
+            <param name="bulkBufferDeadVolume"></param>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.IsLidClosed">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.isPauseCommand">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.getPauseCommandCaption">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.IsHydraulicFluidLow">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.ConfirmHydraulicFluidRefilled">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlProxy.GetBatchEndTimeSpanAndWarningThreshold_minutes(System.Int32@,System.Int32@)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:Tesla.InstrumentControl.InstrumentControlProxy.ReportError">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tesla.InstrumentControl.InstrumentControlEventSink">
+            <summary>
+            Event handlers for IInstrumentControlEvents 
+            </summary>
+            <remarks>
+            TCP/IP server.  Created at run-time in response to the initial 
+            InstrumentControl call (typically a call to the ping() method).
+            Implicitly a Singleton because the singleton attribute is set when the service
+            is registered.  
+            </remarks>
+        </member>
+        <member name="T:Tesla.InstrumentControl.IInstrumentControlEvents">
+            <summary>
+            Public events API for the InstrumentControl subsystem.
+            </summary>
+            <seealso>
+            IInstrumentControl
+            </seealso>
+            <comments>
+            We use Camel-case naming here (rather than the preferred Pascal-case naming) as that was 
+            the way in which the events API methods were specified.
+            </comments>
+        </member>
+        <member name="M:Tesla.InstrumentControl.IInstrumentControlEvents.ping">
+            <summary>
+            Echo test (clients may call this method to test connectivity with this XML-RPC event sink).
+            </summary>
+            <returns>
+            True.
+            </returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.IInstrumentControlEvents.runComplete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.IInstrumentControlEvents.reportETC(System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="estimatedTimeOfBatchRunCompletion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.IInstrumentControlEvents.reportStatus(System.String,System.String,System.Int32,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="state"></param>
+            <param name="statusCode"></param>
+            <param name="statusMessageValuesCount"></param>
+            <param name="statusMessageValues"></param>
+        </member>
+        <member name="M:Tesla.InstrumentControl.IInstrumentControlEvents.reportError(System.Int32,System.String,System.Int32,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="severityLevel"></param>
+            <param name="errorCode"></param>
+            <param name="errorMessageValuesCount"></param>
+            <param name="errorMessageValues"></param>
+        </member>
+        <member name="E:Tesla.InstrumentControl.IInstrumentControlEvents.ReportRunComplete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:Tesla.InstrumentControl.IInstrumentControlEvents.ReportETC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:Tesla.InstrumentControl.IInstrumentControlEvents.ReportStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:Tesla.InstrumentControl.IInstrumentControlEvents.ReportError">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlEventSink.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlEventSink.InitializeLifetimeService">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlEventSink.ping">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlEventSink.runComplete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlEventSink.reportETC(System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="estimatedTimeOfBatchRunCompletion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlEventSink.reportStatus(System.String,System.String,System.Int32,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="state"></param>
+            <param name="statusCode"></param>
+            <param name="statusMessageValuesCount"></param>
+            <param name="statusMessageValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tesla.InstrumentControl.InstrumentControlEventSink.reportError(System.Int32,System.String,System.Int32,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="severityLevel"></param>
+            <param name="errorCode"></param>
+            <param name="errorMessageValuesCount"></param>
+            <param name="errorMessageValues"></param>
+            <returns></returns>
+        </member>
+        <member name="E:Tesla.InstrumentControl.InstrumentControlEventSink.ReportRunComplete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:Tesla.InstrumentControl.InstrumentControlEventSink.ReportETC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:Tesla.InstrumentControl.InstrumentControlEventSink.ReportStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:Tesla.InstrumentControl.InstrumentControlEventSink.ReportError">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tesla.InstrumentControl.RunCompleteDelegate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tesla.InstrumentControl.ReportEstimatedTimeOfCompletionDelegate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tesla.InstrumentControl.ReportStatusDelegate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tesla.InstrumentControl.ReportErrorDelegate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tesla.InstrumentControl.XmlRpcContainer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcContainer.bulkBufferDeadVolume">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tesla.InstrumentControl.XmlRpcProtocol">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcProtocol.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcProtocol.label">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcProtocol.description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcProtocol.minVol">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcProtocol.maxVol">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcProtocol.protocolClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcProtocol.numQuadrants">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tesla.InstrumentControl.XmlRpcConsumables">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.particleVolume">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.lysisVolume">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.antibodyVolume">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.cocktailVolume">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.bulkBufferVolume">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.wasteVesselRequired">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.separationVesselRequired">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.sampleVesselRequired">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.sampleVesselVolumeRequired">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcConsumables.tipBoxRequired">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tesla.InstrumentControl.XmlRpcSample">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcSample.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcSample.label">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcSample.protocolID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcSample.volume_uL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcSample.initialQuadrant">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcSample.cocktailLabel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcSample.particleLabel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcSample.lysisLabel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcSample.antibodyLabel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcSample.sample1Label">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcSample.sample2Label">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcSample.bufferLabel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tesla.InstrumentControl.XmlRpcMaintenanceTask">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcMaintenanceTask.taskID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tesla.InstrumentControl.XmlRpcMaintenanceTask.taskDescription">
+            <summary>
+            
+            </summary>
         </member>
     </members>
 </doc>

@@ -1391,6 +1391,7 @@ namespace Tesla.DataAccess {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("DemoCommand", typeof(DemoCommand))]
+        [System.Xml.Serialization.XmlElementAttribute("EndOfProtocolCommand", typeof(EndOfProtocolCommand))]
         [System.Xml.Serialization.XmlElementAttribute("FlushCommand", typeof(FlushCommand))]
         [System.Xml.Serialization.XmlElementAttribute("HomeAllCommand", typeof(HomeAllCommand))]
         [System.Xml.Serialization.XmlElementAttribute("IncubateCommand", typeof(IncubateCommand))]
@@ -1451,6 +1452,16 @@ namespace Tesla.DataAccess {
                 this.iterationsField = value;
             }
         }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="STI")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="STI", IsNullable=false)]
+    public partial class EndOfProtocolCommand : WaitCommandType {
     }
     
     /// <remarks/>

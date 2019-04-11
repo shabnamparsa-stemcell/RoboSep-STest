@@ -398,6 +398,8 @@ namespace GUI_Console
                     return QuadrantProgress.ProtocolCommand.TopUpTransSepTransCommand;
                 case "TopUp Mix Transport Separate Transport":
                     return QuadrantProgress.ProtocolCommand.TopUpMixTransSepTransCommand;
+                case "End Of Protocol":
+                    return QuadrantProgress.ProtocolCommand.EndOfProtocolCommand;
             }
             return QuadrantProgress.ProtocolCommand.NULL;
         }

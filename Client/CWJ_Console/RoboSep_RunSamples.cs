@@ -1507,7 +1507,8 @@ namespace GUI_Console
                         "ResusMixCommand",
                         "TopUpTransCommand",
                         "TopUpTransSepTransCommand",
-                        "TopUpMixTransSepTransCommand"
+                        "TopUpMixTransSepTransCommand",
+                        "EndOfProtocolCommand"
                     };
             foreach (string s in tmpCmds)
             {

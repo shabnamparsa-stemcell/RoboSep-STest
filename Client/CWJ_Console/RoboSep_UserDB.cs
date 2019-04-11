@@ -708,6 +708,12 @@ namespace GUI_Console
                     else
                         result = 200;
                     break;
+                case "EndOfProtocolCommand":
+                    if (getPos)
+                        result = 19;
+                    else
+                        result = -1;
+                    break;
             }
             return result;
         }

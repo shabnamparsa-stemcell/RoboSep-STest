@@ -55,6 +55,7 @@ namespace GUI_Console
             TopUpTransCommand,
             TopUpTransSepTransCommand,
             TopUpMixTransSepTransCommand,
+            EndOfProtocolCommand,
             NULL
         }
 
@@ -397,6 +398,8 @@ namespace GUI_Console
                     return 17;
                 case "TopUp Mix Transport Separate Transport":
                     return 18;
+                case "End Of Protocol":
+                    return 19;
 
             }
             return -1;
@@ -444,6 +447,8 @@ namespace GUI_Console
                     return "TopUp Transport Separate Transport";
                 case 18:
                     return "TopUp Mix Transport Separate Transport";
+                case 19:
+                    return "End Of Protocol";
             }
             return string.Empty;
         }

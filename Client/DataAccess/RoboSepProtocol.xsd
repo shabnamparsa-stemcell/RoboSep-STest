@@ -233,6 +233,7 @@
           <xs:element ref="TopUpTransCommand" />
           <xs:element ref="TopUpTransSepTransCommand" />
           <xs:element ref="TopUpMixTransSepTransCommand" />
+          <xs:element ref="EndOfProtocolCommand" />
 				</xs:choice>
 			</xs:sequence>
 			<xs:attribute name="number" type="xs:positiveInteger" use="required" />
@@ -289,6 +290,13 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
+  <xs:element name="EndOfProtocolCommand">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="WaitCommandType" />
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
 	<!-- Volume Command subtypes -->
 	<xs:element name="TransportCommand">
 		<xs:complexType>
