@@ -10,15 +10,15 @@
 AppId={{C9291226-105E-45B9-9BFE-DB3911BBDCF0}
 AppName=RoboSep-S
 AppVerName=RoboSep-S
-AppVersion=1.2.1.1
-VersionInfoVersion=1.2.1.1
+AppVersion=1.3.0.0
+VersionInfoVersion=1.3.0.0
 VersionInfoCompany=Stemcell Technologies
 AppPublisher=Stemcell Technologies
 AppPublisherURL=http://www.stemcell.com
 AppSupportURL=http://www.stemcell.com
 AppUpdatesURL=http://www.stemcell.com
 OutputDir=.\output
-OutputBaseFilename=Update_RoboSep-S_v1211
+OutputBaseFilename=Update_RoboSep-S_v1300
 Compression=lzma
 SolidCompression=yes
 DefaultDirName={pf}\STI\RoboSep
@@ -52,6 +52,7 @@ Source: ".\Bin\WallpaperChange.exe";        DestDir: "{app}\Bin";       flags: u
 Source: ".\Bin\Wallpaper.jpg";              DestDir: "{app}\Bin";       flags: uninsneveruninstall;
 Source: ".\Bin\WPC.bat";                    DestDir: "{app}\Bin";       flags: uninsneveruninstall;
 Source: ".\Bin\Form_SplashScreen.exe";      DestDir: "{app}";           flags: deleteafterinstall;
+Source: ".\Bin\RoboCam.exe";                DestDir: "{app}\Bin";       flags: uninsneveruninstall;
 
 [Run]
 Filename: "{app}\uninst\unins003.exe"; Parameters: "/SILENT /SUPPRESSMSGBOXES /FORCE";      flags: skipifdoesntexist waituntilterminated; afterInstall: DeleteSleep(10000);
@@ -289,7 +290,7 @@ end;
 
 function InitializeSetup(): Boolean;
 begin
-  Result := MsgBox('RoboSep S Software Upgrade Information:'#13#13'This updater will upgrade to v1.2.1.1'#13#13' Do you wish to continue?',mbConfirmation,MB_YESNO)=idYes;
+  Result := MsgBox('RoboSep S Software Upgrade Information:'#13#13'This updater will upgrade to v1.3.0.0'#13#13' Do you wish to continue?',mbConfirmation,MB_YESNO)=idYes;
 end;
 
 

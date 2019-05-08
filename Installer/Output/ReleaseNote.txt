@@ -1,5 +1,31 @@
+RoboSep-S Production Installer v1.3.0.0 
+    (May 8, 2019) by Chulwoong Jeon
+---------------------------------------
+This production installer contains following items.
+
++ RoboSep-S Protocol Editor 
+  Version: 4.9.0.0 is replaced with latest Version 4.9.x.4
+
++ RoboSep-S Server
+  Version: 1.3.0.0
+  - BugFix
+  - Configurable Debugger motion comtrol parameter
+  - Error/Pause message not displayed if at end of run
+	
++ RoboSep-S GUI (Client)
+  Version: 1.3.0.0
+  - BugFix
+  - SAP Barcode Support
+  - Resource screen reagent label modification
+
++ RoboSep-S Service
+  Version: 1.0.0.9
+
+* RoboCam is upgraded to v1.1.1.2
+
+*****************************************************************************************
 RoboSep-S Production Installer v1.2.1.0 
-    (Mar 21, 2018) by Chulwoong Jeon
+    (Dec 21, 2018) by Chulwoong Jeon
 ---------------------------------------
 This production installer contains following items.
 
