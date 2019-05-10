@@ -1700,12 +1700,20 @@ namespace GUI_Console
                 LogFile.AddMessage(System.Diagnostics.TraceLevel.Verbose, LOGmsg);            
                 return;
             }
-            
-            int imgIndex = 0;
-            int carouselLocation;
+
+            int imgIndex = 0, len = myCloneRunConfig.Length;
+            int carouselLocation, qdrtIndex = 0;
             double vol;
             string volText;
-            SharingProtocol thisProtocol = myCloneRunConfig[QuadrantNumber];
+            SharingProtocol thisProtocol = null;
+            for (qdrtIndex = 0; qdrtIndex < len; qdrtIndex++)
+            {
+                thisProtocol = myCloneRunConfig[qdrtIndex];                
+                if (myCloneRunConfig[qdrtIndex].InitQuadrant == QuadrantNumber)
+                {
+                    break;
+                }
+            }
 
             listView_Resources.BeginUpdate();
             
