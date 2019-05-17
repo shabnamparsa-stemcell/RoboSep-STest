@@ -47,7 +47,7 @@ namespace GUI_Console
             sp.myAmount = this.myAmount;
             sp.myInitQuadrant = this.myInitQuadrant;
             sp.myQuadrants = this.myQuadrants;
-            sp.myCustomNames = new string[8];
+            sp.myCustomNames = new string[this.myCustomNames.Length];//new string[8];
             if (sp.sharingWith.Count >= this.sharingWith.Count)
                 sp.sharingWith.AddRange(this.sharingWith);
             if (this.myCustomNames != null && sp.myCustomNames != null && this.myCustomNames.Length <= sp.myCustomNames.Length)

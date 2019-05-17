@@ -1701,7 +1701,7 @@ namespace GUI_Console
                 return;
             }
 
-            int imgIndex = 0, len = myCloneRunConfig.Length;
+            int imgIndex = 0, len = myCloneRunConfig.Length, offset;
             int carouselLocation, qdrtIndex = 0;
             double vol;
             string volText;
@@ -1738,18 +1738,19 @@ namespace GUI_Console
                 }
 
                 string strDescription;
+                offset = (thisProtocol.Quadrants == 1) ? 0 : (QuadrantNumber * 8);
                 switch (carouselLocation)
                 {
                     case 0:
                         // Magnetic particles
                         this.imageList1.Images.Add("Particles", bmParticles);
-                        if (string.IsNullOrEmpty(thisProtocol.CustomNames[4]))
+                        if (string.IsNullOrEmpty(thisProtocol.CustomNames[4 + offset]))
                         {
                             strDescription = LanguageINI.GetString("MagneticParticlesVial");
                         }
                         else
                         {
-                            strDescription = thisProtocol.CustomNames[4];
+                            strDescription = thisProtocol.CustomNames[4 + offset];
                         }
                         if (!string.IsNullOrEmpty(volText))
                         {
@@ -1771,13 +1772,13 @@ namespace GUI_Console
                     case 1:
                         // Negative selection vial
                         this.imageList1.Images.Add("CockTail", bmCocktail);
-                        if (string.IsNullOrEmpty(thisProtocol.CustomNames[3]))
+                        if (string.IsNullOrEmpty(thisProtocol.CustomNames[3 + offset]))
                         {
                             strDescription = LanguageINI.GetString("CockTailVial");
                         }
                         else
                         {
-                            strDescription = thisProtocol.CustomNames[3];
+                            strDescription = thisProtocol.CustomNames[3 + offset];
                         }
                         if (!string.IsNullOrEmpty(volText))
                         {
@@ -1798,13 +1799,13 @@ namespace GUI_Console
                     case 2:
                         // Antibody vial
                         this.imageList1.Images.Add("AntibodyVial", bmAntibodyVial);
-                        if (string.IsNullOrEmpty(thisProtocol.CustomNames[5]))
+                        if (string.IsNullOrEmpty(thisProtocol.CustomNames[5 + offset]))
                         {
                             strDescription = LanguageINI.GetString("AntibodyVial");
                         }
                         else
                         {
-                            strDescription = thisProtocol.CustomNames[5];
+                            strDescription = thisProtocol.CustomNames[5 + offset];
                         }
                         if (!string.IsNullOrEmpty(volText))
                         {

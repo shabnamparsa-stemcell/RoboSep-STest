@@ -1,0 +1,427 @@
+2019-05-17T12:59:35 INFO Application log initialised
+2019-05-17T12:59:35 DEBUG Remoting Address = 127.0.0.1
+2019-05-17T12:59:35 DEBUG ICS Server URL       = http://127.0.0.1:8000
+2019-05-17T12:59:35 DEBUG ICS EventSink URL    = http://127.0.0.1:8001/InstrumentControlEventSink
+2019-05-17T12:59:35 DEBUG Separator Server URL =  tcp://127.0.0.1:3149/Separator
+2019-05-17T12:59:35 DEBUG Configured address = 127.0.0.1
+2019-05-17T12:59:35 INFO Initializing User Console
+2019-05-17T12:59:36 DEBUG Initializing UserDB
+2019-05-17T12:59:36 INFO Application config path: C:\Program Files\STI\RoboSep\config\
+2019-05-17T12:59:36 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-05-17T12:59:36 INFO XSD Path : c:\Program Files\STI\RoboSep\
+2019-05-17T12:59:36 DEBUG 228protocols loaded
+2019-05-17T12:59:36 ERROR Failed to convert variable '00/00/0000' to valid date.
+2019-05-17T12:59:36 ERROR WarrantyExpireDate in GUI.ini file is invalid.
+2019-05-17T12:59:36 DEBUG Creating new Form_Home
+2019-05-17T12:59:36 INFO Command to launch service 'dns-sd.exe -R "Orca1" _robosep._tcp . 5899' for Network ORCA.
+2019-05-17T12:59:36 INFO Service 'dns-sd.exe' for network ORCA has been launched. ProcessID='3988'. Path='C:\Windows\system32'
+2019-05-17T12:59:36 INFO Loading User Console
+2019-05-17T12:59:36 ERROR Starting GUI Thread
+2019-05-17T12:59:36 INFO Connecting...
+2019-05-17T12:59:36 INFO set user.db file to : User1.udb
+2019-05-17T12:59:36 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 1 tcp://127.0.0.1:3149/Separator
+2019-05-17T12:59:36 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 2
+2019-05-17T12:59:36 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-05-17T12:59:36 DEBUG Loaded Robosep User
+2019-05-17T12:59:36 INFO Current user ID : 'SAP'.
+2019-05-17T12:59:36 DEBUG Instrument Control API Ping() returned True
+2019-05-17T12:59:37 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 3
+2019-05-17T12:59:37 INFO Get system information for About menu
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Initialising. 
+2019-05-17T12:59:37 INFO Estimated run completion = 01:00
+---------Now update the display
+2019-05-17T13:00:02 DEBUG Carousel state changed to: SeparatorUnloaded
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=SeparatorUnloaded. 
+------------------------------ SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+2019-05-17T13:00:02 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+2019-05-17T13:00:02 INFO Stopping Splash page
+2019-05-17T13:00:03 ERROR Failed to convert variable '00/0/0000' to valid date.
+2019-05-17T13:00:03 ERROR Failed to convert variable '00/0/0000' to valid date.
+2019-05-17T13:00:03 ERROR Failed to convert variable '00/0/0000' to valid date.
+2019-05-17T13:00:03 ERROR Failed to convert variable '00/00/0000' to valid date.
+2019-05-17T13:00:03 ERROR Failed to convert variable '00/00/0000' to valid date.
+2019-05-17T13:00:03 INFO Initializing About user control
+2019-05-17T13:00:03 INFO Generating Robosep Resources user control
+2019-05-17T13:00:03 INFO Initializing Run Samples user control
+2019-05-17T13:00:03 INFO PauseResumeDialog form created
+2019-05-17T13:00:05 INFO New Protocol Select user control generated
+2019-05-17T13:00:05 DEBUG Loaded 9 protocol from User SAP
+2019-05-17T13:00:05 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-05-17T13:00:05 DEBUG Loaded Robosep User
+2019-05-17T13:00:05 INFO Opening protocol selection for quadrant 1
+2019-05-17T13:00:12 INFO Protocol Selection play button clicked
+---------No reloading of user protocols is required.
+---------No need to reload my protocol list.
+---------Select the protocol db quad test 2 before exiting.
+---------Protocol Select: SelectProtocol called.
+----------Protocol Select: Called RoboSep_RunSamples.getInstance().addToRun
+---------Called SelectProtocol
+2019-05-17T13:00:12 DEBUG Adding protocol 'db quad test 2' to run at quadrant0
+2019-05-17T13:00:12 DEBUG Opening New Number Pad window
+2019-05-17T13:00:14 DEBUG Volume: 5.000
+2019-05-17T13:00:14 INFO Estimated run completion = 01:00
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Selected. 
+------------------SeparatorGateway AtSeparatorStateUpdate Selected undefined???
+----------Protocol Select: After RoboSep_RunSamples.getInstance().addToRun
+2019-05-17T13:00:14 INFO Adding protocol to current run
+2019-05-17T13:00:14 INFO Protocol Selection home button exit after sTime seconds.
+------------------------------ SetGuiState:  SeparatorState.Selected -------------------------
+2019-05-17T13:00:14 INFO SetGuiState:  SeparatorState.Selected -------------------------
+2019-05-17T13:00:14 INFO Estimated run completion = 01:00
+2019-05-17T13:00:14 INFO Estimated run completion = 01:00
+---------Now update the display
+------------------------------ SetGuiState:  SeparatorState.Selected -------------------------
+2019-05-17T13:00:14 INFO SetGuiState:  SeparatorState.Selected -------------------------
+RunSamples 32 : setSampleVolume QuadrantId=Quadrant1, Volume=5
+2019-05-17T13:00:14 INFO Quad: 1 Sample Vol 0.005
+RunSamples 33 : setSampleVolume QuadrantId=Quadrant1 completed.
+---------AtProtocolConsumablesUpdate: given 'consumables' are not null.
+---------AtProtocolConsumablesUpdate: update the protocol table (using the newly received sample volumes).
+---------Now update the display
+2019-05-17T13:00:14 DEBUG >> Enter to (ScheduleRun)
+2019-05-17T13:00:14 DEBUG Requesting ETC update (ScheduleRun)
+2019-05-17T13:00:14 INFO Sample 0: Protocol ID:1267061413, Volume:5000.000[uL]
+2019-05-17T13:00:15 DEBUG ETC update: 2019-05-17T13:50:29
+2019-05-17T13:00:16 DEBUG >> Leave (ScheduleRun)
+2019-05-17T13:00:16 DEBUG Time remaining (ScheduleRun ETC):	0.0348827061180556
+2019-05-17T13:00:16 INFO Estimated run completion = 51:00
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Ready. 
+------------------------------ SetGuiState:  SeparatorState.Ready -------------------------
+2019-05-17T13:00:16 INFO SetGuiState:  SeparatorState.Ready -------------------------
+2019-05-17T13:00:16 INFO Run Samples button clicked
+2019-05-17T13:00:16 INFO Scheduling Run
+---------Run Samples: getConsumables called : iProtocolSelectCount = 1
+GetProtocolConsumables called. selectedProtocolIndexNumber = 0.
+myChosenProtocols.GetKey returns QuadrantId = Quadrant1.
+protocolName=db quad test 2. initialQuadrant=Quadrant1.
+2019-05-17T13:00:16 DEBUG Getting Consumables for 1 quadrants
+.............................db quad test 2 0 0
+                                         0 0
+2019-05-17T13:00:16 DEBUG QuadrantManager::StartRun
+2019-05-17T13:00:16 DEBUG protocol: db quad test 2.xml is acquired.
+2019-05-17T13:00:16 DEBUG >> Starting acquiring protocol command list[0]
+2019-05-17T13:00:16 DEBUG >>>> Entering to getProtocolCommandList[0]
+2019-05-17T13:00:16 DEBUG ++++++getProtocolCommandList() before lock
+2019-05-17T13:00:16 DEBUG ------Entering to getProtocolCommandList at ControlProxy
+2019-05-17T13:00:16 DEBUG >>>>>>> Entering to getProtocolCommandList at XMLRpcProxy
+2019-05-17T13:00:16 DEBUG >>>>>>> Leaving getProtocolCommandList at XMLRpcProxy
+2019-05-17T13:00:16 DEBUG ------Leaving getProtocolCommandList at ControlProxy
+2019-05-17T13:00:16 DEBUG ++++++getProtocolCommandList() After lock
+2019-05-17T13:00:16 DEBUG >>>> Leaving getProtocolCommandList[0]
+2019-05-17T13:00:16 DEBUG >>>> Entering to ConvertCmdStringListToIntList
+2019-05-17T13:00:16 DEBUG >>>> Leaving ConvertCmdStringListToIntList
+2019-05-17T13:00:16 DEBUG >> finishing acquiring protocol command list[0]
+2019-05-17T13:00:16 DEBUG protocol: db quad test 2.xml commands: 17
+2019-05-17T13:00:16 DEBUG ProgressBar set 1 steps
+2019-05-17T13:00:16 DEBUG ProgressBar set 17 steps
+2019-05-17T13:00:16 DEBUG Run progress info set.
+2019-05-17T13:00:16 DEBUG Displaying quadrant 0 resources
+2019-05-17T13:00:28 DEBUG Loading resources from sharing protocols
+2019-05-17T13:00:28 INFO Resource window is foreground
+2019-05-17T13:00:33 DEBUG Displaying quadrant 1 resources
+2019-05-17T13:00:36 INFO Unload is called.
+2019-05-17T13:00:36 DEBUG ProgressBar set 1 steps
+2019-05-17T13:00:36 DEBUG Cancel button clicked
+2019-05-17T13:00:37 INFO Removing protocol at quadrant 1
+---------AtProtocolConsumablesUpdate: given 'consumables' are null.
+---------AtProtocolConsumablesUpdate: remove any previous consumables information for quadrant=Quadrant1.
+---------AtProtocolConsumablesUpdate: remove any previous consumables information for quadrant=Quadrant2.
+---------AtProtocolConsumablesUpdate: update the protocol table (using the newly received sample volumes).
+2019-05-17T13:00:37 INFO Quadrant info Cleared
+---------Now update the display
+2019-05-17T13:00:38 INFO Estimated run completion = 01:00
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Configured. 
+2019-05-17T13:00:38 INFO Quadrant info Cleared
+2019-05-17T13:00:38 INFO Quadrant info Cleared
+2019-05-17T13:00:38 INFO Estimated run completion = 01:00
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=SeparatorUnloaded. 
+------------------------------ SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+2019-05-17T13:00:38 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+---------Now update the display
+------------------------------ SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+2019-05-17T13:00:38 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+2019-05-17T13:00:39 INFO New Protocol Select user control generated
+2019-05-17T13:00:39 DEBUG Loaded 9 protocol from User SAP
+2019-05-17T13:00:39 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-05-17T13:00:39 DEBUG Loaded Robosep User
+2019-05-17T13:00:39 INFO Opening protocol selection for quadrant 1
+2019-05-17T13:00:41 INFO Protocol Selection play button clicked
+---------No reloading of user protocols is required.
+---------No need to reload my protocol list.
+---------Select the protocol CUST1104c Hu 17854CD19pos 17858CD14pos 17852CD4pos 17955NKneg Seq Ver1 before exiting.
+---------Protocol Select: SelectProtocol called.
+----------Protocol Select: Called RoboSep_RunSamples.getInstance().addToRun
+---------Called SelectProtocol
+2019-05-17T13:00:41 DEBUG Adding protocol 'CUST1104c Hu 17854CD19pos 17858CD14pos 17852CD4pos 17955NKneg Seq Ver1' to run at quadrant0
+2019-05-17T13:00:41 DEBUG Opening New Number Pad window
+2019-05-17T13:00:42 DEBUG Volume: 5.000
+2019-05-17T13:00:42 INFO Estimated run completion = 01:00
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Selected. 
+------------------SeparatorGateway AtSeparatorStateUpdate Selected undefined???
+----------Protocol Select: After RoboSep_RunSamples.getInstance().addToRun
+2019-05-17T13:00:42 INFO Adding protocol to current run
+2019-05-17T13:00:42 INFO Protocol Selection home button exit after sTime seconds.
+------------------------------ SetGuiState:  SeparatorState.Selected -------------------------
+2019-05-17T13:00:42 INFO SetGuiState:  SeparatorState.Selected -------------------------
+2019-05-17T13:00:42 INFO Estimated run completion = 01:00
+2019-05-17T13:00:42 INFO Estimated run completion = 01:00
+2019-05-17T13:00:42 INFO Estimated run completion = 01:00
+2019-05-17T13:00:42 INFO Estimated run completion = 01:00
+2019-05-17T13:00:42 INFO Estimated run completion = 01:00
+2019-05-17T13:00:42 INFO Estimated run completion = 01:00
+---------Now update the display
+------------------------------ SetGuiState:  SeparatorState.Selected -------------------------
+2019-05-17T13:00:42 INFO SetGuiState:  SeparatorState.Selected -------------------------
+RunSamples 32 : setSampleVolume QuadrantId=Quadrant1, Volume=5
+2019-05-17T13:00:43 INFO Quad: 1 Sample Vol 0.005
+RunSamples 33 : setSampleVolume QuadrantId=Quadrant1 completed.
+---------AtProtocolConsumablesUpdate: given 'consumables' are not null.
+---------AtProtocolConsumablesUpdate: update the protocol table (using the newly received sample volumes).
+---------Now update the display
+2019-05-17T13:00:43 DEBUG >> Enter to (ScheduleRun)
+2019-05-17T13:00:43 DEBUG Requesting ETC update (ScheduleRun)
+2019-05-17T13:00:43 INFO Sample 0: Protocol ID:1202904299, Volume:5000.000[uL]
+2019-05-17T13:00:44 DEBUG ETC update: 2019-05-17T14:37:21
+2019-05-17T13:00:45 DEBUG >> Leave (ScheduleRun)
+2019-05-17T13:00:45 DEBUG Time remaining (ScheduleRun ETC):	0.0670920883518518
+2019-05-17T13:00:45 INFO Estimated run completion = 1:37:00
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Ready. 
+------------------------------ SetGuiState:  SeparatorState.Ready -------------------------
+2019-05-17T13:00:45 INFO SetGuiState:  SeparatorState.Ready -------------------------
+2019-05-17T13:00:45 INFO Run Samples button clicked
+2019-05-17T13:00:45 INFO Scheduling Run
+---------Run Samples: getConsumables called : iProtocolSelectCount = 1
+GetProtocolConsumables called. selectedProtocolIndexNumber = 0.
+myChosenProtocols.GetKey returns QuadrantId = Quadrant1.
+protocolName=CUST1104c Hu 17854CD19pos 17858CD14pos 17852CD4pos 17955NKneg Seq Ver1. initialQuadrant=Quadrant1.
+2019-05-17T13:00:45 DEBUG Getting Consumables for 1 quadrants
+.............................CUST1104c Hu 17854CD19pos 17858CD14pos 17852CD4pos 17955NKneg Seq Ver1 0 0
+                                         0 0
+                                         0 0
+                                         0 0
+2019-05-17T13:00:45 DEBUG QuadrantManager::StartRun
+2019-05-17T13:00:46 DEBUG protocol: CUST1104c Hu 17854CD19pos 17858CD14pos 17852CD4pos 17955NKneg Seq Ver1.xml is acquired.
+2019-05-17T13:00:46 DEBUG >> Starting acquiring protocol command list[0]
+2019-05-17T13:00:46 DEBUG >>>> Entering to getProtocolCommandList[0]
+2019-05-17T13:00:46 DEBUG ++++++getProtocolCommandList() before lock
+2019-05-17T13:00:46 DEBUG ------Entering to getProtocolCommandList at ControlProxy
+2019-05-17T13:00:46 DEBUG >>>>>>> Entering to getProtocolCommandList at XMLRpcProxy
+2019-05-17T13:00:46 DEBUG >>>>>>> Leaving getProtocolCommandList at XMLRpcProxy
+2019-05-17T13:00:46 DEBUG ------Leaving getProtocolCommandList at ControlProxy
+2019-05-17T13:00:46 DEBUG ++++++getProtocolCommandList() After lock
+2019-05-17T13:00:46 DEBUG >>>> Leaving getProtocolCommandList[0]
+2019-05-17T13:00:46 DEBUG >>>> Entering to ConvertCmdStringListToIntList
+2019-05-17T13:00:46 DEBUG >>>> Leaving ConvertCmdStringListToIntList
+2019-05-17T13:00:46 DEBUG >> finishing acquiring protocol command list[0]
+2019-05-17T13:00:46 DEBUG protocol: CUST1104c Hu 17854CD19pos 17858CD14pos 17852CD4pos 17955NKneg Seq Ver1.xml commands: 76
+2019-05-17T13:00:46 DEBUG ProgressBar set 76 steps
+2019-05-17T13:00:46 DEBUG Run progress info set.
+2019-05-17T13:00:46 DEBUG Displaying quadrant 0 resources
+2019-05-17T13:00:46 DEBUG Loading resources from sharing protocols
+2019-05-17T13:00:46 INFO Resource window is foreground
+2019-05-17T13:00:49 DEBUG Displaying quadrant 1 resources
+2019-05-17T13:00:51 DEBUG Displaying quadrant 0 resources
+2019-05-17T13:00:53 DEBUG Displaying quadrant 1 resources
+2019-05-17T13:01:06 DEBUG Displaying quadrant 1 resources
+2019-05-17T13:01:08 DEBUG Displaying quadrant 2 resources
+2019-05-17T13:01:10 DEBUG Displaying quadrant 3 resources
+2019-05-17T13:01:16 INFO Unload is called.
+2019-05-17T13:01:16 DEBUG ProgressBar set 1 steps
+2019-05-17T13:01:16 DEBUG Cancel button clicked
+2019-05-17T13:01:18 INFO Removing protocol at quadrant 1
+---------AtProtocolConsumablesUpdate: given 'consumables' are null.
+---------AtProtocolConsumablesUpdate: remove any previous consumables information for quadrant=Quadrant1.
+---------AtProtocolConsumablesUpdate: remove any previous consumables information for quadrant=Quadrant2.
+---------AtProtocolConsumablesUpdate: remove any previous consumables information for quadrant=Quadrant3.
+2019-05-17T13:01:18 INFO Quadrant info Cleared
+---------AtProtocolConsumablesUpdate: remove any previous consumables information for quadrant=Quadrant4.
+---------AtProtocolConsumablesUpdate: update the protocol table (using the newly received sample volumes).
+2019-05-17T13:01:18 INFO Quadrant info Cleared
+---------Now update the display
+2019-05-17T13:01:18 INFO Estimated run completion = 01:00
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Configured. 
+2019-05-17T13:01:18 INFO Quadrant info Cleared
+2019-05-17T13:01:18 INFO Quadrant info Cleared
+2019-05-17T13:01:18 INFO Quadrant info Cleared
+2019-05-17T13:01:18 INFO Estimated run completion = 01:00
+2019-05-17T13:01:18 INFO Estimated run completion = 01:00
+2019-05-17T13:01:18 INFO Estimated run completion = 01:00
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=SeparatorUnloaded. 
+------------------------------ SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+2019-05-17T13:01:18 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+---------Now update the display
+------------------------------ SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+2019-05-17T13:01:18 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+2019-05-17T13:01:19 INFO New Protocol Select user control generated
+2019-05-17T13:01:19 DEBUG Loaded 9 protocol from User SAP
+2019-05-17T13:01:19 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-05-17T13:01:19 DEBUG Loaded Robosep User
+2019-05-17T13:01:19 INFO Opening protocol selection for quadrant 1
+2019-05-17T13:01:28 INFO Protocol Selection play button clicked
+---------No reloading of user protocols is required.
+---------No need to reload my protocol list.
+---------Select the protocol CJ Whole Blood 2 before exiting.
+---------Protocol Select: SelectProtocol called.
+----------Protocol Select: Called RoboSep_RunSamples.getInstance().addToRun
+---------Called SelectProtocol
+2019-05-17T13:01:28 DEBUG Adding protocol 'CJ Whole Blood 2' to run at quadrant0
+2019-05-17T13:01:28 DEBUG Opening New Number Pad window
+2019-05-17T13:01:29 DEBUG Volume: 5.000
+RunSamples 24: mySeparator.SelectProtocol: QuadrantId=Quadrant1, selectedProtocol.Id=11
+2019-05-17T13:01:29 INFO Estimated run completion = 01:00
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Selected. 
+------------------SeparatorGateway AtSeparatorStateUpdate Selected undefined???
+----------Protocol Select: After RoboSep_RunSamples.getInstance().addToRun
+2019-05-17T13:01:29 INFO Adding protocol to current run
+2019-05-17T13:01:29 INFO Protocol Selection home button exit after sTime seconds.
+------------------------------ SetGuiState:  SeparatorState.Selected -------------------------
+2019-05-17T13:01:29 INFO SetGuiState:  SeparatorState.Selected -------------------------
+---------Now update the display
+------------------------------ SetGuiState:  SeparatorState.Selected -------------------------
+2019-05-17T13:01:29 INFO SetGuiState:  SeparatorState.Selected -------------------------
+RunSamples 32 : setSampleVolume QuadrantId=Quadrant1, Volume=5
+2019-05-17T13:01:30 INFO Quad: 1 Sample Vol 0.005
+RunSamples 33 : setSampleVolume QuadrantId=Quadrant1 completed.
+---------AtProtocolConsumablesUpdate: given 'consumables' are not null.
+---------AtProtocolConsumablesUpdate: update the protocol table (using the newly received sample volumes).
+---------Now update the display
+2019-05-17T13:01:30 DEBUG >> Enter to (ScheduleRun)
+2019-05-17T13:01:30 DEBUG Requesting ETC update (ScheduleRun)
+2019-05-17T13:01:30 INFO Sample 0: Protocol ID:1653983252, Volume:5000.000[uL]
+2019-05-17T13:01:30 DEBUG ETC update: 2019-05-17T13:27:33
+2019-05-17T13:01:31 INFO Run Samples button clicked
+2019-05-17T13:01:31 DEBUG >>Scheduler in progress
+2019-05-17T13:01:31 DEBUG >>Scheduler in progress
+2019-05-17T13:01:31 DEBUG >> Leave (ScheduleRun)
+2019-05-17T13:01:31 DEBUG Time remaining (ScheduleRun ETC):	0.0180849268935185
+2019-05-17T13:01:31 INFO Estimated run completion = 27:00
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Ready. 
+------------------------------ SetGuiState:  SeparatorState.Ready -------------------------
+2019-05-17T13:01:31 INFO SetGuiState:  SeparatorState.Ready -------------------------
+2019-05-17T13:01:31 INFO ---->> ISeparator busy
+2019-05-17T13:01:31 INFO Scheduling Run
+---------Run Samples: getConsumables called : iProtocolSelectCount = 1
+GetProtocolConsumables called. selectedProtocolIndexNumber = 0.
+myChosenProtocols.GetKey returns QuadrantId = Quadrant1.
+protocolName=CJ Whole Blood 2. initialQuadrant=Quadrant1.
+2019-05-17T13:01:31 DEBUG Getting Consumables for 1 quadrants
+.............................CJ Whole Blood 2 0 0
+2019-05-17T13:01:31 DEBUG QuadrantManager::StartRun
+2019-05-17T13:01:31 DEBUG protocol: CJ Whole Blood 2.xml is acquired.
+2019-05-17T13:01:31 DEBUG >> Starting acquiring protocol command list[0]
+2019-05-17T13:01:31 DEBUG >>>> Entering to getProtocolCommandList[0]
+2019-05-17T13:01:31 DEBUG ++++++getProtocolCommandList() before lock
+2019-05-17T13:01:31 DEBUG ------Entering to getProtocolCommandList at ControlProxy
+2019-05-17T13:01:31 DEBUG >>>>>>> Entering to getProtocolCommandList at XMLRpcProxy
+2019-05-17T13:01:31 DEBUG >>>>>>> Leaving getProtocolCommandList at XMLRpcProxy
+2019-05-17T13:01:31 DEBUG ------Leaving getProtocolCommandList at ControlProxy
+2019-05-17T13:01:31 DEBUG ++++++getProtocolCommandList() After lock
+2019-05-17T13:01:31 DEBUG >>>> Leaving getProtocolCommandList[0]
+2019-05-17T13:01:31 DEBUG >>>> Entering to ConvertCmdStringListToIntList
+2019-05-17T13:01:31 DEBUG >>>> Leaving ConvertCmdStringListToIntList
+2019-05-17T13:01:31 DEBUG >> finishing acquiring protocol command list[0]
+2019-05-17T13:01:31 DEBUG protocol: CJ Whole Blood 2.xml commands: 21
+2019-05-17T13:01:31 DEBUG ProgressBar set 21 steps
+2019-05-17T13:01:31 DEBUG Run progress info set.
+2019-05-17T13:01:31 DEBUG Displaying quadrant 0 resources
+2019-05-17T13:01:31 DEBUG Loading resources from sharing protocols
+2019-05-17T13:01:31 INFO Resource window is foreground
+2019-05-17T13:01:33 INFO Unload is called.
+2019-05-17T13:01:33 DEBUG ProgressBar set 1 steps
+2019-05-17T13:01:33 DEBUG Cancel button clicked
+2019-05-17T13:01:34 INFO New Protocol Select user control generated
+2019-05-17T13:01:34 DEBUG Loaded 9 protocol from User SAP
+2019-05-17T13:01:34 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-05-17T13:01:34 DEBUG Loaded Robosep User
+2019-05-17T13:01:34 INFO Opening protocol selection for quadrant 2
+2019-05-17T13:01:37 INFO Protocol Selection play button clicked
+---------No reloading of user protocols is required.
+---------No need to reload my protocol list.
+---------Select the protocol CJ Whole Blood 2 before exiting.
+---------Protocol Select: SelectProtocol called.
+----------Protocol Select: Called RoboSep_RunSamples.getInstance().addToRun
+---------Called SelectProtocol
+2019-05-17T13:01:37 DEBUG Adding protocol 'CJ Whole Blood 2' to run at quadrant1
+2019-05-17T13:01:37 DEBUG Opening New Number Pad window
+2019-05-17T13:01:38 DEBUG Volume: 5.000
+RunSamples 24: mySeparator.SelectProtocol: QuadrantId=Quadrant2, selectedProtocol.Id=11
+2019-05-17T13:01:38 INFO Estimated run completion = 01:00
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Selected. 
+------------------SeparatorGateway AtSeparatorStateUpdate Selected undefined???
+----------Protocol Select: After RoboSep_RunSamples.getInstance().addToRun
+2019-05-17T13:01:38 INFO Adding protocol to current run
+2019-05-17T13:01:38 INFO Protocol Selection home button exit after sTime seconds.
+------------------------------ SetGuiState:  SeparatorState.Selected -------------------------
+2019-05-17T13:01:38 INFO SetGuiState:  SeparatorState.Selected -------------------------
+---------Now update the display
+------------------------------ SetGuiState:  SeparatorState.Selected -------------------------
+2019-05-17T13:01:38 INFO SetGuiState:  SeparatorState.Selected -------------------------
+RunSamples 32 : setSampleVolume QuadrantId=Quadrant2, Volume=5
+2019-05-17T13:01:38 INFO Quad: 2 Sample Vol 0.005
+RunSamples 33 : setSampleVolume QuadrantId=Quadrant2 completed.
+---------AtProtocolConsumablesUpdate: given 'consumables' are not null.
+---------AtProtocolConsumablesUpdate: update the protocol table (using the newly received sample volumes).
+---------Now update the display
+2019-05-17T13:01:39 DEBUG >> Enter to (ScheduleRun)
+2019-05-17T13:01:39 DEBUG Requesting ETC update (ScheduleRun)
+2019-05-17T13:01:39 INFO Sample 0: Protocol ID:1653983252, Volume:5000.000[uL], Sample 1: Protocol ID:1653983252, Volume:5000.000[uL]
+2019-05-17T13:01:39 DEBUG ETC update: 2019-05-17T13:31:34
+2019-05-17T13:01:39 INFO Run Samples button clicked
+2019-05-17T13:01:39 DEBUG >>Scheduler in progress
+2019-05-17T13:01:40 DEBUG >>Scheduler in progress
+2019-05-17T13:01:40 DEBUG >> Leave (ScheduleRun)
+2019-05-17T13:01:40 DEBUG Time remaining (ScheduleRun ETC):	0.0207717396828704
+2019-05-17T13:01:40 INFO Estimated run completion = 30:00
+--------- SeparatorGateway: AtSeparatorStateUpdate - SeparatorState=Ready. 
+------------------------------ SetGuiState:  SeparatorState.Ready -------------------------
+2019-05-17T13:01:40 INFO SetGuiState:  SeparatorState.Ready -------------------------
+2019-05-17T13:01:40 INFO ---->> ISeparator busy
+2019-05-17T13:01:40 INFO ---->> ISeparator busy
+2019-05-17T13:01:40 INFO Scheduling Run
+---------Run Samples: getConsumables called : iProtocolSelectCount = 2
+GetProtocolConsumables called. selectedProtocolIndexNumber = 0.
+myChosenProtocols.GetKey returns QuadrantId = Quadrant1.
+protocolName=CJ Whole Blood 2. initialQuadrant=Quadrant1.
+GetProtocolConsumables called. selectedProtocolIndexNumber = 1.
+myChosenProtocols.GetKey returns QuadrantId = Quadrant2.
+protocolName=CJ Whole Blood 2. initialQuadrant=Quadrant2.
+2019-05-17T13:01:40 DEBUG Getting Consumables for 2 quadrants
+.............................CJ Whole Blood 2 0 0
+.............................CJ Whole Blood 2 0 1
+2019-05-17T13:01:42 DEBUG QuadrantManager::StartRun
+2019-05-17T13:01:42 DEBUG protocol: CJ Whole Blood 2.xml is acquired.
+2019-05-17T13:01:42 DEBUG >> Starting acquiring protocol command list[0]
+2019-05-17T13:01:42 DEBUG >>>> Entering to getProtocolCommandList[0]
+2019-05-17T13:01:42 DEBUG ++++++getProtocolCommandList() before lock
+2019-05-17T13:01:42 DEBUG ------Entering to getProtocolCommandList at ControlProxy
+2019-05-17T13:01:42 DEBUG >>>>>>> Entering to getProtocolCommandList at XMLRpcProxy
+2019-05-17T13:01:42 DEBUG >>>>>>> Leaving getProtocolCommandList at XMLRpcProxy
+2019-05-17T13:01:42 DEBUG ------Leaving getProtocolCommandList at ControlProxy
+2019-05-17T13:01:42 DEBUG ++++++getProtocolCommandList() After lock
+2019-05-17T13:01:42 DEBUG >>>> Leaving getProtocolCommandList[0]
+2019-05-17T13:01:42 DEBUG >>>> Entering to ConvertCmdStringListToIntList
+2019-05-17T13:01:42 DEBUG >>>> Leaving ConvertCmdStringListToIntList
+2019-05-17T13:01:42 DEBUG >> finishing acquiring protocol command list[0]
+2019-05-17T13:01:42 DEBUG protocol: CJ Whole Blood 2.xml commands: 21
+2019-05-17T13:01:42 DEBUG ProgressBar set 21 steps
+2019-05-17T13:01:42 DEBUG Run progress info set.
+2019-05-17T13:01:42 DEBUG protocol: CJ Whole Blood 2.xml is acquired.
+2019-05-17T13:01:42 DEBUG >> Starting acquiring protocol command list[1]
+2019-05-17T13:01:42 DEBUG >>>> Entering to getProtocolCommandList[1]
+2019-05-17T13:01:42 DEBUG ++++++getProtocolCommandList() before lock
+2019-05-17T13:01:42 DEBUG ------Entering to getProtocolCommandList at ControlProxy
+2019-05-17T13:01:42 DEBUG >>>>>>> Entering to getProtocolCommandList at XMLRpcProxy
+2019-05-17T13:01:42 DEBUG >>>>>>> Leaving getProtocolCommandList at XMLRpcProxy
+2019-05-17T13:01:42 DEBUG ------Leaving getProtocolCommandList at ControlProxy
+2019-05-17T13:01:42 DEBUG ++++++getProtocolCommandList() After lock
+2019-05-17T13:01:42 DEBUG >>>> Leaving getProtocolCommandList[1]
+2019-05-17T13:01:42 DEBUG >>>> Entering to ConvertCmdStringListToIntList
+2019-05-17T13:01:42 DEBUG >>>> Leaving ConvertCmdStringListToIntList
+2019-05-17T13:01:42 DEBUG >> finishing acquiring protocol command list[1]
+2019-05-17T13:01:42 DEBUG protocol: CJ Whole Blood 2.xml commands: 21
+2019-05-17T13:01:42 DEBUG ProgressBar set 21 steps
+2019-05-17T13:01:42 DEBUG Run progress info set.
+2019-05-17T13:01:42 DEBUG Displaying quadrant 0 resources
+2019-05-17T13:01:42 DEBUG Loading resources from sharing protocols
+2019-05-17T13:01:42 INFO Resource window is foreground
+2019-05-17T13:01:47 DEBUG Displaying quadrant 1 resources

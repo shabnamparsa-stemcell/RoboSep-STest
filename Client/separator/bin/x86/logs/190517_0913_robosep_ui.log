@@ -1,0 +1,112 @@
+2019-05-17T09:13:46 INFO Application log initialised
+2019-05-17T09:13:46 DEBUG Remoting Address = 127.0.0.1
+2019-05-17T09:13:46 DEBUG ICS Server URL       = http://127.0.0.1:8000
+2019-05-17T09:13:46 DEBUG ICS EventSink URL    = http://127.0.0.1:8001/InstrumentControlEventSink
+2019-05-17T09:13:46 DEBUG Separator Server URL =  tcp://127.0.0.1:3149/Separator
+2019-05-17T09:13:46 DEBUG Configured address = 127.0.0.1
+2019-05-17T09:13:46 INFO Initializing User Console
+2019-05-17T09:13:46 DEBUG Initializing UserDB
+2019-05-17T09:13:46 INFO Application config path: C:\Program Files\STI\RoboSep\config\
+2019-05-17T09:13:46 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-05-17T09:13:47 INFO XSD Path : c:\Program Files\STI\RoboSep\
+2019-05-17T09:13:47 DEBUG 224protocols loaded
+2019-05-17T09:13:47 ERROR Failed to convert variable '00/00/0000' to valid date.
+2019-05-17T09:13:47 ERROR WarrantyExpireDate in GUI.ini file is invalid.
+2019-05-17T09:13:47 DEBUG Creating new Form_Home
+2019-05-17T09:13:47 INFO Command to launch service 'dns-sd.exe -R "Orca1" _robosep._tcp . 5899' for Network ORCA.
+2019-05-17T09:13:47 INFO Service 'dns-sd.exe' for network ORCA has been launched. ProcessID='2452'. Path='C:\Windows\system32'
+2019-05-17T09:13:47 INFO Loading User Console
+2019-05-17T09:13:47 ERROR Starting GUI Thread
+2019-05-17T09:13:47 INFO Connecting...
+2019-05-17T09:13:47 INFO set user.db file to : User1.udb
+2019-05-17T09:13:47 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 1 tcp://127.0.0.1:3149/Separator
+2019-05-17T09:13:47 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 2
+2019-05-17T09:13:47 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-05-17T09:13:47 DEBUG Loaded Robosep User
+2019-05-17T09:13:47 INFO Current user ID : 'SAP'.
+2019-05-17T09:13:47 DEBUG Instrument Control API Ping() returned True
+2019-05-17T09:13:47 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 3
+2019-05-17T09:13:48 INFO Get system information for About menu
+2019-05-17T09:13:48 INFO Estimated run completion = 01:00
+2019-05-17T09:14:13 DEBUG Carousel state changed to: SeparatorUnloaded
+2019-05-17T09:14:13 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+2019-05-17T09:14:13 INFO Stopping Splash page
+2019-05-17T09:14:13 ERROR Failed to convert variable '00/0/0000' to valid date.
+2019-05-17T09:14:13 ERROR Failed to convert variable '00/0/0000' to valid date.
+2019-05-17T09:14:13 ERROR Failed to convert variable '00/0/0000' to valid date.
+2019-05-17T09:14:13 ERROR Failed to convert variable '00/00/0000' to valid date.
+2019-05-17T09:14:13 ERROR Failed to convert variable '00/00/0000' to valid date.
+2019-05-17T09:14:13 INFO Initializing About user control
+2019-05-17T09:14:13 INFO Generating Robosep Resources user control
+2019-05-17T09:14:13 INFO Initializing Run Samples user control
+2019-05-17T09:14:13 INFO PauseResumeDialog form created
+2019-05-17T09:14:16 INFO New Protocol Select user control generated
+2019-05-17T09:14:16 DEBUG Loaded 6 protocol from User SAP
+2019-05-17T09:14:16 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-05-17T09:14:16 DEBUG Loaded Robosep User
+2019-05-17T09:14:16 INFO Opening protocol selection for quadrant 1
+2019-05-17T09:14:25 INFO Protocol Selection play button clicked
+2019-05-17T09:14:25 DEBUG Adding protocol 'EasySep Direct Human PBMC Isolation 19654 - buffy coat-CJ' to run at quadrant0
+2019-05-17T09:14:25 DEBUG Opening New Number Pad window
+2019-05-17T09:14:27 DEBUG Volume: 5.000
+2019-05-17T09:14:27 INFO Estimated run completion = 01:00
+2019-05-17T09:14:27 INFO Adding protocol to current run
+2019-05-17T09:14:27 INFO Protocol Selection home button exit after sTime seconds.
+2019-05-17T09:14:27 INFO SetGuiState:  SeparatorState.Selected -------------------------
+2019-05-17T09:14:27 INFO SetGuiState:  SeparatorState.Selected -------------------------
+2019-05-17T09:14:28 INFO Quad: 1 Sample Vol 0.005
+2019-05-17T09:14:28 DEBUG >> Enter to (ScheduleRun)
+2019-05-17T09:14:28 DEBUG Requesting ETC update (ScheduleRun)
+2019-05-17T09:14:28 INFO Sample 0: Protocol ID:633635150, Volume:5000.000[uL]
+2019-05-17T09:14:28 DEBUG ETC update: 2019-05-17T09:32:56
+2019-05-17T09:14:28 INFO Run Samples button clicked
+2019-05-17T09:14:28 DEBUG >>Scheduler in progress
+2019-05-17T09:14:29 DEBUG >> Leave (ScheduleRun)
+2019-05-17T09:14:29 DEBUG Time remaining (ScheduleRun ETC):	0.0128216923472222
+2019-05-17T09:14:29 INFO Estimated run completion = 19:00
+2019-05-17T09:14:29 INFO SetGuiState:  SeparatorState.Ready -------------------------
+2019-05-17T09:14:29 INFO ---->> ISeparator busy
+2019-05-17T09:14:29 INFO ---->> ISeparator busy
+2019-05-17T09:14:29 INFO Scheduling Run
+2019-05-17T09:14:29 DEBUG Getting Consumables for 1 quadrants
+2019-05-17T09:14:29 DEBUG QuadrantManager::StartRun
+2019-05-17T09:14:29 DEBUG protocol: EasySep Direct Human PBMC Isolation 19654 - buffy coat-CJ.xml is acquired.
+2019-05-17T09:14:29 DEBUG >> Starting acquiring protocol command list[0]
+2019-05-17T09:14:29 DEBUG >>>> Entering to getProtocolCommandList[0]
+2019-05-17T09:14:29 DEBUG ++++++getProtocolCommandList() before lock
+2019-05-17T09:14:29 DEBUG ------Entering to getProtocolCommandList at ControlProxy
+2019-05-17T09:14:29 DEBUG >>>>>>> Entering to getProtocolCommandList at XMLRpcProxy
+2019-05-17T09:14:29 DEBUG >>>>>>> Leaving getProtocolCommandList at XMLRpcProxy
+2019-05-17T09:14:29 DEBUG ------Leaving getProtocolCommandList at ControlProxy
+2019-05-17T09:14:29 DEBUG ++++++getProtocolCommandList() After lock
+2019-05-17T09:14:29 DEBUG >>>> Leaving getProtocolCommandList[0]
+2019-05-17T09:14:29 DEBUG >>>> Entering to ConvertCmdStringListToIntList
+2019-05-17T09:14:29 DEBUG >>>> Leaving ConvertCmdStringListToIntList
+2019-05-17T09:14:29 DEBUG >> finishing acquiring protocol command list[0]
+2019-05-17T09:14:29 DEBUG protocol: EasySep Direct Human PBMC Isolation 19654 - buffy coat-CJ.xml commands: 9
+2019-05-17T09:14:29 DEBUG ProgressBar set 1 steps
+2019-05-17T09:14:29 DEBUG ProgressBar set 9 steps
+2019-05-17T09:14:29 DEBUG Run progress info set.
+2019-05-17T09:14:29 DEBUG Displaying quadrant 0 resources
+2019-05-17T09:14:29 DEBUG Loading resources from sharing protocols
+2019-05-17T09:14:29 INFO Resource window is foreground
+2019-05-17T09:14:40 INFO Unload is called.
+2019-05-17T09:14:40 DEBUG ProgressBar set 1 steps
+2019-05-17T09:14:40 DEBUG Cancel button clicked
+2019-05-17T09:16:42 DEBUG Home button clicked
+2019-05-17T09:16:45 INFO Removing protocol at quadrant 1
+2019-05-17T09:16:45 INFO Estimated run completion = 01:00
+2019-05-17T09:16:45 INFO Quadrant info Cleared
+2019-05-17T09:16:45 INFO Quadrant info Cleared
+2019-05-17T09:16:45 INFO Initializing Protocol List user control
+2019-05-17T09:16:45 INFO Generating New UserProtocol user control
+2019-05-17T09:16:45 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-05-17T09:16:45 DEBUG Loaded Robosep User
+2019-05-17T09:16:45 DEBUG Hiding Home window
+2019-05-17T09:16:45 INFO Protocols button clicked
+2019-05-17T09:16:45 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+2019-05-17T09:16:45 INFO SetGuiState:  SeparatorState.SeparatorUnloaded -------------------------
+2019-05-17T09:16:52 DEBUG Updating Filtered list
+2019-05-17T09:16:53 DEBUG Updating Filtered list
+2019-05-17T09:16:53 DEBUG Updating Filtered list
+2019-05-17T09:16:53 DEBUG Updating Filtered list
