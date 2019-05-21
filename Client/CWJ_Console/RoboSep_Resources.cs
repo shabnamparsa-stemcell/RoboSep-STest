@@ -1738,7 +1738,27 @@ namespace GUI_Console
                 }
 
                 string strDescription;
-                offset = (thisProtocol.Quadrants == 1) ? 0 : (QuadrantNumber * 8);
+#if false
+                switch (thisProtocol.Quadrants)
+                {
+                    case 1:
+                        offset = 0;
+                        break;
+                    case 2:
+                    case 3:
+                        offset = ((QuadrantNumber - thisProtocol.InitQuadrant) % thisProtocol.Quadrants) * 8;
+                        break;
+                    case 4:
+                        offset = QuadrantNumber * 8;
+                        break;
+                    default:
+                        offset = 0;
+                        break;
+                }
+#else
+                offset = (thisProtocol.Quadrants == 1) ? 
+                0 : ((QuadrantNumber - thisProtocol.InitQuadrant) % thisProtocol.Quadrants) * 8; 
+#endif
                 switch (carouselLocation)
                 {
                     case 0:
