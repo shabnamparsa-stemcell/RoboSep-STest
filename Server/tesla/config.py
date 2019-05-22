@@ -379,7 +379,7 @@ def GetConfigEnvironment():
             SS_CHATTER            = int( cfg.get( 'environment', 'SS_CHATTER' ) )
             SS_ASPIRATEDOWN       = int( cfg.get( 'environment', 'SS_ASPIRATEDOWN' ) )
             SS_DISPENSEDOWN       = int( cfg.get( 'environment', 'SS_DISPENSEDOWN' ) )
-            SS_OLDPCB             = int( cfg.get( 'environment', 'SS_OLDPCB' ) )
+            # SS_OLDPCB             = int( cfg.get( 'environment', 'SS_OLDPCB' ) )
             SS_DEBUGGER_LOG       = int( cfg.get( 'environment', 'SS_DEBUGGER_LOG' ) )
             SS_EXT_LOGGER         = int( cfg.get( 'environment', 'SS_EXT_LOGGER' ) )
             OVERWRITE_WITH_BARCODES = int( cfg.get( 'environment', 'OVERWRITE_WITH_BARCODES' ) )
