@@ -469,7 +469,7 @@ def GetConfigEnvironment():
             configEnvironmentSettingMsg += '| SS_CHATTER=%d' % SS_CHATTER
             configEnvironmentSettingMsg += '| SS_ASPIRATEDOWN=%d' % SS_ASPIRATEDOWN
             configEnvironmentSettingMsg += '| SS_DISPENSEDOWN=%d' % SS_DISPENSEDOWN
-            configEnvironmentSettingMsg += '| SS_OLDPCB=%d' % SS_OLDPCB 
+#            configEnvironmentSettingMsg += '| SS_OLDPCB=%d' % SS_OLDPCB 
             configEnvironmentSettingMsg += '| SS_DEBUGGER_LOG=%d' % SS_DEBUGGER_LOG
             configEnvironmentSettingMsg += '| SS_EXT_LOGGER=%d' % SS_EXT_LOGGER
             configEnvironmentSettingMsg += '| OVERWRITE_WITH_BARCODES=%d' % OVERWRITE_WITH_BARCODES
