@@ -43,6 +43,7 @@ def CommandFactory(sequenceNumber, type, label, xmlNode = None):
     standard NameError exception.
     If the xmlNode is defined, then we parse the xml node to get addition 
     parameters for the command.'''
+
     creationString = "%s(%d, '%s', '%s')" % (type, sequenceNumber, type, label)
     cmd = eval(creationString)
     if xmlNode:
@@ -56,7 +57,7 @@ class Command(object):
     LEGAL_COMMANDS = [  'Transport', 'Mix', 'Incubate', 'Separate', 'TopUpVial',
 		        'ResuspendVial', 'Flush', 'Prime', 'HomeAll', 'Park', 
                         'Demo', 'Pause','PumpLife','MixTrans', 'TopUpMixTrans' , 'ResusMixSepTrans','ResusMix',
-                        'TopUpTrans', 'TopUpTransSepTrans', 'TopUpMixTransSepTrans']
+                        'TopUpTrans', 'TopUpTransSepTrans', 'TopUpMixTransSepTrans', 'EndOfProtocol']
    
     workingVols = {}
 
@@ -116,7 +117,11 @@ class Command(object):
     def isWaitType(self):
 	'''Returns True if this a wait command.'''
 	return isinstance(self, WaitCommand)
-    
+    def isSeparateType(self):
+	return isinstance(self, SeparateCommand)
+    def isEndOfProtocolType(self):
+	return isinstance(self, EndOfProtocolCommand)
+
     def isVolumeType(self):
 	'''Return True if this is a volume command.'''
 	return isinstance(self, VolumeCommand)
@@ -151,6 +156,14 @@ class Command(object):
 	return isinstance(self, TopUpTransSepTransCommand)
     def isTopUpMixTransSepTransType(self):
 	return isinstance(self, TopUpMixTransSepTransCommand)
+    def includesTopUpOrResuspendInType(self):
+        return self.isTopUpType() or self.isResuspendType() or \
+                self.isTopUpMixTransType() or self.isResusMixSepTransType() or self.isResusMixType() or \
+                self.isTopUpTransType() or self.isTopUpTransSepTransType() or self.isTopUpMixTransSepTransType()
+    def isTopUpOrResuspendMergeCandidateType(self):
+        return self.isTopUpType() or self.isResuspendType() or \
+                self.isTopUpMixTransType() or self.isResusMixType() or \
+                self.isTopUpTransType() 
 
     def _parseVialInfo(self, vialString):
         '''Parse the vial string and return a tuple of quadrant and the vial name.'''
@@ -175,7 +188,7 @@ class Command(object):
 	'''Returns True if the command is just a 'wait'-type command, such as
 	an Incubate or Separate command'''
         cmdType = cmdType.split('Command')[0]
-	return cmdType in ['Incubate', 'Separate']
+	return cmdType in ['Incubate', 'Separate', 'EndOfProtocol']
     
     isLegalCommandType = staticmethod(isLegalCommandType)
     isWaitCommand = staticmethod(isWaitCommand)    
@@ -211,13 +224,21 @@ class DemoCommand(ServiceCommand):
     def __init__(self, sequenceNumber, type, label):
 	ServiceCommand.__init__(self, sequenceNumber, type, label)
 	self.iterations = 1
-    
+        self.sef        = 0;  
     def parseXML(self, xmlNode):
         '''Sets the number of times we repeat the Demo command.'''
         self.iterations = int(xmlNode.getAttribute('iterations'))
+        self.seq        = int(xmlNode.getAttribute('seq'));
 
     def createCall(self, sample, protocol):
-	return "Demo(iterations=%d, id=%d, seq=%d)" % \
+        if (self.seq == 1):
+            return "Demo(iterations=%d, id=%d, seq=%d)" % \
+		(self.iterations, sample.ID, self.seq)
+        elif (self.seq == 2):
+	    return "Demo5mL(iterations=%d, id=%d, seq=%d)" % \
+		(self.iterations, sample.ID, self.seq)
+        elif (self.seq == 3):
+	    return "Demo1mL(iterations=%d, id=%d, seq=%d)" % \
 		(self.iterations, sample.ID, self.seq)
 
 class PumpLifeCommand(ServiceCommand):
@@ -277,6 +298,9 @@ class SeparateCommand(WaitCommand):
     '''Separate  command'''
     pass
 
+class EndOfProtocolCommand(WaitCommand):
+    pass
+
 # RL - pause command - 03/29/06
 class PauseCommand(WaitCommand):
     '''A command to pause robot'''
@@ -316,6 +340,7 @@ class VolumeCommand(Command):
         self.relative = False            # Relative or absolute volumes?
         self.proportion = 0.0           # Relative volume proportion
         self.absVolume = 0              # Absolute volume value
+        self.volume = 0                 # Volume used by an instance of this command
 	self.tiprackSpecified = False	# if not to use default tip rack #1
 	self.tiprack = 1				# id of tip rack to use
 
@@ -418,6 +443,40 @@ class VolumeCommand(Command):
             raise CommandException, "Absolute volume 5 < 0 (%0d)" % (self.absVolume5)
 
 
+    def copyVolumeCommand(self, oldCmd):
+	self.srcVial = oldCmd.srcVial		
+	self.destVial = oldCmd.destVial
+	self.srcVial2 = oldCmd.srcVial2		
+	self.destVial2 = oldCmd.destVial2
+	self.srcVial3 = oldCmd.srcVial3		
+	self.destVial3 = oldCmd.destVial3
+
+	self.workingVolume = oldCmd.workingVolume		
+        self.relative = oldCmd.relative            
+        self.proportion = oldCmd.proportion           
+        self.absVolume = oldCmd.absVolume              
+        self.volume = oldCmd.volume                 
+	self.tiprackSpecified = oldCmd.tiprackSpecified	
+	self.tiprack = oldCmd.tiprack
+	self.extensionTime = oldCmd.extensionTime
+        self.freeAirDispense = oldCmd.freeAirDispense
+        self.useBufferTip = oldCmd.useBufferTip
+        
+
+	self.numOfStages = oldCmd.numOfStages
+        self.relative2 = oldCmd.relative2            
+        self.proportion2 = oldCmd.proportion2           
+        self.absVolume2 = oldCmd.absVolume2              
+        self.relative3 = oldCmd.relative3            
+        self.proportion3 = oldCmd.proportion3           
+        self.absVolume3 = oldCmd.absVolume3              
+        self.relative4 = oldCmd.relative4            
+        self.proportion4 = oldCmd.proportion4           
+        self.absVolume4 = oldCmd.absVolume4              
+        self.relative5 = oldCmd.relative5            
+        self.proportion5 = oldCmd.proportion5           
+        self.absVolume5 = oldCmd.absVolume5              
+        
 
     def getContainerString(self, sample, vial):
 	'''Return a string of what is needed to eval an Instrument container 

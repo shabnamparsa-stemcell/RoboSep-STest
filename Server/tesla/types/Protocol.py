@@ -329,7 +329,7 @@ class Protocol(object):
             newCmd.copyVolumeCommand(cmdTopUpTrans)
             newCmd.duration = cmdSep.minPeriod
             newCmd.numOfStages = 3
-            newCmd.srcVial3 = cmdTrans.srcVial		
+            newCmd.srcVial3 = cmdTrans.srcVial                
             newCmd.destVial3 = cmdTrans.destVial
             newCmd.relative3 = cmdTrans.relative            
             newCmd.proportion3 = cmdTrans.proportion
@@ -350,7 +350,7 @@ class Protocol(object):
             newCmd.tipTubeBottomGap = cmdTopUpMixTrans.tipTubeBottomGap
             newCmd.duration = cmdSep.minPeriod
             newCmd.numOfStages = 4
-            newCmd.srcVial3 = cmdTrans.srcVial		
+            newCmd.srcVial3 = cmdTrans.srcVial                
             newCmd.destVial3 = cmdTrans.destVial
             newCmd.relative4 = cmdTrans.relative            
             newCmd.proportion4 = cmdTrans.proportion
@@ -369,7 +369,7 @@ class Protocol(object):
             newCmd.tipTubeBottomGap = cmdResusMix.tipTubeBottomGap
             newCmd.duration = cmdSep.minPeriod
             newCmd.numOfStages = 3
-            newCmd.srcVial2 = cmdTrans.srcVial		
+            newCmd.srcVial2 = cmdTrans.srcVial                
             newCmd.destVial2 = cmdTrans.destVial
             newCmd.relative3 = cmdTrans.relative            
             newCmd.proportion3 = cmdTrans.proportion
@@ -390,7 +390,7 @@ class Protocol(object):
             newCmd.absVolume2 = cmdMix.absVolume
             newCmd.duration = cmdSep.minPeriod
             newCmd.numOfStages = 3
-            newCmd.srcVial2 = cmdTrans.srcVial		
+            newCmd.srcVial2 = cmdTrans.srcVial                
             newCmd.destVial2 = cmdTrans.destVial
             newCmd.relative3 = cmdTrans.relative            
             newCmd.proportion3 = cmdTrans.proportion
@@ -441,13 +441,13 @@ class Protocol(object):
             newCmd.proportion2 = cmdTrans.proportion
             newCmd.absVolume2 = cmdTrans.absVolume
             newCmd.numOfStages = 3
-            newCmd.srcVial2 = cmdTrans.srcVial		
+            newCmd.srcVial2 = cmdTrans.srcVial                
             newCmd.destVial2 = cmdTrans.destVial
             newCmd.duration = cmdSep.minPeriod
             newCmd.relative3 = cmdTrans2.relative            
             newCmd.proportion3 = cmdTrans2.proportion
             newCmd.absVolume3 = cmdTrans2.absVolume
-            newCmd.srcVial3 = cmdTrans2.srcVial		
+            newCmd.srcVial3 = cmdTrans2.srcVial                
             newCmd.destVial3 = cmdTrans2.destVial
 
         return newCmd
@@ -462,7 +462,7 @@ class Protocol(object):
             newCmd.proportion2 = cmdTrans.proportion
             newCmd.absVolume2 = cmdTrans.absVolume
             newCmd.numOfStages = 2
-            newCmd.srcVial2 = cmdTrans.srcVial		
+            newCmd.srcVial2 = cmdTrans.srcVial                
             newCmd.destVial2 = cmdTrans.destVial
 
         return newCmd
@@ -479,7 +479,7 @@ class Protocol(object):
             newCmd.proportion2 = cmdMix.proportion
             newCmd.absVolume2 = cmdMix.absVolume
             newCmd.numOfStages = 4
-            newCmd.srcVial2 = cmdTrans.srcVial		
+            newCmd.srcVial2 = cmdTrans.srcVial                
             newCmd.destVial2 = cmdTrans.destVial
             newCmd.relative3 = cmdTrans.relative            
             newCmd.proportion3 = cmdTrans.proportion
@@ -488,7 +488,7 @@ class Protocol(object):
             newCmd.relative4 = cmdTrans2.relative            
             newCmd.proportion4 = cmdTrans2.proportion
             newCmd.absVolume4 = cmdTrans2.absVolume
-            newCmd.srcVial3 = cmdTrans2.srcVial		
+            newCmd.srcVial3 = cmdTrans2.srcVial                
             newCmd.destVial3 = cmdTrans2.destVial
             
 
@@ -506,7 +506,7 @@ class Protocol(object):
             newCmd.proportion2 = cmdMix.proportion
             newCmd.absVolume2 = cmdMix.absVolume
             newCmd.numOfStages = 3
-            newCmd.srcVial2 = cmdTrans.srcVial		
+            newCmd.srcVial2 = cmdTrans.srcVial                
             newCmd.destVial2 = cmdTrans.destVial
             newCmd.relative3 = cmdTrans.relative            
             newCmd.proportion3 = cmdTrans.proportion
@@ -793,10 +793,10 @@ class Protocol(object):
     # --- Instance properties (all read-only) ---------------------------------
     
     ID = property(lambda self: self.__ID, doc = 'Protocol ID')
-    label = property(lambda self: self.__label, doc = 'Protocol label')								
+    label = property(lambda self: self.__label, doc = 'Protocol label')                                                                
     cmds = property(getCommands, doc = 'Return copy of protocol commands list')
     numCmds = property(lambda self: len(self.__cmds), doc = 'Number of protocol commands')
-    numQuadrants = property(lambda self: self.__numQuadrants, doc = 'Number of used quadrants')						
+    numQuadrants = property(lambda self: self.__numQuadrants, doc = 'Number of used quadrants')                                                
     features = property(getFeatures, doc = 'Return copy of protocol features list')
 
     # For testing
@@ -1056,7 +1056,7 @@ class Protocol(object):
                     particleVol += float(currentDeadVolume[Instrument.DeadVolumeBeadLabel])
                     if prints == 1: print "Particle Vol + Dead Vol : %f" % (particleVol)
 
-		## lysisVol can get zeroed if tube is reused in some protocols so we hold the
+                ## lysisVol can get zeroed if tube is reused in some protocols so we hold the
                 ## initial value as startLysisVol for reporting to GUI - bdr 
                 lysisVol = self.__tracking[q][Instrument.LysisLabel]
                 
@@ -1101,9 +1101,9 @@ class Protocol(object):
 
 class Feature(object):
     def __init__(self, name, desc, inputType, inputData):
-	self.name = name
-	self.desc = desc 
-	self.inputType = inputType
-	self.inputData = inputData
+        self.name = name
+        self.desc = desc 
+        self.inputType = inputType
+        self.inputData = inputData
 # eof
 

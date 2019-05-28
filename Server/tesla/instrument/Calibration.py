@@ -1029,22 +1029,22 @@ class Calibration(Subsystem):
         if diff < 0.01:
             diff=0
         #armThirdLeg=armThirdLeg2
-	armTheta1 = (180 - math.fabs(thetaDiff)) / 2
-	armTheta2 = armTheta1
-	shortR = a.r
-	if a.r > b.r:
+        armTheta1 = (180 - math.fabs(thetaDiff)) / 2
+        armTheta2 = armTheta1
+        shortR = a.r
+        if a.r > b.r:
             shortR = b.r
-	longR = a.r
-	if a.r == shortR:
+        longR = a.r
+        if a.r == shortR:
             longR = b.r
             
-	carouselTheta2 = tesla.AdvMath.SinLawSSA(armThirdLeg, shortR, carouselDiff)
-	carouselTheta1 = 180 - carouselTheta2 - carouselDiff
+        carouselTheta2 = tesla.AdvMath.SinLawSSA(armThirdLeg, shortR, carouselDiff)
+        carouselTheta1 = 180 - carouselTheta2 - carouselDiff
 
-	totalDistance =tesla.AdvMath.CosLawSAS(self.armLength, armTheta2 + carouselTheta2,longR)
-	totalDistance2 =tesla.AdvMath.CosLawSAS(self.armLength, 360 - armTheta1 - carouselTheta1, shortR)
+        totalDistance =tesla.AdvMath.CosLawSAS(self.armLength, armTheta2 + carouselTheta2,longR)
+        totalDistance2 =tesla.AdvMath.CosLawSAS(self.armLength, 360 - armTheta1 - carouselTheta1, shortR)
         #totalDistance=totalDistance2
-	return totalDistance
+        return totalDistance
 
 
     # calc vector from arm post to all vials on carousel given Sample 1 and 2 reference angles

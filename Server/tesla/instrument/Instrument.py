@@ -18,7 +18,7 @@
 # the program(s) have been supplied.
 # 
 # Notes:
-# 	 03/24/05 - added parkarm - bdr
+#    03/24/05 - added parkarm - bdr
 #    04/11/05 - added parkpump - bdr
 #    05/09/05 - lysis 'deadVolume' now 5 mL - bdr
 #    05/29/05 - added parkCarousel (line 784) - bdr
@@ -65,8 +65,8 @@ import tesla.DebuggerWindow          # 2012-04-10 sp
 
 from datetime import datetime #added by shabnam
 
-import RoboTrace              	#CWJ Add
-import time		  	#CWJ Add
+import RoboTrace                      #CWJ Add
+import time                          #CWJ Add
 # ---------------------------------------------------------------------------
 
 class InstrumentError(TeslaException):
@@ -92,7 +92,7 @@ class Instrument(Subsystem):
 
     # A label of all reagents on the carousel (not BCCM)
     ReagentLabelSet = (AntibodyLabel, CocktailLabel, BeadLabel, SampleLabel,
-			SupernatentLabel, WasteLabel, LysisLabel)
+                        SupernatentLabel, WasteLabel, LysisLabel)
 
     # Configuration data    
     Tip1mlCapacityLabel = "capacity_1mltip_ul"
@@ -277,11 +277,11 @@ class Instrument(Subsystem):
     __transportTipUsageMap = {
                                 CocktailLabel    : 1,
                                 BeadLabel        : 2,
-				                AntibodyLabel	 : 3,
+                                AntibodyLabel         : 3,
                                 BCCMLabel        : 4,
                                 SampleLabel      : 5,
                                 SupernatentLabel : 5,
-				                LysisLabel	     : 5,
+                                LysisLabel             : 5,
                                 WasteLabel       : 5,       # should not be needed
                              }
 
@@ -293,7 +293,7 @@ class Instrument(Subsystem):
     __forbiddenTipList =     {
                                 # WasteLabel : tips_All,
                                 CocktailLabel : tips_5ml,
-				AntibodyLabel : tips_5ml,
+                                AntibodyLabel : tips_5ml,
                                 }
 
     __m_state = 'RESET'
@@ -328,7 +328,7 @@ class Instrument(Subsystem):
         AxisTracker.dbFilePath = tesla.config.COMPONENT_DB_PATH
 
         # Alias the Incubate() method to Separate() for protocols
-#	self.Separate = self.Incubate #CWJ Mod
+        #self.Separate = self.Incubate #CWJ Mod
 
         self._m_Settings = Instrument.__configData.copy()
         instrumentConfigData = gHardwareData.Section (Instrument.TeslaLabel)
@@ -394,9 +394,9 @@ class Instrument(Subsystem):
     # --- The level 1 workflow methods ----------------------------------------
    
     def HomeAll(self, id = None, **kw):
-	'''Home all axes.
-	id is a unique identifier (eg. sample ID) for tracking the caller.
-	kw is a dictionary of optional parameters & values.'''
+        '''Home all axes.
+        id is a unique identifier (eg. sample ID) for tracking the caller.
+        kw is a dictionary of optional parameters & values.'''
         
         print '===============HomeAll Start'
         
@@ -410,7 +410,7 @@ class Instrument(Subsystem):
         if kw.has_key('seq'):
             seq = - kw['seq']
                 
-      	CamMgr = RoboTrace.GetRoboCamMgrInstance();
+        CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetProcStep(1);
         CamMgr.SetCurrentProtocolID(-1)
         CamMgr.SetCurrentProtocolSeq(seq)
@@ -447,7 +447,7 @@ class Instrument(Subsystem):
         if kw.has_key('seq'):   #CWJ Mod
             seq = kw['seq']      #CWJ Mod
             CamMgr = RoboTrace.GetRoboCamMgrInstance();
-            CamMgr.SetProcStep(2);        	   
+            CamMgr.SetProcStep(2);                   
             CamMgr.SetCurrentProtocolSeq(seq)
             CamMgr.SetCurrentProtocolID(id)
         if kw.has_key('initialQuadrant'): #CWJ Mod
@@ -460,7 +460,7 @@ class Instrument(Subsystem):
             self.__logger.logDebug(zeroVolMsg)
             self.svrLog.logInfo('', self.logPrefix, funcReference, 'ID=%s |No transport, volume=%d' % (id, volume_ul))   # 2011-11-25 sp -- added logging
             self.Trace(zeroVolMsg)
-            return			    # Nothing to move! Do nothing
+            return                            # Nothing to move! Do nothing
         
         # Check vial volume levels
         # Case 1: we want to transport more than is in the source vial
@@ -630,7 +630,7 @@ class Instrument(Subsystem):
                     self.__m_Platform.StripTip() #    03/14/07 - tip strip only if necessary code -RL
             else:
                 self.__logger.logDebug("IL: SKIP tip strip")
-	
+        
     def GetVolumeToTransport(srcVial,volume_ul,id,logger,svrLog,logPrefix,funcReference, doLogging = False):
         if (srcVial.getVolume() < volume_ul):
             # Case 1: we want to transport more than is in the source vial
@@ -652,8 +652,8 @@ class Instrument(Subsystem):
             return volume_ul
 
     def Mix(self, vial, tiprackSpecified, tiprack, mixCycles, tipTubeBottomGap, isRelative, volume_uL, id = None, skipTipStrip = False, skipPickupTip = False, **kw):#CR
-        '''Mix fluid in the given vial.	id is a unique identifier (eg. sample ID) for tracking the caller.
-	       kw is a dictionary of optional parameters & values.'''
+        '''Mix fluid in the given vial.        id is a unique identifier (eg. sample ID) for tracking the caller.
+               kw is a dictionary of optional parameters & values.'''
 
         funcReference = __name__ + '.Mix'  # 2011-11-25 sp -- added logging
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
@@ -662,7 +662,7 @@ class Instrument(Subsystem):
         if kw.has_key('seq'):   #CWJ Mod
            seq = kw['seq']      #CWJ Mod
            CamMgr = RoboTrace.GetRoboCamMgrInstance()
-	   CamMgr.SetCurrentProtocolSeq(seq)
+           CamMgr.SetCurrentProtocolSeq(seq)
 
         if kw.has_key('initialQuadrant'): #CWJ Mod
            qdr = kw['initialQuadrant']
@@ -791,8 +791,8 @@ class Instrument(Subsystem):
 
     def Incubate(self, period_secs, id = None, **kw):
         '''Incubate for a specified number of seconds.
-	id is a unique identifier (eg. sample ID) for tracking the caller.
-	kw is a dictionary of optional parameters & values.'''
+        id is a unique identifier (eg. sample ID) for tracking the caller.
+        kw is a dictionary of optional parameters & values.'''
         funcReference = __name__ + '.Incubate'  # 2011-11-25 sp -- added logging
         cmdName = 'Incubate'
         ProcStep = 4
@@ -811,8 +811,8 @@ class Instrument(Subsystem):
 
     def EndOfProtocol(self, period_secs, id = None, **kw):
         '''Incubate for a specified number of seconds.
-	id is a unique identifier (eg. sample ID) for tracking the caller.
-	kw is a dictionary of optional parameters & values.'''
+        id is a unique identifier (eg. sample ID) for tracking the caller.
+        kw is a dictionary of optional parameters & values.'''
         funcReference = __name__ + '.Incubate'  # 2011-11-25 sp -- added logging
         cmdName = 'EndOfProtocol'
         ProcStep = 18
@@ -828,12 +828,12 @@ class Instrument(Subsystem):
         if kw.has_key('seq'):   #CWJ Mod
             seq = kw['seq']      #CWJ Mod
             CamMgr.SetCurrentProtocolSeq(seq)
-	time.sleep(4)		#CWJ Add
+        time.sleep(4)                #CWJ Add
 
 
     # RL - pause command - 03/29/06
     def Pause(self, period_secs, id = None, **kw):
-	'''kw is a dictionary of optional parameters & values.'''
+        '''kw is a dictionary of optional parameters & values.'''
         print '''Pause here until user resumes... don't know how though... =('''
         funcReference = __name__ + '.Pause'  # 2011-11-25 sp -- added logging
         self.svrLog.logDebug('', self.logPrefix, funcReference, 'start Pause; sample=%s |time=%d' % (id, period_secs))   # 2011-11-25 sp -- added logging
@@ -847,20 +847,20 @@ class Instrument(Subsystem):
 
 
     def TopUpVial(self, destVial, tiprackSpecified, tiprack, srcVial = None, workVolume = 0, usingFreeAirDispense = True,
-		    id = None, skipTipStrip = False, skipPickupTip = False, **kw):
+                    id = None, skipTipStrip = False, skipPickupTip = False, **kw):
         '''Top up the given vial from the given src. By default (srcVial = None), 
-	the vial is topped up from the BCCM.
-	id is a unique identifier (eg. sample ID) for tracking the caller.
-	kw is a dictionary of optional parameters & values.'''
+        the vial is topped up from the BCCM.
+        id is a unique identifier (eg. sample ID) for tracking the caller.
+        kw is a dictionary of optional parameters & values.'''
 
         funcReference = __name__ + '.TopUpVial'  # 2011-11-25 sp -- added logging
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetProcStep(5);
-	CamMgr.SetCurrentProtocolID(id)
+        CamMgr.SetCurrentProtocolID(id)
         if kw.has_key('seq'):   #CWJ Mod
            seq = kw['seq']      #CWJ Mod
            CamMgr = RoboTrace.GetRoboCamMgrInstance()
-	   CamMgr.SetCurrentProtocolSeq(seq)
+           CamMgr.SetCurrentProtocolSeq(seq)
         if kw.has_key('initialQuadrant'): #CWJ Mod
            qdr = kw['initialQuadrant']
            CamMgr = RoboTrace.GetRoboCamMgrInstance()
@@ -897,22 +897,22 @@ class Instrument(Subsystem):
         return volumeToAdd
 
     def ResuspendVial(self, destVial, tiprackSpecified, tiprack, srcVial = None, workVolume = 0, usingFreeAirDispense = True, 
-			id = None, skipTipStrip = False, skipPickupTip = False, **kw):#CR
+                        id = None, skipTipStrip = False, skipPickupTip = False, **kw):#CR
         '''Resuspend the given vial. This is essentially the same as TopUpVial, 
-	except that the vial is assumed to be empty.
-	id is a unique identifier (eg. sample ID) for tracking the caller.
-	kw is a dictionary of optional parameters & values.'''
+        except that the vial is assumed to be empty.
+        id is a unique identifier (eg. sample ID) for tracking the caller.
+        kw is a dictionary of optional parameters & values.'''
 
         funcReference = __name__ + '.ResuspendVial'  # 2011-11-25 sp -- added logging
         self.svrLog.logDebug('', self.logPrefix, funcReference, 'start resuspend')   # 2011-11-25 sp -- added logging
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetProcStep(6);
-	CamMgr.SetCurrentProtocolID(id)
-	CamMgr.SetBlockUpdate(True)
+        CamMgr.SetCurrentProtocolID(id)
+        CamMgr.SetBlockUpdate(True)
         if kw.has_key('seq'):   #CWJ Mod
            seq = kw['seq']      #CWJ Mod
            CamMgr = RoboTrace.GetRoboCamMgrInstance()
- 	   CamMgr.SetCurrentProtocolSeq(seq)
+           CamMgr.SetCurrentProtocolSeq(seq)
         if kw.has_key('initialQuadrant'): #CWJ Mod
            qdr = kw['initialQuadrant']
            CamMgr = RoboTrace.GetRoboCamMgrInstance()
@@ -926,7 +926,7 @@ class Instrument(Subsystem):
             self.TopUpVial( destVial, tiprackSpecified, tiprack, srcVial, workVolume, usingFreeAirDispense, \
                             id = id, skipTipStrip = skipTipStrip, skipPickupTip = skipPickupTip)#CR
         CamMgr = RoboTrace.GetRoboCamMgrInstance()
-	CamMgr.SetBlockUpdate(False)
+        CamMgr.SetBlockUpdate(False)
 
 
     def MixTrans(self, destVial, srcVial, mixCycles, tipTubeBottomGap, isRelative, mix_volume_uL,
@@ -967,7 +967,7 @@ class Instrument(Subsystem):
         self.svrLog.logDebug('', self.logPrefix, funcReference, 'ResusMixSepTrans')   
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetupForCommand(id,'ResusMixSepTrans',**kw)
-	
+        
         self.ResuspendVial(destVial, tiprackSpecified, tiprack, srcVial, workVolume, True,id, skipTipStrip = True, seq=seq, initialQuadrant=initialQuadrant)
         self.Mix(destVial, tiprackSpecified, tiprack, mixCycles, tipTubeBottomGap, isRelative, mix_volume_uL, id, skipTipStrip = True, skipPickupTip = True, seq=seq, initialQuadrant=initialQuadrant)
         #self.Separate(duration, id=id, seq=seq) #function is a no-op, have to sleep myself          
@@ -986,7 +986,7 @@ class Instrument(Subsystem):
         self.svrLog.logDebug('', self.logPrefix, funcReference, 'ResusMix')   
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetupForCommand(id,'ResusMix',**kw)
-	
+        
         self.ResuspendVial(destVial, tiprackSpecified, tiprack, srcVial, workVolume, True,id, skipTipStrip = True, seq=seq,
                            initialQuadrant=initialQuadrant)
         self.Mix(destVial, tiprackSpecified, tiprack, mixCycles, tipTubeBottomGap, isRelative, mix_volume_uL, id,
@@ -1003,7 +1003,7 @@ class Instrument(Subsystem):
         self.svrLog.logDebug('', self.logPrefix, funcReference, 'TopUpTrans')   
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetupForCommand(id,'TopUpTrans',**kw)
-	
+        
         self.TopUpVial(destVial, tiprackSpecified, tiprack, srcVial, workVolume, True, id, skipTipStrip = True, seq=seq, initialQuadrant=initialQuadrant)
         self.Transport(destVial2, destVial, trans_volume_uL, usingFreeAirDispense, usingBufferTip, id, tiprackSpecified, tiprack, seq=seq, skipPickupTip = True, initialQuadrant=initialQuadrant)
         self.__m_Platform.StripTip()
@@ -1017,7 +1017,7 @@ class Instrument(Subsystem):
         self.svrLog.logDebug('', self.logPrefix, funcReference, 'TopUpTransSepTrans')   
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetupForCommand(id,'TopUpTransSepTrans',**kw)
-	
+        
         self.TopUpVial(destVial, tiprackSpecified, tiprack, srcVial, workVolume, True, id, skipTipStrip = True, seq=seq, initialQuadrant=initialQuadrant)
         self.Transport(destVial2, destVial, trans_volume_uL, usingFreeAirDispense, usingBufferTip, id, tiprackSpecified, tiprack, seq=seq, skipTipStrip = True, skipPickupTip = True, initialQuadrant=initialQuadrant)
         #self.Separate(duration, id=id, seq=seq) #function is a no-op, have to sleep myself          
@@ -1036,7 +1036,7 @@ class Instrument(Subsystem):
         self.svrLog.logDebug('', self.logPrefix, funcReference, 'TopUpMixTransSepTrans')   
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetupForCommand(id,'TopUpMixTransSepTrans',**kw)
-	
+        
         self.TopUpVial(destVial, tiprackSpecified, tiprack, srcVial, workVolume, True, id, skipTipStrip = True, seq=seq, initialQuadrant=initialQuadrant)
         self.Mix(destVial, tiprackSpecified, tiprack, mixCycles, tipTubeBottomGap, isRelative, mix_volume_uL, id, skipTipStrip = True, skipPickupTip = True, seq=seq, initialQuadrant=initialQuadrant)
         self.Transport(destVial2, destVial, trans_volume_uL, usingFreeAirDispense, usingBufferTip, id, tiprackSpecified, tiprack, seq=seq, skipTipStrip = True, skipPickupTip = True, initialQuadrant=initialQuadrant)
@@ -1050,9 +1050,9 @@ class Instrument(Subsystem):
     
     def Flush(self, wasteVial, homeAtEnd = True, id = None, **kw):
         '''Flush out the hydraulic line to the given waste vial.
-	If homeAtEnd is true, the Z axis is homed at the end of the flush.
-	id is a unique identifier (eg. sample ID) for tracking the caller.
-	kw is a dictionary of optional parameters & values.'''
+        If homeAtEnd is true, the Z axis is homed at the end of the flush.
+        id is a unique identifier (eg. sample ID) for tracking the caller.
+        kw is a dictionary of optional parameters & values.'''
 
         funcReference = __name__ + '.Flush'  # 2011-11-25 sp -- added logging
         self.svrLog.logInfo('', self.logPrefix, funcReference, 'start flush')   # 2011-11-25 sp -- added logging
@@ -1096,9 +1096,9 @@ class Instrument(Subsystem):
 
     def Prime(self, wasteVial, homeAtEnd = True, id = None, **kw):
         '''Prime the hydraulic line, using the given waste vial.
-	         If homeAtEnd is true, the Z axis is homed at the end of the prime.
-	         id is a unique identifier (eg. sample ID) for tracking the caller.
-	         kw is a dictionary of optional parameters & values.'''
+                 If homeAtEnd is true, the Z axis is homed at the end of the prime.
+                 id is a unique identifier (eg. sample ID) for tracking the caller.
+                 kw is a dictionary of optional parameters & values.'''
         # Strip the current tip
 
         funcReference = __name__ + '.Prime'  # 2011-11-25 sp -- added logging
@@ -1132,116 +1132,116 @@ class Instrument(Subsystem):
 
         
     def Demo(self, iterations = 1, id = None, **kw):
-	'''Run a demo mode for the instrument. You can specify a number of
-	iterations.'''
+        '''Run a demo mode for the instrument. You can specify a number of
+        iterations.'''
 
   
-	volume_uL = 0
-	for i in range(iterations):
-	    self.__m_Platform.Initialise()
+        volume_uL = 0
+        for i in range(iterations):
+            self.__m_Platform.Initialise()
             for sector in self.__sectorRange:
-		vial1 = self.ContainerAt(sector, Instrument.SampleLabel)
-		vial2 = self.ContainerAt(sector, Instrument.WasteLabel)
-		for tipNum in (1, 4):
-		    self.__m_Platform.PickupTip(sector, tipNum)
-		    self.MoveToAspirate(vial1, volume_uL)
-		    self.MoveToDispense(vial2, volume_uL)
-		    self.__m_Platform.StripTip()
-                   			
-		    
+                vial1 = self.ContainerAt(sector, Instrument.SampleLabel)
+                vial2 = self.ContainerAt(sector, Instrument.WasteLabel)
+                for tipNum in (1, 4):
+                    self.__m_Platform.PickupTip(sector, tipNum)
+                    self.MoveToAspirate(vial1, volume_uL)
+                    self.MoveToDispense(vial2, volume_uL)
+                    self.__m_Platform.StripTip()
+                                           
+                    
     def PumpLife(self, iterations = 1, id = None, **kw):
         volume_uL = 0
-	for i in range(iterations):
-	    self.__m_Platform.Initialise()
-	    self.__m_Pump.setHydroFluidFull()
-	    wastevial = self.ContainerAt(1, Instrument.WasteLabel)
-	    bccmvial = self.ContainerAt(0, Instrument.BCCMLabel)
-	    bccmvial.setVolume(75000)
-	    self.Prime(wastevial,homeAtEnd = False)
+        for i in range(iterations):
+            self.__m_Platform.Initialise()
+            self.__m_Pump.setHydroFluidFull()
+            wastevial = self.ContainerAt(1, Instrument.WasteLabel)
+            bccmvial = self.ContainerAt(0, Instrument.BCCMLabel)
+            bccmvial.setVolume(75000)
+            self.Prime(wastevial,homeAtEnd = False)
             for sector in self.__sectorRange:
-		vial1 = self.ContainerAt(sector, Instrument.SampleLabel)
-		vial2 = self.ContainerAt(sector, Instrument.WasteLabel)
-		vial3 = self.ContainerAt(sector, Instrument.SupernatentLabel)
-		vial4 = self.ContainerAt(sector, Instrument.LysisLabel)
-		for tipNum in (1, 4):
-		    self.__m_Platform.PickupTip(sector, tipNum)
-		    self.MoveToAspirate(vial1, volume_uL)
-		    self.MoveToDispense(vial2, volume_uL)
-		    self.__m_Platform.StripTip()
-		self.Transport(vial1,bccmvial,10000)
-		self.Mix(vial1,False,1,1,0,0,0)
-		self.Transport(vial3,vial1,7000)
-		self.Mix(vial3,False,1,1,0,0,0)
-		self.Transport(vial4,vial1,3000)
-		self.Mix(vial4,False,1,1,0,0,0)
-		self.Transport(bccmvial,vial3,7000)
-		self.Transport(bccmvial,vial4,3000)
+                vial1 = self.ContainerAt(sector, Instrument.SampleLabel)
+                vial2 = self.ContainerAt(sector, Instrument.WasteLabel)
+                vial3 = self.ContainerAt(sector, Instrument.SupernatentLabel)
+                vial4 = self.ContainerAt(sector, Instrument.LysisLabel)
+                for tipNum in (1, 4):
+                    self.__m_Platform.PickupTip(sector, tipNum)
+                    self.MoveToAspirate(vial1, volume_uL)
+                    self.MoveToDispense(vial2, volume_uL)
+                    self.__m_Platform.StripTip()
+                self.Transport(vial1,bccmvial,10000)
+                self.Mix(vial1,False,1,1,0,0,0)
+                self.Transport(vial3,vial1,7000)
+                self.Mix(vial3,False,1,1,0,0,0)
+                self.Transport(vial4,vial1,3000)
+                self.Mix(vial4,False,1,1,0,0,0)
+                self.Transport(bccmvial,vial3,7000)
+                self.Transport(bccmvial,vial4,3000)
             
     def Demo2(self, iterations = 1, id = None, **kw):
         volume_uL = 0
-	for i in range(iterations):
-	    self.__m_Platform.Initialise()
-	    self.__m_Pump.setHydroFluidFull()
-	    wastevial = self.ContainerAt(1, Instrument.WasteLabel)
-	    bccmvial = self.ContainerAt(0, Instrument.BCCMLabel)
-	    bccmvial.setVolume(75000)
-	    self.Prime(wastevial,homeAtEnd = False)
+        for i in range(iterations):
+            self.__m_Platform.Initialise()
+            self.__m_Pump.setHydroFluidFull()
+            wastevial = self.ContainerAt(1, Instrument.WasteLabel)
+            bccmvial = self.ContainerAt(0, Instrument.BCCMLabel)
+            bccmvial.setVolume(75000)
+            self.Prime(wastevial,homeAtEnd = False)
             for sector in self.__sectorRange:
-		vial1 = self.ContainerAt(sector, Instrument.SampleLabel)
-		vial2 = self.ContainerAt(sector, Instrument.WasteLabel)
-		vial3 = self.ContainerAt(sector, Instrument.SupernatentLabel)
-		vial4 = self.ContainerAt(sector, Instrument.LysisLabel)
-		for tipNum in (1, 4):
-		    self.__m_Platform.PickupTip(sector, tipNum)
-		    self.MoveToAspirate(vial3, volume_uL)
-		    self.MoveToDispense(vial2, volume_uL)
-		    self.__m_Platform.StripTip()
-		vial1.setVolume(10000)
-		vial4.setVolume(20000)
-		self.Transport(vial4,vial1,10000)
-		self.Transport(vial1,vial4,10000)
+                vial1 = self.ContainerAt(sector, Instrument.SampleLabel)
+                vial2 = self.ContainerAt(sector, Instrument.WasteLabel)
+                vial3 = self.ContainerAt(sector, Instrument.SupernatentLabel)
+                vial4 = self.ContainerAt(sector, Instrument.LysisLabel)
+                for tipNum in (1, 4):
+                    self.__m_Platform.PickupTip(sector, tipNum)
+                    self.MoveToAspirate(vial3, volume_uL)
+                    self.MoveToDispense(vial2, volume_uL)
+                    self.__m_Platform.StripTip()
+                vial1.setVolume(10000)
+                vial4.setVolume(20000)
+                self.Transport(vial4,vial1,10000)
+                self.Transport(vial1,vial4,10000)
             self.Transport(bccmvial,wastevial,18000)
 
     def Demo3(self, iterations = 1, id = None, **kw):
-	'''Run a demo mode for the instrument. You can specify a number of
-	iterations.'''
-	volume_uL = 0
-	for i in range(iterations):
-	    self.__m_Platform.Initialise()
+        '''Run a demo mode for the instrument. You can specify a number of
+        iterations.'''
+        volume_uL = 0
+        for i in range(iterations):
+            self.__m_Platform.Initialise()
             for sector in self.__sectorRange:
-		vial1 = self.ContainerAt(sector, Instrument.SampleLabel)
-		vial2 = self.ContainerAt(sector, Instrument.WasteLabel)
-		for tipNum in (1, 4, 5):
-		    self.__m_Platform.PickupTip(sector, tipNum)
-		    self.MoveToAspirate(vial1, volume_uL)
-		    self.__m_Platform.StripTip()
+                vial1 = self.ContainerAt(sector, Instrument.SampleLabel)
+                vial2 = self.ContainerAt(sector, Instrument.WasteLabel)
+                for tipNum in (1, 4, 5):
+                    self.__m_Platform.PickupTip(sector, tipNum)
+                    self.MoveToAspirate(vial1, volume_uL)
+                    self.__m_Platform.StripTip()
     def Demo4(self, iterations = 1, id = None, **kw):
         volume_uL = 0
-	for i in range(iterations):
-	    self.__m_Platform.Initialise()
-	    self.__m_Pump.setHydroFluidFull()
-	    wastevial = self.ContainerAt(1, Instrument.WasteLabel)
-	    bccmvial = self.ContainerAt(0, Instrument.BCCMLabel)
-	    bccmvial.setVolume(75000)
-	    #self.Prime(wastevial,homeAtEnd = False)
+        for i in range(iterations):
+            self.__m_Platform.Initialise()
+            self.__m_Pump.setHydroFluidFull()
+            wastevial = self.ContainerAt(1, Instrument.WasteLabel)
+            bccmvial = self.ContainerAt(0, Instrument.BCCMLabel)
+            bccmvial.setVolume(75000)
+            #self.Prime(wastevial,homeAtEnd = False)
             for sector in self.__sectorRange:
-		vial1 = self.ContainerAt(sector, Instrument.SampleLabel)
-		vial2 = self.ContainerAt(sector, Instrument.WasteLabel)
-		vial3 = self.ContainerAt(sector, Instrument.SupernatentLabel)
-		vial4 = self.ContainerAt(sector, Instrument.LysisLabel)
-		vial1.setVolume(400)
-	
-		self.Mix(vial1,False,1,1,0,0,0)
-		vial1.setVolume(3000)
-		self.Mix(vial1,False,1,1,0,0,0)
-		vial1.setVolume(4000)
-		self.Mix(vial1,False,1,1,0,0,0)
-		vial1.setVolume(5000)
-		self.Mix(vial1,False,1,1,0,0,0)
-		vial1.setVolume(6000)
-		self.Mix(vial1,False,1,1,0,0,0)
-		vial1.setVolume(7000)
-		self.Mix(vial1,False,1,1,0,0,0)
+                vial1 = self.ContainerAt(sector, Instrument.SampleLabel)
+                vial2 = self.ContainerAt(sector, Instrument.WasteLabel)
+                vial3 = self.ContainerAt(sector, Instrument.SupernatentLabel)
+                vial4 = self.ContainerAt(sector, Instrument.LysisLabel)
+                vial1.setVolume(400)
+        
+                self.Mix(vial1,False,1,1,0,0,0)
+                vial1.setVolume(3000)
+                self.Mix(vial1,False,1,1,0,0,0)
+                vial1.setVolume(4000)
+                self.Mix(vial1,False,1,1,0,0,0)
+                vial1.setVolume(5000)
+                self.Mix(vial1,False,1,1,0,0,0)
+                vial1.setVolume(6000)
+                self.Mix(vial1,False,1,1,0,0,0)
+                vial1.setVolume(7000)
+                self.Mix(vial1,False,1,1,0,0,0)
 
             #self.Transport(bccmvial,wastevial,18000)
     def Park(self, id = None, **kw):
@@ -1293,7 +1293,7 @@ class Instrument(Subsystem):
     def _Dispense (self, volume, vial, usingFreeAirDispense = False):
         '''Dispense the given volume to the given vial using the given tip.
         NB: The given volume is assumed to be the volume aspirated previously.
-	Uses a free air dispense if usingFreeAirDispense = True.'''
+        Uses a free air dispense if usingFreeAirDispense = True.'''
 
         funcReference = __name__ + '._Dispense'  # 2011-11-25 sp -- added logging
         self.svrLog.logInfo('', self.logPrefix, funcReference, 'start Dispense, vial=%s |volume=%d' % (vial, volume))   # 2011-11-25 sp -- added logging
@@ -1326,7 +1326,7 @@ class Instrument(Subsystem):
         """Move to aspirate a specific volume from the given vial."""
         if self.__TipIsForbiddenToEnter (vial):
             raise InstrumentError("Current tip (%d) may not aspirate from %s" % \
-		    (self.__m_Platform.CurrentTipID()[1], vial.getLabel()))
+                    (self.__m_Platform.CurrentTipID()[1], vial.getLabel()))
         
         # Move to the vial and aspirate
         (sector, location) = self.__LocationOf(vial)
@@ -1338,14 +1338,14 @@ class Instrument(Subsystem):
         print msg
         
         self.__m_Platform.MoveTo(sector, location, height)
-        CamMgr = RoboTrace.GetRoboCamMgrInstance();		#CWJ Add
-	CamMgr.SetCurrentSec(sector)				#CWJ Add
-	
+        CamMgr = RoboTrace.GetRoboCamMgrInstance();                #CWJ Add
+        CamMgr.SetCurrentSec(sector)                                #CWJ Add
+        
 
     def MoveToDispense(self, vial, volume_uL, usingFreeAirDispense = False):
         """Move to dispense a volume (in uL) into the given vial. The dispense can be
-	free air if usingFreeAirDispense is True.
-	"""
+        free air if usingFreeAirDispense is True.
+        """
         # Move to the vial and dispense
         (sector, location) = self.__LocationOf(vial)
         
@@ -1354,8 +1354,8 @@ class Instrument(Subsystem):
         #self.__logger.logDebug( "@@@@@@@@@@@@@@@@@@@@@@@@@@@ MoveTo %f " % height)
 
         self.__m_Platform.MoveTo(sector, location, height)     #CWJ Add
-        CamMgr = RoboTrace.GetRoboCamMgrInstance();	       #CWJ Add	
-	CamMgr.SetCurrentSec(sector)		               #CWJ Add
+        CamMgr = RoboTrace.GetRoboCamMgrInstance();               #CWJ Add        
+        CamMgr.SetCurrentSec(sector)                               #CWJ Add
 
     # --- Other support methods -------------------------------------------------------
 
@@ -1789,11 +1789,11 @@ class Instrument(Subsystem):
 
 
     def CleanUp(self):
-	'''Cleaning up at the end of a run. This (currently) means that we
-	move the carousel a short distance from home so that the carousel tab
-	is clear of the opto (for easy removal of the carousel)
-	'''
-	self.__m_Platform.MoveCarouselToSafePosition()
+        '''Cleaning up at the end of a run. This (currently) means that we
+        move the carousel a short distance from home so that the carousel tab
+        is clear of the opto (for easy removal of the carousel)
+        '''
+        self.__m_Platform.MoveCarouselToSafePosition()
 
 
     def getHardwareSetting(self, settingKey):
@@ -1840,15 +1840,15 @@ class Instrument(Subsystem):
             return None
     def InitialiseContainers (self):
         '''Set up the standard containers on the instrument on startup. (They 
-	are initially assumed to be empty).
-	Returns a map of the tubes, with the map key being the sector number 
-	and the map value being a map of tubes for that sector. The sector tube
-	map has keys corresponding to tube name and each map value is the 
-	corresponding Tube instance.'''
+        are initially assumed to be empty).
+        Returns a map of the tubes, with the map key being the sector number 
+        and the map value being a map of tubes for that sector. The sector tube
+        map has keys corresponding to tube name and each map value is the 
+        corresponding Tube instance.'''
 
         # Standard Tesla tube volume profiles, based on data in the Tesla IDD 
-	# (document 8013). The raw data in IDD is represented as a cumulative 
-	# total of the values given here.
+        # (document 8013). The raw data in IDD is represented as a cumulative 
+        # total of the values given here.
         #print "The Full Volume of Hemisphere Volume Profile is %s" % self._m_Settings[Instrument.HemisphericalFullHeight14mlLabel]
         
         profile_14mlVial = (HemisphericalProfile (float(self._m_Settings[Instrument.HemisphericalFullHeight14mlLabel])), CylindricalProfile (float(self._m_Settings[Instrument.CylindricalFullHeight14mlLabel]), float(self._m_Settings[Instrument.CylindricalFullVolume14mlLabel])),)
@@ -1876,15 +1876,15 @@ class Instrument(Subsystem):
         for sector in self.__sectorRange:
             sectorTubes = {}
             for name in tubeList.keys():
-		tube = Tube (sector, name, tubeList[name])
+                tube = Tube (sector, name, tubeList[name])
                 sectorTubes[name] = tube
             fullTubeMap[sector] = sectorTubes
 
         # Finally, insert an entry for the bulk bottle
         # Sector 0 is reserved for items accessible to the robot that aren't on
-	# the carousel
-	bccmTube = Tube (0, Instrument.BCCMLabel, TubeGeometry (float(self._m_Settings[Instrument.BaseBCCMLabel]), 
-			    float(self._m_Settings[Instrument.DeadVolumeBCCMLabel]), profile_BulkBottle))
+        # the carousel
+        bccmTube = Tube (0, Instrument.BCCMLabel, TubeGeometry (float(self._m_Settings[Instrument.BaseBCCMLabel]), 
+                            float(self._m_Settings[Instrument.DeadVolumeBCCMLabel]), profile_BulkBottle))
         fullTubeMap[0] = {Instrument.BCCMLabel : bccmTube, }
 
         self.__m_Containers = fullTubeMap
@@ -1918,7 +1918,7 @@ class Instrument(Subsystem):
             return self.__m_Containers[sector][name]
         
         if not sector in self.__m_Containers.keys():
-	    self.Trace(str(self.__m_Containers.keys()))
+            self.Trace(str(self.__m_Containers.keys()))
             raise InstrumentError ("sector %d is not in range (0-%d)" % (sector, self.__m_Platform.NbrSectors()))
         elif not name in self.__m_Containers[sector].keys():
             raise InstrumentError ("%s is not present in sector %d" % (name, sector))
@@ -1926,7 +1926,7 @@ class Instrument(Subsystem):
         if not newContainer == None:
             self.__m_Containers[sector][name] = newContainer
         
-	return self.__m_Containers[sector][name]
+        return self.__m_Containers[sector][name]
 
 
 
@@ -1950,32 +1950,32 @@ class Instrument(Subsystem):
         funcReference = __name__ + '.setContainerVolume'  # 2011-11-25 sp -- added logging
         self.svrLog.logInfo('S', self.logPrefix, funcReference, "setting volume, sector=%d |container=%s |volume=%d" % \
             (sector, containerName, volume_uL))   # 2011-11-25 sp -- added logging
-	
+        
     def setContainerVolumePercentage(self, sector, containerName, percentageLevel):
-	'''Set the fluid volume as a percentage of maximum volume.
-	percentageLevel is a value between 0 and 1.'''
-	container = self.ContainerAt(sector, containerName)
-	volume_uL = container.getMaxVolume() * percentageLevel
-	self.setContainerVolume(sector, containerName, volume_uL)
+        '''Set the fluid volume as a percentage of maximum volume.
+        percentageLevel is a value between 0 and 1.'''
+        container = self.ContainerAt(sector, containerName)
+        volume_uL = container.getMaxVolume() * percentageLevel
+        self.setContainerVolume(sector, containerName, volume_uL)
 
     def getContainerVolume(self, sector, containerName):
-	'''Return the volume (in uL) of the container at a location, specified
-	by sector and container name.'''
-	container = self.ContainerAt(sector, containerName)
-	return container.getVolume()
+        '''Return the volume (in uL) of the container at a location, specified
+        by sector and container name.'''
+        container = self.ContainerAt(sector, containerName)
+        return container.getVolume()
 
     def emptyReagentContainers(self):
-	'''Set the volume of the reagent containers to zero.'''	
+        '''Set the volume of the reagent containers to zero.'''        
         for sector in self.__sectorRange:
-	    for containerLabel in (Instrument.AntibodyLabel, Instrument.CocktailLabel,
-				    Instrument.BeadLabel, Instrument.LysisLabel,
-				    Instrument.SampleLabel, Instrument.SupernatentLabel):
-		self.setContainerVolume(sector, containerLabel, 0)
+            for containerLabel in (Instrument.AntibodyLabel, Instrument.CocktailLabel,
+                                    Instrument.BeadLabel, Instrument.LysisLabel,
+                                    Instrument.SampleLabel, Instrument.SupernatentLabel):
+                self.setContainerVolume(sector, containerLabel, 0)
 
     def emptyWasteContainers(self):
-	'''Set the volume of the waste containers to zero.'''
+        '''Set the volume of the waste containers to zero.'''
         for sector in self.__sectorRange:
-	    self.setContainerVolume(sector, Instrument.WasteLabel, 0)
+            self.setContainerVolume(sector, Instrument.WasteLabel, 0)
 
 
     # --- Access to the hardware components -----------------------------------
@@ -1985,7 +1985,7 @@ class Instrument(Subsystem):
         '''Moves the robot to a safe place for powerdown'''
         self.__m_Platform.robot.SetTheta( self.__m_thetaParkPosition )
         self.__m_Platform.robot.SetZPosition( self.__m_zParkPosition )
-    	self.__m_Platform.MoveCarouselToSafePosition()
+        self.__m_Platform.MoveCarouselToSafePosition()
         self.__m_Platform.powerDownCarousel()
         return True
 
@@ -1994,10 +1994,10 @@ class Instrument(Subsystem):
         self.__m_Pump.ParkPump()
         return True
 
-	# ver338
+    # ver338
     def parkCarousel( self ):
         '''Parks carousel in safe position to clear opto.'''
-    	self.__m_Platform.MoveCarouselToSafePosition()
+        self.__m_Platform.MoveCarouselToSafePosition()
         return True
 
     # --- bdr
@@ -2065,13 +2065,13 @@ class Instrument(Subsystem):
     # --- Access to the hardware components -----------------------------------
 
     def getPlatform(self):
-	'''Return the Tesla platform instance, primarily for testing purposes.'''
-	return self.__m_Platform
+        '''Return the Tesla platform instance, primarily for testing purposes.'''
+        return self.__m_Platform
 
 
     def getPump(self):
-	'''Return the DRD pump instance, primarily for testing purposes.'''
-	return self.__m_Pump
+        '''Return the DRD pump instance, primarily for testing purposes.'''
+        return self.__m_Pump
 
 
     # ---------------------------------------------------------------------------
@@ -2113,7 +2113,7 @@ class Instrument(Subsystem):
     # IAT - This function was changed due to unexpected tip selection during mix commands. 
     def __TipToMixWith(self, vial):
         '''Determine what tip to use when mixing the fluid currently in the given vial.
-	Returns a tuple of sector and tip.'''
+        Returns a tuple of sector and tip.'''
         nominalMixVolume = min (vial.getVolume() * self.__mixingFraction, self.__maxMixingVolume)
         
         if nominalMixVolume <= 5000:
@@ -2124,7 +2124,7 @@ class Instrument(Subsystem):
         if self.__TipIsForbiddenToEnter(vial, mixTip):
             raise InstrumentError ("Incorrect tip selection.")
         
-	return (vial.getSector(), mixTip)
+        return (vial.getSector(), mixTip)
   
     
     def __TipCapacityOf(self, tipId):
@@ -2152,7 +2152,7 @@ class Instrument(Subsystem):
         
     
     def __CalculateDispenseHeightFor(self, vial, volumeToTransport_uL, tipLength, \
-					usingFreeAirDispense):
+                                        usingFreeAirDispense):
         """Determine the height at which to place the robot in preparation to dispense."""
         dispenseHeight = 0
         
@@ -2160,8 +2160,8 @@ class Instrument(Subsystem):
             dispenseHeight = vial.getBasePosition() - tipLength - vial.getMaxHeight()            
         else:     
             dispenseHeight = vial.getBasePosition() - tipLength - \
-                   				   vial.getMeniscusAfterAdding(volumeToTransport_uL) + \
-				                     float(self._m_Settings[Instrument.WickingDispenseDepthLabel])                        
+                                                      vial.getMeniscusAfterAdding(volumeToTransport_uL) + \
+                                                     float(self._m_Settings[Instrument.WickingDispenseDepthLabel])                        
 
         #self.__logger.logDebug( "@@@@@@@@@@@@@@@@@@@@@@@@@@@ __CalculateDispenseHeightFor %f %f %f %f %f " % (usingFreeAirDispense, \
         #                      vial.getBasePosition() , tipLength , vial.getMaxHeight(),\
@@ -2176,8 +2176,8 @@ class Instrument(Subsystem):
             tipId = self.__m_Platform.CurrentTipID()[1]
         if vial.getLabel() in self.__forbiddenTipList.keys():
             result = tipId in self.__forbiddenTipList[vial.getLabel()]
-	else:
-	    result = False
+        else:
+            result = False
         return result
     
     

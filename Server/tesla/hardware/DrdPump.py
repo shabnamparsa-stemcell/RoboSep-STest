@@ -49,8 +49,8 @@
 #   numberofprimingcycles = 2
 #   steppercardvalveport = 0
 #   singlepistonmode_calibration_ulperstep = 1.33
-#   standardvelocityprofile = 42000, 45400, 10	(421, 1883 ,10)
-#   homingvelocityprofile = 42000, 45400, 10	(421, 1883 ,10)
+#   standardvelocityprofile = 42000, 45400, 10        (421, 1883 ,10)
+#   homingvelocityprofile = 42000, 45400, 10        (421, 1883 ,10)
 #   idlepowerprofile = 140, 50, 0
 #   dualpistonmode_end_step = 1650
 #   steppercardaddress = D2
@@ -84,13 +84,13 @@ class PistonModeSettings(object):
         self.m_EndStep = endStep
         self.m_DefaultAspirationRate = defaultAspirationRate
         self.m_DefaultDispenseRate = defaultDispenseRate
-	self.m_MaxVolume = (self.m_EndStep - self.m_StartStep) * self.m_ulPerStep
+        self.m_MaxVolume = (self.m_EndStep - self.m_StartStep) * self.m_ulPerStep
 
-	#print "!!!!!!!!!!!!!!!!!!!!!!!!!!",self.m_MaxVolume
-	#print "!!!!!!!!!!!!!!!!!!!!!!!!!!",self.m_StartStep,self.m_EndStep,self.m_ulPerStep
+        #print "!!!!!!!!!!!!!!!!!!!!!!!!!!",self.m_MaxVolume
+        #print "!!!!!!!!!!!!!!!!!!!!!!!!!!",self.m_StartStep,self.m_EndStep,self.m_ulPerStep
 
-	#RL 1
-	self.m_SpeedProfileB = speedProfileB
+        #RL 1
+        self.m_SpeedProfileB = speedProfileB
 
     def MaxVolume(self):
         """Returns the maximum volume (in uL) available in this piston mode."""
@@ -134,16 +134,16 @@ class PistonModeSettings(object):
     # bdr
     # Returns the speed profile to use for a given displacement rate in this mode.
     # stepsPerSec as defined in hardware.ini as:
-    # 		dualPistonMode = 2000 uL/s / 0.1728 uL/step = 11574 steps/s
-	#   singlePistonMode = 2000 uL/s / 1.33 uL/step =    1503 steps/s
-	# 
-	#      E_dual = 46250 - ((1000000.0 / 11574) - 69.789) / 0.5425437 = 46250 - 30.62	= 46219
-	#    E_single = 46250 - ((1000000.0 / 1503) - 69.789) / 0.5425437 = 46250 - 1097.7 = 45152
+    #   dualPistonMode = 2000 uL/s / 0.1728 uL/step = 11574 steps/s
+    #   singlePistonMode = 2000 uL/s / 1.33 uL/step =    1503 steps/s
+    # 
+    #      E_dual = 46250 - ((1000000.0 / 11574) - 69.789) / 0.5425437 = 46250 - 30.62        = 46219
+    #    E_single = 46250 - ((1000000.0 / 1503) - 69.789) / 0.5425437 = 46250 - 1097.7 = 45152
     # 
     # so...for dual flow rates of 2000 ul/s B,E,S = (44619, 46219, 8)  
     # 
-	# StepsPerSec = 1000000.0 / (((46250-E) * 0.54254) + 69.789)
-	# StandardVelocityProfile (42000,45400,10) translates to: (421sps, 1883sps, 10)
+    # StepsPerSec = 1000000.0 / (((46250-E) * 0.54254) + 69.789)
+    # StandardVelocityProfile (42000,45400,10) translates to: (421sps, 1883sps, 10)
     # Changes made by suggestion from SimpleStep for new board to now operate
     #       in steps per second instead of a time base
     #     
@@ -197,18 +197,18 @@ class DRDPump(Axis):
     #
     GenericAspirationFlowRateUlPerSecLabel      = 'genericaspirationflowrate_ulpersec'
     GenericDispenseFlowRateUlPerSecLabel        = 'genericdispenseflowrate_ulpersec'
-    DualPistonModeStartLabel		            = 'dualpistonmode_start_step'
-    DualPistonModeEndLabel	                    = 'dualpistonmode_end_step'
+    DualPistonModeStartLabel                            = 'dualpistonmode_start_step'
+    DualPistonModeEndLabel                            = 'dualpistonmode_end_step'
     DualPistonModeVolumePerStepLabel            = 'dualpistonmode_calibration_ulperstep'
     DualPistonModeAspirationRateUlPerSecLabel   = 'dualpistonmode_standardaspirationflowrate_ulpersec'
     DualPistonModeDispenseRateUlPerSecLabel     = 'dualpistonmode_standarddispenseflowrate_ulpersec'
-    SinglePistonModeStartLabel	                = 'singlepistonmode_start_step'
-    SinglePistonModeEndLabel	                = 'singlepistonmode_end_step'
-    SinglePistonModeVolumePerStepLabel	        = 'singlepistonmode_calibration_ulperstep'
+    SinglePistonModeStartLabel                        = 'singlepistonmode_start_step'
+    SinglePistonModeEndLabel                        = 'singlepistonmode_end_step'
+    SinglePistonModeVolumePerStepLabel                = 'singlepistonmode_calibration_ulperstep'
     SinglePistonModeAspirationRateUlPerSecLabel = 'singlepistonmode_standardaspirationflowrate_ulpersec'
-    SinglePistonModeDispenseRateUlPerSecLabel	= 'singlepistonmode_standarddispenseflowrate_ulpersec'
-    ValveHomingPositionLabel		            = 'valvepositionwhenhoming'            
-    ValveParkingPositionLabel		            = 'valvepositionwhenparked'
+    SinglePistonModeDispenseRateUlPerSecLabel        = 'singlepistonmode_standarddispenseflowrate_ulpersec'
+    ValveHomingPositionLabel                            = 'valvepositionwhenhoming'            
+    ValveParkingPositionLabel                            = 'valvepositionwhenparked'
     BacklashStepLabel                           = 'backlashsteps'
     ValvePortLabel                              = 'steppercardvalveport'
     StandardPowerProfileLabel                   = 'standardpowerprofile'
@@ -252,12 +252,12 @@ class DRDPump(Axis):
                          }
     
     # IVEK removed: DualPistonModeEndLabel : '1650',
-	# IVEK removed: DualPistonModeVolumePerStepLabel : '0.1728',
-	# IVEK removed: DualPistonModeAspirationRateUlPerSecLabel : '100',
-	# IVEK removed: DualPistonModeDispenseRateUlPerSecLabel : '100',
-	# IVEK removed: SinglePistonModeStartLabel : '1850',
-	# IVEK removed: SinglePistonModeEndLabel : '4700',
-	# IVEK removed: SinglePistonModeVolumePerStepLabel : '1.33',
+    # IVEK removed: DualPistonModeVolumePerStepLabel : '0.1728',
+    # IVEK removed: DualPistonModeAspirationRateUlPerSecLabel : '100',
+    # IVEK removed: DualPistonModeDispenseRateUlPerSecLabel : '100',
+    # IVEK removed: SinglePistonModeStartLabel : '1850',
+    # IVEK removed: SinglePistonModeEndLabel : '4700',
+    # IVEK removed: SinglePistonModeVolumePerStepLabel : '1.33',
     # bdr - Axis.MotorHomingStepVelocityLabel : '421, 1883, 8', 
     # bdr - Axis.MotorHomingStepVelocityLabel : '42000, 44874, 8', 
     #
@@ -279,9 +279,9 @@ class DRDPump(Axis):
         name: the name to use when tracking use
         card: the card associated with the pump
         configData: a dictionary of configuration values with which to override 
-		    the default settings.
+                    the default settings.
         moreSettings: Refer to stepper card being controlled
-		"""
+                """
 
         # Set up subclass (with all defaults 
         settings =  DRDPump.DefaultSettings.copy()
@@ -312,7 +312,7 @@ class DRDPump(Axis):
         
         self.m_CurrentMode = self.__m_DualMode
 
-		# get calc'd speed profile for aspiration and dispense...
+        # get calc'd speed profile for aspiration and dispense...
         self.__m_GenericAspirationRateProfile = "%d, %d, %d" % self.__m_SingleMode.CalculatedSpeedProfile (int (settings[DRDPump.GenericAspirationFlowRateUlPerSecLabel]))
         self.__m_GenericDispenseRateProfile = "%d, %d, %d" % self.__m_SingleMode.CalculatedSpeedProfile (int (settings[DRDPump.GenericDispenseFlowRateUlPerSecLabel]))
         
@@ -612,7 +612,7 @@ class DRDPump(Axis):
                         [pump_home_command] + ['W300'] + ['CHKPOS'] + \
                         self._SpeedCmd(self.StepSpeedProfile()) + \
                         ['W100']
-           else: 		
+           else:                 
               if( tesla.config.SS_EXT_LOGGER == 1 ): 
                  self.m_Card.ExtLogger.SetCmdListLog('>>>> Custom Homing ',self.m_Card.prefix);
               type = '[' + self.m_Name + ']'
@@ -686,19 +686,19 @@ class DRDPump(Axis):
     def _SetValvePosition(self, position):
         """Move valve to given position. position should be either 1 or 2"""
         
-	if position not in (1, 2):
+        if position not in (1, 2):
             raise DRDPumpError("Valve position %d is invalid" % (position))
 
-	if self.__m_ValvePosition == position:
+        if self.__m_ValvePosition == position:
             # No change. Ignore
             return
-	else:
-	    # Set new position
-	    self.__m_ValvePosition = position
-	    if position == 1:
-		self.m_Card.turnOutputOff(self.__m_ValvePort)
-	    else:
-		self.m_Card.turnOutputOn(self.__m_ValvePort)
+        else:
+            # Set new position
+            self.__m_ValvePosition = position
+            if position == 1:
+                self.m_Card.turnOutputOff(self.__m_ValvePort)
+            else:
+                self.m_Card.turnOutputOn(self.__m_ValvePort)
 
 
     def _ValvePosition(self):

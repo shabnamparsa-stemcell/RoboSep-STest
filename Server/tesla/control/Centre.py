@@ -21,8 +21,8 @@
 #
 # Note:
 #    03/24/05 - added parkarm and islidclosed - bdr
-#	 04/11/05 - added parkpump to deenergize pump - bdr
-#	 04/11/05 - added parkpump to power down proc - bdr
+#    04/11/05 - added parkpump to deenergize pump - bdr
+#    04/11/05 - added parkpump to power down proc - bdr
 #    05/29/05 - added parkCarousel to power down - bdr
 #    01/06/06 - changes to start run - bdr (iat)
 #    03/21/06 - transport from buffer bottle is always from the bottom - RL
@@ -246,7 +246,7 @@ class Centre(object):
         self.parkPump();
         self.parkPump()
         self.parkArm()
-    	self.parkCarousel()
+        self.parkCarousel()
 
         # Wait a sec before new state change request
         time.sleep(1)
@@ -416,7 +416,7 @@ class Centre(object):
             protocol = self.pm.getProtocol(sample.protocolID)
             
             sampleInfo = "%s (%s) V = %0.2fuL" % (sample.ID, sample.label, sample.volume)
-	    self.logger.logInfo("CC: Scheduling sample #%d of %d: '%s' [using %s]" % \
+            self.logger.logInfo("CC: Scheduling sample #%d of %d: '%s' [using %s]" % \
                                 (sampleCounter.next(), numSamples, sampleInfo, protocol.label))
 
         self.svrLog.logID('', self.logPrefix, funcReference, "Scheduling [%s] |[%s]" % \
@@ -537,7 +537,7 @@ class Centre(object):
     def CheckSampleReagentRequiredVolumeAgainstFilledVolume(self, samples):
         #error message should use custom names if available
         
-		#Q? X vial requires Y uL but vial only contains Z uL
+        #Q? X vial requires Y uL but vial only contains Z uL
         errMsg = "Q%d %s requires %duL but vial only contains %duL"
         
         # Create a copy of the samples that are being processed
@@ -802,7 +802,7 @@ class Centre(object):
         self.svrLog.logInfo('', self.logPrefix, funcReference, "start parkArm")       # 2011-11-28 sp -- added logging
         return self.instrument.parkArm()
 
-	# ver338
+    # ver338
     def parkCarousel(self):
         '''Park moves carousel a safe state past opto 
         Returns True if the run could be halted...bdr '''
@@ -1365,7 +1365,7 @@ class Centre(object):
         return self.instrument.GetBarcodeThetaOffset();
 
     def getProtocolCommandList(self, protocolIdx):
-	return self.scheduler.getProtocolCommandList(protocolIdx)
+        return self.scheduler.getProtocolCommandList(protocolIdx)
     
     def isSharingComboValid(self, sampleList, userID = 'undefined',
                  isSharing = False, sharedSectorsTranslation = [], sharedSectorsProtocolIndex = []):

@@ -19,7 +19,7 @@
 # the program(s) have been supplied.
 # 
 # Notes:
-# 	 03/24/05 - added lidclosed error pause msg - bdr
+#    03/24/05 - added lidclosed error pause msg - bdr
 #    03/29/06 - pause command - RL
 #    03/14/07 - tip strip only if necessary code -RL
 
@@ -97,7 +97,7 @@ class Dispatcher(object):
         It is then the responsibility of the Control Centre to update the
         instrument FSM (we do not directly manipulate the instrument FSM from
         this layer).'''
-        self.instrument = instrument		# The Tesla instrument object
+        self.instrument = instrument                # The Tesla instrument object
         self.logger = logger
         self.__reportCallback = reportCallback
 
@@ -105,7 +105,7 @@ class Dispatcher(object):
         self.svrLog = PgmLog( 'svrLog' )
         self.logPrefix = 'DP'
 
-        self.running = False			    # Are we running?
+        self.running = False                            # Are we running?
         self.sequencer = None
         self.wasteVial = None                       # Waste vial for Prime calls
         self.debug = tesla.config.DISPATCH_DEBUG    # Internal debugging
@@ -132,7 +132,7 @@ class Dispatcher(object):
             self.pager.page("Tip strip failed.")
             self.reportStatus(errorMsg, errorCode)"""
             
-	self.reportTransition(self.__pauseState)
+        self.reportTransition(self.__pauseState)
 
     def __preExecuteHandler( self, event ):
         '''Check the paused status of the instrument so the Sequencer knows
@@ -141,17 +141,17 @@ class Dispatcher(object):
 
         if self.instrument.isPauseCommand():
             errorCode = 'TSC3003' 
-    	    errorMsg = "Pause Command"
-    	    errorMsg2 = self.instrument.getPauseCommandCaption()
-    	    print "__preExecuteHandler", errorMsg
+            errorMsg = "Pause Command"
+            errorMsg2 = self.instrument.getPauseCommandCaption()
+            print "__preExecuteHandler", errorMsg
             self.svrLog.logDebug('', self.logPrefix, funcReference, "%s [%s: %s]" % (errorCode, errorMsg, errorMsg2))   # 2011-11-28 sp -- added logging
             self.pager.page(errorMsg2)
             self.reportStatus(errorMsg, errorCode, errorMsg2)
             self.pause()
         elif not self.instrument.isLidClosed():
             errorCode = 'TSC3003' 
-    	    errorMsg = "Lid must be closed"
-    	    print "__preExecuteHandler", errorMsg
+            errorMsg = "Lid must be closed"
+            print "__preExecuteHandler", errorMsg
             self.svrLog.logDebug('', self.logPrefix, funcReference, "%s [%s: 'Please close the lid.']" % (errorCode, errorMsg))   # 2011-11-28 sp -- added logging
             self.pager.page('Please close the lid.')
             self.reportStatus(errorMsg, errorCode)
@@ -177,12 +177,12 @@ class Dispatcher(object):
         Note that this is running inside a Sequencer thread, so it is best to 
         call reportError(), rather than throwing an exception up.'''
         hwCall = "self.instrument.%s" % (event)
-        errorHappened = True		# By default, assume an error happened
-        errorMsg = 'Unknown error'	# Our default error message
+        errorHappened = True                # By default, assume an error happened
+        errorMsg = 'Unknown error'        # Our default error message
         errorCode = 'TEC0101'           # Our default error code
         funcReference = __name__ + '.__eventHandler'          # 2011-11-28 sp -- added logging
-	
-        try:	    
+        
+        try:            
             # Report the progress (at the moment by just reporting the action)
             cmdName = event.strip("'").split("(")[0]
             self.reportStatus(cmdName, 'TSC1001')
@@ -223,7 +223,7 @@ class Dispatcher(object):
                 self.svrLog.logID('', self.logPrefix, funcReference, "%s%scompleted %s |duration=%0.2f secs" % \
                                         (idString, seqIDString, cmdName, (time.time() - startTime)))   # 2011-11-28 sp -- added logging
 
-            errorHappened = False	# Got to here? Then no error :)
+            errorHappened = False        # Got to here? Then no error :)
 
         except AxisError, msg:          # Caught a low-level axis error
             # It's not good if this happens; usually means that a stepper card
@@ -238,15 +238,15 @@ class Dispatcher(object):
                 self.reportStatus(errorMsg, errorCode)
                 self.pause()
                 errorHappened = False
-      	        CamMgr = RoboTrace.GetRoboCamMgrInstance();   #CWJ Add
+                CamMgr = RoboTrace.GetRoboCamMgrInstance();   #CWJ Add
                 CamMgr.SetProcError();                        #CWJ Add
                 self.instrument.TurnONBeacon(2);              #CWJ Add
 
-        except (InstrumentError, TeslaException), msg:	
+        except (InstrumentError, TeslaException), msg:        
                 # Caught an instrument error or some other Tesla exception?
             errorMsg = str(msg)
             self.svrLog.logError('', self.logPrefix, funcReference, "Instrument Err msg=%s" % (msg))   # 2011-11-28 sp -- added logging
-        except Exception, msg:		# Not good? An unanticipated error
+        except Exception, msg:                # Not good? An unanticipated error
             errorMsg = "Unexpected error: %s" % (str(msg))
             self.svrLog.logError('', self.logPrefix, funcReference, errorMsg)   # 2011-11-28 sp -- added logging
             self.pager.page(errorMsg)
@@ -322,7 +322,7 @@ class Dispatcher(object):
                         estopState, endState,
                         needsHome = True, needsPrime = True):
         '''Process the schedule of workflows for each sample at the right time.'''
-	
+        
         funcReference = __name__ + '.processSchedule'          # 2011-11-28 sp -- added logging
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         if (CamMgr.StartCapture() == True):
@@ -365,8 +365,8 @@ class Dispatcher(object):
                 self.logger.logWarning("DI: Waste vial not defined, can't Prime & Flush")
                 self.svrLog.logWarning('', self.logPrefix, funcReference, "Waste vial not defined, can't Prime & Flush")   # 2011-11-28 sp -- added logging
 
-	# Create the sequence, log it (for debugging) and then fire up the 
-	# sequencer to execute the sequenced events
+        # Create the sequence, log it (for debugging) and then fire up the 
+        # sequencer to execute the sequenced events
         if schedule == None:
             # If there is no schedule, just execute the __endOfRun function
             self.logger.logDebug('DI: empty sequence = no run')
@@ -474,13 +474,13 @@ class Dispatcher(object):
         self.sequencer.run()
     
     def reset(self):
-	'''Reset the dispatcher. Not implemented yet (as not required) but
+        '''Reset the dispatcher. Not implemented yet (as not required) but
         left in for future generations :)'''
-	return True		    # This should return success or failure
+        return True                    # This should return success or failure
     
     
     def pause(self):
-	'''Pause the run, with the option of resuming'''
+        '''Pause the run, with the option of resuming'''
       
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetProcEvent(1);
@@ -493,7 +493,7 @@ class Dispatcher(object):
 
         self.sequencer.pause()
         self.instrument.TurnONBeacon(3);                    #CWJ Add        
-	return True		    # This should return success or failure
+        return True                    # This should return success or failure
 
 
     def isRunning(self):
@@ -505,14 +505,14 @@ class Dispatcher(object):
         return self.sequencer.isPaused()
 
     def resume(self):
-	'''Resume a paused run'''
+        '''Resume a paused run'''
         # RL
         # make sure pause command is not active when resume (succeed or not)
         funcReference = __name__ + '.resume'          # 2011-11-28 sp -- added logging
-      	
+              
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetProcEvent(2);
-      	print '\n>>> Dispatcher resume()\n'
+        print '\n>>> Dispatcher resume()\n'
         self.instrument.resetPauseCommand()
         self.instrument.TurnOFFBeacon();
         
@@ -548,8 +548,8 @@ class Dispatcher(object):
               
         self.instrument.homePlatform()
         self.sequencer.resume()
-	self.reportTransition(self.__activeState)
-	return True		    # This should return success or failure
+        self.reportTransition(self.__activeState)
+        return True                    # This should return success or failure
    
    
     def halt(self):
@@ -566,33 +566,33 @@ class Dispatcher(object):
 
         self.instrument.TurnOFFBeacon();
 
-        return True		    # This should return success or failure
+        return True                    # This should return success or failure
    
    
     def estop(self):
         '''Force an E-Stop of the current run'''
-	
+        
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetProcEvent(4);
         
         print '\n>>> Dispatcher estop()\n'
         funcReference = __name__ + '.estop'          # 2011-11-28 sp -- added logging
         self.svrLog.logInfo('', self.logPrefix, funcReference, 'start estop process')   # 2011-11-28 sp -- added logging
-	
+        
         self.sequencer.halt()
         self.running = False
 
         self.reportTransition(self.__estopState)
-        return True		    # This should return success or failure
+        return True                    # This should return success or failure
 
     # --- reporting methods ---
 
     def reportTransition(self, transition):
-	'''Helper function for reporting state transition requests'''
-	if transition == 'PAUSED' and self.instrument.isPauseCommand():
+        '''Helper function for reporting state transition requests'''
+        if transition == 'PAUSED' and self.instrument.isPauseCommand():
             transition = 'PAUSECOMMAND'
-	self.__reportMsg(Dispatcher.STATE_MSG, transition, None)
-	
+        self.__reportMsg(Dispatcher.STATE_MSG, transition, None)
+        
     def reportStatus(self, msg, statusCode = 'TSC1000', msg2 = None):
         '''Simple helper function for reporting status messages.
         The default status code is TSC1000 (Unspecified Dispatcher status)'''
@@ -618,23 +618,23 @@ class Dispatcher(object):
 
 
     def __reportMsg(self, type, field1, *args):
-	'''Report a message (of type MESSAGE_TYPES) to the callback.
-	This should be thread safe :)'''
-	lck = threading.Lock()
-	lck.acquire()
-	if self.__reportCallback:
-	    self.__reportCallback(type, field1, *args)
-	lck.release()
+        '''Report a message (of type MESSAGE_TYPES) to the callback.
+        This should be thread safe :)'''
+        lck = threading.Lock()
+        lck.acquire()
+        if self.__reportCallback:
+            self.__reportCallback(type, field1, *args)
+        lck.release()
 
     # --- static methods ---
 
     def createSequence(schedule):
-	'''Create (and return) a sequence from the supplied Schedule object.'''
-	seq = Sequence()
-	for workflow in schedule.getWorkflows():
-	    cmd, startTime = workflow.getWorkflowAndTime()
-	    seq.append((startTime, cmd))
-	return seq
+        '''Create (and return) a sequence from the supplied Schedule object.'''
+        seq = Sequence()
+        for workflow in schedule.getWorkflows():
+            cmd, startTime = workflow.getWorkflowAndTime()
+            seq.append((startTime, cmd))
+        return seq
 
     createSequence = staticmethod(createSequence)
 

@@ -290,14 +290,14 @@ class TeslaPlatform (Platform):
         tipStripperSettings = GetHardwareData().Section (TeslaPlatform.TipStripperSectionName)
         if self.debugFlag: print tipStripperSettings
         self.tipStripper = TipStripper(TeslaPlatform.TipStripperSectionName, 
-			    self.carousel._ThetaAxis().m_Card, tipStripperSettings)
+                            self.carousel._ThetaAxis().m_Card, tipStripperSettings)
 
 
         # Set up the lid sensors (which uses the carousel stepper card)
         lidSensorSettings = GetHardwareData().Section (TeslaPlatform.LidSensorSectionName)
         print lidSensorSettings
         self.lidSensor = LidSensor(TeslaPlatform.LidSensorSectionName, 
-			    self.carousel._ThetaAxis().m_Card, lidSensorSettings)
+                            self.carousel._ThetaAxis().m_Card, lidSensorSettings)
         
         # Finally, complete initialisation of tip references
         #if len(TeslaPlatform.tipReferenceMap.keys()) == 0:
@@ -392,13 +392,13 @@ class TeslaPlatform (Platform):
 
    
     def MoveCarouselToSafePosition(self):
-	'''Move the carousel to a safe position (away from the opto for easy
-	removal)'''
-	self.carousel.MoveToSafePosition()
+        '''Move the carousel to a safe position (away from the opto for easy
+        removal)'''
+        self.carousel.MoveToSafePosition()
 
     def powerDownCarousel( self ):
-	'''Powers down the carousel so it can move freely'''
-	return self.carousel._ThetaAxis().removePower()
+        '''Powers down the carousel so it can move freely'''
+        return self.carousel._ThetaAxis().removePower()
 
    
     def MoveTo(self, sector, referencePoint, finalZPosition):
@@ -463,7 +463,7 @@ class TeslaPlatform (Platform):
             try:
                 # Down
                 print '\n#### PickUp Tip down ####\n'
-                self.MoveToPosition( sector, referencePoint)	
+                self.MoveToPosition( sector, referencePoint)        
                 # 2012-01-30 sp -- replace environment variable with configuration variable
                 #if os.environ.has_key('SS_CHATTER'):
                 if tesla.config.SS_CHATTER == 1:
@@ -547,8 +547,8 @@ class TeslaPlatform (Platform):
 
 
     def HomeZAxis(self):
-	'''Home *just* the Z axis.'''
-	self.robot.HomeZ()
+        '''Home *just* the Z axis.'''
+        self.robot.HomeZ()
 
 
     def StripTip(self, boDelay=False):
@@ -560,7 +560,7 @@ class TeslaPlatform (Platform):
             - Engage the tip stripper
             - Set high power for strip action
             - Move Z-Axis up to stripped position
-	    - Home the Z axis
+            - Home the Z axis
             - Disengage the Tip Stripper
             - Move the Z-Axis to the travel position (without tip)
             It is assumed that there is a tip currently in place"""
@@ -573,7 +573,7 @@ class TeslaPlatform (Platform):
         self.__logger.logInfo( "StripTip boDelay=%s"%(boDelay))               
         self.svrLog.logInfo('', self.logPrefix, funcReference, "StripTip boDelay=%s"%(boDelay))
         
-	if self.__m_CurrentTip == None:
+        if self.__m_CurrentTip == None:
             # No tip present. Ignore call.
             pass
 
@@ -692,11 +692,11 @@ class TeslaPlatform (Platform):
                 #comment for tip strip failure detection
                 #self.__m_CurrentTipID = None
                 #self.__m_CurrentTip = None
-				#self.robot.SetZTravelPosition(float(self._m_Settings[TeslaPlatform.TravelPositionLabel]))
+                #self.robot.SetZTravelPosition(float(self._m_Settings[TeslaPlatform.TravelPositionLabel]))
             finally:
                 # Ensure that the tip is stripped by disengaging *after* homing
                 self.__SetStripTipState(False)
-				
+                                
                 #comment for tip strip failure detection
                 #future = Future( self.robot.moveToHomeAndCheck )
                 #self.tipStripper.Disengage()
@@ -713,20 +713,20 @@ class TeslaPlatform (Platform):
                             future = Future( self.robot.moveToHomeAndCheck_debug, True ) 
                         else:
                             #self.robot.moveToHomeAndCheck(True)
-			    future = Future( self.robot.moveToHomeAndCheck, True ) # added by shabnam 
-			self.tipStripper.Disengage() # added by shabnam
-			future() # added by shabnam 
-                        #raw_input('Press <Enter> to Start!!! u are in strip Tip after home 636') #add by shabnam							
+                            future = Future( self.robot.moveToHomeAndCheck, True ) # added by shabnam 
+                        self.tipStripper.Disengage() # added by shabnam
+                        future() # added by shabnam 
+                        #raw_input('Press <Enter> to Start!!! u are in strip Tip after home 636') #add by shabnam                                                        
                         # Update the current tip
                         self.__m_CurrentTipID = None
                         self.__m_CurrentTip = None
                 finally:
                     #self.tipStripper.Disengage()
-					#t2 = datetime.now() #added by shabnam					
-					#raw_input('Press <Enter> to Start!!! u are in strip Tip after disengage') #add by shabnam
+                    #t2 = datetime.now() #added by shabnam                                        
+                    #raw_input('Press <Enter> to Start!!! u are in strip Tip after disengage') #add by shabnam
                     print datetime.now()
-					
-					# 2012-01-30 sp -- replace environment variable with configuration variable
+                                        
+                    # 2012-01-30 sp -- replace environment variable with configuration variable
                     #if os.environ.has_key('SS_CHATTER'):
                     if tesla.config.SS_CHATTER == 1:
                        data = self.robot.moveToHomeAndCheck(False)
@@ -734,7 +734,7 @@ class TeslaPlatform (Platform):
                        self.svrLog.logInfo('', self.logPrefix, funcReference, "moveToHomeAndCheck After StripTip (To Start Point:%d, To Home:%d)"%(data[0],data[1]))   # 2011-11-29 sp -- added logging
                     else:
                        self.robot.moveToHomeAndCheck(False)
-                       #raw_input('Press <Enter> to Start!!! u are in strip Tip after home and check') #add by shabnam					   
+                       #raw_input('Press <Enter> to Start!!! u are in strip Tip after home and check') #add by shabnam                                           
 
         # On successful strip, move to travel plane
         self.robot.PrepareZForTravel( 2 )            
@@ -819,7 +819,7 @@ class TeslaPlatform (Platform):
         if isTrue and TeslaPlatform.StripTipVelocityProfileLabel in self._m_Settings.keys():
             velocityProfile = self._m_Settings[TeslaPlatform.StripTipVelocityProfileLabel]
 
-	# Next two lines are debug code
+        # Next two lines are debug code
         self.__SetZPowerAndSpeed (powerProfile, velocityProfile)
             
 
@@ -841,23 +841,23 @@ class TeslaPlatform (Platform):
     
     def MoveToSectorAndTip(self, sector, tipNbr):
         '''Move to a specific sector and tip number. Note that this moves both 
-	the carousel and the theta axis.
-	This is mainly for testing purposes.'''
-	if not tipNbr in TeslaPlatform.tipReferenceMap.keys():
-	    raise TeslaPlatformError ("Tip %d is not defined." % (tipNbr))
+        the carousel and the theta axis.
+        This is mainly for testing purposes.'''
+        if not tipNbr in TeslaPlatform.tipReferenceMap.keys():
+            raise TeslaPlatformError ("Tip %d is not defined." % (tipNbr))
 
         referencePoint = TeslaPlatform.tipReferenceMap[tipNbr][0]
-	self.MoveToPosition(sector, referencePoint)
+        self.MoveToPosition(sector, referencePoint)
 
 
     def getTipStripper(self):
-	'''Return a reference to the TeslaPlatform's tip stripper instance.
-	This is mainly for testing purposes.'''
-	return self.tipStripper
+        '''Return a reference to the TeslaPlatform's tip stripper instance.
+        This is mainly for testing purposes.'''
+        return self.tipStripper
     
 
     #GetInstrumentAxisStatusSet support methods
     def getCarouselAxis(self):
-	        return self.carousel._ThetaAxis()
+        return self.carousel._ThetaAxis()
 
 # eof

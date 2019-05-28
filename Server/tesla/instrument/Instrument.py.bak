@@ -161,6 +161,18 @@ class Instrument(Subsystem):
     SubForTransSepTransOnlyIfSepIsLessThanSecondsLabel = "subfor_transseptrans_onlyif_sep_is_lessthan_seconds"
     ApplyCommandSubstitutionLogicLabel = "apply_cmd_sub_logic"
 
+    Filled2mlVialVolumelLabel = "filledvialvolume_2ml_uL"
+
+    BCCMContainerName           = "bccm_containername"
+    WasteVialName          = "waste_vialname"
+    LysisVialName          = "lysis_vialname"
+    CocktailVialName       = "cocktail_vialname"
+    BeadVialName          = "particle_vialname"
+    AntibodyVialName       = "antibody_vialname"
+    SampleVialName         = "sample_vialname"
+    SupernatentVialName    = "separation_vialname"
+    
+
     # changed DeadVolume50mlLabel to 500 from 100 ml - bdr
 
     __configData =  {
@@ -223,6 +235,17 @@ class Instrument(Subsystem):
                     ConicalFullVolumeBulkLabel : '3960',
                     CylindricalFullHeight2BulkLabel : '41',
                     CylindricalFullVolume2BulkLabel : '48000',
+
+                    Filled2mlVialVolumelLabel : '1100',
+
+                    BCCMContainerName : 'Buffer Bottle',
+                    WasteVialName : 'Waste Tube',
+                    LysisVialName: 'Lysis Buffer Tube',
+                    CocktailVialName : 'Cocktail Vial (Square)',
+                    BeadVialName : 'Magnetic Particle Vial (Triangle)',
+                    AntibodyVialName : 'Antibody Vial (Circle)',
+                    SampleVialName : 'Sample Tube',
+                    SupernatentVialName : 'Separation Tube'
 
                     }
     
@@ -355,6 +378,7 @@ class Instrument(Subsystem):
         self.__mixingFixedSmallVialVolume = float (self._m_Settings[Instrument.MixingVolumeFixedSmallVialVolumeLabel])
         self.__mixingFixedSmallVialMixVolume = float (self._m_Settings[Instrument.MixingVolumeFixedSmallVialMixVolumeLabel])
 
+        self.__filled2mlVialVolume = float(self._m_Settings[Instrument.Filled2mlVialVolumelLabel])
 
         # 2012-04-10 sp -- added barcode support
         if( tesla.config.SS_DEBUGGER_LOG == 1 ):
@@ -601,7 +625,7 @@ class Instrument(Subsystem):
                 #    May/04/2009 - 50 mL TipStrip Method Changes - CWJ 
                 if ( destVial.getLabel() == self.LysisLabel ) :
                     print '\nCWJ - Lysis Vial Delay TipStip\n'
-                    self.__m_Platform.DelayStripTip() 
+                    self.__m_Platform.StripTip(True) 
                 else :                
                     self.__m_Platform.StripTip() #    03/14/07 - tip strip only if necessary code -RL
             else:
@@ -770,26 +794,36 @@ class Instrument(Subsystem):
 	id is a unique identifier (eg. sample ID) for tracking the caller.
 	kw is a dictionary of optional parameters & values.'''
         funcReference = __name__ + '.Incubate'  # 2011-11-25 sp -- added logging
-        self.svrLog.logDebug('', self.logPrefix, funcReference, 'start Incubate; sample=%s |time=%d' % (id, period_secs))   # 2011-11-25 sp -- added logging
-        CamMgr = RoboTrace.GetRoboCamMgrInstance();
-        CamMgr.SetProcStep(4);
-	CamMgr.SetCurrentProtocolID(id)
-        if kw.has_key('seq'):   #CWJ Mod
-           seq = kw['seq']      #CWJ Mod
-	   CamMgr.SetCurrentProtocolSeq(seq)
-	time.sleep(4)				#CWJ Add
+        cmdName = 'Incubate'
+        ProcStep = 4
+        self.WaitCommandHelper(funcReference, cmdName, ProcStep, period_secs, id, **kw)
         
 
     def Separate(self, period_secs, id = None, **kw):         #CWJ MOD
         '''Separate for a specified number of seconds.        #CWJ Mod
         id is a unique identifier (eg. sample ID) for tracking the caller.
         kw is a dictionary of optional parameters & values.'''
-    
+
         funcReference = __name__ + '.Separate'  # 2011-11-25 sp -- added logging
-        self.svrLog.logDebug('', self.logPrefix, funcReference, 'start Separate; sample=%s |time=%d' % (id, period_secs))   # 2011-11-25 sp -- added logging
+        cmdName = 'Separate'
+        ProcStep = 10
+        self.WaitCommandHelper(funcReference, cmdName, ProcStep, period_secs, id, **kw)
+
+    def EndOfProtocol(self, period_secs, id = None, **kw):
+        '''Incubate for a specified number of seconds.
+	id is a unique identifier (eg. sample ID) for tracking the caller.
+	kw is a dictionary of optional parameters & values.'''
+        funcReference = __name__ + '.Incubate'  # 2011-11-25 sp -- added logging
+        cmdName = 'EndOfProtocol'
+        ProcStep = 18
+        self.WaitCommandHelper(funcReference, cmdName, ProcStep, period_secs, id, **kw)
+
+    def WaitCommandHelper(self, funcReference, cmdName, ProcStep, period_secs, id = None, **kw):
+    
+        self.svrLog.logDebug('', self.logPrefix, funcReference, 'start %s; sample=%s |time=%d' % (cmdName, id, period_secs))   # 2011-11-25 sp -- added logging
 
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
-        CamMgr.SetProcStep(10);
+        CamMgr.SetProcStep(ProcStep);
         CamMgr.SetCurrentProtocolID(id)
         if kw.has_key('seq'):   #CWJ Mod
             seq = kw['seq']      #CWJ Mod
@@ -1853,6 +1887,11 @@ class Instrument(Subsystem):
 			    float(self._m_Settings[Instrument.DeadVolumeBCCMLabel]), profile_BulkBottle))
         fullTubeMap[0] = {Instrument.BCCMLabel : bccmTube, }
 
+        self.__m_Containers = fullTubeMap
+
+        wasteVial = self.ContainerAt(1, self.WasteLabel)
+        print "@#$@#$@#$@#$@#$@#$ InitialiseContainers",str(wasteVial)
+        
         return fullTubeMap
 
 
@@ -2186,7 +2225,38 @@ class Instrument(Subsystem):
 
     def MoveToBarcodeOffsetForVial(self, vial):
         (sector, location) = self._LocationOf(vial) 
-        self.__m_Platform.MoveToBarCodePosition(sector, location, self.barCodeThetaOffset)        
+        self.__m_Platform.MoveToBarCodePosition(sector, location, self.barCodeThetaOffset)
+
+    def GetFilled2mlVialVolume(self):
+        return self.__filled2mlVialVolume
+
+    def GetDefaultVialName(self, label):
+        Labels = [Instrument.BCCMLabel,
+           Instrument.WasteLabel,
+           Instrument.LysisLabel,
+           Instrument.CocktailLabel,
+           Instrument.BeadLabel,
+           Instrument.AntibodyLabel,
+           Instrument.SampleLabel,
+           Instrument.SupernatentLabel
+           ]
+        DefaultNames = [self._m_Settings[Instrument.BCCMContainerName],
+                    self._m_Settings[Instrument.WasteVialName],
+                    self._m_Settings[Instrument.LysisVialName],
+                    self._m_Settings[Instrument.CocktailVialName],
+                    self._m_Settings[Instrument.BeadVialName],
+                    self._m_Settings[Instrument.AntibodyVialName],
+                    self._m_Settings[Instrument.SampleVialName],
+                    self._m_Settings[Instrument.SupernatentVialName]
+                        ]
+        result = label
+        try:
+            idx = Labels.index(label)
+            result = DefaultNames[idx]
+        except:
+            self.logger.logDebug("CC: GetDefaultVialName: label not in list="+str(label))    
+
+        return result
 
 
     

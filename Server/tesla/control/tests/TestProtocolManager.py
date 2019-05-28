@@ -33,13 +33,13 @@ class TestProtocolManager(unittest.TestCase):
     # Test the protocol manager by making it read in protocol definition files
     
     def setUp(self):
-	pm = ProtocolManager()
-	# Clear data out of the protocol manager & read in protocols
-	pm.clear()
-	self.pm = ProtocolManager(tesla.config.PROTOCOL_DIR)
+        pm = ProtocolManager()
+        # Clear data out of the protocol manager & read in protocols
+        pm.clear()
+        self.pm = ProtocolManager(tesla.config.PROTOCOL_DIR)
 
     def test_checkForFiles(self):
-	self.failUnless(self.pm.getNumberOfProtocols() > 0, 'Need files for these tests')
+        self.failUnless(self.pm.getNumberOfProtocols() > 0, 'Need files for these tests')
 
     def test_database(self):
         if self.pm.usedDB():
@@ -60,78 +60,78 @@ class TestProtocolManager(unittest.TestCase):
         self.failUnless(self.pm.filesAreEqual(f1, f2), 'Testing files are equal')
 
     def test_getProtocols(self):
-	protocolList = self.pm.getProtocols()
-	self.failUnless(type(protocolList) == type([]), 'Test getProtocols() return type')
-	self.failUnless(len(protocolList) > 0, 'Need protocols for these tests')
-	self.failUnless(isinstance(protocolList[0], Protocol), 'Testing returned protocol')
+        protocolList = self.pm.getProtocols()
+        self.failUnless(type(protocolList) == type([]), 'Test getProtocols() return type')
+        self.failUnless(len(protocolList) > 0, 'Need protocols for these tests')
+        self.failUnless(isinstance(protocolList[0], Protocol), 'Testing returned protocol')
 
     def test_getProtocolsForClient(self):
-	protocolList = self.pm.getProtocols()	
-	clientList = self.pm.getProtocolsForClient()
-	self.failUnless(len(clientList) > 0, 'Testing presence of client protocols')
-	self.failUnless(len(protocolList) == len(clientList), 'Testing length of client list')
-	self.failUnless(isinstance(clientList[0], ClientProtocol), 'Testing returned client protocol')
+        protocolList = self.pm.getProtocols()        
+        clientList = self.pm.getProtocolsForClient()
+        self.failUnless(len(clientList) > 0, 'Testing presence of client protocols')
+        self.failUnless(len(protocolList) == len(clientList), 'Testing length of client list')
+        self.failUnless(isinstance(clientList[0], ClientProtocol), 'Testing returned client protocol')
 
-	# A second call to getProtocolsForClient() should NOT fail
-	p2 = self.pm.getProtocolsForClient()
+        # A second call to getProtocolsForClient() should NOT fail
+        p2 = self.pm.getProtocolsForClient()
 
     def test_findProtocolsByRegexp(self):
-	pattern = '.*'
-	protocols = self.pm.getProtocols()
-	matches = self.pm.findProtocolsByRegexp(pattern)
-	self.failUnless(matches == protocols, "Testing regexp finding for %s" % (pattern))
+        pattern = '.*'
+        protocols = self.pm.getProtocols()
+        matches = self.pm.findProtocolsByRegexp(pattern)
+        self.failUnless(matches == protocols, "Testing regexp finding for %s" % (pattern))
 
-	singleMatch = self.pm.findProtocolsByRegexp('Shutdown')
-	self.failUnless(len(singleMatch) == 1, 'Testing for single regexp hit')
-	
+        singleMatch = self.pm.findProtocolsByRegexp('Shutdown')
+        self.failUnless(len(singleMatch) == 1, 'Testing for single regexp hit')
+        
     def test_findNoProtocolsByRegexp(self):
-	# We shouldn't have any matching protocols with this label :)
-	matches = self.pm.findProtocolsByRegexp('VOODOO')
-	self.failUnless(matches == [], 'Testing regexp finding with no results')
+        # We shouldn't have any matching protocols with this label :)
+        matches = self.pm.findProtocolsByRegexp('VOODOO')
+        self.failUnless(matches == [], 'Testing regexp finding with no results')
 
     def test_findProtocolsByType(self):
-	protocols = self.pm.findProtocolsByType('Maintenance')
-	self.failUnless(type(protocols) == type([]), 'Testing returned type')
-	for p in protocols:
-	    self.failUnless(p.type == 'Maintenance', 'Testing protocol type')
+        protocols = self.pm.findProtocolsByType('Maintenance')
+        self.failUnless(type(protocols) == type([]), 'Testing returned type')
+        for p in protocols:
+            self.failUnless(p.type == 'Maintenance', 'Testing protocol type')
 
     def test_findNoProtocolsByType(self):
-	protocols = self.pm.findProtocolsByType('SILLY_TYPE')
-	self.failUnless(len(protocols) == 0, 'Testing bad protocol-find type')
+        protocols = self.pm.findProtocolsByType('SILLY_TYPE')
+        self.failUnless(len(protocols) == 0, 'Testing bad protocol-find type')
 
     def test_volumeInformation(self):
-	protocol = self.pm.findProtocolsByRegexp('Generic')[0]
-	# protocol = self.pm.findProtocolsByRegexp('Prime')[0]
-	pcList = self.pm.getConsumableInformation(protocol.ID, 1250)
-	
-	numConsumables = len(pcList)
-	# self.failUnless(numConsumables > 0, 'Testing that we got consumables information')
-	self.failUnless(type(pcList) == type([]), 'Testing consumables types')
-	
-	pc = pcList[0]
-	self.failUnless(isinstance(pc, ProtocolConsumable), 'Testing ProtocolConsumable type')
+        protocol = self.pm.findProtocolsByRegexp('Generic')[0]
+        # protocol = self.pm.findProtocolsByRegexp('Prime')[0]
+        pcList = self.pm.getConsumableInformation(protocol.ID, 1250)
+        
+        numConsumables = len(pcList)
+        # self.failUnless(numConsumables > 0, 'Testing that we got consumables information')
+        self.failUnless(type(pcList) == type([]), 'Testing consumables types')
+        
+        pc = pcList[0]
+        self.failUnless(isinstance(pc, ProtocolConsumable), 'Testing ProtocolConsumable type')
 
-	protocolQuadrantsNumber = protocol.numQuadrants
-	self.failUnless(protocolQuadrantsNumber in range(1,5), 'Ensuring quadrant number is okay')
-	self.failUnless(numConsumables == protocolQuadrantsNumber, 'Testing # quadrants')
+        protocolQuadrantsNumber = protocol.numQuadrants
+        self.failUnless(protocolQuadrantsNumber in range(1,5), 'Ensuring quadrant number is okay')
+        self.failUnless(numConsumables == protocolQuadrantsNumber, 'Testing # quadrants')
 
     def test_badVolumeInformation(self):
-	protocol = self.pm.findProtocolsByRegexp('Generic')[0]
-	self.assertRaises(ProtocolException, self.pm.getConsumableInformation, protocol.ID, 0)
-	self.assertRaises(ProtocolException, self.pm.getConsumableInformation, protocol.ID, -1)
-	self.assertRaises(ProtocolException, self.pm.getConsumableInformation, protocol.ID, 900000)
+        protocol = self.pm.findProtocolsByRegexp('Generic')[0]
+        self.assertRaises(ProtocolException, self.pm.getConsumableInformation, protocol.ID, 0)
+        self.assertRaises(ProtocolException, self.pm.getConsumableInformation, protocol.ID, -1)
+        self.assertRaises(ProtocolException, self.pm.getConsumableInformation, protocol.ID, 900000)
 
     def test_isSeparationProtocol(self):
-	mainP1 = self.pm.findProtocolsByType('Maintenance')[0]
-	self.failIf(self.pm.isSeparationProtocol(mainP1), \
-		'Testing non-separation protocol')
-	
-	sepP1 = self.pm.findProtocolsByType('Positive')[0]
-	sepP2 = self.pm.findProtocolsByType('Negative')
+        mainP1 = self.pm.findProtocolsByType('Maintenance')[0]
+        self.failIf(self.pm.isSeparationProtocol(mainP1), \
+                'Testing non-separation protocol')
+        
+        sepP1 = self.pm.findProtocolsByType('Positive')[0]
+        sepP2 = self.pm.findProtocolsByType('Negative')
 
-	for protocol in (sepP1,):
-	    self.failUnless(self.pm.isSeparationProtocol(protocol.ID), \
-		    "Testing %s-type protocol" % (protocol.type))
+        for protocol in (sepP1,):
+            self.failUnless(self.pm.isSeparationProtocol(protocol.ID), \
+                    "Testing %s-type protocol" % (protocol.type))
 
     def test_isSampleVolumeValidForProtocol(self):
         # Test a "safe" volume

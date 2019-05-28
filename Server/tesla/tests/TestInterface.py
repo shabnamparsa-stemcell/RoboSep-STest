@@ -33,8 +33,8 @@ import tesla.instrument.Subsystem
 class TestInstrumentInterface(unittest.TestCase):
    
     def setUp(self):
-	self.host = "http://%s:%d" % (GATEWAY_HOST, GATEWAY_PORT + 10)
-	controller = Centre()
+        self.host = "http://%s:%d" % (GATEWAY_HOST, GATEWAY_PORT + 10)
+        controller = Centre()
         self.iface = InstrumentInterface(self.host, controller)
 
     def tearDown(self):
@@ -42,60 +42,60 @@ class TestInstrumentInterface(unittest.TestCase):
         tesla.instrument.Subsystem.Subsystem.reset()
 
     def testServerInfo(self):
-	info = self.iface.getServerInfo()
+        info = self.iface.getServerInfo()
         NUM_INFO_FIELDS = 5         # Number of info fields that we are expecting
-	self.failUnless(len(info) == NUM_INFO_FIELDS, 'Testing length of info list')
+        self.failUnless(len(info) == NUM_INFO_FIELDS, 'Testing length of info list')
 
-	(addr, ifaceVersion, uptime, swVersion, serialNum) = info
-	self.failUnless(addr == self.host, 'Testing hostname')
-	self.failUnless(uptime > 0, 'Testing uptime')
+        (addr, ifaceVersion, uptime, swVersion, serialNum) = info
+        self.failUnless(addr == self.host, 'Testing hostname')
+        self.failUnless(uptime > 0, 'Testing uptime')
 
     def testState(self):
-	instrumentState = self.iface.getInstrumentState()
-	self.failUnless(instrumentState == 'Start state', 'Testing default instrument state')
+        instrumentState = self.iface.getInstrumentState()
+        self.failUnless(instrumentState == 'Start state', 'Testing default instrument state')
    
     def testDefaultSubscriberList(self):
-	self.failUnless(self.iface.getSubscriberList() == [], 'Testing no subscribers')
+        self.failUnless(self.iface.getSubscriberList() == [], 'Testing no subscribers')
 
     def testInvalidSubscriber(self):
-	# This address should never be an XML-RPC server (by default, it's an HTTP server)
-	bogusAddr = 'http://localhost:80'
-	self.failIf(self.iface.subscribe(bogusAddr), 'Testing invalid subscriber')
+        # This address should never be an XML-RPC server (by default, it's an HTTP server)
+        bogusAddr = 'http://localhost:80'
+        self.failIf(self.iface.subscribe(bogusAddr), 'Testing invalid subscriber')
 
     def testValidSubscriber(self):
-	# TBD - We need to set up an XML-RPC server for this
-	self.failUnless(1)
+        # TBD - We need to set up an XML-RPC server for this
+        self.failUnless(1)
 
     def testInvalidUnsubscription(self):
-	bogusAddr = 'http://localhost:80'
-	self.failIf(self.iface.unsubscribe(bogusAddr), 'Testing invalid unsubscription')
+        bogusAddr = 'http://localhost:80'
+        self.failIf(self.iface.unsubscribe(bogusAddr), 'Testing invalid unsubscription')
 
     def testValidUnsubscription(self):
-	# TBD - We need to set up an XML-RPC server for this
-	self.failUnless(1)
+        # TBD - We need to set up an XML-RPC server for this
+        self.failUnless(1)
 
     def testProtocols(self):
-	protocolList = self.iface.getProtocols()
-	# self.failUnless(len(protocolList) > 0, 'Testing protocol list')
+        protocolList = self.iface.getProtocols()
+        # self.failUnless(len(protocolList) > 0, 'Testing protocol list')
 
     def testConsumables(self):
-	protocolList = self.iface.getProtocols()
-	if len(protocolList):
-	    protocol = protocolList[0]
-	    sampleVolume = 5000
-	    consumablesList = self.iface.calculateConsumables(protocol.ID, sampleVolume)
-	    # self.failUnless(len(consumablesList) > 0, 'Testing consumables')
+        protocolList = self.iface.getProtocols()
+        if len(protocolList):
+            protocol = protocolList[0]
+            sampleVolume = 5000
+            consumablesList = self.iface.calculateConsumables(protocol.ID, sampleVolume)
+            # self.failUnless(len(consumablesList) > 0, 'Testing consumables')
 
     def test_convertSamples(self):
-	ID = 12
-	data = [ {'ID':str(ID), 'label':'test_a', 'protocolID':'123', 'volume_uL':'450','initialQuadrant':1},
-		    {'ID':'22', 'label':'test_b', 'protocolID':'567', 'volume_uL':'5000','initialQuadrant':2},
-		]
-	samples = self.iface._convertSamples(data)
-	self.failUnless(type(samples) == type([]), 'Testing converted sample container type')
-	self.failUnless(len(samples) == len(data), 'Testing for right number of samples')
-	self.failUnless(isinstance(samples[0], Sample), 'Testing sample class')
-	self.failUnless(samples[0].ID == ID, 'Testing sample ID')
+        ID = 12
+        data = [ {'ID':str(ID), 'label':'test_a', 'protocolID':'123', 'volume_uL':'450','initialQuadrant':1},
+                    {'ID':'22', 'label':'test_b', 'protocolID':'567', 'volume_uL':'5000','initialQuadrant':2},
+                ]
+        samples = self.iface._convertSamples(data)
+        self.failUnless(type(samples) == type([]), 'Testing converted sample container type')
+        self.failUnless(len(samples) == len(data), 'Testing for right number of samples')
+        self.failUnless(isinstance(samples[0], Sample), 'Testing sample class')
+        self.failUnless(samples[0].ID == ID, 'Testing sample ID')
 
     def test_convertFullSample(self):
         ID = 1967
@@ -114,12 +114,12 @@ class TestInstrumentInterface(unittest.TestCase):
                     'particleLabel'   : particleLabel,
                     'lysisLabel'      : lysisLabel,
                     'antibodyLabel'   : antibodyLabel,
-                    'sample1Label'    : sample1Label,		 # bdr99
-                    'sample2Label'    : sample2Label,		 # bdr99
+                    'sample1Label'    : sample1Label,                 # bdr99
+                    'sample2Label'    : sample2Label,                 # bdr99
                 }, ]
 
         NUM_SAMPLES = len(data)
-    	samples = self.iface._convertSamples(data)
+            samples = self.iface._convertSamples(data)
         self.failUnless(len(samples) == NUM_SAMPLES, 'Ensuring we have one converted sample')
         sample = samples[0]
         self.failUnless(sample.ID == ID, 'Testing sample ID')

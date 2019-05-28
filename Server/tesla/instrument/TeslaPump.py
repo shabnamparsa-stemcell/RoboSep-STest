@@ -19,7 +19,7 @@
 # stipulated in the agreement/contract under which
 # the program(s) have been supplied.
 # 
-#  04/11/05 - added park pump to power off motor - bdr																							  
+#  04/11/05 - added park pump to power off motor - bdr                                                                                                                                                                                          
 #  12/06/05 - added code for new IVEK pump - bdr
 #  03/03/06 - added universal pump settings - RL 1
 # 
@@ -33,7 +33,7 @@ from tesla.exception import TeslaException
 from tesla.hardware.config import HardwareConfiguration, gHardwareData, LoadSettings, gHardwareMisc
 from tesla.hardware.DrdPump import DRDPump
 from tesla.instrument.Displacement import Displacement, SingleModeAspiration, \
-		    DualModeAspiration, FlushAspiration, AirSlugAspiration, \
+                    DualModeAspiration, FlushAspiration, AirSlugAspiration, \
                     SingleModeDispense, DualModeDispense, FlushDispense, AirSlugDispense
 from tesla.instrument.Subsystem import Subsystem
 import tesla.config         # 2012-01-30 sp -- replace environment variables with configuration file settings
@@ -90,8 +90,8 @@ class TeslaPump(Subsystem):
                     #Dispense_1Label         : '200,',
                     #Dispense_2Label         : '454,',
                     #Dispense_3Label         : '1100, 5000',
-                    MaxVolumeDualModeLabel   : '265',			
-                    MaxVolumeSingleModeLabel : '3600',			
+                    MaxVolumeDualModeLabel   : '265',                        
+                    MaxVolumeSingleModeLabel : '3600',                        
                     PrimeIterationsLabel    : '2',
                     HydraulicBottleCapacityLabel   : '500000',
                     HydraulicBottleThresholdLabel   : '100000',
@@ -112,7 +112,7 @@ class TeslaPump(Subsystem):
         global gHardwareData
         global gHardwareMisc
 
-	Subsystem.__init__( self, name )
+        Subsystem.__init__( self, name )
 
         self._m_Settings = TeslaPump.__configData.copy()
         pumpSettings =  gHardwareData.Section(TeslaPump.SectionName)

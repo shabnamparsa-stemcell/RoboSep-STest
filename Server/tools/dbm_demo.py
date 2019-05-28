@@ -25,39 +25,39 @@ from tesla.config import COMPONENT_DB_PATH
 
 class Device(object):
     def __init__(self, name):
-	print "Constructing %s (%s)" % (name, str(self))
-	self.name = name
-	self.usageCount = 0
-	self.__readTrackCount()
+        print "Constructing %s (%s)" % (name, str(self))
+        self.name = name
+        self.usageCount = 0
+        self.__readTrackCount()
 
     def __del__(self):
-	self.__writeTrackCount()
-	print "And we have closed %s (track count = %d)" % (self.name, self.usageCount)
+        self.__writeTrackCount()
+        print "And we have closed %s (track count = %d)" % (self.name, self.usageCount)
 
     def __readTrackCount(self):
-	trackDB = anydbm.open(COMPONENT_DB_PATH, 'c')
-	if trackDB.has_key(self.name):
-	    self.usageCount = int(trackDB[self.name])
-	else:
-	    self.usageCount = 0
-	trackDB.close()
+        trackDB = anydbm.open(COMPONENT_DB_PATH, 'c')
+        if trackDB.has_key(self.name):
+            self.usageCount = int(trackDB[self.name])
+        else:
+            self.usageCount = 0
+        trackDB.close()
 
     def __writeTrackCount(self):
-	# This is usually called during exit and the module reference may have
-	# already been cleaned up. In that case, just re-import it
-	# There are more elegant solutions, but this will serve for the demo
-	import anydbm
-	trackDB = anydbm.open(COMPONENT_DB_PATH, 'c')
-	# The dbm expects keys and values to be strings, so convert...
-	trackDB[self.name] = str(self.usageCount)
-	trackDB.close()
-	
+        # This is usually called during exit and the module reference may have
+        # already been cleaned up. In that case, just re-import it
+        # There are more elegant solutions, but this will serve for the demo
+        import anydbm
+        trackDB = anydbm.open(COMPONENT_DB_PATH, 'c')
+        # The dbm expects keys and values to be strings, so convert...
+        trackDB[self.name] = str(self.usageCount)
+        trackDB.close()
+        
     def move(self, steps):
-	self.usageCount += 1
+        self.usageCount += 1
         # Then do the move to the 'steps' position... 
 
     def home(self):
-	self.move(0)
+        self.move(0)
 
 # -----------------------------------------------------------------------------
 

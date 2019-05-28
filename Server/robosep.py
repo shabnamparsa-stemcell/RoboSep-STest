@@ -27,28 +27,28 @@ import traceback, string
 def reportImportError(msg = None):
     '''Report an error related to module importing'''
     print 'Some key modules could not be located.\nIf you installed these files ' + \
-	  'manually, ensure that the PYTHONPATH environment variable is set (correctly).'
+          'manually, ensure that the PYTHONPATH environment variable is set (correctly).'
     if msg:
-	print "\nImport error: %s" % (msg)
+        print "\nImport error: %s" % (msg)
     sys.exit(1)
 
 def testForModule(module):
     '''Returns true if the specified module can be imported, false otherwise'''
     try:
-	exec("import %s" % (module))
+        exec("import %s" % (module))
     except ImportError:
-	flag = False
+        flag = False
     else:
-	flag = True
+        flag = True
     return flag
 
 def testPackageAvailability():
     '''Have the key packages been installed correctly? If not, alert the user and die'''
     modules = ['ipl', 'SimpleStep', 'tesla']
     for module in modules:
-	if not testForModule(module):
-	    print "Error: Unable to import the '%s' module.\n" % (module)
-	    reportImportError()
+        if not testForModule(module):
+            print "Error: Unable to import the '%s' module.\n" % (module)
+            reportImportError()
 
 def setupPackageArchive(archiveName):
     '''Set up importing from an archive file'''
@@ -77,24 +77,24 @@ def startRoboSepServer():
     from tesla.controller import Controller
 
     try:
-	controller = Controller()
+        controller = Controller()
     except TeslaException, msg:
-	# Handle instrument-specific exceptions that have bubbled to the top
-	print "Unable to start instrument controller (%s)" % (msg)
+        # Handle instrument-specific exceptions that have bubbled to the top
+        print "Unable to start instrument controller (%s)" % (msg)
     except OSError, msg:
         # Most likely caused by the logger being locked by another process
         print "Unable to start instrument controller (%s)" % (msg)
         print "Is another instance of the controller running?"       
     except StandardError, msg:
-	# Handle any other (unexpected) error, with debug info
-	reportException(msg)	    
+        # Handle any other (unexpected) error, with debug info
+        reportException(msg)            
     else:
-	try:
-	    controller.powerUpInstrument()
-	    controller.startGateway()
-	    controller.shutdownInstrument(False)
-	except TeslaException, msg:
-	    controller.logger.logError(msg)
+        try:
+            controller.powerUpInstrument()
+            controller.startGateway()
+            controller.shutdownInstrument(False)
+        except TeslaException, msg:
+            controller.logger.logError(msg)
 
 # -----------------------------------------------------------------------------
 

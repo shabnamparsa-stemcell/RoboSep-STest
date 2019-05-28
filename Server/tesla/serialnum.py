@@ -32,20 +32,20 @@ class InstrumentSerialNumber(object):
     __haveSerial = False
 
     def __init__(self, serialFileName = tesla.config.SERIAL_PATH):
-	'''Instrument serial number constructor'''
-	if not self.__haveSerial:
-	    try:
-		f = open(serialFileName, 'r')
-		# Read in the first line and strip all whitespace (including
-		# carriage returns)
+        '''Instrument serial number constructor'''
+        if not self.__haveSerial:
+            try:
+                f = open(serialFileName, 'r')
+                # Read in the first line and strip all whitespace (including
+                # carriage returns)
                 valueFromFile = f.readline().strip()
                 if self.validate(valueFromFile):
-		    InstrumentSerialNumber.__serial = valueFromFile
+                    InstrumentSerialNumber.__serial = valueFromFile
                 else:
                     raise TeslaException, "Invalid serial number (%s)" % (valueFromFile)
-		f.close()
-		InstrumentSerialNumber.__haveSerial = True
-	    except IOError, msg:
+                f.close()
+                InstrumentSerialNumber.__haveSerial = True
+            except IOError, msg:
                 # Any problem, throw an exception to force the developer or
                 # production engineer to install a serial number file
                 raise TeslaException, "Unable to read instrument serial number (%s)" % (msg)
@@ -72,8 +72,8 @@ class InstrumentSerialNumber(object):
     reset = staticmethod(reset)
 
     def getSerial():
-	'''Static method: returns the instrument serial number (as a string).'''
-	return InstrumentSerialNumber.__serial
+        '''Static method: returns the instrument serial number (as a string).'''
+        return InstrumentSerialNumber.__serial
     getSerial = staticmethod(getSerial)
 
 # -----------------------------------------------------------------------------

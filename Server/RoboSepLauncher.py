@@ -48,11 +48,11 @@ SEPARATOR_PATH   = 'Separator.exe'
 
 SEPARATOR_CONFIG = 'Separator.exe.config'
 
-SLEEP_TIME_SECS  = 1		# Time to sleep between server checks
-TIMEOUT_LIMIT    = 20		# Timeout loop max value Original: 100
+SLEEP_TIME_SECS  = 1                # Time to sleep between server checks
+TIMEOUT_LIMIT    = 20                # Timeout loop max value Original: 100
 
-EXIT_SUCCESS = 0		# Successful exit code
-EXIT_FAILURE = -1		# Exit code on failure
+EXIT_SUCCESS = 0                # Successful exit code
+EXIT_FAILURE = -1                # Exit code on failure
 
 
 # -----------------------------------------------------------------------------
@@ -80,36 +80,36 @@ def testForApplications():
 
     # Test for the existence of each application
     for app in (SERVER_PATH, SEPARATOR_PATH):
-	appPath = os.path.join(BIN_DIR, app)
-	if not os.path.exists(appPath):
-	    consolePrint("Application installation error: can not find %s." % (appPath))
-	    sys.exit(EXIT_FAILURE)
+        appPath = os.path.join(BIN_DIR, app)
+        if not os.path.exists(appPath):
+            consolePrint("Application installation error: can not find %s." % (appPath))
+            sys.exit(EXIT_FAILURE)
 
 def consolePrint(msg):
     '''Print a message to the console if the TESLA_QUIET_LAUNCH environment 
     variable is not set'''
     if not os.environ.has_key('QUIET_LAUNCH'):
-	print msg
+        print msg
 
 def serverIsRunning(serverURL):
     '''Returns True if the server is running'''
     global server
     runFlag = False
     try:
-	if type(server) == types.NoneType:
-	    server = ServerProxy(serverURL)
-	runFlag = server.ping()
+        if type(server) == types.NoneType:
+            server = ServerProxy(serverURL)
+        runFlag = server.ping()
     except socket.error:
-	# This exception is thrown if the server is not up
-	pass
+        # This exception is thrown if the server is not up
+        pass
     return runFlag
 
 def getServerState():
     '''Returns the state of the instrument control server'''
     if server == None:
-	raise ValueError, "Undefined server (not running yet?)"
+        raise ValueError, "Undefined server (not running yet?)"
     else:
-	return server.getInstrumentState()
+        return server.getInstrumentState()
 
 def startServer(serverURL):
     '''Start the server (as a separate process)'''
@@ -125,7 +125,7 @@ def startServer(serverURL):
     if not successFlag:
         # indicate if the server launched ok or not
         consolePrint( 'Server could not be launched. Error number is xx. Exiting...' )        
-        RoboTrace.RoboSepMessageBox('Failed to create Thread startRoboSepServer. Exiting...')	
+        RoboTrace.RoboSepMessageBox('Failed to create Thread startRoboSepServer. Exiting...')        
         # sys.exit(EXIT_FAILURE)
         thrd = None;
     else:
@@ -144,7 +144,7 @@ def startServer(serverURL):
                 consolePrint("\tWaiting %d seconds" % (attempt + 1))
         else:
             consolePrint( 'Server not responding to requests. Exiting...' )
-            RoboTrace.RoboSepMessageBox('IC Server not responding to requests. Exiting...')	
+            RoboTrace.RoboSepMessageBox('IC Server not responding to requests. Exiting...')        
             # sys.exit(EXIT_FAILURE)            
             thrd = None;
     return thrd
@@ -157,10 +157,10 @@ def startOperatorConsole():
     if os.environ.has_key('ROBO_MANUAL_CONSOLE'):
         return
     try:
-	      execCode = win32api.WinExec(SEPARATOR_PATH)
+        execCode = win32api.WinExec(SEPARATOR_PATH)
     except OSError, msg:
-	      consolePrint("Error launching app: %s (%s)" % (msg, execCode))
-	      RoboTrace.RoboSepMessageBox("Error launching app: %s (%s)" % (msg, execCode))
+        consolePrint("Error launching app: %s (%s)" % (msg, execCode))
+        RoboTrace.RoboSepMessageBox("Error launching app: %s (%s)" % (msg, execCode))
 
 
 def readIpConfig():
@@ -522,7 +522,7 @@ if __name__ == '__main__':
     hostURL = "http://%s:%d" % (tesla.config.GATEWAY_HOST, tesla.config.GATEWAY_PORT)
     
     if not serverIsRunning(hostURL):
-	  # If the server isn't running, try to start it
+       # If the server isn't running, try to start it
        thrd = startServer(hostURL)
        if (thrd == None):
           svrLog.logError( '', svrLog.logPrefix, 'RoboSepLauncher.main', 'Server not running at %s!' % (hostURL) )
@@ -542,9 +542,9 @@ if __name__ == '__main__':
     CamMgr.ExcuteRoboCam();
       
     if serverIsRunning(hostURL):
-	  # So is the server now running? If so, fire up the GUI client
-	     startOperatorConsole()
-	     pass
+        # So is the server now running? If so, fire up the GUI client
+        startOperatorConsole()
+        pass
     else:
         consolePrint("Error: server not running at %s!" % (hostURL))
         svrLog.logError( '', svrLog.logPrefix, 'RoboSepLauncher.main', 'Server not running at %s!' % (hostURL) )

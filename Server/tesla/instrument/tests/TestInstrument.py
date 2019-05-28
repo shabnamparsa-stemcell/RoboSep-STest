@@ -30,7 +30,7 @@ from tesla.types.tube import Tube
 class TestInstrument(unittest.TestCase):
    
     def setUp(self):
-	self.inst = Instrument('Instrument')
+        self.inst = Instrument('Instrument')
         self.numQuadrants = tesla.config.NUM_QUADRANTS
 
     

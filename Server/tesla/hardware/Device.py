@@ -36,27 +36,27 @@ class Device(Component):
     def __init__( self, name ):
         '''Construct the device with an identifying name.'''
         Component.__init__(self, name)
-	Device.registerDevice(self)
+        Device.registerDevice(self)
 
     def __str__(self):
-	'''Simple string representation of the device.'''
-	return "Device: %s" % (self.getName())
+        '''Simple string representation of the device.'''
+        return "Device: %s" % (self.getName())
 
     def reset():
         '''Reset the device list'''
         Device.deviceList = []
   
     def registerDevice(deviceInstance):
-	'''Register our device with the Device list. Note that this is a 
-	static method.'''
-	Device.deviceList.append(deviceInstance)
+        '''Register our device with the Device list. Note that this is a 
+        static method.'''
+        Device.deviceList.append(deviceInstance)
 
     def registerLogger(loggerInstance):
-	'''Register an instance of a Tesla logger with the devices. Note that
-	this is a static method.'''
-	# Ideally, we would check to ensure that the loggerInstance had the
-	# various methods that we need.
-	Device.logger = loggerInstance
+        '''Register an instance of a Tesla logger with the devices. Note that
+        this is a static method.'''
+        # Ideally, we would check to ensure that the loggerInstance had the
+        # various methods that we need.
+        Device.logger = loggerInstance
 
     # Define our static methods
     reset = staticmethod(reset)

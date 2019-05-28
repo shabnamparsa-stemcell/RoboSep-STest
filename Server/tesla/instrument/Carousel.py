@@ -46,7 +46,7 @@ class Carousel(Subsystem):
     PortLabel         = 'steppercardport'
     BoardAddressLabel = 'steppercardaddress'
     # This is the offset from home for the carousel tag (for ease of clearance)
-    TagOffsetLabel    = 'tag_offset'		    
+    TagOffsetLabel    = 'tag_offset'                    
 
     mandatorySettings = (
                         PortLabel,
@@ -54,19 +54,19 @@ class Carousel(Subsystem):
                         )
 
     __configData = {
-		    TagOffsetLabel : 10,
-		    }
+                    TagOffsetLabel : 10,
+                    }
     
     # ---------------------------------------------------------------------------
 
     def __init__( self, name ):
         """Load in the configuration data for the Carousel.
         NB: since the carousel card also drives the TipStripper, this is also 
-	configured and may be accessed via the TipStripper() method.
+        configured and may be accessed via the TipStripper() method.
         """
         global gHardwareData
 
-	Subsystem.__init__( self, name )
+        Subsystem.__init__( self, name )
 
         carConfig = Carousel.__configData.copy()
         carSettings = gHardwareData.Section(Carousel.SectionName)
@@ -74,7 +74,7 @@ class Carousel(Subsystem):
         
         cCard = SimpleStep (carConfig[Carousel.BoardAddressLabel], carConfig[Carousel.PortLabel])
         self.__m_Theta = ThetaAxis (Carousel.SectionName, cCard, carSettings)
-	self.__m_TagOffset = carConfig[Carousel.TagOffsetLabel]
+        self.__m_TagOffset = carConfig[Carousel.TagOffsetLabel]
 
 
     def _serviceMethods(self):
@@ -103,11 +103,11 @@ class Carousel(Subsystem):
 
     def SetTheta (self, theta):
         """ Move carousel to given position, as specified in rotational 
-	degrees.
-	Check to see which direction is shortest, and increment the angle 
-	rather than move to the absolute position (this allows us to avoid
-	problems sensing the home position at 360 degrees!).
-	"""
+        degrees.
+        Check to see which direction is shortest, and increment the angle 
+        rather than move to the absolute position (this allows us to avoid
+        problems sensing the home position at 360 degrees!).
+        """
 
         # Determine which direction to move
         #
@@ -137,9 +137,9 @@ class Carousel(Subsystem):
 
 
     def MoveToSafePosition(self):
-	'''Move the carousel to a position that is clear of the home opto for
-	each removal of the carousel.'''
-	self.SetTheta(self.__m_TagOffset)
+        '''Move the carousel to a position that is clear of the home opto for
+        each removal of the carousel.'''
+        self.SetTheta(self.__m_TagOffset)
 
 
     #GetInstrumentAxisStatusSet support methods
@@ -156,7 +156,7 @@ class Carousel(Subsystem):
     # ---------------------------------------------------------------------------
     
     def _ThetaAxis (self):
-	'''Return a reference to the theta axis.'''
+        '''Return a reference to the theta axis.'''
         return self.__m_Theta
 
 

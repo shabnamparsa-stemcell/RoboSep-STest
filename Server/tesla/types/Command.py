@@ -55,7 +55,7 @@ def CommandFactory(sequenceNumber, type, label, xmlNode = None):
 class Command(object):
 
     LEGAL_COMMANDS = [  'Transport', 'Mix', 'Incubate', 'Separate', 'TopUpVial',
-		        'ResuspendVial', 'Flush', 'Prime', 'HomeAll', 'Park', 
+                        'ResuspendVial', 'Flush', 'Prime', 'HomeAll', 'Park', 
                         'Demo', 'Pause','PumpLife','MixTrans', 'TopUpMixTrans' , 'ResusMixSepTrans','ResusMix',
                         'TopUpTrans', 'TopUpTransSepTrans', 'TopUpMixTransSepTrans', 'EndOfProtocol']
    
@@ -64,16 +64,16 @@ class Command(object):
     vialTable = InfoTable(tesla.config.VIAL_CODES_PATH)
    
     def __init__(self, sequenceNumber, type, label):
-	'''Construct a base command instance with a sequence number (specifying
-	where this command sits in the command sequence in the protocol), a
-	type (one of those defined in Command.LEGAL_COMMANDS), and a human
-	readable label.'''
-	self.seq = sequenceNumber
-	if not Command.isLegalCommandType(type):
-	    pass
-	self.type = type 
-	self.label = label
-	self.executionTime = 0
+        '''Construct a base command instance with a sequence number (specifying
+        where this command sits in the command sequence in the protocol), a
+        type (one of those defined in Command.LEGAL_COMMANDS), and a human
+        readable label.'''
+        self.seq = sequenceNumber
+        if not Command.isLegalCommandType(type):
+            pass
+        self.type = type 
+        self.label = label
+        self.executionTime = 0
         self.extensionTime = 0
 
     def getWorkingVolume(self, sample, protocol):
@@ -90,72 +90,72 @@ class Command(object):
         
 
     def createCall(self, sample = None, protocol = None):
-	'''Returns a string that is ready to call on the Instrument object to
-	initiate the execution of a level 1 workflow. This means that all of
-	the arguments for the call are fully evaluated.
-	This particular method in the parent Command class is abstract. Don't
-	use it :)'''
-	raise NotImplementedError, "Abstract method; not used for %s:%s" % \
-		(self.type, self.label)
+        '''Returns a string that is ready to call on the Instrument object to
+        initiate the execution of a level 1 workflow. This means that all of
+        the arguments for the call are fully evaluated.
+        This particular method in the parent Command class is abstract. Don't
+        use it :)'''
+        raise NotImplementedError, "Abstract method; not used for %s:%s" % \
+                (self.type, self.label)
 
 
     def parseXML(self, xmlNode):
         '''Abstract method for parsing XML into command data.'''
-	raise NotImplementedError, "Abstract method; not used for %s:%s" % \
-		(self.type, self.label)
+        raise NotImplementedError, "Abstract method; not used for %s:%s" % \
+                (self.type, self.label)
 
 
     def isLegal(self):
-	'''Instance version of the static method for testing if this is a
-	legal command.'''
-	return Command.isLegalCommandType(self.type)
+        '''Instance version of the static method for testing if this is a
+        legal command.'''
+        return Command.isLegalCommandType(self.type)
 
     def isServiceType(self):
-	'''Returns True if this is a service command.'''
-	return isinstance(self, ServiceCommand)
+        '''Returns True if this is a service command.'''
+        return isinstance(self, ServiceCommand)
 
     def isWaitType(self):
-	'''Returns True if this a wait command.'''
-	return isinstance(self, WaitCommand)
+        '''Returns True if this a wait command.'''
+        return isinstance(self, WaitCommand)
     def isSeparateType(self):
-	return isinstance(self, SeparateCommand)
+        return isinstance(self, SeparateCommand)
     def isEndOfProtocolType(self):
-	return isinstance(self, EndOfProtocolCommand)
+        return isinstance(self, EndOfProtocolCommand)
 
     def isVolumeType(self):
-	'''Return True if this is a volume command.'''
-	return isinstance(self, VolumeCommand)
+        '''Return True if this is a volume command.'''
+        return isinstance(self, VolumeCommand)
 
     def isTransportType(self):
-	'''Return True if this is a Transport command.'''
-	return isinstance(self, TransportCommand) 
+        '''Return True if this is a Transport command.'''
+        return isinstance(self, TransportCommand) 
 
     def isMixType(self):
-	'''Return True if this is a Mix command.'''
-	return isinstance(self, MixCommand)
+        '''Return True if this is a Mix command.'''
+        return isinstance(self, MixCommand)
     
     def isTopUpType(self):
-	'''Return True if this is a TopUpVialCommand.'''
-	return isinstance(self, TopUpVialCommand)
+        '''Return True if this is a TopUpVialCommand.'''
+        return isinstance(self, TopUpVialCommand)
     
     def isResuspendType(self):
-	'''Return True if this is a ResuspendVialCommand.'''
-	return isinstance(self, ResuspendVialCommand)
+        '''Return True if this is a ResuspendVialCommand.'''
+        return isinstance(self, ResuspendVialCommand)
 
     def isMixTransType(self):
-	return isinstance(self, MixTransCommand)
+        return isinstance(self, MixTransCommand)
     def isTopUpMixTransType(self):
-	return isinstance(self, TopUpMixTransCommand)
+        return isinstance(self, TopUpMixTransCommand)
     def isResusMixSepTransType(self):
-	return isinstance(self, ResusMixSepTransCommand)
+        return isinstance(self, ResusMixSepTransCommand)
     def isResusMixType(self):
-	return isinstance(self, ResusMixCommand)
+        return isinstance(self, ResusMixCommand)
     def isTopUpTransType(self):
-	return isinstance(self, TopUpTransCommand)
+        return isinstance(self, TopUpTransCommand)
     def isTopUpTransSepTransType(self):
-	return isinstance(self, TopUpTransSepTransCommand)
+        return isinstance(self, TopUpTransSepTransCommand)
     def isTopUpMixTransSepTransType(self):
-	return isinstance(self, TopUpMixTransSepTransCommand)
+        return isinstance(self, TopUpMixTransSepTransCommand)
     def includesTopUpOrResuspendInType(self):
         return self.isTopUpType() or self.isResuspendType() or \
                 self.isTopUpMixTransType() or self.isResusMixSepTransType() or self.isResusMixType() or \
@@ -180,15 +180,15 @@ class Command(object):
     # --- Set up our static method(s) -----------------------------------------
 
     def isLegalCommandType(cmdType):
-	'''Is the command a legal one? This is a static method.'''
+        '''Is the command a legal one? This is a static method.'''
         cmdType = cmdType.split('Command')[0]
-	return cmdType in Command.LEGAL_COMMANDS
+        return cmdType in Command.LEGAL_COMMANDS
 
     def isWaitCommand(cmdType):
-	'''Returns True if the command is just a 'wait'-type command, such as
-	an Incubate or Separate command'''
+        '''Returns True if the command is just a 'wait'-type command, such as
+        an Incubate or Separate command'''
         cmdType = cmdType.split('Command')[0]
-	return cmdType in ['Incubate', 'Separate', 'EndOfProtocol']
+        return cmdType in ['Incubate', 'Separate', 'EndOfProtocol']
     
     isLegalCommandType = staticmethod(isLegalCommandType)
     isWaitCommand = staticmethod(isWaitCommand)    
@@ -208,22 +208,22 @@ class ParkCommand(ServiceCommand):
     '''A command to park the Z-Theta robot'''
 
     def createCall(self, sample, protocol):
-	return "Park(id=%d, seq=%d)" % (sample.ID, self.seq)
+        return "Park(id=%d, seq=%d)" % (sample.ID, self.seq)
 
 
 class HomeAllCommand(ServiceCommand):
     '''A command to home all axes.'''
 
     def createCall(self, sample, protocol):
-	return "HomeAll(id=%d, seq=%d)" % (sample.ID, self.seq)
+        return "HomeAll(id=%d, seq=%d)" % (sample.ID, self.seq)
 
 
 class DemoCommand(ServiceCommand):
     '''A command to run some form of demo mode.'''
     
     def __init__(self, sequenceNumber, type, label):
-	ServiceCommand.__init__(self, sequenceNumber, type, label)
-	self.iterations = 1
+        ServiceCommand.__init__(self, sequenceNumber, type, label)
+        self.iterations = 1
         self.sef        = 0;  
     def parseXML(self, xmlNode):
         '''Sets the number of times we repeat the Demo command.'''
@@ -233,28 +233,28 @@ class DemoCommand(ServiceCommand):
     def createCall(self, sample, protocol):
         if (self.seq == 1):
             return "Demo(iterations=%d, id=%d, seq=%d)" % \
-		(self.iterations, sample.ID, self.seq)
+                (self.iterations, sample.ID, self.seq)
         elif (self.seq == 2):
-	    return "Demo5mL(iterations=%d, id=%d, seq=%d)" % \
-		(self.iterations, sample.ID, self.seq)
+            return "Demo5mL(iterations=%d, id=%d, seq=%d)" % \
+                (self.iterations, sample.ID, self.seq)
         elif (self.seq == 3):
-	    return "Demo1mL(iterations=%d, id=%d, seq=%d)" % \
-		(self.iterations, sample.ID, self.seq)
+            return "Demo1mL(iterations=%d, id=%d, seq=%d)" % \
+                (self.iterations, sample.ID, self.seq)
 
 class PumpLifeCommand(ServiceCommand):
     '''A command to run some form of demo mode.'''
     
     def __init__(self, sequenceNumber, type, label):
-	ServiceCommand.__init__(self, sequenceNumber, type, label)
-	self.iterations = 1
+        ServiceCommand.__init__(self, sequenceNumber, type, label)
+        self.iterations = 1
     
     def parseXML(self, xmlNode):
         '''Sets the number of times we repeat the Demo command.'''
         self.iterations = int(xmlNode.getAttribute('iterations'))
 
     def createCall(self, sample, protocol):
-	return "PumpLife(iterations=%d, id=%d, seq=%d)" % \
-		(self.iterations, sample.ID, self.seq)
+        return "PumpLife(iterations=%d, id=%d, seq=%d)" % \
+                (self.iterations, sample.ID, self.seq)
 # ----------------------------------------------------------------------------
 
 class WaitCommand(Command):
@@ -262,31 +262,31 @@ class WaitCommand(Command):
     or Separate.'''
    
     def __init__(self, sequenceNumber, type, label):
-	Command.__init__(self, sequenceNumber, type, label)
-	self.minPeriod = 0
-	self.maxPeriod = 0
+        Command.__init__(self, sequenceNumber, type, label)
+        self.minPeriod = 0
+        self.maxPeriod = 0
 
     def parseXML(self, xmlNode):
-	'''Parse out the wait duration (in seconds) from the XML data.'''
+        '''Parse out the wait duration (in seconds) from the XML data.'''
         duration = 0
         self.extensionTime = int(xmlNode.getAttribute('extensionTime'))
         for child in xmlNode.childNodes:
             if child.nodeName == 'processingTime':
                 duration = int(child.getAttribute('duration'))
                 break
-	self.setPeriods( duration, duration + self.extensionTime )
+        self.setPeriods( duration, duration + self.extensionTime )
 
     def setPeriods(self, minPeriod_secs, maxPeriod_secs):
-	'''Set the minimum and maximum periods that we can wait for (in 
-	seconds).'''
-	self.minPeriod = minPeriod_secs
-	self.maxPeriod = maxPeriod_secs
+        '''Set the minimum and maximum periods that we can wait for (in 
+        seconds).'''
+        self.minPeriod = minPeriod_secs
+        self.maxPeriod = maxPeriod_secs
         if self.minPeriod > self.maxPeriod:
             self.minPeriod, self.maxPeriod = self.maxPeriod, self.minPeriod
 
     def createCall(self, sample, protocol):
         cmdType = self.type.split('Command')[0]
-	return "%s(%d, id=%d, seq=%d)" % (cmdType, self.minPeriod, sample.ID, self.seq)
+        return "%s(%d, id=%d, seq=%d)" % (cmdType, self.minPeriod, sample.ID, self.seq)
 
 
 class IncubateCommand(WaitCommand):
@@ -306,8 +306,8 @@ class PauseCommand(WaitCommand):
     '''A command to pause robot'''
     '''
     def __init__(self, sequenceNumber, type, label):
-	WaitCommand.__init__(self, sequenceNumber, type, label)
-	self.caption = ""
+        WaitCommand.__init__(self, sequenceNumber, type, label)
+        self.caption = ""
     
     def parseXML(self, xmlNode):
         WaitCommand.parseXML(self, xmlNode)
@@ -315,8 +315,8 @@ class PauseCommand(WaitCommand):
     
     def createCall(self, sample, protocol):
         cmdType = self.type.split('Command')[0]
-	return "%s(%d, id=%d, seq=%d, label='%s')" % (cmdType, self.minPeriod, sample.ID, self.seq, self.label)
-	
+        return "%s(%d, id=%d, seq=%d, label='%s')" % (cmdType, self.minPeriod, sample.ID, self.seq, self.label)
+        
     pass
     
 
@@ -327,24 +327,24 @@ class VolumeCommand(Command):
     used, set it to None.'''
 
     def __init__(self, sequenceNumber, type, label):
-	Command.__init__(self, sequenceNumber, type, label)
-	# Vial members
-	self.srcVial = None		# These will be tuples of sector # and tube name
-	self.destVial = None
-	self.srcVial2 = None		# These will be tuples of sector # and tube name
-	self.destVial2 = None
-	self.srcVial3 = None		# These will be tuples of sector # and tube name
-	self.destVial3 = None
-	# Volume-related members -- all volumes are in uL (microlitres)
-	self.workingVolume = 0		# The working volume for this command
+        Command.__init__(self, sequenceNumber, type, label)
+        # Vial members
+        self.srcVial = None                # These will be tuples of sector # and tube name
+        self.destVial = None
+        self.srcVial2 = None                # These will be tuples of sector # and tube name
+        self.destVial2 = None
+        self.srcVial3 = None                # These will be tuples of sector # and tube name
+        self.destVial3 = None
+        # Volume-related members -- all volumes are in uL (microlitres)
+        self.workingVolume = 0                # The working volume for this command
         self.relative = False            # Relative or absolute volumes?
         self.proportion = 0.0           # Relative volume proportion
         self.absVolume = 0              # Absolute volume value
         self.volume = 0                 # Volume used by an instance of this command
-	self.tiprackSpecified = False	# if not to use default tip rack #1
-	self.tiprack = 1				# id of tip rack to use
+        self.tiprackSpecified = False        # if not to use default tip rack #1
+        self.tiprack = 1                                # id of tip rack to use
 
-	self.numOfStages = 1
+        self.numOfStages = 1
         self.relative2 = False            # Relative or absolute volumes?
         self.proportion2 = 0.0           # Relative volume proportion
         self.absVolume2 = 0              # Absolute volume value
@@ -444,26 +444,26 @@ class VolumeCommand(Command):
 
 
     def copyVolumeCommand(self, oldCmd):
-	self.srcVial = oldCmd.srcVial		
-	self.destVial = oldCmd.destVial
-	self.srcVial2 = oldCmd.srcVial2		
-	self.destVial2 = oldCmd.destVial2
-	self.srcVial3 = oldCmd.srcVial3		
-	self.destVial3 = oldCmd.destVial3
+        self.srcVial = oldCmd.srcVial                
+        self.destVial = oldCmd.destVial
+        self.srcVial2 = oldCmd.srcVial2                
+        self.destVial2 = oldCmd.destVial2
+        self.srcVial3 = oldCmd.srcVial3                
+        self.destVial3 = oldCmd.destVial3
 
-	self.workingVolume = oldCmd.workingVolume		
+        self.workingVolume = oldCmd.workingVolume                
         self.relative = oldCmd.relative            
         self.proportion = oldCmd.proportion           
         self.absVolume = oldCmd.absVolume              
         self.volume = oldCmd.volume                 
-	self.tiprackSpecified = oldCmd.tiprackSpecified	
-	self.tiprack = oldCmd.tiprack
-	self.extensionTime = oldCmd.extensionTime
+        self.tiprackSpecified = oldCmd.tiprackSpecified        
+        self.tiprack = oldCmd.tiprack
+        self.extensionTime = oldCmd.extensionTime
         self.freeAirDispense = oldCmd.freeAirDispense
         self.useBufferTip = oldCmd.useBufferTip
         
 
-	self.numOfStages = oldCmd.numOfStages
+        self.numOfStages = oldCmd.numOfStages
         self.relative2 = oldCmd.relative2            
         self.proportion2 = oldCmd.proportion2           
         self.absVolume2 = oldCmd.absVolume2              
@@ -479,25 +479,25 @@ class VolumeCommand(Command):
         
 
     def getContainerString(self, sample, vial):
-	'''Return a string of what is needed to eval an Instrument container 
-	instance with this command given a specific sample and vial tuple (from 
-	__createContainer above).'''
-	if vial == ():
-	    vialString = None
-	else:
-	    try:
-		sector = (vial[0] + sample.initialQuadrant) - 1
+        '''Return a string of what is needed to eval an Instrument container 
+        instance with this command given a specific sample and vial tuple (from 
+        __createContainer above).'''
+        if vial == ():
+            vialString = None
+        else:
+            try:
+                sector = (vial[0] + sample.initialQuadrant) - 1
                 vialName = vial[1]
                 
                 # With some containers, we should ignore the sector as they
                 # are off-board (ie. sector 0); eg. the BCCM
                 if vialName in [Instrument.BCCMLabel,]:
                     sector = 0
-		vialString = "self.instrument.ContainerAt(%d, '%s')" % (sector, vialName)
-	    except Exception, msg:
-		raise CommandException, "CO: Vial must be (quadrant, name), not %s (%s)" % \
-			(vial, msg)
-	return vialString
+                vialString = "self.instrument.ContainerAt(%d, '%s')" % (sector, vialName)
+            except Exception, msg:
+                raise CommandException, "CO: Vial must be (quadrant, name), not %s (%s)" % \
+                        (vial, msg)
+        return vialString
     
 
     def setVials(self, srcVial, destVial):
@@ -520,20 +520,20 @@ class VolumeCommand(Command):
 
 
     def calculateVolume_helper(self, isRelative, tmpProportion, tmpAbsVolume, sampleVolume_uL = 0):
-	'''Calculate the volume that we need for this command, which could be
-	absolute or could be relative to the sample volume.'''
+        '''Calculate the volume that we need for this command, which could be
+        absolute or could be relative to the sample volume.'''
 
-	if isRelative:
-	    # Relative volume (to the sample volume)
-	    volume = int(round(tmpProportion * sampleVolume_uL))
-	else:
-	    # An absolute volume, as defined in the protocol
-	    volume = tmpAbsVolume
+        if isRelative:
+            # Relative volume (to the sample volume)
+            volume = int(round(tmpProportion * sampleVolume_uL))
+        else:
+            # An absolute volume, as defined in the protocol
+            volume = tmpAbsVolume
 
-	return volume
+        return volume
 
     def calculateVolume(self, sampleVolume_uL = 0):
-	return self.calculateVolume_helper(self.relative,self.proportion,self.absVolume,sampleVolume_uL)
+        return self.calculateVolume_helper(self.relative,self.proportion,self.absVolume,sampleVolume_uL)
     def calculateVolume2(self, sampleVolume_uL = 0):
         if self.numOfStages>=2:
             return self.calculateVolume_helper(self.relative2,self.proportion2,self.absVolume2,sampleVolume_uL)
@@ -586,72 +586,72 @@ class TransportCommand(VolumeCommand):
     '''Transport (fluid) command'''
 
     def __init__(self, sequenceNumber, type, label):
-	'''Constructor for the Transport command. Sets up a freeAirDispense
-	member, which is False by default.'''
-	super(TransportCommand, self).__init__(sequenceNumber, type, label)
-	# Default for transports is that we don't do a free air dispense
-	self.freeAirDispense = False
-	self.useBufferTip = False
+        '''Constructor for the Transport command. Sets up a freeAirDispense
+        member, which is False by default.'''
+        super(TransportCommand, self).__init__(sequenceNumber, type, label)
+        # Default for transports is that we don't do a free air dispense
+        self.freeAirDispense = False
+        self.useBufferTip = False
 
     def parseXML(self, xmlNode):
-	'''Parse out the volume data and then the freeAirDispense flag.'''
-	VolumeCommand.parseXML(self, xmlNode)
-	try:
-	    useBufferFlag = xmlNode.volume[0].useBufferTip.lower() == 'true'
-	    self.setUseBufferTip(useBufferFlag)
-	except AttributeError:
-	    # No usebuffertip flag defined? Keep going
-	    pass
-	try:
-	    freeAirFlag = xmlNode.volume[0].freeair.lower() == 'true'
-	    self.setFreeAirDispense(freeAirFlag)
-	except AttributeError:
-	    # No free air dispense flag defined? Keep going
-	    pass
-	
+        '''Parse out the volume data and then the freeAirDispense flag.'''
+        VolumeCommand.parseXML(self, xmlNode)
+        try:
+            useBufferFlag = xmlNode.volume[0].useBufferTip.lower() == 'true'
+            self.setUseBufferTip(useBufferFlag)
+        except AttributeError:
+            # No usebuffertip flag defined? Keep going
+            pass
+        try:
+            freeAirFlag = xmlNode.volume[0].freeair.lower() == 'true'
+            self.setFreeAirDispense(freeAirFlag)
+        except AttributeError:
+            # No free air dispense flag defined? Keep going
+            pass
+        
     def setFreeAirDispense(self, usingFreeAirDispense = False):
-	'''Set the freeAirDispense member (to True or False).'''
-	self.freeAirDispense = usingFreeAirDispense
+        '''Set the freeAirDispense member (to True or False).'''
+        self.freeAirDispense = usingFreeAirDispense
 
     def setUseBufferTip(self, usingBufferTip = False):
         '''Set the useBufferTip member (to True or False).'''
-	self.useBufferTip = usingBufferTip
+        self.useBufferTip = usingBufferTip
     
     def createCall(self, sample, protocol):
-	'''Create the workflow call.'''
-	srcVial = self.getContainerString(sample, self.srcVial)
-	destVial = self.getContainerString(sample, self.destVial)
-	volume_uL = self.calculateVolume(sample.volume)
+        '''Create the workflow call.'''
+        srcVial = self.getContainerString(sample, self.srcVial)
+        destVial = self.getContainerString(sample, self.destVial)
+        volume_uL = self.calculateVolume(sample.volume)
         workVolume = self.getWorkingVolume(sample, protocol)
         initialQuadrant = sample.initialQuadrant
-	return "Transport(destVial=%s, srcVial=%s, volume_ul=%0.2f, workVolume=%0.2f, usingFreeAirDispense=%s, usingBufferTip=%s, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d)" % \
-		(destVial, srcVial, volume_uL, workVolume, self.freeAirDispense, self.useBufferTip, sample.ID, self.seq, self.tiprackSpecified, self.tiprack, initialQuadrant) #CR - added tiprack stuff
+        return "Transport(destVial=%s, srcVial=%s, volume_ul=%0.2f, workVolume=%0.2f, usingFreeAirDispense=%s, usingBufferTip=%s, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d)" % \
+                (destVial, srcVial, volume_uL, workVolume, self.freeAirDispense, self.useBufferTip, sample.ID, self.seq, self.tiprackSpecified, self.tiprack, initialQuadrant) #CR - added tiprack stuff
 
 class MixCommand(VolumeCommand):
     '''Mix (fluid) command'''
     def __init__(self, sequenceNumber, type, label):
-	VolumeCommand.__init__(self, sequenceNumber, type, label)
-	self.mixCycles = -1
-	self.tipTubeBottomGap = -1
-	
+        VolumeCommand.__init__(self, sequenceNumber, type, label)
+        self.mixCycles = -1
+        self.tipTubeBottomGap = -1
+        
     def createCall(self, sample, protocol):
-	vial = self.getContainerString(sample, self.srcVial)
+        vial = self.getContainerString(sample, self.srcVial)
         #volume_uL = self.calculateVolume(self.volume)   #?? values get overridden anyway and param should be sample volume not self volume...
         if self.relative:
-	    volume_uL = self.proportion
-	else:
-	    volume_uL = self.absVolume
+            volume_uL = self.proportion
+        else:
+            volume_uL = self.absVolume
         workVolume = self.getWorkingVolume(sample, protocol)
         initialQuadrant = sample.initialQuadrant
 
-	call = "Mix(vial=%s, workVolume=%0.2f, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d, mixCycles=%d, tipTubeBottomGap=%d, isRelative=%d, volume_uL=%0.2f )" % \
+        call = "Mix(vial=%s, workVolume=%0.2f, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d, mixCycles=%d, tipTubeBottomGap=%d, isRelative=%d, volume_uL=%0.2f )" % \
                  (vial, workVolume, sample.ID, self.seq, self.tiprackSpecified, self.tiprack, initialQuadrant, self.mixCycles, self.tipTubeBottomGap, self.relative, volume_uL)#CR - added tiprack stuff
         return call
 
     def parseXML(self, xmlNode):
-	'''Parse out the volume data and then the freeAirDispense flag.'''
-	VolumeCommand.parseXML(self, xmlNode)
-	
+        '''Parse out the volume data and then the freeAirDispense flag.'''
+        VolumeCommand.parseXML(self, xmlNode)
+        
         if xmlNode.hasAttribute('mixCycles'):
             self.mixCycles = int(xmlNode.getAttribute('mixCycles'))
         if xmlNode.hasAttribute('tipTubeBottomGap'):
@@ -662,22 +662,22 @@ class TopUpVialCommand(VolumeCommand):
     '''Top up vial (with fluid) command'''
     
     def createCall(self, sample, protocol):
-	srcVial = self.getContainerString(sample, self.srcVial)
-	destVial = self.getContainerString(sample, self.destVial)
-	# If the two vials have been accidently mis-specified, swap them
-	# We should never have an undefined destVial and a specified srcVial,
-	# where is it topping up to???
-	if destVial == None and srcVial != None:
-	    destVial = srcVial
-	    srcVial = None
-	if self.relative:
+        srcVial = self.getContainerString(sample, self.srcVial)
+        destVial = self.getContainerString(sample, self.destVial)
+        # If the two vials have been accidently mis-specified, swap them
+        # We should never have an undefined destVial and a specified srcVial,
+        # where is it topping up to???
+        if destVial == None and srcVial != None:
+            destVial = srcVial
+            srcVial = None
+        if self.relative:
             workVolume = self.calculateVolume(sample.volume) + sample.volume
             workVolume = min(10000,workVolume)
         else:
             workVolume = self.getWorkingVolume(sample, protocol)
         initialQuadrant = sample.initialQuadrant
-	return "TopUpVial(destVial=%s, srcVial=%s, workVolume=%0.2f, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d)" % \
-		(destVial, srcVial, workVolume, sample.ID, self.seq, self.tiprackSpecified, self.tiprack, initialQuadrant) #CR - added tiprack stuff
+        return "TopUpVial(destVial=%s, srcVial=%s, workVolume=%0.2f, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d)" % \
+                (destVial, srcVial, workVolume, sample.ID, self.seq, self.tiprackSpecified, self.tiprack, initialQuadrant) #CR - added tiprack stuff
 
 
 
@@ -685,41 +685,41 @@ class ResuspendVialCommand(VolumeCommand):
     '''Resuspend vial (normally with BCCM) command'''
     
     def createCall(self, sample, protocol):
-	srcVial = self.getContainerString(sample, self.srcVial)
-	destVial = self.getContainerString(sample, self.destVial)
-	# If the two vials have been accidently mis-specified, swap them
-	# We should never have an undefined destVial and a specified srcVial,
-	# what is it resuspending into???
-	if destVial == None and srcVial != None:
-	    destVial = srcVial
-	    srcVial = None
-	if self.relative:
+        srcVial = self.getContainerString(sample, self.srcVial)
+        destVial = self.getContainerString(sample, self.destVial)
+        # If the two vials have been accidently mis-specified, swap them
+        # We should never have an undefined destVial and a specified srcVial,
+        # what is it resuspending into???
+        if destVial == None and srcVial != None:
+            destVial = srcVial
+            srcVial = None
+        if self.relative:
             workVolume = self.calculateVolume(sample.volume) + sample.volume
             workVolume = min(10000,workVolume)
         else:
             workVolume = self.getWorkingVolume(sample, protocol)            
         initialQuadrant = sample.initialQuadrant
-	return "ResuspendVial(destVial=%s, srcVial=%s, workVolume=%0.2f, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d)" % \
-		(destVial, srcVial, workVolume, sample.ID, self.seq, self.tiprackSpecified, self.tiprack, initialQuadrant) #CR - added tiprack stuff
+        return "ResuspendVial(destVial=%s, srcVial=%s, workVolume=%0.2f, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d)" % \
+                (destVial, srcVial, workVolume, sample.ID, self.seq, self.tiprackSpecified, self.tiprack, initialQuadrant) #CR - added tiprack stuff
 
 class MixTransCommand(VolumeCommand):
     def __init__(self, sequenceNumber, type, label):
-	VolumeCommand.__init__(self, sequenceNumber, type, label)
-	self.mixCycles = -1
-	self.tipTubeBottomGap = -1
-	self.freeAirDispense = False
-	self.useBufferTip = False
-	
+        VolumeCommand.__init__(self, sequenceNumber, type, label)
+        self.mixCycles = -1
+        self.tipTubeBottomGap = -1
+        self.freeAirDispense = False
+        self.useBufferTip = False
+        
     def createCall(self, sample, protocol):
         srcVial = self.getContainerString(sample, self.srcVial)
-	destVial = self.getContainerString(sample, self.destVial)
+        destVial = self.getContainerString(sample, self.destVial)
         if self.relative:
-	    mix_volume_uL = self.proportion
-	else:
-	    mix_volume_uL = self.absVolume
+            mix_volume_uL = self.proportion
+        else:
+            mix_volume_uL = self.absVolume
 
         trans_volume_uL = self.calculateVolume2(sample.volume)  #!!!! stage dependent  #from transport
-	
+        
         initialQuadrant = sample.initialQuadrant
 
         call = "MixTrans(destVial=%s, srcVial=%s, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d, \
@@ -733,59 +733,59 @@ class MixTransCommand(VolumeCommand):
         return call
 
     def parseXML(self, xmlNode):
-	'''Parse out the volume data and then the freeAirDispense flag.'''
-	VolumeCommand.parseXML(self, xmlNode)
-	
+        '''Parse out the volume data and then the freeAirDispense flag.'''
+        VolumeCommand.parseXML(self, xmlNode)
+        
         if xmlNode.hasAttribute('mixCycles'):
             self.mixCycles = int(xmlNode.getAttribute('mixCycles'))
         if xmlNode.hasAttribute('tipTubeBottomGap'):
             self.tipTubeBottomGap = int(xmlNode.getAttribute('tipTubeBottomGap'))
         try:
-	    useBufferFlag = xmlNode.volume[0].useBufferTip.lower() == 'true'
-	    self.setUseBufferTip(useBufferFlag)
-	except AttributeError:
-	    # No usebuffertip flag defined? Keep going
-	    pass
-	try:
-	    freeAirFlag = xmlNode.volume[0].freeair.lower() == 'true'
-	    self.setFreeAirDispense(freeAirFlag)
-	except AttributeError:
-	    # No free air dispense flag defined? Keep going
-	    pass
+            useBufferFlag = xmlNode.volume[0].useBufferTip.lower() == 'true'
+            self.setUseBufferTip(useBufferFlag)
+        except AttributeError:
+            # No usebuffertip flag defined? Keep going
+            pass
+        try:
+            freeAirFlag = xmlNode.volume[0].freeair.lower() == 'true'
+            self.setFreeAirDispense(freeAirFlag)
+        except AttributeError:
+            # No free air dispense flag defined? Keep going
+            pass
     def setFreeAirDispense(self, usingFreeAirDispense = False):
-	'''Set the freeAirDispense member (to True or False).'''
-	self.freeAirDispense = usingFreeAirDispense
+        '''Set the freeAirDispense member (to True or False).'''
+        self.freeAirDispense = usingFreeAirDispense
 
     def setUseBufferTip(self, usingBufferTip = False):
         '''Set the useBufferTip member (to True or False).'''
-	self.useBufferTip = usingBufferTip
+        self.useBufferTip = usingBufferTip
 
 class TopUpMixTransCommand(VolumeCommand):
     def __init__(self, sequenceNumber, type, label):
-	VolumeCommand.__init__(self, sequenceNumber, type, label)
-	self.mixCycles = -1
-	self.tipTubeBottomGap = -1
-	self.freeAirDispense = False
-	self.useBufferTip = False
-	
+        VolumeCommand.__init__(self, sequenceNumber, type, label)
+        self.mixCycles = -1
+        self.tipTubeBottomGap = -1
+        self.freeAirDispense = False
+        self.useBufferTip = False
+        
     def createCall(self, sample, protocol):
         #bufferVial =  self.getContainerString(sample,self._parseVialInfo(TPC0001)) #assume fix buffer  #dont bother just use default
         srcVial = self.getContainerString(sample, self.srcVial)
-  	destVial = self.getContainerString(sample, self.destVial)
-  	destVial2 = self.getContainerString(sample, self.destVial2)
+        destVial = self.getContainerString(sample, self.destVial)
+        destVial2 = self.getContainerString(sample, self.destVial2)
         if self.relative:
             workVolume = self.calculateVolume(sample.volume) + sample.volume
             workVolume = min(10000,workVolume)
         else:
             workVolume = self.getWorkingVolume(sample, protocol)
-	
+        
         if self.relative2:
-	    mix_volume_uL = self.proportion2
-	else:
-	    mix_volume_uL = self.absVolume2
+            mix_volume_uL = self.proportion2
+        else:
+            mix_volume_uL = self.absVolume2
 
         trans_volume_uL = self.calculateVolume3(sample.volume)  #!!!! stage dependent  #from transport
-	
+        
         initialQuadrant = sample.initialQuadrant
 
         call = "TopUpMixTrans(destVial=%s, srcVial=%s, workVolume=%0.2f, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d, \
@@ -799,60 +799,60 @@ class TopUpMixTransCommand(VolumeCommand):
         return call
 
     def parseXML(self, xmlNode):
-	'''Parse out the volume data and then the freeAirDispense flag.'''
-	VolumeCommand.parseXML(self, xmlNode)
-	
+        '''Parse out the volume data and then the freeAirDispense flag.'''
+        VolumeCommand.parseXML(self, xmlNode)
+        
         if xmlNode.hasAttribute('mixCycles'):
             self.mixCycles = int(xmlNode.getAttribute('mixCycles'))
         if xmlNode.hasAttribute('tipTubeBottomGap'):
             self.tipTubeBottomGap = int(xmlNode.getAttribute('tipTubeBottomGap'))
         try:
-	    useBufferFlag = xmlNode.volume[0].useBufferTip.lower() == 'true'
-	    self.setUseBufferTip(useBufferFlag)
-	except AttributeError:
-	    # No usebuffertip flag defined? Keep going
-	    pass
-	try:
-	    freeAirFlag = xmlNode.volume[0].freeair.lower() == 'true'
-	    self.setFreeAirDispense(freeAirFlag)
-	except AttributeError:
-	    # No free air dispense flag defined? Keep going
-	    pass
+            useBufferFlag = xmlNode.volume[0].useBufferTip.lower() == 'true'
+            self.setUseBufferTip(useBufferFlag)
+        except AttributeError:
+            # No usebuffertip flag defined? Keep going
+            pass
+        try:
+            freeAirFlag = xmlNode.volume[0].freeair.lower() == 'true'
+            self.setFreeAirDispense(freeAirFlag)
+        except AttributeError:
+            # No free air dispense flag defined? Keep going
+            pass
     def setFreeAirDispense(self, usingFreeAirDispense = False):
-	'''Set the freeAirDispense member (to True or False).'''
-	self.freeAirDispense = usingFreeAirDispense
+        '''Set the freeAirDispense member (to True or False).'''
+        self.freeAirDispense = usingFreeAirDispense
 
     def setUseBufferTip(self, usingBufferTip = False):
         '''Set the useBufferTip member (to True or False).'''
-	self.useBufferTip = usingBufferTip
+        self.useBufferTip = usingBufferTip
 
 class ResusMixSepTransCommand(VolumeCommand):
     def __init__(self, sequenceNumber, type, label):
-	VolumeCommand.__init__(self, sequenceNumber, type, label)
-	self.mixCycles = -1
-	self.tipTubeBottomGap = -1
-	self.freeAirDispense = False
-	self.useBufferTip = False
-	self.duration = 0
-	
+        VolumeCommand.__init__(self, sequenceNumber, type, label)
+        self.mixCycles = -1
+        self.tipTubeBottomGap = -1
+        self.freeAirDispense = False
+        self.useBufferTip = False
+        self.duration = 0
+        
     def createCall(self, sample, protocol):
         #bufferVial =  self.getContainerString(sample,self._parseVialInfo(TPC0001)) #assume fix buffer  #dont bother just use default
         srcVial = self.getContainerString(sample, self.srcVial)
-  	destVial = self.getContainerString(sample, self.destVial)
-  	destVial2 = self.getContainerString(sample, self.destVial2)
+        destVial = self.getContainerString(sample, self.destVial)
+        destVial2 = self.getContainerString(sample, self.destVial2)
         if self.relative:
             workVolume = self.calculateVolume(sample.volume) + sample.volume
             workVolume = min(10000,workVolume)
         else:
             workVolume = self.getWorkingVolume(sample, protocol)
-	
+        
         if self.relative2:
-	    mix_volume_uL = self.proportion2
-	else:
-	    mix_volume_uL = self.absVolume2
+            mix_volume_uL = self.proportion2
+        else:
+            mix_volume_uL = self.absVolume2
 
         trans_volume_uL = self.calculateVolume3(sample.volume)  #!!!! stage dependent  #from transport
-	
+        
         initialQuadrant = sample.initialQuadrant
 
         call = "ResusMixSepTrans(destVial=%s, srcVial=%s, workVolume=%0.2f, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d, \
@@ -866,9 +866,9 @@ class ResusMixSepTransCommand(VolumeCommand):
         return call
 
     def parseXML(self, xmlNode):
-	'''Parse out the volume data and then the freeAirDispense flag.'''
-	VolumeCommand.parseXML(self, xmlNode)
-	
+        '''Parse out the volume data and then the freeAirDispense flag.'''
+        VolumeCommand.parseXML(self, xmlNode)
+        
         if xmlNode.hasAttribute('mixCycles'):
             self.mixCycles = int(xmlNode.getAttribute('mixCycles'))
         if xmlNode.hasAttribute('tipTubeBottomGap'):
@@ -876,47 +876,47 @@ class ResusMixSepTransCommand(VolumeCommand):
         if xmlNode.hasAttribute('duration'):
             self.duration = int(xmlNode.getAttribute('duration'))
         try:
-	    useBufferFlag = xmlNode.volume[0].useBufferTip.lower() == 'true'
-	    self.setUseBufferTip(useBufferFlag)
-	except AttributeError:
-	    # No usebuffertip flag defined? Keep going
-	    pass
-	try:
-	    freeAirFlag = xmlNode.volume[0].freeair.lower() == 'true'
-	    self.setFreeAirDispense(freeAirFlag)
-	except AttributeError:
-	    # No free air dispense flag defined? Keep going
-	    pass
+            useBufferFlag = xmlNode.volume[0].useBufferTip.lower() == 'true'
+            self.setUseBufferTip(useBufferFlag)
+        except AttributeError:
+            # No usebuffertip flag defined? Keep going
+            pass
+        try:
+            freeAirFlag = xmlNode.volume[0].freeair.lower() == 'true'
+            self.setFreeAirDispense(freeAirFlag)
+        except AttributeError:
+            # No free air dispense flag defined? Keep going
+            pass
     def setFreeAirDispense(self, usingFreeAirDispense = False):
-	'''Set the freeAirDispense member (to True or False).'''
-	self.freeAirDispense = usingFreeAirDispense
+        '''Set the freeAirDispense member (to True or False).'''
+        self.freeAirDispense = usingFreeAirDispense
 
     def setUseBufferTip(self, usingBufferTip = False):
         '''Set the useBufferTip member (to True or False).'''
-	self.useBufferTip = usingBufferTip
+        self.useBufferTip = usingBufferTip
 
 
 class ResusMixCommand(VolumeCommand):
     def __init__(self, sequenceNumber, type, label):
-	VolumeCommand.__init__(self, sequenceNumber, type, label)
-	self.mixCycles = -1
-	self.tipTubeBottomGap = -1
-	
+        VolumeCommand.__init__(self, sequenceNumber, type, label)
+        self.mixCycles = -1
+        self.tipTubeBottomGap = -1
+        
     def createCall(self, sample, protocol):
         #bufferVial =  self.getContainerString(sample,self._parseVialInfo(TPC0001)) #assume fix buffer  #dont bother just use default
         srcVial = self.getContainerString(sample, self.srcVial)
-  	destVial = self.getContainerString(sample, self.destVial)
+        destVial = self.getContainerString(sample, self.destVial)
         if self.relative:
             workVolume = self.calculateVolume(sample.volume) + sample.volume
             workVolume = min(10000,workVolume)
         else:
             workVolume = self.getWorkingVolume(sample, protocol)
-	
+        
         if self.relative2:
-	    mix_volume_uL = self.proportion2
-	else:
-	    mix_volume_uL = self.absVolume2
-	
+            mix_volume_uL = self.proportion2
+        else:
+            mix_volume_uL = self.absVolume2
+        
         initialQuadrant = sample.initialQuadrant
 
         call = "ResusMix(destVial=%s, srcVial=%s, workVolume=%0.2f, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d, \
@@ -928,9 +928,9 @@ class ResusMixCommand(VolumeCommand):
         return call
 
     def parseXML(self, xmlNode):
-	'''Parse out the volume data and then the freeAirDispense flag.'''
-	VolumeCommand.parseXML(self, xmlNode)
-	
+        '''Parse out the volume data and then the freeAirDispense flag.'''
+        VolumeCommand.parseXML(self, xmlNode)
+        
         if xmlNode.hasAttribute('mixCycles'):
             self.mixCycles = int(xmlNode.getAttribute('mixCycles'))
         if xmlNode.hasAttribute('tipTubeBottomGap'):
@@ -938,15 +938,15 @@ class ResusMixCommand(VolumeCommand):
 
 class TopUpTransCommand(VolumeCommand):
     def __init__(self, sequenceNumber, type, label):
-	VolumeCommand.__init__(self, sequenceNumber, type, label)
-	self.freeAirDispense = False
-	self.useBufferTip = False
-	
+        VolumeCommand.__init__(self, sequenceNumber, type, label)
+        self.freeAirDispense = False
+        self.useBufferTip = False
+        
     def createCall(self, sample, protocol):
         #bufferVial =  self.getContainerString(sample,self._parseVialInfo(TPC0001)) #assume fix buffer  #dont bother just use default
         srcVial = self.getContainerString(sample, self.srcVial)
-  	destVial = self.getContainerString(sample, self.destVial)
-  	destVial2 = self.getContainerString(sample, self.destVial2)
+        destVial = self.getContainerString(sample, self.destVial)
+        destVial2 = self.getContainerString(sample, self.destVial2)
         if self.relative:
             workVolume = self.calculateVolume(sample.volume) + sample.volume
             workVolume = min(10000,workVolume)
@@ -954,7 +954,7 @@ class TopUpTransCommand(VolumeCommand):
             workVolume = self.getWorkingVolume(sample, protocol)
 
         trans_volume_uL = self.calculateVolume2(sample.volume)  #!!!! stage dependent  #from transport
-	
+        
         initialQuadrant = sample.initialQuadrant
 
         call = "TopUpTrans(destVial=%s, srcVial=%s, workVolume=%0.2f, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d, \
@@ -966,43 +966,43 @@ class TopUpTransCommand(VolumeCommand):
         return call
 
     def parseXML(self, xmlNode):
-	'''Parse out the volume data and then the freeAirDispense flag.'''
-	VolumeCommand.parseXML(self, xmlNode)
-	
+        '''Parse out the volume data and then the freeAirDispense flag.'''
+        VolumeCommand.parseXML(self, xmlNode)
+        
         try:
-	    useBufferFlag = xmlNode.volume[0].useBufferTip.lower() == 'true'
-	    self.setUseBufferTip(useBufferFlag)
-	except AttributeError:
-	    # No usebuffertip flag defined? Keep going
-	    pass
-	try:
-	    freeAirFlag = xmlNode.volume[0].freeair.lower() == 'true'
-	    self.setFreeAirDispense(freeAirFlag)
-	except AttributeError:
-	    # No free air dispense flag defined? Keep going
-	    pass
+            useBufferFlag = xmlNode.volume[0].useBufferTip.lower() == 'true'
+            self.setUseBufferTip(useBufferFlag)
+        except AttributeError:
+            # No usebuffertip flag defined? Keep going
+            pass
+        try:
+            freeAirFlag = xmlNode.volume[0].freeair.lower() == 'true'
+            self.setFreeAirDispense(freeAirFlag)
+        except AttributeError:
+            # No free air dispense flag defined? Keep going
+            pass
     def setFreeAirDispense(self, usingFreeAirDispense = False):
-	'''Set the freeAirDispense member (to True or False).'''
-	self.freeAirDispense = usingFreeAirDispense
+        '''Set the freeAirDispense member (to True or False).'''
+        self.freeAirDispense = usingFreeAirDispense
 
     def setUseBufferTip(self, usingBufferTip = False):
         '''Set the useBufferTip member (to True or False).'''
-	self.useBufferTip = usingBufferTip
+        self.useBufferTip = usingBufferTip
 
 class TopUpTransSepTransCommand(VolumeCommand):
     def __init__(self, sequenceNumber, type, label):
-	VolumeCommand.__init__(self, sequenceNumber, type, label)
-	self.freeAirDispense = False
-	self.useBufferTip = False
-	self.duration = 0
+        VolumeCommand.__init__(self, sequenceNumber, type, label)
+        self.freeAirDispense = False
+        self.useBufferTip = False
+        self.duration = 0
 
     
     def createCall(self, sample, protocol):
         #bufferVial =  self.getContainerString(sample,self._parseVialInfo(TPC0001)) #assume fix buffer  #dont bother just use default
         srcVial = self.getContainerString(sample, self.srcVial)
-  	destVial = self.getContainerString(sample, self.destVial)
-  	destVial2 = self.getContainerString(sample, self.destVial2)
-  	destVial3 = self.getContainerString(sample, self.destVial3)
+        destVial = self.getContainerString(sample, self.destVial)
+        destVial2 = self.getContainerString(sample, self.destVial2)
+        destVial3 = self.getContainerString(sample, self.destVial3)
         if self.relative:
             workVolume = self.calculateVolume(sample.volume) + sample.volume
             workVolume = min(10000,workVolume)
@@ -1010,7 +1010,7 @@ class TopUpTransSepTransCommand(VolumeCommand):
             workVolume = self.getWorkingVolume(sample, protocol)
 
         trans_volume_uL = self.calculateVolume2(sample.volume)  #!!!! stage dependent  #from transport
-	trans_volume_uL2 = self.calculateVolume3(sample.volume) 
+        trans_volume_uL2 = self.calculateVolume3(sample.volume) 
         initialQuadrant = sample.initialQuadrant
 
         call = "TopUpTransSepTrans(destVial=%s, srcVial=%s, workVolume=%0.2f, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d, \
@@ -1022,48 +1022,48 @@ class TopUpTransSepTransCommand(VolumeCommand):
         return call
 
     def parseXML(self, xmlNode):
-	'''Parse out the volume data and then the freeAirDispense flag.'''
-	VolumeCommand.parseXML(self, xmlNode)
-	
+        '''Parse out the volume data and then the freeAirDispense flag.'''
+        VolumeCommand.parseXML(self, xmlNode)
+        
         if xmlNode.hasAttribute('duration'):
             self.duration = int(xmlNode.getAttribute('duration'))
-	
+        
         try:
-	    useBufferFlag = xmlNode.volume[0].useBufferTip.lower() == 'true'
-	    self.setUseBufferTip(useBufferFlag)
-	except AttributeError:
-	    # No usebuffertip flag defined? Keep going
-	    pass
-	try:
-	    freeAirFlag = xmlNode.volume[0].freeair.lower() == 'true'
-	    self.setFreeAirDispense(freeAirFlag)
-	except AttributeError:
-	    # No free air dispense flag defined? Keep going
-	    pass
+            useBufferFlag = xmlNode.volume[0].useBufferTip.lower() == 'true'
+            self.setUseBufferTip(useBufferFlag)
+        except AttributeError:
+            # No usebuffertip flag defined? Keep going
+            pass
+        try:
+            freeAirFlag = xmlNode.volume[0].freeair.lower() == 'true'
+            self.setFreeAirDispense(freeAirFlag)
+        except AttributeError:
+            # No free air dispense flag defined? Keep going
+            pass
     def setFreeAirDispense(self, usingFreeAirDispense = False):
-	'''Set the freeAirDispense member (to True or False).'''
-	self.freeAirDispense = usingFreeAirDispense
+        '''Set the freeAirDispense member (to True or False).'''
+        self.freeAirDispense = usingFreeAirDispense
 
     def setUseBufferTip(self, usingBufferTip = False):
         '''Set the useBufferTip member (to True or False).'''
-	self.useBufferTip = usingBufferTip
+        self.useBufferTip = usingBufferTip
 
 class TopUpMixTransSepTransCommand(VolumeCommand):
     def __init__(self, sequenceNumber, type, label):
-	VolumeCommand.__init__(self, sequenceNumber, type, label)
-	self.freeAirDispense = False
-	self.useBufferTip = False
-	self.duration = 0
-	self.mixCycles = -1
-	self.tipTubeBottomGap = -1
+        VolumeCommand.__init__(self, sequenceNumber, type, label)
+        self.freeAirDispense = False
+        self.useBufferTip = False
+        self.duration = 0
+        self.mixCycles = -1
+        self.tipTubeBottomGap = -1
 
     
     def createCall(self, sample, protocol):
         #bufferVial =  self.getContainerString(sample,self._parseVialInfo(TPC0001)) #assume fix buffer  #dont bother just use default
         srcVial = self.getContainerString(sample, self.srcVial)
-  	destVial = self.getContainerString(sample, self.destVial)
-  	destVial2 = self.getContainerString(sample, self.destVial2)
-  	destVial3 = self.getContainerString(sample, self.destVial3)
+        destVial = self.getContainerString(sample, self.destVial)
+        destVial2 = self.getContainerString(sample, self.destVial2)
+        destVial3 = self.getContainerString(sample, self.destVial3)
         if self.relative:
             workVolume = self.calculateVolume(sample.volume) + sample.volume
             workVolume = min(10000,workVolume)
@@ -1071,12 +1071,12 @@ class TopUpMixTransSepTransCommand(VolumeCommand):
             workVolume = self.getWorkingVolume(sample, protocol)
 
         if self.relative2:
-	    mix_volume_uL = self.proportion2
-	else:
-	    mix_volume_uL = self.absVolume2
-	
+            mix_volume_uL = self.proportion2
+        else:
+            mix_volume_uL = self.absVolume2
+        
         trans_volume_uL = self.calculateVolume3(sample.volume)  #!!!! stage dependent  #from transport
-	trans_volume_uL2 = self.calculateVolume4(sample.volume) 
+        trans_volume_uL2 = self.calculateVolume4(sample.volume) 
         initialQuadrant = sample.initialQuadrant
 
         call = "TopUpMixTransSepTrans(destVial=%s, srcVial=%s, workVolume=%0.2f, id=%d, seq=%d, tiprackSpecified=%s, tiprack=%d, initialQuadrant=%d, \
@@ -1090,34 +1090,34 @@ class TopUpMixTransSepTransCommand(VolumeCommand):
         return call
 
     def parseXML(self, xmlNode):
-	'''Parse out the volume data and then the freeAirDispense flag.'''
-	VolumeCommand.parseXML(self, xmlNode)
-	if xmlNode.hasAttribute('mixCycles'):
+        '''Parse out the volume data and then the freeAirDispense flag.'''
+        VolumeCommand.parseXML(self, xmlNode)
+        if xmlNode.hasAttribute('mixCycles'):
             self.mixCycles = int(xmlNode.getAttribute('mixCycles'))
         if xmlNode.hasAttribute('tipTubeBottomGap'):
             self.tipTubeBottomGap = int(xmlNode.getAttribute('tipTubeBottomGap'))
         if xmlNode.hasAttribute('duration'):
             self.duration = int(xmlNode.getAttribute('duration'))
-	
+        
         try:
-	    useBufferFlag = xmlNode.volume[0].useBufferTip.lower() == 'true'
-	    self.setUseBufferTip(useBufferFlag)
-	except AttributeError:
-	    # No usebuffertip flag defined? Keep going
-	    pass
-	try:
-	    freeAirFlag = xmlNode.volume[0].freeair.lower() == 'true'
-	    self.setFreeAirDispense(freeAirFlag)
-	except AttributeError:
-	    # No free air dispense flag defined? Keep going
-	    pass
+            useBufferFlag = xmlNode.volume[0].useBufferTip.lower() == 'true'
+            self.setUseBufferTip(useBufferFlag)
+        except AttributeError:
+            # No usebuffertip flag defined? Keep going
+            pass
+        try:
+            freeAirFlag = xmlNode.volume[0].freeair.lower() == 'true'
+            self.setFreeAirDispense(freeAirFlag)
+        except AttributeError:
+            # No free air dispense flag defined? Keep going
+            pass
     def setFreeAirDispense(self, usingFreeAirDispense = False):
-	'''Set the freeAirDispense member (to True or False).'''
-	self.freeAirDispense = usingFreeAirDispense
+        '''Set the freeAirDispense member (to True or False).'''
+        self.freeAirDispense = usingFreeAirDispense
 
     def setUseBufferTip(self, usingBufferTip = False):
         '''Set the useBufferTip member (to True or False).'''
-	self.useBufferTip = usingBufferTip
+        self.useBufferTip = usingBufferTip
 
 # -----------------------------------------------------------------------------
 
@@ -1125,13 +1125,13 @@ class VolumeMaintenanceCommand(VolumeCommand):
     '''A VolumeCommand child class for maintenance-type workflows.'''
     
     def __init__(self, sequenceNumber, type, label):
-	VolumeCommand.__init__(self, sequenceNumber, type, label)
-	self.home = False
+        VolumeCommand.__init__(self, sequenceNumber, type, label)
+        self.home = False
 
     def parseXML(self, xmlNode):
-	'''Parse the XML data to see if we should set the flag here for "home"
-	or "no home".'''
-	VolumeCommand.parseXML(self, xmlNode)
+        '''Parse the XML data to see if we should set the flag here for "home"
+        or "no home".'''
+        VolumeCommand.parseXML(self, xmlNode)
         for child in xmlNode.childNodes:
             if child.nodeName == 'flags':
                 self.home = child.getAttribute('home') == 'true'
@@ -1141,24 +1141,24 @@ class FlushCommand(VolumeMaintenanceCommand):
     '''Fluidics flush command'''
 
     def createCall(self, sample, protocol):
-	wasteVial = self.getContainerString(sample, self.destVial)
-	
+        wasteVial = self.getContainerString(sample, self.destVial)
+        
     # Nov 7, 2013 Sunny
     # Add seq for maintenance protocol
-	return "Flush(wasteVial=%s, homeAtEnd = %s, id=%d, seq=%d)" % \
-		(wasteVial, self.home, sample.ID, self.seq)
+        return "Flush(wasteVial=%s, homeAtEnd = %s, id=%d, seq=%d)" % \
+                (wasteVial, self.home, sample.ID, self.seq)
    
    
 class PrimeCommand(VolumeMaintenanceCommand):
     '''Fluidics prime command'''
 
     def createCall(self, sample, protocol):
-	wasteVial = self.getContainerString(sample, self.destVial)
-	
+        wasteVial = self.getContainerString(sample, self.destVial)
+        
     # Nov 7, 2013 Sunny
     # Add seq for maintenance protocol
-	return "Prime(wasteVial=%s, homeAtEnd = %s, id=%d, seq=%d)" % \
-		(wasteVial, self.home, sample.ID, self.seq)
+        return "Prime(wasteVial=%s, homeAtEnd = %s, id=%d, seq=%d)" % \
+                (wasteVial, self.home, sample.ID, self.seq)
 
    
 # eof

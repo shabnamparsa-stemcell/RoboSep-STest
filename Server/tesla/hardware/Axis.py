@@ -131,8 +131,8 @@ class Axis(Device):
         self.m_Card = card
         self.m_IsHomed = False     # Flag is set after successful homing, and reset on stepper loss report
         self.m_MaxStep = maxStep   # This is an imposed limit, physical travel may be greater
-        self.__PositionTracking = 0	# Our internal tracking position value
-        self.__PositionTracking = 0	# Our internal tracking position value
+        self.__PositionTracking = 0        # Our internal tracking position value
+        self.__PositionTracking = 0        # Our internal tracking position value
 
         # 2011-10-17 sp -- set reference for program log
         funcReference = __name__ + '.__init__'
@@ -163,7 +163,7 @@ class Axis(Device):
 
         # Track usage
         self.m_Tracker = AxisTracker (name, maxStep)
-        self.m_CheckingHome = True	# by default
+        self.m_CheckingHome = True        # by default
 
         # Log the axis and associated version of stepper card firmware
         firmWareVersion = self.GetFirmwareVersion()     # 2011-11-25 sp -- assigned to variable
@@ -206,7 +206,7 @@ class Axis(Device):
         # Put on record
         # NB: we don't necessarily know the distance to home, but assuming the calculation
         #   probably causes less error than not.
-	if self.debug: print self, "Axis::Home"
+        if self.debug: print self, "Axis::Home"
         if self.m_IsHomed:
             stepsToHome = self.HomeStep() - self.Step()
         else:
@@ -234,7 +234,7 @@ class Axis(Device):
         # Put on record
         # NB: we don't necessarily know the distance to home, but assuming the calculation
         #   probably causes less error than not.
-    	if self.debug: print self, "Axis::Home"
+        if self.debug: print self, "Axis::Home"
         if self.m_IsHomed:
             stepsToHome = self.HomeStep() - self.Step()
         else:
@@ -714,7 +714,7 @@ class Axis(Device):
         # 2011-11-14 -- sp
         self.svrLog.logDebug('', self.logPrefix, funcReference, 'start move command %s' % moveCmd)
 
-	if self.debug: print self, "Axis::_Move"
+        if self.debug: print self, "Axis::_Move"
         
         # Do the move
         if tipStrip == 1:
@@ -735,7 +735,7 @@ class Axis(Device):
         wantedPos = self.GetPositionTracking()
         if int(reportedPos) != wantedPos:
             Device.logger.logDebug("AX: position loss of %s (Wanted %d, reported %d)" % \
-		    (self.m_Name, wantedPos, reportedPos))
+                    (self.m_Name, wantedPos, reportedPos))
             # 2011-11-25 sp -- add logging
             self.svrLog.logInfo('S', self.logPrefix, funcReference, "position lossed; home first and re-execute command; Wanted=%d |reported=%d" % \
                     (wantedPos, reportedPos) )
@@ -748,8 +748,8 @@ class Axis(Device):
         dicates an absolute (M) or relative (R) movement and the steps to move 
         to (or by, for a relative move), in a non-blocking fashion.
         "Loss of position" checking happens here.'''
-	if self.debug: print self, "Axis::_MoveNonBlocking"
-	
+        if self.debug: print self, "Axis::_MoveNonBlocking"
+        
         # Do the move
         cmds = self._PowerCmd(self.Power()) 
         self._ProcessCmdList(cmds)
@@ -763,7 +763,7 @@ class Axis(Device):
         
         funcReference = __name__ + '.WaitForCompletion' # 2011-11-25 sp -- added
 
-	if self.debug: print self, "Axis::WaitForCompletion"
+        if self.debug: print self, "Axis::WaitForCompletion"
 
         # Wait until card has finished the move
         if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
@@ -801,7 +801,7 @@ class Axis(Device):
                     ['P100,100,0'] + \
                     ['B3000'] + ['E15000'] + ['S5'] + \
                     ['RN+500'] + \
-                    ['W100']			# wait 100 msec	 
+                    ['W100']                        # wait 100 msec         
         else:
         # 2011-10-17 sp replaced with home sensor settings from configuration file
         # changed homing logic
@@ -813,7 +813,7 @@ class Axis(Device):
                     self._PowerCmd(self.PreHomingPower()) + \
                     self._SpeedCmd(self.HomingStepSpeedProfile()) + \
                     self._IncrementCmd(self.m_homeBackOffSteps) + \
-                    ['W100']			# wait 100 msec	 
+                    ['W100']                        # wait 100 msec         
             self.svrLog.logDebug('', self.logPrefix, funcReference, 'cmd=%s' % cmds )
         
         self._ProcessCmdList (cmds)
@@ -838,7 +838,7 @@ class Axis(Device):
                           self._PowerCmd(self.HomingPower()) + \
                           self._SpeedCmd(self.HomingStepSpeedProfile()) + \
                           self._IncrementCmd(self.m_homeBackOffSteps) + \
-                          ['W100']			# wait 100 msec	     
+                          ['W100']                        # wait 100 msec             
                   self._ProcessCmdList (cmds)            
                # Now attempt homing action        
                cmds =  ['z']                   + \
@@ -846,7 +846,7 @@ class Axis(Device):
                        self._PowerCmd(self.HomingPower())  + \
                        self._SpeedCmd(self.HomingStepSpeedProfile()) + \
                        ['N-1', 'RN-10']           + \
-                       ['W100']			                                # wait 100 msec
+                       ['W100']                                                        # wait 100 msec
                self._ProcessCmdList (cmds)        
             elif tesla.config.SS_CUSTOM_HOME == 1:
                 if self._IsAtHome():
@@ -855,19 +855,19 @@ class Axis(Device):
                            self._PowerCmd(self.HomingPower()) + \
                            self._SpeedCmd(self.HomingStepSpeedProfile()) + \
                            self._IncrementCmd(self.m_homeBackOffSteps) + \
-                           ['W100']			# wait 100 msec	     
+                           ['W100']                        # wait 100 msec             
                    self._ProcessCmdList (cmds)            
                 # Now attempt homing action    
                 type = '[' + self.m_Name + ']'
-                cmds =  self._GetConfigData(type)	                    
+                cmds =  self._GetConfigData(type)                            
                 if cmds == []:
                         cmds =  ['z']                   + \
                         self._HalfStepCmd()     + \
                         self._PowerCmd(self.HomingPower())  + \
                         self._SpeedCmd(self.HomingStepSpeedProfile()) + \
                         ['N-1'] + ['W300'] + ['CHKPOS'] + \
-                        ['RN-10'] + ['W100']			                    # wait 100 msec
-                self._ProcessCmdList (cmds)   		
+                        ['RN-10'] + ['W100']                                            # wait 100 msec
+                self._ProcessCmdList (cmds)                   
             else:
                if self._IsAtHome():
                   cmds =  ['z'] + ['N-0'] + \
@@ -875,7 +875,7 @@ class Axis(Device):
                           self._PowerCmd(self.HomingPower()) + \
                           self._SpeedCmd(self.HomingStepSpeedProfile()) + \
                           self._IncrementCmd(self.m_homeBackOffSteps) + \
-                          ['W100']			# wait 100 msec	     
+                          ['W100']                        # wait 100 msec             
                   self._ProcessCmdList (cmds)            
                 # Now attempt homing action        
 
@@ -883,7 +883,7 @@ class Axis(Device):
                        self._HalfStepCmd()     + \
                        self._PowerCmd(self.HomingPower())  + \
                        self._SpeedCmd(self.HomingStepSpeedProfile()) + \
-                       ['HOME'] + ['RN-10'] + ['W100']			                    # wait 100 msec
+                       ['HOME'] + ['RN-10'] + ['W100']                                            # wait 100 msec
                self._ProcessCmdList (cmds)        
         # 2011-10-17 sp replaced with home sensor settings from configuration file
         else:
@@ -894,33 +894,33 @@ class Axis(Device):
                          self._PowerCmd(self.HomingPower()) + \
                          self._SpeedCmd(self.HomingStepSpeedProfile()) + \
                          self._IncrementCmd(self.m_homeBackOffSteps) + \
-                         ['W100']			# wait 100 msec	     
+                         ['W100']                        # wait 100 msec             
                  self._ProcessCmdList (cmds)            
               # Now attempt homing action    
               type = '[' + self.m_Name + ']'
-              cmds =  self._GetConfigData(type)	                    
+              cmds =  self._GetConfigData(type)                            
               if cmds == []:
                       cmds =  ['z']                   + \
                       self._HalfStepCmd()     + \
                       self._PowerCmd(self.HomingPower())  + \
                       self._SpeedCmd(self.HomingStepSpeedProfile()) + \
                       [self.m_HomeMotorCmd] + ['W300'] + ['CHKPOS'] + \
-                      ['RN-10'] + ['W100']			                    # wait 100 msec
-              self._ProcessCmdList (cmds)   		
+                      ['RN-10'] + ['W100']                                            # wait 100 msec
+              self._ProcessCmdList (cmds)                   
             else:   
               homeSettings = [] + self._HalfStepCmd() + \
                         self._PowerCmd(self.HomingPower()) + \
                         self._SpeedCmd(self.HomingStepSpeedProfile())
               if self._IsAtHome():
                   self.svrLog.logDebug('', self.logPrefix, funcReference, 'Already homed, backoff from home=%d' % self.m_homeBackOffSteps )
-                  cmds =  ['z'] + [self.m_InitMotorCmd] 			# wait 100 msec
+                  cmds =  ['z'] + [self.m_InitMotorCmd]                         # wait 100 msec
                   self._ProcessCmdList (cmds)    # As not all commands are consistenetly sent, cmds are split ans sent as 2 portions
-                  cmds = homeSettings + self._IncrementCmd(self.m_homeBackOffSteps) + ['W100']			# wait 100 msec
+                  cmds = homeSettings + self._IncrementCmd(self.m_homeBackOffSteps) + ['W100']                        # wait 100 msec
                   self._ProcessCmdList (cmds)
                   homeSettings = []       # 2011-12-12 sp -- no need to resend again for the homing command below
               # Now attempt homing action        
               cmds =  ['z'] + homeSettings + \
-                     ['HOME'] + ['RN-10'] + ['W100']			                    # wait 100 msec
+                     ['HOME'] + ['RN-10'] + ['W100']                                            # wait 100 msec
               self.svrLog.logDebug('', self.logPrefix, funcReference, 'start motion to home' )
               self._ProcessCmdList (cmds)        
 
@@ -954,7 +954,7 @@ class Axis(Device):
         #       will step until it leaves the home sensor range. This is the point we use as our home step
         #
         if self.m_Settings[Axis.HomingOvershootOnLabel] == '1':
-	    if self.debug: print "********** OVERSHOOT ON ************"
+            if self.debug: print "********** OVERSHOOT ON ************"
             i = 0
             overshoot = int (self.m_Settings[Axis.HomingOvershootLabel])
             inSensorRange = True
@@ -972,14 +972,14 @@ class Axis(Device):
 
             if inSensorRange:
                 self.svrLog.logError('', self.logPrefix, funcReference, "AX (%s): Homing is still in sensor range after %d steps.\nTry increasing the %s setting (or increase the holding power when homing." % \
-                                        				    (self.m_Name, overshoot, Axis.HomingOvershootLabel) )   # 2011-11-25 sp -- added
+                                                                            (self.m_Name, overshoot, Axis.HomingOvershootLabel) )   # 2011-11-25 sp -- added
                 if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
                     self.m_Card.ExtLogger.SetCmdListLog("AX (%s): Homing is still in sensor range after %d steps.\nTry increasing the %s setting (or increase the holding power when homing." % \
-                                        				    (self.m_Name, overshoot, Axis.HomingOvershootLabel), self.m_Card.prefix)        
+                                                                            (self.m_Name, overshoot, Axis.HomingOvershootLabel), self.m_Card.prefix)        
                     self.m_Card.ExtLogger.CheckSystemAvail()
                     self.m_Card.ExtLogger.DumpHistory()
                 raise AxisError ("AX (%s): Homing is still in sensor range after %d steps.\nTry increasing the %s setting (or increase the holding power when homing." % \
-				    (self.m_Name, overshoot, Axis.HomingOvershootLabel))
+                                    (self.m_Name, overshoot, Axis.HomingOvershootLabel))
 
 
     def _IsAtHome (self):
@@ -1037,7 +1037,7 @@ class Axis(Device):
 
     def _ProcessCmdList( self, cmds, bNonBlocking = False ):
         """Pass command string to stepper card. Handle exceptions"""
-	if self.debug: print "Axis::_ProcessCmdList - cmds, bNonBlocking"
+        if self.debug: print "Axis::_ProcessCmdList - cmds, bNonBlocking"
         # 2011-11-14 -- sp
         funcReference = __name__ + '._ProcessCmdList'   
         try:

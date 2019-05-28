@@ -67,70 +67,70 @@ class MyInstrument(object):
 class TestDispatcher(unittest.TestCase):
    
     def setUp(self):
-	self.pm = ProtocolManager(tesla.config.PROTOCOL_DIR)
-	logger = tesla.logger.Logger(logName = tesla.config.LOG_PATH)	
-	self.sched = SampleScheduler(self.pm, logger)
+        self.pm = ProtocolManager(tesla.config.PROTOCOL_DIR)
+        logger = tesla.logger.Logger(logName = tesla.config.LOG_PATH)        
+        self.sched = SampleScheduler(self.pm, logger)
 
-	self.instrument = MyInstrument()
-	self.dispatcher = Dispatcher(self.instrument, logger)
+        self.instrument = MyInstrument()
+        self.dispatcher = Dispatcher(self.instrument, logger)
 
     def test_init(self):
-	self.failUnless(self.dispatcher, 'Testing Dispatcher creation')
+        self.failUnless(self.dispatcher, 'Testing Dispatcher creation')
 
     def __createSchedule(self):
-	# Create a list of samples from a specific protocol and then schedule them
-	# Return the resulting Schedule object
-	protocolList = self.pm.findProtocolsByRegexp('Graeme')
-	self.failIf(len(protocolList) == 0, 'Ensuring we have enough protocols for testing')
-	protocol1 = protocolList[0]
+        # Create a list of samples from a specific protocol and then schedule them
+        # Return the resulting Schedule object
+        protocolList = self.pm.findProtocolsByRegexp('Graeme')
+        self.failIf(len(protocolList) == 0, 'Ensuring we have enough protocols for testing')
+        protocol1 = protocolList[0]
 
-	# Create the samples and schedule them
-	numSamples = 1 
-	volume = 500
-	samples = []
-	for i in range(1, numSamples + 1):
-	    samples.append(Sample(i, "Sample #%d" % (i), protocol1.ID, 500.0 * i, i))
-	status = self.sched.schedule(samples)
+        # Create the samples and schedule them
+        numSamples = 1 
+        volume = 500
+        samples = []
+        for i in range(1, numSamples + 1):
+            samples.append(Sample(i, "Sample #%d" % (i), protocol1.ID, 500.0 * i, i))
+        status = self.sched.schedule(samples)
 
-	# Testing the success of scheduling
-	self.failUnless(status, 'Testing scheduling success')
-	self.failUnless(self.sched.getDuration() > 0, 'Test scheduled duration')	
+        # Testing the success of scheduling
+        self.failUnless(status, 'Testing scheduling success')
+        self.failUnless(self.sched.getDuration() > 0, 'Test scheduled duration')        
 
-	mySchedule = self.sched.getSchedule()
-	self.failUnless(mySchedule != None, 'Test schedule')
-	self.failUnless(isinstance(mySchedule, Schedule), 'Test schedule instance')
-	
-	return mySchedule
-	
+        mySchedule = self.sched.getSchedule()
+        self.failUnless(mySchedule != None, 'Test schedule')
+        self.failUnless(isinstance(mySchedule, Schedule), 'Test schedule instance')
+        
+        return mySchedule
+        
     
     def __createSequenceAndWorkflows(self, schedule):
-	# From the schedule return a tuple of events sequence and workflows
-	sequence = Dispatcher.createSequence(schedule)
-	workflows = schedule.getWorkflows()
-	return (sequence, workflows)
+        # From the schedule return a tuple of events sequence and workflows
+        sequence = Dispatcher.createSequence(schedule)
+        workflows = schedule.getWorkflows()
+        return (sequence, workflows)
 
     def test_createSequence(self):
-	schedule = self.__createSchedule()
-	sequence, workflows = self.__createSequenceAndWorkflows(schedule)
-	self.failUnless(sequence, 'Testing that we got a sequence')
-	self.failUnless(isinstance(sequence, list), 
+        schedule = self.__createSchedule()
+        sequence, workflows = self.__createSequenceAndWorkflows(schedule)
+        self.failUnless(sequence, 'Testing that we got a sequence')
+        self.failUnless(isinstance(sequence, list), 
                             'Testing that sequence is derived from the list class')
-	self.failUnless(len(sequence) > 0, 'Testing that we have events')
-	self.failUnless(len(workflows) == len(sequence), 'Testing # events')
+        self.failUnless(len(sequence) > 0, 'Testing that we have events')
+        self.failUnless(len(workflows) == len(sequence), 'Testing # events')
 
     def test_sequenceItems(self):
-	schedule = self.__createSchedule()
-	sequence, workflows = self.__createSequenceAndWorkflows(schedule)
-	for i in range(0, len(workflows)):
-	    wf, startTime = workflows[i].getWorkflowAndTime()
-	    eventTime, event = sequence[i]
-	    self.failUnless(startTime == eventTime, "Testing sequence times (%d)" % (i))
-	    self.failUnless(wf == event, "Testing sequence events (%d)" % (i))
+        schedule = self.__createSchedule()
+        sequence, workflows = self.__createSequenceAndWorkflows(schedule)
+        for i in range(0, len(workflows)):
+            wf, startTime = workflows[i].getWorkflowAndTime()
+            eventTime, event = sequence[i]
+            self.failUnless(startTime == eventTime, "Testing sequence times (%d)" % (i))
+            self.failUnless(wf == event, "Testing sequence events (%d)" % (i))
 
     def test_processSchedule(self):
         schedule = self.__createSchedule()
         numCmds = len(schedule) + 1     # Add one for the HomeAll at the start
-	self.dispatcher.processSchedule(schedule = schedule,
+        self.dispatcher.processSchedule(schedule = schedule,
                                         activeState = 'START',
                                         pauseState =  'PAUSED',
                                         stoppedState ='HALTED',
@@ -150,7 +150,7 @@ class TestDispatcher(unittest.TestCase):
     def test_badSchedule(self):
         # An invalid schedule instance should throw an exception
         schedule = 'hello world'
-	self.assertRaises(DispatcherException, self.dispatcher.processSchedule,
+        self.assertRaises(DispatcherException, self.dispatcher.processSchedule,
                                         schedule = schedule,
                                         activeState = 'START',
                                         pauseState =  'PAUSED',

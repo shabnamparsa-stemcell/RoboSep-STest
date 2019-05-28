@@ -25,16 +25,16 @@ from tesla.types.Protocol import Protocol, ProtocolException
 if __name__ == '__main__':
 
     if len(sys.argv) < 2:
-	print "Syntax: %s protocol_file" % (sys.argv[0])
-	sys.exit(1)
+        print "Syntax: %s protocol_file" % (sys.argv[0])
+        sys.exit(1)
     else:
-	for file in sys.argv[1:]:
-	    print "\nChecking protocol syntax in %s" % (file)
-	    try:
-		p = Protocol(file)
-		print "Protocol definition okay"
-	    except ProtocolException, msg:
-		print "Error: %s" % (msg)
+        for file in sys.argv[1:]:
+            print "\nChecking protocol syntax in %s" % (file)
+            try:
+                p = Protocol(file)
+                print "Protocol definition okay"
+            except ProtocolException, msg:
+                print "Error: %s" % (msg)
 
 # eof
 

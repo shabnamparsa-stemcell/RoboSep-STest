@@ -12,7 +12,7 @@ def CosLawASS(theta, b, a):
     q2=1
     q1=-2*b*math.cos(math.radians(math.fabs(theta)))
     q0=b*b-a*a
-		
+                
     """q2=1 
     q1=1 
     q0=-6""" 
@@ -47,7 +47,7 @@ def Quadratic(q2, q1, q0):
         return ans1 
     else:
         return ans2 
-		
+                
 def SinLawSSA(a, b, thetaA):
     if a == 0:
         return -1 
@@ -58,7 +58,7 @@ def SinLawSAA(a, thetaB, thetaA):
     if math.sin(math.radians(math.fabs(thetaA))) == 0:
         return -1
     else:
-	return math.sin(math.radians(thetaB))*a/math.sin(math.radians(math.fabs(thetaA))) 
+        return math.sin(math.radians(thetaB))*a/math.sin(math.radians(math.fabs(thetaA))) 
 
 def GetThetaDiff(a, b):
     thetaDiff = math.fabs(a.theta - b.theta)
@@ -96,10 +96,10 @@ def GetCarouselFromR(name,r, armLength, totalDistance, RefDistance, RefCarousel,
         carousel2 =0
         
     if carousel<-99999 or 99999<carousel:
-	carousel=0
-		
+        carousel=0
+                
     roboCarousel = carousel-carousel2+RefCarousel +VialOffsetDeg
     return roboCarousel
-	
+        
 # eof
 

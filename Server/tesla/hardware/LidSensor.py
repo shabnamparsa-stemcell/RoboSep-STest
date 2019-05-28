@@ -83,7 +83,7 @@ class LidSensor(Device):
 
     def getSensorState( self ):
         """Gets the state of lid sensor"""
-	if self.debug: print self, "LidSensor::getSensorState"
+        if self.debug: print self, "LidSensor::getSensorState"
         command = 'I' + str(self.__m_sensorPort)
         if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
             self.m_card.ExtLogger.SetCmdListLog("sendAndCheck()[%s] called from LidSensor.getSensorState()"%self.m_card.prefix, self.m_card.prefix);
@@ -150,7 +150,7 @@ class HydraulicSensor(Device):                      #CWJ Add
           self.logPrefix = 'HS'
 
       def getHydraulicSensorState( self ):                              #CWJ Add
-      	  
+                
           command = 'I' + str(self.__m_sensorPort)
           if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
              self.m_card.ExtLogger.SetCmdListLog("sendAndCheck()[%s] called from HydraulicSensor.getHydraulicSensorState()"%self.m_card.prefix, self.m_card.prefix);

@@ -37,10 +37,10 @@ from tesla.types.sample import Sample
 GATEWAY_HOST = tesla.config.GATEWAY_HOST
 GATEWAY_PORT = tesla.config.GATEWAY_PORT
 
-CLIENT_HOST = 'localhost'		# The host and port we will use
+CLIENT_HOST = 'localhost'                # The host and port we will use
 CLIENT_PORT = 8765
 
-WAIT_TIME = 5		    # Time (in secs) that we wait for a state change
+WAIT_TIME = 5                    # Time (in secs) that we wait for a state change
 
 # -----------------------------------------------------------------------------
 
@@ -49,41 +49,41 @@ class ClientInterface:
     to.'''
 
     def __init__(self, errorFlag):
-	'''Constructor with one parameter: an errorFlag Event object that 
-	allows us to indicate that an error has occurred.'''
-	self.errorFlag = errorFlag
-	self.errorTable = InfoTable(tesla.config.ERROR_CODES_PATH)
+        '''Constructor with one parameter: an errorFlag Event object that 
+        allows us to indicate that an error has occurred.'''
+        self.errorFlag = errorFlag
+        self.errorTable = InfoTable(tesla.config.ERROR_CODES_PATH)
 
     def ping(self):
-	'''Return True if we can be pinged.'''
-	return True
+        '''Return True if we can be pinged.'''
+        return True
 
     def reportETC(self, etc):
-	'''Report the run ETC to us (usually if it has been updated).'''
-	print "CLIENT: ETC = %s" % (etc)
-	return True
+        '''Report the run ETC to us (usually if it has been updated).'''
+        print "CLIENT: ETC = %s" % (etc)
+        return True
 
     def reportStatus(self, state, msg, numParams, params):
-	'''Report a status message to us.'''
-	print "CLIENT: STATE = %s, STATUS = %s, #PARAMS = %d, PARAMS = %s" % \
-		(state, msg, numParams, params)
-	return True
-	
+        '''Report a status message to us.'''
+        print "CLIENT: STATE = %s, STATUS = %s, #PARAMS = %d, PARAMS = %s" % \
+                (state, msg, numParams, params)
+        return True
+        
     def reportError(self, level, errorCode, numParams, params):
-	'''Report an error message to us.'''	
-	# Find the error message that corresponds to this code
-	errorMsg = self.errorTable.getMessage(errorCode)
-	self.errorFlag.set()
-	try:
-	    logMsg = ipl.utils.string.expandCSharpString(errorMsg, params)
-	except Exception, msg:
-	    logMsg = "CLIENT: CAUGHT EXCEPTION %s with message [%s][%s]" \
-		    (str(msg), errorMsg, str(params))
-	print "CLIENT: ERROR = %s [level:%d], #PARAMS = %d, PARAMS = %s" % \
-		(errorCode, level, numParams, params)
-	print "CLIENT: ERROR = %s" % (logMsg)
+        '''Report an error message to us.'''        
+        # Find the error message that corresponds to this code
+        errorMsg = self.errorTable.getMessage(errorCode)
+        self.errorFlag.set()
+        try:
+            logMsg = ipl.utils.string.expandCSharpString(errorMsg, params)
+        except Exception, msg:
+            logMsg = "CLIENT: CAUGHT EXCEPTION %s with message [%s][%s]" \
+                    (str(msg), errorMsg, str(params))
+        print "CLIENT: ERROR = %s [level:%d], #PARAMS = %d, PARAMS = %s" % \
+                (errorCode, level, numParams, params)
+        print "CLIENT: ERROR = %s" % (logMsg)
 
-	return True
+        return True
 
 # -----------------------------------------------------------------------------
 
@@ -92,26 +92,26 @@ class Monitor:
     report status and error messages back to us with.'''
     
     def __init__(self, host = CLIENT_HOST, port = CLIENT_PORT, 
-	    logging = False):
-	'''Construct the XML-RPC gateway with an optional host and optional 
-	port. Turning logging on enables the standard SimpleXMLRPCServer requests 
-	logging.'''
-	self.errorFlag = threading.Event()
-	self.controlSrv = SimpleXMLRPCServer.SimpleXMLRPCServer((host, port), logRequests = logging)
-	self.controlSrv.socket.setblocking(0)		# 0 = non-blocking
-	self.controlSrv.register_introspection_functions()
-	self.controlSrv.register_instance(ClientInterface(self.errorFlag))
+            logging = False):
+        '''Construct the XML-RPC gateway with an optional host and optional 
+        port. Turning logging on enables the standard SimpleXMLRPCServer requests 
+        logging.'''
+        self.errorFlag = threading.Event()
+        self.controlSrv = SimpleXMLRPCServer.SimpleXMLRPCServer((host, port), logRequests = logging)
+        self.controlSrv.socket.setblocking(0)                # 0 = non-blocking
+        self.controlSrv.register_introspection_functions()
+        self.controlSrv.register_instance(ClientInterface(self.errorFlag))
 
     def run(self, x, period):
-	'''Start the server running.'''
-	while not x.isSet():
-	    self.controlSrv.handle_request()
-	    x.wait(period)
-	self.controlSrv.server_close()	    
+        '''Start the server running.'''
+        while not x.isSet():
+            self.controlSrv.handle_request()
+            x.wait(period)
+        self.controlSrv.server_close()            
 
     def check(self):
-	'''Check for an incoming request to handle.'''
-	self.controlSrv.handle_request()
+        '''Check for an incoming request to handle.'''
+        self.controlSrv.handle_request()
 
 # -----------------------------------------------------------------------------
 
@@ -121,63 +121,63 @@ class ServiceClient:
     protocols, schedule some samples and kick off a run.'''
 
     def __init__(self, hostURL, monitorURL, debug = True):
-	self.hostURL = hostURL
+        self.hostURL = hostURL
         serviceURL = hostURL
-	self.monitorURL = monitorURL
-	self.debug = debug
-	
-	# Connect to the instrument control server
-	if self.debug: print "Attempting to connect to %s" % (hostURL)
-	try:
-	    self.controlSrv = xmlrpclib.ServerProxy(hostURL)
-	    serverIsAlive = self.controlSrv.ping()
-	except socket.error, msg:
-	    raise TeslaException, "Unable to connect to %s: %s" % (hostURL, msg)
-	
-	if serverIsAlive:
-	    self.monitor = Monitor()
-	    self.monitorThread = SimpleThread(self.monitor.run)
-	    self.monitorThread.start()
-	    self.controlSrv.subscribe(monitorURL)
-	    if self.debug: self.printInfo()
+        self.monitorURL = monitorURL
+        self.debug = debug
+        
+        # Connect to the instrument control server
+        if self.debug: print "Attempting to connect to %s" % (hostURL)
+        try:
+            self.controlSrv = xmlrpclib.ServerProxy(hostURL)
+            serverIsAlive = self.controlSrv.ping()
+        except socket.error, msg:
+            raise TeslaException, "Unable to connect to %s: %s" % (hostURL, msg)
+        
+        if serverIsAlive:
+            self.monitor = Monitor()
+            self.monitorThread = SimpleThread(self.monitor.run)
+            self.monitorThread.start()
+            self.controlSrv.subscribe(monitorURL)
+            if self.debug: self.printInfo()
 
-	# Now connect to the service server
-	if self.debug: print "Attempting to connect to %s" % (serviceURL)
-	try:
-	    self.serviceSrv = xmlrpclib.ServerProxy(serviceURL)
-	    serviceIsAlive = self.serviceSrv.ping()
-	    print "Service interface is", 
-	    if serviceIsAlive:
-		print "up\n"
-	    else:
-		print "down\n"
-	except socket.error, msg:
-	    raise TeslaException, "Unable to connect to %s: %s" % (serviceURL, msg)
-	
+        # Now connect to the service server
+        if self.debug: print "Attempting to connect to %s" % (serviceURL)
+        try:
+            self.serviceSrv = xmlrpclib.ServerProxy(serviceURL)
+            serviceIsAlive = self.serviceSrv.ping()
+            print "Service interface is", 
+            if serviceIsAlive:
+                print "up\n"
+            else:
+                print "down\n"
+        except socket.error, msg:
+            raise TeslaException, "Unable to connect to %s: %s" % (serviceURL, msg)
+        
     def halt(self):
-	'''Halt the client and server'''
-	self.monitorThread.join()
-	if self.debug: print "Halting..."
-	self.controlSrv.halt()
+        '''Halt the client and server'''
+        self.monitorThread.join()
+        if self.debug: print "Halting..."
+        self.controlSrv.halt()
 
     def printInfo(self):
-	'''Print some general information from the server.'''
-	print "\nInstrument state: %s\n" % (self.controlSrv.getInstrumentState())
+        '''Print some general information from the server.'''
+        print "\nInstrument state: %s\n" % (self.controlSrv.getInstrumentState())
 
     def waitForState(self, state = 'IDLE'):
-	'''Wait until we reach the specified state.'''
-	if self.debug: print 'Waiting for the %s state...' % (state)
-	while True:
-	    currentState = self.controlSrv.getInstrumentState()
-	    if currentState in ['HALTED', 'ESTOP', 'SHUTDOWN', state]:
-		break
-	    else:
-		time.sleep(WAIT_TIME)
-	return currentState
-	
+        '''Wait until we reach the specified state.'''
+        if self.debug: print 'Waiting for the %s state...' % (state)
+        while True:
+            currentState = self.controlSrv.getInstrumentState()
+            if currentState in ['HALTED', 'ESTOP', 'SHUTDOWN', state]:
+                break
+            else:
+                time.sleep(WAIT_TIME)
+        return currentState
+        
     def waitForIdle(self):
-	'''Wait until we reach the IDLE state.'''
-	return self.waitForState('IDLE')
+        '''Wait until we reach the IDLE state.'''
+        return self.waitForState('IDLE')
 
     def printServiceFunctions(self, functions):
         componentEntries = {}
@@ -247,6 +247,6 @@ if __name__ == '__main__':
     client.waitForIdle()
     client.exerciseService(serviceCalls)
     client.halt()
-	
+        
 # eof
 

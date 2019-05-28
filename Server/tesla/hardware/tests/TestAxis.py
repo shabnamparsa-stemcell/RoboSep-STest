@@ -29,13 +29,13 @@ BOARD_ADDRESS = 'X1'
 class TestDevice(unittest.TestCase):
 
     def setUp(self):
-	self.axis = Axis(BOARD_ADDRESS, emulation = True)
+        self.axis = Axis(BOARD_ADDRESS, emulation = True)
 
     def test_name(self):
-	self.failUnless(self.axis.name, 'Name is defined')
+        self.failUnless(self.axis.name, 'Name is defined')
 
     def test_address(self):
-	self.failUnless(self.axis.boardAddress == BOARD_ADDRESS, 'Board address')
+        self.failUnless(self.axis.boardAddress == BOARD_ADDRESS, 'Board address')
 
 unittest.main()
 

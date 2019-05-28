@@ -32,8 +32,8 @@ def moveAndConfirm(axisMoveFunc, axisGetPosFunc, power, profile, position):
     robotPosition = apply(axisGetPosFunc)
     print "Moved. Robot at position = %d" % (robotPosition)
     if robotPosition != position:
-	print "Aborting run"
-	sys.exit(1)
+        print "Aborting run"
+        sys.exit(1)
     
 # -----------------------------------------------------------------------------
 
@@ -62,17 +62,17 @@ if __name__ == '__main__':
 
     # The various settings we will use for testing
     powerSettings = (platform._m_Settings[TeslaPlatform.PickupTipPowerProfileLabel],
-		     platform._m_Settings[TeslaPlatform.StripTipPowerProfileLabel],
-		     z.m_Settings[z.MotorPowerLabel],
-		     z.m_Settings[z.MotorHomingPowerLabel],
-		     z.m_Settings[z.MotorIdlePowerLabel],
-		     )
+                     platform._m_Settings[TeslaPlatform.StripTipPowerProfileLabel],
+                     z.m_Settings[z.MotorPowerLabel],
+                     z.m_Settings[z.MotorHomingPowerLabel],
+                     z.m_Settings[z.MotorIdlePowerLabel],
+                     )
     velocityProfiles = (platform._m_Settings[TeslaPlatform.PickupTipVelocityProfileLabel],
-			platform._m_Settings[TeslaPlatform.StripTipVelocityProfileLabel],
-			instrument._m_Settings[Instrument.WickingExtractVelocityProfileLabel],
-			z.m_Settings[z.MotorStepVelocityLabel],
-			z.m_Settings[z.MotorHomingStepVelocityLabel],
-			)
+                        platform._m_Settings[TeslaPlatform.StripTipVelocityProfileLabel],
+                        instrument._m_Settings[Instrument.WickingExtractVelocityProfileLabel],
+                        z.m_Settings[z.MotorStepVelocityLabel],
+                        z.m_Settings[z.MotorHomingStepVelocityLabel],
+                        )
     positions = (pickupPosition, stripPosition, strippedPosition, travelPosition, zeroPosition)
 
     # Now loop through the following scenario:
@@ -82,13 +82,13 @@ if __name__ == '__main__':
     # 4. Move to travel position, confirm position
     # 5. Move to zero position, confirm position
     for i in range(NUM_TESTS):
-	print "\nZ axis test #%d" % (i + 1)
+        print "\nZ axis test #%d" % (i + 1)
 
-	for power in powerSettings:
-	    print "\nPower = %s" % (str(power))
-	    for profile in velocityProfiles:
-		print "Velocity profile = %s" % (str(profile))
-		for position in positions:
-		    moveAndConfirm(zMoveFunc, zGetPosFunc, power, profile, position)
+        for power in powerSettings:
+            print "\nPower = %s" % (str(power))
+            for profile in velocityProfiles:
+                print "Velocity profile = %s" % (str(profile))
+                for position in positions:
+                    moveAndConfirm(zMoveFunc, zGetPosFunc, power, profile, position)
 
 # eof

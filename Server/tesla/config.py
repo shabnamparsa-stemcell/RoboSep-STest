@@ -69,15 +69,15 @@ def getGatewayHost():
 # General instrument configuration data: this should not change (often)
 
 # Name of the Tesla Python archive that will be imported
-TESLA_ARCHIVE = 'robosep.zip'	    
+TESLA_ARCHIVE = 'robosep.zip'            
 
 # XML-RPC server configuration
-DEFAULT_GATEWAY_HOST = 'localhost'	# Default control gateway host
+DEFAULT_GATEWAY_HOST = 'localhost'        # Default control gateway host
 GATEWAY_HOST = getGatewayHost()         # Get the actual gateway host
-GATEWAY_PORT = 8000			# Default control gateway port
+GATEWAY_PORT = 8000                        # Default control gateway port
 
 # Minimum disk space for safe operation, in bytes
-MIN_SAFE_DISK_SPACE = 10 * 1024 * 1024	# Let's say 10 MB?
+MIN_SAFE_DISK_SPACE = 10 * 1024 * 1024        # Let's say 10 MB?
 
 # What level do we want to log at?
 LOG_LEVEL = logging.DEBUG
@@ -489,7 +489,7 @@ def GetConfigEnvironment():
 # -----------------------------------------------------------------------------
 # Various protocol constants that should not change
 
-NUM_QUADRANTS = 4		    # How many quadrants on the carousel?
+NUM_QUADRANTS = 4                    # How many quadrants on the carousel?
 
 POSITIVE_PROTOCOL    = 'Positive'   # Unique ID for positive separation protocols
 NEGATIVE_PROTOCOL    = 'Negative'   # Unique ID for negative separation protocols
@@ -499,7 +499,7 @@ MOUSEPOSITIVE_PROTOCOL    = 'MousePositive'   # Unique ID for MousePositive sepa
 MOUSENEGATIVE_PROTOCOL    = 'MouseNegative'   # Unique ID for MouseNegative separation protocols#CR
 WHOLEBLOODPOSITIVE_PROTOCOL    = 'WholeBloodPositive'   # Unique ID for WholeBloodPositive separation protocols#CR
 WHOLEBLOODNEGATIVE_PROTOCOL    = 'WholeBloodNegative'   # Unique ID for WholeBloodPositive separation protocols
-MAINTENANCE_PROTOCOL = 'Maintenance'	# Unique ID for maintenance protocols
+MAINTENANCE_PROTOCOL = 'Maintenance'        # Unique ID for maintenance protocols
 SHUTDOWN_PROTOCOL    = 'Shutdown'   # Unique ID for shutdown protocols
 TEST_PROTOCOL        = 'Testing'    # Unique ID for testing protocols
 

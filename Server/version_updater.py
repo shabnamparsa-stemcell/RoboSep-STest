@@ -44,9 +44,9 @@ def getVersionDetails():
     major, minor, revision, minorRev = version.split('.')
     
     if MAJOR_LABEL.has_key(major) and MINOR_LABEL.has_key(minor):
-	infoLabel = "%s %s" % (MAJOR_LABEL[major], MINOR_LABEL[minor])
+        infoLabel = "%s %s" % (MAJOR_LABEL[major], MINOR_LABEL[minor])
     else:
-	infoLabel = "Unknown release"
+        infoLabel = "Unknown release"
     infoTextLabel = infoLabel + " version"
     return (version, infoLabel, infoTextLabel)
 

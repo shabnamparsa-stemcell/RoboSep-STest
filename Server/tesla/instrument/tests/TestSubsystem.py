@@ -37,12 +37,12 @@ class TestSubsystem(unittest.TestCase):
             return self._count
 
     def setUp(self):
-	self.subsys = TestSubsystem.mySubsystem(
+        self.subsys = TestSubsystem.mySubsystem(
                         TestSubsystem.ssName,
                         TestSubsystem.ssValue)
 
     def test_subsystem(self):
-	self.failUnless(self.subsys)
+        self.failUnless(self.subsys)
     
     def test_execute(self):
         rv=0

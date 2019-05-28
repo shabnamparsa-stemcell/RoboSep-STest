@@ -29,8 +29,8 @@ class Component(object):
 
     def __init__( self, name ):
         '''Construct the component with an identifying name.'''
-	self.__name = name
-	self.debug = tesla.config.HW_DEBUG	# Enable the H/W debug flag locally
+        self.__name = name
+        self.debug = tesla.config.HW_DEBUG        # Enable the H/W debug flag locally
 
     def _serviceMethods(self):
         '''Return a list of methods for the service interface. If a device doesn't
@@ -48,8 +48,8 @@ class Component(object):
         return serviceMethods
    
     def getName(self):
-	'''Return the device's identifying name.'''
-	return self.__name
+        '''Return the device's identifying name.'''
+        return self.__name
 
     def execute( self, functionWithArgs ):
         '''Executes the formatted function call string functionWithArgs on

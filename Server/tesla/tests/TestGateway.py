@@ -29,19 +29,19 @@ from tesla.control.Centre import Centre
 class TestGateway(unittest.TestCase):
  
     def setUp(self):
-	controller = Centre()
-	self.gw = Gateway(controller)	
+        controller = Centre()
+        self.gw = Gateway(controller)        
 
     def tearDown(self):
-	self.gw.close()
+        self.gw.close()
 
     def testRunFlag(self):
-	self.failIf(self.gw.isRunning(), 'Gateway should not be running')
+        self.failIf(self.gw.isRunning(), 'Gateway should not be running')
 
     def testHalt(self):
-	# No test yet -- we really need to set up an XML-RPC client to test 
-	# halt properly
-	status = self.gw.halt()
+        # No test yet -- we really need to set up an XML-RPC client to test 
+        # halt properly
+        status = self.gw.halt()
         self.failUnless(status == True, 'Testing halt status')
         self.failIf(self.gw.isRunning(), 'Testing gateway run state')
 

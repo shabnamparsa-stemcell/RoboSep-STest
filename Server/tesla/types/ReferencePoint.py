@@ -44,16 +44,16 @@ class ReferencePoint:
     position3ToSampleDeg = 11.72 #12.75 #11.78
     position4ToSampleDeg = 21.67 #22.71 #21.76
     position5ToSampleDeg = 12.58 #13.61 #12.68"""
-	
+        
     def __init__(self, theta, carousel, r, z):
-	self.theta = theta
-	self.carousel = carousel
-	self.r = r
-	self.z = z
+        self.theta = theta
+        self.carousel = carousel
+        self.r = r
+        self.z = z
 
     def __str__(self):
-	'''A string representation of the tube'''
-	return "%f %f %f %f" % (self.theta, \
+        '''A string representation of the tube'''
+        return "%f %f %f %f" % (self.theta, \
                 self.carousel, self.r, self.z)
 
    

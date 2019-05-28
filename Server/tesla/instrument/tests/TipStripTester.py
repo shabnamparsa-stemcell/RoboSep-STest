@@ -34,8 +34,8 @@ if __name__ == '__main__':
     platform.Initialise()
 
     for tipNum in (startTip, endTip):
-	print "Moving to sector #%d, tip #%d" % (sector, tipNum)	    	
-	platform.PickupTip(sector, tipNum)
-	platform.StripTip()
+        print "Moving to sector #%d, tip #%d" % (sector, tipNum)                    
+        platform.PickupTip(sector, tipNum)
+        platform.StripTip()
     
 # eof

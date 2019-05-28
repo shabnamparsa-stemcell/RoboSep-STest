@@ -50,7 +50,7 @@ class TestProtocol(unittest.TestCase):
     def setUp(self):
         testFile = 'test_maintenance.xml'
         self.fileName = os.path.join(tesla.config.PROTOCOL_DIR, testFile)
-	self.p = Protocol(fileName = self.fileName)
+        self.p = Protocol(fileName = self.fileName)
 
     def test_file(self):
         self.failUnless(self.p, 'Testing file existence and Protocol instance creation')
@@ -345,7 +345,7 @@ class TestProtocol(unittest.TestCase):
         '''Test the protocol (and commands) using our test protocol.'''      
         baseName = 'test_protocol.xml'
         fileName = os.path.join(tesla.config.PROTOCOL_DIR, baseName)
-	pro = Protocol(fileName)
+        pro = Protocol(fileName)
         self.failUnless(pro)
 
         sample = Sample(42, 'Test sample', pro.ID, 1250, 1)

@@ -40,7 +40,7 @@ class Controller:
         # 2011-11-24 -- sp
         self.svrLog = PgmLog( 'svrLog' )
         self.logPrefix = 'CN'
-	
+        
     def powerUpInstrument(self):
         """Power up the instrument and perform self-checks"""
         self.logger.logInfo('Instrument power-up commenced')
@@ -54,7 +54,7 @@ class Controller:
             self.logger.logError(msg)
             # 2011-11-24 sp -- added logging
             self.svrLog.logError('', self.logPrefix, funcReference, msg)
-	
+        
     def shutdownInstrument(self, powerDown = True):
         """Shutdown the instrument"""
         self.logger.logInfo('Instrument shutdown commenced')

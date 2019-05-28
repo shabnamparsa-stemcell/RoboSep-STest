@@ -54,15 +54,15 @@ class Tube:
     def setVolume(self, volume_uL):
 	'''Set the tube volume (in uL).'''
 	if volume_uL < 0 or volume_uL > self.getMaxVolume():
-	    raise TubeException, "%0.1f uL tube can't hold %0.1f uL" % \
-		    (self.getMaxVolume(), volume_uL)
+	    raise TubeException, "%0.1f uL %s tube can't hold %0.1f uL" % \
+		    (self.getMaxVolume(), self.__label, volume_uL)
 	self.__volume = volume_uL
 
     def addVolume(self, volume_uL):
 	'''Add a volume (in uL) to the tube'''
 	if self.getMaxVolume() < (self.getVolume() + volume_uL):
-	    raise TubeException, "%0.1f uL tube can't add %0.1f uL (already at %0.1f uL)" % \
-		    (self.getMaxVolume(), volume_uL, self.getVolume())
+	    raise TubeException, "%0.1f uL %s tube can't add %0.1f uL (already at %0.1f uL)" % \
+		    (self.getMaxVolume(), self.__label, volume_uL, self.getVolume())
 	else:
 	    self.__volume += volume_uL
 

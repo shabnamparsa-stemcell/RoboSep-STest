@@ -25,21 +25,21 @@ class WorkflowContainer(object):
     specific time (for a specific sample).'''
 
     def __init__(self, sampleID, startTime_secs, workflowCall):
-	'''For the specified sample ID, store the workflow command (as a 
-	string) that we	need to execute it (by the dispatcher) at the 
-	specified start time, which is relative to T = 0.'''
-	self.__sampleID = sampleID
-	self.__startTime = startTime_secs
-	self.__workflowCall = workflowCall
+        '''For the specified sample ID, store the workflow command (as a 
+        string) that we        need to execute it (by the dispatcher) at the 
+        specified start time, which is relative to T = 0.'''
+        self.__sampleID = sampleID
+        self.__startTime = startTime_secs
+        self.__workflowCall = workflowCall
 
     def __str__(self):
-	'''Simple string representation'''
-	return "ID = %d, Start @ %d secs, workflow = %s" % \
-		(self.__sampleID, self.__startTime, self.__workflowCall)
+        '''Simple string representation'''
+        return "ID = %d, Start @ %d secs, workflow = %s" % \
+                (self.__sampleID, self.__startTime, self.__workflowCall)
 
     def getWorkflowAndTime(self):
-	'''Return the workflow call and it's start time'''
-	return (self.__workflowCall, self.__startTime)
+        '''Return the workflow call and it's start time'''
+        return (self.__workflowCall, self.__startTime)
 
     def getStartTime(self):
         return self.__startTime
@@ -49,12 +49,12 @@ class WorkflowContainer(object):
         self.__startTime = startTime
 
     def getSampleID(self):
-	'''Return the sample ID associated with this workflow'''
-	return self.__sampleID
+        '''Return the sample ID associated with this workflow'''
+        return self.__sampleID
 
     def __cmp__(self, otherWorkflow):
-	'''Let's us sort WorkflowContainer objects, which we do based on start time.'''
-	return cmp(self.__startTime, otherWorkflow.__startTime)
+        '''Let's us sort WorkflowContainer objects, which we do based on start time.'''
+        return cmp(self.__startTime, otherWorkflow.__startTime)
 
 # -----------------------------------------------------------------------------
 
@@ -65,39 +65,39 @@ class Schedule(object):
     tesla.control.Dispatcher.'''
     
     def __init__(self):
-	'''Simple constructor to initialise members. Populate the instance by
-	calling addWorkflow().'''
-	self.__workflows = []
-	self.__changed = False
+        '''Simple constructor to initialise members. Populate the instance by
+        calling addWorkflow().'''
+        self.__workflows = []
+        self.__changed = False
 
     def __str__(self):
-	'''A simple string representation of the Schedule object.'''
-	s = ''
-	for wf in self.__workflows:
-	    s += ("[%s]," % (str(wf)))
-	if s != '':
-	    s = s[:-1]	    # Strip off any trailing ,
-	return s
+        '''A simple string representation of the Schedule object.'''
+        s = ''
+        for wf in self.__workflows:
+            s += ("[%s]," % (str(wf)))
+        if s != '':
+            s = s[:-1]            # Strip off any trailing ,
+        return s
 
     def __len__(self):
         '''Length of the schedule == # workflows.'''
         return len(self.__workflows)
 
     def addWorkflow(self, sampleID, startTime, cmd):
-	'''Add the information on when to schedule a sample's workflow to the
-	Schedule instance. Three parameters: the sample ID, the time to start
-	the workflow command and a string representation of the workflow
-	command that we want to execute.'''
-	self.__workflows.append(WorkflowContainer(sampleID, startTime, cmd))
-	self.__changed = True
+        '''Add the information on when to schedule a sample's workflow to the
+        Schedule instance. Three parameters: the sample ID, the time to start
+        the workflow command and a string representation of the workflow
+        command that we want to execute.'''
+        self.__workflows.append(WorkflowContainer(sampleID, startTime, cmd))
+        self.__changed = True
 
     def getWorkflows(self):
-	'''Return a list of WorkflowContainer objects, allowing us to execute
-	commands at specific times.'''
-	if self.__changed:
-	    self.__workflows.sort()   # Added one or more items? Resort our list
-	    self.__changed = False
-	return self.__workflows
+        '''Return a list of WorkflowContainer objects, allowing us to execute
+        commands at specific times.'''
+        if self.__changed:
+            self.__workflows.sort()   # Added one or more items? Resort our list
+            self.__changed = False
+        return self.__workflows
 
 #    def reverseWorkflowSchedule( self ):
 #        '''Reverses the current schedule and reevaluates the start times'''

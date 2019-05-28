@@ -5,11 +5,11 @@
 #
 # New program logging module (RoboSep V4.7+) for the Tesla instrument controller
 # Implemented using Python Logging package with loglevels defined as:
-#   Level 	Numeric value
-#   CRITICAL 	50
+#   Level         Numeric value
+#   CRITICAL         50
 #   ERROR       40
-#   WARNING 	30
-#   INFO 	    20
+#   WARNING         30
+#   INFO             20
 #   DEBUG       10
 #   NOTSET      0
 #
@@ -888,14 +888,14 @@ class DebuggerWindow(wx.Frame):
 
 class DebuggerApp(wx.App):
     def OnInit(self):
-    	frame = DebuggerWindow(None, "RoboSep Server Debugger")
+        frame = DebuggerWindow(None, "RoboSep Server Debugger")
 
-    	#frame = wx.Frame(None, -1, "This is a test", size=(400,300))
-    	frame.Show(True)
-    	# tell wxPython that this is our main window
-    	self.SetTopWindow(frame)
-    	# return an optional success flag
-    	return True
+        #frame = wx.Frame(None, -1, "This is a test", size=(400,300))
+        frame.Show(True)
+        # tell wxPython that this is our main window
+        self.SetTopWindow(frame)
+        # return an optional success flag
+        return True
 
 
 class StartGUIThread (threading.Thread ):

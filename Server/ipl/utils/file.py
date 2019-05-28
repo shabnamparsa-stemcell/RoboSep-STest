@@ -35,7 +35,7 @@ def getFileList(searchPath, extMask = None):
     return fileList
 
 
-					 
+                                         
 def getFreeDiskSpace(path):
     """Return the free disk space (in bytes) for the specified path, from
     which we get the disk drive to look at."""

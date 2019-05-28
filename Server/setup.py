@@ -20,7 +20,7 @@
 # Notes:
 #
 # To build the executable:
-#	python setup.py py2exe
+#        python setup.py py2exe
 #
 
 from distutils.core import setup

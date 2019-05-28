@@ -68,7 +68,7 @@ class ZThetaRobot(Subsystem):
         # 2011-10-17 sp -- set reference for program log
         self.m_Name = name
 
-	Subsystem.__init__( self, name )
+        Subsystem.__init__( self, name )
         
         zConfig = {}
         zSettings = gHardwareData.Section(ZThetaRobot.ZAxisSectionName)
@@ -193,7 +193,7 @@ class ZThetaRobot(Subsystem):
 
     def SetTheta (self, degrees, bNonBlocking = False):
         """Rotate arm to given position, after ensuring that it is in the 
-	travel position."""
+        travel position."""
         self.PrepareZForTravel()
         self.__m_Theta.SetTheta( degrees, bNonBlocking )
 
@@ -212,7 +212,7 @@ class ZThetaRobot(Subsystem):
 
     def SetZTravelPosition (self, zTravelPosition):
         """Define the Z-axis position to adopt prior to rotating the theta 
-	axis."""
+        axis."""
         # Ensure that result is within limits
         position = min(zTravelPosition, self.Z().MaxPosition())
         position = max(position, self.Z().MinPosition())
@@ -243,8 +243,8 @@ class ZThetaRobot(Subsystem):
         return self.__m_Theta
 
     def ZPosition(self):
-	'''Returns the current Z position.'''
-	return self.Z().Position()
+        '''Returns the current Z position.'''
+        return self.Z().Position()
 
 
     #GetInstrumentAxisStatusSet support methods

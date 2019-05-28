@@ -30,7 +30,7 @@ class TestSequence(unittest.TestCase):
     def test_init(self):
         # Test that we have the right class
         s = Sequence()
-	self.failUnless(isinstance(s, Sequence))
+        self.failUnless(isinstance(s, Sequence))
         self.failUnless(isinstance(s, list))
 
 

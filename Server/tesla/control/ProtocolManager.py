@@ -68,9 +68,9 @@ class ProtocolManager(object):
     all of the protocols are shared across instances.'''
 
     FILEINFO_DB = 'profile.db'          # The pickled protocol file information
-    PROTOCOL_DB = 'protocols.db'	# The pickled protocols
-    CLIENT_PROTOCOL_DB = '_mru.xml'	# The client's protocol d/base
-    protocols = {}			# Our shared protocol map
+    PROTOCOL_DB = 'protocols.db'        # The pickled protocols
+    CLIENT_PROTOCOL_DB = '_mru.xml'        # The client's protocol d/base
+    protocols = {}                        # Our shared protocol map
 
     USER_CONFIG_XML_PATH = os.path.join(tesla.config.CONFIG_DIR, 'UserConfig.config')
 
@@ -118,7 +118,7 @@ class ProtocolManager(object):
         # 2011-11-25 sp -- added logging
         self.svrLog = PgmLog( 'svrLog' )
         self.logPrefix = 'PM'
-	
+        
         self.reloadProtocols()
 
     # --- methods used by the control centre (and interface) ------------------
@@ -268,22 +268,22 @@ class ProtocolManager(object):
         
     
     def getProtocolsForClient(self):
-	'''Return the list of protocols in a suitable form for clients, ie. we
-	are using the simpler ClientProtocol objects'''
+        '''Return the list of protocols in a suitable form for clients, ie. we
+        are using the simpler ClientProtocol objects'''
 
-	# RL - Short Description for Sample Volume Dialog -  03/29/06
-	return [ClientProtocol(p.type, p.label, p.description, p.minVol, p.maxVol, p.numQuadrants) \
-		for p in self.getProtocols()]
+        # RL - Short Description for Sample Volume Dialog -  03/29/06
+        return [ClientProtocol(p.type, p.label, p.description, p.minVol, p.maxVol, p.numQuadrants) \
+                for p in self.getProtocols()]
     
     
     def getConsumableInformation(self, protocolID, sampleVolume_uL):
-	'''For the specified ID and a sample volume (in uL), determine
-	what consumables are needed and return this as a list of
-	ProtocolConsumable objects. The list is always RELATIVE, rather than
-	an absolute mapping of reagent requirements to a specific carousel.'''
+        '''For the specified ID and a sample volume (in uL), determine
+        what consumables are needed and return this as a list of
+        ProtocolConsumable objects. The list is always RELATIVE, rather than
+        an absolute mapping of reagent requirements to a specific carousel.'''
         protocol = self.getProtocolWithSampleCheck(protocolID, sampleVolume_uL)
 
-	return protocol.getVolumes(sampleVolume_uL, protocol.type)
+        return protocol.getVolumes(sampleVolume_uL, protocol.type)
 
 
     def isSampleVolumeValidForProtocol(self, protocol, sampleVolume_uL):
@@ -300,39 +300,39 @@ class ProtocolManager(object):
             return validateNumber(sampleVolume_uL, protocol.minVol, protocol.maxVol)
         else:
             return True
-	
+        
     
     # -------------------------------------------------------------------------
 
     def add(self, protocol):
-	'''Add a protocol to the manager'''
-	ProtocolManager.protocols[protocol.ID] = protocol
+        '''Add a protocol to the manager'''
+        ProtocolManager.protocols[protocol.ID] = protocol
 
     def getProtocol(self, ID = None, label = None):
-	'''Find a protocol by searching for it's ID or label'''
-	if ID:
-	    return self[ID]
-	else:
-	    for protocol in ProtocolManager.protocols.values():
-		if protocol.matches(ID, label):
-		    hit = protocol
-		    break
-	    else:
-		hit = None
-	    return hit
+        '''Find a protocol by searching for it's ID or label'''
+        if ID:
+            return self[ID]
+        else:
+            for protocol in ProtocolManager.protocols.values():
+                if protocol.matches(ID, label):
+                    hit = protocol
+                    break
+            else:
+                hit = None
+            return hit
 
     def findProtocolsByType(self, protocolType):
-	'''Return a list of all protocols who match the specified type.'''
-	return [p for p in self.getProtocols() if p.type == protocolType]
+        '''Return a list of all protocols who match the specified type.'''
+        return [p for p in self.getProtocols() if p.type == protocolType]
 
     def findProtocolsByRegexp(self, regexp):
-	'''Return a list of all protocols whose labels match the regexp.'''
-	pattern = re.compile(regexp)
-	return [p for p in self.getProtocols() if pattern.search(p.label) != None]
+        '''Return a list of all protocols whose labels match the regexp.'''
+        pattern = re.compile(regexp)
+        return [p for p in self.getProtocols() if pattern.search(p.label) != None]
 
     def getProtocols(self):
-	'''Return the list of protocols'''
-	return ProtocolManager.protocols.values()
+        '''Return the list of protocols'''
+        return ProtocolManager.protocols.values()
 
 
     def getProtocolWithSampleCheck(self, protocolID, sampleVolume_uL):
@@ -340,12 +340,12 @@ class ProtocolManager(object):
         the sample volume is appropriate.'''
         print "bdr -- Fetching protocol id = %s " % (protocolID)
         protocol = self.getProtocol(protocolID)
-	if not protocol:
-	    raise ProtocolException, "Can not find protocol ID = %d" % (protocolID)
-	else:
-	    # Let's sanity check the sample volume to ensure it's within
-	    # our protocol's limits
-	    # We only do this for sample processing protocols
+        if not protocol:
+            raise ProtocolException, "Can not find protocol ID = %d" % (protocolID)
+        else:
+            # Let's sanity check the sample volume to ensure it's within
+            # our protocol's limits
+            # We only do this for sample processing protocols
 
             print "bdr -- ProtocolManager - getProtWithSampChk chk sampleVolume= %0.2f" % (sampleVolume_uL)
 
@@ -357,9 +357,9 @@ class ProtocolManager(object):
                 return protocol
 
     def isSeparationProtocol(self, ID):
-	'''Returns True if this protocol is for separation.'''
-	p = self.getProtocol(ID)
-	return p != None and p.type in [ClientProtocol.POSITIVE,
+        '''Returns True if this protocol is for separation.'''
+        p = self.getProtocol(ID)
+        return p != None and p.type in [ClientProtocol.POSITIVE,
                                         ClientProtocol.NEGATIVE,
                                         ClientProtocol.HUMANPOSITIVE,
                                         ClientProtocol.HUMANNEGATIVE,
@@ -381,7 +381,7 @@ class ProtocolManager(object):
         Used to compare time stamps and file names with the current file list.'''
         funcReference = __name__ + '.__getFileInfo'   # 2011-11-254 sp -- added logging
         files = []
-	pf = None
+        pf = None
         try:
             #print ">>>>>>>> File Path is: %s" % dbName
             pf = open(dbName, 'r')
@@ -405,9 +405,9 @@ class ProtocolManager(object):
         '''Store the information about each file in the database'''
         funcReference = __name__ + '.__storeFileInfo'   # 2011-11-254 sp -- added logging
         print "###### Now in "
-    	try:
+        try:
             pf = open(dbName, 'w')
-            cPickle.dump(fileList, pf)	    # Store the file info
+            cPickle.dump(fileList, pf)            # Store the file info
             pf.close()
 
             if prints == 1: print "\nProtocolManager.py, Replacing old database with new"
@@ -430,9 +430,9 @@ class ProtocolManager(object):
         return equalState
 
     def isDatabaseCurrent(self, xmlFileList):
-	'''What's more recent? The pickled protocol database file or some/all
-	of the raw protocol XML files in xmlFileList?
-	Returns True if the pickled database is fresher.'''
+        '''What's more recent? The pickled protocol database file or some/all
+        of the raw protocol XML files in xmlFileList?
+        Returns True if the pickled database is fresher.'''
         # Create the list of bunches of filenames and their times
         self.__usedDB = False
         newFiles = []
@@ -548,7 +548,7 @@ class ProtocolManager(object):
             pf.close()
             if protocols == None: protocols = {}
         except IOError, msg:
-    	    self.logger.logWarning("PM: Unable to unpickle protocols: %s" % (msg))
+            self.logger.logWarning("PM: Unable to unpickle protocols: %s" % (msg))
             self.svrLog.logWarning('', self.logPrefix, funcReference, "Unable to unpickle protocols: %s" % (msg) )    # 2011-11-254 sp -- added logging
             protocols = {}
         return protocols
@@ -558,7 +558,7 @@ class ProtocolManager(object):
         funcReference = __name__ + '.__pickleProtocols'   # 2011-11-254 sp -- added logging
         try:
             pf = open(self.protocolDBPath, 'w')
-            cPickle.dump(self.protocols, pf)	    # Store the protocols
+            cPickle.dump(self.protocols, pf)            # Store the protocols
             pf.close()
         except IOError, msg:
             self.logger.logWarning("PM: Unable to pickle protocols: %s" % (msg))
@@ -567,15 +567,15 @@ class ProtocolManager(object):
     # --- Helper functions ----------------------------------------------------
     
     def getNumberOfProtocols(self):
-	'''Return the the number of protocols being managed'''
-	return self.__len__()
+        '''Return the the number of protocols being managed'''
+        return self.__len__()
     
     def remove(self, id = None, protocol = None):
-	'''Remove a protocol from the manager'''
-	if id:
-	    del ProtocolManager.protocols[id]
-	else:
-	    del ProtocolManager.protocols[protocol.ID]
+        '''Remove a protocol from the manager'''
+        if id:
+            del ProtocolManager.protocols[id]
+        else:
+            del ProtocolManager.protocols[protocol.ID]
 
     def replace(self, protocol):
         '''Replace an existing protocol with a new version of the protocol'''

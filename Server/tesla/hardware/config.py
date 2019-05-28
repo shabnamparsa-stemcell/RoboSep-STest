@@ -66,7 +66,7 @@ class HardwareConfiguration:
 
     For more information, see Section 5.14 "ConfigParser" in the Python Library
     Reference.
-    '''												
+    '''                                                                                                
        
     def __init__(self, configFile, mainFile=True):
         if mainFile:
@@ -174,7 +174,7 @@ class HardwareConfiguration:
         advancing their trailing numeral by one and then write the most recent config file 
         as hardware.ini.1."""
         print "backupConfig start"
-		
+                
         # create the directory if necessary
         backupDir = tesla.config.CFG_BACKUP_DIR        
         createDir(backupDir)

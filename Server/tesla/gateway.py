@@ -34,12 +34,12 @@ class Gateway(object):
     '''
     
     def __init__(self, controlCentre, host = tesla.config.GATEWAY_HOST, 
-	    controlPort = tesla.config.GATEWAY_PORT, logging = False):
-	'''Construct the XML-RPC gateway with an instrument control centre 
-	instance, an optional host and optional port. Turning logging on 
-	enables the standard SimpleXMLRPCServer requests logging.
-	'''
-	self.__runFlag = False
+        controlPort = tesla.config.GATEWAY_PORT, logging = False):
+        '''Construct the XML-RPC gateway with an instrument control centre 
+        instance, an optional host and optional port. Turning logging on 
+        enables the standard SimpleXMLRPCServer requests logging.
+        '''
+        self.__runFlag = False
         self.controlCentre = controlCentre
 
         hostsToTry = [host,]
@@ -68,49 +68,49 @@ class Gateway(object):
 
                 
     def isRunning(self):
-	'''Returns True if the gateway is running.'''
-	return self.__runFlag
+        '''Returns True if the gateway is running.'''
+        return self.__runFlag
 
     def run(self):
-	'''Start the gateway server running (accepting requests from clients).'''
-	self.__runFlag = True
-	try:
-	    while self.__runFlag:
-		self.controlServer.handle_request()
+        '''Start the gateway server running (accepting requests from clients).'''
+        self.__runFlag = True
+        try:
+            while self.__runFlag:
+                self.controlServer.handle_request()
                 currentState = self.controlCentre.getState()
                 # If the control centre has shutdown or turned off, shutdown
                 # the XML-RPC interface
                 if currentState in ['SHUTDOWN', 'OFF']:
                     self.halt()
-	except KeyboardInterrupt:
-	    # Caught an interrupt, can we exit more gracefully than just
-	    # dropping out of the handle_request() loop?
-	    pass
-	except StandardError, e:
-	    raise TeslaException, "Caught unexpected error: %s" % (e)
+        except KeyboardInterrupt:
+            # Caught an interrupt, can we exit more gracefully than just
+            # dropping out of the handle_request() loop?
+            pass
+        except StandardError, e:
+            raise TeslaException, "Caught unexpected error: %s" % (e)
         # A server has cleared the run flag, so close the servers
-	self.close()
+        self.close()
 
 
     def close(self):
-	'''Close the XML-RPC servers.'''
-	if self.isRunning():
-	    self.halt()
-	try:
-	   self.controlServer.server_close()
-	except socket.error:
-	    # Ignore any socket errors associated with closing the server
-	    pass		
-	
+        '''Close the XML-RPC servers.'''
+        if self.isRunning():
+            self.halt()
+        try:
+           self.controlServer.server_close()
+        except socket.error:
+            # Ignore any socket errors associated with closing the server
+            pass                
+        
 
     # --- XML-RPC methods that are available to all XML-RPC interfaces --------
 
     def halt(self):
-	'''Halt the XML-RPC servers.
-	IN: Nothing
-	OUT: (bool) [always true]
-	'''
-	self.__runFlag = False
-	return True
+        '''Halt the XML-RPC servers.
+        IN: Nothing
+        OUT: (bool) [always true]
+        '''
+        self.__runFlag = False
+        return True
 
 # eof

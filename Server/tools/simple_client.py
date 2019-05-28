@@ -38,10 +38,10 @@ from tesla.types.sample import Sample
 GATEWAY_HOST = tesla.config.GATEWAY_HOST
 GATEWAY_PORT = tesla.config.GATEWAY_PORT
 
-CLIENT_HOST = 'localhost'		# The host and port we will use
+CLIENT_HOST = 'localhost'                # The host and port we will use
 CLIENT_PORT = 8765
 
-WAIT_TIME = 5		    # Time (in secs) that we wait for a state change
+WAIT_TIME = 5                    # Time (in secs) that we wait for a state change
 
 # -----------------------------------------------------------------------------
 
@@ -50,41 +50,41 @@ class ClientInterface:
     to.'''
 
     def __init__(self, errorFlag):
-	'''Constructor with one parameter: an errorFlag Event object that 
-	allows us to indicate that an error has occurred.'''
-	self.errorFlag = errorFlag
-	self.errorTable = InfoTable(tesla.config.ERROR_CODES_PATH)
+        '''Constructor with one parameter: an errorFlag Event object that 
+        allows us to indicate that an error has occurred.'''
+        self.errorFlag = errorFlag
+        self.errorTable = InfoTable(tesla.config.ERROR_CODES_PATH)
 
     def ping(self):
-	'''Return True if we can be pinged.'''
-	return True
+        '''Return True if we can be pinged.'''
+        return True
 
     def reportETC(self, etc):
-	'''Report the run ETC to us (usually if it has been updated).'''
-	print "CLIENT: ETC = %s" % (etc)
-	return True
+        '''Report the run ETC to us (usually if it has been updated).'''
+        print "CLIENT: ETC = %s" % (etc)
+        return True
 
     def reportStatus(self, state, msg, numParams, params):
-	'''Report a status message to us.'''
-	print "CLIENT: STATE = %s, STATUS = %s, #PARAMS = %d, PARAMS = %s" % \
-		(state, msg, numParams, params)
-	return True
-	
+        '''Report a status message to us.'''
+        print "CLIENT: STATE = %s, STATUS = %s, #PARAMS = %d, PARAMS = %s" % \
+                (state, msg, numParams, params)
+        return True
+        
     def reportError(self, level, errorCode, numParams, params):
-	'''Report an error message to us.'''	
-	# Find the error message that corresponds to this code
-	errorMsg = self.errorTable.getMessage(errorCode)
-	self.errorFlag.set()
-	try:
-	    logMsg = ipl.utils.string.expandCSharpString(errorMsg, params)
-	except Exception, msg:
-	    logMsg = "CLIENT: CAUGHT EXCEPTION %s with message [%s][%s]" \
-		    (str(msg), errorMsg, str(params))
-	print "CLIENT: ERROR = %s [level:%d], #PARAMS = %d, PARAMS = %s" % \
-		(errorCode, level, numParams, params)
-	print "CLIENT: ERROR = %s" % (logMsg)
+        '''Report an error message to us.'''        
+        # Find the error message that corresponds to this code
+        errorMsg = self.errorTable.getMessage(errorCode)
+        self.errorFlag.set()
+        try:
+            logMsg = ipl.utils.string.expandCSharpString(errorMsg, params)
+        except Exception, msg:
+            logMsg = "CLIENT: CAUGHT EXCEPTION %s with message [%s][%s]" \
+                    (str(msg), errorMsg, str(params))
+        print "CLIENT: ERROR = %s [level:%d], #PARAMS = %d, PARAMS = %s" % \
+                (errorCode, level, numParams, params)
+        print "CLIENT: ERROR = %s" % (logMsg)
 
-	return True
+        return True
 
 # -----------------------------------------------------------------------------
 
@@ -93,26 +93,26 @@ class Monitor:
     report status and error messages back to us with.'''
     
     def __init__(self, host = CLIENT_HOST, port = CLIENT_PORT, 
-	    logging = False):
-	'''Construct the XML-RPC gateway with an optional host and optional 
-	port. Turning logging on enables the standard SimpleXMLRPCServer requests 
-	logging.'''
-	self.errorFlag = threading.Event()
-	self.controlSrv = SimpleXMLRPCServer.SimpleXMLRPCServer((host, port), logRequests = logging)
-	self.controlSrv.socket.setblocking(0)		# 0 = non-blocking
-	self.controlSrv.register_introspection_functions()
-	self.controlSrv.register_instance(ClientInterface(self.errorFlag))
+            logging = False):
+        '''Construct the XML-RPC gateway with an optional host and optional 
+        port. Turning logging on enables the standard SimpleXMLRPCServer requests 
+        logging.'''
+        self.errorFlag = threading.Event()
+        self.controlSrv = SimpleXMLRPCServer.SimpleXMLRPCServer((host, port), logRequests = logging)
+        self.controlSrv.socket.setblocking(0)                # 0 = non-blocking
+        self.controlSrv.register_introspection_functions()
+        self.controlSrv.register_instance(ClientInterface(self.errorFlag))
 
     def run(self, x, period):
-	'''Start the server running.'''
-	while not x.isSet():
-	    self.controlSrv.handle_request()
-	    x.wait(period)
-	self.controlSrv.server_close()	    
+        '''Start the server running.'''
+        while not x.isSet():
+            self.controlSrv.handle_request()
+            x.wait(period)
+        self.controlSrv.server_close()            
 
     def check(self):
-	'''Check for an incoming request to handle.'''
-	self.controlSrv.handle_request()
+        '''Check for an incoming request to handle.'''
+        self.controlSrv.handle_request()
 
 # -----------------------------------------------------------------------------
 
@@ -122,139 +122,139 @@ class SimpleClient:
     protocols, schedule some samples and kick off a run.'''
 
     def __init__(self, hostURL, monitorURL, serviceURL, debug = True):
-	self.hostURL = hostURL
-	self.monitorURL = monitorURL
-	self.serviceURL = serviceURL
-	self.debug = debug
-	
-	# Connect to the instrument control server
-	if self.debug: print "Attempting to connect to %s" % (hostURL)
-	try:
-	    self.controlSrv = xmlrpclib.ServerProxy(hostURL)
-	    serverIsAlive = self.controlSrv.ping()
-	except socket.error, msg:
-	    raise TeslaException, "Unable to connect to %s: %s" % (hostURL, msg)
-	
-	if serverIsAlive:
-	    self.monitor = Monitor()
-	    self.monitorThread = SimpleThread(self.monitor.run)
-	    self.monitorThread.start()
-	    self.controlSrv.subscribe(monitorURL)
-	    if self.debug: self.printInfo()
+        self.hostURL = hostURL
+        self.monitorURL = monitorURL
+        self.serviceURL = serviceURL
+        self.debug = debug
+        
+        # Connect to the instrument control server
+        if self.debug: print "Attempting to connect to %s" % (hostURL)
+        try:
+            self.controlSrv = xmlrpclib.ServerProxy(hostURL)
+            serverIsAlive = self.controlSrv.ping()
+        except socket.error, msg:
+            raise TeslaException, "Unable to connect to %s: %s" % (hostURL, msg)
+        
+        if serverIsAlive:
+            self.monitor = Monitor()
+            self.monitorThread = SimpleThread(self.monitor.run)
+            self.monitorThread.start()
+            self.controlSrv.subscribe(monitorURL)
+            if self.debug: self.printInfo()
 
-	# Now connect to the service server
-	if self.debug: print "Attempting to connect to %s" % (serviceURL)
-	try:
-	    self.serviceSrv = xmlrpclib.ServerProxy(serviceURL)
-	    serviceIsAlive = self.serviceSrv.ping()
-	    print "Service interface is", 
-	    if serviceIsAlive:
-		print "up\n"
-	    else:
-		print "down\n"
-	except socket.error, msg:
-	    raise TeslaException, "Unable to connect to %s: %s" % (serviceURL, msg)
-	
-	
+        # Now connect to the service server
+        if self.debug: print "Attempting to connect to %s" % (serviceURL)
+        try:
+            self.serviceSrv = xmlrpclib.ServerProxy(serviceURL)
+            serviceIsAlive = self.serviceSrv.ping()
+            print "Service interface is", 
+            if serviceIsAlive:
+                print "up\n"
+            else:
+                print "down\n"
+        except socket.error, msg:
+            raise TeslaException, "Unable to connect to %s: %s" % (serviceURL, msg)
+        
+        
     def halt(self):
-	'''Halt the client and server'''
-	self.monitorThread.join()
-	if self.debug: print "Halting..."
-	self.controlSrv.halt()
+        '''Halt the client and server'''
+        self.monitorThread.join()
+        if self.debug: print "Halting..."
+        self.controlSrv.halt()
 
     def printInfo(self):
-	'''Print some general information from the server.'''
-	serverInfo = self.controlSrv.getServerInfo()
-	print "  Gateway address:", serverInfo[0]
-	print "   Server version:", serverInfo[1]
-	print "    Server uptime:", serverInfo[2]
-	print " Software version:", serverInfo[3]
-	print "    Serial number:", serverInfo[4]
-	
-	hostInfo = self.controlSrv.getHostConfiguration()
-	for key in hostInfo.keys():
-	    print "%17s: %s" % (key, hostInfo[key])
+        '''Print some general information from the server.'''
+        serverInfo = self.controlSrv.getServerInfo()
+        print "  Gateway address:", serverInfo[0]
+        print "   Server version:", serverInfo[1]
+        print "    Server uptime:", serverInfo[2]
+        print " Software version:", serverInfo[3]
+        print "    Serial number:", serverInfo[4]
+        
+        hostInfo = self.controlSrv.getHostConfiguration()
+        for key in hostInfo.keys():
+            print "%17s: %s" % (key, hostInfo[key])
 
-	print  
-	print "Instrument status:", self.controlSrv.getInstrumentStatus()
-	print " Instrument state:", self.controlSrv.getInstrumentState()
-	print "        Error log:"
-	for entry in self.controlSrv.getErrorLog():
-	    print "\t\t" + entry
-	print 
+        print  
+        print "Instrument status:", self.controlSrv.getInstrumentStatus()
+        print " Instrument state:", self.controlSrv.getInstrumentState()
+        print "        Error log:"
+        for entry in self.controlSrv.getErrorLog():
+            print "\t\t" + entry
+        print 
        
-	subscribers = self.controlSrv.getSubscriberList()
-	print "      Subscribers:", 
-	if len(subscribers):
-	    print subscribers
-	else:
-	    print "None"
-	print
+        subscribers = self.controlSrv.getSubscriberList()
+        print "      Subscribers:", 
+        if len(subscribers):
+            print subscribers
+        else:
+            print "None"
+        print
 
     def getProtocols(self):
-	'''Return the list of protocols'''
-	return self.controlSrv.getProtocols()
+        '''Return the list of protocols'''
+        return self.controlSrv.getProtocols()
 
     def waitForState(self, state = 'IDLE'):
-	'''Wait until we reach the specified state.'''
-	if self.debug: print 'Waiting for the %s state...' % (state)
-	while True:
-	    currentState = self.controlSrv.getInstrumentState()
-	    if currentState in ['HALTED', 'ESTOP', 'SHUTDOWN', state]:
-		if self.debug: print "Breaking on %s" % (currentState)
-		break
-	    else:
-		time.sleep(WAIT_TIME)
-	return currentState
-	
+        '''Wait until we reach the specified state.'''
+        if self.debug: print 'Waiting for the %s state...' % (state)
+        while True:
+            currentState = self.controlSrv.getInstrumentState()
+            if currentState in ['HALTED', 'ESTOP', 'SHUTDOWN', state]:
+                if self.debug: print "Breaking on %s" % (currentState)
+                break
+            else:
+                time.sleep(WAIT_TIME)
+        return currentState
+        
     def waitForIdle(self):
-	'''Wait until we reach the IDLE state.'''
-	return self.waitForState('IDLE')
+        '''Wait until we reach the IDLE state.'''
+        return self.waitForState('IDLE')
 
     def reportETC(self, etc):
-	'''Report the ETC for the schedule or run, if the debug flag is on.'''
-	if self.debug: 
-	    if self.monitor.errorFlag.isSet():
-		print 'ETC not available (failed schedule)'
-	    else:
-		print 'ETC =', etc
+        '''Report the ETC for the schedule or run, if the debug flag is on.'''
+        if self.debug: 
+            if self.monitor.errorFlag.isSet():
+                print 'ETC not available (failed schedule)'
+            else:
+                print 'ETC =', etc
 
     def runSamples(self, sampleList):
-	'''Start a run, using a set of samples, and then wait for it to 
-	finish (ie. return to IDLE).'''
-	state = self.waitForIdle()
-	if state == 'IDLE':
-	    if self.debug: print 'Now running samples.'	
-	    try:
-		self.monitor.errorFlag.clear()	    # Clear the error flag
-		etc = self.controlSrv.startRun(sampleList)
-		self.reportETC(etc)
-	    except Exception, msg:
-		if self.debug: print 'ERROR ===>', msg
-	    if not self.monitor.errorFlag.isSet():
-		# No error, then wait for us to return to the 'idle' state
-		time.sleep(WAIT_TIME)
-		state = self.waitForIdle()
-	    else:
-		# Otherwise, clear the error flag and return
-		self.monitor.errorFlag.clear()
+        '''Start a run, using a set of samples, and then wait for it to 
+        finish (ie. return to IDLE).'''
+        state = self.waitForIdle()
+        if state == 'IDLE':
+            if self.debug: print 'Now running samples.'        
+            try:
+                self.monitor.errorFlag.clear()            # Clear the error flag
+                etc = self.controlSrv.startRun(sampleList)
+                self.reportETC(etc)
+            except Exception, msg:
+                if self.debug: print 'ERROR ===>', msg
+            if not self.monitor.errorFlag.isSet():
+                # No error, then wait for us to return to the 'idle' state
+                time.sleep(WAIT_TIME)
+                state = self.waitForIdle()
+            else:
+                # Otherwise, clear the error flag and return
+                self.monitor.errorFlag.clear()
             print "\aRun complete"              # Ring a bell to alert the user
-	return state
+        return state
   
     def scheduleSamples(self, numSamples, protocolName, sampleVolume = 1000):
-	'''Set up some samples and schedule them.'''
-	# Pick the first protocol
-	protocol = [p for p in self.getProtocols() if p['label'] == protocolName][0]
+        '''Set up some samples and schedule them.'''
+        # Pick the first protocol
+        protocol = [p for p in self.getProtocols() if p['label'] == protocolName][0]
 
         if sampleVolume < protocol['minVol'] or sampleVolume > protocol['maxVol']:
             print "ERROR: volume (%d) is out of range (%d -> %d)" % (sampleVolume, protocol['minVol'], protocol['maxVol'])
             return []
         
-	pID = protocol['ID']
-	cons = self.controlSrv.calculateConsumables(pID, sampleVolume)
+        pID = protocol['ID']
+        cons = self.controlSrv.calculateConsumables(pID, sampleVolume)
 
-	samples = []
-	for i in range(1, numSamples + 1):
+        samples = []
+        for i in range(1, numSamples + 1):
             try:
                 sample = Sample(i, "Sample %d" % (i), protocol['ID'], sampleVolume, i)
                 samples.append(sample)
@@ -262,19 +262,19 @@ class SimpleClient:
                 print "ERROR:", msg
                 return []
 
-	try:
-	    self.monitor.errorFlag.clear()	# Clear the error flag
-	    etc = self.controlSrv.scheduleRun(samples)
-	    self.reportETC(etc)
-	except Exception, msg:
-	    if self.debug: print 'ERROR --->', msg
-	if not self.monitor.errorFlag.isSet():
-	    # Successful? Let the operator know
-	    print "Samples scheduled... with protocol: %s" % (protocolName)
-	else:
-	    # Otherwise, clear the error flag
-	    self.monitor.errorFlag.clear()
-	return samples
+        try:
+            self.monitor.errorFlag.clear()        # Clear the error flag
+            etc = self.controlSrv.scheduleRun(samples)
+            self.reportETC(etc)
+        except Exception, msg:
+            if self.debug: print 'ERROR --->', msg
+        if not self.monitor.errorFlag.isSet():
+            # Successful? Let the operator know
+            print "Samples scheduled... with protocol: %s" % (protocolName)
+        else:
+            # Otherwise, clear the error flag
+            self.monitor.errorFlag.clear()
+        return samples
 
 # -----------------------------------------------------------------------------
 
@@ -285,28 +285,28 @@ def pickAProtocol(protocols):
     print "\n        Protocols:"
     i = 0
     for protocol in protocols:
-	print "\t[%d]\t%s\t%s" % (i, hex(protocol['ID']), protocol['label'])
-	i += 1
+        print "\t[%d]\t%s\t%s" % (i, hex(protocol['ID']), protocol['label'])
+        i += 1
     print "\tor [Q]uit\n"
     try:
-	index = int(raw_input('Protocol number: '))
-	p = protocols[index]
-	print "Selected [%d] = protocol: %s\n" % (index, p['label'])
-	return p['label']
+        index = int(raw_input('Protocol number: '))
+        p = protocols[index]
+        print "Selected [%d] = protocol: %s\n" % (index, p['label'])
+        return p['label']
     except:
-	return 'Q'
+        return 'Q'
 
 def pickNumSamples():
     '''Return a number between 1 and 4 for the number of samples to schedule/run'''
     N = 4
     while True:
-	print "How many samples do you want to run (1 - %d): " % (N),
-	try:
-	    key = int(msvcrt.getche())
-	except:
-	    pass
-	if key in range(1, N + 1):
-	    break
+        print "How many samples do you want to run (1 - %d): " % (N),
+        try:
+            key = int(msvcrt.getche())
+        except:
+            pass
+        if key in range(1, N + 1):
+            break
     print
     return key
 
@@ -334,13 +334,13 @@ if __name__ == '__main__':
 
     # Loop until the user presses 'Q' when prompted for a protocol
     while True:
-	client.waitForIdle()
-	protocolPick = pickAProtocol(protocols)
-	if protocolPick == 'Q': break
-	numSamples = pickNumSamples()
+        client.waitForIdle()
+        protocolPick = pickAProtocol(protocols)
+        if protocolPick == 'Q': break
+        numSamples = pickNumSamples()
         sampleVolume = askForVolume()
     
-	samples = client.scheduleSamples(numSamples, protocolPick, sampleVolume)
+        samples = client.scheduleSamples(numSamples, protocolPick, sampleVolume)
         if len(samples) > 0:
             state = client.runSamples(samples)
             if state != 'IDLE':
@@ -348,6 +348,6 @@ if __name__ == '__main__':
                 break
 
     client.halt()
-	
+        
 # eof
 

@@ -307,6 +307,14 @@ class SampleTracker:
         else:
             return vialLabelList[idx]
 
+    def GenSampleLabel(self,idx,vialLabelList):
+        NOT_PROVIDED ="Not Provided"
+        NOT_APPLICABLE ="-"    # Not Applicable
+        if not vialLabelList or len(vialLabelList)<=idx or vialLabelList[idx]=='':
+            return NOT_PROVIDED
+        else:
+            return vialLabelList[idx]
+
 
     def GenRunSummary(self,reportFile):
         NOT_PROVIDED ="Not Provided"
@@ -351,11 +359,6 @@ class SampleTracker:
                         sampleCount+=1
                         sampleNo=str(sampleCount)
 
-                        if sample.sample1Label == '':
-                            sampleID=NOT_PROVIDED
-                        else:
-                            sampleID=str(sample.sample1Label)
-
                         protocol = self.convertSymbols(sample.protocol.label);
                         sampleVolume_ML="%2.3f" %(float(sample.volume)/1000.0)
                         initQuad=str(sample.initialQuadrant)
@@ -372,6 +375,11 @@ class SampleTracker:
                             selectionCocktailLotID = self.GenVialLabel(k,sample.consumables[k].cocktailVolume,sample.cocktailLabel)
                             antibodyCocktailLotID = self.GenVialLabel(k,sample.consumables[k].antibodyVolume,sample.antibodyLabel)
 
+                            if sample.consumables[k].sampleVesselRequired > 0:
+                                sampleID = self.GenSampleLabel(k,sample.sample1Label)
+                            else:
+                                sampleID = NOT_APPLICABLE
+                                
                                     
                             if (k == 0):
                                 if str(sample.bufferLabel) == '':

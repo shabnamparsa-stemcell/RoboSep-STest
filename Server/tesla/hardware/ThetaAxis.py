@@ -96,7 +96,7 @@ class ThetaAxis (Axis):
         # Put on record
         # NB: we don't necessarily know the distance to home, but assuming the calculation
         #   probably causes less error than not.
-	if self.debug: print self, "Axis::Home"
+        if self.debug: print self, "Axis::Home"
         if self.m_IsHomed:
             stepsToHome = self.HomeStep() - self.Step()
         else:

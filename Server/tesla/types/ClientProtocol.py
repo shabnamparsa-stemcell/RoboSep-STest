@@ -77,56 +77,56 @@ class ClientProtocol:
 
     # RL - Short Description for Sample Volume Dialog -  03/29/06
     def __init__(self, protocolClass, label, description,
-	    minVolume_uL, maxVolume_uL = tesla.config.DEFAULT_WORKING_VOLUME_uL, 
-	    numQuadrants = 1):
-	'''Protocol initialisation, primarily designed to be called by 
-	__new__(). Requires a separation class, a (unique) identifying label, 
-	a minimum sample volume (in uL), a maximum sample volume (in uL), the
-	number of quadrants required by the protocol.
-	The class members, as used by the interface clients are:
+            minVolume_uL, maxVolume_uL = tesla.config.DEFAULT_WORKING_VOLUME_uL, 
+            numQuadrants = 1):
+        '''Protocol initialisation, primarily designed to be called by 
+        __new__(). Requires a separation class, a (unique) identifying label, 
+        a minimum sample volume (in uL), a maximum sample volume (in uL), the
+        number of quadrants required by the protocol.
+        The class members, as used by the interface clients are:
 
-	int	ID
-	string	label
-	string	description
-	double	minVol
-	double	maxVol
-	string	protocolClass
-	int	numQuadrants
-	'''
-	if protocolClass not in ClientProtocol.LEGAL_CLASSES:
-	    raise ClientProtocolException, "Invalid separation class: %s" % (protocolClass)
-	self.protocolClass = protocolClass
-	
-	self.label = label
-	self.description = description
-	self.ID = simpleHash(label)
+        int        ID
+        string        label
+        string        description
+        double        minVol
+        double        maxVol
+        string        protocolClass
+        int        numQuadrants
+        '''
+        if protocolClass not in ClientProtocol.LEGAL_CLASSES:
+            raise ClientProtocolException, "Invalid separation class: %s" % (protocolClass)
+        self.protocolClass = protocolClass
+        
+        self.label = label
+        self.description = description
+        self.ID = simpleHash(label)
 
-	# Let's ensure that we don't have a hash collision - just replace the
-	# old instance
-	# Note that we originally had some nice code in to handle this, using
-	# new-style classes and the __new__ method, but the XML-RPC library
-	# can not marshal new-style objects (apparently).
-	ClientProtocol.known[self.ID] = self
-	    
-	# Sanity check the volumes
-	if minVolume_uL > maxVolume_uL:
-	    raise ClientProtocolException, 'Min volume must be less than max volume'
-	elif maxVolume_uL > tesla.config.DEFAULT_WORKING_VOLUME_uL:
-	    raise ClientProtocolException, "Maximum volume can not exceed %0.1f uL" % \
-		    (tesla.config.DEFAULT_WORKING_VOLUME_uL)
-	else:
-	    self.minVol = float(minVolume_uL)
-	    self.maxVol = float(maxVolume_uL)
+        # Let's ensure that we don't have a hash collision - just replace the
+        # old instance
+        # Note that we originally had some nice code in to handle this, using
+        # new-style classes and the __new__ method, but the XML-RPC library
+        # can not marshal new-style objects (apparently).
+        ClientProtocol.known[self.ID] = self
+            
+        # Sanity check the volumes
+        if minVolume_uL > maxVolume_uL:
+            raise ClientProtocolException, 'Min volume must be less than max volume'
+        elif maxVolume_uL > tesla.config.DEFAULT_WORKING_VOLUME_uL:
+            raise ClientProtocolException, "Maximum volume can not exceed %0.1f uL" % \
+                    (tesla.config.DEFAULT_WORKING_VOLUME_uL)
+        else:
+            self.minVol = float(minVolume_uL)
+            self.maxVol = float(maxVolume_uL)
 
-	# Sanity check the quadrants 
-	if numQuadrants < 0 or numQuadrants > tesla.config.NUM_QUADRANTS:
-	    raise ClientProtocolException, "Number of quadrants must be between 0 & %d (not %d)" % \
-		    (tesla.config.NUM_QUADRANTS, numQuadrants)
-	self.numQuadrants = numQuadrants
+        # Sanity check the quadrants 
+        if numQuadrants < 0 or numQuadrants > tesla.config.NUM_QUADRANTS:
+            raise ClientProtocolException, "Number of quadrants must be between 0 & %d (not %d)" % \
+                    (tesla.config.NUM_QUADRANTS, numQuadrants)
+        self.numQuadrants = numQuadrants
 
     def __str__(self):
-	'''Simple string representation of the protocol.'''
-	return "%s [%s]" % (self.label, self.protocolClass)
+        '''Simple string representation of the protocol.'''
+        return "%s [%s]" % (self.label, self.protocolClass)
 
 # eof
 

@@ -16,8 +16,8 @@
 # the program(s) have been supplied.
 # 
 # Notes:
-# 	 03/24/05 - added parkarm(0 and islidclosed() - bdr
-# 	 04/11/05 - added parkpump to deenergize pump - bdr
+#          03/24/05 - added parkarm(0 and islidclosed() - bdr
+#          04/11/05 - added parkpump to deenergize pump - bdr
 #    03/23/06 - uniform multi sample - RL
 #    03/29/06 - pause command - RL
 #    09/07/07 - added usebuffertip transport option - bdr
@@ -115,12 +115,12 @@ class InstrumentInterface(object):
 
         interfaceVersion is a version number for the interface revision
         '''
-        self.__startTime = self.__getNow()  	# Record the time we started up
-        self.__gatewayURL = gatewayURL		# Store the gateway we're tied to
+        self.__startTime = self.__getNow()          # Record the time we started up
+        self.__gatewayURL = gatewayURL                # Store the gateway we're tied to
         self.controlCentre = controlCentre
         self.version = interfaceVersion
         self.logger = tesla.logger.Logger(logName = tesla.config.LOG_PATH)
-        self.subscribers = {}			# Initialise our subscribers
+        self.subscribers = {}                        # Initialise our subscribers
 
         # 2011-11-24 -- sp
         self.svrLog = PgmLog( 'svrLog' )
@@ -132,7 +132,7 @@ class InstrumentInterface(object):
         # Register our reporter callback with the control centre so that we can
         # receive error & status notifications
         self.controlCentre.registerReporter(self.__reporter)
-        self.__needToInit = True		# Need to init the instrument?
+        self.__needToInit = True                # Need to init the instrument?
 
         # Do the inspection of Devices and Subsystems
         self.__serviceFunctionList = []         # Holds a list of all service functions
@@ -150,90 +150,90 @@ class InstrumentInterface(object):
     # --- General instrument/interface queries --------------------------------
 
     def ping(self):
-	'''Are we there? This is for basic keep-alive testing.
-	IN: Nothing
-	OUT: (boolean) True
-	'''
-	return True
+        '''Are we there? This is for basic keep-alive testing.
+        IN: Nothing
+        OUT: (boolean) True
+        '''
+        return True
 
 
     def getServerInfo(self):
-	'''Returns a list of server information.
-	IN: Nothing
-	OUT: A list of (string) gateway URL, (string) interface version,
-	     (string) uptime in seconds, (string) instrument version and
-	     (string) instrument serial number
-	'''
-	uptime = round(self.__getNow() - self.__startTime)
-	return [self.__gatewayURL, self.version, str(uptime), 
-		tesla.config.SOFTWARE_VERSION, self.serialNumber]
+        '''Returns a list of server information.
+        IN: Nothing
+        OUT: A list of (string) gateway URL, (string) interface version,
+             (string) uptime in seconds, (string) instrument version and
+             (string) instrument serial number
+        '''
+        uptime = round(self.__getNow() - self.__startTime)
+        return [self.__gatewayURL, self.version, str(uptime), 
+            tesla.config.SOFTWARE_VERSION, self.serialNumber]
 
 
     def getInstrumentState(self):
-	'''Returns the current instrument state.
-	IN: Nothing
-	OUT: (string) Instrument state
-	'''
-	return self.controlCentre.getState()
+        '''Returns the current instrument state.
+        IN: Nothing
+        OUT: (string) Instrument state
+        '''
+        return self.controlCentre.getState()
 
 
     def getInstrumentStatus(self):
-	'''Returns a list of the instrument status fields - work in progress
-	IN: Nothing
-	OUT: A list of (string)
-	'''	
-    	# Status: Not used. This method should be reviewed, as it appears to
-	#         now be redundant.
-	return ['N/A',]
+        '''Returns a list of the instrument status fields - work in progress
+        IN: Nothing
+        OUT: A list of (string)
+        '''        
+        # Status: Not used. This method should be reviewed, as it appears to
+        #         now be redundant.
+        return ['N/A',]
 
 
     def getHostConfiguration(self):
-	'''Return a map of host configuration information; for debug/diagnostic 
-	purposes
-	IN: Nothing
-	OUT: A list of (string) host configuration information.
-	'''
-	configInfo = {	'Python EXE'      : sys.executable,
-			'Python version'  : sys.version,
-			'Windows version' : sys.getwindowsversion(),
-	}
-	return configInfo
+        '''Return a map of host configuration information; for debug/diagnostic 
+        purposes
+        IN: Nothing
+        OUT: A list of (string) host configuration information.
+        '''
+        configInfo = {        'Python EXE'      : sys.executable,
+                        'Python version'  : sys.version,
+                        'Windows version' : sys.getwindowsversion(),
+        }
+        return configInfo
 
     def getContainerVolumes(self):
         '''Returns configured volumes for containers used by the instrument'''
         return self.controlCentre.getContainerVolumes()
 
     def getErrorLog(self, numEntries = 10, entryOffset = 0):
-	'''Returns a list of entries (as strings) from the instrument error log. 
-	IN: (int) numEntries, specifies how many entries to return.
-	    (int) entryOffset, specifies which entry to start at. 0-indexed. 
-	    Defaults to 0.
-	OUT: A list of (string) error entries
-	'''
-	# Status: complete for CDP
-	return self.logger.getEntries(numEntries, entryOffset)
+        '''Returns a list of entries (as strings) from the instrument error log. 
+        IN: (int) numEntries, specifies how many entries to return.
+            (int) entryOffset, specifies which entry to start at. 0-indexed. 
+            Defaults to 0.
+        OUT: A list of (string) error entries
+        '''
+        # Status: complete for CDP
+        return self.logger.getEntries(numEntries, entryOffset)
 
 
     # --- Event administration ------------------------------------------------
 
     def getSubscriberList(self):
-	'''Returns a list of event server subscriptions.
-	IN: Nothing
-	OUT: A list of (string) subscribers
-	'''
-	# Status: complete for CDP
-	return self.subscribers.keys()
+        '''Returns a list of event server subscriptions.
+        IN: Nothing
+        OUT: A list of (string) subscribers
+        '''
+        # Status: complete for CDP
+        return self.subscribers.keys()
 
 
     def testSubscriber(self, subscriber):
-	'''Test the connection to the subscriber by pinging it
-	IN: (string) subscriber URL 
-	OUT: (boolean) success flag
-	'''
+        '''Test the connection to the subscriber by pinging it
+        IN: (string) subscriber URL 
+        OUT: (boolean) success flag
+        '''
         try:
-	    return subscriber.ping()
-	except:
-	    return False		    	
+            return subscriber.ping()
+        except:
+            return False                            
 
 
     def subscribe(self, serverURL):
@@ -267,7 +267,7 @@ class InstrumentInterface(object):
                 self.logger.logInfo("II: %s in an invalid URL (reserved port?)" % (serverURL))
                 self.svrLog.logInfo('', self.logPrefix, funcReference, 'Invalid (reserved?) url=%s' % serverURL)  # 2011-11-24 sp -- added logging
             else:
-                # Bring up a connection to the subscriber	
+                # Bring up a connection to the subscriber        
                 s = xmlrpclib.ServerProxy(serverURL, verbose = tesla.config.XMLRPC_DEBUG)
                 subscriberAlive = self.testSubscriber(s)
                 if subscriberAlive:
@@ -324,20 +324,20 @@ class InstrumentInterface(object):
     #    return self.controlCentre.getMultipleSamples()
     
     def getProtocols(self):
-	'''Return a list of all known separation protocols.
-	IN: Nothing
-	OUT: A list of ClientProtocol objects
-	'''
-	return self.controlCentre.getProtocols()
+        '''Return a list of all known separation protocols.
+        IN: Nothing
+        OUT: A list of ClientProtocol objects
+        '''
+        return self.controlCentre.getProtocols()
 
     def calculateConsumables(self, protocolID, sampleVolume):
-	'''Return a map of consumables needed for the specified protocol and 
-	sample volume.
-	IN: protocolID = (int) unique protocol ID, obtained from getProtocols()
-	    sampleVolume = (double) sammple volume (in uL)
-	OUT: A list of ProtocolConsumable objects
-	'''
-	return self.controlCentre.calculateConsumables(protocolID, sampleVolume)
+        '''Return a map of consumables needed for the specified protocol and 
+        sample volume.
+        IN: protocolID = (int) unique protocol ID, obtained from getProtocols()
+            sampleVolume = (double) sammple volume (in uL)
+        OUT: A list of ProtocolConsumable objects
+        '''
+        return self.controlCentre.calculateConsumables(protocolID, sampleVolume)
 
     def scheduleRun(self, samples):
         '''Schedule 1 - 4 samples to run. Stores the ETC and batch object.
@@ -356,72 +356,72 @@ class InstrumentInterface(object):
 
     def startRun(self, samples, userID = 'unknown',
                  isSharing = False, sharedSectorsTranslation = [], sharedSectorsProtocolIndex = []):
-	'''Start the scheduled run.
-	IN: samples = A list of 1 - 4 Sample objects
-	    userID = (string) optional user/operator ID	
-	OUT: (ISO 8601) Estimated Time *of* Completion, aka "ETC"
-	'''
-	try:
+        '''Start the scheduled run.
+        IN: samples = A list of 1 - 4 Sample objects
+            userID = (string) optional user/operator ID        
+        OUT: (ISO 8601) Estimated Time *of* Completion, aka "ETC"
+        '''
+        try:
             etc = self.controlCentre.startRun(self._convertSamples(samples), userID,
                                               isSharing,sharedSectorsTranslation,sharedSectorsProtocolIndex)
-	    #self._reportETC(etc)
-	except ControlException, msg:
-	    # This exception should have already been logged and reported to
-	    # the host. Clean up nicely by getting the ETC from the control 
+            #self._reportETC(etc)
+        except ControlException, msg:
+            # This exception should have already been logged and reported to
+            # the host. Clean up nicely by getting the ETC from the control 
             # layer; in the case, ETC should be set to *now*
-	    etc = self.controlCentre.getETC()
-	return etc
+            etc = self.controlCentre.getETC()
+        return etc
 
     def pauseRun(self):
-	'''Pause a currently-executing run. The run can then be resumed
-	by calling the resumeRun() method, but the validity of the
-	chemistries can not be guaranteed (for example, cells may have
-	dried out or been separated for too long).
-	IN: Nothing
-	OUT: (boolean) flag, not used
-	'''
-	return self.controlCentre.pauseRun()
+        '''Pause a currently-executing run. The run can then be resumed
+        by calling the resumeRun() method, but the validity of the
+        chemistries can not be guaranteed (for example, cells may have
+        dried out or been separated for too long).
+        IN: Nothing
+        OUT: (boolean) flag, not used
+        '''
+        return self.controlCentre.pauseRun()
 
     def resumeRun(self):
-	'''Resume a paused run. This will ONLY work if the
-	pauseRun() method has been callled.
-	IN: Nothing
-	OUT: (boolean) status, true if the run could be resumed
-	'''
-	result = self.controlCentre.resumeRun()
-	#stupid thing blocks for some reason
-	return result
+        '''Resume a paused run. This will ONLY work if the
+        pauseRun() method has been callled.
+        IN: Nothing
+        OUT: (boolean) status, true if the run could be resumed
+        '''
+        result = self.controlCentre.resumeRun()
+        #stupid thing blocks for some reason
+        return result
 
     def parkArm(self):
-	'''All axes are sent back to safe positions, etc.)...bdr
-	IN: Nothing
-	OUT: (boolean) flag, not used
-	'''
-	return self.controlCentre.parkArm()
+        '''All axes are sent back to safe positions, etc.)...bdr
+        IN: Nothing
+        OUT: (boolean) flag, not used
+        '''
+        return self.controlCentre.parkArm()
 
     def parkPump(self):
-	'''Put pump valve in deenergized position..bdr
-	IN: Nothing
-	OUT: (boolean) flag, not used
-	'''
-	return self.controlCentre.parkPump()
+        '''Put pump valve in deenergized position..bdr
+        IN: Nothing
+        OUT: (boolean) flag, not used
+        '''
+        return self.controlCentre.parkPump()
 
     def haltRun(self):
-	'''Halt a currently-executing run. The run is stopped as
-	gracefully as possible (all axes are sent back to safe
-	positions, etc.).
-	IN: Nothing
-	OUT: (boolean) flag, not used
-	'''
-	return self.controlCentre.haltRun()
+        '''Halt a currently-executing run. The run is stopped as
+        gracefully as possible (all axes are sent back to safe
+        positions, etc.).
+        IN: Nothing
+        OUT: (boolean) flag, not used
+        '''
+        return self.controlCentre.haltRun()
 
     def abortRun(self):
-	'''Abort/eStop a currently-executing run. There is NO graceful
-	termination of the current run; the instrument is simply STOPPED.
-	IN: Nothing
-	OUT: (boolean) flag, not used
-	'''
-	return self.controlCentre.abortRun()
+        '''Abort/eStop a currently-executing run. There is NO graceful
+        termination of the current run; the instrument is simply STOPPED.
+        IN: Nothing
+        OUT: (boolean) flag, not used
+        '''
+        return self.controlCentre.abortRun()
 
     def reloadProtocols(self):
         return self.controlCentre.reloadProtocols()
@@ -518,20 +518,20 @@ class InstrumentInterface(object):
         return True
 
     def shutdown(self, powerDown = True):
-	'''Move the instrument to the SHUTTINGDOWN (and then the SHUTDOWN) state.
-	IN: (boolean) if true, power down the instrument
-	OUT: (boolean) True, not used
-	'''
-	self.controlCentre.shutdownInstrument(powerDown)
-	return True
-	
+        '''Move the instrument to the SHUTTINGDOWN (and then the SHUTDOWN) state.
+        IN: (boolean) if true, power down the instrument
+        OUT: (boolean) True, not used
+        '''
+        self.controlCentre.shutdownInstrument(powerDown)
+        return True
+        
     def turnOff(self):
-	'''Move the instrument to its powered off state
-	IN: Nothing
-	OUT: (boolean) True, not used
-	'''
-	self.controlCentre.shutdownInstrument(powerDown = False)
-	return True
+        '''Move the instrument to its powered off state
+        IN: Nothing
+        OUT: (boolean) True, not used
+        '''
+        self.controlCentre.shutdownInstrument(powerDown = False)
+        return True
 
 
     def isLidClosed( self ):
@@ -618,7 +618,7 @@ class InstrumentInterface(object):
             return self.controlCentre.isHydroFluidLow()
         else :
             if self.controlCentre.isHydroFluidLow():
-            	self.setHydroFluidFull() #setting this writes into ini so don't do it if you dont have to
+                self.setHydroFluidFull() #setting this writes into ini so don't do it if you dont have to
             return self.controlCentre.isLowHydraulicLevel()
             
     def AttachBarcode(self):
@@ -656,19 +656,19 @@ class InstrumentInterface(object):
 
     def enterServiceState( self ): 
         '''Changes the instrument state from IDLE to SERVICE
-	IN: Nothing
-	OUT: (boolean) flag on success of state change
-	'''
-	self.DetachBarcode();
-	return self.controlCentre.enterServiceState()
+        IN: Nothing
+        OUT: (boolean) flag on success of state change
+        '''
+        self.DetachBarcode();
+        return self.controlCentre.enterServiceState()
     
     def exitServiceState( self ):
         '''Changes the instrument state to SERVICE to IDLE
-	IN: Nothing
-	OUT: (boolean) flag on success of state change
-	'''
-	self.AttachBarcode();
-	return self.controlCentre.exitServiceState()
+        IN: Nothing
+        OUT: (boolean) flag on success of state change
+        '''
+        self.AttachBarcode();
+        return self.controlCentre.exitServiceState()
 
     def execute( self, objectName, method, arguments ):
         '''Execute command given by the arguments
@@ -724,15 +724,15 @@ class InstrumentInterface(object):
             self.logger.logError("II: Can't execute() in %s state" % (currentState))
             self.svrLog.logError('xx', self.logPrefix, funcReference, "Can't execute() in %s state" % (currentState))  # 2011-11-24 sp -- added logging
             self._reportError(WARNING_LEVEL, 'TEC1400', currentState)
-    	    return ""
+            return ""
         
 
     def getServiceFunctionList( self ):
-	'''Return all the information the client needs for each function
+        '''Return all the information the client needs for each function
         in the function list.
-	IN: Nothing
-	OUT: A list of lists of strings
-	'''
+        IN: Nothing
+        OUT: A list of lists of strings
+        '''
         returnList = []
         for funcName, funcInfo in self.__serviceFunctionList:
             # If there is no doc then funcInfo.__doc__ is None so we need to change this to
@@ -847,33 +847,33 @@ class InstrumentInterface(object):
 
 
     def _reportError(self, errorLevel, errorCode, *args):
-	'''Trigger an event reporting a critical error to all subscribers.
-	This is not intended to be called across the interface.'''
-	paramCount = len(args)
-	params = [str(x) for x in args]
-	for subscriber in self.subscribers.values():
-	    subscriber.reportError(errorLevel, errorCode, paramCount, params)
+        '''Trigger an event reporting a critical error to all subscribers.
+        This is not intended to be called across the interface.'''
+        paramCount = len(args)
+        params = [str(x) for x in args]
+        for subscriber in self.subscribers.values():
+            subscriber.reportError(errorLevel, errorCode, paramCount, params)
 
 
     # ---- Private helper methods ---------------------------------------------
 
     def __getNow(self):
-	'''Private method: Returns the current time in epoch seconds'''
-	return time.time()
+        '''Private method: Returns the current time in epoch seconds'''
+        return time.time()
 
     def __verifySubscriber(self, serverURL):
-	'''Verify that the URL provided for subscription to an interface is
-	okay; in particular, that we are not binding to the service port (on
-	this machine).
-	An example of a decent server URL is: 
-	   http://localhost:8001/InstrumentControlEventSink
-	'''
-	verified = False
-	urlMatch = re.compile("^http://(.*):(\d+)(/.*){0,1}").search(serverURL)
-	verified = urlMatch	    
-	# hostname = urlMatch.group(1)
-	# port = urlMatch.group(2)
-	return verified
+        '''Verify that the URL provided for subscription to an interface is
+        okay; in particular, that we are not binding to the service port (on
+        this machine).
+        An example of a decent server URL is: 
+           http://localhost:8001/InstrumentControlEventSink
+        '''
+        verified = False
+        urlMatch = re.compile("^http://(.*):(\d+)(/.*){0,1}").search(serverURL)
+        verified = urlMatch            
+        # hostname = urlMatch.group(1)
+        # port = urlMatch.group(2)
+        return verified
 
     def _convertSamples(self, samples):
         '''Convert a list of sample dictionaries into a returned list of Sample
@@ -881,13 +881,13 @@ class InstrumentInterface(object):
         converts = []
         for s in samples:
             sample = Sample(int(s['ID']), s['label'], int(s['protocolID']), 
-				float(s['volume_uL']), int(s['initialQuadrant']),
+                                float(s['volume_uL']), int(s['initialQuadrant']),
                                 s.get('cocktailLabel', []), 
                                 s.get('particleLabel', []),
                                 s.get('lysisLabel', ''), 
                                 s.get('antibodyLabel', []),
-                                s.get('sample1Label', ''),	# bdr99
-                                s.get('sample2Label', ''),	# bdr99
+                                s.get('sample1Label', []),        # bdr99
+                                s.get('sample2Label', ''),        # bdr99
                                 s.get('bufferLabel', '')     # sunny
                             )
             
@@ -952,6 +952,12 @@ class InstrumentInterface(object):
         return self.controlCentre.GetBarcodeThetaOffset();
 
     def getProtocolCommandList(self, protocolIdx):
-	return self.controlCentre.getProtocolCommandList(protocolIdx)
+        return self.controlCentre.getProtocolCommandList(protocolIdx)
+    
+    def isSharingComboValid(self, sampleList, userID = 'undefined',
+                 isSharing = False, sharedSectorsTranslation = [], sharedSectorsProtocolIndex = []):
+        return self.controlCentre.isSharingComboValid(self._convertSamples(sampleList), userID,
+                 isSharing, sharedSectorsTranslation, sharedSectorsProtocolIndex)
+        
 # eof
 

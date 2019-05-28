@@ -607,10 +607,10 @@ class RoboCamMgr :
             self.svrLog.logWarning('', self.logPrefix, funcReference, \
                                    '\n\n #### RoboCam UNKNOWN COMMAND: %s \n' % (cmd_str))
             
-	self.SetCurrentProtocolID(id)
+        self.SetCurrentProtocolID(id)
         if kw.has_key('seq'):   
            seq = kw['seq']      
- 	   self.SetCurrentProtocolSeq(seq)
+           self.SetCurrentProtocolSeq(seq)
         if kw.has_key('initialQuadrant'): 
            qdr = kw['initialQuadrant']
            self.SetCurrentSec(qdr)

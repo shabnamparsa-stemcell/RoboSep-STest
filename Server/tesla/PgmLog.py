@@ -6,11 +6,11 @@ import os.path
 #
 # New program logging module (RoboSep V4.7+) for the Tesla instrument controller
 # Implemented using Python Logging package with loglevels defined as:
-#   Level 	Numeric value
-#   CRITICAL 	50
+#   Level         Numeric value
+#   CRITICAL         50
 #   ERROR       40
-#   WARNING 	30
-#   INFO 	    20
+#   WARNING         30
+#   INFO             20
 #   DEBUG       10
 #   NOTSET      0
 # 
@@ -179,7 +179,7 @@ class pgmLogMessageHandler(logging.Handler):
             self.logHandler.emit(record)
             self.logFlush()
         else:
-        	# otherwise add message to history queue, and increment the index counter 
+                # otherwise add message to history queue, and increment the index counter 
             self.records.append(record)
             if( self.index == self.capacity ):
                 self.records.pop(0)
@@ -324,7 +324,7 @@ class PgmLog:
 
     def createPathIfNotExist(self, fileName):
         '''Private method: Ensure that the path for the specified filename
-        exists. If not,	create it.'''
+        exists. If not,        create it.'''
         path = os.path.dirname(fileName)
         if( path != '' ):
             status = os.path.exists(path)

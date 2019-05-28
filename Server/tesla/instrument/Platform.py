@@ -77,7 +77,7 @@ class Platform( Subsystem ):
         """Load in the configuration data for the Platform."""
         global gHardwareData
 
-	Subsystem.__init__( self, name )
+        Subsystem.__init__( self, name )
         
         platformCfg = gHardwareData.Section('Platform')
         settings = Platform.configData.copy()
@@ -197,12 +197,12 @@ class Platform( Subsystem ):
 
 
     def getCarousel(self):
-	'''Returns the carousel instance.'''
-	return self.carousel
+        '''Returns the carousel instance.'''
+        return self.carousel
 
     def getRobot(self):
-	'''Returns the Z/theta robot instance.'''
-	return self.robot
+        '''Returns the Z/theta robot instance.'''
+        return self.robot
 
     # ---------------------------------------------------------------------------
     #   Nominal 'Protected' methods

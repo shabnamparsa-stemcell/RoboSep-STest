@@ -126,20 +126,20 @@ class SampleScheduler(object):
     # each of our schedulable actions.
     #
     # Notes: * This is temporary code for getting the CDP up and running.
-    #	     * These values were obtained from AED (email, 15 March 2004)
-    #	     * We're not using the sample information at the moment
+    #             * These values were obtained from AED (email, 15 March 2004)
+    #             * We're not using the sample information at the moment
     
-					# open, used, free
-    schedulerTimes = {	'Transport'	: (  0,  28,  0),
-			'Mix'		: (  0,  28,  0),
-			'TopUpVial'	: (  0,  35,  0),
-			'ResuspendVial'	: (  0,  35,  0),
-			'Flush'		: (  0,  10,  0),
-			'Prime'		: (  0,  25,  0),
-			'HomeAll'	: (  0,  30,  0),
-			'Park'    	: (  0,  10,  0),
-			'Demo'		: (  0, 200,  0),
-			'PumpLife'	: (  0, 200,  0),
+    # open, used, free
+    schedulerTimes = {        'Transport'        : (  0,  28,  0),
+                        'Mix'                : (  0,  28,  0),
+                        'TopUpVial'        : (  0,  35,  0),
+                        'ResuspendVial'        : (  0,  35,  0),
+                        'Flush'                : (  0,  10,  0),
+                        'Prime'                : (  0,  25,  0),
+                        'HomeAll'        : (  0,  30,  0),
+                        'Park'            : (  0,  10,  0),
+                        'Demo'                : (  0, 200,  0),
+                        'PumpLife'        : (  0, 200,  0),
                         'MixTrans'      : (  0, 200,  0),
                         'TopUpMixTrans' : (  0, 200,  0),
                         'ResusMixSepTrans'    : (  0, 200,  0),
@@ -147,7 +147,7 @@ class SampleScheduler(object):
                         'TopUpTrans' : (  0, 200,  0),
                         'TopUpTransSepTrans' : (  0, 200,  0),
                         'TopUpMixTransSepTrans' : (  0, 200,  0),
-		    }
+                    }
     skipWarningList = ['Transport','Mix','TopUpVial','ResuspendVial',
                        'MixTrans','TopUpMixTrans','ResusMixSepTrans','ResusMix',
                        'TopUpTrans','TopUpTransSepTrans','TopUpMixTransSepTrans']
@@ -171,9 +171,9 @@ class SampleScheduler(object):
     # ensure that there is sufficient flexibility in the schedule
 
   
-    MAX_ITERATIONS = 10000	    # Maximum number of iterations in a schedule calc
-    NUM_SCHEDULES  = 1		    # Number of schedules calculated internally
-    SEARCH_SPACE_MULTIPLIER = 1	    # Failed? Increase the search space by this much & try again
+    MAX_ITERATIONS = 10000            # Maximum number of iterations in a schedule calc
+    NUM_SCHEDULES  = 1                    # Number of schedules calculated internally
+    SEARCH_SPACE_MULTIPLIER = 1            # Failed? Increase the search space by this much & try again
 
 
 
@@ -193,9 +193,9 @@ class SampleScheduler(object):
             '''
 
         self.debug = tesla.config.SCHEDULER_DEBUG        
-        self.scheduler = IPL_Scheduler()	    
+        self.scheduler = IPL_Scheduler()            
         self.protocolMgr = protocolManager  # A protocol manager instance
-        self.logger = logger		    # A tesla.logger instance
+        self.logger = logger                    # A tesla.logger instance
         self.instrument = instrument
 
         # 2011-11-25 sp -- added logging
@@ -204,7 +204,7 @@ class SampleScheduler(object):
 
         # Get the scheduler times for each workflow command
         self.getSchedulerTimes(tesla.config.CMD_TIME_PATH)
-        self.reset()			    # Create & reset other members
+        self.reset()                            # Create & reset other members
 
     def getNumberOfTransportsPerFlush( self ):
         return self.numberOfTransportsPerFlush
@@ -222,7 +222,7 @@ class SampleScheduler(object):
                 safespace = {}
                 execfile(timeFile, safespace)
                 times = safespace['times']
-                transportTimesSmallTip = safespace['transportTimesSmallTip']	
+                transportTimesSmallTip = safespace['transportTimesSmallTip']        
                 transportTimesLargeTip = safespace['transportTimesLargeTip']
                 mixTimes = safespace['mixTimes']
                 schedulerEndTimeSpan1 = safespace['schedulerEndTimeSpan1']
@@ -262,7 +262,7 @@ class SampleScheduler(object):
         
         self.schedulerTimes = times
         self.transportTimesSmallTip = transportTimesSmallTip
-        self.transportTimesLargeTip = transportTimesLargeTip		    
+        self.transportTimesLargeTip = transportTimesLargeTip                    
         self.mixTimes = mixTimes
         self.schedulerEndTimeSpan1 = schedulerEndTimeSpan1
         self.schedulerEndTimeSpan2 = schedulerEndTimeSpan2
@@ -273,10 +273,10 @@ class SampleScheduler(object):
         self.scheduler.Reset()
         self.scheduler.SetNbrSchedules(self.NUM_SCHEDULES)
         self.scheduler.SetMaxIterations(self.MAX_ITERATIONS)
-        self.__duration_secs = 0	    # Last calculated schedule duration
-        self.__schedule = None		    # Last calculated schedule
-        self.__batchIDList = []		    # Our list of batch IDs for scheduling
-        self.__blockIDs = {}		    # Dictionary of block IDs for samples
+        self.__duration_secs = 0            # Last calculated schedule duration
+        self.__schedule = None                    # Last calculated schedule
+        self.__batchIDList = []                    # Our list of batch IDs for scheduling
+        self.__blockIDs = {}                    # Dictionary of block IDs for samples
 
     def getSchedule(self):
         '''Returns a Schedule object, suitable for dispatching to the hardware
@@ -688,7 +688,7 @@ class SampleScheduler(object):
         return self.getCommandTypeTimes(command.type)
 
     def getCommandTypeTimes(self, commandType):
-       	'''Return a tuple of (open, used, free) times that it will take the 
+        '''Return a tuple of (open, used, free) times that it will take the 
         specified command to execute.'''
         # This next line is to accomodate legacy code (we used to look up a type
         # such as 'Transport', but the type is now 'TransportCommand'. Rather 
@@ -781,7 +781,7 @@ class SampleScheduler(object):
             self.svrLog.logWarning('', self.logPrefix, funcReference, "Index error in __createWorkflowCall: %s" % (msg))    # 2011-12-09 sp -- added logging
             raise SchedulerException, "SS: Index error in __createWorkflowCall: %s" % (msg)
 
-    	return cmdCall
+        return cmdCall
 
     def __getInterpolatedValue( self, volume, coords ):
         '''Returns the interpolated value y, given an x value (volume) and a list of points
@@ -985,8 +985,8 @@ class SampleScheduler(object):
         #    print c
         #print '====================================== getProtocolCommandList DD'
         
-	return self.xmlRpcProtocols[protocolIdx]
-	
+        return self.xmlRpcProtocols[protocolIdx]
+        
 
 
     # Set up our static methods
