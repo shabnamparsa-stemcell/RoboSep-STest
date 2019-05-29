@@ -151,7 +151,8 @@ class Board:
         cmdMethodName = 'self.process_%s_cmd' % cmdCode
         try:
             cmdMethod = eval(cmdMethodName)
-AttributeErrormsg            raise EmulatorError, 'Command %s is not yet implemented' % cmdCode
+        except:
+            raise EmulatorError, 'Command %s is not yet implemented' % cmdCode
 
         try:
             i = len(params)
