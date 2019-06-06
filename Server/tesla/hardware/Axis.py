@@ -31,6 +31,8 @@ from tesla.hardware.AxisTracker import AxisTracker
 from tesla.PgmLog import PgmLog    # 2011-11-23 sp -- programming logging
 import tesla.config         # 2012-01-30 sp -- replace environment variables with configuration file settings
 
+import tesla.DebuggerWindow          # 2012-04-10 sp
+
 # ---------------------------------------------------------------------------
 
 class AxisError(HardwareError):
@@ -174,6 +176,15 @@ class Axis(Device):
                               (self.m_Card.prefix, firmWareVersion) )
         
         self.logger = Device.logger     #CWJ Add
+        if( tesla.config.SS_DEBUGGER_LOG == 1 ):
+          ssLogDebugger = tesla.DebuggerWindow.GetSSTracerInstance()        
+          cardAxis = card.board + str(card.address)
+          param = { 
+                    'Axis' :cardAxis,
+                    'configData':configData,
+                    'moreConfig':moreSettings
+                  }
+          ssLogDebugger.SetParameterFromAxis(param)                
         
     def _GetConfigData (self, type, configFile = 'C:\\Program Files\\STI\\RoboSep\\config\\homeConfig.ini'):
         import os

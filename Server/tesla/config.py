@@ -201,58 +201,15 @@ def GetConfigEnvironment():
     global SS_XY_MICRO_LC;
     
     'Debugger parameters'
-    global ZAxis
-    global ZAxisPower
-    global ZAxisSpeedBegin
-    global ZAxisSpeedSlope
-    global ZAxisSpeedEnd
-    global ZAxisSpeedHomeBegin
-    global ZAxisSpeedHomeSlope
-    global ZAxisSpeedHomeEnd
-    global ZAxisHalfStep
-    global ZAxisBackOffHome
-    global ZAxisHome
-    
-    global PumpAxis
-    global PumpPower
-    global PumpSpeedBegin
-    global PumpSpeedSlope
-    global PumpSpeedEnd
-    global PumpSpeedHomeBegin
-    global PumpSpeedHomeSlope
-    global PumpSpeedHomeEnd
-    global PumpHalfStep
-    global PumpBackOffHome
-    global PumpHome
-    
-    global ThetaArm
-    global ThetaArmPower
-    global ThetaArmSpeedBegin
-    global ThetaArmSpeedSlope
-    global ThetaArmSpeedEnd
-    global ThetaArmSpeedHomeBegin
-    global ThetaArmSpeedHomeSlope
-    global ThetaArmSpeedHomeEnd
-    global ThetaArmHalfStep
-    global ThetaArmBackOffHome
-    global ThetaArmHome
-    
-    global Carousel
-    global CarouselPower
-    global CarouselSpeedBegin
-    global CarouselSpeedSlope
-    global CarouselSpeedEnd
-    global CarouselSpeedHomeBegin
-    global CarouselSpeedHomeSlope
-    global CarouselSpeedHomeEnd
-    global CarouselHalfStep
-    global CarouselBackOffHome
-    global CarouselHome
     global CarouselHomeSwitch
-    
     global PowerOff
     global ZPowerOff
-
+    
+    global ZAxisPowerProfile
+    global PumpPowerProfile
+    global ThetaArmPowerProfile
+    global CarouselPowerProfile
+    
     # set default values
     SS_STEP               = 0;
     SS_STEP_POPUP         = 0;
@@ -290,57 +247,15 @@ def GetConfigEnvironment():
     SS_ENABLE_STRIP_ARM_POSITION_CHECK = 1;
     SS_XY_MICRO_LC = 0;
 
-    ZAxis = 'X0'
-    ZAxisPower = 'P140,50,0'
-    ZAxisSpeedBegin = 'B3000'
-    ZAxisSpeedSlope = 'S5'
-    ZAxisSpeedEnd = 'E15000'
-    ZAxisSpeedHomeBegin = 'B1000'
-    ZAxisSpeedHomeSlope = 'S5'
-    ZAxisSpeedHomeEnd = 'E5000'
-    ZAxisHalfStep = 'H3'
-    ZAxisBackOffHome = 600
-    ZAxisHome = 'N-110s'
-    
-    PumpAxis = 'X1'
-    PumpPower = 'P150,50,0'
-    PumpSpeedBegin = 'B421'
-    PumpSpeedSlope = 'S10'
-    PumpSpeedEnd = 'E1883'
-    PumpSpeedHomeBegin = 'B421'
-    PumpSpeedHomeSlope = 'S10'
-    PumpSpeedHomeEnd = 'E1883'
-    PumpHalfStep = 'H0'
-    PumpBackOffHome = -1200
-    PumpHome = 'N+110s'
-    
-    ThetaArm = 'Y0'
-    ThetaArmPower = 'P140,100,0'
-    ThetaArmSpeedBegin = 'B300'
-    ThetaArmSpeedSlope = 'S7'
-    ThetaArmSpeedEnd = 'E3750'
-    ThetaArmSpeedHomeBegin = 'B900'
-    ThetaArmSpeedHomeSlope = 'S1'
-    ThetaArmSpeedHomeEnd = 'E900'
-    ThetaArmHalfStep = 'H4'
-    ThetaArmBackOffHome = 1200
-    ThetaArmHome = 'N-110s'
-    
-    Carousel = 'Y1'
-    CarouselPower = 'P140,50,0'
-    CarouselSpeedBegin = 'B400'
-    CarouselSpeedSlope = 'S5'
-    CarouselSpeedEnd = 'E8000'
-    CarouselSpeedHomeBegin = 'B1500'
-    CarouselSpeedHomeSlope = 'S1'
-    CarouselSpeedHomeEnd = 'E1500'
-    CarouselHalfStep = 'H4'
-    CarouselBackOffHome = 600
-    CarouselHome = 'N-100s'
     CarouselHomeSwitch = 0
-    
+
     PowerOff = 'P1,0,0'
     ZPowerOff = 'P20,20,0'
+
+    ZAxisPowerProfile    = 'homingpowerprofile'
+    PumpPowerProfile     = 'homingpowerprofile'
+    ThetaArmPowerProfile = 'homingpowerprofile'
+    CarouselPowerProfile = 'homingpowerprofile'
 
     cfg = ConfigParser()
 
@@ -390,58 +305,14 @@ def GetConfigEnvironment():
             SS_ENABLE_STRIP_ARM_POSITION_CHECK = int( cfg.get( 'environment', 'SS_ENABLE_STRIP_ARM_POSITION_CHECK' ) )
             SS_XY_MICRO_LC = int( cfg.get( 'environment', 'SS_XY_MICRO_LC' ) )
             
-
-            ZAxis                 = str(cfg.get( 'debugger', 'ZAxis'))
-            ZAxisPower            = str(cfg.get( 'debugger', 'ZAxisPower'))
-            ZAxisSpeedBegin       = str(cfg.get( 'debugger', 'ZAxisSpeedBegin'))
-            ZAxisSpeedSlope       = str(cfg.get( 'debugger', 'ZAxisSpeedSlope'))
-            ZAxisSpeedEnd         = str(cfg.get( 'debugger', 'ZAxisSpeedEnd'))
-            ZAxisSpeedHomeBegin   = str(cfg.get( 'debugger', 'ZAxisSpeedHomeBegin'))
-            ZAxisSpeedHomeSlope   = str(cfg.get( 'debugger', 'ZAxisSpeedHomeSlope'))
-            ZAxisSpeedHomeEnd     = str(cfg.get( 'debugger', 'ZAxisSpeedHomeEnd'))
-            ZAxisHalfStep         = str(cfg.get( 'debugger', 'ZAxisHalfStep'))
-            ZAxisBackOffHome      = str(cfg.get( 'debugger', 'ZAxisBackOffHome'))
-            ZAxisHome             = str(cfg.get( 'debugger', 'ZAxisHome'))
-    
-            PumpAxis              = str(cfg.get( 'debugger', 'PumpAxis'))
-            PumpPower             = str(cfg.get( 'debugger', 'PumpPower'))
-            PumpSpeedBegin        = str(cfg.get( 'debugger', 'PumpSpeedBegin'))
-            PumpSpeedSlope        = str(cfg.get( 'debugger', 'PumpSpeedSlope'))
-            PumpSpeedEnd          = str(cfg.get( 'debugger', 'PumpSpeedEnd'))
-            PumpSpeedHomeBegin    = str(cfg.get( 'debugger', 'PumpSpeedHomeBegin'))
-            PumpSpeedHomeSlope    = str(cfg.get( 'debugger', 'PumpSpeedHomeSlope'))
-            PumpSpeedHomeEnd      = str(cfg.get( 'debugger', 'PumpSpeedHomeEnd'))
-            PumpHalfStep          = str(cfg.get( 'debugger', 'PumpHalfStep'))
-            PumpBackOffHome       = str(cfg.get( 'debugger', 'PumpBackOffHome'))
-            PumpHome              = str(cfg.get( 'debugger', 'PumpHome'))
-    
-            ThetaArm              = str(cfg.get( 'debugger', 'ThetaArm'))
-            ThetaArmPower         = str(cfg.get( 'debugger', 'ThetaArmPower'))
-            ThetaArmSpeedBegin    = str(cfg.get( 'debugger', 'ThetaArmSpeedBegin'))
-            ThetaArmSpeedSlope    = str(cfg.get( 'debugger', 'ThetaArmSpeedSlope'))
-            ThetaArmSpeedEnd      = str(cfg.get( 'debugger', 'ThetaArmSpeedEnd'))
-            ThetaArmSpeedHomeBegin = str(cfg.get( 'debugger', 'ThetaArmSpeedHomeBegin'))
-            ThetaArmSpeedHomeSlope = str(cfg.get( 'debugger', 'ThetaArmSpeedHomeSlope'))
-            ThetaArmSpeedHomeEnd  = str(cfg.get( 'debugger', 'ThetaArmSpeedHomeEnd'))
-            ThetaArmHalfStep      = str(cfg.get( 'debugger', 'ThetaArmHalfStep'))
-            ThetaArmBackOffHome   = str(cfg.get( 'debugger', 'ThetaArmBackOffHome'))
-            ThetaArmHome          = str(cfg.get( 'debugger', 'ThetaArmHome'))
-    
-            Carousel              = str(cfg.get( 'debugger', 'Carousel'))
-            CarouselPower         = str(cfg.get( 'debugger', 'CarouselPower'))
-            CarouselSpeedBegin    = str(cfg.get( 'debugger', 'CarouselSpeedBegin'))
-            CarouselSpeedSlope    = str(cfg.get( 'debugger', 'CarouselSpeedSlope'))
-            CarouselSpeedEnd      = str(cfg.get( 'debugger', 'CarouselSpeedEnd'))
-            CarouselSpeedHomeBegin = str(cfg.get( 'debugger', 'CarouselSpeedHomeBegin'))
-            CarouselSpeedHomeSlope = str(cfg.get( 'debugger', 'CarouselSpeedHomeSlope'))
-            CarouselSpeedHomeEnd  = str(cfg.get( 'debugger', 'CarouselSpeedHomeEnd'))
-            CarouselHalfStep      = str(cfg.get( 'debugger', 'CarouselHalfStep'))
-            CarouselBackOffHome   = str(cfg.get( 'debugger', 'CarouselBackOffHome'))
-            CarouselHome          = str(cfg.get( 'debugger', 'CarouselHome'))
-            CarouselHomeSwitch    = str(cfg.get( 'debugger', 'CarouselHomeSwitch'))
-    
+            CarouselHomeSwitch    = int(cfg.get( 'debugger', 'CarouselHomeSwitch'))
             PowerOff              = str(cfg.get( 'debugger', 'PowerOff'))
             ZPowerOff             = str(cfg.get( 'debugger', 'ZPowerOff'))
+
+            ZAxisPowerProfile    = str(cfg.get( 'debugger', 'ZAxisPowerProfile'))
+            PumpPowerProfile     = str(cfg.get( 'debugger', 'PumpPowerProfile'))
+            ThetaArmPowerProfile = str(cfg.get( 'debugger', 'ThetaArmPowerProfile'))
+            CarouselPowerProfile = str(cfg.get( 'debugger', 'CarouselPowerProfile'))
 
             # generate log message of success, report file and version number
             configEnvironmentMsg = 'Loaded environment settings from configuration file.'

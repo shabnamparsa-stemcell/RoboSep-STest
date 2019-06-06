@@ -5,11 +5,11 @@
 #
 # New program logging module (RoboSep V4.7+) for the Tesla instrument controller
 # Implemented using Python Logging package with loglevels defined as:
-#   Level         Numeric value
-#   CRITICAL         50
+#   Level 	Numeric value
+#   CRITICAL 	50
 #   ERROR       40
-#   WARNING         30
-#   INFO             20
+#   WARNING 	30
+#   INFO 	    20
 #   DEBUG       10
 #   NOTSET      0
 #
@@ -33,6 +33,7 @@
 # -----------------------------------------------------------------------------
 #!/usr/bin/env python
 
+import re
 import os
 import platform
 import time
@@ -49,6 +50,13 @@ import threading
 
 ssTracer = None
 
+def FillupSpeedString(param):
+    ans = re.findall('[-+]?\d+', param)
+    B   = 'B' + ans[0];
+    E   = 'E' + ans[1];
+    S   = 'S' + ans[2]; 
+    return (B,E,S)
+    
 class DebuggerWindow(wx.Frame):
     SYSTEM_READY      = '>'
     SYSTEM_BUSY       = 'b'
@@ -66,6 +74,9 @@ class DebuggerWindow(wx.Frame):
     
     INVALID_POSITION = -999999999
 
+    iniParam = [];
+
+    ZAxisPowerProfile = 'homingpowerprofile'
     ZAxis = 'X0'
     ZAxisPower = 'P140,50,0'
     ZAxisSpeedBegin = 'B3000'
@@ -77,7 +88,8 @@ class DebuggerWindow(wx.Frame):
     ZAxisHalfStep = 'H3'
     ZAxisBackOffHome = 600
     ZAxisHome = 'N-110s'
-    
+
+    PumpPowerProfile = 'homingpowerprofile'
     PumpAxis = 'X1'
     PumpPower = 'P150,50,0'
     PumpSpeedBegin = 'B421'
@@ -89,7 +101,8 @@ class DebuggerWindow(wx.Frame):
     PumpHalfStep = 'H0'
     PumpBackOffHome = -1200
     PumpHome = 'N+110s'
-    
+              
+    ThetaArmPowerProfile = 'homingpowerprofile'
     ThetaArm = 'Y0'
     ThetaArmPower = 'P140,100,0'
     ThetaArmSpeedBegin = 'B300'
@@ -101,7 +114,8 @@ class DebuggerWindow(wx.Frame):
     ThetaArmHalfStep = 'H4'
     ThetaArmBackOffHome = 1200
     ThetaArmHome = 'N-110s'
-    
+
+    CarouselPowerProfile = 'homingpowerprofile'
     Carousel = 'Y1'
     CarouselPower = 'P140,50,0'
     CarouselSpeedBegin = 'B400'
@@ -117,7 +131,76 @@ class DebuggerWindow(wx.Frame):
     
     PowerOff = 'P1,0,0'
     ZPowerOff = 'P20,20,0'
-    
+        
+    def UpdateAxisParams(self, Params):
+        self.iniParam.append(Params);
+        STDPwr = Params['StandardPower']
+        HOMPwr = Params['HomePower']
+        STDVel = Params['StandardVelocity']
+        HOMVel = Params['HomeVelocity']
+        HalfStep   = Params['HalfStep']
+        HOMECmd    = Params['Home']
+        BACKHome   = Params['BackOffHome']
+
+        thePwr     = HOMPwr  
+
+        if Params['Axis'] == 'X0':
+           print '>> Update ZAxis'
+           if self.ZAxisPowerProfile == 'homingpowerprofile':
+              thePwr = HOMPwr
+           elif self.ZAxisPowerProfile == 'standardpowerprofile': 
+              thePwr = STDPwr
+
+           self.ZAxis            = Params['Axis']
+           self.ZAxisPower       = thePwr
+           self.ZAxisHalfStep    = HalfStep
+           self.ZAxisBackOffHome = BACKHome
+           self.ZAxisHome        = HOMECmd
+           (self.ZAxisSpeedHomeBegin, self.ZAxisSpeedHomeEnd, self.ZAxisSpeedHomeSlope) = FillupSpeedString( HOMVel );
+           (self.ZAxisSpeedBegin, self.ZAxisSpeedEnd, self.ZAxisSpeedSlope) = FillupSpeedString( STDVel );
+
+        elif Params['Axis'] == 'X1':
+           if self.PumpPowerProfile == 'homingpowerprofile':
+              thePwr = HOMPwr
+           elif self.PumpPowerProfile == 'standardpowerprofile': 
+              thePwr = STDPwr
+
+           self.PumpAxis        = Params['Axis']
+           self.PumpPower       = thePwr
+           self.PumpHalfStep    = HalfStep
+           self.PumpBackOffHome = BACKHome
+           self.PumpHome        = HOMECmd
+           (self.PumpSpeedHomeBegin, self.PumpSpeedHomeEnd, self.PumpSpeedHomeSlope) = FillupSpeedString( HOMVel );
+           (self.PumpSpeedBegin, self.PumpSpeedEnd, self.PumpSpeedSlope) = FillupSpeedString( STDVel );
+           
+        elif Params['Axis'] == 'Y0':
+           if self.ThetaArmPowerProfile == 'homingpowerprofile':
+              thePwr = HOMPwr
+           elif self.ThetaArmPowerProfile == 'standardpowerprofile': 
+              thePwr = STDPwr
+
+           self.ThetaArm            = Params['Axis']
+           self.ThetaArmPower       = thePwr
+           self.ThetaArmHalfStep    = HalfStep
+           self.ThetaArmBackOffHome = BACKHome
+           self.ThetaArmHome        = HOMECmd
+           (self.ThetaArmSpeedHomeBegin, self.ThetaArmSpeedHomeEnd, self.ThetaArmSpeedHomeSlope) = FillupSpeedString( HOMVel );
+           (self.ThetaArmSpeedBegin, self.ThetaArmSpeedEnd, self.ThetaArmSpeedSlope) = FillupSpeedString( STDVel );
+
+        elif Params['Axis'] == 'Y1':
+           if self.CarouselPowerProfile == 'homingpowerprofile':
+              thePwr = HOMPwr
+           elif self.CarouselPowerProfile == 'standardpowerprofile': 
+              thePwr = STDPwr
+
+           self.Carousel            = Params['Axis']
+           self.CarouselPower       = thePwr
+           self.CarouselHalfStep    = HalfStep
+           self.CarouselBackOffHome = BACKHome
+           self.CarouselHome        = HOMECmd
+           (self.CarouselSpeedHomeBegin, self.CarouselSpeedHomeEnd, self.CarouselSpeedHomeSlope) = FillupSpeedString( HOMVel );
+           (self.CarouselSpeedBegin, self.CarouselSpeedEnd, self.CarouselSpeedSlope) = FillupSpeedString( STDVel );
+             
     def GetTimeStamp(self):
         timestamp = str(datetime.datetime.now())
         strlen = len(timestamp)
@@ -426,6 +509,8 @@ class DebuggerWindow(wx.Frame):
                 self.EnableAutoDCV(commandList)     # db added 2016-02-16
             elif (commandList[0].upper() == 'ASPI'):
                 self.ProcessAspiHeight(commandList)
+            elif (commandList[0].upper() == 'DUMP'):    
+                self.DumpParameters(); 
             else:
                 self.svrLog.logDebug('', self.logPrefix, funcReference, \
                     'Invalid command=%s ; Enter "help" for a list of commands' % command ) # db changed 2016-02-23
@@ -818,6 +903,7 @@ class DebuggerWindow(wx.Frame):
         self.SetOperatingDefaults(axis)
         
     def DumpParameters(self):
+        print '@#$!'
         dmplist = [];
         dmplist.extend(['ZAxis=' + self.ZAxis])
         dmplist.extend(['ZAxisPower=' + self.ZAxisPower])
@@ -866,12 +952,17 @@ class DebuggerWindow(wx.Frame):
         dmplist.extend(['CarouselHalfStep=' + self.CarouselHalfStep])
         dmplist.extend(['CarouselBackOffHome=' + str(self.CarouselBackOffHome)])
         dmplist.extend(['CarouselHome=' + self.CarouselHome])
+
         dmplist.extend(['CarouselHomeSwitch=' + str(self.CarouselHomeSwitch)])
     
         dmplist.extend(['PowerOff=' + self.PowerOff])
         dmplist.extend(['ZPowerOff=' + self.ZPowerOff])
         
-        return dmplist;
+        dumpParam = open("C:\debuggerparamdump.txt","w")        
+        for iter in range(0,len(dmplist)):
+            dumpParam.write(dmplist[iter]+'\n')
+        dumpParam.close();
+
 
 #
 #
@@ -888,14 +979,14 @@ class DebuggerWindow(wx.Frame):
 
 class DebuggerApp(wx.App):
     def OnInit(self):
-        frame = DebuggerWindow(None, "RoboSep Server Debugger")
+    	frame = DebuggerWindow(None, "RoboSep Server Debugger")
 
-        #frame = wx.Frame(None, -1, "This is a test", size=(400,300))
-        frame.Show(True)
-        # tell wxPython that this is our main window
-        self.SetTopWindow(frame)
-        # return an optional success flag
-        return True
+    	#frame = wx.Frame(None, -1, "This is a test", size=(400,300))
+    	frame.Show(True)
+    	# tell wxPython that this is our main window
+    	self.SetTopWindow(frame)
+    	# return an optional success flag
+    	return True
 
 
 class StartGUIThread (threading.Thread ):
@@ -930,18 +1021,10 @@ def getSSDebuggerInstance():
 
 def GetSSTracerInstance():
     global ssTracer
-    
     if ssTracer == None:
         ssTracer = SSDebugger()
         ssTracer.LoadDebbugerParameter();
-        dmpmsg = ssTracer.DumpDebbugerParameter();
-        #dumpParam = open("C:\Program Files\STI\RoboSep\logs\debuggerparamdump.txt","w")
-        dumpParam = open("C:\debuggerparamdump.txt","w")        
-        for iter in range(0,len(dmpmsg)):
-            dumpParam.write(dmpmsg[iter]+'\n')
-        dumpParam.close();
     return ssTracer
-
 
 class SSDebugger:
     def __init__(self):
@@ -1045,61 +1128,26 @@ class SSDebugger:
         return self.frame.AspiHeight;
         
     def LoadDebbugerParameter(self):
-        self.frame.ZAxis                = tesla.config.ZAxis
-        self.frame.ZAxisPower           = tesla.config.ZAxisPower
-        self.frame.ZAxisSpeedBegin      = tesla.config.ZAxisSpeedBegin
-        self.frame.ZAxisSpeedSlope      = tesla.config.ZAxisSpeedSlope
-        self.frame.ZAxisSpeedEnd        = tesla.config.ZAxisSpeedEnd
-        self.frame.ZAxisSpeedHomeBegin  = tesla.config.ZAxisSpeedHomeBegin
-        self.frame.ZAxisSpeedHomeSlope  = tesla.config.ZAxisSpeedHomeSlope
-        self.frame.ZAxisSpeedHomeEnd    = tesla.config.ZAxisSpeedHomeEnd
-        self.frame.ZAxisHalfStep        = tesla.config.ZAxisHalfStep
-        self.frame.ZAxisBackOffHome     = tesla.config.ZAxisBackOffHome
-        self.frame.ZAxisHome            = tesla.config.ZAxisHome
-    
-        self.frame.PumpAxis             = tesla.config.PumpAxis
-        self.frame.PumpPower            = tesla.config.PumpPower
-        self.frame.PumpSpeedBegin       = tesla.config.PumpSpeedBegin
-        self.frame.PumpSpeedSlope       = tesla.config.PumpSpeedSlope
-        self.frame.PumpSpeedEnd         = tesla.config.PumpSpeedEnd
-        self.frame.PumpSpeedHomeBegin   = tesla.config.PumpSpeedHomeBegin
-        self.frame.PumpSpeedHomeSlope   = tesla.config.PumpSpeedHomeSlope
-        self.frame.PumpSpeedHomeEnd     = tesla.config.PumpSpeedHomeEnd
-        self.frame.PumpHalfStep         = tesla.config.PumpHalfStep
-        self.frame.PumpBackOffHome      = int(tesla.config.PumpBackOffHome)
-        self.frame.PumpHome             = tesla.config.PumpHome
-    
-        self.frame.ThetaArm             = tesla.config.ThetaArm
-        self.frame.ThetaArmPower        = tesla.config.ThetaArmPower
-        self.frame.ThetaArmSpeedBegin   = tesla.config.ThetaArmSpeedBegin
-        self.frame.ThetaArmSpeedSlope   = tesla.config.ThetaArmSpeedSlope
-        self.frame.ThetaArmSpeedEnd     = tesla.config.ThetaArmSpeedEnd
-        self.frame.ThetaArmSpeedHomeBegin = tesla.config.ThetaArmSpeedHomeBegin
-        self.frame.ThetaArmSpeedHomeSlope = tesla.config.ThetaArmSpeedHomeSlope
-        self.frame.ThetaArmSpeedHomeEnd   = tesla.config.ThetaArmSpeedHomeEnd
-        self.frame.ThetaArmHalfStep     = tesla.config.ThetaArmHalfStep
-        self.frame.ThetaArmBackOffHome  = int(tesla.config.ThetaArmBackOffHome)
-        self.frame.ThetaArmHome         = tesla.config.ThetaArmHome
-    
-        self.frame.Carousel             = tesla.config.Carousel
-        self.frame.CarouselPower        = tesla.config.CarouselPower
-        self.frame.CarouselSpeedBegin   = tesla.config.CarouselSpeedBegin
-        self.frame.CarouselSpeedSlope   = tesla.config.CarouselSpeedSlope
-        self.frame.CarouselSpeedEnd     = tesla.config.CarouselSpeedEnd
-        self.frame.CarouselSpeedHomeBegin = tesla.config.CarouselSpeedHomeBegin
-        self.frame.CarouselSpeedHomeSlope = tesla.config.CarouselSpeedHomeSlope
-        self.frame.CarouselSpeedHomeEnd = tesla.config.CarouselSpeedHomeEnd
-        self.frame.CarouselHalfStep     = tesla.config.CarouselHalfStep
-        self.frame.CarouselBackOffHome  = int(tesla.config.CarouselBackOffHome)
-        self.frame.CarouselHome         = tesla.config.CarouselHome
         self.frame.CarouselHomeSwitch   = tesla.config.CarouselHomeSwitch
-    
         self.frame.PowerOff             = tesla.config.PowerOff
         self.frame.ZPowerOff            = tesla.config.ZPowerOff
+        self.frame.ZAxisPowerProfile    = tesla.config.ZAxisPowerProfile
+        self.frame.PumpPowerProfile     = tesla.config.PumpPowerProfile
+        self.frame.ThetaArmPowerProfile = tesla.config.ThetaArmPowerProfile
+        self.frame.CarouselPowerProfile = tesla.config.CarouselPowerProfile
 
-    def DumpDebbugerParameter(self): 
-        return self.frame.DumpParameters();
-
+    def SetParameterFromAxis(self, Param):
+        localParam = {}
+        localParam['Axis']              = Param['Axis']
+        localParam['HomePower']         = 'P'+(Param['configData']['homingpowerprofile']).replace(' ','')
+        localParam['StandardPower']     = 'P'+(Param['configData']['standardpowerprofile']).replace(' ','')
+        localParam['HomeVelocity']      = (Param['configData']['homingvelocityprofile']).replace(' ','')
+        localParam['StandardVelocity']  = (Param['configData']['standardvelocityprofile']).replace(' ','')
+        localParam['BackOffHome']       = int((Param['configData']['homebackoffsteps']).replace(' ',''))  
+        localParam['Home']              = 'N%s1%s'%(Param['configData']['homingdirection'].replace(' ',''), Param['configData']['homelimitsensor_configuration'].replace(' ',''))
+        localParam['HalfStep']          = 'H'+(Param['configData']['halfstepexponent'].replace(' ',''))
+        self.frame.UpdateAxisParams(localParam);
+                              
 def logMessages(message=''):
     import random
 
