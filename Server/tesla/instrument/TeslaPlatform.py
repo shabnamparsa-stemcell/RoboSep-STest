@@ -288,6 +288,20 @@ class TeslaPlatform (Platform):
 
         # Set up the tip stripper (which uses the carousel stepper card)
         tipStripperSettings = GetHardwareData().Section (TeslaPlatform.TipStripperSectionName)
+        firmWareVersion = self.carousel._ThetaAxis().GetFirmwareVersion()
+        #firmWareVersion = "109:012:079:328:001"
+        #firmWareVersion = "300:012:008:328:001"
+        try:
+            self.__SS_XY_MICRO_LC = tesla.config.SS_XY_MICRO_LC
+            version = int(firmWareVersion.split(":")[0])
+            if version>=300:
+                self.__SS_XY_MICRO_LC = 1
+            else:
+                self.__SS_XY_MICRO_LC = 0
+            #print "TeslaPlatform.__SS_XY_MICRO_LC "+str(self.__SS_XY_MICRO_LC) + ", " + version
+        except:
+            pass
+
         if self.debugFlag: print tipStripperSettings
         self.tipStripper = TipStripper(TeslaPlatform.TipStripperSectionName, 
                             self.carousel._ThetaAxis().m_Card, tipStripperSettings)
@@ -310,6 +324,9 @@ class TeslaPlatform (Platform):
         self.__logger = tesla.logger.Logger(logName = tesla.config.LOG_PATH)
         if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
             self.ExtLogger = SimpleStep.SimpleStep.GetSSExtLoggerInstance()
+
+            
+        self.__logger.logInfo( "TeslaPlatform.__SS_XY_MICRO_LC=%d"%(self.__SS_XY_MICRO_LC))
 
         # 2011-11-29 sp -- added logging
         self.svrLog = PgmLog( 'svrLog' )
@@ -620,7 +637,7 @@ class TeslaPlatform (Platform):
 
                 if tesla.config.SS_FORCE_EMULATION == 1:
                     isStripperArmFailed = False
-                elif tesla.config.SS_XY_MICRO_LC == 1: #2019-04-09 new logic for new board without i27
+                elif self.__SS_XY_MICRO_LC == 1: #2019-04-09 new logic for new board without i27
                     #Michael: Error messages (when I26==1, even though tip stripper is extended out) will be displayed/logged depending on SS_EnableStripArmPositionCheck. 
                     #tipStripper.getHomeStatus(self): checks I26
                     i26 = self.tipStripper.getHomeStatus()

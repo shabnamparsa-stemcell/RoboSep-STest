@@ -303,7 +303,7 @@ def GetConfigEnvironment():
             SS_USE460_PUMPHOMING  = int(cfg.get( 'environment', 'SS_USE460_PUMPHOMING' ) )
             SS_BAD_H_TEST         = int(cfg.get( 'environment', 'SS_BAD_H_TEST' ) )
             SS_ENABLE_STRIP_ARM_POSITION_CHECK = int( cfg.get( 'environment', 'SS_ENABLE_STRIP_ARM_POSITION_CHECK' ) )
-            SS_XY_MICRO_LC = int( cfg.get( 'environment', 'SS_XY_MICRO_LC' ) )
+            #SS_XY_MICRO_LC = int( cfg.get( 'environment', 'SS_XY_MICRO_LC' ) )
             
             CarouselHomeSwitch    = int(cfg.get( 'debugger', 'CarouselHomeSwitch'))
             PowerOff              = str(cfg.get( 'debugger', 'PowerOff'))
@@ -349,7 +349,7 @@ def GetConfigEnvironment():
             configEnvironmentSettingMsg += '| SS_USE460_PUMPHOMING=%d' % SS_USE460_PUMPHOMING
             configEnvironmentSettingMsg += '| SS_BAD_H_TEST=%d' % SS_BAD_H_TEST
             configEnvironmentSettingMsg += '| SS_ENABLE_STRIP_ARM_POSITION_CHECK=%d' % SS_ENABLE_STRIP_ARM_POSITION_CHECK
-            configEnvironmentSettingMsg += '| SS_XY_MICRO_LC=%d' % SS_XY_MICRO_LC
+#            configEnvironmentSettingMsg += '| SS_XY_MICRO_LC=%d' % SS_XY_MICRO_LC
             
 #        except Exception, msg:
         except Exception:
