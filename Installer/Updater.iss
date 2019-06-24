@@ -185,7 +185,7 @@ Filename: "{app}\Config\Hardware.ini"; Section: "Comments";        Key: "Nov2018
 Filename: "{app}\Config\Hardware.ini"; Section: "Comments";        Key: "Nov2018 Server 1.2.1.1 Upgrade Installer_29"; String: "Adding [Tesla] deadvolume_bulkcontainer_ul = 75000"
 Filename: "{app}\Config\serverConfig.ini"; Section: "Comments";    Key: "May2019 Server 1.3.0.0 Upgrade Installer_30"; String: "Disable SS_OLDPCB"
 Filename: "{app}\Config\serverConfig.ini"; Section: "Comments";    Key: "May2019 Server 1.3.0.0 Upgrade Installer_31"; String: "Adding [debugger] section"
-Filename: "{app}\Config\serverConfig.ini"; Section: "Comments";    Key: "May2019 Server 1.3.0.0 Upgrade Installer_32"; String: "Adding SS_XY_MICRO_LC = 1"
+;Filename: "{app}\Config\serverConfig.ini"; Section: "Comments";    Key: "May2019 Server 1.3.0.0 Upgrade Installer_32"; String: "Adding SS_XY_MICRO_LC = 1"
 Filename: "{app}\Config\serverConfig.ini"; Section: "Comments";    Key: "May2019 Server 1.3.0.0 Upgrade Installer_33"; String: "Adding SS_ENABLE_STRIP_ARM_POSITION_CHECK = 1"
 ; Filename: "{app}\Config\Hardware.ini"; Section: "Comments";        Key: "Dec2015 Server 1.1.0.1 Upgrade Installer_10"; String: "Changing [Aspiration_1] and [Dispense_1] compensation_scalingfactor   = 1.0 (was 1.0190)"
 ; Filename: "{app}\Config\Hardware.ini"; Section: "Comments";        Key: "Dec2015 Server 1.1.0.1 Upgrade Installer_11"; String: "Changing [Aspiration_1] and [Dispense_1] compensation_offset    = -0.0 (was -0.7843)"
@@ -195,60 +195,63 @@ Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_CUST
 Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_USE460_PUMPHOMING";   String: "0";
 Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_BAD_H_TEST";          String: "0";
 Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_OLDPCB";              String: "1  ; Obsoleted - No logner supported";
-Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_XY_MICRO_LC";         String: "1";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_XY_MICRO_LC";         String: "1";
 Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_ENABLE_STRIP_ARM_POSITION_CHECK";              String: "1";
 
 Filename: "{app}\Config\serverConfig.ini"; Section: "new_cmd_logic"; Key: "apply_cmd_sub_logic";  String: "1";
 Filename: "{app}\Config\serverConfig.ini"; Section: "new_cmd_logic"; Key: "subfor_transseptrans_onlyif_sep_is_lessthan_seconds"; String: "60";
 
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxis"; String: "X0";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisPower"; String: "P120,80,0";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisSpeedBegin"; String: "B3000";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisSpeedSlope"; String: "S5";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisSpeedEnd"; String: "E15000";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisSpeedHomeBegin"; String: "B2000";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisSpeedHomeSlope"; String: "S5";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisSpeedHomeEnd"; String: "E10000";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisHalfStep"; String: "H3";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisBackOffHome"; String: "600";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisHome"; String: "N-110s";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpAxis"; String: "X1";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpPower"; String: "P150,50,0";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpSpeedBegin"; String: "B421";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpSpeedSlope"; String: "S10";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpSpeedEnd"; String: "E1883";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpSpeedHomeBegin"; String: "B421";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpSpeedHomeSlope"; String: "S10";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpSpeedHomeEnd"; String: "E1883";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpHalfStep"; String: "H0";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpBackOffHome"; String: "-1200";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpHome"; String: "N+110s";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArm"; String: "Y0";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmPower"; String: "P140,100,0";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmSpeedBegin"; String: "B300";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmSpeedSlope"; String: "S12";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmSpeedEnd"; String: "E3000";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmSpeedHomeBegin"; String: "B900";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmSpeedHomeSlope"; String: "S1";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmSpeedHomeEnd"; String: "E900";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmHalfStep"; String: "H4";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmBackOffHome"; String: "1200";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmHome"; String: "N-110s";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "Carousel"; String: "Y1";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselPower"; String: "P200,200,0";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselSpeedBegin"; String: "B400";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselSpeedSlope"; String: "S5";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselSpeedEnd"; String: "E8000";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselSpeedHomeBegin"; String: "B1000";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselSpeedHomeSlope"; String: "S1";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselSpeedHomeEnd"; String: "E1000";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselHalfStep"; String: "H4";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselBackOffHome"; String: "800";
-Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselHome"; String: "N-100s";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxis"; String: "X0";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisPower"; String: "P120,80,0";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisSpeedBegin"; String: "B3000";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisSpeedSlope"; String: "S5";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisSpeedEnd"; String: "E15000";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisSpeedHomeBegin"; String: "B2000";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisSpeedHomeSlope"; String: "S5";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisSpeedHomeEnd"; String: "E10000";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisHalfStep"; String: "H3";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisBackOffHome"; String: "600";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisHome"; String: "N-110s";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpAxis"; String: "X1";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpPower"; String: "P150,50,0";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpSpeedBegin"; String: "B421";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpSpeedSlope"; String: "S10";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpSpeedEnd"; String: "E1883";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpSpeedHomeBegin"; String: "B421";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpSpeedHomeSlope"; String: "S10";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpSpeedHomeEnd"; String: "E1883";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpHalfStep"; String: "H0";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpBackOffHome"; String: "-1200";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpHome"; String: "N+110s";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArm"; String: "Y0";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmPower"; String: "P140,100,0";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmSpeedBegin"; String: "B300";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmSpeedSlope"; String: "S12";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmSpeedEnd"; String: "E3000";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmSpeedHomeBegin"; String: "B900";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmSpeedHomeSlope"; String: "S1";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmSpeedHomeEnd"; String: "E900";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmHalfStep"; String: "H4";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmBackOffHome"; String: "1200";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmHome"; String: "N-110s";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "Carousel"; String: "Y1";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselPower"; String: "P200,200,0";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselSpeedBegin"; String: "B400";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselSpeedSlope"; String: "S5";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselSpeedEnd"; String: "E8000";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselSpeedHomeBegin"; String: "B1000";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselSpeedHomeSlope"; String: "S1";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselSpeedHomeEnd"; String: "E1000";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselHalfStep"; String: "H4";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselBackOffHome"; String: "800";
+;Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselHome"; String: "N-100s";
 Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselHomeSwitch"; String: "0";
 Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PowerOff"; String: "P1,0,0";
 Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZPowerOff"; String: "P20,20,0";
-
+Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ZAxisPowerProfile";    String: "homingpowerprofile";
+Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "PumpPowerProfile";     String: "homingpowerprofile";
+Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "ThetaArmPowerProfile"; String: "homingpowerprofile";
+Filename: "{app}\Config\serverConfig.ini"; Section: "debugger"; Key: "CarouselPowerProfile"; String: "homingpowerprofile";
 
 [Code]
 var
