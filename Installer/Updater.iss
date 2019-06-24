@@ -194,7 +194,7 @@ Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_EXT_
 Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_CUSTOM_HOME";         String: "0";
 Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_USE460_PUMPHOMING";   String: "0";
 Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_BAD_H_TEST";          String: "0";
-Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_OLDPCB";              String: "1  ; Obsoleted - No logner supported";
+Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_OLDPCB";              String: "1  ; Obsoleted - No longer supported";
 ;Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_XY_MICRO_LC";         String: "1";
 Filename: "{app}\Config\serverConfig.ini"; Section: "environment"; Key: "SS_ENABLE_STRIP_ARM_POSITION_CHECK";              String: "1";
 
