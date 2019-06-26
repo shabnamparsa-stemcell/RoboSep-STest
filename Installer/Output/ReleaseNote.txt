@@ -1,5 +1,5 @@
 RoboSep-S Production Installer v1.3.0.0 
-    (June 24, 2019) by Chulwoong Jeon
+    (June 26, 2019) by Chulwoong Jeon
 ---------------------------------------
 This production installer contains following items.
 

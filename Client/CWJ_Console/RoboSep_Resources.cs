@@ -1706,6 +1706,7 @@ namespace GUI_Console
             double vol;
             string volText;
             SharingProtocol thisProtocol = null;
+#if false
             for (qdrtIndex = 0; qdrtIndex < len; qdrtIndex++)
             {
                 thisProtocol = myCloneRunConfig[qdrtIndex];                
@@ -1714,7 +1715,15 @@ namespace GUI_Console
                     break;
                 }
             }
-
+#else
+            for (qdrtIndex = 0; qdrtIndex < len; qdrtIndex++)
+            {
+                thisProtocol = myCloneRunConfig[qdrtIndex];
+                if ((QuadrantNumber >= thisProtocol.InitQuadrant) &&
+                   (QuadrantNumber <= (thisProtocol.InitQuadrant + thisProtocol.Quadrants - 1)))
+                    break;
+            }
+#endif
             listView_Resources.BeginUpdate();
             
             this.imageList1.Images.Clear();
@@ -1757,7 +1766,7 @@ namespace GUI_Console
                 }
 #else
                 offset = (thisProtocol.Quadrants == 1) ? 
-                0 : ((QuadrantNumber - thisProtocol.InitQuadrant) % thisProtocol.Quadrants) * 8; 
+                0 : ((QuadrantNumber - thisProtocol.InitQuadrant) % thisProtocol.Quadrants) * 8;
 #endif
                 switch (carouselLocation)
                 {

@@ -4,43 +4,43 @@
     <SeparationProtocolId>1</SeparationProtocolId>
     <SeparationProtocolProtocolId>1</SeparationProtocolProtocolId>
     <SeparationProtocolMinimumVolume>500</SeparationProtocolMinimumVolume>
-    <SeparationProtocolMaximumVolume>8000</SeparationProtocolMaximumVolume>
-    <SeparationProtocolClass>WholeBloodNegative</SeparationProtocolClass>
+    <SeparationProtocolMaximumVolume>9000</SeparationProtocolMaximumVolume>
+    <SeparationProtocolClass>WholeBloodPositive</SeparationProtocolClass>
   </SeparationProtocol>
   <SeparationProtocol>
     <SeparationProtocolId>2</SeparationProtocolId>
     <SeparationProtocolProtocolId>2</SeparationProtocolProtocolId>
+    <SeparationProtocolMinimumVolume>500</SeparationProtocolMinimumVolume>
+    <SeparationProtocolMaximumVolume>8000</SeparationProtocolMaximumVolume>
+    <SeparationProtocolClass>WholeBloodNegative</SeparationProtocolClass>
+  </SeparationProtocol>
+  <SeparationProtocol>
+    <SeparationProtocolId>3</SeparationProtocolId>
+    <SeparationProtocolProtocolId>3</SeparationProtocolProtocolId>
     <SeparationProtocolMinimumVolume>2000</SeparationProtocolMinimumVolume>
     <SeparationProtocolMaximumVolume>5000</SeparationProtocolMaximumVolume>
     <SeparationProtocolClass>WholeBloodNegative</SeparationProtocolClass>
   </SeparationProtocol>
   <SeparationProtocol>
-    <SeparationProtocolId>3</SeparationProtocolId>
-    <SeparationProtocolProtocolId>4</SeparationProtocolProtocolId>
+    <SeparationProtocolId>4</SeparationProtocolId>
+    <SeparationProtocolProtocolId>5</SeparationProtocolProtocolId>
     <SeparationProtocolMinimumVolume>4000</SeparationProtocolMinimumVolume>
     <SeparationProtocolMaximumVolume>8500</SeparationProtocolMaximumVolume>
     <SeparationProtocolClass>HumanNegative</SeparationProtocolClass>
   </SeparationProtocol>
   <SeparationProtocol>
-    <SeparationProtocolId>4</SeparationProtocolId>
-    <SeparationProtocolProtocolId>6</SeparationProtocolProtocolId>
-    <SeparationProtocolMinimumVolume>500</SeparationProtocolMinimumVolume>
-    <SeparationProtocolMaximumVolume>6000</SeparationProtocolMaximumVolume>
-    <SeparationProtocolClass>HumanNegative</SeparationProtocolClass>
-  </SeparationProtocol>
-  <SeparationProtocol>
     <SeparationProtocolId>5</SeparationProtocolId>
     <SeparationProtocolProtocolId>7</SeparationProtocolProtocolId>
-    <SeparationProtocolMinimumVolume>2000</SeparationProtocolMinimumVolume>
-    <SeparationProtocolMaximumVolume>5000</SeparationProtocolMaximumVolume>
-    <SeparationProtocolClass>WholeBloodNegative</SeparationProtocolClass>
+    <SeparationProtocolMinimumVolume>1000</SeparationProtocolMinimumVolume>
+    <SeparationProtocolMaximumVolume>7000</SeparationProtocolMaximumVolume>
+    <SeparationProtocolClass>HumanPositive</SeparationProtocolClass>
   </SeparationProtocol>
   <SeparationProtocol>
     <SeparationProtocolId>6</SeparationProtocolId>
     <SeparationProtocolProtocolId>8</SeparationProtocolProtocolId>
-    <SeparationProtocolMinimumVolume>2000</SeparationProtocolMinimumVolume>
-    <SeparationProtocolMaximumVolume>5000</SeparationProtocolMaximumVolume>
-    <SeparationProtocolClass>WholeBloodNegative</SeparationProtocolClass>
+    <SeparationProtocolMinimumVolume>500</SeparationProtocolMinimumVolume>
+    <SeparationProtocolMaximumVolume>6000</SeparationProtocolMaximumVolume>
+    <SeparationProtocolClass>HumanNegative</SeparationProtocolClass>
   </SeparationProtocol>
   <SeparationProtocol>
     <SeparationProtocolId>7</SeparationProtocolId>
@@ -52,90 +52,127 @@
   <SeparationProtocol>
     <SeparationProtocolId>8</SeparationProtocolId>
     <SeparationProtocolProtocolId>10</SeparationProtocolProtocolId>
+    <SeparationProtocolMinimumVolume>2000</SeparationProtocolMinimumVolume>
+    <SeparationProtocolMaximumVolume>5000</SeparationProtocolMaximumVolume>
+    <SeparationProtocolClass>WholeBloodNegative</SeparationProtocolClass>
+  </SeparationProtocol>
+  <SeparationProtocol>
+    <SeparationProtocolId>9</SeparationProtocolId>
+    <SeparationProtocolProtocolId>11</SeparationProtocolProtocolId>
+    <SeparationProtocolMinimumVolume>2000</SeparationProtocolMinimumVolume>
+    <SeparationProtocolMaximumVolume>5000</SeparationProtocolMaximumVolume>
+    <SeparationProtocolClass>WholeBloodNegative</SeparationProtocolClass>
+  </SeparationProtocol>
+  <SeparationProtocol>
+    <SeparationProtocolId>10</SeparationProtocolId>
+    <SeparationProtocolProtocolId>12</SeparationProtocolProtocolId>
     <SeparationProtocolMinimumVolume>500</SeparationProtocolMinimumVolume>
     <SeparationProtocolMaximumVolume>8000</SeparationProtocolMaximumVolume>
     <SeparationProtocolClass>WholeBloodNegative</SeparationProtocolClass>
   </SeparationProtocol>
+  <SeparationProtocol>
+    <SeparationProtocolId>11</SeparationProtocolId>
+    <SeparationProtocolProtocolId>13</SeparationProtocolProtocolId>
+    <SeparationProtocolMinimumVolume>500</SeparationProtocolMinimumVolume>
+    <SeparationProtocolMaximumVolume>6500</SeparationProtocolMaximumVolume>
+    <SeparationProtocolClass>HumanNegative</SeparationProtocolClass>
+  </SeparationProtocol>
+  <SeparationProtocol>
+    <SeparationProtocolId>12</SeparationProtocolId>
+    <SeparationProtocolProtocolId>15</SeparationProtocolProtocolId>
+    <SeparationProtocolMinimumVolume>250</SeparationProtocolMinimumVolume>
+    <SeparationProtocolMaximumVolume>7000</SeparationProtocolMaximumVolume>
+    <SeparationProtocolClass>Positive</SeparationProtocolClass>
+  </SeparationProtocol>
   <Sample>
     <SampleId>1</SampleId>
-    <SampleSeparationProtocolId>3</SampleSeparationProtocolId>
+    <SampleSeparationProtocolId>5</SampleSeparationProtocolId>
     <SampleLabel />
     <SampleVolume>5000</SampleVolume>
   </Sample>
   <Sample>
     <SampleId>2</SampleId>
-    <SampleSeparationProtocolId>3</SampleSeparationProtocolId>
+    <SampleSeparationProtocolId>12</SampleSeparationProtocolId>
     <SampleLabel />
-    <SampleVolume>5000</SampleVolume>
+    <SampleVolume>2000</SampleVolume>
   </Sample>
   <Sample>
     <SampleId>3</SampleId>
-    <SampleSeparationProtocolId>8</SampleSeparationProtocolId>
+    <SampleSeparationProtocolId>12</SampleSeparationProtocolId>
     <SampleLabel />
-    <SampleVolume>5000</SampleVolume>
+    <SampleVolume>2000</SampleVolume>
   </Sample>
   <Sample>
     <SampleId>4</SampleId>
-    <SampleSeparationProtocolId>8</SampleSeparationProtocolId>
+    <SampleSeparationProtocolId>12</SampleSeparationProtocolId>
     <SampleLabel />
-    <SampleVolume>5000</SampleVolume>
+    <SampleVolume>2000</SampleVolume>
   </Sample>
   <Sample>
     <SampleId>5</SampleId>
-    <SampleSeparationProtocolId>3</SampleSeparationProtocolId>
+    <SampleSeparationProtocolId>2</SampleSeparationProtocolId>
     <SampleLabel />
     <SampleVolume>5000</SampleVolume>
   </Sample>
   <Sample>
     <SampleId>6</SampleId>
-    <SampleSeparationProtocolId>8</SampleSeparationProtocolId>
+    <SampleSeparationProtocolId>12</SampleSeparationProtocolId>
     <SampleLabel />
-    <SampleVolume>5000</SampleVolume>
+    <SampleVolume>2000</SampleVolume>
   </Sample>
   <Sample>
     <SampleId>7</SampleId>
-    <SampleSeparationProtocolId>8</SampleSeparationProtocolId>
+    <SampleSeparationProtocolId>12</SampleSeparationProtocolId>
     <SampleLabel />
     <SampleVolume>5000</SampleVolume>
   </Sample>
   <Sample>
     <SampleId>8</SampleId>
-    <SampleSeparationProtocolId>3</SampleSeparationProtocolId>
+    <SampleSeparationProtocolId>12</SampleSeparationProtocolId>
     <SampleLabel />
-    <SampleVolume>5000</SampleVolume>
+    <SampleVolume>2000</SampleVolume>
   </Sample>
   <Sample>
     <SampleId>9</SampleId>
-    <SampleSeparationProtocolId>8</SampleSeparationProtocolId>
+    <SampleSeparationProtocolId>12</SampleSeparationProtocolId>
     <SampleLabel />
     <SampleVolume>5000</SampleVolume>
   </Sample>
   <Sample>
     <SampleId>10</SampleId>
-    <SampleSeparationProtocolId>3</SampleSeparationProtocolId>
+    <SampleSeparationProtocolId>12</SampleSeparationProtocolId>
     <SampleLabel />
-    <SampleVolume>5000</SampleVolume>
+    <SampleVolume>2000</SampleVolume>
   </Sample>
   <Sample>
     <SampleId>11</SampleId>
-    <SampleSeparationProtocolId>8</SampleSeparationProtocolId>
+    <SampleSeparationProtocolId>12</SampleSeparationProtocolId>
     <SampleLabel />
     <SampleVolume>5000</SampleVolume>
   </Sample>
   <MaintenanceProtocol>
     <MaintenanceProtocolId>1</MaintenanceProtocolId>
-    <MaintenanceProtocolProtocolId>3</MaintenanceProtocolProtocolId>
+    <MaintenanceProtocolProtocolId>4</MaintenanceProtocolProtocolId>
     <MaintenanceProtocolTaskId>0</MaintenanceProtocolTaskId>
     <MaintenanceProtocolTaskDescription />
   </MaintenanceProtocol>
   <MaintenanceProtocol>
     <MaintenanceProtocolId>2</MaintenanceProtocolId>
-    <MaintenanceProtocolProtocolId>5</MaintenanceProtocolProtocolId>
+    <MaintenanceProtocolProtocolId>6</MaintenanceProtocolProtocolId>
     <MaintenanceProtocolTaskId>0</MaintenanceProtocolTaskId>
     <MaintenanceProtocolTaskDescription />
   </MaintenanceProtocol>
   <Protocol>
     <ProtocolId>1</ProtocolId>
+    <ProtocolInstrumentControlId>271461729</ProtocolInstrumentControlId>
+    <ProtocolLabel>Human B Cell WB Positive Selection 18184HLA</ProtocolLabel>
+    <ProtocolDescription>25 uL/mL cocktail, 25 uL/mL particle, 12, 8 min incubation(s), 10, 5, 5 min separation(s)</ProtocolDescription>
+    <ProtocolQuadrantCount>1</ProtocolQuadrantCount>
+    <ProtocolUsageCount>0</ProtocolUsageCount>
+    <ProtocolUsageTime>2019-06-26T10:32:39.2928238-07:00</ProtocolUsageTime>
+  </Protocol>
+  <Protocol>
+    <ProtocolId>2</ProtocolId>
     <ProtocolInstrumentControlId>317372226</ProtocolInstrumentControlId>
     <ProtocolLabel>EasySep Direct Human CD4 T Cell Isolation 19662 - whole blood</ProtocolLabel>
     <ProtocolDescription>50 uL/mL antibody, 50 uL/mL cocktail, 50 uL/mL particle, 1, 4, 0 min incubation(s), 4, 4, 3 min separation(s), RSSCustVial: 2600;4100;61</ProtocolDescription>
@@ -144,7 +181,7 @@
     <ProtocolUsageTime>2019-04-04T10:48:43.7344932-07:00</ProtocolUsageTime>
   </Protocol>
   <Protocol>
-    <ProtocolId>2</ProtocolId>
+    <ProtocolId>3</ProtocolId>
     <ProtocolInstrumentControlId>1487031555</ProtocolInstrumentControlId>
     <ProtocolLabel>EasySep Direct Human Monocyte Isolation 19669 - buffy coat</ProtocolLabel>
     <ProtocolDescription>100 uL/mL cocktail, 200 uL/mL particle, 5 min incubation(s), 4, 4 min separation(s), RSSCustVial: 2600;4100;61</ProtocolDescription>
@@ -153,7 +190,7 @@
     <ProtocolUsageTime>2019-04-04T11:01:31.4659385-07:00</ProtocolUsageTime>
   </Protocol>
   <Protocol>
-    <ProtocolId>3</ProtocolId>
+    <ProtocolId>4</ProtocolId>
     <ProtocolInstrumentControlId>862125732</ProtocolInstrumentControlId>
     <ProtocolLabel>Home all</ProtocolLabel>
     <ProtocolDescription>No Description</ProtocolDescription>
@@ -162,7 +199,7 @@
     <ProtocolUsageTime>2019-04-04T10:48:43.7344932-07:00</ProtocolUsageTime>
   </Protocol>
   <Protocol>
-    <ProtocolId>4</ProtocolId>
+    <ProtocolId>5</ProtocolId>
     <ProtocolInstrumentControlId>1267061413</ProtocolInstrumentControlId>
     <ProtocolLabel>db quad test 2</ProtocolLabel>
     <ProtocolDescription>500 uL antibody, 50 uL/mL cocktail, 100 uL/mL particle, 10, 10, 15 min incubation(s), 5, 1 min separation(s)</ProtocolDescription>
@@ -171,7 +208,7 @@
     <ProtocolUsageTime>2019-05-17T12:28:15.2220729-07:00</ProtocolUsageTime>
   </Protocol>
   <Protocol>
-    <ProtocolId>5</ProtocolId>
+    <ProtocolId>6</ProtocolId>
     <ProtocolInstrumentControlId>309666504</ProtocolInstrumentControlId>
     <ProtocolLabel>Basic prime</ProtocolLabel>
     <ProtocolDescription />
@@ -180,7 +217,16 @@
     <ProtocolUsageTime>2019-04-09T09:50:56.0565937-07:00</ProtocolUsageTime>
   </Protocol>
   <Protocol>
-    <ProtocolId>6</ProtocolId>
+    <ProtocolId>7</ProtocolId>
+    <ProtocolInstrumentControlId>1202904299</ProtocolInstrumentControlId>
+    <ProtocolLabel>CUST1104c Hu 17854CD19pos 17858CD14pos 17852CD4pos 17955NKneg Seq Ver1</ProtocolLabel>
+    <ProtocolDescription>CD19 100C3 75P3 1x7 3x3 CD14 100C10 100P3 1x8 3x3 CD4 50C3 85P3 1x6 3x3 NK 50C8 25P3 1x3</ProtocolDescription>
+    <ProtocolQuadrantCount>4</ProtocolQuadrantCount>
+    <ProtocolUsageCount>0</ProtocolUsageCount>
+    <ProtocolUsageTime>2019-06-26T10:32:39.2957535-07:00</ProtocolUsageTime>
+  </Protocol>
+  <Protocol>
+    <ProtocolId>8</ProtocolId>
     <ProtocolInstrumentControlId>782776077</ProtocolInstrumentControlId>
     <ProtocolLabel>Human Resting CD4+ T Cell Isolation 17962</ProtocolLabel>
     <ProtocolDescription>50 uL/mL antibody, 50 uL/mL cocktail, 75 uL/mL particle, 10, 5 min incubation(s), 10, 5 min separation(s)</ProtocolDescription>
@@ -189,7 +235,7 @@
     <ProtocolUsageTime>2019-05-10T14:12:07.8713724-07:00</ProtocolUsageTime>
   </Protocol>
   <Protocol>
-    <ProtocolId>7</ProtocolId>
+    <ProtocolId>9</ProtocolId>
     <ProtocolInstrumentControlId>633635150</ProtocolInstrumentControlId>
     <ProtocolLabel>EasySep Direct Human PBMC Isolation 19654 - buffy coat-CJ</ProtocolLabel>
     <ProtocolDescription>100 uL/mL cocktail, 250 uL/mL particle, 5 min incubation(s), 8 min separation(s), RSSCustVial: 2600;4100;26</ProtocolDescription>
@@ -198,7 +244,7 @@
     <ProtocolUsageTime>2019-04-04T13:45:47.1511482-07:00</ProtocolUsageTime>
   </Protocol>
   <Protocol>
-    <ProtocolId>8</ProtocolId>
+    <ProtocolId>10</ProtocolId>
     <ProtocolInstrumentControlId>662683855</ProtocolInstrumentControlId>
     <ProtocolLabel>EasySep Direct Human PBMC Isolation 19654 - buffy coat</ProtocolLabel>
     <ProtocolDescription>100 uL/mL cocktail, 200 uL/mL particle, 5 min incubation(s), 8 min separation(s), RSSCustVial: 2600;4100;26</ProtocolDescription>
@@ -207,7 +253,7 @@
     <ProtocolUsageTime>2019-04-04T10:48:43.7344932-07:00</ProtocolUsageTime>
   </Protocol>
   <Protocol>
-    <ProtocolId>9</ProtocolId>
+    <ProtocolId>11</ProtocolId>
     <ProtocolInstrumentControlId>12829808</ProtocolInstrumentControlId>
     <ProtocolLabel>EasySep Direct Human 19669 - 2_5ml test</ProtocolLabel>
     <ProtocolDescription>900 uL/mL cocktail, 200 uL/mL particle, 5 min incubation(s), 4, 4 min separation(s), RSSCustVial: 2600;4100;61</ProtocolDescription>
@@ -216,7 +262,7 @@
     <ProtocolUsageTime>2019-04-04T10:48:43.7344932-07:00</ProtocolUsageTime>
   </Protocol>
   <Protocol>
-    <ProtocolId>10</ProtocolId>
+    <ProtocolId>12</ProtocolId>
     <ProtocolInstrumentControlId>1653983252</ProtocolInstrumentControlId>
     <ProtocolLabel>CJ Whole Blood 2</ProtocolLabel>
     <ProtocolDescription>50 uL/mL antibody, 50 uL/mL cocktail, 50 uL/mL particle, 1, 4, 0 min incubation(s), 4, 4, 3 min separation(s), RSSCustVial: 2600;4100;61</ProtocolDescription>
@@ -225,7 +271,16 @@
     <ProtocolUsageTime>2019-05-17T12:28:15.2220729-07:00</ProtocolUsageTime>
   </Protocol>
   <Protocol>
-    <ProtocolId>11</ProtocolId>
+    <ProtocolId>13</ProtocolId>
+    <ProtocolInstrumentControlId>302855576</ProtocolInstrumentControlId>
+    <ProtocolLabel>Human Basophil Negative Selection 19069-high purity</ProtocolLabel>
+    <ProtocolDescription>50 uL/mL cocktail, 150 uL/mL particle, 10, 10 min incubation(s), 10, 10 min separation(s)</ProtocolDescription>
+    <ProtocolQuadrantCount>2</ProtocolQuadrantCount>
+    <ProtocolUsageCount>0</ProtocolUsageCount>
+    <ProtocolUsageTime>2019-06-26T10:32:39.2967301-07:00</ProtocolUsageTime>
+  </Protocol>
+  <Protocol>
+    <ProtocolId>14</ProtocolId>
     <ProtocolInstrumentControlId>1274572367</ProtocolInstrumentControlId>
     <ProtocolLabel>Basic shutdown protocol</ProtocolLabel>
     <ProtocolDescription>No Description</ProtocolDescription>
@@ -233,9 +288,18 @@
     <ProtocolUsageCount>0</ProtocolUsageCount>
     <ProtocolUsageTime>2019-04-04T10:48:43.7344932-07:00</ProtocolUsageTime>
   </Protocol>
+  <Protocol>
+    <ProtocolId>15</ProtocolId>
+    <ProtocolInstrumentControlId>1403791069</ProtocolInstrumentControlId>
+    <ProtocolLabel>2 Quad Sequential Protocol v1_2 (barcoded)</ProtocolLabel>
+    <ProtocolDescription>200 uL antibody, 200 uL/mL cocktail, 200 uL/mL particle, RSSCustVial: 2600;4100;61</ProtocolDescription>
+    <ProtocolQuadrantCount>2</ProtocolQuadrantCount>
+    <ProtocolUsageCount>2</ProtocolUsageCount>
+    <ProtocolUsageTime>2019-06-26T10:45:17.1707535-07:00</ProtocolUsageTime>
+  </Protocol>
   <ShutdownProtocol>
     <ShutdownProtocolId>1</ShutdownProtocolId>
-    <ShutdownProtocolProtocolId>11</ShutdownProtocolProtocolId>
+    <ShutdownProtocolProtocolId>14</ShutdownProtocolProtocolId>
     <ShutdownProtocolDescription />
   </ShutdownProtocol>
 </SeparatorDataSource>
