@@ -50,7 +50,7 @@ class Controller:
 
         try:
             self.controlCentre.resetInstrument()
-        except ControlException, msg:
+        except ControlException as msg:
             self.logger.logError(msg)
             # 2011-11-24 sp -- added logging
             self.svrLog.logError('', self.logPrefix, funcReference, msg)
@@ -64,7 +64,7 @@ class Controller:
 
         try:
             self.controlCentre.shutdownInstrument(powerDown)
-        except ControlException, msg:
+        except ControlException as msg:
             self.logger.logError(msg)
             self.svrLog.logError('', self.logPrefix, funcReference, msg)    # 2011-11-24 sp -- added logging
         self.logger.logInfo('Instrument shutdown')

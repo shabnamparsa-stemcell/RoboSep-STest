@@ -37,7 +37,7 @@ import RoboTrace                                                        #CWJ Add
 # If you find that they are, please move them across to tesla.config
 
 LOG_ID        = 'ROBOSEP'              # Name of the log object
-ROLLOVER_SIZE = 104857600L            # At 100MB, we roll the file over
+ROLLOVER_SIZE = 104857600            # At 100MB, we roll the file over
 MAX_BACKUPS   = 9999                        # This is a lot of log files :)
 MAX_BUFFERED_ENTRIES = 1000            # How many entries do we buffer in memory?
 
@@ -45,7 +45,7 @@ MAX_BUFFERED_ENTRIES = 1000            # How many entries do we buffer in memory
 
 class LoggerException(TeslaException):
     """Exception thrown when there is a logger error"""
-    print "LoggerException ", str(TeslaException) 
+    print("LoggerException ", str(TeslaException)) 
     pass
 
 # -----------------------------------------------------------------------------
@@ -74,9 +74,9 @@ class Logger(Borg):
                                     mode = 'a', maxBytes = ROLLOVER_SIZE, 
                                     backupCount = MAX_BACKUPS)
                 self.addHandler(logFileHandler)
-            except IOError, msg:
+            except IOError as msg:
                 # Problem creating or opening the file?
-                raise LoggerException, msg
+                raise LoggerException(msg)
 
             # Roll the log file over at start-up each time
             logFileHandler.doRollover()
@@ -120,23 +120,23 @@ class Logger(Borg):
     def logPrintDebug(self, msg):
         """Log a debug message -- this is primarily for development"""
         self.log('debug', msg)
-        print "Print Debug:  " + msg
+        print("Print Debug:  " + msg)
 
     def logInfo(self, msg):
         """Log a generic information message: not for problem reporting"""
         self.log('info', msg)
-        print "Info:  " + msg
+        print("Info:  " + msg)
 
     def logWarning(self, msg):
         """Log a warning message"""
         self.log('warning', msg)
-        print "Warning:  " + msg
+        print("Warning:  " + msg)
         
         
     def logError(self, msg):
         """Log an error message"""
         self.log('error', msg)
-        print "Error:  " + msg
+        print("Error:  " + msg)
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetProcError(True);
 

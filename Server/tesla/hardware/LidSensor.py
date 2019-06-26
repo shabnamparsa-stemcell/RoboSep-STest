@@ -83,14 +83,14 @@ class LidSensor(Device):
 
     def getSensorState( self ):
         """Gets the state of lid sensor"""
-        if self.debug: print self, "LidSensor::getSensorState"
+        if self.debug: print(self, "LidSensor::getSensorState")
         command = 'I' + str(self.__m_sensorPort)
         if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
             self.m_card.ExtLogger.SetCmdListLog("sendAndCheck()[%s] called from LidSensor.getSensorState()"%self.m_card.prefix, self.m_card.prefix);
         funcReference = __name__ + '.getSensorState'          # 2011-11-29 sp -- added logging
         result = self.m_card.sendAndCheck( command ) 
         result = int(result[0])
-        if self.debug: print "LidSensor result =", result
+        if self.debug: print("LidSensor result =", result)
         self.svrLog.logDebug('', self.logPrefix, funcReference, "LidSensor %s, state=%d" % (self.m_card.prefix, result))   # 2011-11-29 sp -- added logging
         return result == 1
 
@@ -165,7 +165,7 @@ class HydraulicSensor(Device):                      #CWJ Add
              result = self.m_card.sendAndCheck( command ) 
              result = int(result[0])
           
-          if self.debug: print "Hydraulic result =", result
+          if self.debug: print("Hydraulic result =", result)
 
           return result == 1
 
@@ -218,7 +218,7 @@ class BeaconDriver(Device):                                              #CWJ Ad
           beaconDrv       = self;
                                         
       def TurnOFFBeacon( self ):
-          print " \n>>> # Beacon OFF #\n";
+          print(" \n>>> # Beacon OFF #\n");
           command = '#fD' + str(self.m_channel);
    
           if tesla.config.SS_FORCE_EMULATION == 0:
@@ -228,7 +228,7 @@ class BeaconDriver(Device):                                              #CWJ Ad
              self.m_card.ExtLogger.SetCmdListLog("sendAndCheck()[%s] called from BeaconDriver.TurnOFF()"%self.m_card.prefix, self.m_card.prefix);
           
       def TurnONBeacon( self, evt):
-          print "\n >>># Beacon ON : Event %d # \n"%evt;
+          print("\n >>># Beacon ON : Event %d # \n"%evt);
           command = '#fE' + str(self.m_channel) + ',' + str(self.m_port) + ',';
           
           if   (evt == 1):

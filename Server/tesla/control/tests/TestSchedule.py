@@ -36,26 +36,26 @@ class Test_WorkflowContainer(unittest.TestCase):
         self.workflows = [self.wf1, self.wf2, self.wf3]
 
     def test_str(self):
-        self.failUnless(str(self.wf1), 'Testing WorkflowContainer __str__()')
+        self.assertTrue(str(self.wf1), 'Testing WorkflowContainer __str__()')
 
     def test_getWorkflowContainerAndTime(self):
         workflowCall, startTime = self.wf1.getWorkflowAndTime()
-        self.failUnless(workflowCall == self.workflowCall, 'Testing Workflow call string')
-        self.failUnless(startTime == self.startTime, 'Testing Workflow start time')
+        self.assertTrue(workflowCall == self.workflowCall, 'Testing Workflow call string')
+        self.assertTrue(startTime == self.startTime, 'Testing Workflow start time')
 
     def test_getSampleID(self):
         id = self.wf1.getSampleID()
-        self.failUnless(id == self.sampleID, 'Testing sample ID')
+        self.assertTrue(id == self.sampleID, 'Testing sample ID')
 
     def test_cmp(self):
-        self.failUnless(self.wf2 < self.wf1, 'Testing _cmp_')
+        self.assertTrue(self.wf2 < self.wf1, 'Testing _cmp_')
         unsortedList = self.workflows[:]
         self.workflows.sort()
-        self.failUnless(unsortedList != self.workflows, 'Testing sorted WorkflowContainer list')
+        self.assertTrue(unsortedList != self.workflows, 'Testing sorted WorkflowContainer list')
         for i in range(1, len(self.workflows)):
             cmd, timeA = self.workflows[i - 1].getWorkflowAndTime()
             cmd, timeB = self.workflows[i].getWorkflowAndTime()
-            self.failUnless(timeB > timeA, 'Testing __cmp__ in sorted list')
+            self.assertTrue(timeB > timeA, 'Testing __cmp__ in sorted list')
             
 # -----------------------------------------------------------------------------
 
@@ -66,10 +66,10 @@ class TestSchedule(unittest.TestCase):
         self.sched.addWorkflow(1, 120, 'Incubate(300)')
 
     def test_len(self):
-        self.failUnless(len(self.sched) == 1, 'Testing schedule length')
+        self.assertTrue(len(self.sched) == 1, 'Testing schedule length')
 
     def test_str(self):
-        self.failUnless(str(self.sched), 'Testing Schedule __str__()')
+        self.assertTrue(str(self.sched), 'Testing Schedule __str__()')
         
 # -----------------------------------------------------------------------------
  

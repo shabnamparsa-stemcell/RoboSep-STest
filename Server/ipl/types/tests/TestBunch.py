@@ -14,8 +14,8 @@ class TestBunch(unittest.TestCase):
         bearName = 'Edward'
         myYear = 1066
         b = Bunch(bear = bearName, year = myYear)
-        self.failUnless(b.bear == bearName)
-        self.failUnless(b.year == myYear)
+        self.assertTrue(b.bear == bearName)
+        self.assertTrue(b.year == myYear)
 
     
     def testBadMember(self):
@@ -26,7 +26,7 @@ class TestBunch(unittest.TestCase):
         myFruit = 'Loganberry'
         food = Bunch(yoghurt = 'Raspberry', cheese = 'Brie')
         food.fruit = myFruit
-        self.failUnless(food.fruit == myFruit, 'Testing assignment')
+        self.assertTrue(food.fruit == myFruit, 'Testing assignment')
 
 
 if __name__ == '__main__':

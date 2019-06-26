@@ -80,8 +80,8 @@ class TestSampleTracker(unittest.TestCase):
         self.endTime = datetime.fromtimestamp(self.timeNow + 10000)
 
     def testEmptyTracker(self):
-        self.failUnless(self.st.samples == None, 'Testing empty tracker - sample set')
-        self.failIf(self.st.hasStarted(), 'Testing empty tracker - initial state')
+        self.assertTrue(self.st.samples == None, 'Testing empty tracker - sample set')
+        self.assertFalse(self.st.hasStarted(), 'Testing empty tracker - initial state')
 
     def addSamples(self):
         samples = []
@@ -97,24 +97,24 @@ class TestSampleTracker(unittest.TestCase):
                                         600*index-600,)
             samples.append(thisSample)
         self.st.addSamples(samples)
-        self.failIf(self.st.samples == None, 'Testing Add samples')
+        self.assertFalse(self.st.samples == None, 'Testing Add samples')
         
     def testStartSchedule(self):
         self.st.resetTracker()
         self.addSamples()
         self.st.scheduleStart(str(self.endTime),self.startTime,'OperatorXYZ')
-        self.failUnless(self.st.hasStarted(), 'Testing schedule running')
+        self.assertTrue(self.st.hasStarted(), 'Testing schedule running')
 
     def testCompleteSchedule(self):
         self.st.resetTracker()
         self.addSamples()
         self.st.scheduleStart(str(self.endTime),self.startTime,'OperatorXYZ')
         self.st.scheduleCompleted(self.endTime)
-        self.failUnless(self.st.samples == None, 'Testing finished tracker - sample set')
-        self.failIf(self.st.hasStarted(), 'Testing finished tracker - final state')
+        self.assertTrue(self.st.samples == None, 'Testing finished tracker - sample set')
+        self.assertFalse(self.st.hasStarted(), 'Testing finished tracker - final state')
 
         # check if report file created
-        self.failUnless(os.path.exists(self.st.getFileName(self.endTime)),'Testing existance of report')
+        self.assertTrue(os.path.exists(self.st.getFileName(self.endTime)),'Testing existance of report')
 
 
     def testAbortSchedule(self):
@@ -122,11 +122,11 @@ class TestSampleTracker(unittest.TestCase):
         self.addSamples()
         self.st.scheduleStart(str(self.endTime),self.startTime,'OperatorYYY')
         self.st.scheduleAborted("User request",self.endTime)
-        self.failUnless(self.st.samples == None, 'Testing finished tracker - sample set')
-        self.failIf(self.st.hasStarted(), 'Testing finished tracker - final state')
+        self.assertTrue(self.st.samples == None, 'Testing finished tracker - sample set')
+        self.assertFalse(self.st.hasStarted(), 'Testing finished tracker - final state')
 
         # check if report file created
-        self.failUnless(os.path.exists(self.st.getFileName(self.endTime)),'Testing existance of report')
+        self.assertTrue(os.path.exists(self.st.getFileName(self.endTime)),'Testing existance of report')
         
 # -----------------------------------------------------------------------------
  
@@ -143,9 +143,9 @@ if __name__ == "__main__":
     # Run inbuilt test
 
     st = SampleTracker()
-    print 'Today\'s Path = ', st.getFileName()
-    print 'Path for [2005/7/22 18:03:59.0]= ', st.getFileName(
-                    datetime(2005, 7, 22, 18, 03, 59, 000))
+    print('Today\'s Path = ', st.getFileName())
+    print('Path for [2005/7/22 18:03:59.0]= ', st.getFileName(
+                    datetime(2005, 7, 22, 18, 0o3, 59, 000)))
 
     st.resetTracker()
     

@@ -51,7 +51,7 @@ from tesla.instrument.Subsystem import Subsystem
 from tesla.instrument.Calibration import Calibration
 from tesla.hardware.BarCodeReader import BarCodeReader      # 2012-01031 sp -- added barcode reader
 
-import Queue
+import queue
 import threading
 
 from ipl.task.future import *
@@ -60,7 +60,7 @@ from ipl.utils.wait import wait_msecs
 import os       #CWJ Downstroke Pause Test
 
 from tesla.PgmLog import PgmLog    # 2011-11-25 sp -- programming logging
-from ConfigParser import *         # 2012-02-01 sp -- configuration from ini file
+from configparser import *         # 2012-02-01 sp -- configuration from ini file
 import tesla.DebuggerWindow          # 2012-04-10 sp
 
 from datetime import datetime #added by shabnam
@@ -286,7 +286,7 @@ class Instrument(Subsystem):
                              }
 
     # List tubes for which a given tip is is not allowed entry
-    tips_All = range(1,6)
+    tips_All = list(range(1,6))
     tips_1ml = (1, 2, 3)
     tips_5ml = (4, 5)
     
@@ -336,7 +336,7 @@ class Instrument(Subsystem):
 
         self.__m_Platform = TeslaPlatform( "TeslaPlatform" )
         self.__nbrSectors = self.__m_Platform.NbrSectors()
-        self.__sectorRange = range(1, self.__nbrSectors + 1)
+        self.__sectorRange = list(range(1, self.__nbrSectors + 1))
         
         self.__m_Pump = TeslaPump( "TeslaPump" )
         self.__m_Containers = self.InitialiseContainers()
@@ -398,7 +398,7 @@ class Instrument(Subsystem):
         id is a unique identifier (eg. sample ID) for tracking the caller.
         kw is a dictionary of optional parameters & values.'''
         
-        print '===============HomeAll Start'
+        print('===============HomeAll Start')
         
         self.__m_Platform.BeaconDriver.TurnONBeacon(3);   #CWJ Add
         time.sleep(3);                                    #CWJ Add
@@ -407,7 +407,7 @@ class Instrument(Subsystem):
         # Nov 7, 2013 Sunny
         # Update seq for maintenance protocol        
         seq = -1
-        if kw.has_key('seq'):
+        if 'seq' in kw:
             seq = - kw['seq']
                 
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
@@ -420,7 +420,7 @@ class Instrument(Subsystem):
         self.__m_Pump.Initialise( False )
 
         self.__m_Platform.BeaconDriver.TurnOFFBeacon();   #CWJ Add
-        print '===============HomeAll End'
+        print('===============HomeAll End')
     
 
 
@@ -444,13 +444,13 @@ class Instrument(Subsystem):
         #print '--------------------------roy-a0---',srcVial.getLabel(),destVial.getLabel()
         #print datetime.now() # shabnam 
         funcReference = __name__ + '.Transport'  # 2011-11-25 sp -- added logging
-        if kw.has_key('seq'):   #CWJ Mod
+        if 'seq' in kw:   #CWJ Mod
             seq = kw['seq']      #CWJ Mod
             CamMgr = RoboTrace.GetRoboCamMgrInstance();
             CamMgr.SetProcStep(2);                   
             CamMgr.SetCurrentProtocolSeq(seq)
             CamMgr.SetCurrentProtocolID(id)
-        if kw.has_key('initialQuadrant'): #CWJ Mod
+        if 'initialQuadrant' in kw: #CWJ Mod
            qdr = kw['initialQuadrant']
            CamMgr = RoboTrace.GetRoboCamMgrInstance()
            CamMgr.SetCurrentSec(qdr)
@@ -478,16 +478,16 @@ class Instrument(Subsystem):
 
         # bdr - test tiprack specified
         if tiprackSpecified == True:
-            print "Specified TipRack of %d" % (tiprack)
+            print("Specified TipRack of %d" % (tiprack))
         else :
-            print "Tip rack was not specified"
+            print("Tip rack was not specified")
 
 
         # RL - transport from buffer bottle is always from the bottom - 03/21/06
         #      (dead) mL - 10mL
         if srcVial.getLabel() == Instrument.BCCMLabel:
             srcVial.setVolume(float(self._m_Settings[Instrument.DeadVolumeBCCMLabel]) - 10000)
-            print "transport from bccm", srcVial.getVolume()
+            print("transport from bccm", srcVial.getVolume())
             
         # Set up a debug message for tracing transported volumes
         transportMsg = "ID = %s: Transporting %duL from %d:%s (%duL) to %d:%s (%duL)" % \
@@ -505,7 +505,7 @@ class Instrument(Subsystem):
             #2017_05_01 should use small tip if destination is reagent vial
             if chosenTip2 == 1 or chosenTip2 == 2 or chosenTip2==3:
                 transportMsg = "Destination Vial requires small tip for transport"
-                print transportMsg
+                print(transportMsg)
                 self.__logger.logDebug(transportMsg)
                 self.svrLog.logInfo('', self.logPrefix, funcReference, transportMsg )
                 chosenSector = chosenSector2
@@ -513,17 +513,17 @@ class Instrument(Subsystem):
                 
             
             # bdr - override normal tip on useBufferTip set
-            print "   BDR - Chosen tip  %d" % (chosenTip)
+            print("   BDR - Chosen tip  %d" % (chosenTip))
             if chosenTip in Instrument.tips_5ml and usingBufferTip == True:
                 if chosenTip == 5:
                     chosenTip = 4
                 else:
                     chosenTip = 5
                 
-                print "   BDR - new Chosen tip  %d" % (chosenTip)
+                print("   BDR - new Chosen tip  %d" % (chosenTip))
 
             # RL - relative multi tiprack fix -03/21/06
-            if kw.has_key('initialQuadrant'):
+            if 'initialQuadrant' in kw:
                 chosenSector = kw['initialQuadrant']
 
             #Is tiprack specified?
@@ -624,7 +624,7 @@ class Instrument(Subsystem):
             if not skipTipStrip:
                 #    May/04/2009 - 50 mL TipStrip Method Changes - CWJ 
                 if ( destVial.getLabel() == self.LysisLabel ) :
-                    print '\nCWJ - Lysis Vial Delay TipStip\n'
+                    print('\nCWJ - Lysis Vial Delay TipStip\n')
                     self.__m_Platform.StripTip(True) 
                 else :                
                     self.__m_Platform.StripTip() #    03/14/07 - tip strip only if necessary code -RL
@@ -659,12 +659,12 @@ class Instrument(Subsystem):
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetProcStep(3);
         CamMgr.SetCurrentProtocolID(id)
-        if kw.has_key('seq'):   #CWJ Mod
+        if 'seq' in kw:   #CWJ Mod
            seq = kw['seq']      #CWJ Mod
            CamMgr = RoboTrace.GetRoboCamMgrInstance()
            CamMgr.SetCurrentProtocolSeq(seq)
 
-        if kw.has_key('initialQuadrant'): #CWJ Mod
+        if 'initialQuadrant' in kw: #CWJ Mod
            qdr = kw['initialQuadrant']
            CamMgr = RoboTrace.GetRoboCamMgrInstance()
            CamMgr.SetCurrentSec(qdr)
@@ -674,7 +674,7 @@ class Instrument(Subsystem):
             (chosenSector, chosenTip) = self.__TipToMixWith (vial)
             
             # RL - relative multi tiprack fix -03/21/06
-            if kw.has_key('initialQuadrant'):
+            if 'initialQuadrant' in kw:
                 chosenSector = kw['initialQuadrant']
 
             #Is tiprack specified?
@@ -710,7 +710,7 @@ class Instrument(Subsystem):
 
 
             #print "Mix vial.getVolume() %d mixFraction %f  MixVolume %f " % (vial.getVolume(), mixFraction, mixVolume)
-            print "Mix TipTubeBottomGap %d" % (vial.getVolume()-mixVolume)
+            print("Mix TipTubeBottomGap %d" % (vial.getVolume()-mixVolume))
             
 
             # Prior to mixing, obtain an air slug ...
@@ -745,8 +745,8 @@ class Instrument(Subsystem):
                 vial.setVolume(tmp_volume)
                 mixVolume = volume_uL
 
-            print "Mix volume reset vial.getVolume() %d " % (vial.getVolume())
-            print "Mix tipCapacity %d mixVolume %d aspirationHeight %d dispenseHeight %d" % (tipCapacity, mixVolume, aspirationHeight, dispenseHeight)
+            print("Mix volume reset vial.getVolume() %d " % (vial.getVolume()))
+            print("Mix tipCapacity %d mixVolume %d aspirationHeight %d dispenseHeight %d" % (tipCapacity, mixVolume, aspirationHeight, dispenseHeight))
 
             MixLoop = self.__nbrMixes
 
@@ -825,7 +825,7 @@ class Instrument(Subsystem):
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetProcStep(ProcStep);
         CamMgr.SetCurrentProtocolID(id)
-        if kw.has_key('seq'):   #CWJ Mod
+        if 'seq' in kw:   #CWJ Mod
             seq = kw['seq']      #CWJ Mod
             CamMgr.SetCurrentProtocolSeq(seq)
         time.sleep(4)                #CWJ Add
@@ -834,7 +834,7 @@ class Instrument(Subsystem):
     # RL - pause command - 03/29/06
     def Pause(self, period_secs, id = None, **kw):
         '''kw is a dictionary of optional parameters & values.'''
-        print '''Pause here until user resumes... don't know how though... =('''
+        print('''Pause here until user resumes... don't know how though... =(''')
         funcReference = __name__ + '.Pause'  # 2011-11-25 sp -- added logging
         self.svrLog.logDebug('', self.logPrefix, funcReference, 'start Pause; sample=%s |time=%d' % (id, period_secs))   # 2011-11-25 sp -- added logging
 
@@ -842,7 +842,7 @@ class Instrument(Subsystem):
         CamMgr.SetProcStep(9);
 
         self.__m_isPause = True
-        if kw.has_key('label'):
+        if 'label' in kw:
             self.__m_pauseCaption = kw['label']
 
 
@@ -857,11 +857,11 @@ class Instrument(Subsystem):
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetProcStep(5);
         CamMgr.SetCurrentProtocolID(id)
-        if kw.has_key('seq'):   #CWJ Mod
+        if 'seq' in kw:   #CWJ Mod
            seq = kw['seq']      #CWJ Mod
            CamMgr = RoboTrace.GetRoboCamMgrInstance()
            CamMgr.SetCurrentProtocolSeq(seq)
-        if kw.has_key('initialQuadrant'): #CWJ Mod
+        if 'initialQuadrant' in kw: #CWJ Mod
            qdr = kw['initialQuadrant']
            CamMgr = RoboTrace.GetRoboCamMgrInstance()
            CamMgr.SetCurrentSec(qdr)
@@ -879,7 +879,7 @@ class Instrument(Subsystem):
         if volumeToAdd > 0:
             self.svrLog.logInfo('', self.logPrefix, funcReference, "starting TopUp, id=%s |vial=%s |volume=%d" \
                     % (str(id), destVial, volumeToAdd))   # 2011-11-25 sp -- added logging
-            if kw.has_key( 'initialQuadrant' ):
+            if 'initialQuadrant' in kw:
                 self.Transport(destVial, fromVial, volumeToAdd, usingFreeAirDispense, False, id, tiprackSpecified, tiprack, skipTipStrip = skipTipStrip, skipPickupTip = skipPickupTip, initialQuadrant = kw['initialQuadrant'] ) #CR
             else:
                 self.Transport(destVial, fromVial, volumeToAdd, usingFreeAirDispense, False, id, tiprackSpecified, tiprack, skipTipStrip = skipTipStrip, skipPickupTip = skipPickupTip ) #CR
@@ -909,17 +909,17 @@ class Instrument(Subsystem):
         CamMgr.SetProcStep(6);
         CamMgr.SetCurrentProtocolID(id)
         CamMgr.SetBlockUpdate(True)
-        if kw.has_key('seq'):   #CWJ Mod
+        if 'seq' in kw:   #CWJ Mod
            seq = kw['seq']      #CWJ Mod
            CamMgr = RoboTrace.GetRoboCamMgrInstance()
            CamMgr.SetCurrentProtocolSeq(seq)
-        if kw.has_key('initialQuadrant'): #CWJ Mod
+        if 'initialQuadrant' in kw: #CWJ Mod
            qdr = kw['initialQuadrant']
            CamMgr = RoboTrace.GetRoboCamMgrInstance()
            CamMgr.SetCurrentSec(qdr)
 
         initialQuadrant = kw['initialQuadrant']
-        if kw.has_key( 'initialQuadrant' ):
+        if 'initialQuadrant' in kw:
             self.TopUpVial( destVial, tiprackSpecified, tiprack, srcVial, workVolume, usingFreeAirDispense, \
                             id = id, skipTipStrip = skipTipStrip, skipPickupTip = skipPickupTip, initialQuadrant = kw['initialQuadrant'] )#CR
         else:
@@ -971,7 +971,7 @@ class Instrument(Subsystem):
         self.ResuspendVial(destVial, tiprackSpecified, tiprack, srcVial, workVolume, True,id, skipTipStrip = True, seq=seq, initialQuadrant=initialQuadrant)
         self.Mix(destVial, tiprackSpecified, tiprack, mixCycles, tipTubeBottomGap, isRelative, mix_volume_uL, id, skipTipStrip = True, skipPickupTip = True, seq=seq, initialQuadrant=initialQuadrant)
         #self.Separate(duration, id=id, seq=seq) #function is a no-op, have to sleep myself          
-        print "ResusMixSepTrans sleep",duration
+        print("ResusMixSepTrans sleep",duration)
         time.sleep(duration);
         
         self.Transport(destVial2, destVial, trans_volume_uL, usingFreeAirDispense, usingBufferTip, id, tiprackSpecified, tiprack, seq=seq, skipPickupTip = True, initialQuadrant=initialQuadrant)
@@ -1021,7 +1021,7 @@ class Instrument(Subsystem):
         self.TopUpVial(destVial, tiprackSpecified, tiprack, srcVial, workVolume, True, id, skipTipStrip = True, seq=seq, initialQuadrant=initialQuadrant)
         self.Transport(destVial2, destVial, trans_volume_uL, usingFreeAirDispense, usingBufferTip, id, tiprackSpecified, tiprack, seq=seq, skipTipStrip = True, skipPickupTip = True, initialQuadrant=initialQuadrant)
         #self.Separate(duration, id=id, seq=seq) #function is a no-op, have to sleep myself          
-        print "TopUpTransSepTrans sleep",duration
+        print("TopUpTransSepTrans sleep",duration)
         time.sleep(duration);
         self.Transport(destVial3, destVial2, trans_volume_uL2, usingFreeAirDispense, usingBufferTip, id, tiprackSpecified, tiprack, seq=seq, skipPickupTip = True, initialQuadrant=initialQuadrant)
         self.__m_Platform.StripTip()
@@ -1041,7 +1041,7 @@ class Instrument(Subsystem):
         self.Mix(destVial, tiprackSpecified, tiprack, mixCycles, tipTubeBottomGap, isRelative, mix_volume_uL, id, skipTipStrip = True, skipPickupTip = True, seq=seq, initialQuadrant=initialQuadrant)
         self.Transport(destVial2, destVial, trans_volume_uL, usingFreeAirDispense, usingBufferTip, id, tiprackSpecified, tiprack, seq=seq, skipTipStrip = True, skipPickupTip = True, initialQuadrant=initialQuadrant)
         #self.Separate(duration, id=id, seq=seq) #function is a no-op, have to sleep myself          
-        print "TopUpMixTransSepTrans sleep",duration
+        print("TopUpMixTransSepTrans sleep",duration)
         time.sleep(duration);
         self.Transport(destVial3, destVial2, trans_volume_uL2, usingFreeAirDispense, usingBufferTip, id, tiprackSpecified, tiprack, seq=seq, skipPickupTip = True, initialQuadrant=initialQuadrant)
         self.__m_Platform.StripTip()
@@ -1060,7 +1060,7 @@ class Instrument(Subsystem):
         # Nov 7, 2013 Sunny
         # Update seq for maintenance protocol       
         seq = -3
-        if kw.has_key('seq'):
+        if 'seq' in kw:
             seq = - kw['seq']
         
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
@@ -1085,7 +1085,7 @@ class Instrument(Subsystem):
 
         volumeDispensed = self.__m_Pump.FlushDispense()
         wasteVial.addVolume(volumeDispensed)
-        print '\n### wasteVial: %d Flushed! ###\n'%volumeDispensed
+        print('\n### wasteVial: %d Flushed! ###\n'%volumeDispensed)
         # Aspirate airslug while raising robot
 
         
@@ -1107,7 +1107,7 @@ class Instrument(Subsystem):
         # Nov 7, 2013 Sunny
         # Update seq for maintenance protocol
         seq = -2
-        if kw.has_key('seq'):
+        if 'seq' in kw:
             seq = - kw['seq']
             
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
@@ -1258,31 +1258,31 @@ class Instrument(Subsystem):
         funcReference = __name__ + '._Aspirate'  # 2011-11-25 sp -- added logging
         
         msg = "Aspirate:  Moving to Aspirate vial = %s, volume = %f" % ((vial.getLabel()), volume)
-        print msg
+        print(msg)
         
         self.MoveToAspirate(vial, volume)
         # 2012-01-30 sp -- replace environment variable with configuration variable
         #if os.environ.has_key('SS_ASPIRATEDOWN'):
         if tesla.config.SS_ASPIRATEDOWN == 1:
-            raw_input('\n####MoveToAspirate done!\n\a')
+            input('\n####MoveToAspirate done!\n\a')
         
         volumeAspirated = self.__m_Pump.Aspirate(volume, tipCapacity)
         
         msg = "Aspirate:  Volume actually aspirated = %f" % (volumeAspirated)
-        print msg
+        print(msg)
         self.svrLog.logInfo('', self.logPrefix, funcReference, 'start Aspirate, vial=%s |volume=%d' % (vial, volumeAspirated))   # 2011-11-25 sp -- added logging
 
         # 2012-01-30 sp -- replace environment variable with configuration variable
         #if os.environ.has_key('SS_ASPIRATEDOWN'):
         if tesla.config.SS_ASPIRATEDOWN == 1:
-            raw_input('\n####Pump done!\n\a')
+            input('\n####Pump done!\n\a')
 
         vial.removeVolume(volumeAspirated)
         if vial.getLabel() in ( self.AntibodyLabel, self.CocktailLabel, self.BeadLabel ):
             self.__WickingExtract(self.__aspirateReagentWickingExtractOffset)
         elif vial.getLabel() in (self.BCCMLabel,) :
             # RL - move arm slowly for buffer bottle - 03/27/06
-            print "BCCM wicking extract dist", self.__aspirateBCCMWickingExtractOffset
+            print("BCCM wicking extract dist", self.__aspirateBCCMWickingExtractOffset)
             self.__WickingExtract(self.__aspirateBCCMWickingExtractOffset)
         else:
             self.__WickingExtract(self.__aspirateWickingExtractOffset)
@@ -1303,14 +1303,14 @@ class Instrument(Subsystem):
         # 2012-01-30 sp -- replace environment variable with configuration variable
         #if os.environ.has_key('SS_DISPENSEDOWN'):
         if tesla.config.SS_DISPENSEDOWN == 1:
-            raw_input('\n####MoveToDispse done!\n\a')
+            input('\n####MoveToDispse done!\n\a')
         
         self.__m_Pump.Dispense()   # Pump will dispense whatever was aspirated
         
         # 2012-01-30 sp -- replace environment variable with configuration variable
         #if os.environ.has_key('SS_DISPENSEDOWN'):
         if tesla.config.SS_DISPENSEDOWN == 1:
-            raw_input('\n####Pump done!\n\a')
+            input('\n####Pump done!\n\a')
 
         vial.addVolume(volume)
 
@@ -1335,7 +1335,7 @@ class Instrument(Subsystem):
         
         #msg = "Aspirate:  Moving to Aspirate vial = %s, volume = %f" % ((vial.getLabel()), volume)
         #print "------------------------------------ROY2"
-        print msg
+        print(msg)
         
         self.__m_Platform.MoveTo(sector, location, height)
         CamMgr = RoboTrace.GetRoboCamMgrInstance();                #CWJ Add
@@ -1375,8 +1375,8 @@ class Instrument(Subsystem):
             newPosition = self.barCodeThetaOffset
             maxRescan   = self.maxRescan; #CJ MOD 10/31/2013
             
-            print '#maxRescan %d\n'%maxRescan
-            print '#maxCount  %d\n'%self.maxCount
+            print('#maxRescan %d\n'%maxRescan)
+            print('#maxCount  %d\n'%self.maxCount)
             
             while( ((barcode == 'NR') or (barcode == None))
                                 and count < self.maxCount ):  #CJ MOD 10/31/2013
@@ -1416,8 +1416,8 @@ class Instrument(Subsystem):
             newPosition = self.barCodeThetaOffset
             maxRescan   = self.maxRescan; #CJ MOD 10/31/2013
             
-            print '#maxRescan %d\n'%maxRescan
-            print '#maxCount  %d\n'%self.maxCount
+            print('#maxRescan %d\n'%maxRescan)
+            print('#maxCount  %d\n'%self.maxCount)
             
             self.svrLog.logDebug('', self.logPrefix, funcReference, 'number of times to scan barcode, rescan=%d |attempts=%d: ' % (rescan, count) )
 
@@ -1565,7 +1565,7 @@ class Instrument(Subsystem):
             
     # 2012-03-30 sp -- added barcode reader
     def InitScanVialBarcode( self, freeaxis ):     
-        print ('>> Enter InitScanVialBarcode[%s]\n' % freeaxis);
+        print(('>> Enter InitScanVialBarcode[%s]\n' % freeaxis));
         if (freeaxis == True):
             self.CleanUp();
             self.__m_Platform.powerDownCarousel();
@@ -1656,7 +1656,7 @@ class Instrument(Subsystem):
     def ScanVialBarcodeAt(self, Quadrant, Vial):
         if (self.barcodeScanningThread == None or not self.barcodeScanningThread.isAlive()):
             self.abortScanning = False        
-            q = Queue.Queue()
+            q = queue.Queue()
             self.barcodeScanningThread = threading.Thread(target=self.__barcodeScanningThread, args = (q, Quadrant, Vial))
             self.barcodeScanningThread.start()
             return 0
@@ -1798,10 +1798,10 @@ class Instrument(Subsystem):
 
     def getHardwareSetting(self, settingKey):
         '''Return the value of the specified setting key.'''
-        if self._m_Settings.has_key(settingKey):
+        if settingKey in self._m_Settings:
             return self._m_Settings[settingKey]
         else:
-            raise InstrumentError, "IL: Can not find setting = %s" % (settingKey)
+            raise InstrumentError("IL: Can not find setting = %s" % (settingKey))
 
 
     def ClearRootQuadrantMapping(self):
@@ -1875,7 +1875,7 @@ class Instrument(Subsystem):
         fullTubeMap = {}
         for sector in self.__sectorRange:
             sectorTubes = {}
-            for name in tubeList.keys():
+            for name in list(tubeList.keys()):
                 tube = Tube (sector, name, tubeList[name])
                 sectorTubes[name] = tube
             fullTubeMap[sector] = sectorTubes
@@ -1890,7 +1890,7 @@ class Instrument(Subsystem):
         self.__m_Containers = fullTubeMap
 
         wasteVial = self.ContainerAt(1, self.WasteLabel)
-        print "@#$@#$@#$@#$@#$@#$ InitialiseContainers",str(wasteVial)
+        print("@#$@#$@#$@#$@#$@#$ InitialiseContainers",str(wasteVial))
         
         return fullTubeMap
 
@@ -1917,10 +1917,10 @@ class Instrument(Subsystem):
         if self.__m_state == 'SERVICE':
             return self.__m_Containers[sector][name]
         
-        if not sector in self.__m_Containers.keys():
-            self.Trace(str(self.__m_Containers.keys()))
+        if not sector in list(self.__m_Containers.keys()):
+            self.Trace(str(list(self.__m_Containers.keys())))
             raise InstrumentError ("sector %d is not in range (0-%d)" % (sector, self.__m_Platform.NbrSectors()))
-        elif not name in self.__m_Containers[sector].keys():
+        elif not name in list(self.__m_Containers[sector].keys()):
             raise InstrumentError ("%s is not present in sector %d" % (name, sector))
 
         if not newContainer == None:
@@ -2093,7 +2093,7 @@ class Instrument(Subsystem):
         """ Determine the sector and location reference for the given vial."""
         location = vial.getLabel()
         
-        if location in Instrument.__reagentPositionMap.keys():
+        if location in list(Instrument.__reagentPositionMap.keys()):
             # Override label
             location = Instrument.__reagentPositionMap[location]
 
@@ -2106,7 +2106,7 @@ class Instrument(Subsystem):
     
     def __TipToUseFor(self, vial):
         """Determine what tip to use for a given vial."""
-        if not vial.getLabel() in Instrument.__transportTipUsageMap.keys():
+        if not vial.getLabel() in list(Instrument.__transportTipUsageMap.keys()):
             raise InstrumentError ("%s vial has no designated tip!" % (vial.getLabel()))
         return (vial.getSector(), Instrument.__transportTipUsageMap[vial.getLabel()])
         
@@ -2129,7 +2129,7 @@ class Instrument(Subsystem):
     
     def __TipCapacityOf(self, tipId):
         '''Determine the tip capacity (in uL) for the specified tip ID.'''
-        if not tipId in self.__tipCapacityMap.keys():
+        if not tipId in list(self.__tipCapacityMap.keys()):
             raise InstrumentError ("Tip %d is undefined!" % (tipId))
             
         return float (self._m_Settings[self.__tipCapacityMap[tipId]])
@@ -2144,10 +2144,10 @@ class Instrument(Subsystem):
     
     def __CalculateAspirationHeightFor(self, vial, volumeToTransport_uL, tipLength):
         """Determine the height at which to place the robot in preparation to aspirate."""
-        print "### CWJ -  Label %s, basePos : %d, tipLen :%d"%( vial.getLabel(), vial.getBasePosition(), tipLength) 
-        print "bdr - __CalculateAspirationHeightFor basepsn, tiplen, meniscus, asp_depthlbl", vial.getBasePosition(),tipLength , vial.getMeniscusAfterRemoving(volumeToTransport_uL) ,float(self._m_Settings[Instrument.AspirationDepthLabel])
+        print("### CWJ -  Label %s, basePos : %d, tipLen :%d"%( vial.getLabel(), vial.getBasePosition(), tipLength)) 
+        print("bdr - __CalculateAspirationHeightFor basepsn, tiplen, meniscus, asp_depthlbl", vial.getBasePosition(),tipLength , vial.getMeniscusAfterRemoving(volumeToTransport_uL) ,float(self._m_Settings[Instrument.AspirationDepthLabel]))
         aspirationHeight = vial.getBasePosition() - tipLength - vial.getMeniscusAfterRemoving(volumeToTransport_uL) + float(self._m_Settings[Instrument.AspirationDepthLabel])
-        print "bdr - __CalculateAspirationHeightFor height", aspirationHeight
+        print("bdr - __CalculateAspirationHeightFor height", aspirationHeight)
         return self.__ClipHeight (aspirationHeight, vial, tipLength, True)
         
     
@@ -2174,7 +2174,7 @@ class Instrument(Subsystem):
         """Determine whether the current tip (or the one given) is allowed to enter a given vial."""
         if tipId == None:
             tipId = self.__m_Platform.CurrentTipID()[1]
-        if vial.getLabel() in self.__forbiddenTipList.keys():
+        if vial.getLabel() in list(self.__forbiddenTipList.keys()):
             result = tipId in self.__forbiddenTipList[vial.getLabel()]
         else:
             result = False
@@ -2185,7 +2185,7 @@ class Instrument(Subsystem):
         """Ensure that the given height does not cause tip to get too close to the base"""
         
         if (vial.getLabel() == 'SeparationVial') and (isAspiration == True) and (tesla.config.SS_DEBUGGER_LOG == 1):
-            print '\n[SeparationVial at Aspiration (Debug version)]'
+            print('\n[SeparationVial at Aspiration (Debug version)]')
             self.__logger.logDebug('DI: [ SeparationVial at Aspiration ]')            
             ssLogDebugger = tesla.DebuggerWindow.GetSSTracerInstance()
             maxHeight = vial.getBasePosition() - tipLength - ( float(self._m_Settings[Instrument.MinTipBaseGapLabel]) + ssLogDebugger.GetAspiHeight() )

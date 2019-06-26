@@ -42,36 +42,36 @@ class TestProtocolConsumable(unittest.TestCase):
                                         True, False, True, False)
     
     def test_members(self):
-        self.failUnless(self.pc.quadrant == self.quadrant, 
+        self.assertTrue(self.pc.quadrant == self.quadrant, 
                             'Testing quadrant member')
-        self.failUnless(self.pc.cocktailVolume == self.cocktailVol, 
+        self.assertTrue(self.pc.cocktailVolume == self.cocktailVol, 
                             'Testing cocktail volume')
-        self.failUnless(self.pc.particleVolume == self.particleVol, 
+        self.assertTrue(self.pc.particleVolume == self.particleVol, 
                             'Testing particle volume')
-        self.failUnless(self.pc.lysisVolume == self.lysisVol,
+        self.assertTrue(self.pc.lysisVolume == self.lysisVol,
                             'Testing lysis volume')
-        self.failUnless(self.pc.antibodyVolume == self.antibodyVol,
+        self.assertTrue(self.pc.antibodyVolume == self.antibodyVol,
                             'Testing antibody volume')
-        self.failUnless(self.pc.bulkBufferVolume == self.bulkBufferVolume,
+        self.assertTrue(self.pc.bulkBufferVolume == self.bulkBufferVolume,
                             'Testing bulk buffer volume')
-        self.failUnless(self.pc.wasteVesselRequired == True, 
+        self.assertTrue(self.pc.wasteVesselRequired == True, 
                             'Testing waste vessel required')
-        self.failUnless(self.pc.separationVesselRequired == False, 
+        self.assertTrue(self.pc.separationVesselRequired == False, 
                             'Testing seraration vessel required')
-        self.failUnless(self.pc.sampleVesselRequired == True, 
+        self.assertTrue(self.pc.sampleVesselRequired == True, 
                             'Testing sample vessel required')
-        self.failUnless(self.pc.tipBoxRequired == False, 
+        self.assertTrue(self.pc.tipBoxRequired == False, 
                             'Testing tip box required')
     
     def test_emptyOrNotNeeded(self):
         pc1 = ProtocolConsumable(2, NOT_NEEDED, EMPTY, NOT_NEEDED, EMPTY)
-        self.failUnless(pc1)
+        self.assertTrue(pc1)
                 
     def test_validQuadrant(self):
         con1 = ProtocolConsumable(1, EMPTY, EMPTY, EMPTY, EMPTY)
-        self.failUnless(con1)
+        self.assertTrue(con1)
         con4 = ProtocolConsumable(NUM_QUADRANTS, EMPTY, EMPTY, EMPTY, EMPTY)
-        self.failUnless(con4)        
+        self.assertTrue(con4)        
 
     def test_invalidQuadrants(self):        
         self.assertRaises(TeslaException, ProtocolConsumable,
@@ -81,8 +81,8 @@ class TestProtocolConsumable(unittest.TestCase):
 
     def test_getPrettyString(self):
         pretty = self.pc.getPrettyString()
-        self.failUnless(type(pretty) == str, 'Testing pretty string type')
-        self.failUnless(len(pretty) > 0)
+        self.assertTrue(type(pretty) == str, 'Testing pretty string type')
+        self.assertTrue(len(pretty) > 0)
 
 # -----------------------------------------------------------------------------
         

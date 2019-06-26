@@ -22,7 +22,7 @@
 import os
 import time
 from datetime import datetime
-from xmlrpclib import DateTime
+from xmlrpc.client import DateTime
 
 from ipl.scheduler.Scheduler import TimeBlock
 from ipl.scheduler.Scheduler import Scheduler as IPL_Scheduler
@@ -220,7 +220,7 @@ class SampleScheduler(object):
         if timeFile and os.path.exists(timeFile):
             try:
                 safespace = {}
-                execfile(timeFile, safespace)
+                exec(compile(open(timeFile, "rb").read(), timeFile, 'exec'), safespace)
                 times = safespace['times']
                 transportTimesSmallTip = safespace['transportTimesSmallTip']        
                 transportTimesLargeTip = safespace['transportTimesLargeTip']
@@ -233,7 +233,7 @@ class SampleScheduler(object):
                 timesSet = True
                 self.logger.logInfo("SS: Import user-defined command times from %s" % (timeFile))
                 self.svrLog.logID('', self.logPrefix, funcReference, "Import user-defined command times from %s" % (timeFile) )    # 2011-11-24 sp -- added logging
-            except Exception, msg:
+            except Exception as msg:
                 self.logger.logWarning("SS: Unable to import user-defined command times from %s: %s; using defaults" % \
                     (timeFile, msg))
                 self.svrLog.logWarning('', self.logPrefix, funcReference, "Unable to import user-defined command times from %s |mag=%s; using defaults" % \
@@ -252,7 +252,7 @@ class SampleScheduler(object):
             # Let's make sure we have all of the required keys (if we imported
             # our scheduler times from a timeFile)
             for cmd in SampleScheduler.schedulerTimes:
-                if not times.has_key(cmd):
+                if cmd not in times:
                     if not cmd in SampleScheduler.skipWarningList:
                         self.logger.logWarning("%s is missing scheduler times for the %s command" %\
                             (timeFile, cmd))
@@ -349,7 +349,7 @@ class SampleScheduler(object):
                 msg = "Failed to schedule samples %s" % (SampleScheduler.getSampleInfo(sampleList))
                 self.logger.logError("SS: Attempt 2: %s" % msg)
                 self.svrLog.logError('', self.logPrefix, funcReference, "Attempt 2: %s" % msg )    # 2011-11-24 sp -- added logging
-                raise SchedulerException, msg
+                raise SchedulerException(msg)
                 return schedulingSuccess
 
 
@@ -400,8 +400,8 @@ class SampleScheduler(object):
                 if blockID == -1:
                     self.svrLog.logWarning('', self.logPrefix, funcReference, "AppendBlock() failed; batchID=%d, block=%d" % \
                         (batchID, block))    # 2011-12-09 sp -- added logging
-                    raise SchedulerException, "SS: AppendBlock() failed; batchID=%d, block=%d" % \
-                        (batchID, block)
+                    raise SchedulerException("SS: AppendBlock() failed; batchID=%d, block=%d" % \
+                        (batchID, block))
                 else:
                     self.__blockIDs[batchID].append(blockID)
 
@@ -675,8 +675,8 @@ class SampleScheduler(object):
             # the protocol associated with this sample
             self.svrLog.logWarning('', self.logPrefix, funcReference, " Can't find protocol ID (%d) for sample ID %d" % \
                 (sample.protocolID, sample.ID))    # 2011-11-24 sp -- added logging
-            raise SchedulerException, "SS: Can't find protocol ID (%d) for sample ID %d" % \
-                (sample.protocolID, sample.ID)
+            raise SchedulerException("SS: Can't find protocol ID (%d) for sample ID %d" % \
+                (sample.protocolID, sample.ID))
 
         return blockList
 
@@ -697,11 +697,11 @@ class SampleScheduler(object):
         funcReference = __name__ + '.getCommandTypeTimes'      # 2011-12-09 sp -- added logging
 
         commandType = commandType.split('Command')[0]
-        if not self.schedulerTimes.has_key(commandType):
+        if commandType not in self.schedulerTimes:
             self.svrLog.logWarning('', self.logPrefix, funcReference, "Invalid type (%s) for duration calc" % \
                 (commandType))    # 2011-11-24 sp -- added logging
-            raise SchedulerException, "SS: Invalid type (%s) for duration calc" % \
-                (commandType)
+            raise SchedulerException("SS: Invalid type (%s) for duration calc" % \
+                (commandType))
         else:
             return self.schedulerTimes[commandType]
 
@@ -732,8 +732,8 @@ class SampleScheduler(object):
             else:
                 self.svrLog.logWarning('', self.logPrefix, funcReference, "Unable to find last block for batch ID %d" % \
                     (batchID))    # 2011-12-09 sp -- added logging
-                raise SchedulerException, "SS: Unable to find last block for batch ID %d" % \
-                    (batchID)
+                raise SchedulerException("SS: Unable to find last block for batch ID %d" % \
+                    (batchID))
 
         durations.sort()
         self.__duration_secs = durations[-1]
@@ -766,20 +766,20 @@ class SampleScheduler(object):
                         if sharedSectorsTranslation[sector-1]!=0:
                             newVial = sharedSectorsTranslation[sector-1]+1-sample.initialQuadrant
                             cmd.srcVial=(newVial,cmd.srcVial[1])
-                            print cmd.__class__.__name__,"convert",sector,cmd.srcVial[0]+sample.initialQuadrant-1
+                            print(cmd.__class__.__name__,"convert",sector,cmd.srcVial[0]+sample.initialQuadrant-1)
 
             # Now create the workflow call (that we'll eval in the Dispatcher)
             cmdCall = cmd.createCall(sample, protocol)
-        except CommandException, msg:
+        except CommandException as msg:
             # Unable to create the command call, probably because of bad input
             # data; ie. a bad protocol definition
             # This is serious, so let's bail
             self.svrLog.logWarning('', self.logPrefix, funcReference, "Unable to create workflow call: %s" % (msg))    # 2011-12-09 sp -- added logging
-            raise SchedulerException, "SS: Unable to create workflow call: %s" % (msg)
-        except IndexError,msg:
+            raise SchedulerException("SS: Unable to create workflow call: %s" % (msg))
+        except IndexError as msg:
             # This shouldn't happen any more (famous last words)
             self.svrLog.logWarning('', self.logPrefix, funcReference, "Index error in __createWorkflowCall: %s" % (msg))    # 2011-12-09 sp -- added logging
-            raise SchedulerException, "SS: Index error in __createWorkflowCall: %s" % (msg)
+            raise SchedulerException("SS: Index error in __createWorkflowCall: %s" % (msg))
 
         return cmdCall
 
@@ -825,7 +825,7 @@ class SampleScheduler(object):
         # First off, reverse the order of start times to make the schedule forward pointing again.
         # Then subtract the used time of each block,
         if self.debug:
-            print "Working out finish time"
+            print("Working out finish time")
         finishTimeList = []
         for batchID in self.__batchIDList:
             lastBlockID = self.__blockIDs[batchID][-1]
@@ -834,16 +834,16 @@ class SampleScheduler(object):
             if not haveBlock:
                 self.svrLog.logWarning('', self.logPrefix, funcReference, "Unable to find last block for batch ID %d" % \
                       (batchID))    # 2011-12-09 sp -- added logging
-                raise SchedulerException, "SS: Unable to find last block for batch ID %d" % \
-                      (batchID)
+                raise SchedulerException("SS: Unable to find last block for batch ID %d" % \
+                      (batchID))
             finishTimeList.append( block.getStartTime() )
 
-        print "finishTimeList =", finishTimeList
+        print("finishTimeList =", finishTimeList)
 
         finishTimeList.sort()
         finishTime = finishTimeList[-1]
         if self.debug:
-            print "Finish time is", finishTime
+            print("Finish time is", finishTime)
 
         for batchID in self.__batchIDList:
             startTimes[batchID] = []
@@ -855,8 +855,8 @@ class SampleScheduler(object):
                 if not haveBlock:
                     self.svrLog.logWarning('', self.logPrefix, funcReference, "Unable to block ID %d for batch ID %d" % \
                         (blockID,batchID))    # 2011-12-09 sp -- added logging
-                    raise SchedulerException, "SS: Unable to block ID %d for batch ID %d" % \
-                        (blockID,batchID)
+                    raise SchedulerException("SS: Unable to block ID %d for batch ID %d" % \
+                        (blockID,batchID))
                 startTimes[batchID].append( finishTime - block.getStartTime() - block.getUsedPeriod() )
             startTimes[batchID].sort()
             
@@ -886,8 +886,8 @@ class SampleScheduler(object):
                 else:
                     self.svrLog.logWarning('', self.logPrefix, funcReference, "Unable to find block ID %d for batch ID %d" % \
                         (blockID, batchID))    # 2011-12-09 sp -- added logging
-                    raise SchedulerException, "SS: Unable to find block ID %d for batch ID %d" % \
-                        (blockID, batchID)
+                    raise SchedulerException("SS: Unable to find block ID %d for batch ID %d" % \
+                        (blockID, batchID))
                 workflowCall = self.__createWorkflowCall(sampleList, batchID, blockID, sharedSectorsTranslation)
     #                if self.debug:
     #                    print "addWorkflow", (batchID, startTime, workflowCall)
@@ -896,13 +896,13 @@ class SampleScheduler(object):
             self.endTimeList.append( startTime + block.getUsedPeriod() + block.getFreePeriod() )
 
         if self.debug:
-            print "End times =", self.endTimeList
+            print("End times =", self.endTimeList)
 
         self.endTimeList.sort()
         self.endTimeSpan = self.endTimeList[-1] - self.endTimeList[0]
 
         if self.debug:
-            print "End time span =", self.endTimeSpan
+            print("End time span =", self.endTimeSpan)
         
         return s
 
@@ -913,9 +913,9 @@ class SampleScheduler(object):
         really just for debugging purposes.'''
         funcReference = __name__ + '.dumpBlocks'      # 2011-12-09 sp -- added logging
 
-        for batchID in self.__blockIDs.keys():
-            print '~' * 75
-            print "Batch ID (= sample ID) = %d" % (batchID)
+        for batchID in list(self.__blockIDs.keys()):
+            print('~' * 75)
+            print("Batch ID (= sample ID) = %d" % (batchID))
 
             for blockID in self.__blockIDs[batchID]:
                 block = SchedulerBlock(0, 0, 0)
@@ -924,11 +924,11 @@ class SampleScheduler(object):
                     # This really should not happen
                     self.svrLog.logWarning('xx', self.logPrefix, funcReference, "Could not find block for %d/%d" % \
                         (batchID, blockID))    # 2011-12-09 sp -- added logging; not used within, logging not tested
-                    raise SchedulerException, "SS: Could not find block for %d/%d" % \
-                        (batchID, blockID)
+                    raise SchedulerException("SS: Could not find block for %d/%d" % \
+                        (batchID, blockID))
 
-                print "%2d: %12s\tST = %-5d" % (blockID, block.getPeriods(), block.getStartTime())
-        print '=' * 75
+                print("%2d: %12s\tST = %-5d" % (blockID, block.getPeriods(), block.getStartTime()))
+        print('=' * 75)
 
     # --- set up our static methods etc ---
 
@@ -956,13 +956,13 @@ class SampleScheduler(object):
         numHits = len(hits)
         if numHits == 0:
             svrLog.logWarning('', logPrefix, funcReference, "Could not find sample for batchID = %d" % (batchID))    # 2011-12-09 sp -- added logging
-            raise SchedulerException, "SS: Could not find sample for batchID = %d" % (batchID)
+            raise SchedulerException("SS: Could not find sample for batchID = %d" % (batchID))
         elif numHits > 1:
             # This should *never* happen!
             svrLog.logWarning('', logPrefix, funcReference, "Found %d samples with batchID = %d" % \
                 (numHits, batchID))    # 2011-12-09 sp -- added logging
-            raise SchedulerException, "SS: Found %d samples with batchID = %d" % \
-                (numHits, batchID)
+            raise SchedulerException("SS: Found %d samples with batchID = %d" % \
+                (numHits, batchID))
         else:
             sample = hits[0]
 

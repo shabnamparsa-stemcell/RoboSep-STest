@@ -29,19 +29,19 @@ from tesla.config import *
 class TestConfig(unittest.TestCase):
    
     def test_platform(self):
-        self.failUnless(PLATFORM, 'platform test')
+        self.assertTrue(PLATFORM, 'platform test')
     
     def test_gateway(self):
-        self.failUnless(GATEWAY_HOST, 'Gateway host test')
-        self.failUnless(type(GATEWAY_HOST) == type(''), 'Test gateway string')
-        self.failUnless(type(GATEWAY_PORT) == type(80), 'Test gateway port')
-        self.failUnless(GATEWAY_PORT > 0, 'Gateway port validity test')
+        self.assertTrue(GATEWAY_HOST, 'Gateway host test')
+        self.assertTrue(type(GATEWAY_HOST) == type(''), 'Test gateway string')
+        self.assertTrue(type(GATEWAY_PORT) == type(80), 'Test gateway port')
+        self.assertTrue(GATEWAY_PORT > 0, 'Gateway port validity test')
         
     def test_diskSpace(self):
-        self.failUnless(MIN_SAFE_DISK_SPACE > 0, 'Min. disk space test')
+        self.assertTrue(MIN_SAFE_DISK_SPACE > 0, 'Min. disk space test')
     
     def test_logLevel(self):
-        self.failUnless(LOG_LEVEL, 'log level test')
+        self.assertTrue(LOG_LEVEL, 'log level test')
 
     def __dirTest(self, dir):
         '''Returns true if the directory exists'''
@@ -49,11 +49,11 @@ class TestConfig(unittest.TestCase):
 
     def test_directories(self):
         for dir in [BASE_DIR, PROTOCOL_DIR, LOG_DIR, SAMPLE_REPORT_DIR]:
-            self.failUnless(self.__dirTest(dir), "Testing %s directory" % (dir))
+            self.assertTrue(self.__dirTest(dir), "Testing %s directory" % (dir))
 
     def test_quadrants(self):
-        self.failUnless(type(NUM_QUADRANTS) == type(1), 'Testing quadrant type')
-        self.failUnless(NUM_QUADRANTS > 0, 'Testing valid quadrants limit')
+        self.assertTrue(type(NUM_QUADRANTS) == type(1), 'Testing quadrant type')
+        self.assertTrue(NUM_QUADRANTS > 0, 'Testing valid quadrants limit')
 
     def test_protocolTypeID(self):
         protocols = []
@@ -61,10 +61,10 @@ class TestConfig(unittest.TestCase):
             value = eval("tesla.config.%s" % (entry))
             if entry.find('_PROTOCOL') > 0:
                 protocols.append(value)
-                self.failUnless(type(value) == type(''), "Testing type of %s" % (value))
+                self.assertTrue(type(value) == type(''), "Testing type of %s" % (value))
         # We should have 5 types of protocol defined: positive separation, 
         # negative separation, shutdown, testing and maintenance
-        self.failUnless(len(protocols) == 5, 'Testing number of protocol types')
+        self.assertTrue(len(protocols) == 5, 'Testing number of protocol types')
     
    
 # ---------------------------------------------------------------------------

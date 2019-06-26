@@ -4,7 +4,7 @@
 # Decompiled by https://python-decompiler.com
 import types, string, time
 
-class EmulatorError(StandardError):
+class EmulatorError(Exception):
     __module__ = __name__
 
 
@@ -92,20 +92,20 @@ class Board:
         """Start the motor moving"""
         moveMethod = {'R': self.startRelativeMove, 'M': self.startAbsoluteMove, 'N': self.nullMotorCommand}
         try:
-            apply(moveMethod[cmdCode], (params,))
+            moveMethod[cmdCode](*(params,))
         except:
-            raise EmulatorError, 'Move command %c is not yet supported' % cmdCode
+            raise EmulatorError('Move command %c is not yet supported' % cmdCode)
 
     def isValidPosition(self, position):
         """Is the position valid for this stepper's min & max travel"""
-        if type(position) != types.IntType:
-            raise EmulatorError, 'The position (%s) has to be a number!' % str(position)
+        if type(position) != int:
+            raise EmulatorError('The position (%s) has to be a number!' % str(position))
         return position >= 0 and position <= self.maxSteps
 
     def moveTo(self, position):
         """Move the motor to a specific position (in steps)"""
         if not self.isValidPosition(position):
-            raise EmulatorError, 'Whoops! Invalid position'
+            raise EmulatorError('Whoops! Invalid position')
         else:
             distance = abs(self.position - position)
             self.position = position
@@ -146,13 +146,13 @@ class Board:
     def processNonMoveCommand(self, cmdCode, params):
         """Process one of the commands that is not related to moving the stepper"""
         trCmds = {'*': 'STAR', '!': 'BANG'}
-        if cmdCode in trCmds.keys():
+        if cmdCode in list(trCmds.keys()):
             cmdCode = trCmds[cmdCode]
         cmdMethodName = 'self.process_%s_cmd' % cmdCode
         try:
             cmdMethod = eval(cmdMethodName)
         except:
-            raise EmulatorError, 'Command %s is not yet implemented' % cmdCode
+            raise EmulatorError('Command %s is not yet implemented' % cmdCode)
 
         try:
             i = len(params)
@@ -160,7 +160,7 @@ class Board:
             params = [
              params]
 
-        return apply(cmdMethod, (params,))
+        return cmdMethod(*(params,))
 
     def process__cmd(self, params):
         """Empty command, used to check for card's presence"""
@@ -169,8 +169,8 @@ class Board:
     def process_c_cmd(self, params):
         """Change the communications baudrate"""
         baudRateIndex = int(params[0])
-        if baudRateIndex not in range(0, 5):
-            raise EmulatorError, '%d is an invalid baudrate parameter' % baudRateIndex
+        if baudRateIndex not in list(range(0, 5)):
+            raise EmulatorError('%d is an invalid baudrate parameter' % baudRateIndex)
         return ''
 
     def process_STAR_cmd(self, params):
@@ -260,7 +260,7 @@ class Board:
 
     def process_O_cmd(self, params):
         """Toggle a digital output port"""
-        paramList = string.split(params, ',')
+        paramList = str.split(params, ',')
         port = int(paramList[0])
         state = int(paramList[1])
         self.ports[port] = state
@@ -272,7 +272,7 @@ class Board:
         """
         cmdLen = len(cmd)
         if cmdLen < 2:
-            raise EmulatorError, 'Zero-length command packet?'
+            raise EmulatorError('Zero-length command packet?')
         params = None
         if cmdLen == 2:
             cmdCode = ''
@@ -288,7 +288,7 @@ class Board:
         """Return the param as an int, checking that it is within the limit"""
         val = int(param)
         if val < 1 or val > limit:
-            raise EmulatorError, 'Invalid value (%d)'
+            raise EmulatorError('Invalid value (%d)')
         return val
 
 

@@ -28,8 +28,8 @@ import unittest
 from SimpleStep.SimpleStep import SimpleStep
 from tesla.hardware.config import HardwareConfiguration, gHardwareData
 
-print '<=========== START OF UNITTEST ============>\n'
-print 'We will need the SimpleStep card BoardID!!'
+print('<=========== START OF UNITTEST ============>\n')
+print('We will need the SimpleStep card BoardID!!')
 EMULATION = True
 
 configData = gHardwareData.Section ('Robot_ZAxis')
@@ -49,8 +49,8 @@ class LinearTestOK(unittest.TestCase):
     
     def testCreation(self):
         """Create LinearAxis"""
-        self.failUnless (self.m_Axis.m_Card == self.m_Card)
-        self.failUnless (LinearTestOK.tracker.name == name)
+        self.assertTrue (self.m_Axis.m_Card == self.m_Card)
+        self.assertTrue (LinearTestOK.tracker.name == name)
         
     def testHomePosition(self):
         """Can we obtain home posiition?"""
@@ -59,7 +59,7 @@ class LinearTestOK(unittest.TestCase):
     def testHoming(self):
         """Determine whether axis needs homing, and whether it can be homed"""
         self.m_Axis.Home()
-        self.failUnless (self.m_Axis.IsHomed())
+        self.assertTrue (self.m_Axis.IsHomed())
         self.assertAlmostEqual (self.m_Axis.Position(), self.m_Axis.HomePosition(), TOLERANCE)
    
     def testHomeTracking(self):
@@ -67,7 +67,7 @@ class LinearTestOK(unittest.TestCase):
         nbrMoves = LinearTestOK.tracker.totalMovements
         self.m_Axis.Home()
         self.m_Axis.Home()
-        self.failUnless (nbrMoves != LinearTestOK.tracker.totalMovements)
+        self.assertTrue (nbrMoves != LinearTestOK.tracker.totalMovements)
    
     def testPosition(self):
         """Can position be selected between 0-max?"""
@@ -80,7 +80,7 @@ class LinearTestOK(unittest.TestCase):
         self.m_Axis.SetPosition (maxPosition)
         self.assertAlmostEqual (self.m_Axis.Position(), maxPosition, TOLERANCE)
         self.m_Axis.SetPosition (minPosition)
-        self.failUnless (nbrMoves != LinearTestOK.tracker.totalMovements)
+        self.assertTrue (nbrMoves != LinearTestOK.tracker.totalMovements)
         self.assertAlmostEqual (self.m_Axis.Position(), minPosition, TOLERANCE)
     
     def testIncrementPosition (self):
@@ -104,15 +104,15 @@ class LinearTestFail(unittest.TestCase):
     def testValidatePosition (self):
         """Validation should fail if not homed"""
         posn = (self.m_xRotor.MinPosition()+self.m_xRotor.MinPosition())/2.0
-        self.assertEquals (self.m_xRotor.IsHomed(), False, "Axis should not be homed")
+        self.assertEqual (self.m_xRotor.IsHomed(), False, "Axis should not be homed")
         self.assertRaises (AxisError, self.m_xRotor.Position)
         self.assertRaises (AxisError, self.m_xRotor.SetPosition, posn)
 
     def testPositionLimits (self):
         """Position may not be set outside configured limits"""
         self.m_xRotor.Home()
-        self.assertAlmostEquals (float(configData[LinearAxis.MinPositionLabel]), self.m_xRotor.MinPosition(), TOLERANCE)
-        self.assertAlmostEquals (float(configData[LinearAxis.MaxPositionLabel]), self.m_xRotor.MaxPosition(), TOLERANCE)
+        self.assertAlmostEqual (float(configData[LinearAxis.MinPositionLabel]), self.m_xRotor.MinPosition(), TOLERANCE)
+        self.assertAlmostEqual (float(configData[LinearAxis.MaxPositionLabel]), self.m_xRotor.MaxPosition(), TOLERANCE)
         self.m_xRotor.SetPosition (self.m_xRotor.MinPosition())
         self.m_xRotor.SetPosition (self.m_xRotor.MaxPosition())
         self.assertRaises (AxisError, self.m_xRotor.SetPosition, self.m_xRotor.MinPosition() - 0.1)

@@ -20,7 +20,7 @@
 # 
 
 from datetime import date
-import anydbm
+import dbm
         
 # ---------------------------------------------------------------------------
 def Report(file = None):
@@ -30,17 +30,17 @@ def Report(file = None):
     else:
         dbFile = file
         
-    db = anydbm.open (dbFile, 'r')
+    db = dbm.open (dbFile, 'r')
 
     try:
-        print "%-16s %-17s %-10s %17s %15s %15s" % ("Name:", "Commissioned:", "Movements:", "Steps (x10^6):", "Full motions:", "Failures/Homes:")
+        print("%-16s %-17s %-10s %17s %15s %15s" % ("Name:", "Commissioned:", "Movements:", "Steps (x10^6):", "Full motions:", "Failures/Homes:"))
 
-        for axisName in db.keys():
+        for axisName in list(db.keys()):
             #(maxStep, totalMovements, totalMegaSteps, totalSteps, ordinalDate) = db[axisName].split(',')
             row = _ObtainTrackerData (db, axisName)
             commissionDate = date.fromordinal (int (row[AxisTracker.CommissionDateField])).strftime ("%d %b, %Y")
             fullTraverses = _FullTraverses (int(row[AxisTracker.MaxStepField]), int(row[AxisTracker.TotalMegaStepsField]), int(row[AxisTracker.TotalStepsField]))
-            print "%-16s %-17s %10s %10s.%06d %15d %6s/%s" % \
+            print("%-16s %-17s %10s %10s.%06d %15d %6s/%s" % \
                   (axisName, \
                    commissionDate, \
                    row[AxisTracker.TotalMovementsField], \
@@ -48,7 +48,7 @@ def Report(file = None):
                    int(row[AxisTracker.TotalStepsField]), \
                    fullTraverses, \
                    row[AxisTracker.TotalHomeFailsField], \
-                   row[AxisTracker.TotalHomesField])
+                   row[AxisTracker.TotalHomesField]))
 
     finally:
         db.close()
@@ -154,10 +154,10 @@ class AxisTracker:
         """Load data from the database, creating the file if not already present"""
 
         isNew = True
-        db = anydbm.open (AxisTracker.dbFilePath, 'c')
+        db = dbm.open (AxisTracker.dbFilePath, 'c')
 
         try:
-            if self.name in db.keys():
+            if self.name in list(db.keys()):
                 row = _ObtainTrackerData(db, self.name)
                 self.maxStep        = int (row[0])
                 self.totalMovements = int (row[1])
@@ -184,7 +184,7 @@ class AxisTracker:
     #-------------------------------------------------------------------------
     def __StoreData (self):
         """Store data to the database"""
-        db = anydbm.open (AxisTracker.dbFilePath, 'w')
+        db = dbm.open (AxisTracker.dbFilePath, 'w')
 
         try:
             dataString = "%d, %d, %d, %d, %d, %d, %d" % \

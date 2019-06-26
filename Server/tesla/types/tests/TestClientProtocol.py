@@ -28,7 +28,7 @@ class TestClientProtocol(unittest.TestCase):
   
     def testDefault(self):
         p = ClientProtocol(ClientProtocol.POSITIVE, 'CD18', 250, 10000)
-        self.failUnless(p)
+        self.assertTrue(p)
 
     def test_protocolTypes(self):
         # Test the legal protocol types that we can use to create 
@@ -61,11 +61,11 @@ class TestClientProtocol(unittest.TestCase):
         for quadCount in quads:
            p = ClientProtocol(ClientProtocol.POSITIVE, "CD%02d" % (quadCount), \
                    250, 10000, numQuadrants = quadCount)
-           self.failUnless(p.numQuadrants == quadCount, 'Testing # quadrants')
+           self.assertTrue(p.numQuadrants == quadCount, 'Testing # quadrants')
 
         # For a SHUTDOWN protocol, we should be able to specify zero quadrants
         p = ClientProtocol(ClientProtocol.SHUTDOWN, "Shutdown", 0, 0, 0)
-        self.failUnless(p)
+        self.assertTrue(p)
 
 
     def testBadQuadrants(self):
@@ -80,7 +80,7 @@ class TestClientProtocol(unittest.TestCase):
 
         maxVol = 7500
         p2 = ClientProtocol(ClientProtocol.POSITIVE, label, 500, maxVolume_uL = maxVol)
-        self.failUnless(p2.maxVol == maxVol, 'Testing updated protocol')
+        self.assertTrue(p2.maxVol == maxVol, 'Testing updated protocol')
 
 # -----------------------------------------------------------------------------
 

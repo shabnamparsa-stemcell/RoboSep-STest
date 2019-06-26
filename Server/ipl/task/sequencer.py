@@ -8,10 +8,10 @@ import sys
 def myPrint(*args):
     """A simple helper function, provided in case the optional handler 
     parameter is not used in the Sequencer constructor."""
-    print args
+    print(args)
 
 
-class SequencerException(StandardError):
+class SequencerException(Exception):
     __module__ = __name__
     __doc__ = 'Exceptions related to the sequencer'
 
@@ -89,7 +89,7 @@ class Sequencer:
         #time.sleep(1)
         #time.sleep(1)
         #time.sleep(DISPATCHER_TIMEOUT) #added by shabnam
-        print "sequencer... dispatch now"
+        print("sequencer... dispatch now")
 
 
         
@@ -99,39 +99,39 @@ class Sequencer:
             (start, event,) = self.schedule.pop(0)
             while self.isNotHalted():
                 if self.preExecuteHandler:
-                    apply(self.preExecuteHandler, (None,))
+                    self.preExecuteHandler(*(None,))
                 if (self.isPaused() and self.onPausedHandler):
-                    apply(self.onPausedHandler, (None,))
+                    self.onPausedHandler(*(None,))
                 if self._Sequencer__debug:
-                    print 'self.__resume.wait()'
+                    print('self.__resume.wait()')
                 self._Sequencer__resume.wait()
                 if (not self.isNotHalted()):
                     break
                 now = (self.getTime() - t0)
                 if self._Sequencer__debug:
-                    print 'now, start =',
-                    print (now,
-                     start)
+                    print('now, start =', end=' ')
+                    print((now,
+                     start))
                 if (now >= start):
                     try:
                         lateness = (now - start)
-                        if ((lateness > 0.01) and ((self.doesActionRequirePushbackIfLate != None) and apply(self.doesActionRequirePushbackIfLate, (event,)))):
+                        if ((lateness > 0.01) and ((self.doesActionRequirePushbackIfLate != None) and self.doesActionRequirePushbackIfLate(*(event,)))):
                             if self._Sequencer__debug:
-                                print 'Pushing back schedule by',
-                                print lateness,
-                                print 'seconds'
+                                print('Pushing back schedule by', end=' ')
+                                print(lateness, end=' ')
+                                print('seconds')
                             self.pushBackSchedule(lateness)
                         elif self._Sequencer__debug:
-                            print 'No need to push back schedule'
-                        apply(self.handler, (event,))
+                            print('No need to push back schedule')
+                        self.handler(*(event,))
                     except:
                         self._Sequencer__halt.set()
                         self._Sequencer__break.set()
                         (exceptionType, exceptionMsg, tb,) = sys.exc_info()
                         if self._Sequencer__debug:
-                            print ('Caught %s: %s' % (exceptionType,
-                             exceptionMsg))
-                        raise SequencerException, ('%s: %s' % (exceptionType,
+                            print(('Caught %s: %s' % (exceptionType,
+                             exceptionMsg)))
+                        raise SequencerException('%s: %s' % (exceptionType,
                          exceptionMsg))
                     break
                 else:
@@ -142,7 +142,7 @@ class Sequencer:
 
 
         if (self.exitFunc != None):
-            apply(self.exitFunc, ())
+            self.exitFunc(*())
         self._Sequencer__isRunning.clear()
 
 
@@ -160,7 +160,7 @@ class Sequencer:
 \tto terminate the dispatching from outside that thread, call halt()
 \tinstead."""
         if self._Sequencer__debug:
-            print 'Dispatching abandoned'
+            print('Dispatching abandoned')
         self._Sequencer__halt.set()
         self._Sequencer__resume.set()
         self._Sequencer__break.set()
@@ -200,7 +200,7 @@ class Sequencer:
 
     def halt(self, timeout = None):
         """Halt the dispatcher (with no resumption of event dispatching)."""
-        print '\n >>> Abort Set! \n'
+        print('\n >>> Abort Set! \n')
         if self.thrd.isAlive():
             self._Sequencer__halt.set()
             self._Sequencer__resume.set()

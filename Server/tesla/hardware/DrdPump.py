@@ -505,7 +505,7 @@ class DRDPump(Axis):
         # 2012-01-30 sp -- replace environment variable with configuration variable
         #if os.environ.has_key('SS_DRYRUN'):                                       #CWJ Add
         if tesla.config.SS_DRYRUN == 1:                                       #CWJ Add
-           print '\n### DrdPump in DryRun Mode! ###\n'                            #CWJ Add 
+           print('\n### DrdPump in DryRun Mode! ###\n')                            #CWJ Add 
            iStepInc = int(stepInc)                                                #CWJ Add
            if iStepInc == 0:                                                      #CWJ Add
               # Ignore zero increment case: it can cause bad status error in card #CWJ Add

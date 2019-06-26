@@ -7,8 +7,8 @@ class TestPriorityQueue(unittest.TestCase):
     
     def test_emptyQueue(self):
         q = PriorityQueue()
-        self.failUnless(isinstance(q, PriorityQueue), 'Testing PriorityQueue class')
-        self.failUnless(len(q) == 0, 'Testing empty queue length')
+        self.assertTrue(isinstance(q, PriorityQueue), 'Testing PriorityQueue class')
+        self.assertTrue(len(q) == 0, 'Testing empty queue length')
 
     
     def test_queue(self):
@@ -26,9 +26,9 @@ class TestPriorityQueue(unittest.TestCase):
             'one']
         for number in expected:
             result = q.pop()
-            self.failUnless(result == number, 'Expecting %s == %s' % (result, number))
+            self.assertTrue(result == number, 'Expecting %s == %s' % (result, number))
         
-        self.failUnless(len(q) == 0, 'Testing fully popped queue')
+        self.assertTrue(len(q) == 0, 'Testing fully popped queue')
 
 
 if __name__ == '__main__':

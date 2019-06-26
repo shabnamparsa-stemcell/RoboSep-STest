@@ -27,12 +27,12 @@ NUM_TESTS = 100
 
 def moveAndConfirm(axisMoveFunc, axisGetPosFunc, power, profile, position):
     '''Move the axis to the specified position & confirm that it got there.'''
-    print "      Moving to position = %d" % (position)
-    apply(axisMoveFunc, (position,))
+    print("      Moving to position = %d" % (position))
+    axisMoveFunc(*(position,))
     robotPosition = apply(axisGetPosFunc)
-    print "Moved. Robot at position = %d" % (robotPosition)
+    print("Moved. Robot at position = %d" % (robotPosition))
     if robotPosition != position:
-        print "Aborting run"
+        print("Aborting run")
         sys.exit(1)
     
 # -----------------------------------------------------------------------------
@@ -82,12 +82,12 @@ if __name__ == '__main__':
     # 4. Move to travel position, confirm position
     # 5. Move to zero position, confirm position
     for i in range(NUM_TESTS):
-        print "\nZ axis test #%d" % (i + 1)
+        print("\nZ axis test #%d" % (i + 1))
 
         for power in powerSettings:
-            print "\nPower = %s" % (str(power))
+            print("\nPower = %s" % (str(power)))
             for profile in velocityProfiles:
-                print "Velocity profile = %s" % (str(profile))
+                print("Velocity profile = %s" % (str(profile)))
                 for position in positions:
                     moveAndConfirm(zMoveFunc, zGetPosFunc, power, profile, position)
 

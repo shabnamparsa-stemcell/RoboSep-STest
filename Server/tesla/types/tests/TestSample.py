@@ -35,21 +35,21 @@ class TestSample(unittest.TestCase):
                 self.quadrant)
    
     def test_str(self):
-        self.failUnless(str(self.sample) == "ID = 53261 ('Sample 16'). Protocol ID = 1234. Vol = 5000.00 uL", 'Testing Sample.__str__()')
+        self.assertTrue(str(self.sample) == "ID = 53261 ('Sample 16'). Protocol ID = 1234. Vol = 5000.00 uL", 'Testing Sample.__str__()')
         
     def test_protocolID(self):
-        self.failUnless(self.sample.protocolID == self.protocolID, 'Protocol ID')
+        self.assertTrue(self.sample.protocolID == self.protocolID, 'Protocol ID')
 
     def test_volume(self):
         # There are three ways to get the volume (for historical purposes)
-        self.failUnless(self.sample.volume == self.volume, 'Get sample volume #1')
-        self.failUnless(self.sample.volume_uL == self.volume, 'Get sample volume #2')
+        self.assertTrue(self.sample.volume == self.volume, 'Get sample volume #1')
+        self.assertTrue(self.sample.volume_uL == self.volume, 'Get sample volume #2')
 
     def test_sampleID(self):
-        self.failUnless(self.sample.ID == self.sampleID, 'Sample ID')
+        self.assertTrue(self.sample.ID == self.sampleID, 'Sample ID')
 
     def test_quadrant(self):
-        self.failUnless(self.sample.initialQuadrant == self.quadrant, 'Initial quadrant')
+        self.assertTrue(self.sample.initialQuadrant == self.quadrant, 'Initial quadrant')
 
     def test_invalidQuadrants(self):
         for quad in [0, 5, 42]:

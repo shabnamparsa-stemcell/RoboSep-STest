@@ -29,7 +29,7 @@ import copy
 import os
 import datetime
 import handyxml
-import xml.dom.Element
+#import xml.dom.Element
 
 from ipl.utils import simpleHash
 from ipl.utils.validation import validateNumber
@@ -95,15 +95,15 @@ class Protocol(object):
         self.__sourceFile = fileName        # Store the filename for debugging
         self.__createDefaults()             # Create default values for members
         self.importFromXML(fileName)
-        self.filename = fileName.encode('utf-8')
+        self.filename = fileName #.encode('utf-8')
 
 
         self.ApplyCommandSubstitutionLogic = 1
-        if kw.has_key(Instrument.ApplyCommandSubstitutionLogicLabel):
+        if Instrument.ApplyCommandSubstitutionLogicLabel in kw:
             self.ApplyCommandSubstitutionLogic = kw[Instrument.ApplyCommandSubstitutionLogicLabel]
 
         self.SubForTransSepTransOnlyIfSepIsLessThanSeconds = 60
-        if kw.has_key(Instrument.SubForTransSepTransOnlyIfSepIsLessThanSecondsLabel):
+        if Instrument.SubForTransSepTransOnlyIfSepIsLessThanSecondsLabel in kw:
             self.SubForTransSepTransOnlyIfSepIsLessThanSeconds = kw[Instrument.SubForTransSepTransOnlyIfSepIsLessThanSecondsLabel]
 
         #print 'TEST',self.ApplyCommandSubstitutionLogic,self.SubForTransSepTransOnlyIfSepIsLessThanSeconds
@@ -155,7 +155,7 @@ class Protocol(object):
 
                 
                 if cmd.isTopUpOrResuspendMergeCandidateType(): #see if it is candidate
-                    print i, cmd
+                    print(i, cmd)
 
                     nxtCmd = None
                     nxtNxtCmd = None
@@ -316,9 +316,9 @@ class Protocol(object):
             
         debug_print = False
         if debug_print:
-            print "^^^^^^^^MERGE   ",self.filename
+            print("^^^^^^^^MERGE   ",self.filename)
             for i, cmd in list(enumerate(self.__cmds)):
-                print "^^^^^^^^   ",i, cmd
+                print("^^^^^^^^   ",i, cmd)
 
     def mergeTopUpTransWithSepWithTrans(self, seq, cmdTopUpTrans, cmdSep, cmdTrans):
         newCmd = None
@@ -564,8 +564,8 @@ class Protocol(object):
     def getCommand(self, sequenceNumber):
         '''Return the specific command from our list of protocol commands.'''
         if sequenceNumber < 1 or sequenceNumber > self.numCmds:
-            raise ProtocolException, "PR: %d commands in protocol (tried to get %d)" % \
-                    (self.numCmds, sequenceNumber)
+            raise ProtocolException("PR: %d commands in protocol (tried to get %d)" % \
+                    (self.numCmds, sequenceNumber))
         return copy.deepcopy(self.__cmds[sequenceNumber - 1])
 
 
@@ -600,21 +600,23 @@ class Protocol(object):
     def importFromXML(self, fileName):
         '''Import the protocol definition from the appropriate XML file.'''
         if not os.path.isfile(fileName):
-            raise ProtocolException, "PR: Unable to find file (%s)" % (fileName)
+            raise ProtocolException("PR: Unable to find file (%s)" % (fileName))
 
         try:
             xmlData = handyxml.xml(fileName,False)
-        except Exception, msg:
-            raise ProtocolException, "PR: XML parse error (%s) in %s" % (msg, fileName)
+        except Exception as msg:
+            raise ProtocolException("PR: XML parse error (%s) in %s" % (msg, fileName))
 
-        if xmlData.node.getAttribute(0) != u'http://www.w3.org/2001/XMLSchema-instance':
+        #if xmlData.node.getAttribute(0) != 'http://www.w3.org/2001/XMLSchema-instance':
             # We've hit an old-style protocol file???
-            raise ProtocolException, "PR: %s is not a valid protocol file" % (fileName)
+         #   raise ProtocolException("PR: %s is not a valid protocol file" % (fileName))
+
+
         
         try:
             self.type = xmlData.getAttribute('type')
             
-            if prints == 1: print "protocol.py, self.type = %s" %self.type #CR - debug check
+            if prints == 1: print("protocol.py, self.type = %s" %self.type) #CR - debug check
 
             self.parseHeaderNode(xmlData.header[0])
             self.parseConstraintsNode(xmlData.constraints[0])
@@ -624,7 +626,7 @@ class Protocol(object):
             for i in range(self.numQuadrants):
                 try:
                     self.parseCustomNames(xmlData.customNames[i])
-                except StandardError:
+                except Exception:
                     #raise ProtocolException, "CR: parse custom names"
                     for j in range(8-(len(self.__customNames) % 8)):
                         self.__customNames.append("")
@@ -632,7 +634,7 @@ class Protocol(object):
             for i in range(self.numQuadrants):
                 try:
                     self.parseResultChecks(xmlData.resultVialChecks[i])
-                except StandardError:
+                except Exception:
                     #raise ProtocolException, "CR: parse custom names"
                     for j in range(8-(len(self.__resultChecks) % 8)):
                         self.__resultChecks.append(False)
@@ -644,13 +646,13 @@ class Protocol(object):
             # if exists, MUST have info for all quadrants
             try:
                 self.parseMultipleSamples(xmlData.multipleSamples[0])
-            except StandardError:
-                self.__multipleSamples = [ u"false" for i in range(tesla.config.NUM_QUADRANTS) ]
+            except Exception:
+                self.__multipleSamples = [ "false" for i in range(tesla.config.NUM_QUADRANTS) ]
             
-        except AttributeError, msg:
-            raise ProtocolException, "PR: XML protocol error (%s) in %s" % (msg, fileName)
-        except StandardError, msg:
-            raise ProtocolException, "PR: Unexpected error (%s) in %s" % (msg, fileName)
+        except AttributeError as msg:
+            raise ProtocolException("PR: XML protocol error (%s) in %s" % (msg, fileName))
+        except Exception as msg:
+            raise ProtocolException("PR: Unexpected error (%s) in %s" % (msg, fileName))
 
 #CR - added function
     def parseCustomNames(self, node):
@@ -685,17 +687,19 @@ class Protocol(object):
     def parseHeaderNode(self, node):
         '''Parse the header members from the supplied XML node.'''
         # Mandatory fields
-        self.__label = node.label.encode('utf-8').strip()
+        print("RRRRRRRRRRRR LABEL "+str(node.label))
+        self.__label = node.label.strip() #.encode('utf-8').strip()
 
         # RL - Short Description for Sample Volume Dialog -  03/29/06
         try:
-            self.description = node.description.encode('utf-8')
+            print("RRRRRRRRRRRR DESC "+str(node.description))
+            self.description = node.description #.encode('utf-8')
         except AttributeError:
             self.description = "No Description"
             
         self.__ID    = simpleHash(self.label)
         self.version = node.version        
-        self.author  = node.author[0].name.encode('utf-8')        
+        self.author  = node.author[0].name #.encode('utf-8')        
         self.created = node.date[0].created        
         # Optional field: modification date
         try:
@@ -711,8 +715,8 @@ class Protocol(object):
         '''Parse the chemistry constraint members from the supplied XML node.'''
         # Mandatory fields
         self.__numQuadrants = int(node.quadrants[0].number)
-        if self.numQuadrants not in range(0, tesla.config.NUM_QUADRANTS + 1):
-            raise AttributeError, "Invalid # quadrants (%d)" % (self.numQuadrants)
+        if self.numQuadrants not in list(range(0, tesla.config.NUM_QUADRANTS + 1)):
+            raise AttributeError("Invalid # quadrants (%d)" % (self.numQuadrants))
 
         # Optional fields: sample volume min/max
         try:
@@ -772,8 +776,8 @@ class Protocol(object):
         elements = [child for child in node.childNodes if child.nodeType == node.ELEMENT_NODE]
         numElements = len(elements)
         if numElements != numCmds:
-            raise AttributeError, "# command elements (%d) != # commands (%d)" % \
-                    (numElements, numCmds)
+            raise AttributeError("# command elements (%d) != # commands (%d)" % \
+                    (numElements, numCmds))
         # Now create each command and append it to the list of commands
         for element in elements:
             seqNum = int(element.getAttribute('seq'))
@@ -781,7 +785,7 @@ class Protocol(object):
             label = element.getAttribute('label')
 #            extensionTime = int(element.getAttribute('extensionTime'))
             self.__cmds.append(CommandFactory(seqNum, cmdType, label, element))
-            label = label.encode('utf-8')
+            #label = label.encode('utf-8')
 
     # --- Support methods -----------------------------------------------------
   
@@ -830,7 +834,7 @@ class Protocol(object):
         else:
             destQuad, destVessel = destVial
 
-        if prints == 1: print "BDR -- In UPD_TRACK for Src Quad %d, Dest Quad %d Vessel %s" % (srcQuad, destQuad, destVessel) #bdr
+        if prints == 1: print("BDR -- In UPD_TRACK for Src Quad %d, Dest Quad %d Vessel %s" % (srcQuad, destQuad, destVessel)) #bdr
         
         ## TRACK TIP USAGE
         
@@ -895,7 +899,7 @@ class Protocol(object):
             # we dont care about volume, only that it is needed
             self.__tracking[destQuad][destVessel] = EMPTY
             if destVessel == Instrument.LysisLabel:
-                if prints == 1: print "BDR -- UPDATETRACK: Lysis tube needed in quad %d- !!! - set to EMPTY %d" % (destQuad, self.__tracking[destQuad][Instrument.LysisLabel])
+                if prints == 1: print("BDR -- UPDATETRACK: Lysis tube needed in quad %d- !!! - set to EMPTY %d" % (destQuad, self.__tracking[destQuad][Instrument.LysisLabel]))
                 if self.__maxLysisVol[destQuad] == NOT_NEEDED:
                     self.__maxLysisVol[destQuad] = EMPTY
                     
@@ -936,8 +940,8 @@ class Protocol(object):
                     Instrument.SupernatentLabel,
                     Instrument.SampleLabel ]
 
-        if prints == 1: print "\nBDR --In GET_VOLUMES"  #bdr
-        if prints == 1: print "Protocol Type: %s in getVolumes" % (protocolType)   
+        if prints == 1: print("\nBDR --In GET_VOLUMES")  #bdr
+        if prints == 1: print("Protocol Type: %s in getVolumes" % (protocolType))   
                  
         isBloodPositive = 0                                 #IAT
         if (protocolType == "WholeBloodPositive"):          #IAT
@@ -945,7 +949,7 @@ class Protocol(object):
 
         self.__maxLysisVol = [-1,-1,-1,-1,-1]
          
-        if prints == 1: print "BDR -- GET_VOLS: Starting - set Lysis tube volume to not needed (-1)" # bdr
+        if prints == 1: print("BDR -- GET_VOLS: Starting - set Lysis tube volume to not needed (-1)") # bdr
         
         # Create our tracking list, where we track the volumes needed for each
         # tube in each quadrant
@@ -954,7 +958,7 @@ class Protocol(object):
         # Bulk media fluid is tracked per quadrant and the totalled at the end.
         self.__tracking = [{},]
         self.__tipboxRequired = [False,]
-        quadrantRange = range(1, tesla.config.NUM_QUADRANTS + 1)
+        quadrantRange = list(range(1, tesla.config.NUM_QUADRANTS + 1))
         for _ in quadrantRange:
             vesselDict = {}
             for vessel in vessels:
@@ -964,7 +968,7 @@ class Protocol(object):
         
         # Run through each command and update the appropriate vessel details
         for cmd in self.__cmds:
-            if prints == 1: print "cmd.type = ",cmd.type  
+            if prints == 1: print("cmd.type = ",cmd.type)  
             if cmd.type == 'TransportCommand':
                 # Update tracking
                 self.__updateTracking(cmd.srcVial,cmd.destVial,cmd.tiprackSpecified, cmd.tiprack,cmd.calculateVolume(sampleVolume_uL))#CR
@@ -1033,7 +1037,7 @@ class Protocol(object):
             if q == 1:
                 required = True
             
-            if prints == 1: print "\nBDR -- GETVOLS: Checking dead vols for quad %d" % (q) # bdr
+            if prints == 1: print("\nBDR -- GETVOLS: Checking dead vols for quad %d" % (q)) # bdr
             
             # Process this quadrant
             for vessel in vessels:
@@ -1045,16 +1049,16 @@ class Protocol(object):
                 cocktailVol = self.__tracking[q][Instrument.CocktailLabel]
                 if cocktailVol >= 0:
                     # Add dead volume
-                    if prints == 1: print "Cocktail Vol            : %f" % (cocktailVol)           
+                    if prints == 1: print("Cocktail Vol            : %f" % (cocktailVol))           
                     cocktailVol += float(currentDeadVolume[Instrument.DeadVolumeCocktailLabel]) 
-                    if prints == 1: print "Cocktail Vol + Dead Vol : %f" % (cocktailVol)
+                    if prints == 1: print("Cocktail Vol + Dead Vol : %f" % (cocktailVol))
 
                 particleVol = self.__tracking[q][Instrument.BeadLabel]
                 if particleVol >= 0:
                     # Add dead volume
-                    if prints == 1: print "Particle Vol            : %f" % (particleVol)                     
+                    if prints == 1: print("Particle Vol            : %f" % (particleVol))                     
                     particleVol += float(currentDeadVolume[Instrument.DeadVolumeBeadLabel])
-                    if prints == 1: print "Particle Vol + Dead Vol : %f" % (particleVol)
+                    if prints == 1: print("Particle Vol + Dead Vol : %f" % (particleVol))
 
                 ## lysisVol can get zeroed if tube is reused in some protocols so we hold the
                 ## initial value as startLysisVol for reporting to GUI - bdr 
@@ -1065,17 +1069,17 @@ class Protocol(object):
 
                 if lysisVol >= 0:
                     # Add dead volume
-                    if prints == 1: print "Lysis Vol              : %f" % (lysisVol)                       
+                    if prints == 1: print("Lysis Vol              : %f" % (lysisVol))                       
                     lysisVol += float(currentDeadVolume[Instrument.DeadVolume50mlLabel ])                    
-                    if prints == 1: print "Lysis Vol + Dead Vol   : %f" % (lysisVol)
+                    if prints == 1: print("Lysis Vol + Dead Vol   : %f" % (lysisVol))
 
 
                 antibodyVol = self.__tracking[q][Instrument.AntibodyLabel]
                 if antibodyVol >= 0:
                     # Add dead volume
-                    if prints == 1: print "Anti Vol              : %f" % (antibodyVol)  
+                    if prints == 1: print("Anti Vol              : %f" % (antibodyVol))  
                     antibodyVol += float(currentDeadVolume[Instrument.DeadVolumeAntibodyLabel])
-                    if prints == 1: print "Anti Vol + Dead Vol   : %f" % (antibodyVol)
+                    if prints == 1: print("Anti Vol + Dead Vol   : %f" % (antibodyVol))
 
                 BCCMVol = self.__tracking[q][Instrument.BCCMLabel]
 
@@ -1089,12 +1093,12 @@ class Protocol(object):
                         wasteVesselRequired      = self.__tracking[q][Instrument.WasteLabel] >= 0,
                         separationVesselRequired = self.__tracking[q][Instrument.SupernatentLabel] >= 0,
                         sampleVesselRequired     = self.__tracking[q][Instrument.SampleLabel] >= 0,
-                        sampleVesselVolumeRequired     = self.getMultipleSamples()[q-1] == u"true",
+                        sampleVesselVolumeRequired     = self.getMultipleSamples()[q-1] == "true",
                         tipBoxRequired           = self.__tipboxRequired[q]
                         )
-                if prints == 1: print "BDR -- GETVOLS: Final lysisVol appended to consumableInfo[] is %d for quad %d" % (lysisVol,q) # bdr
+                if prints == 1: print("BDR -- GETVOLS: Final lysisVol appended to consumableInfo[] is %d for quad %d" % (lysisVol,q)) # bdr
                 consumableInfo.append(pc)
-        if prints == 1: print "getVolumes done\n\n"
+        if prints == 1: print("getVolumes done\n\n")
         
         return consumableInfo
   

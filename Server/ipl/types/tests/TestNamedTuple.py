@@ -3,8 +3,7 @@
 import unittest
 from ipl.types.NamedTuple import NamedTuple, NamedTupleMetaclass
 
-class SampleTuple(tuple):
-    __metaclass__ = NamedTupleMetaclass
+class SampleTuple(tuple, metaclass=NamedTupleMetaclass):
     names = [
         'batchID',
         'sampleVolume',
@@ -25,9 +24,9 @@ class TestNamedTuple(unittest.TestCase):
             batchID,
             volume,
             patientID])
-        self.failUnless(sample.batchID == batchID)
-        self.failUnless(sample.sampleVolume == volume)
-        self.failUnless(sample.patientID == patientID)
+        self.assertTrue(sample.batchID == batchID)
+        self.assertTrue(sample.sampleVolume == volume)
+        self.assertTrue(sample.patientID == patientID)
 
     
     def testBadName(self):

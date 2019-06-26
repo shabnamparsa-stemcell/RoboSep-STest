@@ -3,6 +3,7 @@
 import unittest
 import time
 from ipl.task.sequencer import Sequencer, SequencerException
+from functools import reduce
 
 class TestSequencer(unittest.TestCase):
     
@@ -21,11 +22,11 @@ class TestSequencer(unittest.TestCase):
             (3, 27),
             (4, 64)]
         seq = Sequencer(events, handler = self.adder)
-        self.failIf(seq.getDebuggingState(), 'Testing default debug state')
+        self.assertFalse(seq.getDebuggingState(), 'Testing default debug state')
         seq.enableDebugging()
-        self.failUnless(seq.getDebuggingState(), 'Testing enabled debug state')
+        self.assertTrue(seq.getDebuggingState(), 'Testing enabled debug state')
         seq.enableDebugging(False)
-        self.failIf(seq.getDebuggingState(), 'Testing disabled debug state')
+        self.assertFalse(seq.getDebuggingState(), 'Testing disabled debug state')
 
     
     def testEvents(self):
@@ -34,18 +35,18 @@ class TestSequencer(unittest.TestCase):
             (2, 4),
             (3, 9),
             (4, 16)]
-        self.failUnless(self.counter == 0, 'Ensuring counter is reset')
+        self.assertTrue(self.counter == 0, 'Ensuring counter is reset')
         seq = Sequencer(events, handler = self.adder)
         seq.run()
         while seq.isRunning():
             pass
-        self.failIf(seq.isRunning(), 'Ensure sequencer has finished')
-        expectedCount = reduce(lambda x, y: x + y, map(lambda x: x[1], events))
-        self.failUnless(expectedCount == self.counter, 'Testing event count')
+        self.assertFalse(seq.isRunning(), 'Ensure sequencer has finished')
+        expectedCount = reduce(lambda x, y: x + y, [x[1] for x in events])
+        self.assertTrue(expectedCount == self.counter, 'Testing event count')
 
     
     def lessThanTen(self, value):
-        print '===>', value
+        print('===>', value)
         if value > 10:
             raise ValueError
         
@@ -57,13 +58,13 @@ class TestSequencer(unittest.TestCase):
             (1, 1),
             (2, 2),
             (3, 19)]
-        self.failUnless(self.counter == 0, 'Ensuring counter is reset')
+        self.assertTrue(self.counter == 0, 'Ensuring counter is reset')
         seq = Sequencer(events, handler = self.lessThanTen)
         self.run()
         while seq.isRunning():
             pass
-        self.failIf(seq.isRunning(), 'Ensure sequencer has finished')
-        print '~~~>', self.counter
+        self.assertFalse(seq.isRunning(), 'Ensure sequencer has finished')
+        print('~~~>', self.counter)
 
     
     def preBreak(self, val):
@@ -96,9 +97,9 @@ class TestSequencer(unittest.TestCase):
         self.seq.run()
         while self.seq.isRunning():
             pass
-        self.failIf(self.seq.isRunning(), 'Ensure sequencer has finished')
-        self.failUnless(self.counter == self.BREAKPOINT, 'Testing sequencer was correctly abandoned')
-        self.failUnless(self.exited, 'Testing exit func was called')
+        self.assertFalse(self.seq.isRunning(), 'Ensure sequencer has finished')
+        self.assertTrue(self.counter == self.BREAKPOINT, 'Testing sequencer was correctly abandoned')
+        self.assertTrue(self.exited, 'Testing exit func was called')
 
     
     def pauseHandler(self, val):
@@ -123,12 +124,12 @@ class TestSequencer(unittest.TestCase):
         self.seq.run()
         while not self.seq.isPaused():
             pass
-        self.failUnless(self.letter == self.PAUSE_VALUE, 'Testing correct pause point')
+        self.assertTrue(self.letter == self.PAUSE_VALUE, 'Testing correct pause point')
         self.seq.resume()
         while self.seq.isRunning():
             pass
-        self.failIf(self.seq.isRunning(), 'Ensure sequencer has finished')
-        self.failUnless(self.letter == 'Z', 'Testing last letter passed')
+        self.assertFalse(self.seq.isRunning(), 'Ensure sequencer has finished')
+        self.assertTrue(self.letter == 'Z', 'Testing last letter passed')
 
 
 if __name__ == '__main__':

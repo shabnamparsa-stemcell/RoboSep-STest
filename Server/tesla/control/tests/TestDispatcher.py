@@ -75,13 +75,13 @@ class TestDispatcher(unittest.TestCase):
         self.dispatcher = Dispatcher(self.instrument, logger)
 
     def test_init(self):
-        self.failUnless(self.dispatcher, 'Testing Dispatcher creation')
+        self.assertTrue(self.dispatcher, 'Testing Dispatcher creation')
 
     def __createSchedule(self):
         # Create a list of samples from a specific protocol and then schedule them
         # Return the resulting Schedule object
         protocolList = self.pm.findProtocolsByRegexp('Graeme')
-        self.failIf(len(protocolList) == 0, 'Ensuring we have enough protocols for testing')
+        self.assertFalse(len(protocolList) == 0, 'Ensuring we have enough protocols for testing')
         protocol1 = protocolList[0]
 
         # Create the samples and schedule them
@@ -93,12 +93,12 @@ class TestDispatcher(unittest.TestCase):
         status = self.sched.schedule(samples)
 
         # Testing the success of scheduling
-        self.failUnless(status, 'Testing scheduling success')
-        self.failUnless(self.sched.getDuration() > 0, 'Test scheduled duration')        
+        self.assertTrue(status, 'Testing scheduling success')
+        self.assertTrue(self.sched.getDuration() > 0, 'Test scheduled duration')        
 
         mySchedule = self.sched.getSchedule()
-        self.failUnless(mySchedule != None, 'Test schedule')
-        self.failUnless(isinstance(mySchedule, Schedule), 'Test schedule instance')
+        self.assertTrue(mySchedule != None, 'Test schedule')
+        self.assertTrue(isinstance(mySchedule, Schedule), 'Test schedule instance')
         
         return mySchedule
         
@@ -112,11 +112,11 @@ class TestDispatcher(unittest.TestCase):
     def test_createSequence(self):
         schedule = self.__createSchedule()
         sequence, workflows = self.__createSequenceAndWorkflows(schedule)
-        self.failUnless(sequence, 'Testing that we got a sequence')
-        self.failUnless(isinstance(sequence, list), 
+        self.assertTrue(sequence, 'Testing that we got a sequence')
+        self.assertTrue(isinstance(sequence, list), 
                             'Testing that sequence is derived from the list class')
-        self.failUnless(len(sequence) > 0, 'Testing that we have events')
-        self.failUnless(len(workflows) == len(sequence), 'Testing # events')
+        self.assertTrue(len(sequence) > 0, 'Testing that we have events')
+        self.assertTrue(len(workflows) == len(sequence), 'Testing # events')
 
     def test_sequenceItems(self):
         schedule = self.__createSchedule()
@@ -124,8 +124,8 @@ class TestDispatcher(unittest.TestCase):
         for i in range(0, len(workflows)):
             wf, startTime = workflows[i].getWorkflowAndTime()
             eventTime, event = sequence[i]
-            self.failUnless(startTime == eventTime, "Testing sequence times (%d)" % (i))
-            self.failUnless(wf == event, "Testing sequence events (%d)" % (i))
+            self.assertTrue(startTime == eventTime, "Testing sequence times (%d)" % (i))
+            self.assertTrue(wf == event, "Testing sequence events (%d)" % (i))
 
     def test_processSchedule(self):
         schedule = self.__createSchedule()
@@ -138,13 +138,13 @@ class TestDispatcher(unittest.TestCase):
                                         endState = 'END')
         i = itertools.count(1)
         delay = 10
-        print "Be patient, this next test will take a while (hash every %s secs)" % (delay)
+        print("Be patient, this next test will take a while (hash every %s secs)" % (delay))
         while self.dispatcher.isRunning():
             time.sleep(delay)
             sys.stdout.write('#')
-        print
+        print()
         cmdCount = self.instrument.getCmdCount()
-        self.failUnless(cmdCount == numCmds, "Testing # dispatched cmds; expected %d, got %d" % \
+        self.assertTrue(cmdCount == numCmds, "Testing # dispatched cmds; expected %d, got %d" % \
                             (numCmds, cmdCount))
 
     def test_badSchedule(self):

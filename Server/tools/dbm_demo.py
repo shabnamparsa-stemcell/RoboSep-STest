@@ -18,25 +18,25 @@
 # the program(s) have been supplied.
 # 
 
-import anydbm
+import dbm
 from tesla.config import COMPONENT_DB_PATH
 
 # -----------------------------------------------------------------------------
 
 class Device(object):
     def __init__(self, name):
-        print "Constructing %s (%s)" % (name, str(self))
+        print("Constructing %s (%s)" % (name, str(self)))
         self.name = name
         self.usageCount = 0
         self.__readTrackCount()
 
     def __del__(self):
         self.__writeTrackCount()
-        print "And we have closed %s (track count = %d)" % (self.name, self.usageCount)
+        print("And we have closed %s (track count = %d)" % (self.name, self.usageCount))
 
     def __readTrackCount(self):
-        trackDB = anydbm.open(COMPONENT_DB_PATH, 'c')
-        if trackDB.has_key(self.name):
+        trackDB = dbm.open(COMPONENT_DB_PATH, 'c')
+        if self.name in trackDB:
             self.usageCount = int(trackDB[self.name])
         else:
             self.usageCount = 0
@@ -46,8 +46,8 @@ class Device(object):
         # This is usually called during exit and the module reference may have
         # already been cleaned up. In that case, just re-import it
         # There are more elegant solutions, but this will serve for the demo
-        import anydbm
-        trackDB = anydbm.open(COMPONENT_DB_PATH, 'c')
+        import dbm
+        trackDB = dbm.open(COMPONENT_DB_PATH, 'c')
         # The dbm expects keys and values to be strings, so convert...
         trackDB[self.name] = str(self.usageCount)
         trackDB.close()

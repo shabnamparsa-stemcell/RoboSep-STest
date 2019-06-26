@@ -42,14 +42,14 @@ class TestSubsystem(unittest.TestCase):
                         TestSubsystem.ssValue)
 
     def test_subsystem(self):
-        self.failUnless(self.subsys)
+        self.assertTrue(self.subsys)
     
     def test_execute(self):
         rv=0
         for obj in Subsystem.instanceList:
             if "Subsystem: %s" % TestSubsystem.ssName == "%s" % obj:
                 rv += obj.execute("self.getCount()")
-        self.failUnless(rv == TestSubsystem.ssValue)
+        self.assertTrue(rv == TestSubsystem.ssValue)
 
 # ---------------------------------------------------------------------------
 

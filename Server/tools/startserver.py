@@ -23,19 +23,19 @@
 # Usage:
 #          Execute the associated batch script 'startserver.bat'
 
-from xmlrpclib import ServerProxy
+from xmlrpc.client import ServerProxy
 from sys import exit
 
 s = ServerProxy( "http://localhost:8000" )
 try:
     s.ping()
 except:
-    print "Cannot ping RoboSep server - exiting..."
+    print("Cannot ping RoboSep server - exiting...")
     exit( -1 )
 
-print "Connected to RoboSep server. The ServerProxy object is s."
-print "Hit CTRL-Z ENTER to exit."
-print ""
+print("Connected to RoboSep server. The ServerProxy object is s.")
+print("Hit CTRL-Z ENTER to exit.")
+print("")
 
 # eof
 

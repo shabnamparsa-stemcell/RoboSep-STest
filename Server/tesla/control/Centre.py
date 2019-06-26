@@ -174,7 +174,7 @@ class Centre(object):
             state = self.getState()
             self.__reportError(ERROR_LEVEL, 'TEC1200', state)
             self.svrLog.logError('', self.logPrefix, funcReference, 'Error: TEC1200 Not in START state (actually in %s)' % state)       # 2011-11-28 sp -- added logging
-            raise ControlException, "CC: Not in START state (actually in %s)" % state
+            raise ControlException("CC: Not in START state (actually in %s)" % state)
         
         self.checkDiskSpace()               # Check that disk space is okay
         self.setInitialVolumeLevels()       # Set up the initial volume levels  
@@ -197,7 +197,7 @@ class Centre(object):
             SplashMgr = RoboTrace.GetRoboSplashMgrInstance();            
             SplashMgr.TerminateSplash();
             
-        except StandardError, msg:
+        except Exception as msg:
             # Clean up on any error that may have bubbled up from beneath 
             # And let's force the exceptions into a string format (just in case)
             self.instrument.TurnONBeacon(1);                    #CWJ Add: Catch System Crash!            
@@ -299,7 +299,7 @@ class Centre(object):
                     if os.path.isfile(sselogs):
                         filesToCompress.append(sselogs);
 
-                print ( '\nCreating compressed file ' + zipFileName )
+                print(( '\nCreating compressed file ' + zipFileName ))
                 zFile = zipfile.ZipFile( zipFileName, "w" )
                 for name in filesToCompress:
                     zFile.write(name, os.path.basename(name), zipfile.ZIP_DEFLATED)
@@ -315,7 +315,7 @@ class Centre(object):
           ##              print( info.filename, info.file_size, info.compress_size )
                         totalFileSize += info.file_size
                         totalCompressSize += info.compress_size
-                    print( zipFileName, "contains", len(zFile.namelist()), "files;", totalFileSize, "bytes; compressed to", int(totalCompressSize*100/totalFileSize ), "%" )
+                    print(( zipFileName, "contains", len(zFile.namelist()), "files;", totalFileSize, "bytes; compressed to", int(totalCompressSize*100/totalFileSize ), "%" ))
                     print ( 'No errors encountered during compression, Original files are being removed.' )
                     
                     roboSepLogPath = os.path.join( tesla.config.LOG_DIR, 'robosep.log.*' );
@@ -384,12 +384,12 @@ class Centre(object):
 
         try:
             info = self.pm.getConsumableInformation(protocolID, sampleVolume)
-        except ProtocolException, msg:
+        except ProtocolException as msg:
             # In case of error, log the error and return an empty map 
             self.svrLog.logWarning('', self.logPrefix, funcReference, 'TEC1240 [%s]' % msg )       # 2011-11-28 sp -- added logging
             self.__reportError(WARNING_LEVEL, 'TEC1240', msg)
             info = {}
-        except Exception, msg:
+        except Exception as msg:
             # If we hit this, we have an unexpected error; log it
             self.svrLog.logWarning('', self.logPrefix, funcReference, 'TEC1241 [%s]' % msg )       # 2011-11-28 sp -- added logging
             self.__reportError(WARNING_LEVEL, 'TEC1241', msg)
@@ -417,7 +417,7 @@ class Centre(object):
             
             sampleInfo = "%s (%s) V = %0.2fuL" % (sample.ID, sample.label, sample.volume)
             self.logger.logInfo("CC: Scheduling sample #%d of %d: '%s' [using %s]" % \
-                                (sampleCounter.next(), numSamples, sampleInfo, protocol.label))
+                                (next(sampleCounter), numSamples, sampleInfo, protocol.label))
 
         self.svrLog.logID('', self.logPrefix, funcReference, "Scheduling [%s] |[%s]" % \
                                 (protocol.label, sampleInfo ))       # 2011-11-28 sp -- added logging
@@ -427,14 +427,14 @@ class Centre(object):
         
         try:
             self.scheduler.schedule(samples, sharedSectorsTranslation)
-            print '\n\tLeave schedule\n'
-        except SchedulerException, msg:
+            print('\n\tLeave schedule\n')
+        except SchedulerException as msg:
             self.svrLog.logWarning('', self.logPrefix, funcReference, 'TEC1222 schedule' )      # 2011-11-28 sp -- added logging
             self.__reportError(WARNING_LEVEL, 'TEC1222')
         try:
             self.__schedule = self.scheduler.getSchedule()    
-            print '\n\tLeave getschedule\n'            
-        except SchedulerException, msg:
+            print('\n\tLeave getschedule\n')            
+        except SchedulerException as msg:
             self.svrLog.logWarning('', self.logPrefix, funcReference, 'TEC1220 getSchedule[%s]' % msg )       # 2011-11-28 sp -- added logging
             self.__reportError(WARNING_LEVEL, 'TEC1220', msg)
         return self.scheduler.getETC()
@@ -678,7 +678,7 @@ class Centre(object):
         if not self.__assertState('IDLE'):
             self.__reportError(ERROR_LEVEL, 'TEC1202', state)
             self.svrLog.logError('', self.logPrefix, funcReference, 'TEC1202: CC: Not in IDLE state (actually in %s)' % (state))       # 2011-11-28 sp -- added logging
-            raise ControlException, "CC: Not in IDLE state (actually in %s)" % (state)
+            raise ControlException("CC: Not in IDLE state (actually in %s)" % (state))
         else:
             samples = self.filterSamples(sampleList)
             
@@ -692,7 +692,7 @@ class Centre(object):
                     self.__reportError(ERROR_LEVEL, 'TEC1221')
                     self.logger.logDebug("CC: Can't schedule, abandoning startRun()")
                     self.svrLog.logErrror('', self.logPrefix, funcReference, "CC: Can't schedule, abandoning startRun()")       # 2011-11-28 sp -- added logging
-                    raise ControlException, 'CC: Empty schedule for samples after 2 tries?'
+                    raise ControlException('CC: Empty schedule for samples after 2 tries?')
                 else:
                     self.logger.logDebug("CC: Scheduled before run; ETC = %s" % (etc))              
                     self.svrLog.logDebug('', self.logPrefix, funcReference, "CC: Scheduled before run; ETC = %s" % (etc))       # 2011-11-28 sp -- added logging
@@ -773,14 +773,14 @@ class Centre(object):
                 # Start the 'normal' run
 
                 self.__doRun('RUNNING', 'IDLE', needsHome, needsPrime)
-                print "StartRun let go of control"
+                print("StartRun let go of control")
 
         return etc
 
     def pauseRun(self):
         '''Pause the currently executing run. Returns True if it could be 
         done safely.'''
-        print "!!!!!!!!!!!!!!!!!!!!!!!!!!!RECV PAUSERUN MSG",self.getState()
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!RECV PAUSERUN MSG",self.getState())
         if self.getState() == 'RUNNING': 
             return self.dispatcher.pause()
         else:
@@ -788,7 +788,7 @@ class Centre(object):
 
     def resumeRun(self):
         '''Resume a paused run. Returns True if the run could be resumed.'''
-        print '\n >>> resumeRun \n'
+        print('\n >>> resumeRun \n')
         if self.getState() == 'PAUSED' or self.getState() == 'PAUSECOMMAND':
             return self.dispatcher.resume()
         else:
@@ -858,13 +858,13 @@ class Centre(object):
         '''Halt the current run. Waits until the current action is complete,
         halts the run and then moves all hardware back to a safe state.
         Returns True if the run could be halted.'''
-        print '\n >>> haltRun \n'
+        print('\n >>> haltRun \n')
         return self.dispatcher.halt()
 
     def abortRun(self):
         '''Abort (or ESTOP) the current run. Hardware is left in an "as-is" 
         state. Returns True if the run could be halted.'''
-        print '\n >>> abortRun \n'
+        print('\n >>> abortRun \n')
         return self.dispatcher.estop()
 
     def isLidClosed( self ):
@@ -945,11 +945,11 @@ class Centre(object):
             # state back to us -- we catch this in __reporter() and then
             # change state appropriately
 
-        except StandardError, msg:
+        except Exception as msg:
             self.instrument.TurnONBeacon(1);         #CWJ Add: Catch System Crash!
             self.__reportError(ERROR_LEVEL, 'TEC1230', msg)
             self.__changeState(endState)
-            raise ControlException, "CC: startRun() failed: %s" % (msg)
+            raise ControlException("CC: startRun() failed: %s" % (msg))
 
     # --- state-related methods ---
 
@@ -991,7 +991,7 @@ class Centre(object):
         try:
             self.__changeState( 'SERVICE' )
             status = True
-        except FSM_Exception, msg:
+        except FSM_Exception as msg:
             self.logger.logWarning("CC: Invalid state change: %s" % (msg))
             self.svrLog.logWarning('', self.logPrefix, funcReference, "CC: Invalid state change: %s" % (msg))       # 2011-11-28 sp -- added logging
         return status
@@ -1057,14 +1057,14 @@ class Centre(object):
         # Find the message that corresponds to this code
         try:
             msg = table.getMessage(lookupCode)
-        except Exception, errMsg:
+        except Exception as errMsg:
             # This is not good: it means our table is corrupt or out of date?
             return "LOOKUP FAILURE for code = %s: %s" % (lookupCode, errMsg)
         
         # Fill in the various parameters to get a complete string
         try:
             expandedMsg = ipl.utils.string.expandCSharpString(msg, args)
-        except Exception, errMsg:
+        except Exception as errMsg:
             # This isn't good -- we screwed up with the number of arguments 
             # we passed in?
             # However it happened, log the problem and create a string that we
@@ -1296,8 +1296,8 @@ class Centre(object):
                 levels[index][Instrument.BeadLabel]     = max(0, pc.particleVolume)
                 levels[index][Instrument.LysisLabel]    = max(0, pc.lysisVolume)
                 
-                print '\n#CWJ - Sample volume %d'%levels[index][Instrument.SampleLabel]
-                print '#CWJ - Lysis volume %d\n\n'%levels[index][Instrument.LysisLabel]
+                print('\n#CWJ - Sample volume %d'%levels[index][Instrument.SampleLabel])
+                print('#CWJ - Lysis volume %d\n\n'%levels[index][Instrument.LysisLabel])
         return levels
 
     def setVolumeLevels(self, samples):
@@ -1310,8 +1310,8 @@ class Centre(object):
 
         self.setInitialVolumeLevels()
         levels = self.calculateVolumeLevels(samples)
-        for sector in levels.keys():
-            for container in levels[sector].keys():
+        for sector in list(levels.keys()):
+            for container in list(levels[sector].keys()):
                 volume_uL = levels[sector][container]
                 self.instrument.setContainerVolume(sector, container, volume_uL)
                 
@@ -1323,8 +1323,8 @@ class Centre(object):
         spaceOkay = freeSpace_bytes > tesla.config.MIN_SAFE_DISK_SPACE
         if not spaceOkay:
             self.__reportError(ERROR_LEVEL, 'TEC1101', freeSpace_bytes)
-            raise ControlException, "CC: %d bytes: insufficient disk space" % \
-                    (freeSpace_bytes)
+            raise ControlException("CC: %d bytes: insufficient disk space" % \
+                    (freeSpace_bytes))
         return spaceOkay
 
     def checkRequiredProtocols(self):
@@ -1334,7 +1334,7 @@ class Centre(object):
         shutdownProtocols = self.pm.findProtocolsByType(tesla.config.SHUTDOWN_PROTOCOL)
         if len(shutdownProtocols) == 0:
             self.__reportError(ERROR_LEVEL, 'TEC1210', 'Need at least one shutdown protocol')
-            raise ControlException, "CC: Need at least one shutdown protocol"
+            raise ControlException("CC: Need at least one shutdown protocol")
 
     #GetInstrumentAxisStatusSet support methods
     def GetZHardwareInfo(self):
@@ -1386,7 +1386,7 @@ class Centre(object):
         #catch exception here and send message back to client
         try:
             self.setVolumeLevels(samplesWithVolumes)
-        except Exception, msg:
+        except Exception as msg:
             self.logger.logWarning("CC: isSharingComboValid found error: %s" % str(msg))
             return str(msg)
         

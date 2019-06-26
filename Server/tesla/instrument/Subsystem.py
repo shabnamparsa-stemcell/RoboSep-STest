@@ -69,7 +69,7 @@ class Subsystem(Component):
     
     def PrintTrace (self, message):
         '''Print a debug message'''
-        print "%s TRACE: %s" % (self.SectionName, message)
+        print("%s TRACE: %s" % (self.SectionName, message))
         
     # ---------------------------------------------------------------------------
 

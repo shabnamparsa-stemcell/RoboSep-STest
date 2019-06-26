@@ -62,7 +62,7 @@ class SampleTracker:
         self.reportXmlName = ""
         self.reportBaseDir = reportBaseDir
         self.resetTracker()
-        if os.environ.has_key('ProgramFiles(x86)'):    
+        if 'ProgramFiles(x86)' in os.environ:    
            self.BIN_DIR = BIN_DIR64
         else:
            self.BIN_DIR = BIN_DIR32
@@ -75,7 +75,7 @@ class SampleTracker:
     def addSamples(self, sampleList):
         '''Add samples to the tracker'''
         if self.scheduleStarted:
-            raise SampleTrackingException, "SampleTracker: Schedule already started, cannot add samples"
+            raise SampleTrackingException("SampleTracker: Schedule already started, cannot add samples")
 
         self.samples = sampleList[:]
 
@@ -88,9 +88,9 @@ class SampleTracker:
         startTime defaults to current system time
         operator defaults to "Unknown"'''
         if self.scheduleStarted:
-            raise SampleTrackingException, "SampleTracker: Schedule already started, cannot start schedule"
+            raise SampleTrackingException("SampleTracker: Schedule already started, cannot start schedule")
         if self.samples == None:
-            raise SampleTrackingException, "SampleTracker: No samples, cannot start schedule"
+            raise SampleTrackingException("SampleTracker: No samples, cannot start schedule")
 
         if not startTime:
             startTime = datetime.fromtimestamp(time.time())
@@ -106,7 +106,7 @@ class SampleTracker:
         '''Marks a schedule as successfully complete and logs a report for all samples
         endTime defaults to current system time'''
         if not self.scheduleStarted:
-            raise SampleTrackingException, "SampleTracker: Schedule not started, cannot complete schedule"
+            raise SampleTrackingException("SampleTracker: Schedule not started, cannot complete schedule")
         if not endTime:
             endTime = datetime.fromtimestamp(time.time())
 
@@ -118,7 +118,7 @@ class SampleTracker:
         reason should contain a description of why the schedule did not complete
         abortTime defaults to current system time'''
         if not self.scheduleStarted:
-            raise SampleTrackingException, "SampleTracker: Schedule not started, cannot abort schedule"
+            raise SampleTrackingException("SampleTracker: Schedule not started, cannot abort schedule")
         if not abortTime:
             abortTime = datetime.fromtimestamp(time.time())
 
@@ -126,7 +126,7 @@ class SampleTracker:
         self.reportSchedule('ABORTED because '+ reason)
 
     def GetReportXMLFullFileName(self):
-        print "\nGetReportXMLFullFileName: %s"%(self.reportXmlName)
+        print("\nGetReportXMLFullFileName: %s"%(self.reportXmlName))
         return self.reportXmlName;
     
     def convertSymbols(self, inStr):
@@ -219,21 +219,21 @@ class SampleTracker:
         if not os.path.exists(pathName):
             try:
                 os.makedirs(pathName)
-            except OSError, msg:
-                raise SampleTrackingException, "Unable to make sample report dir (%s)" % (msg)
+            except OSError as msg:
+                raise SampleTrackingException("Unable to make sample report dir (%s)" % (msg))
 
         # Create the full path name
         fullFileName = os.path.join(pathName, fileName)
-        print fullFileName
+        print(fullFileName)
         return fullFileName
 
 
         
     def getVialText(self, Vial, InitQ, customNames):
 
-        print "BDR ------ in getVialText with srcvial=%s and initQuad=%d" % (str(Vial[1]), InitQ)  
+        print("BDR ------ in getVialText with srcvial=%s and initQuad=%d" % (str(Vial[1]), InitQ))  
         indx = Vial[0]-1        
-        print "BDR---- using Vial[0]=%d index=%d" % (Vial[0], indx)
+        print("BDR---- using Vial[0]=%d index=%d" % (Vial[0], indx))
        
         vialName= ''
         if str(Vial[1]) == Instrument.BCCMLabel:
@@ -282,9 +282,9 @@ class SampleTracker:
         if indx < 1:
             indx = 0
             
-        print "BDR ---- str(indx+InitQ) = %s" % (str(indx+InitQ)) 
+        print("BDR ---- str(indx+InitQ) = %s" % (str(indx+InitQ))) 
             
-        return "Q"+str(indx+InitQ)+", "+vialName.encode('utf-8')
+        return "Q"+str(indx+InitQ)+", "+vialName #.encode('utf-8')
 
 
     def GenRunDetails(self,reportFile,finalStatus):

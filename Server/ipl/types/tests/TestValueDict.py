@@ -17,11 +17,11 @@ class TestValueDict(unittest.TestCase):
 
     
     def test_getFirstKey(self):
-        self.failUnless(self.dict.getFirstKey('Male') == 'Graeme', 'Testing getFirstKey()')
+        self.assertTrue(self.dict.getFirstKey('Male') == 'Graeme', 'Testing getFirstKey()')
 
     
     def test_getFirstKey_forNoValue(self):
-        self.failUnless(self.dict.getFirstKey('Neuter') == None, 'Testing no value')
+        self.assertTrue(self.dict.getFirstKey('Neuter') == None, 'Testing no value')
 
     
     def test_getKeys(self):
@@ -32,11 +32,11 @@ class TestValueDict(unittest.TestCase):
             'Raeleen']
         found = self.dict.getKeys('Female')
         expected.sort()
-        self.failUnless(found == expected, 'Testing keys that match our value')
+        self.assertTrue(found == expected, 'Testing keys that match our value')
 
     
     def test_getKeys_forNoValue(self):
-        self.failUnless(self.dict.getKeys('Neuter') == [], 'Testing no values')
+        self.assertTrue(self.dict.getKeys('Neuter') == [], 'Testing no values')
 
 
 if __name__ == '__main__':

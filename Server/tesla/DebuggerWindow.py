@@ -40,7 +40,7 @@ import time
 import datetime
 import tesla.config
 from tesla.exception import TeslaException
-from ConfigParser import *
+from configparser import *
 
 import tesla.PgmLog
 import logging
@@ -145,7 +145,7 @@ class DebuggerWindow(wx.Frame):
         thePwr     = HOMPwr  
 
         if Params['Axis'] == 'X0':
-           print '>> Update ZAxis'
+           print('>> Update ZAxis')
            if self.ZAxisPowerProfile == 'homingpowerprofile':
               thePwr = HOMPwr
            elif self.ZAxisPowerProfile == 'standardpowerprofile': 
@@ -297,7 +297,7 @@ class DebuggerWindow(wx.Frame):
           vial = 0;
 
           if len(vialList) < 12:
-             print '\n>>> Cannot import %s \n'%vialIDpath;
+             print('\n>>> Cannot import %s \n'%vialIDpath);
              self.vialIDs = None;
           else:   
              idx = 0;
@@ -308,7 +308,7 @@ class DebuggerWindow(wx.Frame):
                      self.vialIDs[qdr][vial] = vialList[idx].strip();
                      idx = idx + 1;
         except:
-          print '\n>>> Cannot open %s \n'%vialIDpath;
+          print('\n>>> Cannot open %s \n'%vialIDpath);
           self.vialIDs = None;
         
     def setInstrument(self, Instrument, platform):
@@ -526,7 +526,7 @@ class DebuggerWindow(wx.Frame):
         #trace = RoboTrace.GetRoboTracerInstance()
         if (cmdList[1].isdigit()):
             self.AspiHeight = int(cmdList[1])
-            print ('## New Sep AspiHeight : %d'%self.AspiHeight)
+            print(('## New Sep AspiHeight : %d'%self.AspiHeight))
         pass
         
     def ProcessAxisCommand(self, axis, command):
@@ -703,7 +703,7 @@ class DebuggerWindow(wx.Frame):
                       
                       fs.write('%s -------------- BCR Iteration=%d starts-------------\n'%(self.GetTimeStamp(), i+1))
                       fd.write('%s -------------- BCR Iteration=%d starts-------------\n'%(self.GetTimeStamp(), i+1))                      
-                      print('-------------- BCR Iteration=%d starts-------------\n'%(i+1));
+                      print(('-------------- BCR Iteration=%d starts-------------\n'%(i+1)));
                       
                       for q in range(0,4) :
                           for v in range(0,3) :
@@ -713,12 +713,12 @@ class DebuggerWindow(wx.Frame):
                               if (tableLotID == barcodeLotID):
                                       self.svrLog.logDebug('', self.logPrefix, funcReference, 'CORRECT:   quad=%d| vial=%d| barcode=%s ' % ( q+1, v+1, barcodeLotID) )
                                       fd.write('%s CORRECT:   quad=%d| vial=%d| barcode=%s \n' % ( self.GetTimeStamp(), q+1, v+1, barcodeLotID) )                                      
-                                      print('CORRECT:   quad=%d| vial=%d| barcode=%s ' % ( q+1, v+1, barcodeLotID) );
+                                      print(('CORRECT:   quad=%d| vial=%d| barcode=%s ' % ( q+1, v+1, barcodeLotID) ));
                               else:
                                       self.svrLog.logDebug('', self.logPrefix, funcReference, 'INCORRECT: quad=%d| vial=%d| barcode=%s | table=%s | status=%s' % ( q+1, v+1, barcodeLotID, tableLotID, barcodeStatus) )
                                       fs.write('%s INCORRECT: quad=%d| vial=%d| barcode=%s | table=%s | status=%s \n' % ( self.GetTimeStamp(), q+1, v+1, barcodeLotID, tableLotID, barcodeStatus) )
                                       fd.write('%s INCORRECT: quad=%d| vial=%d| barcode=%s | table=%s | status=%s \n' % ( self.GetTimeStamp(), q+1, v+1, barcodeLotID, tableLotID, barcodeStatus) )
-                                      print('INCORRECT: quad=%d| vial=%d| barcode=%s | table=%s | status=%s ' % ( q+1, v+1, barcodeLotID, tableLotID, barcodeStatus) )
+                                      print(('INCORRECT: quad=%d| vial=%d| barcode=%s | table=%s | status=%s ' % ( q+1, v+1, barcodeLotID, tableLotID, barcodeStatus) ))
                                                                             
                       self.svrLog.logDebug('', self.logPrefix, funcReference, '--------------BCR Iteration finished-------------')
                       fs.write('%s --------------BCR Iteration finished-------------\n'%self.GetTimeStamp());
@@ -895,15 +895,15 @@ class DebuggerWindow(wx.Frame):
     def FindStepsHome( self, axis ):
         funcReference = __name__ + '.ProcessBarCodeReaderCommand'  # 2011-11-29 -- sp
         self.EnableFreeMotion(axis)
-        a = raw_input('Manual operation has been selected.\nThe system can be moved freely.\n\nPress enter/return/ok to return to automatic mode...')
+        a = input('Manual operation has been selected.\nThe system can be moved freely.\n\nPress enter/return/ok to return to automatic mode...')
         backOffHome = self.HomeDevice(axis, 'z')
         position = 2147483647 - self.GetPosition( axis ) - backOffHome
-        print( 'Position = ,' + str(position) + ',' )
+        print(( 'Position = ,' + str(position) + ',' ))
         self.svrLog.logDebug('', self.logPrefix, funcReference, 'position=%d' % position )
         self.SetOperatingDefaults(axis)
         
     def DumpParameters(self):
-        print '@#$!'
+        print('@#$!')
         dmplist = [];
         dmplist.extend(['ZAxis=' + self.ZAxis])
         dmplist.extend(['ZAxisPower=' + self.ZAxisPower])
@@ -1186,6 +1186,6 @@ if (__name__ == '__main__'):
         time.sleep(.5)
     #debugApp.MainLoop()
     time.sleep(2)
-    print 'finish'
+    print('finish')
 
 

@@ -81,7 +81,7 @@ class Command(object):
         volume. The result is cached so we don't have to recalculate this all
         the time.'''
         key = "%s:%s" % (sample, protocol)
-        if Command.workingVols.has_key(key):
+        if key in Command.workingVols:
             return Command.workingVols[key]
         else:
             workingVol = protocol.getWorkingVolume(sample.volume)
@@ -95,14 +95,14 @@ class Command(object):
         the arguments for the call are fully evaluated.
         This particular method in the parent Command class is abstract. Don't
         use it :)'''
-        raise NotImplementedError, "Abstract method; not used for %s:%s" % \
-                (self.type, self.label)
+        raise NotImplementedError("Abstract method; not used for %s:%s" % \
+                (self.type, self.label))
 
 
     def parseXML(self, xmlNode):
         '''Abstract method for parsing XML into command data.'''
-        raise NotImplementedError, "Abstract method; not used for %s:%s" % \
-                (self.type, self.label)
+        raise NotImplementedError("Abstract method; not used for %s:%s" % \
+                (self.type, self.label))
 
 
     def isLegal(self):
@@ -171,8 +171,8 @@ class Command(object):
             try:
                 quadrant = int(vialString[3:5])
                 vialName = self.vialTable.getMessage(vialString)
-            except StandardError, msg:
-                raise CommandException, "Error (%s) parsing vial data [%s]" % (msg, vialString)
+            except Exception as msg:
+                raise CommandException("Error (%s) parsing vial data [%s]" % (msg, vialString))
             return (quadrant, vialName)
         else:
             return ()
@@ -372,7 +372,7 @@ class VolumeCommand(Command):
         try:
             self.tiprack = int(xmlNode.getAttribute('tipRack'))
             self.tiprackSpecified = True
-        except StandardError:
+        except Exception:
             self.tiprack = 1;
         if xmlNode.hasAttribute('workingVolume_uL'):
             self.workingVolume = int(xmlNode.getAttribute('workingVolume_uL'))
@@ -422,25 +422,25 @@ class VolumeCommand(Command):
 
         # Now make sure that we have sensible values... 
         if self.relative and self.proportion < 0.0:
-            raise CommandException, "Relative volume < 0 (%0.2f)" % (self.proportion)
+            raise CommandException("Relative volume < 0 (%0.2f)" % (self.proportion))
         elif self.absVolume < 0:
-            raise CommandException, "Absolute volume < 0 (%0d)" % (self.absVolume)
+            raise CommandException("Absolute volume < 0 (%0d)" % (self.absVolume))
         if self.relative2 and self.proportion2 < 0.0:
-            raise CommandException, "Relative volume 2 < 0 (%0.2f)" % (self.proportion2)
+            raise CommandException("Relative volume 2 < 0 (%0.2f)" % (self.proportion2))
         elif self.absVolume2 < 0:
-            raise CommandException, "Absolute volume 2 < 0 (%0d)" % (self.absVolume2)
+            raise CommandException("Absolute volume 2 < 0 (%0d)" % (self.absVolume2))
         if self.relative3 and self.proportion3 < 0.0:
-            raise CommandException, "Relative volume 3 < 0 (%0.2f)" % (self.proportion3)
+            raise CommandException("Relative volume 3 < 0 (%0.2f)" % (self.proportion3))
         elif self.absVolume3 < 0:
-            raise CommandException, "Absolute volume 3 < 0 (%0d)" % (self.absVolume3)
+            raise CommandException("Absolute volume 3 < 0 (%0d)" % (self.absVolume3))
         if self.relative4 and self.proportion4 < 0.0:
-            raise CommandException, "Relative volume 4 < 0 (%0.2f)" % (self.proportion4)
+            raise CommandException("Relative volume 4 < 0 (%0.2f)" % (self.proportion4))
         elif self.absVolume4 < 0:
-            raise CommandException, "Absolute volume 4 < 0 (%0d)" % (self.absVolume4)
+            raise CommandException("Absolute volume 4 < 0 (%0d)" % (self.absVolume4))
         if self.relative5 and self.proportion5 < 0.0:
-            raise CommandException, "Relative volume 5 < 0 (%0.2f)" % (self.proportion5)
+            raise CommandException("Relative volume 5 < 0 (%0.2f)" % (self.proportion5))
         elif self.absVolume5 < 0:
-            raise CommandException, "Absolute volume 5 < 0 (%0d)" % (self.absVolume5)
+            raise CommandException("Absolute volume 5 < 0 (%0d)" % (self.absVolume5))
 
 
     def copyVolumeCommand(self, oldCmd):
@@ -494,9 +494,9 @@ class VolumeCommand(Command):
                 if vialName in [Instrument.BCCMLabel,]:
                     sector = 0
                 vialString = "self.instrument.ContainerAt(%d, '%s')" % (sector, vialName)
-            except Exception, msg:
-                raise CommandException, "CO: Vial must be (quadrant, name), not %s (%s)" % \
-                        (vial, msg)
+            except Exception as msg:
+                raise CommandException("CO: Vial must be (quadrant, name), not %s (%s)" % \
+                        (vial, msg))
         return vialString
     
 
@@ -577,7 +577,7 @@ class VolumeCommand(Command):
             isRelative = self.relative5
             prop = self.proportion5
         else:
-            raise CommandException, "CO: getMixVolAndTime() failed, stage_num=%d seq=%d" % (stage_num, self.seq)
+            raise CommandException("CO: getMixVolAndTime() failed, stage_num=%d seq=%d" % (stage_num, self.seq))
         return (vol,isRelative,prop)
 
 # -----------------------------------------------------------------------------

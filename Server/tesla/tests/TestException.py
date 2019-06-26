@@ -25,7 +25,7 @@ from tesla.exception import TeslaException
 class TestException(unittest.TestCase):
   
     def raiseMe(self):
-        raise TeslaException, 'Test exception'
+        raise TeslaException('Test exception')
     
     def test_raise(self):
         self.assertRaises(TeslaException, self.raiseMe)

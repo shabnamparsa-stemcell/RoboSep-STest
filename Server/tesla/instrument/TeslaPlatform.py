@@ -302,14 +302,14 @@ class TeslaPlatform (Platform):
         except:
             pass
 
-        if self.debugFlag: print tipStripperSettings
+        if self.debugFlag: print(tipStripperSettings)
         self.tipStripper = TipStripper(TeslaPlatform.TipStripperSectionName, 
                             self.carousel._ThetaAxis().m_Card, tipStripperSettings)
 
 
         # Set up the lid sensors (which uses the carousel stepper card)
         lidSensorSettings = GetHardwareData().Section (TeslaPlatform.LidSensorSectionName)
-        print lidSensorSettings
+        print(lidSensorSettings)
         self.lidSensor = LidSensor(TeslaPlatform.LidSensorSectionName, 
                             self.carousel._ThetaAxis().m_Card, lidSensorSettings)
         
@@ -405,7 +405,7 @@ class TeslaPlatform (Platform):
         self.__m_CurrentTip = None
 
         self.__tipStripperSensorDelay = float (self._m_Settings[TeslaPlatform.TipStripperSensorDelayLabel])
-        print "self.__tipStripperSensorDelay",self.__tipStripperSensorDelay
+        print("self.__tipStripperSensorDelay",self.__tipStripperSensorDelay)
 
    
     def MoveCarouselToSafePosition(self):
@@ -468,7 +468,7 @@ class TeslaPlatform (Platform):
                 self.svrLog.logError('', self.logPrefix, funcReference, "Cannot pick up a tip with another one already present!")   # 2011-12-13 sp -- added logging
                 raise TeslaPlatformError ("Cannot pick up a tip with another one already present!")
 
-            if not tipNbr in TeslaPlatform.tipReferenceMap.keys():
+            if not tipNbr in list(TeslaPlatform.tipReferenceMap.keys()):
                 self.svrLog.logError('', self.logPrefix, funcReference, "Tip %d is not defined." % (tipNbr))   # 2011-12-13 sp -- added logging
                 raise TeslaPlatformError ("Tip %d is not defined." % (tipNbr))
 
@@ -479,7 +479,7 @@ class TeslaPlatform (Platform):
                     (sector, tipNbr, referencePoint) )   # 2011-12-13 sp -- added logging
             try:
                 # Down
-                print '\n#### PickUp Tip down ####\n'
+                print('\n#### PickUp Tip down ####\n')
                 self.MoveToPosition( sector, referencePoint)        
                 # 2012-01-30 sp -- replace environment variable with configuration variable
                 #if os.environ.has_key('SS_CHATTER'):
@@ -522,7 +522,7 @@ class TeslaPlatform (Platform):
 
         # On successful pick up, Home, and move to travel plane
         #
-        print '\n#### PickUp Tip Success! ####\n'        
+        print('\n#### PickUp Tip Success! ####\n')        
         #raw_input('Press <Enter> to Start!!!') #add by shabnam
         # 2012-01-30 sp -- replace environment variable with configuration variable
         #if os.environ.has_key('SS_LEGACY'):
@@ -546,21 +546,21 @@ class TeslaPlatform (Platform):
 
     def SmartPickupTip(self, sector, tipNbr):
         if self.CurrentTipID() == (sector, tipNbr):
-            print  "@@@@@@@@@@@@@@@@@@@@@@@@@@@ SmartPickupTip ignore call %s " % (self.CurrentTipID(),)
+            print("@@@@@@@@@@@@@@@@@@@@@@@@@@@ SmartPickupTip ignore call %s " % (self.CurrentTipID(),))
             # Tip is already loaded. Ignore call
             pass
 
         else:
-            print  "@@@@@@@@@@@@@@@@@@@@@@@@@@@ SmartPickupTip doing stuff"
+            print("@@@@@@@@@@@@@@@@@@@@@@@@@@@ SmartPickupTip doing stuff")
             #otherwise strip and pickup
             if self.__m_CurrentTip != None:
-                print  "@@@@@@@@@@@@@@@@@@@@@@@@@@@ tip not none"
+                print("@@@@@@@@@@@@@@@@@@@@@@@@@@@ tip not none")
                 self.StripTip()
-            print  "@@@@@@@@@@@@@@@@@@@@@@@@@@@ do normal pickup"
-            print "Tip %d is ." % (tipNbr)
-            print "sector %d is ." % (sector)
+            print("@@@@@@@@@@@@@@@@@@@@@@@@@@@ do normal pickup")
+            print("Tip %d is ." % (tipNbr))
+            print("sector %d is ." % (sector))
             self.PickupTip(sector, tipNbr)
-            print  "@@@@@@@@@@@@@@@@@@@@@@@@@@@ SmartPickupTip done!!!"
+            print("@@@@@@@@@@@@@@@@@@@@@@@@@@@ SmartPickupTip done!!!")
 
 
     def HomeZAxis(self):
@@ -623,13 +623,13 @@ class TeslaPlatform (Platform):
 
                 future = Future( self.tipStripper.Engage )
                 self.robot.Theta().SetTheta(rTheta)
-                print "...Move to strip psn theta = ", rTheta
+                print("...Move to strip psn theta = ", rTheta)
                 #raw_input('Press <Enter> to Start!!! u are in strip Tip def after theta ') #add by shabnam
                 future()
                 
                 # Oct 19 2006 - tip strip detection changes - RL
                 #stripper can't be both home and limit
-                print "self.__tipStripperSensorDelay",self.__tipStripperSensorDelay
+                print("self.__tipStripperSensorDelay",self.__tipStripperSensorDelay)
                 time.sleep(self.__tipStripperSensorDelay) #commented by shabnam
 
                 tipStripWarningMsg = "Tip strip could fail because stripper arm didn't come out all the way."
@@ -741,7 +741,7 @@ class TeslaPlatform (Platform):
                     #self.tipStripper.Disengage()
                     #t2 = datetime.now() #added by shabnam                                        
                     #raw_input('Press <Enter> to Start!!! u are in strip Tip after disengage') #add by shabnam
-                    print datetime.now()
+                    print(datetime.now())
                                         
                     # 2012-01-30 sp -- replace environment variable with configuration variable
                     #if os.environ.has_key('SS_CHATTER'):
@@ -813,12 +813,12 @@ class TeslaPlatform (Platform):
         #
         powerProfile = None
 
-        if isTrue and TeslaPlatform.PickupTipPowerProfileLabel in self._m_Settings.keys():
+        if isTrue and TeslaPlatform.PickupTipPowerProfileLabel in list(self._m_Settings.keys()):
             powerProfile = self._m_Settings[TeslaPlatform.PickupTipPowerProfileLabel]
 
         velocityProfile = None
 
-        if isTrue and TeslaPlatform.PickupTipVelocityProfileLabel in self._m_Settings.keys():
+        if isTrue and TeslaPlatform.PickupTipVelocityProfileLabel in list(self._m_Settings.keys()):
             velocityProfile = self._m_Settings[TeslaPlatform.PickupTipVelocityProfileLabel]
 
         self.__SetZPowerAndSpeed (powerProfile, velocityProfile)
@@ -828,12 +828,12 @@ class TeslaPlatform (Platform):
         """Set or reset the power and speed profile in the Z-Axis to strip or standard settings."""
         powerProfile = None
 
-        if isTrue and TeslaPlatform.StripTipPowerProfileLabel in self._m_Settings.keys():
+        if isTrue and TeslaPlatform.StripTipPowerProfileLabel in list(self._m_Settings.keys()):
             powerProfile = self._m_Settings[TeslaPlatform.StripTipPowerProfileLabel]
 
         velocityProfile = None
 
-        if isTrue and TeslaPlatform.StripTipVelocityProfileLabel in self._m_Settings.keys():
+        if isTrue and TeslaPlatform.StripTipVelocityProfileLabel in list(self._m_Settings.keys()):
             velocityProfile = self._m_Settings[TeslaPlatform.StripTipVelocityProfileLabel]
 
         # Next two lines are debug code
@@ -860,7 +860,7 @@ class TeslaPlatform (Platform):
         '''Move to a specific sector and tip number. Note that this moves both 
         the carousel and the theta axis.
         This is mainly for testing purposes.'''
-        if not tipNbr in TeslaPlatform.tipReferenceMap.keys():
+        if not tipNbr in list(TeslaPlatform.tipReferenceMap.keys()):
             raise TeslaPlatformError ("Tip %d is not defined." % (tipNbr))
 
         referencePoint = TeslaPlatform.tipReferenceMap[tipNbr][0]

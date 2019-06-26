@@ -36,19 +36,19 @@ class TestInstrument(unittest.TestCase):
     
     def test_getBulkBufferDeadVolume(self):
         deadVolume = self.inst.getBulkBufferDeadVolume()
-        self.failUnless(deadVolume >= 0, 'Testing bulk buffer dead volume')
+        self.assertTrue(deadVolume >= 0, 'Testing bulk buffer dead volume')
 
     def test_bulkBottle(self):
         bottle = self.inst.BulkBottle()
-        self.failUnless(bottle, 'Testing that we have a bottle')
-        self.failUnless(isinstance(bottle, Tube), 'Testing bulk bottle is a Tube')
+        self.assertTrue(bottle, 'Testing that we have a bottle')
+        self.assertTrue(isinstance(bottle, Tube), 'Testing bulk bottle is a Tube')
        
     def test_getContainers(self):
         containers = self.inst.getContainers()
-        self.failUnless(isinstance(containers, dict), 'Testing container map')
-        quadrantRange = range(0, self.numQuadrants + 1)
-        for quadrantNumber in containers.keys():
-            self.failUnless(quadrantNumber in quadrantRange, \
+        self.assertTrue(isinstance(containers, dict), 'Testing container map')
+        quadrantRange = list(range(0, self.numQuadrants + 1))
+        for quadrantNumber in list(containers.keys()):
+            self.assertTrue(quadrantNumber in quadrantRange, \
                     "Testing quadrant number %d for containers" % (quadrantNumber))
                 
 

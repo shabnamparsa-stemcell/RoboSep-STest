@@ -25,7 +25,7 @@
 # ---------------------------------------------------------------------------
 
 import sys, time, re
-import xmlrpclib
+import xmlrpc.client
 
 from ipl.utils import flattenSequence
 
@@ -174,7 +174,7 @@ class InstrumentInterface(object):
         IN: Nothing
         OUT: (string) Instrument state
         '''
-        return self.controlCentre.getState()
+        return str(self.controlCentre.getState())
 
 
     def getInstrumentStatus(self):
@@ -222,7 +222,7 @@ class InstrumentInterface(object):
         OUT: A list of (string) subscribers
         '''
         # Status: complete for CDP
-        return self.subscribers.keys()
+        return list(self.subscribers.keys())
 
 
     def testSubscriber(self, subscriber):
@@ -268,7 +268,7 @@ class InstrumentInterface(object):
                 self.svrLog.logInfo('', self.logPrefix, funcReference, 'Invalid (reserved?) url=%s' % serverURL)  # 2011-11-24 sp -- added logging
             else:
                 # Bring up a connection to the subscriber        
-                s = xmlrpclib.ServerProxy(serverURL, verbose = tesla.config.XMLRPC_DEBUG)
+                s = xmlrpc.client.ServerProxy(serverURL, verbose = tesla.config.XMLRPC_DEBUG)
                 subscriberAlive = self.testSubscriber(s)
                 if subscriberAlive:
                     self.subscribers[serverURL] = s
@@ -365,7 +365,7 @@ class InstrumentInterface(object):
             etc = self.controlCentre.startRun(self._convertSamples(samples), userID,
                                               isSharing,sharedSectorsTranslation,sharedSectorsProtocolIndex)
             #self._reportETC(etc)
-        except ControlException, msg:
+        except ControlException as msg:
             # This exception should have already been logged and reported to
             # the host. Clean up nicely by getting the ETC from the control 
             # layer; in the case, ETC should be set to *now*
@@ -501,7 +501,7 @@ class InstrumentInterface(object):
             #print '****************end ', int(round(time.time() * 1000))
 
             #print '>>> %s <<<' % str
-            print '****************COMBO 100 @@@', int(round(time.time() * 1000)-sec)
+            print('****************COMBO 100 @@@', int(round(time.time() * 1000)-sec))
 
             return str
 
@@ -538,11 +538,11 @@ class InstrumentInterface(object):
         '''Returns true if the lid is closed
         IN: Nothing
         OUT: (boolean) True if lid is closed'''
-        print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! lid close"
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! lid close")
         return self.controlCentre.isLidClosed()
         
     def SetIgnoreLidSensor(self, sw):                                       #CWJ Add
-        print '\n>>> SetIgnoreLidSensor: %d \n'%sw
+        print('\n>>> SetIgnoreLidSensor: %d \n'%sw)
         self.controlCentre.SetIgnoreLidSensor(sw);
         self.m_hardwareConfig.writeItem( 'LidSensor','ignorelidsensor' ,sw ) #TODO: move this to lid sensor
         self.m_hardwareConfig.write()
@@ -554,7 +554,7 @@ class InstrumentInterface(object):
         return rtn
 
     def SetTimedStart(self,sw):                                       #RL Add
-        print '\n>>> SetTimedStart: %d \n'%sw
+        print('\n>>> SetTimedStart: %d \n'%sw)
         self.m_hardwareConfig.writeItem( 'ConsoleConfig','timedstart' ,sw )
         self.m_hardwareConfig.write()
         rtn = 0;                                          # Return Integer
@@ -562,7 +562,7 @@ class InstrumentInterface(object):
     
 # 2012-03-05 RL -- added
     def LoadSelectedHardwareINI(self,path):                                       #RL Add
-        print '\n>>> LoadSelectedHardwareINI: %s \n'%path
+        print('\n>>> LoadSelectedHardwareINI: %s \n'%path)
         self.m_hardwareConfig.LoadSelectedHardwareINI(path)
         self.controlCentre.reInitInstrument()
         self.m_hardwareConfig = GetHardwareData()
@@ -575,7 +575,7 @@ class InstrumentInterface(object):
         return rtn
 
     def SetIgnoreHydraulicSensor(self, sw):                                 #CWJ
-        print '\n>>> SetIgnoreHydraulicSensor: %d \n'%sw
+        print('\n>>> SetIgnoreHydraulicSensor: %d \n'%sw)
         self.controlCentre.SetIgnoreHydraulicSensor(sw);
         self.m_hardwareConfig.writeItem( 'HydraulicSensor','ignoresensor' ,sw ) #TODO: move this to lid sensor
         self.m_hardwareConfig.write()
@@ -710,7 +710,7 @@ class InstrumentInterface(object):
             returnVal = None            
             try:
                 returnVal = obj.execute( fnCall )
-            except AttributeError, msg:
+            except AttributeError as msg:
                 self.logger.logWarning("II: %s is an invalid call (%s)" % (fnCall, msg))
                 self.svrLog.logWarning('xx', self.logPrefix, funcReference, "Invalid: called %s |msg=%s)" % (fnCall, msg))  # 2011-11-24 sp -- added logging
                 self._reportError(WARNING_LEVEL, 'TEC1411', fnCall)
@@ -740,7 +740,7 @@ class InstrumentInterface(object):
             documentation = funcInfo.__doc__
             if None == documentation:
                 documentation = ""
-            returnList.append( ["%s"%funcInfo.im_self, documentation,\
+            returnList.append( ["%s"%funcInfo.__self__, documentation,\
                                 funcName, inspect.getargspec(funcInfo)[0]] )
 
         return returnList
@@ -760,7 +760,7 @@ class InstrumentInterface(object):
 #    otherwise it will return the scan code which indicates the vials that fail.
 #    If the quadrant value is -1, it will reset the stored values of all quadrants and vials
     def ScanVialBarcodeAt(self, Quadrant, Vial):        #CWJ
-        print ('\n *** Recv ScanVialAt Quadrant: %d, Vial: %d\n'%(Quadrant, Vial));
+        print(('\n *** Recv ScanVialAt Quadrant: %d, Vial: %d\n'%(Quadrant, Vial)));
         rtn = self.controlCentre.ScanVialBarcodeAt(Quadrant, Vial)  # 2012-02-01 -- sp added support
         return rtn;
 
@@ -784,7 +784,7 @@ class InstrumentInterface(object):
 #    return the string representing the bar code that had been read at the given location
 #    no scanning is performed by this routine
     def GetVialBarcodeAt( self, Quadrant, Vial):        #CWJ
-        print ('\n *** Recv GetVialBarcodeAt Quadrant: %d, Vial: %d\n'%(Quadrant, Vial));
+        print(('\n *** Recv GetVialBarcodeAt Quadrant: %d, Vial: %d\n'%(Quadrant, Vial)));
         rtn = self.controlCentre.GetVialBarcodeAt(Quadrant, Vial)  # 2012-02-01 -- sp added support
 #        rtn = 'Scanning';   # Moving, Error, Barcode(Real Barcode)
         return rtn;
@@ -824,10 +824,10 @@ class InstrumentInterface(object):
         This is not intended to be called across the interface.'''
         if etc == None:
             etc = self.controlCentre.getETC()
-        for subscriber in self.subscribers.values():
+        for subscriber in list(self.subscribers.values()):
             try:
                 subscriber.reportETC(etc)
-            except Exception, msg:
+            except Exception as msg:
                 self.logger.logWarning("II: reportETC() exception: %s" % (msg))
                 funcReference = __name__ + '._reportETC'  # 2011-11-24 sp -- added logging
                 # 2011-12 sp -- message not tested
@@ -842,7 +842,7 @@ class InstrumentInterface(object):
         #       level of overlap (a nice-to-have)
         paramCount = len(args)
         params = [str(x) for x in args]
-        for subscriber in self.subscribers.values():
+        for subscriber in list(self.subscribers.values()):
             subscriber.reportStatus(state, statusCode, paramCount, params)
 
 
@@ -851,7 +851,7 @@ class InstrumentInterface(object):
         This is not intended to be called across the interface.'''
         paramCount = len(args)
         params = [str(x) for x in args]
-        for subscriber in self.subscribers.values():
+        for subscriber in list(self.subscribers.values()):
             subscriber.reportError(errorLevel, errorCode, paramCount, params)
 
 
@@ -915,7 +915,7 @@ class InstrumentInterface(object):
         except AttributeError:
             self.logger.logError("II: Invalid report type: %s" % (reportType))
             self.svrLog.logError('', self.logPrefix, funcReference, "Invalid report type=%s" % reportType)  # 2011-11-24 sp -- added logging
-        except Exception, msg:
+        except Exception as msg:
             if( field1 == 'SHUTDOWN' ):      # 2011-12-02 sp -- normal operation so report information (not error condition)
                 self.svrLog.logDebug('', self.logPrefix, funcReference, "Client has completed shutdown and is no longer available: %s" % msg)
             else:                            # 2011-12-02 sp -- report error otherwise
@@ -926,7 +926,7 @@ class InstrumentInterface(object):
 
 
     def SetBarcodeRescanOffset(self, offset):
-        print '\n>>> SetBarcodeRescanOffset: %f \n'%offset
+        print('\n>>> SetBarcodeRescanOffset: %f \n'%offset)
         self.controlCentre.SetBarcodeRescanOffset(offset);
         self.m_hardwareConfig.writeItem( 'Barcode_reader','barcode_rescan_offset_degrees' ,offset )
         self.m_hardwareConfig.write()
@@ -935,11 +935,11 @@ class InstrumentInterface(object):
         
         
     def GetBarcodeRescanOffset(self): 
-        print '\n>>> GetBarcodeRescanOffset: %f \n'%self.controlCentre.GetBarcodeRescanOffset()                                          
+        print('\n>>> GetBarcodeRescanOffset: %f \n'%self.controlCentre.GetBarcodeRescanOffset())                                          
         return self.controlCentre.GetBarcodeRescanOffset();
 
     def SetBarcodeThetaOffset(self, offset):
-        print '\n>>> SetBarcodeThetaOffset: %f \n'%offset
+        print('\n>>> SetBarcodeThetaOffset: %f \n'%offset)
         self.controlCentre.SetBarcodeThetaOffset(offset);
         self.m_hardwareConfig.writeItem( 'Barcode_reader','barcode_offset_degrees' ,offset )
         self.m_hardwareConfig.write()
@@ -948,7 +948,7 @@ class InstrumentInterface(object):
         
         
     def GetBarcodeThetaOffset(self): 
-        print '\n>>> GetBarcodeThetaOffset: %f \n'%self.controlCentre.GetBarcodeThetaOffset()                                          
+        print('\n>>> GetBarcodeThetaOffset: %f \n'%self.controlCentre.GetBarcodeThetaOffset())                                          
         return self.controlCentre.GetBarcodeThetaOffset();
 
     def getProtocolCommandList(self, protocolIdx):

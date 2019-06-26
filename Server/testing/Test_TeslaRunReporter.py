@@ -30,7 +30,7 @@ class Test_SequenceContainer(unittest.TestCase):
         self.seqcont = run_reporter.SequenceContainer()
 
     def test_emptySequence(self):
-        self.failUnless(len(self.seqcont) == 0, 'Testing length of empty sequence')
+        self.assertTrue(len(self.seqcont) == 0, 'Testing length of empty sequence')
    
     def addSequence(self):
         self.myID = 67
@@ -40,25 +40,25 @@ class Test_SequenceContainer(unittest.TestCase):
         
     def test_add(self):
         self.addSequence()
-        self.failUnless(len(self.seqcont) == 1, \
+        self.assertTrue(len(self.seqcont) == 1, \
                 'Testing length of sequence with one element')
 
     def test_getIDs(self):
         self.addSequence()
         ids = self.seqcont.getIDs()
-        self.failUnless(ids == [self.myID], 'Testing IDs')
+        self.assertTrue(ids == [self.myID], 'Testing IDs')
 
     def test_getByID(self):
         self.addSequence()
         seqlist = self.seqcont.getByID(self.myID)
-        self.failUnless(seqlist == [self.seq], 'Testing getByID()')
+        self.assertTrue(seqlist == [self.seq], 'Testing getByID()')
 
     def test_noEvents(self):
-        self.failIf(self.seqcont.hasEvent(0), 'We should have no events')
+        self.assertFalse(self.seqcont.hasEvent(0), 'We should have no events')
 
     def test_hasEvent(self):
         self.addSequence()
-        self.failUnless(self.seqcont.hasEvent(self.seqNum), 'Testing sequence')
+        self.assertTrue(self.seqcont.hasEvent(self.seqNum), 'Testing sequence')
 
 # -----------------------------------------------------------------------------
 
@@ -73,7 +73,7 @@ class Test_TeslaRunReporter(unittest.TestCase):
     def test_filterOnPatternWithEmptyList(self):
         data = []
         results = self.run.filterOnPattern(self.start, self.end, data)
-        self.failUnless(results == [], 'Testing filter on empty list') 
+        self.assertTrue(results == [], 'Testing filter on empty list') 
 
     def test_filterOnPattern_1(self):
         # Testing one list
@@ -82,29 +82,29 @@ class Test_TeslaRunReporter(unittest.TestCase):
         lastEntry = 'ZZ the end'
         data = [firstEntry, middleEntry, lastEntry]
         results = self.run.filterOnPattern(self.start, self.end, data)
-        self.failUnless(len(results) == 1, 'Testing results')
-        self.failUnless(len(results[0]) == 3, 'Testing a single list')
-        self.failUnless(results[0][0] == firstEntry, 'Testing first entry')
-        self.failUnless(results[0][1] == middleEntry, 'Testing middle entry')
-        self.failUnless(results[0][2] == lastEntry, 'Testing last entry')
+        self.assertTrue(len(results) == 1, 'Testing results')
+        self.assertTrue(len(results[0]) == 3, 'Testing a single list')
+        self.assertTrue(results[0][0] == firstEntry, 'Testing first entry')
+        self.assertTrue(results[0][1] == middleEntry, 'Testing middle entry')
+        self.assertTrue(results[0][2] == lastEntry, 'Testing last entry')
 
     def test_filterOnPattern_2(self):
         # We expect two lists with 'good' start and ends 
         data = ['AA 0', 'BB a', 'CC b', 'ZZ c', 'AA d', 'BB e', 'ZZ z']
         results = self.run.filterOnPattern(self.start, self.end, data)
-        self.failUnless(len(results) == 2, 'Testing two sets of results')
+        self.assertTrue(len(results) == 2, 'Testing two sets of results')
         set1 = results[0]
         set2 = results[1]
-        self.failUnless(len(set1) == 4, 'Testing set 1')
-        self.failUnless(len(set2) == 3, 'Testing set 2')
+        self.assertTrue(len(set1) == 4, 'Testing set 1')
+        self.assertTrue(len(set2) == 3, 'Testing set 2')
         moreResults = self.run.filterOnPattern(self.start, self.end, data, discardCrap = True)
-        self.failUnless(results == moreResults, 'Testing discardCrap')
+        self.assertTrue(results == moreResults, 'Testing discardCrap')
 
     def test_filterOnPattern_PureJunk(self):
         # Test a list with no starts or ends
         data = ['BB b', 'CC c', 'DD d', 'EE e']
         results = self.run.filterOnPattern(self.start, self.end, data)
-        self.failUnless(results == [data], 'Testing filtering junk')
+        self.assertTrue(results == [data], 'Testing filtering junk')
 
     def test_filterOnPattern_JunkAtStart(self):
         # Test a list with junk at the beginning: no start or end at the 
@@ -112,18 +112,18 @@ class Test_TeslaRunReporter(unittest.TestCase):
         data1 = ['BB a', 'CC b', 'AA d', 'BB e', 'ZZ z']
         results1 = self.run.filterOnPattern(self.start, self.end, data1, discardCrap = True)
         results1crap = self.run.filterOnPattern(self.start, self.end, data1, discardCrap = False)
-        self.failIf(results1 == results1crap, 'Testing discarded list != kept list')
-        self.failUnless(results1 == [['AA d', 'BB e', 'ZZ z']], 'Testing filtered list')
-        self.failUnless(results1crap == [['BB a', 'CC b'], ['AA d', 'BB e', 'ZZ z']], 'Testing crappy list')
+        self.assertFalse(results1 == results1crap, 'Testing discarded list != kept list')
+        self.assertTrue(results1 == [['AA d', 'BB e', 'ZZ z']], 'Testing filtered list')
+        self.assertTrue(results1crap == [['BB a', 'CC b'], ['AA d', 'BB e', 'ZZ z']], 'Testing crappy list')
 
     def test_filterOnPattern_JunkAtEnd(self):
         # Test a list with junk at the end
         data = ['AA a', 'BB b', 'ZZ c', 'EE e', 'GG g']
         results = self.run.filterOnPattern(self.start, self.end, data, discardCrap = True)
         resultsCrap = self.run.filterOnPattern(self.start, self.end, data, discardCrap = False)
-        self.failIf(results == resultsCrap, 'Testing discarded list != kept list')
-        self.failUnless(results == [['AA a', 'BB b', 'ZZ c']], 'Testing filtered list')
-        self.failUnless(resultsCrap == [['AA a', 'BB b', 'ZZ c'], ['EE e', 'GG g']], 'Testing crappy list')
+        self.assertFalse(results == resultsCrap, 'Testing discarded list != kept list')
+        self.assertTrue(results == [['AA a', 'BB b', 'ZZ c']], 'Testing filtered list')
+        self.assertTrue(resultsCrap == [['AA a', 'BB b', 'ZZ c'], ['EE e', 'GG g']], 'Testing crappy list')
 
     def test_filterOnPatter_TwoStartsOneEnd(self):
         # Test a list with two starts and only one end
@@ -131,9 +131,9 @@ class Test_TeslaRunReporter(unittest.TestCase):
         data2 = ['AA 0', 'BB a', 'CC b', 'AA d', 'BB e', 'ZZ z']
         results2 = self.run.filterOnPattern(self.start, self.end, data2, discardCrap = True)
         results2crap = self.run.filterOnPattern(self.start, self.end, data2, discardCrap = False)
-        self.failIf(results2 == results2crap, 'Testing discarded list != kept list with false start')
-        self.failUnless(results2 == [['AA d', 'BB e', 'ZZ z']], 'Testing real list')
-        self.failUnless(results2crap == [['AA 0', 'BB a', 'CC b'], ['AA d', 'BB e', 'ZZ z']], 'Testing crappy list')
+        self.assertFalse(results2 == results2crap, 'Testing discarded list != kept list with false start')
+        self.assertTrue(results2 == [['AA d', 'BB e', 'ZZ z']], 'Testing real list')
+        self.assertTrue(results2crap == [['AA 0', 'BB a', 'CC b'], ['AA d', 'BB e', 'ZZ z']], 'Testing crappy list')
         
     def test_filterOnPatter_OneStartTwoEnds(self):
         # Test a list with one start and two ends
@@ -141,9 +141,9 @@ class Test_TeslaRunReporter(unittest.TestCase):
         data = ['BB a', 'CC b', 'ZZ c', 'AA d', 'BB e', 'ZZ z']
         results = self.run.filterOnPattern(self.start, self.end, data, discardCrap = True)
         resultsCrap = self.run.filterOnPattern(self.start, self.end, data, discardCrap = False)
-        self.failIf(results == resultsCrap, 'Testing discarded list != kept list with false start')
-        self.failUnless(results == [['AA d', 'BB e', 'ZZ z']], 'Testing real list')
-        self.failUnless(resultsCrap == [['BB a', 'CC b', 'ZZ c'], ['AA d', 'BB e', 'ZZ z']], 'Testing crappy list')
+        self.assertFalse(results == resultsCrap, 'Testing discarded list != kept list with false start')
+        self.assertTrue(results == [['AA d', 'BB e', 'ZZ z']], 'Testing real list')
+        self.assertTrue(resultsCrap == [['BB a', 'CC b', 'ZZ c'], ['AA d', 'BB e', 'ZZ z']], 'Testing crappy list')
 
 # -----------------------------------------------------------------------------
 

@@ -64,7 +64,7 @@ class TestAxisTracker(unittest.TestCase):
 
         if TestAxisTracker.instanceCount == 0:
             from tesla.hardware.AxisTracker import AxisTracker, Report 
-            print 'Final result:'
+            print('Final result:')
             Report()
             os.remove (AxisTracker.dbFilePath)
 
@@ -81,13 +81,13 @@ class TestAxisTracker(unittest.TestCase):
 
     def test_init(self):
         """Test that creation loads the attributes as expected."""
-        self.failUnless(self.axisTracker.maxStep == self.maxStep)
-        self.failUnless(self.axisTracker.totalMovements == self.nbrMoves)
-        self.failUnless(self.axisTracker.totalMegaSteps == self.nbrMegaSteps)
-        self.failUnless(self.axisTracker.totalSteps == self.nbrSteps)
-        self.failUnless(self.axisTracker.totalHomeFails == self.nbrFails)
-        self.failUnless(self.axisTracker.totalHomes == self.nbrHomes)
-        self.failUnless(self.axisTracker.commissionDate == date.today().toordinal())
+        self.assertTrue(self.axisTracker.maxStep == self.maxStep)
+        self.assertTrue(self.axisTracker.totalMovements == self.nbrMoves)
+        self.assertTrue(self.axisTracker.totalMegaSteps == self.nbrMegaSteps)
+        self.assertTrue(self.axisTracker.totalSteps == self.nbrSteps)
+        self.assertTrue(self.axisTracker.totalHomeFails == self.nbrFails)
+        self.assertTrue(self.axisTracker.totalHomes == self.nbrHomes)
+        self.assertTrue(self.axisTracker.commissionDate == date.today().toordinal())
         
     def test_noteSteps(self):
         """Test that noting steps updates total steps and movements."""
@@ -96,8 +96,8 @@ class TestAxisTracker(unittest.TestCase):
         for i in range (0, nbrMoves):
             self.axisTracker.NoteSteps(steps)
 
-        self.failUnless(self.axisTracker.totalSteps == self.nbrSteps + steps*nbrMoves, "Each step is noted")
-        self.failUnless(self.axisTracker.totalMovements == self.nbrMoves + nbrMoves, "Each move is noted")
+        self.assertTrue(self.axisTracker.totalSteps == self.nbrSteps + steps*nbrMoves, "Each step is noted")
+        self.assertTrue(self.axisTracker.totalMovements == self.nbrMoves + nbrMoves, "Each move is noted")
 
     def test_noteStepsNeg(self):
         """Test that noting steps takes the absolute value of a negative increment."""
@@ -106,58 +106,58 @@ class TestAxisTracker(unittest.TestCase):
         for i in range (0, nbrMoves):
             self.axisTracker.NoteSteps(steps)
 
-        self.failUnless(self.axisTracker.totalSteps == self.nbrSteps + abs(steps*nbrMoves), "Each step is noted")
-        self.failUnless(self.axisTracker.totalMovements == self.nbrMoves + nbrMoves, "Each move is noted")
+        self.assertTrue(self.axisTracker.totalSteps == self.nbrSteps + abs(steps*nbrMoves), "Each step is noted")
+        self.assertTrue(self.axisTracker.totalMovements == self.nbrMoves + nbrMoves, "Each move is noted")
 
     def test_overflow1(self):
         """Test that overflow occurs correctly."""
         unMegaStep = AxisTracker.stepsPerMegaStep - 1 - self.nbrSteps
         self.axisTracker.NoteSteps(unMegaStep)
-        self.failUnless(self.axisTracker.totalSteps == self.nbrSteps + unMegaStep, "Doesn't quite trigger overflow")
-        self.failUnless(self.axisTracker.totalMegaSteps == self.nbrMegaSteps, "No overflow")
-        self.failUnless(self.axisTracker.totalMovements == self.nbrMoves + 1, "Each move is noted")
+        self.assertTrue(self.axisTracker.totalSteps == self.nbrSteps + unMegaStep, "Doesn't quite trigger overflow")
+        self.assertTrue(self.axisTracker.totalMegaSteps == self.nbrMegaSteps, "No overflow")
+        self.assertTrue(self.axisTracker.totalMovements == self.nbrMoves + 1, "Each move is noted")
 
         self.axisTracker.NoteSteps(1)
-        self.failUnless(self.axisTracker.totalSteps == 0, "Triggered overflow")
-        self.failUnless(self.axisTracker.totalMegaSteps == self.nbrMegaSteps + 1, "Overflow caught")
-        self.failUnless(self.axisTracker.totalMovements == self.nbrMoves + 2, "Each move is noted")
+        self.assertTrue(self.axisTracker.totalSteps == 0, "Triggered overflow")
+        self.assertTrue(self.axisTracker.totalMegaSteps == self.nbrMegaSteps + 1, "Overflow caught")
+        self.assertTrue(self.axisTracker.totalMovements == self.nbrMoves + 2, "Each move is noted")
         
     def test_overflow2(self):
         """Test that overflow occurs correctly with large steps."""
         megaStep = AxisTracker.stepsPerMegaStep
         self.axisTracker.NoteSteps(megaStep)
-        self.failUnless(self.axisTracker.totalSteps == self.nbrSteps, "Triggered overflow")
-        self.failUnless(self.axisTracker.totalMegaSteps == self.nbrMegaSteps + 1, "Overflow caught")
-        self.failUnless(self.axisTracker.totalMovements == self.nbrMoves + 1, "Each move is noted")
+        self.assertTrue(self.axisTracker.totalSteps == self.nbrSteps, "Triggered overflow")
+        self.assertTrue(self.axisTracker.totalMegaSteps == self.nbrMegaSteps + 1, "Overflow caught")
+        self.assertTrue(self.axisTracker.totalMovements == self.nbrMoves + 1, "Each move is noted")
 
         # To be sure...        
         self.axisTracker.NoteSteps(megaStep)
-        self.failUnless(self.axisTracker.totalSteps == self.nbrSteps, "Triggered overflow")
-        self.failUnless(self.axisTracker.totalMegaSteps == self.nbrMegaSteps + 2, "Overflow caught")
-        self.failUnless(self.axisTracker.totalMovements == self.nbrMoves + 2, "Each move is noted")
+        self.assertTrue(self.axisTracker.totalSteps == self.nbrSteps, "Triggered overflow")
+        self.assertTrue(self.axisTracker.totalMegaSteps == self.nbrMegaSteps + 2, "Overflow caught")
+        self.assertTrue(self.axisTracker.totalMovements == self.nbrMoves + 2, "Each move is noted")
 
     def test_NbrFullTraverses(self):
         """Test that the expected number of traverses is provided."""
         nbrTraverses = int((float(self.nbrMegaSteps)/self.maxStep)*AxisTracker.stepsPerMegaStep + self.nbrSteps/self.maxStep)
-        self.failUnless(self.axisTracker.NbrFullTraverses() == nbrTraverses, "Each step is noted")
+        self.assertTrue(self.axisTracker.NbrFullTraverses() == nbrTraverses, "Each step is noted")
 
     def test_NoteHomeActionOK(self):
         """Test Noting of successful home action."""
         nbrSteps = 100
         self.axisTracker.NoteHomeAction (nbrSteps, True)
-        self.failUnless(self.axisTracker.totalHomes == self.nbrHomes+1, "Homing action noted")
-        self.failUnless(self.axisTracker.totalHomeFails == self.nbrFails, "Successful home noted")
-        self.failUnless(self.axisTracker.totalSteps == self.nbrSteps + nbrSteps, "Homing steps noted")
-        self.failUnless(self.axisTracker.totalMovements == self.nbrMoves + 1, "Movement noted")
+        self.assertTrue(self.axisTracker.totalHomes == self.nbrHomes+1, "Homing action noted")
+        self.assertTrue(self.axisTracker.totalHomeFails == self.nbrFails, "Successful home noted")
+        self.assertTrue(self.axisTracker.totalSteps == self.nbrSteps + nbrSteps, "Homing steps noted")
+        self.assertTrue(self.axisTracker.totalMovements == self.nbrMoves + 1, "Movement noted")
 
     def test_NoteHomeActionNotOK(self):
         """Test Noting of unsuccessful home action."""
         nbrSteps = 100
         self.axisTracker.NoteHomeAction (nbrSteps, False)
-        self.failUnless(self.axisTracker.totalHomes == self.nbrHomes+1, "Homing action noted")
-        self.failUnless(self.axisTracker.totalHomeFails == self.nbrFails+1, "Successful home noted")
-        self.failUnless(self.axisTracker.totalSteps == self.nbrSteps + nbrSteps, "Homing steps noted")
-        self.failUnless(self.axisTracker.totalMovements == self.nbrMoves + 1, "Movement noted")
+        self.assertTrue(self.axisTracker.totalHomes == self.nbrHomes+1, "Homing action noted")
+        self.assertTrue(self.axisTracker.totalHomeFails == self.nbrFails+1, "Successful home noted")
+        self.assertTrue(self.axisTracker.totalSteps == self.nbrSteps + nbrSteps, "Homing steps noted")
+        self.assertTrue(self.axisTracker.totalMovements == self.nbrMoves + 1, "Movement noted")
 
 if __name__ == '__main__':
     unittest.main()

@@ -79,7 +79,7 @@ class BarCodeReader:
                 else:
                     self.svrLog.logError('', self.logPrefix, funcReference, "Error opening; Port=%s, Code=%s" % ( self.port, barCode) )
                                         
-            except serial.serialutil.SerialException, args:
+            except serial.serialutil.SerialException as args:
                 self.bcReader = None
                 self.comPortActive = False
                 if (str(args).find('Access is denied') >= 0):
@@ -104,7 +104,7 @@ class BarCodeReader:
               self.bcReader.open();
             except:
               pass;
-        print '>> Barcode Reader: Attached done!';            
+        print('>> Barcode Reader: Attached done!');            
     
     def DetachBarcodeReader(self):
         if (not self.useEmulator):
@@ -112,7 +112,7 @@ class BarCodeReader:
               self.bcReader.close();
             except:
               pass;  
-        print '>> Barcode Reader: Dettached done!';
+        print('>> Barcode Reader: Dettached done!');
         
     def setPollDuration(self, value):
         """sets a new time in milliseconds for the pollDuration if the value is greater than zero"""
@@ -133,7 +133,7 @@ class BarCodeReader:
             try:
                 retry = 0
                 barcode = 'NR';                
-                print('\n----- Enter getBarCode ------ %d\n'%self.numRetries);
+                print(('\n----- Enter getBarCode ------ %d\n'%self.numRetries));
                 
                 if(self.preCmd != ""):
                     preCmdResp = None;
@@ -141,31 +141,31 @@ class BarCodeReader:
                         self.bcReader.sendAndCheck( self.initCmds[0], self.pollDuration );
                         #preCmdResp = self.bcReader.sendAndCheck(self.preCmd, self.pollDuration);
                         preCmdResp = self.bcReader.sendAndCheckWithout(self.preCmd, self.pollDuration);
-                        print('>>> Set BCR Pre Command %s  %d %s!!!\n'%(self.preCmd,self.pollDuration,preCmdResp) );   
+                        print(('>>> Set BCR Pre Command %s  %d %s!!!\n'%(self.preCmd,self.pollDuration,preCmdResp) ));   
                     
                 while (retry < self.numRetries) :
                       barcode = 'NR';
-                      print('>>> Set BCR Trigger Command %s  %d!!!\n'%(self.triggerCmd,self.pollDuration) );                      
+                      print(('>>> Set BCR Trigger Command %s  %d!!!\n'%(self.triggerCmd,self.pollDuration) ));                      
                       barcode = self.bcReader.sendAndCheck(self.triggerCmd, self.pollDuration)
                       if (barcode != 'NR'): 
                          break;
                       elif (barcode == None):
                          self.bcReader.sendAndCheck(self.updateCmd, self.pollDuration)
-                         print('<<< Set BCR Update Command %s  %d!!!\n'%(self.updateCmd,self.pollDuration) );
+                         print(('<<< Set BCR Update Command %s  %d!!!\n'%(self.updateCmd,self.pollDuration) ));
                          retry += 1;                      
                       else:
                          self.bcReader.sendAndCheck(self.updateCmd, self.pollDuration)
-                         print('<<< Set BCR Update Command %s  %d!!!\n'%(self.updateCmd,self.pollDuration) );
+                         print(('<<< Set BCR Update Command %s  %d!!!\n'%(self.updateCmd,self.pollDuration) ));
                          retry += 1;
 
-            except serial.serialutil.SerialException, errorMsg:
+            except serial.serialutil.SerialException as errorMsg:
                 print( errorMsg )
                 self.comPortActive = False
                 self.bcReader = None
                 barcode = self.error_response
         else:
             barcode = self.error_response
-        print('----- Leave getBarCode %s------\n'%barcode);            
+        print(('----- Leave getBarCode %s------\n'%barcode));            
         return barcode
 
 
@@ -182,8 +182,8 @@ if (__name__ == '__main__'):
     startTime = time.time()
     for i in range(1, 10):
         barcode = bcr.getBarCode()
-        print( i, barcode ) # trigger: poll scanner
+        print(( i, barcode )) # trigger: poll scanner
     endTime = time.time()
-    print( "\nTime taken = %f" % (endTime - startTime) )
+    print(( "\nTime taken = %f" % (endTime - startTime) ))
 
 

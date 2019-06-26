@@ -96,7 +96,7 @@ class Null:
         return 'Null()'
 
     
-    def __nonzero__(self):
+    def __bool__(self):
         return 0
 
     

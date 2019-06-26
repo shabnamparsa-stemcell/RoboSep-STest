@@ -31,7 +31,7 @@ if __name__ == '__main__':
         fileName = os.path.basename(fileName)
         moduleName = fileName[:-3]
         importCmd = "from %s import *" % (moduleName,)
-        print "Importing unit tests from %s" % (moduleName)
+        print("Importing unit tests from %s" % (moduleName))
         exec(importCmd)
         
     unittest.main()

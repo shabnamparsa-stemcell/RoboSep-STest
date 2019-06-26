@@ -1,6 +1,6 @@
 # File: S (Python 2.3)
 
-import _SchedulerPy
+import ctypes
 
 def _swig_setattr(self, class_type, name, value):
     if name == 'this':
@@ -25,12 +25,12 @@ def _swig_getattr(self, class_type, name):
     if method:
         return method(self)
     
-    raise AttributeError, name
+    raise AttributeError(name)
 
 import types
 
 try:
-    _object = types.ObjectType
+    _object = object
     _newclass = 1
 except AttributeError:
     
@@ -51,7 +51,7 @@ class TimeBlock(_object):
     
     def __repr__(self):
         return '<C TimeBlock instance at %s>' % (self.this,)
-
+    """
     __swig_setmethods__['m_OpenPeriod'] = _SchedulerPy.TimeBlock_m_OpenPeriod_set
     __swig_getmethods__['m_OpenPeriod'] = _SchedulerPy.TimeBlock_m_OpenPeriod_get
     if _newclass:
@@ -71,14 +71,14 @@ class TimeBlock(_object):
     __swig_getmethods__['m_StartTime'] = _SchedulerPy.TimeBlock_m_StartTime_get
     if _newclass:
         m_StartTime = property(_SchedulerPy.TimeBlock_m_StartTime_get, _SchedulerPy.TimeBlock_m_StartTime_set)
-    
+    """
     
     def __init__(self, *args):
-        _swig_setattr(self, TimeBlock, 'this', _SchedulerPy.new_TimeBlock(*args))
+        #_swig_setattr(self, TimeBlock, 'this', _SchedulerPy.new_TimeBlock(*args))
         _swig_setattr(self, TimeBlock, 'thisown', 1)
 
     
-    def __del__(self, destroy = _SchedulerPy.delete_TimeBlock):
+    def __del__(self, destroy):# = _SchedulerPy.delete_TimeBlock):
         
         try:
             if self.thisown:
@@ -99,7 +99,7 @@ class TimeBlockPtr(TimeBlock):
         _swig_setattr(self, TimeBlock, self.__class__, TimeBlock)
 
 
-_SchedulerPy.TimeBlock_swigregister(TimeBlockPtr)
+#_SchedulerPy.TimeBlock_swigregister(TimeBlockPtr)
 
 class Scheduler(_object):
     __swig_setmethods__ = { }
@@ -114,11 +114,11 @@ class Scheduler(_object):
 
     
     def __init__(self, *args):
-        _swig_setattr(self, Scheduler, 'this', _SchedulerPy.new_Scheduler(*args))
+        #_swig_setattr(self, Scheduler, 'this', _SchedulerPy.new_Scheduler(*args))
         _swig_setattr(self, Scheduler, 'thisown', 1)
 
     
-    def __del__(self, destroy = _SchedulerPy.delete_Scheduler):
+    def __del__(self, destroy):# = _SchedulerPy.delete_Scheduler):
         
         try:
             if self.thisown:
@@ -129,47 +129,47 @@ class Scheduler(_object):
 
     
     def SetDelayFor(*args):
-        return _SchedulerPy.Scheduler_SetDelayFor(*args)
+        pass #return _SchedulerPy.Scheduler_SetDelayFor(*args)
 
     
     def DelayFor(*args):
-        return _SchedulerPy.Scheduler_DelayFor(*args)
+        pass #return _SchedulerPy.Scheduler_DelayFor(*args)
 
     
     def AppendBlock(*args):
-        return _SchedulerPy.Scheduler_AppendBlock(*args)
+        pass #return _SchedulerPy.Scheduler_AppendBlock(*args)
 
     
     def CalculateTimes(*args):
-        return _SchedulerPy.Scheduler_CalculateTimes(*args)
+        pass #return _SchedulerPy.Scheduler_CalculateTimes(*args)
 
     
     def GetBlock(*args):
-        return _SchedulerPy.Scheduler_GetBlock(*args)
+        pass #return _SchedulerPy.Scheduler_GetBlock(*args)
 
     
     def Reset(*args):
-        return _SchedulerPy.Scheduler_Reset(*args)
+        pass #return _SchedulerPy.Scheduler_Reset(*args)
 
     
     def MaxIterations(*args):
-        return _SchedulerPy.Scheduler_MaxIterations(*args)
+        pass #return _SchedulerPy.Scheduler_MaxIterations(*args)
 
     
     def SetMaxIterations(*args):
-        return _SchedulerPy.Scheduler_SetMaxIterations(*args)
+        pass #return _SchedulerPy.Scheduler_SetMaxIterations(*args)
 
     
     def NbrSchedules(*args):
-        return _SchedulerPy.Scheduler_NbrSchedules(*args)
+        pass #return _SchedulerPy.Scheduler_NbrSchedules(*args)
 
     
     def SetNbrSchedules(*args):
-        return _SchedulerPy.Scheduler_SetNbrSchedules(*args)
+        pass #return _SchedulerPy.Scheduler_SetNbrSchedules(*args)
 
     
     def NbrIterations(*args):
-        return _SchedulerPy.Scheduler_NbrIterations(*args)
+        pass #return _SchedulerPy.Scheduler_NbrIterations(*args)
 
 
 
@@ -182,5 +182,4 @@ class SchedulerPtr(Scheduler):
         
         _swig_setattr(self, Scheduler, self.__class__, Scheduler)
 
-
-_SchedulerPy.Scheduler_swigregister(SchedulerPtr)
+#_SchedulerPy.Scheduler_swigregister(SchedulerPtr)

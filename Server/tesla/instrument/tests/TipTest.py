@@ -62,37 +62,37 @@ if __name__ == '__main__':
             if not validateNumber(tip, 1, NUM_TIPS):
             raise ValueError, "Tip #%d is invalid" % tip
         """
-    except Exception, msg:
-        print msg
-        print "Usage: python TipTest.py [Sa[:b]] [Ta[:b]] In"
-        print "       where: S = sector range a, b. 1:4 is the default"
-        print "              T = tip range a, b. 1:5 is the default"
-        print "              I = number of iterations. n = -1 (indefinite) is the default"
+    except Exception as msg:
+        print(msg)
+        print("Usage: python TipTest.py [Sa[:b]] [Ta[:b]] In")
+        print("       where: S = sector range a, b. 1:4 is the default")
+        print("              T = tip range a, b. 1:5 is the default")
+        print("              I = number of iterations. n = -1 (indefinite) is the default")
         sys.exit(1)
         
-    print "Telsa tip pickup/stripping functional test"
-    print "Start quadrant = %d, end quadrant = %d" % (startQ, endQ)
-    print "Start tip = %d, end tip = %d" % (startTip, endTip)
+    print("Telsa tip pickup/stripping functional test")
+    print("Start quadrant = %d, end quadrant = %d" % (startQ, endQ))
+    print("Start tip = %d, end tip = %d" % (startTip, endTip))
     
     platform.Initialise()
 
-    print "Testing tip pickup & stripping"
+    print("Testing tip pickup & stripping")
 
     trial = 0
 
     try:
         while trial != nbrIterations:
             trial += 1
-            print "Trial # %d\n(Press ^C to break into program)" % (trial)
+            print("Trial # %d\n(Press ^C to break into program)" % (trial))
 
             for sector in range(startQ, endQ + 1):
                 for tipNum in range(startTip, endTip + 1):
-                    print "Moving to sector #%d, tip #%d" % (sector, tipNum)            
+                    print("Moving to sector #%d, tip #%d" % (sector, tipNum))            
                     platform.PickupTip(sector, tipNum)
                     platform.StripTip()
 
     except KeyboardInterrupt:
-        print "Break during trial #%d. Press 'Enter' to continue" % (trial)
+        print("Break during trial #%d. Press 'Enter' to continue" % (trial))
         sys.stdin.readline()
     
 # eof

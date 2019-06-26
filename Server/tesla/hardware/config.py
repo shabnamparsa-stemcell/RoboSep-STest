@@ -27,7 +27,7 @@ from datetime import datetime
 from ipl.utils.file import createDir
 from ipl.utils.path import path
 
-from ConfigParser import *
+from configparser import *
 from shutil import copyfile
 
 import tesla.logger
@@ -100,7 +100,7 @@ class HardwareConfiguration:
 
             copyfile(temp,configFile)
             
-        except IOError, msg:
+        except IOError as msg:
             raise ConfigurationException(msg)  
 
     def LoadFile(self, configFile):
@@ -110,9 +110,9 @@ class HardwareConfiguration:
         cfg = ConfigParser()
         try:
             cfg.read(self.configFile)
-        except MissingSectionHeaderError, msg:
+        except MissingSectionHeaderError as msg:
             raise ConfigurationException(msg)
-        except ParsingError, msg:
+        except ParsingError as msg:
             raise ConfigurationException(msg)
 
         # convert the config data to a dictionary
@@ -133,11 +133,11 @@ class HardwareConfiguration:
 
     def SectionList(self):
         """Obtain a list of the sections read in"""
-        return self.m_Sections.keys()
+        return list(self.m_Sections.keys())
         
     def SectionExists(self, sectionKey):
         """Determine whether an given section exists"""
-        return sectionKey in self.m_Sections.keys()
+        return sectionKey in list(self.m_Sections.keys())
         
     def Section(self, sectionKey):
         """Obtain the item dictionary of the given section.
@@ -150,14 +150,14 @@ class HardwareConfiguration:
     def ItemExists(self, sectionKey, itemKey):
         """Determine whether a given item exists in a given section"""
         section = self.Section(sectionKey)
-        return itemKey in section.keys()
+        return itemKey in list(section.keys())
         
     def Item(self, sectionKey, itemKey):
         """Obtain a specific item in a given section.
             Returns an empty string if item does not exist"""
         section = self.Section(sectionKey)
 
-        if itemKey in section.keys():
+        if itemKey in list(section.keys()):
             return section[itemKey]
         else:
             return ''
@@ -173,7 +173,7 @@ class HardwareConfiguration:
         """Called from write() - renames all files in the config backup folder by effectively
         advancing their trailing numeral by one and then write the most recent config file 
         as hardware.ini.1."""
-        print "backupConfig start"
+        print("backupConfig start")
                 
         # create the directory if necessary
         backupDir = tesla.config.CFG_BACKUP_DIR        
@@ -187,15 +187,15 @@ class HardwareConfiguration:
         
         # copy this file to dir with .1 extension added
         copyfile(tesla.config.HW_CFG_PATH, tesla.config.HW_BACK_PATH + ext)
-        print "backupConfig exit", ext
+        print("backupConfig exit", ext)
         
     def SaveIniAsFactory(self):                                       #RL Add
         copyfile(tesla.config.HW_CFG_PATH, tesla.config.HW_CFG_PATH + ".factory")
-        print '0000000000000000000000000000000000000000'
+        print('0000000000000000000000000000000000000000')
 
     def RestoreIniWithFactory(self):                                           #RL Add
         copyfile(tesla.config.HW_CFG_PATH + ".factory",tesla.config.HW_CFG_PATH)
-        print '111111111111111111111111111'
+        print('111111111111111111111111111')
 
 # 2012-03-05 RL -- added
     def LoadSelectedHardwareINI(self,path):                                       #RL Add
@@ -208,14 +208,14 @@ class HardwareConfiguration:
         read from at construction-time.'''
 
         # Create an empty config object
-        print "bdr in config.py - writing", newFile, self.configFile
+        print("bdr in config.py - writing", newFile, self.configFile)
         cfg = ConfigParser()
 
         # Populate the config with the sections data
-        for sectionKey in self.m_Sections.keys():
+        for sectionKey in list(self.m_Sections.keys()):
             # Create a section
             cfg.add_section(sectionKey)
-            for itemKey in self.m_Sections[sectionKey].keys():
+            for itemKey in list(self.m_Sections[sectionKey].keys()):
                 # Add the item to the section
                 cfg.set(sectionKey,itemKey,self.m_Sections[sectionKey][itemKey])
     
@@ -238,7 +238,7 @@ class HardwareConfiguration:
 
             copyfile(temp,fileName)
             
-        except IOError, msg:
+        except IOError as msg:
             raise ConfigurationException(msg)        
 
 #-------------------------------------------------------------------------
@@ -259,21 +259,21 @@ def LoadSettings (settings, configData, mandatoryList = ()):
     #
     missingComponents = []
     for key in mandatoryList:
-        if key not in configData.keys():
+        if key not in list(configData.keys()):
             # Mark as missing if key is not already present
-            if key not in settings.keys():
+            if key not in list(settings.keys()):
                 missingComponents.append(key)
         else:
             settings[key] = configData[key]
 
     if len (missingComponents) > 0:
         errMsg = "The following components are mandatory: %s" % (missingComponents,)
-        if debugFlag: print errMsg
+        if debugFlag: print(errMsg)
         raise ConfigurationException (errMsg)
         
     missingList = []
-    for key in settings.keys():
-        if key in configData.keys():
+    for key in list(settings.keys()):
+        if key in list(configData.keys()):
             # Copy the configuration value                
             settings[key] = configData[key]
         else:
@@ -282,7 +282,7 @@ def LoadSettings (settings, configData, mandatoryList = ()):
 
     if len(missingList) != 0 and missingList not in knownMissingSettings:
         msg = "The following defaults were not passed in configData: %s" % (missingList,)
-        if debugFlag: print msg
+        if debugFlag: print(msg)
         knownMissingSettings.append(missingList)
         
 

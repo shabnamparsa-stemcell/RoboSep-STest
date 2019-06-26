@@ -125,7 +125,7 @@ class ZThetaRobot(Subsystem):
            if not self.PreHomingDone :
               self.__m_Z.HomeInit()
               self.PreHomingDone = True
-              print '\n<<<<< None Legacy HomeZ >>>>>\n'
+              print('\n<<<<< None Legacy HomeZ >>>>>\n')
            else :
               self.__m_Z.Home()           
            
@@ -151,7 +151,7 @@ class ZThetaRobot(Subsystem):
             else:
                if not tipstrip :                          #CWJ Add
                   self.__m_Z.SetPositionWithoutMotion( 0 )#CWJ Add
-                  print '\n<<<<< None Legacy >>>>>\n'
+                  print('\n<<<<< None Legacy >>>>>\n')
                else:                                      #CWJ Add
                   self.__m_Z.SetPosition( 0 )             #CWJ Add
 
@@ -179,7 +179,7 @@ class ZThetaRobot(Subsystem):
             else:
                if not tipstrip :                          #CWJ Add
                   self.__m_Z.SetPositionWithoutMotion( 0 )#CWJ Add
-                  print '\n<<<<< None Legacy >>>>>\n'
+                  print('\n<<<<< None Legacy >>>>>\n')
                else:                                      #CWJ Add
                   self.__m_Z.SetPosition( 0 )             #CWJ Add
 
@@ -214,7 +214,9 @@ class ZThetaRobot(Subsystem):
         """Define the Z-axis position to adopt prior to rotating the theta 
         axis."""
         # Ensure that result is within limits
-        position = min(zTravelPosition, self.Z().MaxPosition())
+        position = self.Z().MaxPosition()
+        if zTravelPosition != None:
+            position = min(zTravelPosition, self.Z().MaxPosition())
         position = max(position, self.Z().MinPosition())
         self.__m_ZTravelPosition = position
 

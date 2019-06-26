@@ -21,7 +21,7 @@
 import sys
 import time
 import threading
-import socket, xmlrpclib, SimpleXMLRPCServer
+import socket, xmlrpc.client, xmlrpc.server
 
 from ipl.utils.InfoTable import InfoTable
 import ipl.utils.string
@@ -60,13 +60,13 @@ class ClientInterface:
 
     def reportETC(self, etc):
         '''Report the run ETC to us (usually if it has been updated).'''
-        print "CLIENT: ETC = %s" % (etc)
+        print("CLIENT: ETC = %s" % (etc))
         return True
 
     def reportStatus(self, state, msg, numParams, params):
         '''Report a status message to us.'''
-        print "CLIENT: STATE = %s, STATUS = %s, #PARAMS = %d, PARAMS = %s" % \
-                (state, msg, numParams, params)
+        print("CLIENT: STATE = %s, STATUS = %s, #PARAMS = %d, PARAMS = %s" % \
+                (state, msg, numParams, params))
         return True
         
     def reportError(self, level, errorCode, numParams, params):
@@ -76,12 +76,12 @@ class ClientInterface:
         self.errorFlag.set()
         try:
             logMsg = ipl.utils.string.expandCSharpString(errorMsg, params)
-        except Exception, msg:
+        except Exception as msg:
             logMsg = "CLIENT: CAUGHT EXCEPTION %s with message [%s][%s]" \
                     (str(msg), errorMsg, str(params))
-        print "CLIENT: ERROR = %s [level:%d], #PARAMS = %d, PARAMS = %s" % \
-                (errorCode, level, numParams, params)
-        print "CLIENT: ERROR = %s" % (logMsg)
+        print("CLIENT: ERROR = %s [level:%d], #PARAMS = %d, PARAMS = %s" % \
+                (errorCode, level, numParams, params))
+        print("CLIENT: ERROR = %s" % (logMsg))
 
         return True
 
@@ -97,7 +97,7 @@ class Monitor:
         port. Turning logging on enables the standard SimpleXMLRPCServer requests 
         logging.'''
         self.errorFlag = threading.Event()
-        self.controlSrv = SimpleXMLRPCServer.SimpleXMLRPCServer((host, port), logRequests = logging)
+        self.controlSrv = xmlrpc.server.SimpleXMLRPCServer((host, port), logRequests = logging)
         self.controlSrv.socket.setblocking(0)                # 0 = non-blocking
         self.controlSrv.register_introspection_functions()
         self.controlSrv.register_instance(ClientInterface(self.errorFlag))
@@ -127,12 +127,12 @@ class ServiceClient:
         self.debug = debug
         
         # Connect to the instrument control server
-        if self.debug: print "Attempting to connect to %s" % (hostURL)
+        if self.debug: print("Attempting to connect to %s" % (hostURL))
         try:
-            self.controlSrv = xmlrpclib.ServerProxy(hostURL)
+            self.controlSrv = xmlrpc.client.ServerProxy(hostURL)
             serverIsAlive = self.controlSrv.ping()
-        except socket.error, msg:
-            raise TeslaException, "Unable to connect to %s: %s" % (hostURL, msg)
+        except socket.error as msg:
+            raise TeslaException("Unable to connect to %s: %s" % (hostURL, msg))
         
         if serverIsAlive:
             self.monitor = Monitor()
@@ -142,31 +142,31 @@ class ServiceClient:
             if self.debug: self.printInfo()
 
         # Now connect to the service server
-        if self.debug: print "Attempting to connect to %s" % (serviceURL)
+        if self.debug: print("Attempting to connect to %s" % (serviceURL))
         try:
-            self.serviceSrv = xmlrpclib.ServerProxy(serviceURL)
+            self.serviceSrv = xmlrpc.client.ServerProxy(serviceURL)
             serviceIsAlive = self.serviceSrv.ping()
-            print "Service interface is", 
+            print("Service interface is", end=' ') 
             if serviceIsAlive:
-                print "up\n"
+                print("up\n")
             else:
-                print "down\n"
-        except socket.error, msg:
-            raise TeslaException, "Unable to connect to %s: %s" % (serviceURL, msg)
+                print("down\n")
+        except socket.error as msg:
+            raise TeslaException("Unable to connect to %s: %s" % (serviceURL, msg))
         
     def halt(self):
         '''Halt the client and server'''
         self.monitorThread.join()
-        if self.debug: print "Halting..."
+        if self.debug: print("Halting...")
         self.controlSrv.halt()
 
     def printInfo(self):
         '''Print some general information from the server.'''
-        print "\nInstrument state: %s\n" % (self.controlSrv.getInstrumentState())
+        print("\nInstrument state: %s\n" % (self.controlSrv.getInstrumentState()))
 
     def waitForState(self, state = 'IDLE'):
         '''Wait until we reach the specified state.'''
-        if self.debug: print 'Waiting for the %s state...' % (state)
+        if self.debug: print('Waiting for the %s state...' % (state))
         while True:
             currentState = self.controlSrv.getInstrumentState()
             if currentState in ['HALTED', 'ESTOP', 'SHUTDOWN', state]:
@@ -187,35 +187,35 @@ class ServiceClient:
             # Ugly but it was quick and it works :)
             argString = str(args).replace("'",'').replace('[','').replace(']','')
             methodStr = "%s(%s)" % (method, argString)
-            if not componentEntries.has_key(component):
+            if component not in componentEntries:
                 componentEntries[component] = [methodStr,]
             else:
                 componentEntries[component].append(methodStr)
         for component in componentEntries:
-            print component
+            print(component)
             for method in componentEntries[component]:
-                print "\t%s" % (method)
-            print 
+                print("\t%s" % (method))
+            print() 
 
     def exerciseService(self, serviceCalls = []):
         '''Exercise the service interface. Pass in a list of tuples of
         service cmds to execute.'''
         self.controlSrv.enterServiceState()
         self.waitForState('SERVICE')
-        print "\nNow in service state\n"
+        print("\nNow in service state\n")
 
-        print "Supported service functions:\n"
+        print("Supported service functions:\n")
         functions = self.controlSrv.getServiceFunctionList()
         self.printServiceFunctions(functions)
 
         if serviceCalls != []:
-            print "\nNow executing service calls:"
+            print("\nNow executing service calls:")
             for (objName, method, args) in serviceCalls:
-                print "\nExecuting: %s.%s(%s)" % (objName, method, args)
+                print("\nExecuting: %s.%s(%s)" % (objName, method, args))
                 result = self.controlSrv.execute(objName, method, args)
-                print "Result = [%s]" % (str(result))
+                print("Result = [%s]" % (str(result)))
 
-        print "\nExiting service state\n"
+        print("\nExiting service state\n")
         self.controlSrv.exitServiceState()
         self.waitForState()
         

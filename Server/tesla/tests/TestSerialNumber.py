@@ -31,8 +31,8 @@ class TestSerialNum(unittest.TestCase):
     
     def test_serial(self):
         # Verify that we can read a serial number from the default file
-        self.failUnless(self.serial, 'Serial number is defined')
-        self.failUnless(repr(self.serial), 'Serial number representation test')
+        self.assertTrue(self.serial, 'Serial number is defined')
+        self.assertTrue(repr(self.serial), 'Serial number representation test')
 
     def test_missingSerialNumFile(self):
         # Try to read a serial number from a non-existent file

@@ -17,7 +17,7 @@ class ActionFSM(SimpleFSM):
             actionTable = self.entryActions
         else:
             actionTable = self.exitActions
-        if actionTable.has_key(state):
+        if state in actionTable:
             apply(actionTable[state])
         
 

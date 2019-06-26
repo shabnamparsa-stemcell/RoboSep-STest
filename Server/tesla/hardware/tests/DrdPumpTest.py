@@ -27,8 +27,8 @@ from tesla.hardware.Axis import AxisError
 from SimpleStep.SimpleStep import SimpleStep
 from tesla.hardware.config import HardwareConfiguration
 
-print '<=========== START OF UNITTEST ============>\n'
-print 'We will need the SimpleStep card BoardID!!'
+print('<=========== START OF UNITTEST ============>\n')
+print('We will need the SimpleStep card BoardID!!')
 EMULATION = True
 
 hwcfg = HardwareConfiguration('C:\projects\hardware.ini')

@@ -34,21 +34,21 @@ class TestDeadProfile(unittest.TestCase):
     
     #------------------------------------------------------------------------
     def testHeightOf(self):
-        self.failUnless (self.profile.HeightOf (0) == 0, "Test: height always zero.")
-        self.failUnless (self.profile.HeightOf (self.volume/2) == 0, "Test: height always zero.")
-        self.failUnless (self.profile.HeightOf (self.volume) == 0, "Test: height always zero.")
+        self.assertTrue (self.profile.HeightOf (0) == 0, "Test: height always zero.")
+        self.assertTrue (self.profile.HeightOf (self.volume/2) == 0, "Test: height always zero.")
+        self.assertTrue (self.profile.HeightOf (self.volume) == 0, "Test: height always zero.")
     
     #------------------------------------------------------------------------
     def testExcessCapacity(self):
-        self.failUnlessRaises (VolumeProfileError, self.profile.HeightOf, self.volume+1)
+        self.assertRaises (VolumeProfileError, self.profile.HeightOf, self.volume+1)
     
     #------------------------------------------------------------------------
     def testFullHeight(self):
-        self.failUnless (self.profile.FullHeight () == 0, "Test: FullHeight is zero.")
+        self.assertTrue (self.profile.FullHeight () == 0, "Test: FullHeight is zero.")
     
     #------------------------------------------------------------------------
     def testFullVolume(self):
-        self.failUnless (self.profile.FullVolume () == self.volume, "Test: FullVolume is specified profile volume.")
+        self.assertTrue (self.profile.FullVolume () == self.volume, "Test: FullVolume is specified profile volume.")
     
 #----------------------------------------------------------------------------
 class TestCylindricalProfile(unittest.TestCase):
@@ -62,21 +62,21 @@ class TestCylindricalProfile(unittest.TestCase):
     
     #------------------------------------------------------------------------
     def testHeightOf(self):
-        self.failUnlessAlmostEqual (self.profile.HeightOf (0), 0, 3, "Test: h(0) = 0.")
-        self.failUnlessAlmostEqual (self.profile.HeightOf (self.volume), self.height, 3, "Test: h(V) = H => %f = %f." % (self.profile.HeightOf (self.volume), self.height))
-        self.failUnlessAlmostEqual (self.profile.HeightOf (self.volume/2), self.height/2, 3, "Test: interpolation - h(V/2) = H/2.")
+        self.assertAlmostEqual (self.profile.HeightOf (0), 0, 3, "Test: h(0) = 0.")
+        self.assertAlmostEqual (self.profile.HeightOf (self.volume), self.height, 3, "Test: h(V) = H => %f = %f." % (self.profile.HeightOf (self.volume), self.height))
+        self.assertAlmostEqual (self.profile.HeightOf (self.volume/2), self.height/2, 3, "Test: interpolation - h(V/2) = H/2.")
     
     #------------------------------------------------------------------------
     def testExcessCapacity(self):
-        self.failUnlessRaises (VolumeProfileError, self.profile.HeightOf, self.volume+1)
+        self.assertRaises (VolumeProfileError, self.profile.HeightOf, self.volume+1)
     
     #------------------------------------------------------------------------
     def testFullHeight(self):
-        self.failUnless (self.profile.FullHeight () == self.height, "Test: FullHeight is specified profile height.")
+        self.assertTrue (self.profile.FullHeight () == self.height, "Test: FullHeight is specified profile height.")
     
     #------------------------------------------------------------------------
     def testFullVolume(self):
-        self.failUnless (self.profile.FullVolume () == self.volume, "Test: FullVolume is specified profile volume.")
+        self.assertTrue (self.profile.FullVolume () == self.volume, "Test: FullVolume is specified profile volume.")
     
 #----------------------------------------------------------------------------
 class TestConicalProfile(unittest.TestCase):
@@ -91,26 +91,26 @@ class TestConicalProfile(unittest.TestCase):
     
     #------------------------------------------------------------------------
     def testHeightOf(self):
-        self.failUnlessAlmostEqual (self.profile.HeightOf (0), 0, 3, "Test: h(0) = 0.")
-        self.failUnlessAlmostEqual (self.profile.HeightOf (self.volume), self.height, 3, "Test: h(V) = H => %f = %f." % (self.profile.HeightOf (self.volume), self.height))
-        self.failUnlessAlmostEqual (self.profile.HeightOf (self.volume/8.0), self.height/2.0, 3, "Test: interpolation - h(V/8) = H/2.")
+        self.assertAlmostEqual (self.profile.HeightOf (0), 0, 3, "Test: h(0) = 0.")
+        self.assertAlmostEqual (self.profile.HeightOf (self.volume), self.height, 3, "Test: h(V) = H => %f = %f." % (self.profile.HeightOf (self.volume), self.height))
+        self.assertAlmostEqual (self.profile.HeightOf (self.volume/8.0), self.height/2.0, 3, "Test: interpolation - h(V/8) = H/2.")
     
-        self.failUnlessAlmostEqual (self.iProfile.HeightOf (0), 0, 3, "Test: h(0) = 0.")
-        self.failUnlessAlmostEqual (self.iProfile.HeightOf (self.volume), self.height, 2, "Test: h(V) = H => %f = %f." % (self.profile.HeightOf (self.volume), self.height))
-        self.failUnlessAlmostEqual (self.iProfile.HeightOf (7.0*self.volume/8.0), self.height/2.0, 3, "Test: interpolation - h(7V/8) = H/2.")
+        self.assertAlmostEqual (self.iProfile.HeightOf (0), 0, 3, "Test: h(0) = 0.")
+        self.assertAlmostEqual (self.iProfile.HeightOf (self.volume), self.height, 2, "Test: h(V) = H => %f = %f." % (self.profile.HeightOf (self.volume), self.height))
+        self.assertAlmostEqual (self.iProfile.HeightOf (7.0*self.volume/8.0), self.height/2.0, 3, "Test: interpolation - h(7V/8) = H/2.")
     
     #------------------------------------------------------------------------
     def testExcessCapacity(self):
-        self.failUnlessRaises (VolumeProfileError, self.profile.HeightOf, self.volume+1)
+        self.assertRaises (VolumeProfileError, self.profile.HeightOf, self.volume+1)
     
     #------------------------------------------------------------------------
     def testFullHeight(self):
-        self.failUnless (self.profile.FullHeight () == self.height, "Test: FullHeight is specified profile height.")
+        self.assertTrue (self.profile.FullHeight () == self.height, "Test: FullHeight is specified profile height.")
     
     #------------------------------------------------------------------------
     def testFullVolume(self):
-        self.failUnless (self.profile.FullVolume () == self.volume, "Test: FullVolume is specified profile volume.")
-        self.failUnless (self.iProfile.FullVolume () == self.volume, "Test: FullVolume is specified profile volume.")
+        self.assertTrue (self.profile.FullVolume () == self.volume, "Test: FullVolume is specified profile volume.")
+        self.assertTrue (self.iProfile.FullVolume () == self.volume, "Test: FullVolume is specified profile volume.")
     
 #----------------------------------------------------------------------------
 class TestTruncatedConicalProfile(unittest.TestCase):
@@ -138,30 +138,30 @@ class TestTruncatedConicalProfile(unittest.TestCase):
     
     #------------------------------------------------------------------------
     def testHeightOf(self):
-        self.failUnlessAlmostEqual (self.profile.HeightOf (0), 0, 3, "Test: h(0) = 0.")
-        self.failUnlessAlmostEqual (self.profile.HeightOf (self.volume), self.height, 3, "Test: h(V) = H => %f = %f." % (self.profile.HeightOf (self.volume), self.height))
+        self.assertAlmostEqual (self.profile.HeightOf (0), 0, 3, "Test: h(0) = 0.")
+        self.assertAlmostEqual (self.profile.HeightOf (self.volume), self.height, 3, "Test: h(V) = H => %f = %f." % (self.profile.HeightOf (self.volume), self.height))
         testVolume = self.volume /2.0
         testHeight = self.stdProfile.HeightOf(testVolume + self.tipvolume)-self.tipheight
-        self.failUnlessAlmostEqual (self.profile.HeightOf (testVolume), testHeight, 3, "Test: interpolation - h(V/8) = H/2.")
+        self.assertAlmostEqual (self.profile.HeightOf (testVolume), testHeight, 3, "Test: interpolation - h(V/8) = H/2.")
     
-        self.failUnlessAlmostEqual (self.iProfile.HeightOf (0), 0, 3, "Test: h(0) = 0.")
-        self.failUnlessAlmostEqual (self.iProfile.HeightOf (self.volume), self.height, 2, "Test: h(V) = H => %f = %f." % (self.profile.HeightOf (self.volume), self.height))
+        self.assertAlmostEqual (self.iProfile.HeightOf (0), 0, 3, "Test: h(0) = 0.")
+        self.assertAlmostEqual (self.iProfile.HeightOf (self.volume), self.height, 2, "Test: h(V) = H => %f = %f." % (self.profile.HeightOf (self.volume), self.height))
         testVolume = self.volume /2.0
         testHeight = self.istdProfile.HeightOf(testVolume)
-        self.failUnlessAlmostEqual (self.iProfile.HeightOf (testVolume), testHeight, 3, "Test: interpolation - h(7V/8) = H/2.")
+        self.assertAlmostEqual (self.iProfile.HeightOf (testVolume), testHeight, 3, "Test: interpolation - h(7V/8) = H/2.")
     
     #------------------------------------------------------------------------
     def testExcessCapacity(self):
-        self.failUnlessRaises (VolumeProfileError, self.profile.HeightOf, self.volume+1)
+        self.assertRaises (VolumeProfileError, self.profile.HeightOf, self.volume+1)
     
     #------------------------------------------------------------------------
     def testFullHeight(self):
-        self.failUnless (self.profile.FullHeight () == self.height, "Test: FullHeight is specified profile height.")
+        self.assertTrue (self.profile.FullHeight () == self.height, "Test: FullHeight is specified profile height.")
     
     #------------------------------------------------------------------------
     def testFullVolume(self):
-        self.failUnless (self.profile.FullVolume () == self.volume, "Test: FullVolume is specified profile volume.")
-        self.failUnless (self.iProfile.FullVolume () == self.volume, "Test: FullVolume is specified profile volume.")
+        self.assertTrue (self.profile.FullVolume () == self.volume, "Test: FullVolume is specified profile volume.")
+        self.assertTrue (self.iProfile.FullVolume () == self.volume, "Test: FullVolume is specified profile volume.")
     
 #----------------------------------------------------------------------------
 class TestHemisphericalProfile(unittest.TestCase):
@@ -176,22 +176,22 @@ class TestHemisphericalProfile(unittest.TestCase):
     
     #------------------------------------------------------------------------
     def testHeightOf(self):
-        self.failUnlessAlmostEqual (self.profile.HeightOf (0), 0, 2, "Test: h(0) = 0.")
-        self.failUnlessAlmostEqual (self.profile.HeightOf (self.volume), self.height, 2, "Test: h(V) = H => %f = %f." % (self.profile.HeightOf (self.volume), self.height))
+        self.assertAlmostEqual (self.profile.HeightOf (0), 0, 2, "Test: h(0) = 0.")
+        self.assertAlmostEqual (self.profile.HeightOf (self.volume), self.height, 2, "Test: h(V) = H => %f = %f." % (self.profile.HeightOf (self.volume), self.height))
         halfHeightVolume = self.profile._VolumeOf(self.height/2.0)
-        self.failUnlessAlmostEqual (self.profile.HeightOf (halfHeightVolume), self.height/2.0, 2, "Test: interpolation .")
+        self.assertAlmostEqual (self.profile.HeightOf (halfHeightVolume), self.height/2.0, 2, "Test: interpolation .")
     
     #------------------------------------------------------------------------
     def testExcessCapacity(self):
-        self.failUnlessRaises (VolumeProfileError, self.profile.HeightOf, self.volume+1)
+        self.assertRaises (VolumeProfileError, self.profile.HeightOf, self.volume+1)
     
     #------------------------------------------------------------------------
     def testFullHeight(self):
-        self.failUnless (self.profile.FullHeight () == self.height, "Test: FullHeight is specified profile height.")
+        self.assertTrue (self.profile.FullHeight () == self.height, "Test: FullHeight is specified profile height.")
     
     #------------------------------------------------------------------------
     def testFullVolume(self):
-        self.failUnless (self.profile.FullVolume () == self.volume, "Test: FullVolume is specified profile volume.")
+        self.assertTrue (self.profile.FullVolume () == self.volume, "Test: FullVolume is specified profile volume.")
     
     
 if __name__ == '__main__':

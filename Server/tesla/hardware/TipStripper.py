@@ -77,7 +77,7 @@ class TipStripper(Device):
         # 2012-01-30 sp -- replace environment variable with configuration variable
         #if os.environ.has_key('SS_DISABLE_STRIP'):
         if tesla.config.SS_DISABLE_STRIP == 1:
-           print '\n>>>> Tip Stripper Disabled! <<<<\n'
+           print('\n>>>> Tip Stripper Disabled! <<<<\n')
            pass           
         else:
            self.__Traverse(self.__m_EngagePort, self.__m_DisengagePort)
@@ -91,7 +91,7 @@ class TipStripper(Device):
         # 2012-01-30 sp -- replace environment variable with configuration variable
         #if os.environ.has_key('SS_DISABLE_STRIP'):
         if tesla.config.SS_DISABLE_STRIP == 1:
-           print '\n>>>> Tip Stripper Disabled! <<<<\n'
+           print('\n>>>> Tip Stripper Disabled! <<<<\n')
            pass
         else:   
            self.__Traverse(self.__m_DisengagePort, self.__m_EngagePort)

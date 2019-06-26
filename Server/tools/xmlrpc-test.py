@@ -18,7 +18,7 @@
 # the program(s) have been supplied.
 # 
 
-import xmlrpclib 
+import xmlrpc.client 
 import socket
 
 # -----------------------------------------------------------------------------
@@ -33,67 +33,67 @@ if __name__ == '__main__':
     host = "http://%s:%d" % (GATEWAY_HOST, GATEWAY_PORT)
 
     try:
-        srv = xmlrpclib.ServerProxy(host)
+        srv = xmlrpc.client.ServerProxy(host)
 
-        print "\nAttempting to connect to %s\n" % (host)
+        print("\nAttempting to connect to %s\n" % (host))
 
         serverIsAlive = srv.ping()
         if serverIsAlive:
 
             serverInfo = srv.getServerInfo()
-            print "  Gateway address:", serverInfo[0]
-            print "   Server version:", serverInfo[1]
-            print "    Server uptime:", serverInfo[2]
+            print("  Gateway address:", serverInfo[0])
+            print("   Server version:", serverInfo[1])
+            print("    Server uptime:", serverInfo[2])
 
             hostInfo = srv.getHostConfiguration()
-            for key in hostInfo.keys():
-                print "%17s: %s" % (key, hostInfo[key])
+            for key in list(hostInfo.keys()):
+                print("%17s: %s" % (key, hostInfo[key]))
 
-            print  
-            print "Instrument status:", srv.getInstrumentStatus()
-            print " Instrument state:", srv.getInstrumentState()
-            print "        Error log:", srv.getErrorLog()
+            print()  
+            print("Instrument status:", srv.getInstrumentStatus())
+            print(" Instrument state:", srv.getInstrumentState())
+            print("        Error log:", srv.getErrorLog())
 
             subscribers = srv.getSubscriberList()
-            print "      Subscribers:", 
+            print("      Subscribers:", end=' ') 
             if len(subscribers):
-                print subscribers
+                print(subscribers)
             else:
-                print "None"
+                print("None")
 
             try:
                 protocolInfo = srv.getProtocols()
-            except xmlrpclib.Error, msg:
-                print "ERROR -- UNABLE TO getProtocols()", msg
+            except xmlrpc.client.Error as msg:
+                print("ERROR -- UNABLE TO getProtocols()", msg)
                 protocolInfo = ()
 
-            print "        Protocols:"
+            print("        Protocols:")
             for protocol in protocolInfo:
-                print "\t\t%s" % (protocol['label'])
+                print("\t\t%s" % (protocol['label']))
                 for key in protocol:
                     if key == 'label':
                         continue
                     else:
-                        print "\t\t\t%15s: %s" % (key, protocol[key])
-                print
+                        print("\t\t\t%15s: %s" % (key, protocol[key]))
+                print()
 
-            print "State:",srv.getInstrumentState()
+            print("State:",srv.getInstrumentState())
 
             #etc = srv.startRun([])
             #print "Started run: ETC =", etc
 
-            print "State:",srv.getInstrumentState()
+            print("State:",srv.getInstrumentState())
 
-            print "Halting...", srv.halt()
+            print("Halting...", srv.halt())
 
         else:
-            print "Can not connect to %s" % (host)
+            print("Can not connect to %s" % (host))
 
-    except socket.error, msg:
-        print "Unable to connect to XML-RPC server (%s)" % (msg)
+    except socket.error as msg:
+        print("Unable to connect to XML-RPC server (%s)" % (msg))
 
-    except xmlrpclib.Fault, msg:
-        print "XML-RPC error (%s). Halting." % (msg)
+    except xmlrpc.client.Fault as msg:
+        print("XML-RPC error (%s). Halting." % (msg))
         if srv.ping():
            srv.halt()
 

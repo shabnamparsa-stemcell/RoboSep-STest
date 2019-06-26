@@ -31,8 +31,8 @@ def Setup():
     global i, pump, tp, car, rob, ts, c, z, t, p, cCard, zCard, tCard, pCard, gHardwareData
    
     #ReloadHardwareData('C:\Work\Tesla\Hardware.ini')
-    print gHardwareData.Item ('Platform', 'carouselreferencepointoffset')
-    print gHardwareData.Item ('Platform', 'robotthetareferencepointoffset')
+    print(gHardwareData.Item ('Platform', 'carouselreferencepointoffset'))
+    print(gHardwareData.Item ('Platform', 'robotthetareferencepointoffset'))
     i = Instrument( "Instrument" )
     pump = i.getPump()
     tp = i.getPlatform()
@@ -72,27 +72,27 @@ def CheckHome(axis, overshoot, zeroPoint = 0):
     while i < overshoot:
         i = i+1
         try:
-            print '#%d: %d' % (i, axis.Step())
+            print('#%d: %d' % (i, axis.Step()))
             axis.m_Card.processCmds(['P200,200,0', 'B1100', 'E3000', 'S5', 'RN+1','RY-1', 'P140,50,0'])
         except:
-            print '...Bang!'
+            print('...Bang!')
         else:
             i = overshoot
 
     axis.m_Card.processCmds(['A%d' % (zeroPoint)])
     
 def Demo():
-    print 'Initialising instrument.'
+    print('Initialising instrument.')
     Initialise()
-    print 'Picking up 5ml tip from position 4, quadrant 4'
+    print('Picking up 5ml tip from position 4, quadrant 4')
     tp.PickupTip(4, 4)
-    print 'Moving to separation.'
+    print('Moving to separation.')
     tp.MoveTo(4, 'separation', 115)
-    print 'Stripping the tip'
+    print('Stripping the tip')
     tp.StripTip()
     tp.PickupTip(4, 3)
     tp.StripTip()
-    print 'Next...!'
+    print('Next...!')
 
 def TestAspiration(volume, capacity = 1100):
     global pump
@@ -110,15 +110,15 @@ def SetupVials (sector = 1):
     wv = i.ContainerAt (sector, Instrument.WasteLabel)
     lv = i.ContainerAt (sector, Instrument.LysisLabel)
     bulk = i.BulkBottle()
-    print "vials in sector %d:" % (sector)
-    print "av = Antibody"
-    print "cv = Cocktail"
-    print "bv = Bead"
-    print "sv = Sample"
-    print "mv = (magnetic) separation"
-    print "wv = Waste"
-    print "lv = Lysis"
-    print "bulk = BCCM"
+    print("vials in sector %d:" % (sector))
+    print("av = Antibody")
+    print("cv = Cocktail")
+    print("bv = Bead")
+    print("sv = Sample")
+    print("mv = (magnetic) separation")
+    print("wv = Waste")
+    print("lv = Lysis")
+    print("bulk = BCCM")
     
 def SetVialVolume (vial, volume):
     """Set a given vial to have a given volume."""
@@ -136,11 +136,11 @@ def TestPumpWorkflows ():
     mixVial = i.ContainerAt (4, Instrument.SampleLabel)
     mixVial.removeVolume(mixVial.getVolume())
     mixVial.addVolume(5000)
-    print "Priming:"
+    print("Priming:")
     i.Prime (wasteVial)
-    print "Mixing:"
+    print("Mixing:")
     i.Mix (mixVial)
-    print "Flushing:"
+    print("Flushing:")
     i.Flush (wasteVial)
 
 def TestPump ():

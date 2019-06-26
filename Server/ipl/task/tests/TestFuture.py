@@ -19,7 +19,7 @@ def doSomething(delay = 0):
 
 def profile(func, *args):
     start = time.time()
-    dummy = apply(func, args)
+    dummy = func(*args)
     timeDiff = round(time.time() - start)
     return timeDiff
 
@@ -31,7 +31,7 @@ def badFunc():
     while badCounter < badLimit:
         badCounter += 1
         time.sleep(1)
-    raise PlughException, "where's the pirate?"
+    raise PlughException("where's the pirate?")
     badCounter += badLimit
 
 
@@ -44,23 +44,23 @@ class TestFuture(unittest.TestCase):
     def testProfileFunction(self):
         myTime = 5
         delay = profile(doSomething, myTime)
-        self.failUnless(delay >= myTime, 'Testing profile()')
+        self.assertTrue(delay >= myTime, 'Testing profile()')
 
     
     def testNoDelay(self):
         A = Future(foo)
-        self.failUnless(A.isDone(), 'Testing no delay')
+        self.assertTrue(A.isDone(), 'Testing no delay')
 
     
     def testDelay(self):
         start = time.time()
         delay = 10
         A = Future(doSomething, delay)
-        self.failIf(A.isDone(), 'Testing start of call to Future()')
+        self.assertFalse(A.isDone(), 'Testing start of call to Future()')
         result = A()
         timeDiff = round(time.time() - start)
-        self.failUnless(result == delay, 'Testing Future() result')
-        self.failUnless(timeDiff >= delay, 'Testing length of call to Future()')
+        self.assertTrue(result == delay, 'Testing Future() result')
+        self.assertTrue(timeDiff >= delay, 'Testing length of call to Future()')
 
     
     def testErrorsInside(self):

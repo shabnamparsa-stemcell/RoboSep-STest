@@ -27,8 +27,8 @@ import unittest
 from SimpleStep.SimpleStep import SimpleStep
 from tesla.hardware.config import HardwareConfiguration, gHardwareData
 
-print '<=========== START OF UNITTEST ============>\n'
-print 'We will need the SimpleStep card BoardID!!'
+print('<=========== START OF UNITTEST ============>\n')
+print('We will need the SimpleStep card BoardID!!')
 EMULATION = True
 
 configData = gHardwareData.Section ('Carousel')
@@ -98,20 +98,20 @@ class ThetaTestOK(unittest.TestCase):
         self.m_Rotor.ResetStepSpeedProfile()
         (B, E, S) = self.m_Rotor.StepSpeedProfile()
         profile = '%d, %d, %d' % (B, E, S)
-        self.assertEquals(configData[Axis.MotorStepVelocityLabel], profile)
+        self.assertEqual(configData[Axis.MotorStepVelocityLabel], profile)
 
         (newB, newE, newS) = (B+1, E+1, S+1)
         self.m_Rotor.SetStepSpeedProfile (newB, newE, newS)
         
         (newerB, newerE, newerS) = self.m_Rotor.StepSpeedProfile()
-        self.assertEquals(newB, newerB)
-        self.assertEquals(newE, newerE)
-        self.assertEquals(newS, newerS)
+        self.assertEqual(newB, newerB)
+        self.assertEqual(newE, newerE)
+        self.assertEqual(newS, newerS)
         
         self.m_Rotor.ResetStepSpeedProfile()
         (B, E, S) = self.m_Rotor.StepSpeedProfile()
         profile = '%d, %d, %d' % (B, E, S)
-        self.assertEquals(configData[Axis.MotorStepVelocityLabel], profile)
+        self.assertEqual(configData[Axis.MotorStepVelocityLabel], profile)
 
 
     def testHomingStepSpeedProfile (self):
@@ -119,20 +119,20 @@ class ThetaTestOK(unittest.TestCase):
         self.m_Rotor.ResetHomingStepSpeedProfile()
         (B, E, S) = self.m_Rotor.HomingStepSpeedProfile()
         profile = '%d, %d, %d' % (B, E, S)
-        self.assertEquals(configData[Axis.MotorHomingStepVelocityLabel], profile)
+        self.assertEqual(configData[Axis.MotorHomingStepVelocityLabel], profile)
 
         (newB, newE, newS) = (B+1, E+1, S+1)
         self.m_Rotor.SetHomingStepSpeedProfile (newB, newE, newS)
         
         (newerB, newerE, newerS) = self.m_Rotor.HomingStepSpeedProfile()
-        self.assertEquals(newB, newerB)
-        self.assertEquals(newE, newerE)
-        self.assertEquals(newS, newerS)
+        self.assertEqual(newB, newerB)
+        self.assertEqual(newE, newerE)
+        self.assertEqual(newS, newerS)
         
         self.m_Rotor.ResetHomingStepSpeedProfile()
         (B, E, S) = self.m_Rotor.HomingStepSpeedProfile()
         profile = '%d, %d, %d' % (B, E, S)
-        self.assertEquals(configData[Axis.MotorHomingStepVelocityLabel], profile)
+        self.assertEqual(configData[Axis.MotorHomingStepVelocityLabel], profile)
 
 
 #--------------------------------------------------------------------------
@@ -151,15 +151,15 @@ class ThetaTestFail(unittest.TestCase):
         
     def testValidateTheta (self):
         """Validation should fail if not homed"""
-        self.assertEquals (self.m_xRotor.IsHomed(), False, "Rotor should not be homed")
+        self.assertEqual (self.m_xRotor.IsHomed(), False, "Rotor should not be homed")
         self.assertRaises (AxisError, self.m_xRotor.Theta)
         self.assertRaises (AxisError, self.m_xRotor.SetTheta, ThetaAxis.PI_DEG/4.0)
 
     def testThetaLimits (self):
         """Theta may not be set outside configured limits"""
         self.m_xRotor.Home()
-        self.assertAlmostEquals (float(self.m_Config[ThetaAxis.MinThetaLabel]), self.m_xRotor.MinTheta(), TOLERANCE)
-        self.assertAlmostEquals (float(self.m_Config[ThetaAxis.MaxThetaLabel]), self.m_xRotor.MaxTheta(), TOLERANCE)
+        self.assertAlmostEqual (float(self.m_Config[ThetaAxis.MinThetaLabel]), self.m_xRotor.MinTheta(), TOLERANCE)
+        self.assertAlmostEqual (float(self.m_Config[ThetaAxis.MaxThetaLabel]), self.m_xRotor.MaxTheta(), TOLERANCE)
         self.m_xRotor.SetTheta (self.m_xRotor.MinTheta())
         self.m_xRotor.SetTheta (self.m_xRotor.MaxTheta())
         self.assertRaises (AxisError, self.m_xRotor.SetTheta, self.m_xRotor.MinTheta() - 0.1)

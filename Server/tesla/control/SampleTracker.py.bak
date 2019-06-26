@@ -8,7 +8,7 @@
 # 495 Blackburn Rd
 # Mt Waverley, Vic, Australia.
 # Phone (+61 3) 9211 7700
-# Fax   (+61 3) 9211 7701																											 
+# Fax   (+61 3) 9211 7701                                                                                                                                                                                                                         
 # 
 # The copyright to the computer program(s) herein is the
 # property of Invetech Pty Ltd, Australia.
@@ -57,27 +57,27 @@ class SampleTracker:
     '''
     
     def __init__(self, reportBaseDir = tesla.config.SAMPLE_REPORT_DIR):
-	'''Initialise the sample tracker and leave it empty
+        '''Initialise the sample tracker and leave it empty
         Parameters: reportBaseDir - the base directory for report generation'''
-	self.reportXmlName = ""
-	self.reportBaseDir = reportBaseDir
-	self.resetTracker()
-        if os.environ.has_key('ProgramFiles(x86)'):    
+        self.reportXmlName = ""
+        self.reportBaseDir = reportBaseDir
+        self.resetTracker()
+        if 'ProgramFiles(x86)' in os.environ:    
            self.BIN_DIR = BIN_DIR64
         else:
            self.BIN_DIR = BIN_DIR32
 
     def resetTracker(self):
-	'''Clear all sample history out of the tracker'''
-	self.samples = None
+        '''Clear all sample history out of the tracker'''
+        self.samples = None
         self.scheduleStarted = False
 
     def addSamples(self, sampleList):
-	'''Add samples to the tracker'''
+        '''Add samples to the tracker'''
         if self.scheduleStarted:
-            raise SampleTrackingException, "SampleTracker: Schedule already started, cannot add samples"
+            raise SampleTrackingException("SampleTracker: Schedule already started, cannot add samples")
 
-	self.samples = sampleList[:]
+        self.samples = sampleList[:]
 
     def hasStarted(self):
         '''Returns True is a schedule is marked as started'''
@@ -88,9 +88,9 @@ class SampleTracker:
         startTime defaults to current system time
         operator defaults to "Unknown"'''
         if self.scheduleStarted:
-            raise SampleTrackingException, "SampleTracker: Schedule already started, cannot start schedule"
+            raise SampleTrackingException("SampleTracker: Schedule already started, cannot start schedule")
         if self.samples == None:
-            raise SampleTrackingException, "SampleTracker: No samples, cannot start schedule"
+            raise SampleTrackingException("SampleTracker: No samples, cannot start schedule")
 
         if not startTime:
             startTime = datetime.fromtimestamp(time.time())
@@ -106,7 +106,7 @@ class SampleTracker:
         '''Marks a schedule as successfully complete and logs a report for all samples
         endTime defaults to current system time'''
         if not self.scheduleStarted:
-            raise SampleTrackingException, "SampleTracker: Schedule not started, cannot complete schedule"
+            raise SampleTrackingException("SampleTracker: Schedule not started, cannot complete schedule")
         if not endTime:
             endTime = datetime.fromtimestamp(time.time())
 
@@ -118,7 +118,7 @@ class SampleTracker:
         reason should contain a description of why the schedule did not complete
         abortTime defaults to current system time'''
         if not self.scheduleStarted:
-            raise SampleTrackingException, "SampleTracker: Schedule not started, cannot abort schedule"
+            raise SampleTrackingException("SampleTracker: Schedule not started, cannot abort schedule")
         if not abortTime:
             abortTime = datetime.fromtimestamp(time.time())
 
@@ -126,7 +126,7 @@ class SampleTracker:
         self.reportSchedule('ABORTED because '+ reason)
 
     def GetReportXMLFullFileName(self):
-        print "\nGetReportXMLFullFileName: %s"%(self.reportXmlName)
+        print("\nGetReportXMLFullFileName: %s"%(self.reportXmlName))
         return self.reportXmlName;
     
     def convertSymbols(self, inStr):
@@ -194,12 +194,12 @@ class SampleTracker:
         reportFile.close()
         self.resetTracker()
         time.sleep(2)
-    	  
-    	  
+              
+              
     # --- Private methods -----------------------------------------------------
 
     def getFileName(self,basedOnTime=None):
-	'''Return the filename for the given day'''
+        '''Return the filename for the given day'''
         if not basedOnTime:
             basedOnTime = datetime.fromtimestamp(time.time())
 
@@ -207,33 +207,33 @@ class SampleTracker:
         # ie: BASEDIR/2004/Dec
         theDate = basedOnTime #.date()
         theYear = theDate.strftime("%Y")
-	theMonth = theDate.strftime("%b")
-	
-	# Create the report file name "Report_25Dec2004.txt"
-	fileName = theDate.strftime("Report_%d%b%Y_%H_%M_%S.html")
+        theMonth = theDate.strftime("%b")
+        
+        # Create the report file name "Report_25Dec2004.txt"
+        fileName = theDate.strftime("Report_%d%b%Y_%H_%M_%S.html")
 
         # full path name of report
         pathName = os.path.join(self.reportBaseDir, theYear, theMonth)
 
         # If the path doesn't exist, create it
-	if not os.path.exists(pathName):
-	    try:
-		os.makedirs(pathName)
-	    except OSError, msg:
-		raise SampleTrackingException, "Unable to make sample report dir (%s)" % (msg)
+        if not os.path.exists(pathName):
+            try:
+                os.makedirs(pathName)
+            except OSError as msg:
+                raise SampleTrackingException("Unable to make sample report dir (%s)" % (msg))
 
-	# Create the full path name
+        # Create the full path name
         fullFileName = os.path.join(pathName, fileName)
-        print fullFileName
-	return fullFileName
+        print(fullFileName)
+        return fullFileName
 
 
-	
+        
     def getVialText(self, Vial, InitQ, customNames):
 
-        print "BDR ------ in getVialText with srcvial=%s and initQuad=%d" % (str(Vial[1]), InitQ)  
+        print("BDR ------ in getVialText with srcvial=%s and initQuad=%d" % (str(Vial[1]), InitQ))  
         indx = Vial[0]-1        
-        print "BDR---- using Vial[0]=%d index=%d" % (Vial[0], indx)
+        print("BDR---- using Vial[0]=%d index=%d" % (Vial[0], indx))
        
         vialName= ''
         if str(Vial[1]) == Instrument.BCCMLabel:
@@ -282,7 +282,7 @@ class SampleTracker:
         if indx < 1:
             indx = 0
             
-        print "BDR ---- str(indx+InitQ) = %s" % (str(indx+InitQ)) 
+        print("BDR ---- str(indx+InitQ) = %s" % (str(indx+InitQ))) 
             
         return "Q"+str(indx+InitQ)+", "+vialName.encode('utf-8')
 

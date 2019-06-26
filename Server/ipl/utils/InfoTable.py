@@ -16,7 +16,7 @@ class InfoTable(object):
         '''Read in the information table and process for getCode() to use.'''
         
         try:
-            f = open(self.path, 'r')
+            f = open(self.path, 'r', encoding="utf-8")
             data = f.readlines()
             for line in data:
                 if line[0] == '#':
@@ -25,15 +25,15 @@ class InfoTable(object):
                 if line.count('='):
                     (key, value) = line.split('=', 1)
                     key = key.strip()
-                    if self._InfoTable__codes.has_key(key):
-                        raise KeyError, "%s is a duplicate key in line '%s'" % (key, line)
+                    if key in self._InfoTable__codes:
+                        raise KeyError("%s is a duplicate key in line '%s'" % (key, line))
                     
                     self._InfoTable__codes[key] = value.strip()
                     continue
             
             f.close()
         except:
-            raise IOError, 'Unable to construct InfoTable from %s' % self.path
+            raise IOError('Unable to construct InfoTable from %s' % self.path)
 
 
     
@@ -44,16 +44,16 @@ class InfoTable(object):
     
     def getCode(self, msg):
         '''Return the code for a specific message.'''
-        for (key, value) in self._InfoTable__codes.items():
+        for (key, value) in list(self._InfoTable__codes.items()):
             if msg == value:
                 return key
                 continue
         else:
-            raise LookupError, 'Unable to find code for %s message' % msg
+            raise LookupError('Unable to find code for %s message' % msg)
 
     
     def getCodes(self):
         '''Return a list of all the codes in this table.'''
-        return self._InfoTable__codes.keys()
+        return list(self._InfoTable__codes.keys())
 
 

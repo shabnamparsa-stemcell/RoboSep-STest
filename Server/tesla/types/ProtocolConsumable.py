@@ -26,6 +26,7 @@ from ipl.utils.validation import validateNumber
 
 from tesla.exception import TeslaException
 from tesla.config import NUM_QUADRANTS
+from functools import reduce
 
 # -----------------------------------------------------------------------------
 
@@ -72,7 +73,7 @@ class ProtocolConsumable:
         container, which can (should!) be empty.
         '''
         if not validateNumber(quadrant, 1, NUM_QUADRANTS):
-            raise TeslaException, "Invalid quadrant number (%d)" % (quadrant)
+            raise TeslaException("Invalid quadrant number (%d)" % (quadrant))
         self.quadrant           = quadrant
         self.cocktailVolume     = float(cocktailVolume_uL)
         self.particleVolume     = float(particleVolume_uL)
@@ -93,16 +94,15 @@ class ProtocolConsumable:
 
     def __repr__(self):
         '''String representation of the protocol consumables'''
-        volumes = map(lambda x:self.__volumeValue(x), [
+        volumes = [self.__volumeValue(x) for x in [
                                 self.cocktailVolume, self.particleVolume, 
                                 self.lysisVolume, self.antibodyVolume, 
-                                self.bulkBufferVolume])
+                                self.bulkBufferVolume]]
         volumeCat = reduce(lambda x,y: x + y, volumes)
-        flags = map(lambda x:'[' + str(x)[:1] + ']', 
-                                        [   self.wasteVesselRequired,
+        flags = ['[' + str(x)[:1] + ']' for x in [   self.wasteVesselRequired,
                                             self.separationVesselRequired,
                                             self.sampleVesselRequired,
-                                            self.tipBoxRequired])
+                                            self.tipBoxRequired]]
         flagsCat = reduce(lambda x,y: x + ' ' + y, flags) 
         return "%d %s %s" % (self.quadrant, volumeCat, flagsCat)
 

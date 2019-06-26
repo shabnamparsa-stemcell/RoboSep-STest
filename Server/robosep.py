@@ -26,10 +26,10 @@ import traceback, string
 
 def reportImportError(msg = None):
     '''Report an error related to module importing'''
-    print 'Some key modules could not be located.\nIf you installed these files ' + \
-          'manually, ensure that the PYTHONPATH environment variable is set (correctly).'
+    print('Some key modules could not be located.\nIf you installed these files ' + \
+          'manually, ensure that the PYTHONPATH environment variable is set (correctly).')
     if msg:
-        print "\nImport error: %s" % (msg)
+        print("\nImport error: %s" % (msg))
     sys.exit(1)
 
 def testForModule(module):
@@ -47,7 +47,7 @@ def testPackageAvailability():
     modules = ['ipl', 'SimpleStep', 'tesla']
     for module in modules:
         if not testForModule(module):
-            print "Error: Unable to import the '%s' module.\n" % (module)
+            print("Error: Unable to import the '%s' module.\n" % (module))
             reportImportError()
 
 def setupPackageArchive(archiveName):
@@ -62,9 +62,9 @@ def reportException(msg):
     list = traceback.format_tb(tb, limit) + traceback.format_exception_only(type, value)
     tracebackMsg = "\nError traceback:\n\n" + "%-20s %s" % (string.join(list[:-1], ""), list[-1])
     
-    print "\nCAUGHT FATAL ERROR:", msg
-    print tracebackMsg
-    print "Please report this message to Chulwoong Jeon <CHULWOONG.JEON@STEMCELL.COM>"
+    print("\nCAUGHT FATAL ERROR:", msg)
+    print(tracebackMsg)
+    print("Please report this message to Chulwoong Jeon <CHULWOONG.JEON@STEMCELL.COM>")
 
 def startRoboSepServer():
     #PKG_ARCHIVE = 'robosep.zip'
@@ -78,14 +78,14 @@ def startRoboSepServer():
 
     try:
         controller = Controller()
-    except TeslaException, msg:
+    except TeslaException as msg:
         # Handle instrument-specific exceptions that have bubbled to the top
-        print "Unable to start instrument controller (%s)" % (msg)
-    except OSError, msg:
+        print("Unable to start instrument controller (%s)" % (msg))
+    except OSError as msg:
         # Most likely caused by the logger being locked by another process
-        print "Unable to start instrument controller (%s)" % (msg)
-        print "Is another instance of the controller running?"       
-    except StandardError, msg:
+        print("Unable to start instrument controller (%s)" % (msg))
+        print("Is another instance of the controller running?")       
+    except Exception as msg:
         # Handle any other (unexpected) error, with debug info
         reportException(msg)            
     else:
@@ -93,7 +93,7 @@ def startRoboSepServer():
             controller.powerUpInstrument()
             controller.startGateway()
             controller.shutdownInstrument(False)
-        except TeslaException, msg:
+        except TeslaException as msg:
             controller.logger.logError(msg)
 
 # -----------------------------------------------------------------------------

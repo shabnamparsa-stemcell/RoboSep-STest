@@ -12,16 +12,16 @@ class TestInfoTable(unittest.TestCase):
     def test_getCode(self):
         msg = 'January'
         code = self.statusTable.getCode(msg)
-        self.failUnless(code == 'MONTH1', 'getCode() test')
+        self.assertTrue(code == 'MONTH1', 'getCode() test')
 
     
     def test_spaces(self):
         msg = 'April'
-        self.failUnless(self.statusTable.getCode(msg) == 'MONTH4', 'getCode() test')
+        self.assertTrue(self.statusTable.getCode(msg) == 'MONTH4', 'getCode() test')
 
     
     def test_getMessage(self):
-        self.failUnless(self.statusTable.getMessage('MONTH1') == 'January', 'getMessage() test')
+        self.assertTrue(self.statusTable.getMessage('MONTH1') == 'January', 'getMessage() test')
 
     
     def test_getBadMessage(self):
@@ -30,7 +30,7 @@ class TestInfoTable(unittest.TestCase):
     
     def test_emptyCode(self):
         code = self.statusTable.getCode('Nothing')
-        self.failUnless(code == '', 'Testing empty code')
+        self.assertTrue(code == '', 'Testing empty code')
 
     
     def test_getBadCode(self):
@@ -39,8 +39,8 @@ class TestInfoTable(unittest.TestCase):
     
     def test_getCodes(self):
         codes = self.statusTable.getCodes()
-        self.failUnless(type(codes) == type([]), 'Testing codes type')
-        self.failUnless(len(codes) > 0, 'Do we have codes?')
+        self.assertTrue(type(codes) == type([]), 'Testing codes type')
+        self.assertTrue(len(codes) > 0, 'Do we have codes?')
 
     
     def test_bogusTable(self):

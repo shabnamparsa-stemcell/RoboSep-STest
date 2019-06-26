@@ -161,7 +161,7 @@ class TeslaPump(Subsystem):
         self.m_hardwareConfigMisc = gHardwareMisc
         
         self.__m_hydraulicLevel = int (self._m_Settings[TeslaPump.HydraulicBottleLevelLabel])
-        print 'self.__m_hydraulicLevel -----------------', self.__m_hydraulicLevel
+        print('self.__m_hydraulicLevel -----------------', self.__m_hydraulicLevel)
         
         #RL 1
         #print "Universal Pump Debug  MaxVolumeDualMode =", {'265': 'DRD', '500': 'IVEK'}[self._m_Settings[TeslaPump.MaxVolumeDualModeLabel]]
@@ -263,7 +263,7 @@ class TeslaPump(Subsystem):
         usingSmallTip = capacity <= 1100
         
         if usingSmallTip:
-            print '\n###### Aspirate usingSmallTip !!!'
+            print('\n###### Aspirate usingSmallTip !!!')
             if self.__m_Aspiration1.CanHandleVolumeSmallTip( volume ):
                 ( volumeAspirated, self.__dispenseList ) = self.__Aspirate_1(volume, self.__m_Aspiration1)
                 self.__nextDispenseID = 1
@@ -279,7 +279,7 @@ class TeslaPump(Subsystem):
             else:
                 raise TeslaPumpError ('volume (%dul) exceeds all technique limits' % (volume))
         else:
-            print '\n###### Aspirate not usingSmallTip !!!'
+            print('\n###### Aspirate not usingSmallTip !!!')
             if self.__m_Aspiration1.CanHandleVolumeLargeTip( volume ):
                 ( volumeAspirated, self.__dispenseList ) = self.__Aspirate_1(volume, self.__m_Aspiration1)
                 self.__nextDispenseID = 1
@@ -304,7 +304,7 @@ class TeslaPump(Subsystem):
         The volume dispensed at the tip is assumed to be the volume retruned by the previous aspiration call"""
 
         self.__VerifyReadinessForDispense()
-        print '\n###### Dispense !!!'
+        print('\n###### Dispense !!!')
         if self.__nextDispenseID == 1:
             self.__Dispense_1(self.__dispenseList, self.__m_Dispense1)
         elif self.__nextDispenseID == 2:
@@ -333,7 +333,7 @@ class TeslaPump(Subsystem):
             # (This is low level stuff)
             #
             volumePerStroke = self.__m_Pump.FullStrokeVolume()
-            print "volumePerStroke %d" % volumePerStroke
+            print("volumePerStroke %d" % volumePerStroke)
             
             for _ in range(0,self.__m_NbrPrimingStrokes):
                 self.SetValveToReservoir()
@@ -416,15 +416,15 @@ class TeslaPump(Subsystem):
         # Aspirate the air slug. NB: Another aspiration is expected, so no backlash correction is required
         self.__m_Pump.UseDefaultAspirationFlowRate()
 
-        if self.debug: print "self.__m_Pump.IncrementVolume( volume )"
+        if self.debug: print("self.__m_Pump.IncrementVolume( volume )")
         self.__m_Pump.IncrementVolume( volume )
 
-        if self.debug: print "self.SetValveToReservoir()"
+        if self.debug: print("self.SetValveToReservoir()")
         self.SetValveToReservoir()
         
-        if self.debug: print "self.__m_Pump.IncrementStep( self.__m_Pump.BacklashSteps() )"
+        if self.debug: print("self.__m_Pump.IncrementStep( self.__m_Pump.BacklashSteps() )")
         self.__m_Pump.IncrementStep( self.__m_Pump.BacklashSteps(), False, False )
-        if self.debug: print "self.__m_Pump.IncrementStep( - self.__m_Pump.BacklashSteps() )"
+        if self.debug: print("self.__m_Pump.IncrementStep( - self.__m_Pump.BacklashSteps() )")
         self.__m_Pump.IncrementStep( - self.__m_Pump.BacklashSteps(), False, False )
 
 
@@ -630,14 +630,14 @@ class TeslaPump(Subsystem):
         volumeBeingDisplaced = aspData.VolumeToDisplace (volume) # NB: Assume there is no aspiration ???
         nbrCycles = int (math.ceil(volumeBeingDisplaced / aspData.UsableVolume()))
         if prints == 1:
-            print "KC - TeslaPump.py, Aspiration 4 being used:" #KC: for debugging
-            print "nbrCycles = %d" %(nbrCycles) #KC: for debugging
-            print "volumeBeingDisplaced = %d" %(volumeBeingDisplaced) #KC: for debugging
-            print "aspData.UsableVolume() = %d" %(aspData.UsableVolume()) #KC: for debugging
+            print("KC - TeslaPump.py, Aspiration 4 being used:") #KC: for debugging
+            print("nbrCycles = %d" %(nbrCycles)) #KC: for debugging
+            print("volumeBeingDisplaced = %d" %(volumeBeingDisplaced)) #KC: for debugging
+            print("aspData.UsableVolume() = %d" %(aspData.UsableVolume())) #KC: for debugging
         
         volumePerCycle = volumeBeingDisplaced / nbrCycles
         volumeLeft = volumeBeingDisplaced
-        print 'Aspirate before While VolPerCycle: %d, VolLeft %d'%(volumePerCycle,volumeLeft)
+        print('Aspirate before While VolPerCycle: %d, VolLeft %d'%(volumePerCycle,volumeLeft))
         while volumeLeft > 0:
             # Initialise pump to 0 setting, accounting for backlash
             #
@@ -666,7 +666,7 @@ class TeslaPump(Subsystem):
             self.__m_Pump.IncrementVolume (volumePerCycle)
 
             dispenseList.insert (0, volumePerCycle)
-            print 'Aspirate before in while VolPerCycle: %d, VolLeft %d'%(volumePerCycle,volumeLeft)
+            print('Aspirate before in while VolPerCycle: %d, VolLeft %d'%(volumePerCycle,volumeLeft))
         # Prepare to dispense
         #
 
@@ -677,7 +677,7 @@ class TeslaPump(Subsystem):
         self.__m_Pump.IncrementVolume (-backlashVolume)
 
         self.SetValveToTip()
-        print '\nVolume in Tip = %f'% self.__m_Pump.Volume()        
+        print('\nVolume in Tip = %f'% self.__m_Pump.Volume())        
         return (volume, dispenseList)
 
     # ---------------------------------------------------------------------------
@@ -772,15 +772,15 @@ class TeslaPump(Subsystem):
         totalVolume = 0.0
         backlashVolume = dispData.BacklashVolume()
 
-        print '\nEnter Dispense 4\n backlashVolume - %d'%backlashVolume
-        print '-----------------------------------------------------------'
-        print '\n============ DispenseList============================='
-        print dispenseList
-        print '======================================================\n'
+        print('\nEnter Dispense 4\n backlashVolume - %d'%backlashVolume)
+        print('-----------------------------------------------------------')
+        print('\n============ DispenseList=============================')
+        print(dispenseList)
+        print('======================================================\n')
         # Dispense in reverse order to previous aspiration
         #
         for volumePerCycle in dispenseList:
-            print '\nVolume in Tip = %f'% self.__m_Pump.Volume()
+            print('\nVolume in Tip = %f'% self.__m_Pump.Volume())
             if self.__m_Pump.Volume() <= backlashVolume:
                 # Prior cycle has dispensed. Reset pump for next cycle
                 #                                

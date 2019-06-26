@@ -21,6 +21,10 @@
 import unittest
 
 import tesla.config
+
+tesla.config.UpdatePathes()
+tesla.config.GetConfigEnvironment()
+
 import tesla.logger
 
 from tesla.exception import TeslaException
@@ -48,36 +52,36 @@ class TestSchedulerBlock(unittest.TestCase):
         self.block = SchedulerBlock(self.open, self.used, self.free)
 
     def test_blockMembers(self):
-        self.failUnless(self.block.m_OpenPeriod == self.open, 'Testing m_OpenPeriod')
-        self.failUnless(self.block.m_UsedPeriod == self.used, 'Testing m_UsedPeriod')
-        self.failUnless(self.block.m_FreePeriod == self.free, 'Testing m_FreePeriod')
+        self.assertTrue(self.block.m_OpenPeriod == self.open, 'Testing m_OpenPeriod')
+        self.assertTrue(self.block.m_UsedPeriod == self.used, 'Testing m_UsedPeriod')
+        self.assertTrue(self.block.m_FreePeriod == self.free, 'Testing m_FreePeriod')
 
     def test_defaultStartTime(self):
-        self.failUnless(self.block.m_StartTime == 0, 'Testing m_StartTime')
+        self.assertTrue(self.block.m_StartTime == 0, 'Testing m_StartTime')
 
     def test_repr(self):
         s = self.block
-        self.failUnless(s, 'Testing SchedulerBlock.__repr__()')
+        self.assertTrue(s, 'Testing SchedulerBlock.__repr__()')
 
     def test_getPeriods(self):
         periods = self.block.getPeriods()
-        self.failUnless(periods == (self.open, self.used, self.free), 'Testing getPeriods()')
+        self.assertTrue(periods == (self.open, self.used, self.free), 'Testing getPeriods()')
 
     def test_getStartTime(self):
-        self.failUnless(self.block.getStartTime() == 0, 'Testing getStartTime() #1')
+        self.assertTrue(self.block.getStartTime() == 0, 'Testing getStartTime() #1')
         newStart = 1967
         self.block.m_StartTime = newStart
-        self.failUnless(self.block.getStartTime() == newStart, 'Testing getStartTime() #2')
+        self.assertTrue(self.block.getStartTime() == newStart, 'Testing getStartTime() #2')
 
     def test_setFreePeriod(self):
         freeTime = 2004
         self.block.setFreePeriod(freeTime)
-        self.failUnless(self.block.m_FreePeriod == freeTime, 'Testing setFreePeriod()')
+        self.assertTrue(self.block.m_FreePeriod == freeTime, 'Testing setFreePeriod()')
 
     def test_setOpenPeriod(self):
         openTime = 1066
         self.block.setOpenPeriod(openTime)
-        self.failUnless(self.block.m_OpenPeriod == openTime, 'Testing setOpenPeriod()')
+        self.assertTrue(self.block.m_OpenPeriod == openTime, 'Testing setOpenPeriod()')
 
 
 # -----------------------------------------------------------------------------
@@ -94,7 +98,7 @@ class SchedulerTestCase(unittest.TestCase):
     def getProtocol(self, index = 0):
         # Return a single protocol (the first one?) for testing purposes
         protocolList = self.pm.getProtocols()
-        self.failIf(len(protocolList) == 0, 'Ensuring we have protocols for testing')
+        self.assertFalse(len(protocolList) == 0, 'Ensuring we have protocols for testing')
         return protocolList[index]
 
     def createSampleList(self, numSamples, protocol, volume):
@@ -111,11 +115,11 @@ class TestScheduler(SchedulerTestCase):
 
     def test_initialDuration(self):
         # The duration for a newly constructed schedule should be zero
-        self.failUnless(self.sched.getDuration() == 0, 'Test initial duration')
+        self.assertTrue(self.sched.getDuration() == 0, 'Test initial duration')
 
     def test_initialSchedule(self):
         # The schedule for a newly constructed schedule should be None
-        self.failUnless(self.sched.getSchedule() == None, 'Test initial schedule')
+        self.assertTrue(self.sched.getSchedule() == None, 'Test initial schedule')
 
     def test_findSample(self):
         protocol = self.getProtocol()
@@ -134,13 +138,13 @@ class TestScheduler(SchedulerTestCase):
         sample = Sample(1, 'Test sample', protocol.ID, 5000, 1)
         self.sched.appendBlocks([sample,])
         blockList = self.sched.getBlockList(sample)
-        self.failUnless(type(blockList) == type([]), 'Testing block list type')
+        self.assertTrue(type(blockList) == type([]), 'Testing block list type')
 
         # This is the number of blocks we should have
         protocol = self.pm.getProtocol(sample.protocolID)
         cmdCount = len(protocol.getCommands())
-        self.failUnless(cmdCount > 0, 'Expected schedulable commands for this test')        
-        self.failUnless(len(blockList) == cmdCount, 'Number of blocks test')
+        self.assertTrue(cmdCount > 0, 'Expected schedulable commands for this test')        
+        self.assertTrue(len(blockList) == cmdCount, 'Number of blocks test')
 
     def test_schedule(self):
         # Schedule a single sample and then test the outcome
@@ -148,10 +152,10 @@ class TestScheduler(SchedulerTestCase):
         sample = Sample(42, 'Test sample', protocol.ID, 5000, 1)
         status = self.sched.schedule([sample,])
 
-        self.failUnless(status, 'Testing scheduling success')
-        self.failUnless(self.sched.getDuration() > 0, 'Test scheduled duration')        
-        self.failUnless(self.sched.getSchedule() != None, 'Test schedule')
-        self.failUnless(isinstance(self.sched.getSchedule(), Schedule), 'Test schedule instance')
+        self.assertTrue(status, 'Testing scheduling success')
+        self.assertTrue(self.sched.getDuration() > 0, 'Test scheduled duration')        
+        self.assertTrue(self.sched.getSchedule() != None, 'Test schedule')
+        self.assertTrue(isinstance(self.sched.getSchedule(), Schedule), 'Test schedule instance')
 
     def test_multiSampleSchedule(self):
         # Schedule a set of four samples and then test the outcome
@@ -159,10 +163,10 @@ class TestScheduler(SchedulerTestCase):
         numSamples = 3
         samples = self.createSampleList(numSamples, protocol, 1000)
         status = self.sched.schedule(samples)
-        self.failUnless(status, 'Testing scheduling success')
-        self.failUnless(self.sched.getDuration() > 0, 'Test scheduled duration')        
-        self.failUnless(self.sched.getSchedule() != None, 'Test schedule')
-        self.failUnless(isinstance(self.sched.getSchedule(), Schedule), 'Test schedule instance')
+        self.assertTrue(status, 'Testing scheduling success')
+        self.assertTrue(self.sched.getDuration() > 0, 'Test scheduled duration')        
+        self.assertTrue(self.sched.getSchedule() != None, 'Test schedule')
+        self.assertTrue(isinstance(self.sched.getSchedule(), Schedule), 'Test schedule instance')
 
     def test_tooManySamples(self):
         # Try to induce the scheduler to fail by scheduling more samples than
@@ -192,7 +196,7 @@ class TestScheduler(SchedulerTestCase):
         status = self.sched.schedule(sampleSet2)
         status = self.sched.schedule(sampleSet1)
         secondDuration = self.sched.getDuration()
-        self.failUnless(firstDuration == secondDuration, 'Testing repeated scheduling durations')           
+        self.assertTrue(firstDuration == secondDuration, 'Testing repeated scheduling durations')           
 
     def test_reset(self):
         # Set up a schedule, reset it and make sure our values have reset
@@ -200,13 +204,13 @@ class TestScheduler(SchedulerTestCase):
         sample = Sample(67, 'Another sample', protocol.ID, 750, 2)
         status = self.sched.schedule([sample,])
 
-        self.failUnless(status, 'Testing scheduling success before reset')
-        self.failUnless(self.sched.getDuration() > 0, 'Test scheduled duration')        
-        self.failUnless(self.sched.getSchedule() != None, 'Test schedule')
+        self.assertTrue(status, 'Testing scheduling success before reset')
+        self.assertTrue(self.sched.getDuration() > 0, 'Test scheduled duration')        
+        self.assertTrue(self.sched.getSchedule() != None, 'Test schedule')
         
         self.sched.reset()
-        self.failUnless(self.sched.getDuration() == 0, 'Test reset duration')        
-        self.failUnless(self.sched.getSchedule() == None, 'Test reset schedule')
+        self.assertTrue(self.sched.getDuration() == 0, 'Test reset duration')        
+        self.assertTrue(self.sched.getSchedule() == None, 'Test reset schedule')
 
     def test_getCommandDuration(self):
         cmdTypeList = Command.LEGAL_COMMANDS
@@ -216,7 +220,7 @@ class TestScheduler(SchedulerTestCase):
                 self.assertRaises(SchedulerException, self.sched.getCommandTimes, cmd)
             else:
                 open, used, free = self.sched.getCommandTimes(cmd)
-                self.failUnless(open + used + free > 0, "Testing %s duration" % (cmdType))
+                self.assertTrue(open + used + free > 0, "Testing %s duration" % (cmdType))
 
     def test_getCommandTypeTime(self):
         cmdTypeList = Command.LEGAL_COMMANDS
@@ -226,7 +230,7 @@ class TestScheduler(SchedulerTestCase):
                 self.assertRaises(SchedulerException, self.sched.getCommandTypeTimes, cmdType)
             else:
                 timeInfo = self.sched.getCommandTypeTimes(cmdType)
-                self.failUnless(len(timeInfo) == 3, "Testing time info for %s" % (cmdType))
+                self.assertTrue(len(timeInfo) == 3, "Testing time info for %s" % (cmdType))
 
     def test_badCommandTypeTime(self):
         # We should have a Scheduler exception raised for commands that aren't in 
@@ -254,26 +258,26 @@ class TestSchedulerDuration(SchedulerTestCase):
   
     def test_protocol(self):
         # Make sure we have a protocol to work with
-        self.failIf(self.protocol == [], 'Ensuring we have a protocol to test with')
+        self.assertFalse(self.protocol == [], 'Ensuring we have a protocol to test with')
 
     def test_scheduling(self):
         for numSamples, expectedDuration in ((1, 1462), (2, 2144), (3, 2991),):
             sampleList = self.createSampleList(numSamples)
             status = self.sched.schedule(sampleList)
-            self.failUnless(status)
+            self.assertTrue(status)
             duration = self.sched.getDuration()
             return
-            self.failUnless(duration == expectedDuration, \
+            self.assertTrue(duration == expectedDuration, \
                     "Testing scheduler duration, expected %d, got %d" % (expectedDuration, duration))
 
     def test_padding(self):
         sampleList = self.createSampleList(1)
         status = self.sched.schedule(sampleList)
-        self.failUnless(status)
+        self.assertTrue(status)
         padding = 123
         duration1 = self.sched.getDuration()
         duration2 = self.sched.getDuration(padding)
-        self.failUnless(duration1 + padding == duration2, 'Testing duration padding')
+        self.assertTrue(duration1 + padding == duration2, 'Testing duration padding')
 
 
 # -----------------------------------------------------------------------------
@@ -284,41 +288,45 @@ class TestSchedulerThroughput(SchedulerTestCase):
         testProtocol = self.getProtocol(1)
         samples = self.createSampleList(1, testProtocol, 5000)
         status = self.sched.schedule(samples)
-        self.failUnless(status, 'Testing scheduling success for throughput')
-        self.failUnless(self.sched.getDuration() > 0, 'Test scheduled duration')        
-        self.failUnless(self.sched.getSchedule() != None, 'Test schedule')
+        self.assertTrue(status, 'Testing scheduling success for throughput')
+        self.assertTrue(self.sched.getDuration() > 0, 'Test scheduled duration')        
+        self.assertTrue(self.sched.getSchedule() != None, 'Test schedule')
 
     def generateTestForProtocol(self, protocolPattern, numSamples = 1):
         protocol = self.pm.findProtocolsByRegexp(protocolPattern)[0]
         samples = self.createSampleList(numSamples, protocol, 1250)
         status = self.sched.schedule(samples)
         # self.sched.dumpBlocks()                # Some debugging assistance
-        self.failUnless(status, "Testing scheduling success (%s)" % (protocolPattern))
-        self.failUnless(self.sched.getDuration() > 0, "Test scheduled duration (%s)" % (protocolPattern))
-        self.failUnless(self.sched.getSchedule() != None, "Test schedule (%s)" % (protocolPattern))
+        self.assertTrue(status, "Testing scheduling success (%s)" % (protocolPattern))
+        self.assertTrue(self.sched.getDuration() > 0, "Test scheduled duration (%s)" % (protocolPattern))
+        self.assertTrue(self.sched.getSchedule() != None, "Test schedule (%s)" % (protocolPattern))
         
     def test_withoutWaitCommands(self):
         # Test scheduling multiple samples using a protocol that doesn't
         # contain any Wait commands (Incubate or Separate)
         # In theory, this should happily schedule for 1 - 4 samples
-        self.generateTestForProtocol('Shutdown', 4)
+        self.generateTestForProtocol('Basic shutdown protocol', 4)
+        #self.generateTestForProtocol('Shutdown', 4)
         
     def test_fewCommands(self):
         # Test scheduling multiple samples using a protocol that doesn't
         # have many commands in it
         # In theory, this should happily schedule for 1 - 4 samples
-        self.generateTestForProtocol('Prime', 4)
+        self.generateTestForProtocol('Basic prime', 4)
+        #self.generateTestForProtocol('Prime', 4)
 
     def test_singleCommandProtocol(self):
         # We have a protocol with a single command in it. If we can't
         # schedule multiple samples with this protocols, we have REAL
         # problems! :)
-        self.generateTestForProtocol('Home all axes', 4)
+        self.generateTestForProtocol('Home all',4) # axes', 4)
         
 
 # -----------------------------------------------------------------------------
  
 if __name__ == '__main__':
+    tesla.config.UpdatePathes()
+    tesla.config.GetConfigEnvironment()
     unittest.main()
 
 # eof

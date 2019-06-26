@@ -19,7 +19,7 @@
 # the program(s) have been supplied.
 # 
 
-from Component import Component
+from .Component import Component
 
 # -----------------------------------------------------------------------------
 

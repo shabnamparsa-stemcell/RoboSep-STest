@@ -123,7 +123,7 @@ class Future:
             self._Future__exception = inst
 
         self._Future__done = True
-        self._Future__status = `self._Future__result`
+        self._Future__status = repr(self._Future__result)
         self._Future__C.notify()
         self._Future__C.release()
 
@@ -137,25 +137,25 @@ if __name__ == '__main__':
 
     delay = 2
     A = Future(waitAwhile, delay)
-    print 'Is our %d delay finished? %s' % (delay, A.isDone())
-    print "Now let's wait until we know it is definitely finished..."
+    print('Is our %d delay finished? %s' % (delay, A.isDone()))
+    print("Now let's wait until we know it is definitely finished...")
     time.sleep(delay * 2)
-    print 'Is our %d delay finished? %s' % (delay, A.isDone())
-    print 'And the result is:', A()
-    print "Now let's try that again for a 30 second delay..."
+    print('Is our %d delay finished? %s' % (delay, A.isDone()))
+    print('And the result is:', A())
+    print("Now let's try that again for a 30 second delay...")
     delay = 30
     aBigNumber = 123456789
     B = Future(waitAwhile, delay)
-    print 'We are off sleeping in a thread for %d seconds' % delay
-    print 'We could spend this time doing all sorts of other things.'
-    print "Let's loop from 1 to %d" % aBigNumber
+    print('We are off sleeping in a thread for %d seconds' % delay)
+    print('We could spend this time doing all sorts of other things.')
+    print("Let's loop from 1 to %d" % aBigNumber)
     j = 0
-    for i in xrange(0, aBigNumber):
+    for i in range(0, aBigNumber):
         j += i
         if B.isDone():
-            print 'We counted up to i = %d before our thread completed' % i
+            print('We counted up to i = %d before our thread completed' % i)
             break
             continue
     
-    print 'And the result is:', B()
+    print('And the result is:', B())
 

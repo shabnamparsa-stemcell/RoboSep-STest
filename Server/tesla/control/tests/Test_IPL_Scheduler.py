@@ -37,13 +37,13 @@ class Test_IPLScheduler(unittest.TestCase):
             block.m_UsedPeriod = 71 
             block.m_FreePeriod = 0
             index = self.sched.AppendBlock(batchID, block)
-            self.failUnless(index >= 0, 'Ensuring valid index')                
+            self.assertTrue(index >= 0, 'Ensuring valid index')                
     
     def test_blocks(self):
         numBatches = 4
         self.createBatches(numBatches)
         calcFlag = self.sched.CalculateTimes()
-        self.failUnless(calcFlag, 'Testing scheduling success')
+        self.assertTrue(calcFlag, 'Testing scheduling success')
         
         for batchID in range(1, numBatches + 1):
             index = itertools.count(0)
@@ -52,17 +52,17 @@ class Test_IPLScheduler(unittest.TestCase):
                 block.m_OpenPeriod = 0
                 block.m_UsedPeriod = 0
                 block.m_FreePeriod = 0
-                getFlag = self.sched.GetBlock(batchID, index.next(), block)
+                getFlag = self.sched.GetBlock(batchID, next(index), block)
                 if not getFlag: break
 
-                print "%d: %d %d %d" % (batchID, block.m_OpenPeriod, 
-                        block.m_UsedPeriod, block.m_FreePeriod)
+                print("%d: %d %d %d" % (batchID, block.m_OpenPeriod, 
+                        block.m_UsedPeriod, block.m_FreePeriod))
     
     def test_badSchedule(self):
         numBatches = 7 
         self.createBatches(numBatches)
         calcFlag = self.sched.CalculateTimes()
-        self.failIf(calcFlag, 'Testing scheduling failure')
+        self.assertFalse(calcFlag, 'Testing scheduling failure')
         
 
 # -----------------------------------------------------------------------------

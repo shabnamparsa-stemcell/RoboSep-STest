@@ -13,27 +13,27 @@ class TestSimpleStep(unittest.TestCase):
         self.card = SimpleStep('D1', port=self.port, useEmulator=True)
 
     def test_parseAddress(self):
-        self.failUnless(self.card.board == 'D', 'Board parsed')
-        self.failUnless(self.card.address == 1, 'Address parsed')
+        self.assertTrue(self.card.board == 'D', 'Board parsed')
+        self.assertTrue(self.card.address == 1, 'Address parsed')
 
     def test_PollUntilReady(self):
         packet = self.card.pollUntilReady()
-        self.failUnless(packet == '>', 'Poll until ready')
+        self.assertTrue(packet == '>', 'Poll until ready')
 
     def test_isMotorCommand(self):
-        self.failUnless(self.card.isMotorCommand('M'), 'M is motor command')
-        self.failUnless(self.card.isMotorCommand('R'), 'R is motor command')
-        self.failIf(self.card.isMotorCommand('z'), 'z is not a motor command')
+        self.assertTrue(self.card.isMotorCommand('M'), 'M is motor command')
+        self.assertTrue(self.card.isMotorCommand('R'), 'R is motor command')
+        self.assertFalse(self.card.isMotorCommand('z'), 'z is not a motor command')
 
     def test_getStatus(self):
         status = self.card.getStatus()
-        self.failUnless(status == '>', 'getStatus()')
+        self.assertTrue(status == '>', 'getStatus()')
 
     def test_isPresent(self):
-        self.failUnless(self.card.isPresent(), 'isPresent()')
+        self.assertTrue(self.card.isPresent(), 'isPresent()')
 
     def test_getPort(self):
-        self.failUnless(self.card.getPort() == self.port, 'getPort()')
+        self.assertTrue(self.card.getPort() == self.port, 'getPort()')
 
     def test_getBoardInfo(self):
         pass

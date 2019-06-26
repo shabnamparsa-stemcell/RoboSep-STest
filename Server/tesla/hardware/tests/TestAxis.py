@@ -32,10 +32,10 @@ class TestDevice(unittest.TestCase):
         self.axis = Axis(BOARD_ADDRESS, emulation = True)
 
     def test_name(self):
-        self.failUnless(self.axis.name, 'Name is defined')
+        self.assertTrue(self.axis.name, 'Name is defined')
 
     def test_address(self):
-        self.failUnless(self.axis.boardAddress == BOARD_ADDRESS, 'Board address')
+        self.assertTrue(self.axis.boardAddress == BOARD_ADDRESS, 'Board address')
 
 unittest.main()
 

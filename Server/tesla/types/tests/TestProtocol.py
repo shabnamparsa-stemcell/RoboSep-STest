@@ -53,8 +53,8 @@ class TestProtocol(unittest.TestCase):
         self.p = Protocol(fileName = self.fileName)
 
     def test_file(self):
-        self.failUnless(self.p, 'Testing file existence and Protocol instance creation')
-        self.failUnless(self.fileName == self.p.sourceFile, 'Testing filename')
+        self.assertTrue(self.p, 'Testing file existence and Protocol instance creation')
+        self.assertTrue(self.fileName == self.p.sourceFile, 'Testing filename')
 
     def test_nonExistentFile(self):
         # This XML file should not exist and we should catch an exception
@@ -62,11 +62,11 @@ class TestProtocol(unittest.TestCase):
         self.assertRaises(ProtocolException, Protocol, absentFile)
 
     def test_ID(self):
-        self.failUnless(self.p.ID)
-        self.failUnless(type(self.p.ID) == int, 'Testing ID type (should be int)')
+        self.assertTrue(self.p.ID)
+        self.assertTrue(type(self.p.ID) == int, 'Testing ID type (should be int)')
 
     def test_type(self):
-        self.failUnless(self.p.type == 'Maintenance', 'Testing type of protocol')
+        self.assertTrue(self.p.type == 'Maintenance', 'Testing type of protocol')
 
     def test_parseHeaderNode(self):
         label = 'My header test protocol'
@@ -84,11 +84,11 @@ class TestProtocol(unittest.TestCase):
         
         headerNode = xmlFromString(headerData)
         self.p.parseHeaderNode(headerNode)
-        self.failUnless(self.p.label == label, 'Testing label field')
-        self.failUnless(self.p.version == version, 'Testing version field')
-        self.failUnless(self.p.created == created, 'Testing created field')
-        self.failUnless(self.p.modified == modified, 'Testing modified field')
-        self.failUnless(self.p.author == author, 'Testing author field')
+        self.assertTrue(self.p.label == label, 'Testing label field')
+        self.assertTrue(self.p.version == version, 'Testing version field')
+        self.assertTrue(self.p.created == created, 'Testing created field')
+        self.assertTrue(self.p.modified == modified, 'Testing modified field')
+        self.assertTrue(self.p.author == author, 'Testing author field')
        
 
     def createHeaderString(self, label):
@@ -111,11 +111,11 @@ class TestProtocol(unittest.TestCase):
         headerData = self.createHeaderString(label)
         headerNode = xmlFromString(headerData)
         self.p.parseHeaderNode(headerNode)
-        self.failUnless(self.p.label == label, 'Testing label field')
-        self.failUnless(self.p.version, 'Testing version field')
-        self.failUnless(self.p.created, 'Testing created field')
-        self.failUnless(self.p.modified, 'Testing modified field')
-        self.failUnless(self.p.author, 'Testing author field')       
+        self.assertTrue(self.p.label == label, 'Testing label field')
+        self.assertTrue(self.p.version, 'Testing version field')
+        self.assertTrue(self.p.created, 'Testing created field')
+        self.assertTrue(self.p.modified, 'Testing modified field')
+        self.assertTrue(self.p.author, 'Testing author field')       
 
 
     def test_labelsWithSpaces(self):
@@ -125,7 +125,7 @@ class TestProtocol(unittest.TestCase):
             headerData = self.createHeaderString(label)
             headerNode = xmlFromString(headerData)
             self.p.parseHeaderNode(headerNode)
-            self.failUnless(self.p.label == realLabel, 'Testing trimmed label field')            
+            self.assertTrue(self.p.label == realLabel, 'Testing trimmed label field')            
     
 
     def test_parseConstraintsNode_SeparationConstraints(self):
@@ -145,12 +145,12 @@ class TestProtocol(unittest.TestCase):
         
         node = xmlFromString(data)
         self.p.parseConstraintsNode(node)
-        self.failUnless(self.p.numQuadrants == quads, 'Testing number of quadrants')
-        self.failUnless(self.p.minVol == minVol, 'Testing min sample volume')
-        self.failUnless(self.p.maxVol == maxVol, 'Testing max sample volume')
-        self.failUnless(self.p.sampleThreshold == threshold, 'Testing sample threshold')
-        self.failUnless(self.p.lowWorkingVolume == lowVol, 'Testing low working volume')
-        self.failUnless(self.p.highWorkingVolume == highVol, 'Testing high working volume')        
+        self.assertTrue(self.p.numQuadrants == quads, 'Testing number of quadrants')
+        self.assertTrue(self.p.minVol == minVol, 'Testing min sample volume')
+        self.assertTrue(self.p.maxVol == maxVol, 'Testing max sample volume')
+        self.assertTrue(self.p.sampleThreshold == threshold, 'Testing sample threshold')
+        self.assertTrue(self.p.lowWorkingVolume == lowVol, 'Testing low working volume')
+        self.assertTrue(self.p.highWorkingVolume == highVol, 'Testing high working volume')        
 
     def test_parseConstraintsNode_MaintenanceConstraints(self):
         quads = 0
@@ -162,13 +162,13 @@ class TestProtocol(unittest.TestCase):
         """ % (quads)
         node = xmlFromString(data)
         self.p.parseConstraintsNode(node)
-        self.failUnless(self.p.numQuadrants == quads, 'Testing number of quadrants')
+        self.assertTrue(self.p.numQuadrants == quads, 'Testing number of quadrants')
         # All these should reset to zero
-        self.failUnless(self.p.minVol == 0, 'Testing min sample volume')
-        self.failUnless(self.p.maxVol == 0, 'Testing max sample volume')
-        self.failUnless(self.p.sampleThreshold == 0, 'Testing sample threshold')
-        self.failUnless(self.p.lowWorkingVolume == 0, 'Testing low working volume')
-        self.failUnless(self.p.highWorkingVolume == 0, 'Testing high working volume')        
+        self.assertTrue(self.p.minVol == 0, 'Testing min sample volume')
+        self.assertTrue(self.p.maxVol == 0, 'Testing max sample volume')
+        self.assertTrue(self.p.sampleThreshold == 0, 'Testing sample threshold')
+        self.assertTrue(self.p.lowWorkingVolume == 0, 'Testing low working volume')
+        self.assertTrue(self.p.highWorkingVolume == 0, 'Testing high working volume')        
         
 
     def test_parseConstraintsNode_SwappedMinMaxVolumes(self):
@@ -184,8 +184,8 @@ class TestProtocol(unittest.TestCase):
         
         node = xmlFromString(data)
         self.p.parseConstraintsNode(node)
-        self.failUnless(self.p.minVol == maxVol, 'Testing swapped min sample volume')
-        self.failUnless(self.p.maxVol == minVol, 'Testing swapped max sample volume')
+        self.assertTrue(self.p.minVol == maxVol, 'Testing swapped min sample volume')
+        self.assertTrue(self.p.maxVol == minVol, 'Testing swapped max sample volume')
 
 
     def test_parseConstraintsNode_SwappedWorkingVolumes(self):
@@ -201,8 +201,8 @@ class TestProtocol(unittest.TestCase):
         
         node = xmlFromString(data)
         self.p.parseConstraintsNode(node)
-        self.failUnless(self.p.lowWorkingVolume == highVol, 'Testing swapped low working volume')
-        self.failUnless(self.p.highWorkingVolume == lowVol, 'Testing swapped high working volume')
+        self.assertTrue(self.p.lowWorkingVolume == highVol, 'Testing swapped low working volume')
+        self.assertTrue(self.p.highWorkingVolume == lowVol, 'Testing swapped high working volume')
 
 
     def test_parseConstraintsNode_InvalidLowVolume(self):
@@ -219,9 +219,9 @@ class TestProtocol(unittest.TestCase):
         
         node = xmlFromString(data)
         self.p.parseConstraintsNode(node)
-        self.failUnless(self.p.sampleThreshold == lowVol , 'Testing new sample threshold')
-        self.failUnless(self.p.lowWorkingVolume == lowVol, 'Testing low working volume')
-        self.failUnless(self.p.highWorkingVolume == highVol, 'Testing high working volume')
+        self.assertTrue(self.p.sampleThreshold == lowVol , 'Testing new sample threshold')
+        self.assertTrue(self.p.lowWorkingVolume == lowVol, 'Testing low working volume')
+        self.assertTrue(self.p.highWorkingVolume == highVol, 'Testing high working volume')
 
 
     def test_parseConstraintsNode_InvalidMaxVolume(self):
@@ -239,7 +239,7 @@ class TestProtocol(unittest.TestCase):
         
         node = xmlFromString(data)
         self.p.parseConstraintsNode(node)
-        self.failUnless(self.p.maxVol == highVol, 'Testing new max volume')
+        self.assertTrue(self.p.maxVol == highVol, 'Testing new max volume')
 
 
     def test_parseConstraintsNode_BadQuadrants(self):
@@ -258,17 +258,17 @@ class TestProtocol(unittest.TestCase):
         cmds1 = self.p.getCommands()
         cmds2 = self.p.getCommands()
 
-        self.failUnless(len(cmds1) > 1)
-        self.failUnless(len(cmds1) == len(cmds2))
+        self.assertTrue(len(cmds1) > 1)
+        self.assertTrue(len(cmds1) == len(cmds2))
         cmds2.pop()
-        self.failUnless(len(cmds1) == len(cmds2) + 1, 'Testing decoupled lists')
+        self.assertTrue(len(cmds1) == len(cmds2) + 1, 'Testing decoupled lists')
 
 
     def test_command(self):
         for i in [1, 2]:
             # Expect two commands
             cmd = self.p.getCommand(i)
-            self.failUnless(isinstance(cmd, Command), 'Testing Command instance')
+            self.assertTrue(isinstance(cmd, Command), 'Testing Command instance')
         # Shouldn't be able to get commands outside of the first two
         self.assertRaises(ProtocolException, self.p.getCommand, 0)
         self.assertRaises(ProtocolException, self.p.getCommand, 99)
@@ -277,39 +277,39 @@ class TestProtocol(unittest.TestCase):
     def test_types(self):
         # Check the type of key members
         intType = type(1)
-        self.failUnless(type(self.p.numQuadrants) == intType)
-        self.failUnless(type(self.p.minVol) == intType)
-        self.failUnless(type(self.p.maxVol) == intType)
-        self.failUnless(type(self.p.sampleThreshold) == intType)
-        self.failUnless(type(self.p.lowWorkingVolume) == intType)
-        self.failUnless(type(self.p.highWorkingVolume) == intType)
+        self.assertTrue(type(self.p.numQuadrants) == intType)
+        self.assertTrue(type(self.p.minVol) == intType)
+        self.assertTrue(type(self.p.maxVol) == intType)
+        self.assertTrue(type(self.p.sampleThreshold) == intType)
+        self.assertTrue(type(self.p.lowWorkingVolume) == intType)
+        self.assertTrue(type(self.p.highWorkingVolume) == intType)
 
-        self.failUnless(isinstance(self.p.cmds, list), 'Testing commands class')
+        self.assertTrue(isinstance(self.p.cmds, list), 'Testing commands class')
 
 
     def test_getVolumes(self):
         baseName = 'test_OneLiner.xml'        
         fileName = os.path.join(tesla.config.PROTOCOL_DIR, baseName)
         pro = Protocol(fileName)
-        self.failUnless(pro)
+        self.assertTrue(pro)
           
         volume = 1000
         vols = pro.getVolumes(volume)
-        self.failUnless(type(vols) == list)
-        self.failUnless(len(vols) == pro.numQuadrants, 'Expect just one quadrant of consumables')
+        self.assertTrue(type(vols) == list)
+        self.assertTrue(len(vols) == pro.numQuadrants, 'Expect just one quadrant of consumables')
         pcs = vols[0]
 
-        self.failUnless(isinstance(pcs, ProtocolConsumable))
-        self.failUnless(pcs.quadrant == 1, 'Expect to be in the first quadrant')
+        self.assertTrue(isinstance(pcs, ProtocolConsumable))
+        self.assertTrue(pcs.quadrant == 1, 'Expect to be in the first quadrant')
 
-        self.failUnless(pcs.tipBoxRequired, 'We need a tip box')
-        self.failUnless(pcs.sampleVesselRequired, 'We need a sample vessel')
-        self.failIf(pcs.separationVesselRequired, "We don't need a separation vessel")
-        self.failUnless(pcs.cocktailVolume > 0, 'We need cocktail')
-        self.failUnless(pcs.bulkBufferVolume == NOT_NEEDED, "We don't need BCCM")
-        self.failUnless(pcs.particleVolume == NOT_NEEDED, "We don't need particles")
-        self.failUnless(pcs.antibodyVolume == NOT_NEEDED, "We don't need antibody")
-        self.failUnless(pcs.lysisVolume == NOT_NEEDED, "We don't need lysis")
+        self.assertTrue(pcs.tipBoxRequired, 'We need a tip box')
+        self.assertTrue(pcs.sampleVesselRequired, 'We need a sample vessel')
+        self.assertFalse(pcs.separationVesselRequired, "We don't need a separation vessel")
+        self.assertTrue(pcs.cocktailVolume > 0, 'We need cocktail')
+        self.assertTrue(pcs.bulkBufferVolume == NOT_NEEDED, "We don't need BCCM")
+        self.assertTrue(pcs.particleVolume == NOT_NEEDED, "We don't need particles")
+        self.assertTrue(pcs.antibodyVolume == NOT_NEEDED, "We don't need antibody")
+        self.assertTrue(pcs.lysisVolume == NOT_NEEDED, "We don't need lysis")
 
 
     def test_getVolumes2(self):
@@ -346,20 +346,20 @@ class TestProtocol(unittest.TestCase):
         baseName = 'test_protocol.xml'
         fileName = os.path.join(tesla.config.PROTOCOL_DIR, baseName)
         pro = Protocol(fileName)
-        self.failUnless(pro)
+        self.assertTrue(pro)
 
         sample = Sample(42, 'Test sample', pro.ID, 1250, 1)
-        self.failUnless(sample, 'Testing sample creation')
+        self.assertTrue(sample, 'Testing sample creation')
 
         cmds = pro.getCommands()
-        self.failUnless(len(cmds) == pro.numCmds, 'Testing number of commands')
+        self.assertTrue(len(cmds) == pro.numCmds, 'Testing number of commands')
 
         expectedSeq = 1
         for cmd in cmds:
-            self.failUnless(cmd.isLegal(), "Testing that %s command is legal" % (cmd))
-            self.failUnless(cmd.label)
-            self.failUnless(type(cmd.seq) == int, 'Testing sequence number type')
-            self.failUnless(cmd.seq == expectedSeq)
+            self.assertTrue(cmd.isLegal(), "Testing that %s command is legal" % (cmd))
+            self.assertTrue(cmd.label)
+            self.assertTrue(type(cmd.seq) == int, 'Testing sequence number type')
+            self.assertTrue(cmd.seq == expectedSeq)
             expectedSeq += 1
 
             if cmd.isMixType():
@@ -367,31 +367,31 @@ class TestProtocol(unittest.TestCase):
                 
             elif cmd.isServiceType():
                 if isinstance(cmd, DemoCommand):
-                    self.failUnless(type(cmd.iterations) == int)
-                    self.failUnless(cmd.iterations > 0)
+                    self.assertTrue(type(cmd.iterations) == int)
+                    self.assertTrue(cmd.iterations > 0)
                     
             elif cmd.isTransportType():
-                self.failUnless(cmd.freeAirDispense in [True, False])
-                self.failUnless(cmd.useBufferTip in [True, False])
-                self.failUnless(cmd.srcVial != None)
-                self.failUnless(cmd.destVial != None)
+                self.assertTrue(cmd.freeAirDispense in [True, False])
+                self.assertTrue(cmd.useBufferTip in [True, False])
+                self.assertTrue(cmd.srcVial != None)
+                self.assertTrue(cmd.destVial != None)
                 if cmd.relative:
-                    self.failUnless(cmd.proportion > 0.0)
+                    self.assertTrue(cmd.proportion > 0.0)
                 else:
-                    self.failUnless(cmd.absVolume >= 0)
+                    self.assertTrue(cmd.absVolume >= 0)
                 
             elif cmd.isVolumeType():
-                self.failUnless(cmd.srcVial != None)
-                self.failUnless(cmd.destVial != None)
+                self.assertTrue(cmd.srcVial != None)
+                self.assertTrue(cmd.destVial != None)
                 
             elif cmd.isWaitType():
-                self.failUnless(cmd.minPeriod >= 0)
+                self.assertTrue(cmd.minPeriod >= 0)
                 
             else:
                 self.fail("%s is an unknown command type" % (cmd))
             
             call = cmd.createCall(sample, pro)
-            self.failUnless(cmd)
+            self.assertTrue(cmd)
             #  Note -- should put more testing in here...
  
 

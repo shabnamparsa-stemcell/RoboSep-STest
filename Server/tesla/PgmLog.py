@@ -41,7 +41,7 @@ import logging
 import logging.handlers
 import tesla.config
 from tesla.exception import TeslaException
-from ConfigParser import *
+from configparser import *
 from tesla.DebuggerWindow import *     # 2011-11-24 sp -- program logging
 
 
@@ -139,8 +139,8 @@ class pgmLogMessageHandler(logging.Handler):
             fileHandler = logging.FileHandler( filename=fileName, mode=fileMode )
             fileHandler.setLevel( self.logLevel )
             fileHandler.setFormatter( logging.Formatter( '%(message)s' ) )
-            print( "Created log file: %s." % fileName )
-        except IOError, msg:
+            print(( "Created log file: %s." % fileName ))
+        except IOError as msg:
             # Problem creating or opening the file?
             # set log level above critical such that no logging is performed
             # resets file counter
@@ -148,10 +148,10 @@ class pgmLogMessageHandler(logging.Handler):
             self.logLevel = PgmLog.NOLOG
             fileHandler = logging.StreamHandler()       # defaults handler to standard output
             print( '************************************' )
-            print( '*** PgmLogException: %s' % msg )
+            print(( '*** PgmLogException: %s' % msg ))
             print( '*** No logging to specified file!' )
             print( '************************************' )
-            print
+            print()
         # initializes the log file with header and other info
         self.initLogFile(fileHandler)
 
@@ -231,7 +231,7 @@ class PgmLog:
 
         if( self.logName != '' ):
             self.logger = logging.getLogger( self.logName )
-            if( self.logger != '' ):
+            if( self.logger != '' and hasattr(self.logger, 'sysLogID')):
                 self.sysLogID = self.logger.sysLogID
         pass
 
@@ -311,11 +311,11 @@ class PgmLog:
                 self.configLogID = self.VERBOSE
                 self.configLog = self.formatMessage( self.VERBOSE, 'Vbs', self.logPrefix, __name__ + '.getLogConfigurations',
                     'Using log configuration=%s | version=%s' % (configFile, cfg.get( 'log_properties', 'version' ) ) )
-            except Exception, msg:
+            except Exception as msg:
                 self.configLogID = self.WARNING
                 self.configLog = self.formatMessage( self.WARNING, 'Warn', self.logPrefix, __name__ + '.getLogConfigurations',
                     'Error reading from configuration file [%s]...Default settings used: %s' % (configFile, msg))
-            print( self.configLog )
+            print(( self.configLog ))
         else:
             self.configLogID = self.WARNING
             self.configLog = self.formatMessage( self.WARNING, 'Warn', self.logPrefix, __name__ + '.getLogConfigurations',
@@ -339,10 +339,10 @@ class PgmLog:
         formattedMessage = ( '%s\t%s\t%s\t%s\t%s|%s' % ( getTimeStamp(), self.sysLogID,
                     logClass, description, deviceName, functionReference ) )
         if( self.logger != '' ):
-            if( self.logger.printLogLevel <= msgLevel ):
-                print( 'LOG: %s' % formattedMessage )
+            if( hasattr(self.logger, 'printLogLevel') and self.logger.printLogLevel <= msgLevel ):
+                print(( 'LOG: %s' % formattedMessage ))
             if( tesla.config.SS_DEBUGGER_LOG == 1 ):
-                if( self.logger.debuggerLogLevel <= msgLevel ):
+                if( hasattr(self.logger, 'debuggerLogLevel') and self.logger.debuggerLogLevel <= msgLevel ):
                     ssLogDebugger = tesla.DebuggerWindow.GetSSTracerInstance()
                     ssLogDebugger.logMessage( msgLevel, formattedMessage)
         return( formattedMessage )

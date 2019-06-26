@@ -113,7 +113,7 @@ class Dispatcher(object):
         self.numberOfTransportsPerFlush = 1000
         
         self.pager = PagerSystem()
-        print self.pager.getInfo()
+        print(self.pager.getInfo())
 
 
     def __onPausedHandler( self, event ):
@@ -143,7 +143,7 @@ class Dispatcher(object):
             errorCode = 'TSC3003' 
             errorMsg = "Pause Command"
             errorMsg2 = self.instrument.getPauseCommandCaption()
-            print "__preExecuteHandler", errorMsg
+            print("__preExecuteHandler", errorMsg)
             self.svrLog.logDebug('', self.logPrefix, funcReference, "%s [%s: %s]" % (errorCode, errorMsg, errorMsg2))   # 2011-11-28 sp -- added logging
             self.pager.page(errorMsg2)
             self.reportStatus(errorMsg, errorCode, errorMsg2)
@@ -151,7 +151,7 @@ class Dispatcher(object):
         elif not self.instrument.isLidClosed():
             errorCode = 'TSC3003' 
             errorMsg = "Lid must be closed"
-            print "__preExecuteHandler", errorMsg
+            print("__preExecuteHandler", errorMsg)
             self.svrLog.logDebug('', self.logPrefix, funcReference, "%s [%s: 'Please close the lid.']" % (errorCode, errorMsg))   # 2011-11-28 sp -- added logging
             self.pager.page('Please close the lid.')
             self.reportStatus(errorMsg, errorCode)
@@ -225,7 +225,7 @@ class Dispatcher(object):
 
             errorHappened = False        # Got to here? Then no error :)
 
-        except AxisError, msg:          # Caught a low-level axis error
+        except AxisError as msg:          # Caught a low-level axis error
             # It's not good if this happens; usually means that a stepper card
             # has failed badly
             errorMsg = str(msg)
@@ -242,11 +242,11 @@ class Dispatcher(object):
                 CamMgr.SetProcError();                        #CWJ Add
                 self.instrument.TurnONBeacon(2);              #CWJ Add
 
-        except (InstrumentError, TeslaException), msg:        
+        except (InstrumentError, TeslaException) as msg:        
                 # Caught an instrument error or some other Tesla exception?
             errorMsg = str(msg)
             self.svrLog.logError('', self.logPrefix, funcReference, "Instrument Err msg=%s" % (msg))   # 2011-11-28 sp -- added logging
-        except Exception, msg:                # Not good? An unanticipated error
+        except Exception as msg:                # Not good? An unanticipated error
             errorMsg = "Unexpected error: %s" % (str(msg))
             self.svrLog.logError('', self.logPrefix, funcReference, errorMsg)   # 2011-11-28 sp -- added logging
             self.pager.page(errorMsg)
@@ -303,7 +303,7 @@ class Dispatcher(object):
            CamMgr = RoboTrace.GetRoboCamMgrInstance();
            CamMgr.StopCapture();
         except:
-           print '\n>>> Cannot Stop Capture!\n'
+           print('\n>>> Cannot Stop Capture!\n')
 
     def setNumberOfTransportsPerFlush( self, number ):
         self.numberOfTransportsPerFlush = number
@@ -312,9 +312,9 @@ class Dispatcher(object):
         '''Set the location of the waste vial for Prime calls, based on the 
         specified absolute quadrant number.'''
         if quadrant < 1 or quadrant > tesla.config.NUM_QUADRANTS:
-            raise DispatcherException, "Invalid quadrant number: %d" % (quadrant)
+            raise DispatcherException("Invalid quadrant number: %d" % (quadrant))
         self.wasteVial = self.instrument.ContainerAt(quadrant, self.instrument.WasteLabel)
-        print "@#$@#$@#$@#$@#$@#$ setWasteVialLocation",str(self.wasteVial)
+        print("@#$@#$@#$@#$@#$@#$ setWasteVialLocation",str(self.wasteVial))
 
 
     def processSchedule(self, schedule, activeState,
@@ -337,7 +337,7 @@ class Dispatcher(object):
         if self.running:
             # We should only run one Sequencer at a time
             self.svrLog.logWarning('', self.logPrefix, funcReference, "We are already running? Bailing out.")   # 2011-11-28 sp -- added logging
-            raise DispatcherException, "We are already running? Bailing out."
+            raise DispatcherException("We are already running? Bailing out.")
         self.running = True
 
         # Keep these states for later
@@ -380,8 +380,8 @@ class Dispatcher(object):
             else:
                 self.svrLog.logWarning( '', self.logPrefix, funcReference, "%s is not a Schedule object: can't dispatch!" % \
                         (schedule))   # 2011-11-28 sp -- added logging
-                raise DispatcherException, "%s is not a Schedule object: can't dispatch!" % \
-                        (schedule)
+                raise DispatcherException("%s is not a Schedule object: can't dispatch!" % \
+                        (schedule))
         
 
             # Insert flushes every N transports. We keep the index of the last transport type
@@ -394,11 +394,11 @@ class Dispatcher(object):
             recomp = re.compile("Transport|TopUpVial|Mix|ResuspendVial|MixTrans|TopUpMixTrans|ResusMixSepTrans|ResusMix|TopUpTrans|TopUpTransSepTrans|TopUpMixTransSepTrans", re.IGNORECASE )
             for i in range( len( sequence ) ):
                 meth = sequence[i][1]
-                print i, meth
+                print(i, meth)
 
                 #if recomp.search(meth):
                 if recomp.match(meth):
-                    print "DEBUG ------------------------------ flush for ",i,meth
+                    print("DEBUG ------------------------------ flush for ",i,meth)
                     nTransports += 1
                     iLastTransportCommand = i
                     # get sector of this transport
@@ -432,10 +432,10 @@ class Dispatcher(object):
                 sequence.insert( i, ( startTime + 1, flushCommand ) )
 
             for i in range( len( sequence ) ):
-                print i, sequence[i]
+                print(i, sequence[i])
 
 
-            for eventNum, event in itertools.izip(itertools.count(1), sequence):
+            for eventNum, event in zip(itertools.count(1), sequence):
                 msg = "DI: sequence event %2d = %s" % (eventNum, event)
                 self.logger.logDebug(msg)
                 # 2011-12-14 sp -- added reporting of id and seq ids
@@ -485,7 +485,7 @@ class Dispatcher(object):
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetProcEvent(1);
         
-        print '\n>>> dispatcher pause()\n'
+        print('\n>>> dispatcher pause()\n')
       
         self.logger.logInfo('DI: sequencer pause!!!')
         funcReference = __name__ + '.pause'          # 2011-11-28 sp -- added logging
@@ -512,7 +512,7 @@ class Dispatcher(object):
               
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetProcEvent(2);
-        print '\n>>> Dispatcher resume()\n'
+        print('\n>>> Dispatcher resume()\n')
         self.instrument.resetPauseCommand()
         self.instrument.TurnOFFBeacon();
         
@@ -536,7 +536,7 @@ class Dispatcher(object):
                 self.instrument.getPlatform().StripTip()
                 errorCode = 'TSC3003' 
                 errorMsg = "Tip strip recovery"
-                print "resume:", errorMsg
+                print("resume:", errorMsg)
                 self.svrLog.logDebug('', self.logPrefix, funcReference, '%s [%s]' %(errorCode, errorMsg))   # 2011-11-28 sp -- added logging
                 self.pager.page('Tip strip failured recovered. Please choose action.')
                 self.reportStatus(errorMsg, errorCode)
@@ -558,7 +558,7 @@ class Dispatcher(object):
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetProcEvent(3);
         
-        print '\n>>> Dispatcher halt()\n'
+        print('\n>>> Dispatcher halt()\n')
         funcReference = __name__ + '.halt'          # 2011-11-28 sp -- added logging
         self.svrLog.logInfo('', self.logPrefix, funcReference, 'start halt process')   # 2011-11-28 sp -- added logging
         self.sequencer.halt()
@@ -575,7 +575,7 @@ class Dispatcher(object):
         CamMgr = RoboTrace.GetRoboCamMgrInstance();
         CamMgr.SetProcEvent(4);
         
-        print '\n>>> Dispatcher estop()\n'
+        print('\n>>> Dispatcher estop()\n')
         funcReference = __name__ + '.estop'          # 2011-11-28 sp -- added logging
         self.svrLog.logInfo('', self.logPrefix, funcReference, 'start estop process')   # 2011-11-28 sp -- added logging
         

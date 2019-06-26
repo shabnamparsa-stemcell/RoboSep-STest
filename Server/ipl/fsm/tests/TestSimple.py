@@ -30,12 +30,12 @@ class TestSimpleFSM(unittest.TestCase):
 
     
     def testState(self):
-        self.failUnless(self.fsm.getState() == SimpleFSM.START_STATE, 'Test state')
+        self.assertTrue(self.fsm.getState() == SimpleFSM.START_STATE, 'Test state')
 
     
     def testGetTargetStates(self):
         targets = self.fsm.getTargetStates()
-        self.failUnless(targets == [
+        self.assertTrue(targets == [
             'POWERED_ON'], 'Target test')
 
     
@@ -43,13 +43,13 @@ class TestSimpleFSM(unittest.TestCase):
         self.fsm.addGlobalState('ESTOP')
         self.fsm.changeState('ESTOP')
         targets = self.fsm.getTargetStates()
-        self.failUnless(targets == [], 'Empty target test')
+        self.assertTrue(targets == [], 'Empty target test')
 
     
     def testAddGlobalState(self):
         self.fsm.addGlobalState('ESTOP')
         targets = self.fsm.getTargetStates()
-        self.failUnless(targets == [
+        self.assertTrue(targets == [
             'POWERED_ON',
             'ESTOP'], 'Add target test')
 
@@ -67,7 +67,7 @@ class TestSimpleFSM(unittest.TestCase):
         for state in states:
             self.fsm.changeState(state)
         
-        self.failUnless(self.fsm.getState() == states[-1], 'Change state test')
+        self.assertTrue(self.fsm.getState() == states[-1], 'Change state test')
 
     
     def testInvalidStateChange(self):
@@ -79,12 +79,12 @@ class TestSimpleFSM(unittest.TestCase):
         self.fsm.addTransition('ESTOP', SimpleFSM.END_STATE)
         self.fsm.changeState('ESTOP')
         self.fsm.changeState(SimpleFSM.END_STATE)
-        self.failUnless(self.fsm.getState() == SimpleFSM.END_STATE, 'Add transition test')
+        self.assertTrue(self.fsm.getState() == SimpleFSM.END_STATE, 'Add transition test')
 
     
     def testStateProperty(self):
         self.fsm.state = 'POWERED_ON'
-        self.failUnless(self.fsm.state == 'POWERED_ON')
+        self.assertTrue(self.fsm.state == 'POWERED_ON')
 
 
 if __name__ == '__main__':

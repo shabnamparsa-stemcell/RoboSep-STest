@@ -24,7 +24,7 @@
 # 
 #
 
-import cPickle, os
+import pickle, os
 import re
 
 import ipl.utils.file
@@ -38,14 +38,14 @@ from tesla.types.Protocol import Protocol, ProtocolException
 from tesla.types.ClientProtocol import ClientProtocol
 
 import handyxml
-import xml.dom.Element
+#import xml.dom.Element
 
 import threading
 
 from tesla.PgmLog import PgmLog    # 2011-11-23 sp -- programming logging
 
 from tesla.instrument.Instrument import Instrument
-from ConfigParser import *          #configuration from ini file
+from configparser import *          #configuration from ini file
 import RoboTrace
 import time
 
@@ -134,11 +134,11 @@ class ProtocolManager(object):
         if self.path:
             #Load file (ie someone.udb) spec in UserConfig.config
             udbName = self.getCurrentUserUDBName()
-            print ">>>>>>>>> UDBName is : %s" % udbName
+            print(">>>>>>>>> UDBName is : %s" % udbName)
             (baseUDB, ext) = os.path.splitext(udbName)
             self.fileDBPath = os.path.join(self.path, baseUDB+"_"+self.FILEINFO_DB)
             self.protocolDBPath = os.path.join(self.path, baseUDB+"_"+self.PROTOCOL_DB)
-            if ProtocolManager.presetUserData.has_key(udbName):
+            if udbName in ProtocolManager.presetUserData:
                 #print ">>>>>> ProtocolManager.presetUserData has a key <<<<<<"
                 if not os.path.isfile(self.fileDBPath) and \
                    not os.path.isfile(self.protocolDBPath):
@@ -166,7 +166,7 @@ class ProtocolManager(object):
                 xmlData = handyxml.xml(filename,False)
                 value = xmlData.CurrentUser[0].childNodes[0].nodeValue
                 udbName = value
-            except Exception, msg:
+            except Exception as msg:
                 pass
         return udbName
 
@@ -178,7 +178,7 @@ class ProtocolManager(object):
                 xmlData = handyxml.xml(udbPath,False)
                 files = [os.path.join(self.path,node.childNodes[0].nodeValue) \
                          for node in xmlData.ProtocolFile ]
-            except Exception, msg:
+            except Exception as msg:
                 pass
             
         files.append(os.path.join(self.path,"home_axes.xml"))
@@ -224,7 +224,7 @@ class ProtocolManager(object):
                         #self.logger.logInfo("PM: Added protocol (%s %s)" % (protocol.label,protocol.type))
                         #self.svrLog.logDebug('', self.logPrefix, funcReference, 'Added protocol (%s %s)' % (protocol.label,protocol.type) )    # 2011-11-254 sp -- added logging
                         self.reportStatus("Loading "+protocol.label);
-            except ProtocolException, msg:
+            except ProtocolException as msg:
                 self.logger.logError("PM: Protocol error: %s" % (msg))
                 self.svrLog.logError('', self.logPrefix, funcReference, 'Protocol error: %s' % (msg) )    # 2011-11-254 sp -- added logging
         if count > 0:
@@ -313,7 +313,7 @@ class ProtocolManager(object):
         if ID:
             return self[ID]
         else:
-            for protocol in ProtocolManager.protocols.values():
+            for protocol in list(ProtocolManager.protocols.values()):
                 if protocol.matches(ID, label):
                     hit = protocol
                     break
@@ -332,28 +332,29 @@ class ProtocolManager(object):
 
     def getProtocols(self):
         '''Return the list of protocols'''
-        return ProtocolManager.protocols.values()
+        #print(ProtocolManager.protocols.values())
+        return list(ProtocolManager.protocols.values())
 
 
     def getProtocolWithSampleCheck(self, protocolID, sampleVolume_uL):
         '''Return a protocol object (as specified by it's ID), checking that
         the sample volume is appropriate.'''
-        print "bdr -- Fetching protocol id = %s " % (protocolID)
+        print("bdr -- Fetching protocol id = %s " % (protocolID))
         protocol = self.getProtocol(protocolID)
         if not protocol:
-            raise ProtocolException, "Can not find protocol ID = %d" % (protocolID)
+            raise ProtocolException("Can not find protocol ID = %d" % (protocolID))
         else:
             # Let's sanity check the sample volume to ensure it's within
             # our protocol's limits
             # We only do this for sample processing protocols
 
-            print "bdr -- ProtocolManager - getProtWithSampChk chk sampleVolume= %0.2f" % (sampleVolume_uL)
+            print("bdr -- ProtocolManager - getProtWithSampChk chk sampleVolume= %0.2f" % (sampleVolume_uL))
 
             if not self.isSampleVolumeValidForProtocol(protocol, sampleVolume_uL):
-                raise ProtocolException, "Sample volume (%0.2f) is not within protocol limits (%02.f -> %0.2fuL)" \
-                        % (sampleVolume_uL, protocol.minVol, protocol.maxVol)
+                raise ProtocolException("Sample volume (%0.2f) is not within protocol limits (%02.f -> %0.2fuL)" \
+                        % (sampleVolume_uL, protocol.minVol, protocol.maxVol))
             else:
-                print "bdr -- ProtocolManager - getProtWithSampChk - return protocol ok"
+                print("bdr -- ProtocolManager - getProtWithSampChk - return protocol ok")
                 return protocol
 
     def isSeparationProtocol(self, ID):
@@ -383,18 +384,18 @@ class ProtocolManager(object):
         files = []
         pf = None
         try:
-            #print ">>>>>>>> File Path is: %s" % dbName
-            pf = open(dbName, 'r')
-            files = cPickle.load(pf)
+            print (">>>>>>>> File Path is: %s" % dbName)
+            pf = open(dbName, 'rb')
+            files = pickle.load(pf)
             pf.close()
         except EOFError:
-            print ">>>>>> EOFError Occurred <<<<<<"
+            print(">>>>>> EOFError Occurred <<<<<<")
             RoboTrace.RoboSepMessageBox("User Profile is corrupted. Please re-configure the User Profile after the application started")
             if pf != None:
                 pf.close()
             #YW: Comment out the Correction temporarily 
             #os.remove(dbName)
-        except IOError, msg:
+        except IOError as msg:
             #print ">>>>>> IOError Occurred <<<<<<"
             self.logger.logWarning("PM: Unable to read file information: %s" % (msg))            
             self.svrLog.logWarning('', self.logPrefix, funcReference, 'Unable to read file information: %s' % (msg) )    # 2011-11-254 sp -- added logging
@@ -404,15 +405,15 @@ class ProtocolManager(object):
     def __storeFileInfo(self, dbName, fileList):
         '''Store the information about each file in the database'''
         funcReference = __name__ + '.__storeFileInfo'   # 2011-11-254 sp -- added logging
-        print "###### Now in "
+        print("###### Now in ")
         try:
-            pf = open(dbName, 'w')
-            cPickle.dump(fileList, pf)            # Store the file info
+            pf = open(dbName, 'wb')
+            pickle.dump(fileList, pf)            # Store the file info
             pf.close()
 
-            if prints == 1: print "\nProtocolManager.py, Replacing old database with new"
+            if prints == 1: print("\nProtocolManager.py, Replacing old database with new")
 
-        except IOError, msg:
+        except IOError as msg:
             self.logger.logWarning("PM: Unable to store file information: %s" % (msg))
             self.svrLog.logWarning('', self.logPrefix, funcReference, 'Unable to store file information: %s' % (msg) )    # 2011-11-254 sp -- added logging
 
@@ -420,8 +421,8 @@ class ProtocolManager(object):
         '''Returns true if the info in the two file lists are the same'''
         equalState = False                          # Assume they're not equal
         if len(fileList1) == len(fileList2):        # Are they the same size?
-            fileList1.sort(lambda f1, f2: cmp(f1.name, f2.name))
-            fileList2.sort(lambda f1, f2: cmp(f1.name, f2.name))
+            fileList1.sort(key=(lambda f: f.name))
+            fileList2.sort(key=(lambda f: f.name))
             for f1, f2 in zip(fileList1, fileList2):
                 if f1.name != f2.name or f1.time != f2.time:
                     break
@@ -462,7 +463,7 @@ class ProtocolManager(object):
             # Ignore the client's protocol database (which is stored in an
             # XML format, and is called _mru.xml)
             files = [f for f in files if not f.count(ProtocolManager.CLIENT_PROTOCOL_DB)]
-        except WindowsError, msg:
+        except WindowsError as msg:
             # No protocol files? Then let's set our file list to be empty and
             # see if we can read in the database
             self.logger.logError("PM: Unable to find %s files in path (%s)? %s" % \
@@ -480,7 +481,7 @@ class ProtocolManager(object):
         funcReference = __name__ + '.__addProtocols'   # 2011-11-254 sp -- added logging
         #print "###### Now in Function: %s ######" %  funcReference
         self.svrLog.logID('', self.logPrefix, funcReference, 'File to add, path=%s' % path )    # 2011-11-254 sp -- added logging
-        if ProtocolManager.presetUserData.has_key(path):
+        if path in ProtocolManager.presetUserData:
             files = [ f.name for f in self.__getFileInfo(self.fileDBPath)]
         else:
             #print ">>>>>> ProtocolManager.presentUserData has no key <<<<<<<"
@@ -496,7 +497,7 @@ class ProtocolManager(object):
             self.svrLog.logInfo('', self.logPrefix, funcReference, "Using protocol database=%s" % (self.protocolDBPath) )    # 2011-11-254 sp -- added logging
             protocols = self.__unpickleProtocols()
             if protocols != {}:
-                for protocol in protocols.values():
+                for protocol in list(protocols.values()):
                     self.add(protocol)
                     #self.logger.logInfo("PM: Added protocol (%s)" % (protocol.label))
                     #self.svrLog.logDebug('', self.logPrefix, funcReference, "Added protocol (%s)" % (protocol.label) )    # 2011-11-254 sp -- added logging
@@ -524,8 +525,8 @@ class ProtocolManager(object):
                     count += 1
                     #self.logger.logInfo("PM: Added protocol (%s)" % (protocol.label))
                     #self.svrLog.logDebug('', self.logPrefix, funcReference, "Added protocol (%s)" % (protocol.label) )    # 2011-11-254 sp -- added logging
-                    self.reportStatus("Loading "+protocol.label);
-            except ProtocolException, msg:
+                    self.reportStatus("Loading "+protocol.label)#.decode());
+            except ProtocolException as msg:
                 self.logger.logError("PM: Protocol error: %s" % (msg))
                 self.svrLog.logError('', self.logPrefix, funcReference, "Protocol error: %s" % (msg) )    # 2011-11-254 sp -- added logging
 
@@ -543,11 +544,11 @@ class ProtocolManager(object):
         there are no pickled protocols.'''
         funcReference = __name__ + '.__unpickleProtocols'   # 2011-11-254 sp -- added logging
         try:
-            pf = open(self.protocolDBPath, 'r')
-            protocols = cPickle.load(pf)
+            pf = open(self.protocolDBPath, 'rb')
+            protocols = pickle.load(pf)
             pf.close()
             if protocols == None: protocols = {}
-        except IOError, msg:
+        except IOError as msg:
             self.logger.logWarning("PM: Unable to unpickle protocols: %s" % (msg))
             self.svrLog.logWarning('', self.logPrefix, funcReference, "Unable to unpickle protocols: %s" % (msg) )    # 2011-11-254 sp -- added logging
             protocols = {}
@@ -557,10 +558,10 @@ class ProtocolManager(object):
         '''Pickle our protocols and store them to disk.'''
         funcReference = __name__ + '.__pickleProtocols'   # 2011-11-254 sp -- added logging
         try:
-            pf = open(self.protocolDBPath, 'w')
-            cPickle.dump(self.protocols, pf)            # Store the protocols
+            pf = open(self.protocolDBPath, 'wb')
+            pickle.dump(self.protocols, pf)            # Store the protocols
             pf.close()
-        except IOError, msg:
+        except IOError as msg:
             self.logger.logWarning("PM: Unable to pickle protocols: %s" % (msg))
             self.svrLog.logWarning('', self.logPrefix, funcReference, "Unable to pickle protocols: %s" % (msg) )    # 2011-11-254 sp -- added logging
 
@@ -593,7 +594,7 @@ class ProtocolManager(object):
 
     def __len__(self):
         '''Returns the number of protocols'''
-        return len(ProtocolManager.protocols.keys())
+        return len(list(ProtocolManager.protocols.keys()))
 
     def __getitem__(self, ID):
         '''Return a protocol from the ID key. Returns None if non-existent'''
@@ -637,7 +638,7 @@ class ProtocolManager(object):
                 
                 self.apply_cmd_sub_logic = apply_cmd_sub_logic
                 self.subfor_transseptrans_onlyif_sep_is_lessthan_seconds   = subfor_transseptrans_onlyif_sep_is_lessthan_seconds
-            except Exception, msg:
+            except Exception as msg:
                 self.svrLog.logError('', self.logPrefix, funcReference,
                                      'Error reading from configuration file [%s]...Default settings used: %s' % (configFile, msg))
         else:

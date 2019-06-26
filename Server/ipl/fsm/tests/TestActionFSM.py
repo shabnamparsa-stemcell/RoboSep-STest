@@ -30,7 +30,7 @@ class TestActionFSM(unittest.TestCase):
             'HOT']
         for state in states:
             self.fsm.state = state
-            self.failUnless(self.fsm.getState() == state, 'Changing to %s' % state)
+            self.assertTrue(self.fsm.getState() == state, 'Changing to %s' % state)
         
 
     
@@ -40,16 +40,16 @@ class TestActionFSM(unittest.TestCase):
     
     def testActions(self):
         self.fsm.entryActions['WARM'] = self.foo
-        self.failUnless(self.counter == 0)
+        self.assertTrue(self.counter == 0)
         self.fsm.state = 'COLD'
         self.fsm.state = 'WARM'
-        self.failUnless(self.counter == 1)
+        self.assertTrue(self.counter == 1)
         self.fsm.state = 'COLD'
-        self.failUnless(self.counter == 1)
+        self.assertTrue(self.counter == 1)
         self.fsm.state = 'WARM'
-        self.failUnless(self.counter == 2)
+        self.assertTrue(self.counter == 2)
         self.fsm.state = 'HOT'
-        self.failUnless(self.counter == 2)
+        self.assertTrue(self.counter == 2)
 
 
 if __name__ == '__main__':

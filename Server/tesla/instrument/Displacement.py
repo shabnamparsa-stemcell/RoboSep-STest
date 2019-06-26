@@ -188,7 +188,7 @@ class Displacement:
     def CanHandleVolumeSmallTip( self, volume ):
         """Return whether the displacement parameters are usable for a given volume."""
         #return self.VolumeToDisplace(volume) <= self.UsableVolume()
-        print "volume = %d small tip limit = %d" % (volume, self.m_smallTipVolumeLimit)
+        print("volume = %d small tip limit = %d" % (volume, self.m_smallTipVolumeLimit))
         #print volume <= self.m_smallTipVolumeLimit
         return volume <= self.m_smallTipVolumeLimit
 
@@ -196,7 +196,7 @@ class Displacement:
     def CanHandleVolumeLargeTip( self, volume ):
         """Return whether the displacement parameters are usable for a given volume."""
         #return self.VolumeToDisplace(volume) <= self.UsableVolume()
-        print "volume = %d large tip limit = %d" % (volume, self.m_largeTipVolumeLimit)
+        print("volume = %d large tip limit = %d" % (volume, self.m_largeTipVolumeLimit))
         #print volume <= self.m_largeTipVolumeLimit
         return volume <= self.m_largeTipVolumeLimit
 

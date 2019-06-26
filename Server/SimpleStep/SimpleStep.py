@@ -5,7 +5,7 @@
 #
 
 import os
-from emulator.Port import Port as EmulatedPort
+from .emulator.Port import Port as EmulatedPort
 from ipl.utils.wait import wait_msecs
 from tesla.hardware.Device import Device
 
@@ -124,7 +124,7 @@ class SimpleStepExtLogger:
               print ('\nRoboSep Debug: press [Enter] or [Space] Key >')
               rtn = msvcrt.getch()
               if (ord(rtn) == 32) or (ord(rtn) == 13):
-                 print 'Key Accepted!\n'
+                 print('Key Accepted!\n')
                  break
 
         if (self.STEPPOPUP):
@@ -221,28 +221,28 @@ class SimpleStepExtLogger:
           if self.LOGX0 :
              if addr == 'X0':
                      if not self.SILENT :
-                        print "+" + data
+                        print("+" + data)
                      self.ExtDump.append(timestamp + ': ' + str(data) +'\n')
                      if self.PROC :
                               self.WaitKBD()
           if self.LOGX1:
              if addr == 'X1':
                      if not self.SILENT :
-                        print "+" + data
+                        print("+" + data)
                      self.ExtDump.append(timestamp + ': ' + str(data) +'\n')
                      if self.PROC :
                               self.WaitKBD()
           if self.LOGY0:
              if addr == 'Y0':
                      if not self.SILENT :
-                        print "+" + data
+                        print("+" + data)
                      self.ExtDump.append(timestamp + ': ' + str(data) +'\n')
                      if self.PROC :
                               self.WaitKBD()
           if self.LOGY1:
              if addr == 'Y1':
                      if not self.SILENT :
-                        print "+" + data
+                        print("+" + data)
                      self.ExtDump.append(timestamp + ': ' + str(data) +'\n')
                      if self.PROC :
                               self.WaitKBD()
@@ -269,14 +269,14 @@ class SimpleStepExtLogger:
           if self.LOGX0 :
              if addr == 'X0':
                      if not self.SILENT :
-                        print "+" + data
+                        print("+" + data)
                      self.ExtDump.append(timestamp + ': '+ str(data) +'\n')
                      if self.PROC :
                               self.WaitKBD()
           if self.LOGX1:
              if addr == 'X1':
                      if not self.SILENT :
-                        print "+" + data
+                        print("+" + data)
                      self.ExtDump.append(timestamp + ': '+ str(data) +'\n')
                      if self.PROC :
                               self.WaitKBD()
@@ -284,7 +284,7 @@ class SimpleStepExtLogger:
           if self.LOGY0:
              if addr == 'Y0':
                      if not self.SILENT :
-                        print "+" + data
+                        print("+" + data)
                      self.ExtDump.append(timestamp + ': '+ str(data) +'\n')
                      if self.PROC :
                               self.WaitKBD()
@@ -292,7 +292,7 @@ class SimpleStepExtLogger:
           if self.LOGY1:
              if addr == 'Y1':
                      if not self.SILENT :
-                        print "+" + data
+                        print("+" + data)
                      self.ExtDump.append(timestamp + ': '+ str(data) +'\n')
                      if self.PROC :
                               self.WaitKBD()
@@ -305,27 +305,27 @@ class SimpleStepExtLogger:
         month    = ('Dummy','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
         now      = time.localtime()
         self.filename = tesla.config.LOG_DIR+'\\SSE' + ('%04d%s%02d-%02dh%02dm%02ds.err' % (now.tm_year, month[now.tm_mon], now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec))
-        print self.filename
+        print(self.filename)
         try:
-              hFile = file(self.filename,'wb')
+              hFile = open(self.filename,'wb')
               hFile.writelines(self.Extlog)
               hFile.close()
-              print 'Error Log Created!!!'
+              print('Error Log Created!!!')
         except IOError:
-              print 'Cannot open/write a log file!\n'
+              print('Cannot open/write a log file!\n')
 
     def DumpPollHistory(self):
         month    = ('Dummy','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
         now      = time.localtime()
         self.filename = tesla.config.LOG_DIR+'\\SSE' + ('%04d%s%02d-%02dh%02dm%02ds_Poll.err' % (now.tm_year, month[now.tm_mon], now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec))
-        print self.filename
+        print(self.filename)
         try:
-              hFile = file(self.filename,'wb')
+              hFile = open(self.filename,'wb')
               hFile.writelines(self.Extlog)
               hFile.close()
-              print 'Error Log Created!!!'
+              print('Error Log Created!!!')
         except IOError:
-              print 'Cannot open/write a log file!\n'
+              print('Cannot open/write a log file!\n')
 
     def DumpNoneHistory(self):
         month    = ('Dummy','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
@@ -334,48 +334,48 @@ class SimpleStepExtLogger:
         try:
               self.NumOfNoneError = self.NumOfNoneError + 1
               if self.ver >= 109 :
-                 print '############# Detect [None] Error #####################'
+                 print('############# Detect [None] Error #####################')
                  ln = len(self.Extlog)
-                 hFile = file(self.filename,'wb')
+                 hFile = open(self.filename,'wb')
                  hFile.writelines(self.Extlog[((ln)-50):])
                  hFile.close()
-                 print 'Error Log Created!!!'
+                 print('Error Log Created!!!')
                  self.NumOfNoneError = 0
               else:
                    if self.NumOfNoneError > self.MAXNONEERROR :
-                      print '############# Detect [None] Error #####################'
+                      print('############# Detect [None] Error #####################')
                       ln = len(self.Extlog)
-                      hFile = file(self.filename,'wb')
+                      hFile = open(self.filename,'wb')
                       hFile.writelines(self.Extlog)
                       hFile.close()
-                      print 'Error Log Created!!!'
+                      print('Error Log Created!!!')
                       self.NumOfNoneError = 0
 
         except IOError:
-              print 'Cannot open/write a log file!\n'
+              print('Cannot open/write a log file!\n')
 
     def DumpBackUpHistory(self):
         self.filename = tesla.config.LOG_DIR+'\\SSE.trm'
-        print self.filename
+        print(self.filename)
         try:
-              hFile = file(self.filename,'wb')
+              hFile = open(self.filename,'wb')
               hFile.writelines(self.Extlog)
               hFile.close()
-              print 'Terminate Log Created!!!'
+              print('Terminate Log Created!!!')
         except IOError:
-              print 'Cannot open/write a log file!\n'
+              print('Cannot open/write a log file!\n')
 
     def Dump(self):
         if self.DUMP :
             self.filename = tesla.config.LOG_DIR+'\\SSE.dmp'
-            print self.filename
+            print(self.filename)
             try:
-                hFile = file(self.filename,'wb')
+                hFile = open(self.filename,'wb')
                 hFile.writelines(self.ExtDump)
                 hFile.close()
-                print 'SS Dump Created!!!'
+                print('SS Dump Created!!!')
             except IOError:
-                print 'Cannot open/write a Dump file!\n'
+                print('Cannot open/write a Dump file!\n')
 
 def GetSSExtLoggerInstance():
     global SSExtLogger
@@ -386,7 +386,7 @@ def GetSSExtLoggerInstance():
     return SSExtLogger
 
 
-class SimpleStepError(StandardError):
+class SimpleStepError(Exception):
     __module__ = __name__
     __doc__ = 'Exception for errors related to talking to the SimpleStep card(s)'
 
@@ -405,14 +405,11 @@ class SimpleStep:
 
     # 2012-01-30 sp -- replace environment variable with configuration variable
     #if os.environ.has_key('SS_LEGACY'):
-    if tesla.config.SS_LEGACY == 1:
-       SERIAL_PAUSE      = 20
-       POLL_PAUSE        = 20
-       RETRY_PAUSE       = 20
-    else:
-       SERIAL_PAUSE      = 100
-       POLL_PAUSE        = 100
-       RETRY_PAUSE       = 100
+    # 2019-06-09 RL moved if tesla.config.SS_LEGACY to __init__ because might not be initialize yet here. AttributeError: module 'tesla.config' has no attribute 'SS_LEGACY'
+
+    SERIAL_PAUSE      = 100
+    POLL_PAUSE        = 100
+    RETRY_PAUSE       = 100
 
     OFFLINE_PAUSE     = 1000
     ver               = 104
@@ -436,7 +433,11 @@ class SimpleStep:
         Emulation can be forced (overriding the useEmulator parameter) by
         setting the SS_FORCE_EMULATION environment variable.
         """
-        
+        if tesla.config.SS_LEGACY == 1:
+           SERIAL_PAUSE      = 20
+           POLL_PAUSE        = 20
+           RETRY_PAUSE       = 20
+       
         if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
             self.ExtLogger = GetSSExtLoggerInstance()
         if( tesla.config.SS_DEBUGGER_LOG == 1 ):
@@ -455,7 +456,7 @@ class SimpleStep:
         #if os.environ.has_key('SS_FORCE_EMULATION'):
         if tesla.config.SS_FORCE_EMULATION == 1:
             if self.INFO:
-                print 'SimpleStep emulation forced'
+                print('SimpleStep emulation forced')
             useEmulator = True
         (self.board, self.address,)   = self._SimpleStep__parseBoardAddress(boardAddress)
         self.prefix                   = ('%s%d' % (self.board, self.address))
@@ -479,8 +480,8 @@ class SimpleStep:
         self.m_stepsToHome = 0
 
         if self.INFO:
-            print ('Emulator status = %d' % useEmulator)
-            print ('  Board address = %s' % boardAddress)
+            print(('Emulator status = %d' % useEmulator))
+            print(('  Board address = %s' % boardAddress))
 
         if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
             self.ExtLogger.SetLog('Emulator status = %d' % useEmulator,  self.prefix)
@@ -491,17 +492,17 @@ class SimpleStep:
         if useEmulator:
             self.port = EmulatedPort(port)
             if self.INFO:
-                print "WARNING: emulation mode in use! Hardware won't operate!!"
+                print("WARNING: emulation mode in use! Hardware won't operate!!")
             if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
                 self.ExtLogger.SetLog("WARNING: emulation mode in use! Hardware won't operate!!", self.prefix)
             self.svrLog.logDebug('X', self.logPrefix, funcReference, "WARNING: emulation mode in use! Hardware won't operate!!" )  # 2011-11-29 -- sp
 
         else:
-            if SimpleStep.openPorts.has_key(port):
+            if port in SimpleStep.openPorts:
                 self.port = SimpleStep.openPorts[port]
             else:
                 import serial
-                import SerialComms
+                from . import SerialComms
                 
                 #YW: Comment out the Correction for serial port connection failure temporarily
                 
@@ -525,7 +526,7 @@ class SimpleStep:
                 # YW: need to take out the if/else when above correction put in place
                 try:
                     self.port = SerialComms.SerialComms(port)
-                except serial.serialutil.SerialException, args:
+                except serial.serialutil.SerialException as args:
                     
                     if (str(args).find('Access is denied') >= 0):
                         errorMsg = ("Can't access port %s (%s). Locked by another resource?" % (port,args))
@@ -534,7 +535,7 @@ class SimpleStep:
                         errorMsg = args
                     
                     if self.DEBUG:
-                        print errorMsg
+                        print(errorMsg)
                         
 
                     self.svrLog.logError('X', self.logPrefix, funcReference, errorMsg )  # 2011-11-29 -- sp
@@ -545,7 +546,7 @@ class SimpleStep:
                         self.ExtLogger.DumpHistory()
                         
                     RoboTrace.RoboSepMessageBox("Cannot Open COM Port!")
-                    raise SimpleStepError, errorMsg
+                    raise SimpleStepError(errorMsg)
                     
 
                 SimpleStep.openPorts[port] = self.port
@@ -559,7 +560,7 @@ class SimpleStep:
                     self.ExtLogger.SetLog("Could not talk to %s card: status = '%s'" % (self.prefix,self.getStatus()), self.prefix)
 #                self.ExtLogger.CheckSystemAvail()
                     self.ExtLogger.DumpHistory()
-                raise SimpleStepError, ("Could not talk to %s card: status = '%s'" % (self.prefix,self.getStatus()))
+                raise SimpleStepError("Could not talk to %s card: status = '%s'" % (self.prefix,self.getStatus()))
 
         # Log the axis and associated version of stepper card firmware
         Device.logger.logInfo("Stepper: Board connection %s (%s)" % (self.board, self.address))
@@ -614,7 +615,7 @@ class SimpleStep:
             pos = int(result)
 
             if self.DEBUG:
-                print ('getPosition() = %d' % pos)
+                print(('getPosition() = %d' % pos))
 
             if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
                 self.ExtLogger.SetLog('getPosition() = %d' % pos, self.prefix)
@@ -622,14 +623,14 @@ class SimpleStep:
 
         except:
             if self.DEBUG:
-                print ('getPosition() failed on [%s]' % result)
+                print(('getPosition() failed on [%s]' % result))
 
             self.svrLog.logError('X', self.logPrefix, funcReference, "Card %s: Can't convert result (%s) to integer" % (self.prefix,result) )  # 2011-11-29 -- sp
             if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
                 self.ExtLogger.SetLog( "Card %s: Can't convert result (%s) to integer" % (self.prefix,result), self.prefix )
                 self.ExtLogger.CheckSystemAvail()
                 self.ExtLogger.DumpHistory()
-            raise SimpleStepError, ("Card %s: Can't convert result (%s) to integer" % (self.prefix,result))
+            raise SimpleStepError("Card %s: Can't convert result (%s) to integer" % (self.prefix,result))
         return pos
 
 
@@ -641,8 +642,8 @@ class SimpleStep:
             settings.append(int(result[:-1]))
 
         if self.DEBUG:
-            print 'getVelocityAndSlope: settings =',
-            print settings
+            print('getVelocityAndSlope: settings =', end=' ')
+            print(settings)
 
         funcReference = __name__ + '.getVelocityAndSlope'  # 2011-11-29 sp -- function not called from within, not tested
         self.svrLog.logDebug('Extxx', self.logPrefix, funcReference, 'settings='+ settings )  # 2011-11-29 -- sp
@@ -662,17 +663,17 @@ class SimpleStep:
                 self.ExtLogger.SetLog(('Card %s: Invalid port number (%d)' % (self.prefix,port)), self.prefix)
                 self.ExtLogger.CheckSystemAvail()
                 self.ExtLogger.DumpHistory()
-            raise SimpleStepError, ('Card %s: Invalid port number (%d)' % (self.prefix,port))
+            raise SimpleStepError('Card %s: Invalid port number (%d)' % (self.prefix,port))
         elif (state not in [0,1]):
             self.svrLog.logError('X', self.logPrefix, funcReference, 'State must be 0 or 1 (not %d)' % (state) )  # 2011-11-29 -- sp
             if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
                 self.ExtLogger.SetLog(('Card %s: State must be 0 or 1 (not %d)' % (self.prefix,state)), self.prefix)
                 self.ExtLogger.CheckSystemAvail()
                 self.ExtLogger.DumpHistory()
-            raise SimpleStepError, ('Card %s: State must be 0 or 1 (not %d)' % (self.prefix,state))
+            raise SimpleStepError('Card %s: State must be 0 or 1 (not %d)' % (self.prefix,state))
         else:
             if self.DEBUG:
-                print ('setOutputState() %d %d' % (port,state))
+                print(('setOutputState() %d %d' % (port,state)))
             self.svrLog.logDebug('', self.logPrefix, funcReference, 'set Port:%d, State:%d'%(port,state) )  # 2011-11-29 -- sp
             if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
                 self.ExtLogger.SetCmdListLog(('setOutputState()[%s]: Port:%d, State:%d'%(self.prefix,port,state)), self.prefix)
@@ -730,7 +731,7 @@ class SimpleStep:
                self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                self.ExtLogger.CheckSystemAvail()
                self.ExtLogger.DumpHistory()
-            raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+            raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
 
         (result, status,) = self.sendAndCheck(pump_zero_command , self.SERIAL_PAUSE);
         if ((not (status in allowableStatus)) and (status != None)):
@@ -739,7 +740,7 @@ class SimpleStep:
                self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                self.ExtLogger.CheckSystemAvail()
                self.ExtLogger.DumpHistory()
-            raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+            raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
 
         (result, status,) = self.sendAndCheck( cmd  , self.SERIAL_PAUSE);
         if ((not (status in allowableStatus)) and (status != None)):
@@ -748,7 +749,7 @@ class SimpleStep:
                self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                self.ExtLogger.CheckSystemAvail()
                self.ExtLogger.DumpHistory()
-            raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+            raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
 
         (result, status,) = self.sendAndCheck(self.m_PumpHomePower, self.SERIAL_PAUSE);
         if ((not (status in allowableStatus)) and (status != None)):
@@ -757,7 +758,7 @@ class SimpleStep:
                self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                self.ExtLogger.CheckSystemAvail()
                self.ExtLogger.DumpHistory()
-            raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+            raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
 
         (result, status,) = self.sendAndCheck(self.m_PumpHomeStepSpeed[0]);
         if ((not (status in allowableStatus)) and (status != None)):
@@ -766,7 +767,7 @@ class SimpleStep:
                self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                self.ExtLogger.CheckSystemAvail()
                self.ExtLogger.DumpHistory()
-            raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+            raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
 
         (result, status,) = self.sendAndCheck(self.m_PumpHomeStepSpeed[1]);
         if ((not (status in allowableStatus)) and (status != None)):
@@ -775,7 +776,7 @@ class SimpleStep:
                self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                self.ExtLogger.CheckSystemAvail()
                self.ExtLogger.DumpHistory()
-            raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+            raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
 
         (result, status,) = self.sendAndCheck(self.m_PumpHomeStepSpeed[2]);
         if ((not (status in allowableStatus)) and (status != None)):
@@ -784,7 +785,7 @@ class SimpleStep:
                self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                self.ExtLogger.CheckSystemAvail()
                self.ExtLogger.DumpHistory()
-            raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+            raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
 
         rtnMsg = self.sendAndCheck('I1', self.SERIAL_PAUSE)
         tripSensor = int(rtnMsg[0])
@@ -813,7 +814,7 @@ class SimpleStep:
                        self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                        self.ExtLogger.CheckSystemAvail()
                        self.ExtLogger.DumpHistory()
-                    raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+                    raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
 
                  (result, status,) = self.sendAndCheck( 'A0' , self.SERIAL_PAUSE);
                  if ((not (status in allowableStatus)) and (status != None)):
@@ -822,7 +823,7 @@ class SimpleStep:
                        self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                        self.ExtLogger.CheckSystemAvail()
                        self.ExtLogger.DumpHistory()
-                    raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+                    raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
                  
                  cmd = ( 'M+%d'%(currentPos) )
                  (result, status,) = self.sendAndCheck( cmd , self.SERIAL_PAUSE);         
@@ -832,7 +833,7 @@ class SimpleStep:
                        self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                        self.ExtLogger.CheckSystemAvail()
                        self.ExtLogger.DumpHistory()
-                    raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+                    raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
                  if( tesla.config.SS_EXT_LOGGER == 1 ): 
                     self.ExtLogger.SetCmdListLog('<----------Pump Home failed, retry step-and-seek #XX',self.prefix);
                  return;
@@ -865,7 +866,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpHomePower, self.SERIAL_PAUSE);
           if ((not (status in allowableStatus)) and (status != None)):
               Device.logger.logInfo("Stepper %s %s error: [cmd = %s][payload = %s] -> [result = %s][status = %s] "% (self.board, self.address, cmd, payload, result, status))                
@@ -873,7 +874,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpHomeStepSpeed[0]);
           if ((not (status in allowableStatus)) and (status != None)):
               Device.logger.logInfo("Stepper %s %s error: [cmd = %s][payload = %s] -> [result = %s][status = %s] "% (self.board, self.address, cmd, payload, result, status))                
@@ -881,7 +882,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpHomeStepSpeed[1]);
           if ((not (status in allowableStatus)) and (status != None)):
               Device.logger.logInfo("Stepper %s %s error: [cmd = %s][payload = %s] -> [result = %s][status = %s] "% (self.board, self.address, cmd, payload, result, status))                
@@ -889,7 +890,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpHomeStepSpeed[2]);
           if ((not (status in allowableStatus)) and (status != None)):
               Device.logger.logInfo("Stepper %s %s error: [cmd = %s][payload = %s] -> [result = %s][status = %s] "% (self.board, self.address, cmd, payload, result, status))                
@@ -897,7 +898,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck('M+0', self.SERIAL_PAUSE);
           # if disallowed status, raise error for Axis and report in log
           if ((not (status in allowableStatus)) and (status != None)):
@@ -906,7 +907,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           wait_msecs(300);
           (result, status,) = self.sendAndCheck('A0', self.SERIAL_PAUSE);        
           # if disallowed status, raise error for Axis and report in log
@@ -916,7 +917,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpStandardStepSpeed[0], self.SERIAL_PAUSE);
           # if disallowed status, raise error for Axis and report in log
           if ((not (status in allowableStatus)) and (status != None)):
@@ -925,7 +926,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpStandardStepSpeed[1], self.SERIAL_PAUSE);
           # if disallowed status, raise error for Axis and report in log
           if ((not (status in allowableStatus)) and (status != None)):
@@ -934,7 +935,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpStandardStepSpeed[2], self.SERIAL_PAUSE);
           # if disallowed status, raise error for Axis and report in log
           if ((not (status in allowableStatus)) and (status != None)):
@@ -943,7 +944,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpStandardPower, self.SERIAL_PAUSE);
           # if disallowed status, raise error for Axis and report in log
           if ((not (status in allowableStatus)) and (status != None)):
@@ -952,7 +953,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           if( tesla.config.SS_EXT_LOGGER == 1 ):          
               self.ExtLogger.SetCmdListLog('<------Finishing Non-fatal pump homing',self.prefix);
         else:    
@@ -963,7 +964,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck('m', self.SERIAL_PAUSE)
           if ((not (status in allowableStatus)) and (status != None)):
               Device.logger.logInfo("Stepper %s %s error: [cmd = %s][payload = %s] -> [result = %s][status = %s] "% (self.board, self.address, cmd, payload, result, status))                
@@ -971,7 +972,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           rtnMsg = (result, status,)
           self.m_savedPumpPos = int(rtnMsg[0])
           cmd = ('M+%s'%(self.m_PumpStopPos));
@@ -983,7 +984,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpHomePower, self.SERIAL_PAUSE);
           if ((not (status in allowableStatus)) and (status != None)):
               Device.logger.logInfo("Stepper %s %s error: [cmd = %s][payload = %s] -> [result = %s][status = %s] "% (self.board, self.address, cmd, payload, result, status))                
@@ -991,7 +992,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpHomeStepSpeed[0]);
           if ((not (status in allowableStatus)) and (status != None)):
               Device.logger.logInfo("Stepper %s %s error: [cmd = %s][payload = %s] -> [result = %s][status = %s] "% (self.board, self.address, cmd, payload, result, status))                
@@ -999,7 +1000,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpHomeStepSpeed[1]);
           if ((not (status in allowableStatus)) and (status != None)):
               Device.logger.logInfo("Stepper %s %s error: [cmd = %s][payload = %s] -> [result = %s][status = %s] "% (self.board, self.address, cmd, payload, result, status))                
@@ -1007,7 +1008,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpHomeStepSpeed[2]);
           if ((not (status in allowableStatus)) and (status != None)):
               Device.logger.logInfo("Stepper %s %s error: [cmd = %s][payload = %s] -> [result = %s][status = %s] "% (self.board, self.address, cmd, payload, result, status))                
@@ -1015,7 +1016,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(pump_home_commandz, self.SERIAL_PAUSE);
           # if disallowed status, raise error for Axis and report in log
           if ((not (status in allowableStatus)) and (status != None)):
@@ -1024,7 +1025,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           wait_msecs(300);
           (result, status,) = self.sendAndCheck('A0', self.SERIAL_PAUSE);        
           # if disallowed status, raise error for Axis and report in log
@@ -1034,7 +1035,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           wait_msecs(350);                                                        #Insert on 205-07-16 CJ
           if tesla.config.SS_FORCE_EMULATION == 1:
             if( tesla.config.SS_EXT_LOGGER == 1 ): 
@@ -1067,7 +1068,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck('A0', self.SERIAL_PAUSE);        
           # if disallowed status, raise error for Axis and report in log
           if ((not (status in allowableStatus)) and (status != None)):
@@ -1076,7 +1077,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpStandardStepSpeed[0], self.SERIAL_PAUSE);
           # if disallowed status, raise error for Axis and report in log
           if ((not (status in allowableStatus)) and (status != None)):
@@ -1085,7 +1086,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpStandardStepSpeed[1], self.SERIAL_PAUSE);
           # if disallowed status, raise error for Axis and report in log
           if ((not (status in allowableStatus)) and (status != None)):
@@ -1094,7 +1095,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpStandardStepSpeed[2], self.SERIAL_PAUSE);
           # if disallowed status, raise error for Axis and report in log
           if ((not (status in allowableStatus)) and (status != None)):
@@ -1103,7 +1104,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           (result, status,) = self.sendAndCheck(self.m_PumpStandardPower, self.SERIAL_PAUSE);
           # if disallowed status, raise error for Axis and report in log
           if ((not (status in allowableStatus)) and (status != None)):
@@ -1112,7 +1113,7 @@ class SimpleStep:
                  self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                  self.ExtLogger.CheckSystemAvail()
                  self.ExtLogger.DumpHistory()
-              raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+              raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
           if( tesla.config.SS_EXT_LOGGER == 1 ): 
              self.ExtLogger.SetCmdListLog('<------Finishing PUMPHOME',self.prefix);
 
@@ -1166,12 +1167,12 @@ class SimpleStep:
 
     def home(self):
         """Abstract (?) method for homing the axis"""
-        raise NotImplementedError, 'Abstract method'
+        raise NotImplementedError('Abstract method')
 
 
     def speed(self, speed_stepsPerSec, slope):
         """Abstract (?) method for setting the motor's speed"""
-        raise NotImplementedError, 'Abstract method'
+        raise NotImplementedError('Abstract method')
 
 
     def pollUntilReadyOrBusy(self, delay = POLL_PAUSE):
@@ -1193,7 +1194,7 @@ class SimpleStep:
             status = None
 
         if self.DEBUG:
-            print ('pollUntilReadyOrBusy(): status = [%s]' % status)
+            print(('pollUntilReadyOrBusy(): status = [%s]' % status))
         return status
 
 
@@ -1238,7 +1239,7 @@ class SimpleStep:
                  error  = whole[3:]
 
         if self.DEBUG:
-           print ('pollUntilReady(): status = [%s], TRY = %d' % (status,i+1))
+           print(('pollUntilReady(): status = [%s], TRY = %d' % (status,i+1)))
 
         funcReference = __name__ + '.pollUntilReady'  # 2011-11-29 -- sp
         if self.ver >= 109:
@@ -1283,7 +1284,7 @@ class SimpleStep:
         and return a tuple of payload data and the status."""
 
         if self.INFO:
-            print ('SS/SAC (%s): [%s] ->' % (self.prefix, data)),
+            print(('SS/SAC (%s): [%s] ->' % (self.prefix, data)), end=' ')
 
         funcReference = __name__ + '.sendAndCheck'  # 2011-11-29 -- sp
         self.svrLog.logVerbose('X', self.logPrefix, funcReference, 'SS/SAC (%s): [%s] ->' % (self.prefix, data) )  # 2011-11-29 -- sp
@@ -1298,10 +1299,10 @@ class SimpleStep:
         if payload != None:
            log_payload = payload.strip('\r')
         else:
-           print 'SendLowCmd returns %s'%payload
+           print('SendLowCmd returns %s'%payload)
 
         if self.DEBUG:
-            print ('sendAndCheck payload 1 = [%s]' % log_payload)
+            print(('sendAndCheck payload 1 = [%s]' % log_payload))
 
         if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
             self.ExtLogger.SetLog(('<-- sendAndCheck [%s%s] payload 1 = [%s]' % (self.prefix, data, log_payload)), self.prefix )
@@ -1310,7 +1311,7 @@ class SimpleStep:
         # if no reply or motor cmd replies 'ready' or 'not homed' get new reply
         if ((payload == None) or (self.isMotorCommand(data) and (payload[2] in (SimpleStep.SYSTEM_READY, SimpleStep.SYSTEM_NOT_HOMED)))):
             if self.DEBUG:
-                print 'sendAndCheck poll 1'
+                print('sendAndCheck poll 1')
 
             if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
                 self.ExtLogger.SetLog( ('<-- sendAndCheck poll 1, payload = [%s]'%log_payload) , self.prefix)
@@ -1326,19 +1327,19 @@ class SimpleStep:
             if (sanityCheck != self.prefixResponse):
 
                 if self.DEBUG:
-                    print 'sendAndCheck, sanityCheck failed'
+                    print('sendAndCheck, sanityCheck failed')
 
                 self.svrLog.logError('X', self.logPrefix, funcReference, 'Sanity check (%s) failed' % (sanityCheck) )  # 2011-11-29 -- sp
                 if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
                     self.ExtLogger.SetLog( ('Card %s: Sanity check (%s) failed' % (self.prefix,sanityCheck) ), self.prefix)
                     self.ExtLogger.CheckSystemAvail()
                     self.ExtLogger.DumpHistory()
-                raise SimpleStepError, ('Card %s: Sanity check (%s) failed' % (self.prefix,sanityCheck))
+                raise SimpleStepError('Card %s: Sanity check (%s) failed' % (self.prefix,sanityCheck))
 
             # on busy or abort reply try again...
             if ((status == 'b') or (status == 'a')):
                 if self.DEBUG:
-                    print 'sendAndCheck, busy or abort'
+                    print('sendAndCheck, busy or abort')
 #                self.ExtLogger.SetLog('<-- sendAndCheck, busy or abort', self.prefix)
                 if (status == 'a'):
                     self.svrLog.logError('X', self.logPrefix, funcReference, '<-- Motor Abort occurs!' )  # 2011-11-29 -- sp
@@ -1356,10 +1357,10 @@ class SimpleStep:
                 returnValue = (payload, status)
 
         if self.DEBUG:
-            print ('sendAndCheck returnValue = [%s][%s]' % returnValue)
+            print(('sendAndCheck returnValue = [%s][%s]' % returnValue))
 #        self.ExtLogger.SetLog('<-- sendAndCheck returnValue = [%s][%s]' % returnValue, self.prefix)
         if self.INFO:
-            print ('[%s]' % str(returnValue))
+            print(('[%s]' % str(returnValue)))
 
 #       2013-02-06 -- sp  comment lines such that program is not paused when other threads are invoked
 #                       or timers are used to catch errors when in debug mode
@@ -1378,14 +1379,14 @@ class SimpleStep:
 
         funcReference = __name__ + '.sendAndCheckNonBlocking'  # 2011-11-29 -- sp
         if self.INFO:
-            print ('> SS/SAC (%s): [%s] ->' % (self.prefix,data)),
+            print(('> SS/SAC (%s): [%s] ->' % (self.prefix,data)), end=' ')
         self.doublePollUntilReady()
         payload = self.SendLowCmd(('%s%s' % (self.prefix, data)), delay, 0)
         if self.DEBUG:
-            print ('sendAndCheckNonBlocking payload 1 = [%s]' % payload)
+            print(('sendAndCheckNonBlocking payload 1 = [%s]' % payload))
         if ((payload == None) or (self.isMotorCommand(data) and (payload[2] in (SimpleStep.SYSTEM_READY, SimpleStep.SYSTEM_NOT_HOMED)))):
             if self.DEBUG:
-                print 'sendAndCheckNonBlocking poll 1'
+                print('sendAndCheckNonBlocking poll 1')
             payload = self.pollUntilReadyOrBusy()
 
         returnValue = (None,None)
@@ -1394,26 +1395,26 @@ class SimpleStep:
             (sanityCheck, status,) = self.unpackPayload(payload)
             if (sanityCheck != self.prefixResponse):
                 if self.DEBUG:
-                    print 'sendAndCheckNonBlocking, sanityCheck failed'
+                    print('sendAndCheckNonBlocking, sanityCheck failed')
 
                 self.svrLog.logError('X', self.logPrefix, funcReference, 'Sanity check (%s) failed' % (sanityCheck) )  # 2011-11-29 -- sp
                 if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
                     self.ExtLogger.SetLog('Card %s: Sanity check (%s) failed' % (self.prefix, sanityCheck))
                     self.ExtLogger.CheckSystemAvail()
                     self.ExtLogger.DumpHistory()
-                raise SimpleStepError, ('Card %s: Sanity check (%s) failed' % (self.prefix, sanityCheck))
+                raise SimpleStepError('Card %s: Sanity check (%s) failed' % (self.prefix, sanityCheck))
             if ((status == 'b') or (status == 'a')):
                 if self.DEBUG:
-                    print 'sendAndCheckNonBlocking, busy or abort'
+                    print('sendAndCheckNonBlocking, busy or abort')
                 (sanityCheck, status,) = self.unpackPayload(payload)
             try:
                 returnValue = (payload[3:].strip('\r'), status)
             except:
                 returnValue = (payload, status)
         if self.DEBUG:
-            print ('sendAndCheck returnValue = [%s][%s]' % returnValue)
+            print(('sendAndCheck returnValue = [%s][%s]' % returnValue))
         if self.INFO:
-            print ('[%s]' % str(returnValue))
+            print(('[%s]' % str(returnValue)))
         return returnValue
 
 
@@ -1433,11 +1434,11 @@ class SimpleStep:
         elif (command =='HOME'):                                #CWJ Add
             self.Init(False)                                    #CWJ Add
         elif (command =='PUMPHOME'):                            #CWJ Add
-            print '\n>>>> PumpHOME \n\n'
+            print('\n>>>> PumpHOME \n\n')
             # self.Init(True)                                     #CWJ Add
             self.setPumpHome();
         elif (command =='PUMPHOMESKIPTRIP'):                            #CWJ Add
-            print '\n>>>> Use Non-fatal pump homing \n\n'
+            print('\n>>>> Use Non-fatal pump homing \n\n')
             # self.Init(True)                                     #CWJ Add
             self.setPumpHome( True );            
         else:
@@ -1451,7 +1452,7 @@ class SimpleStep:
 #                self.ExtLogger.DumpHistory()
 #                raise SimpleStepError, ("Card %s: Move while homing error" % (self.prefix))
                 self.svrLog.logError('', self.logPrefix, funcReference, 'Homing error, blocking cmd=%s' % command )
-                print( "Card %s: homing error, no movements made" % (self.prefix) )
+                print(( "Card %s: homing error, no movements made" % (self.prefix) ))
                 pass
             else:
                 if bNonBlocking:
@@ -1462,7 +1463,7 @@ class SimpleStep:
                     allowableStatus = [SimpleStep.SYSTEM_READY, SimpleStep.SYSTEM_NOT_HOMED]
 
                 if self.DEBUG:
-                    print ('process()[%s] [cmd = %s][payload = %s][result = %s][status = %s]\n' % (self.prefix, cmd, payload, result, status))
+                    print(('process()[%s] [cmd = %s][payload = %s][result = %s][status = %s]\n' % (self.prefix, cmd, payload, result, status)))
 
                 self.svrLog.logVerbose('X', self.logPrefix, funcReference, 'cmd=%s|payload=%s|result=%s|status=%s' % (cmd, payload, result, status) )
                 
@@ -1477,7 +1478,7 @@ class SimpleStep:
                         self.ExtLogger.SetLog( ("Card %s: Bad status = '%s'" % (self.prefix, status)), self.prefix )
                         self.ExtLogger.CheckSystemAvail()
                         self.ExtLogger.DumpHistory()
-                    raise SimpleStepError, ("Card %s: Bad status = '%s'" % (self.prefix, status))
+                    raise SimpleStepError("Card %s: Bad status = '%s'" % (self.prefix, status))
 
 
     def processCmds(self, cmdList, bNonBlocking = False):
@@ -1514,8 +1515,8 @@ class SimpleStep:
                         self.process(strippedLine, bNonBlocking)
 
             f.close()
-        except Exception, msg:
-            raise SimpleStepError, ('Card %s: processFile() error = %s' % (self.prefix, msg))
+        except Exception as msg:
+            raise SimpleStepError('Card %s: processFile() error = %s' % (self.prefix, msg))
 
 
     def __parseBoardAddress(self, boardAddress):
@@ -1531,7 +1532,7 @@ class SimpleStep:
                 self.ExtLogger.SetLog(('Invalid board address (%s)' % str(boardAddress)), self.prefix)
                 self.ExtLogger.CheckSystemAvail()
                 self.ExtLogger.DumpHistory()
-            raise SimpleStepError, ('Invalid board address (%s)' % str(boardAddress))
+            raise SimpleStepError('Invalid board address (%s)' % str(boardAddress))
 
         boardType = boardAddress[0]
         address = int(boardAddress[1])
@@ -1555,7 +1556,7 @@ class SimpleStep:
         for i in range(6):
             if (self.pollUntilReady() == None):
                 if self.INFO:
-                    print ('%s card offline? %d' % (self.prefix,i))
+                    print(('%s card offline? %d' % (self.prefix,i)))
                 if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
                     self.ExtLogger.SetLog( ('%s card offline? %d' % (self.prefix,i)), self.prefix )
                 self.svrLog.logDebug('X', self.logPrefix, funcReference, '%s card offline? %d' % (self.prefix,i) )   # 2011-11-29
@@ -1565,13 +1566,13 @@ class SimpleStep:
         else:                                         # Strange Code ---- CWJ
             if (self.pollUntilReady() == None):
                 if self.INFO:
-                    print ('%s card failed to respond' % self.prefix)
+                    print(('%s card failed to respond' % self.prefix))
                 self.svrLog.logError('X', self.logPrefix, funcReference, '%s card poll failed: Busy or not responding.' % self.prefix )   # 2011-11-29
                 if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
                     self.ExtLogger.SetLog(( '%s card poll failed: Busy or not responding.' % self.prefix), self.prefix )
                     self.ExtLogger.CheckSystemAvail()
                     self.ExtLogger.DumpHistory()
-                raise SimpleStepError, ('%s card poll failed: Busy or not responding.' % self.prefix)
+                raise SimpleStepError('%s card poll failed: Busy or not responding.' % self.prefix)
 
 
     def unpackPayload(self, payload):
@@ -1587,9 +1588,9 @@ class SimpleStep:
             else:
                 sanityCheck = payload[:2]
                 status = payload[2:3]
-        except TypeError, msg:
+        except TypeError as msg:
             if self.DEBUG:
-                print ('unpackPayload() error: [%s]' % msg)
+                print(('unpackPayload() error: [%s]' % msg))
                 if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
                     self.ExtLogger.SetLog( ('unpackPayload() error: [%s]' % msg), self.prefix )
             
@@ -1598,10 +1599,10 @@ class SimpleStep:
                 self.ExtLogger.SetLog( ('Card %s: TypeError caught: %s for payload = %s (type = %s)' % (self.prefix, msg,payload,str(type(payload)))), self.prefix  )
                 self.ExtLogger.CheckSystemAvail()
                 self.ExtLogger.DumpHistory()
-            raise SimpleStepError, ('Card %s: TypeError caught: %s for payload = %s (type = %s)' % (self.prefix, msg,payload,str(type(payload))))
+            raise SimpleStepError('Card %s: TypeError caught: %s for payload = %s (type = %s)' % (self.prefix, msg,payload,str(type(payload))))
 
         if self.DEBUG:
-            print ('unpackPayload: %s %s' % (sanityCheck, status))
+            print(('unpackPayload: %s %s' % (sanityCheck, status)))
 
 #        self.ExtLogger.SetLog( ('<-- unpackPayload: %s %s' % (sanityCheck, status)), self.prefix )
 
@@ -1817,10 +1818,10 @@ class SimpleStep:
         #if not os.environ.has_key('SS_MINNIE_DEV'):
         if tesla.config.SS_MINNIE_DEV == 0:
             if (Pump == True):
-               print '\n#### Pump Home!!! ####\n'
+               print('\n#### Pump Home!!! ####\n')
                self.process('N+1', False)
             else:
-               print '\n#### Normal Home!!! ####\n'
+               print('\n#### Normal Home!!! ####\n')
                self.process('N-1', False)
                
             rtnMsg  = self.sendAndCheck('m')
@@ -1841,10 +1842,10 @@ class SimpleStep:
                 if (chk == True): #home not tripped
                     self.process('!', False)
                     if (Pump == True):
-                        print '\n#### Pump Reset Pos! ####\n'
+                        print('\n#### Pump Reset Pos! ####\n')
                         self.process('N+0', False)
                     else:
-                        print '\n#### Normal Reset Pos! ####\n'
+                        print('\n#### Normal Reset Pos! ####\n')
                     self.process('N-0', False)
                 else: #chk = False , home is tripped
                     self.process('!', False) #home tripped
@@ -1919,8 +1920,8 @@ if (__name__ == '__main__'):
     drd.process('F', False)
     drd.process('P1', False)
     drd.process('N+1', False)
-    print 'Going home'
+    print('Going home')
     drd.process('M0', False)
-    print 'Going to end'
+    print('Going to end')
     drd.process('M4700', False)
     drd.process('P0', False)

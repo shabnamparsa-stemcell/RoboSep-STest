@@ -213,7 +213,7 @@ class Platform( Subsystem ):
             NB: since there are two intercept points, a set of 2x2=4 values, separated by commas, is expected
                 If one point is given, then it is assumed to be for the zTheta robot only.
         """
-        for key in referenceData.keys():
+        for key in list(referenceData.keys()):
             angleSet = referenceData[key].split(',')
             
             if len(angleSet) == 1:
@@ -238,7 +238,7 @@ class Platform( Subsystem ):
 
         # Validate the given point: check that it, or the string to which it refers, is in the rendezvous list
         #
-        if not referencePoint in self.__m_RendezvousList.keys():
+        if not referencePoint in list(self.__m_RendezvousList.keys()):
             raise PlatformError ("'%s' is not a reference point." % (referencePoint))
 
         pointList = self.__m_RendezvousList[referencePoint]

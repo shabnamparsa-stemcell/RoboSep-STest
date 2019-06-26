@@ -7,7 +7,7 @@ class TestConst(unittest.TestCase):
     
     def test_creation(self):
         const.foo = 1
-        self.failUnless(const.foo == 1, 'Constant set')
+        self.assertTrue(const.foo == 1, 'Constant set')
 
     
     def test_resetting(self):
@@ -18,10 +18,10 @@ class TestConst(unittest.TestCase):
             const.foo = 67
         except ConstError:
             msg = None
-            print '>>>>', msg
+            print('>>>>', msg)
             flag = 1
 
-        self.failUnless(flag, 'Resetting the constant')
+        self.assertTrue(flag, 'Resetting the constant')
 
     
     def test_del(self):
@@ -33,7 +33,7 @@ class TestConst(unittest.TestCase):
         except:
             flag = 1
 
-        self.failUnless(flag, 'Deleting the constant')
+        self.assertTrue(flag, 'Deleting the constant')
 
     
     def test_unknownConstant(self):
@@ -44,7 +44,7 @@ class TestConst(unittest.TestCase):
         except NameError:
             flag = 1
 
-        self.failUnless(flag, 'Removing unknown constant')
+        self.assertTrue(flag, 'Removing unknown constant')
 
 
 unittest.main()

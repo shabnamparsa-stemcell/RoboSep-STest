@@ -15,7 +15,7 @@ class ODB:
     
     def __init__(self, dbPath):
         '''Create an instance of our object database'''
-        if ODB.openDBs.has_key(dbPath):
+        if dbPath in ODB.openDBs:
             self.conn = ODB.openDBs[dbPath]
         else:
             storage = FileStorage.FileStorage(dbPath)
@@ -26,7 +26,7 @@ class ODB:
 
     
     def __contains__(self, item):
-        return self.root.has_key(item)
+        return item in self.root
 
     
     def __delitem__(self, key):

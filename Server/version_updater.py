@@ -43,7 +43,7 @@ def getVersionDetails():
     version = tesla.config.SOFTWARE_VERSION
     major, minor, revision, minorRev = version.split('.')
     
-    if MAJOR_LABEL.has_key(major) and MINOR_LABEL.has_key(minor):
+    if major in MAJOR_LABEL and minor in MINOR_LABEL:
         infoLabel = "%s %s" % (MAJOR_LABEL[major], MINOR_LABEL[minor])
     else:
         infoLabel = "Unknown release"
@@ -60,8 +60,8 @@ def readInstallerFile(filename = 'robosep.iss'):
         f = open(filename, 'r')
         data = f.readlines()
         f.close()
-    except IOError, msg:
-        print "\nERROR: Problem reading %s: %s" % (filename, msg)
+    except IOError as msg:
+        print("\nERROR: Problem reading %s: %s" % (filename, msg))
         sys.exit(-1)
 
     # The lines we want to change:
@@ -80,9 +80,9 @@ def readInstallerFile(filename = 'robosep.iss'):
             keyFields.remove(fields[0])
     if len(keyFields) > 0:
         # We didn't find all our fields? Bitch!
-        print "\nERROR: The %s installer file is missing the following lines:\n" % (filename)
+        print("\nERROR: The %s installer file is missing the following lines:\n" % (filename))
         for field in keyFields:
-            print "\t", field
+            print("\t", field)
         sys.exit(-1)
     return [line.rstrip() for line in data]
    
@@ -93,15 +93,15 @@ def getInstallerVersion(installerFileContents):
             fields = line.split('=', 1)
             if fields[0] == 'VersionInfoVersion':
                 return fields[1]
-    raise ValueError, "Unable to find VersionInfoVersion line in installer file"
+    raise ValueError("Unable to find VersionInfoVersion line in installer file")
 
 
 def convertVersionString(versionStr):
     '''Convert a version string (eg. 1.2.13) to a numeric value (eg.100200013)'''
     try:
         major, minor, rev, minorRev = [int(x) for x in versionStr.split('.')]
-    except ValueError, msg:
-        raise ValueError, "Invalid version string (%s): %s" % (versionStr, msg)
+    except ValueError as msg:
+        raise ValueError("Invalid version string (%s): %s" % (versionStr, msg))
     return (major * 10**6 + minor * 10**3 + rev)
     
 
@@ -121,10 +121,10 @@ def createNewInstallerFile(filename, versionTuple):
     
     newVersion = versionTuple[0]
     versionDetails = versionTuple[1]
-    print
+    print()
     if cmpVersions(newVersion, installerVersion) > 0:
-        print "Installer file was for v%s" % (installerVersion)
-        print "Creating new installer for v%s" % (newVersion)
+        print("Installer file was for v%s" % (installerVersion))
+        print("Creating new installer for v%s" % (newVersion))
 
         # XXX - p4 edit the file
                 
@@ -148,7 +148,7 @@ def createNewInstallerFile(filename, versionTuple):
         # XXX - p4 submit the file
         
     else:
-        print "No change: %s installer is up-to-date for v%s" % (filename, newVersion)
+        print("No change: %s installer is up-to-date for v%s" % (filename, newVersion))
 
 
 # -----------------------------------------------------------------------------

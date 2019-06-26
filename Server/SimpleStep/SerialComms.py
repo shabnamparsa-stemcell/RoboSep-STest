@@ -81,7 +81,7 @@ class SerialComms:
 if (__name__ == '__main__'):
     ser = SerialComms()
     ser.send('D1')
-    print ser.check()
+    print(ser.check())
     ser.send('U0')
-    print ser.check()
+    print(ser.check())
 

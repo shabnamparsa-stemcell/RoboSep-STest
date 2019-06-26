@@ -2,9 +2,9 @@
 
 __doc__ = 'Scheduler Unit Test '
 import unittest
-import Scheduler
-print 'This suite tests interface call validity only.'
-print 'To exercise the Scheduler algorithm, use the CPPUNIT suite and the spreadsheet'
+from . import Scheduler
+print('This suite tests interface call validity only.')
+print('To exercise the Scheduler algorithm, use the CPPUNIT suite and the spreadsheet')
 testProtocolA = ((10000, 40, 0, 0), (0, 31, 0, 0), (1200, 31, 0, 0), (1200, 105, 300, 0), (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 285, 0, 0), (0, 285, 900, 0), (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 105, 0, 0), (0, 105, 480, 0), (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 105, 0, 0), (0, 105, 480, 0), (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 105, 0, 0), (0, 105, 300, 0), (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 105, 300, 0), (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0))
 
 def BuildBlockList(dataList):
@@ -83,7 +83,7 @@ class SchedulerCheckOK(unittest.TestCase):
         for block in blockList:
             blockIndex[s.AppendBlock(batchID, block)] = block
         
-        for index in blockIndex.keys():
+        for index in list(blockIndex.keys()):
             self.assertNotEqual(s.GetBlock(batchID, index, checkBlock), 0)
             block = blockIndex[index]
             self.assertEqual(checkBlock.m_FreePeriod, block.m_FreePeriod)
@@ -102,13 +102,13 @@ class SchedulerCheckOK(unittest.TestCase):
         for block in blockList:
             blockIndex[s.AppendBlock(batchID, block)] = block
         
-        self.assert_(s.CalculateTimes(), 0)
+        self.assertTrue(s.CalculateTimes(), 0)
         lastBlockEndTime = 0
-        for index in blockIndex.keys():
+        for index in list(blockIndex.keys()):
             self.assertNotEqual(s.GetBlock(batchID, index, checkBlock), 0)
             latestAllowedStartTime = lastBlockEndTime + checkBlock.m_OpenPeriod
-            self.assert_(checkBlock.m_StartTime >= lastBlockEndTime)
-            self.assert_(checkBlock.m_StartTime <= latestAllowedStartTime)
+            self.assertTrue(checkBlock.m_StartTime >= lastBlockEndTime)
+            self.assertTrue(checkBlock.m_StartTime <= latestAllowedStartTime)
             lastBlockEndTime = checkBlock.m_StartTime + checkBlock.m_UsedPeriod + checkBlock.m_FreePeriod
         
 
@@ -139,9 +139,9 @@ class SchedulerCheckOK(unittest.TestCase):
         for block in blockList:
             s.AppendBlock(batchID, block)
         
-        self.assert_(s.NbrIterations() == 0)
-        self.assert_(s.CalculateTimes(), 0)
-        self.assert_(s.NbrIterations() > 0)
+        self.assertTrue(s.NbrIterations() == 0)
+        self.assertTrue(s.CalculateTimes(), 0)
+        self.assertTrue(s.NbrIterations() > 0)
 
     
     def testResetBatchID(self):
@@ -168,18 +168,18 @@ class SchedulerCheckOK(unittest.TestCase):
         for block in blockList:
             blockIndex[s.AppendBlock(batchID, block)] = block
         
-        self.assert_(s.DelayFor(batchID) == 0)
-        self.assert_(s.CalculateTimes(), 0)
-        self.assert_(s.DelayFor(batchID) == 0)
+        self.assertTrue(s.DelayFor(batchID) == 0)
+        self.assertTrue(s.CalculateTimes(), 0)
+        self.assertTrue(s.DelayFor(batchID) == 0)
         checkBlock = Scheduler.TimeBlock()
         self.assertNotEqual(s.GetBlock(batchID, 0, checkBlock), 0)
-        self.assert_(checkBlock.m_StartTime == 0)
+        self.assertTrue(checkBlock.m_StartTime == 0)
         delay = 100
         s.SetDelayFor(batchID, delay)
-        self.assert_(s.DelayFor(batchID) == delay)
-        self.assert_(s.CalculateTimes(), 0)
+        self.assertTrue(s.DelayFor(batchID) == delay)
+        self.assertTrue(s.CalculateTimes(), 0)
         self.assertNotEqual(s.GetBlock(batchID, 0, checkBlock), 0)
-        self.assert_(checkBlock.m_StartTime == delay)
+        self.assertTrue(checkBlock.m_StartTime == delay)
 
 
 
@@ -191,24 +191,24 @@ class SchedulerCheckBad(unittest.TestCase):
         s = Scheduler.Scheduler()
         block = Scheduler.TimeBlock()
         batchID = 1
-        self.assert_(s.AppendBlock(0, block) >= 0)
-        self.assert_(s.AppendBlock(-1, block) < 0)
-        self.assert_(s.AppendBlock(batchID, block) >= 0)
+        self.assertTrue(s.AppendBlock(0, block) >= 0)
+        self.assertTrue(s.AppendBlock(-1, block) < 0)
+        self.assertTrue(s.AppendBlock(batchID, block) >= 0)
 
     
     def testGetBlock(self):
         ''' GetBlock requires a valid batchID and index'''
         s = Scheduler.Scheduler()
         block = Scheduler.TimeBlock()
-        self.assert_(s.GetBlock(0, 0, block) == 0)
+        self.assertTrue(s.GetBlock(0, 0, block) == 0)
         batchID = 1
-        self.assert_(s.GetBlock(-1, 0, block) == 0)
-        self.assert_(s.GetBlock(batchID + 1, 0, block) == 0)
-        self.assert_(s.GetBlock(batchID, 0, block) == 0)
+        self.assertTrue(s.GetBlock(-1, 0, block) == 0)
+        self.assertTrue(s.GetBlock(batchID + 1, 0, block) == 0)
+        self.assertTrue(s.GetBlock(batchID, 0, block) == 0)
         index = s.AppendBlock(batchID, block)
-        self.assert_(s.GetBlock(batchID, -1, block) == 0)
-        self.assert_(s.GetBlock(batchID, index + 1, block) == 0)
-        self.assert_(s.GetBlock(batchID, index, block) != 0)
+        self.assertTrue(s.GetBlock(batchID, -1, block) == 0)
+        self.assertTrue(s.GetBlock(batchID, index + 1, block) == 0)
+        self.assertTrue(s.GetBlock(batchID, index, block) != 0)
 
 
 if __name__ == '__main__':

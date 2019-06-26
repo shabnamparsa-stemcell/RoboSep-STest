@@ -1,7 +1,7 @@
 # File: p (Python 2.3)
 
 __doc__ = " path.py - An object representing a path to a file or directory.\n\nExample:\n\nfrom path import path\nd = path('/home/guido/bin')\nfor f in d.files('*.py'):\n    f.chmod(0755)\n\nThis module requires Python 2.2 or later.\n\n\nURL:     http://www.jorendorff.com/articles/python/path\nAuthor:  Jason Orendorff <jason@jorendorff.com> (and others - see the url!)\nDate:    7 Mar 2004\n"
-from __future__ import generators
+
 import sys
 import os
 import fnmatch
@@ -15,7 +15,7 @@ _base = str
 
 try:
     if os.path.supports_unicode_filenames:
-        _base = unicode
+        _base = str
 except AttributeError:
     pass
 
@@ -23,11 +23,11 @@ except AttributeError:
 try:
     pass
 except NameError:
-    basestring = (str, unicode)
+    str = (str, str)
 
 _textmode = 'r'
-if hasattr(file, 'newlines'):
-    _textmode = 'U'
+#if hasattr(file, 'newlines'):
+#    _textmode = 'U'
 
 
 class path(_base):
@@ -372,12 +372,12 @@ class path(_base):
         For example, path('/users').glob('*/bin/*') returns a list
         of all the files users have in their bin directories.
         """
-        return map(path, glob.glob(_base(self / pattern)))
+        return list(map(path, glob.glob(_base(self / pattern))))
 
     
     def open(self, mode = 'r'):
         ''' Open this file.  Return a file object. '''
-        return file(self, mode)
+        return open(self, mode)
 
     
     def bytes(self):
@@ -443,7 +443,7 @@ class path(_base):
             finally:
                 f.close()
 
-            return t.replace(u'\r\n', u'\n').replace(u'\r\xc2\x85', u'\n').replace(u'\r', u'\n').replace(u'\xc2\x85', u'\n').replace(u'\xe2\x80\xa8', u'\n')
+            return t.replace('\r\n', '\n').replace('\r\xc2\x85', '\n').replace('\r', '\n').replace('\xc2\x85', '\n').replace('\xe2\x80\xa8', '\n')
 
     
     def write_text(self, text, encoding = None, errors = 'strict', linesep = os.linesep, append = False):
@@ -513,10 +513,10 @@ class path(_base):
         conversion.
 
         '''
-        if isinstance(text, unicode):
+        if isinstance(text, str):
             if linesep is not None:
-                text = text.replace(u'\r\n', u'\n').replace(u'\r\xc2\x85', u'\n').replace(u'\r', u'\n').replace(u'\xc2\x85', u'\n').replace(u'\xe2\x80\xa8', u'\n')
-                text = text.replace(u'\n', linesep)
+                text = text.replace('\r\n', '\n').replace('\r\xc2\x85', '\n').replace('\r', '\n').replace('\xc2\x85', '\n').replace('\xe2\x80\xa8', '\n')
+                text = text.replace('\n', linesep)
             
             if encoding is None:
                 encoding = sys.getdefaultencoding()
@@ -608,12 +608,12 @@ class path(_base):
         
         try:
             for line in lines:
-                isUnicode = isinstance(line, unicode)
+                isUnicode = isinstance(line, str)
                 if linesep is not None and not line.endswith(linesep):
                     if isUnicode:
-                        if line[-2:] in (u'\r\n', u'\r\xc2\x85'):
+                        if line[-2:] in ('\r\n', '\r\xc2\x85'):
                             line = line[:-2]
-                        elif line[-1:] in (u'\r', u'\n', u'\xc2\x85', u'\xe2\x80\xa8'):
+                        elif line[-1:] in ('\r', '\n', '\xc2\x85', '\xe2\x80\xa8'):
                             line = line[:-1]
                         
                     elif line[-2:] == '\r\n':

@@ -7,7 +7,7 @@
 #          'python getservicemethodlist.py > tesla_service.csv'
 
 
-from xmlrpclib import ServerProxy
+from xmlrpc.client import ServerProxy
 from sys import exit
 import re
 
@@ -17,7 +17,7 @@ s = ServerProxy( "http://localhost:8000" )
 try:
     s.ping()
 except:
-    print "Cannot ping RoboSep service server - exiting..."
+    print("Cannot ping RoboSep service server - exiting...")
     exit( -1 )
 
 # Build re pattern to remove more than one consecutive space (gets rid of newlines)
@@ -30,7 +30,7 @@ previousObject = ""
 for obj,doc,func,args in s.getServiceFunctionList():
     # If it is a new object put a blank line
     if obj != previousObject:
-        print
+        print()
     previousObject = obj
 
     # Remove newlines from documentation
@@ -56,11 +56,11 @@ for obj,doc,func,args in s.getServiceFunctionList():
               '"' + doc + '"', command, '', 'S']
 
     # output the fields for this record separated by commas (csv format)
-    print ','.join( fields )
+    print(','.join( fields ))
 
 
 # blank line
-print
+print()
 
 ################ SECOND SET #################
 # This time we need to replace "Calibration" with "Scripting and replace all
@@ -68,7 +68,7 @@ print
 for obj,doc,func,args in s.getServiceFunctionList():
     # If it is a new object put a blank line
     if obj != previousObject:
-        print
+        print()
     previousObject = obj
 
     # Remove newlines from documentation
@@ -104,7 +104,7 @@ for obj,doc,func,args in s.getServiceFunctionList():
               '"' + doc + ''.join( uscores ) + '"', command, ''.join( args ), 'S']
 
     # output the fields for this record separated by commas (csv format)
-    print ','.join( fields )
+    print(','.join( fields ))
 
 
 

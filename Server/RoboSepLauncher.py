@@ -25,7 +25,7 @@ from robosep import startRoboSepServer
 
 
 import traceback, string
-from _winreg import *
+from winreg import *
 import os, sys, win32gui, win32con, win32api, glob    
 # -----------------------------------------------------------------------------
 # Configurables
@@ -58,7 +58,7 @@ EXIT_FAILURE = -1                # Exit code on failure
 # -----------------------------------------------------------------------------
 # Rest of our module imports
 
-from xmlrpclib import ServerProxy
+from xmlrpc.client import ServerProxy
 import time, socket
 import types
 
@@ -66,8 +66,8 @@ import tesla.config
 
 import re
 
-from xml.dom.ext.reader import Sax2
-import xml.dom.ext
+#from xml.dom.ext.reader import Sax2
+#import xml.dom.ext
 import xml.dom.minidom
     
 # -----------------------------------------------------------------------------
@@ -88,15 +88,15 @@ def testForApplications():
 def consolePrint(msg):
     '''Print a message to the console if the TESLA_QUIET_LAUNCH environment 
     variable is not set'''
-    if not os.environ.has_key('QUIET_LAUNCH'):
-        print msg
+    if 'QUIET_LAUNCH' not in os.environ:
+        print(msg)
 
 def serverIsRunning(serverURL):
     '''Returns True if the server is running'''
     global server
     runFlag = False
     try:
-        if type(server) == types.NoneType:
+        if type(server) == type(None):
             server = ServerProxy(serverURL)
         runFlag = server.ping()
     except socket.error:
@@ -107,7 +107,7 @@ def serverIsRunning(serverURL):
 def getServerState():
     '''Returns the state of the instrument control server'''
     if server == None:
-        raise ValueError, "Undefined server (not running yet?)"
+        raise ValueError("Undefined server (not running yet?)")
     else:
         return server.getInstrumentState()
 
@@ -154,11 +154,11 @@ def startOperatorConsole():
     responsible for launching the operator console.'''
     consolePrint('Starting user application')
     os.chdir(BIN_DIR)
-    if os.environ.has_key('ROBO_MANUAL_CONSOLE'):
+    if 'ROBO_MANUAL_CONSOLE' in os.environ:
         return
     try:
         execCode = win32api.WinExec(SEPARATOR_PATH)
-    except OSError, msg:
+    except OSError as msg:
         consolePrint("Error launching app: %s (%s)" % (msg, execCode))
         RoboTrace.RoboSepMessageBox("Error launching app: %s (%s)" % (msg, execCode))
 
@@ -186,13 +186,13 @@ def refreshHostAddress():
                 tesla.config.GATEWAY_HOST = hostIp;
                 break
         else:
-            print "Network disconnected. Using localhost (127.0.0.1) for instrument."
+            print("Network disconnected. Using localhost (127.0.0.1) for instrument.")
             hostIp = "127.0.0.1"
             tesla.config.GATEWAY_HOST = hostIp;
 
         # detect unstable IP address and try again after pause if unstable
         if hostIp == "0.0.0.0":
-            print "Unstable IP adress detected. Waiting 5 seconds and trying again..."
+            print("Unstable IP adress detected. Waiting 5 seconds and trying again...")
             time.sleep(5)
         else:
             break
@@ -202,19 +202,22 @@ def refreshHostAddress():
 
     # Read Separator.exe.config
     try:
-        separatorConfigFile = open( BIN_DIR + "\\" + SEPARATOR_CONFIG )
-        reader = Sax2.Reader()
-        doc = reader.fromStream( separatorConfigFile )
+        #separatorConfigFile = open( BIN_DIR + "\\" + SEPARATOR_CONFIG )
+        #reader = Sax2.Reader()
+        #doc = reader.fromStream( separatorConfigFile )
+        doc = xml.dom.minidom.parse(BIN_DIR + "\\" + SEPARATOR_CONFIG)
     except IOError:
-        separatorConfigFile = open( BIN_DIR + "\\" + SEPARATOR_CONFIG + ".bak" )
-        reader = Sax2.Reader()
-        doc = reader.fromStream( separatorConfigFile )
+        #separatorConfigFile = open( BIN_DIR + "\\" + SEPARATOR_CONFIG + ".bak" )
+        #reader = Sax2.Reader()
+        #doc = reader.fromStream( separatorConfigFile )
+        doc = xml.dom.minidom.parse(BIN_DIR + "\\" + SEPARATOR_CONFIG + ".bak")
     except:
-        separatorConfigFile.close()
-        separatorConfigFile = open( BIN_DIR + "\\" + SEPARATOR_CONFIG + ".bak" )
-        reader = Sax2.Reader()
-        doc = reader.fromStream( separatorConfigFile )
-    separatorConfigFile.close()
+        #separatorConfigFile.close()
+        #separatorConfigFile = open( BIN_DIR + "\\" + SEPARATOR_CONFIG + ".bak" )
+        #reader = Sax2.Reader()
+        #doc = reader.fromStream( separatorConfigFile )
+        doc = xml.dom.minidom.parse(BIN_DIR + "\\" + SEPARATOR_CONFIG + ".bak")
+    #separatorConfigFile.close()
 
     #dom = xml.dom.minidom.getDOMImplementation()
     #doc = dom.createDocument(None,'configuration',None)
@@ -228,10 +231,10 @@ def refreshHostAddress():
         for node in iccChildNodes:
             attributes = node.attributes
             if attributes:
-                if attributes[(None,u'key')].nodeValue == 'ServerAddress':
-                    oldIp = attributes[(None,u'value')].nodeValue
-                    print "Replacing old host IP", oldIp, "with new host IP", hostIp, "in Separator.exe.config"
-                    attributes[(None,u'value')].nodeValue = hostIp
+                if attributes[(None,'key')].nodeValue == 'ServerAddress':
+                    oldIp = attributes[(None,'value')].nodeValue
+                    print("Replacing old host IP", oldIp, "with new host IP", hostIp, "in Separator.exe.config")
+                    attributes[(None,'value')].nodeValue = hostIp
     except:
         separatorNode = doc.createElement('Separator')
         instrumentConnectionNode = doc.createElement('InstrumentControlConnection')
@@ -246,10 +249,11 @@ def refreshHostAddress():
 
     # Write Separator.exe.config
     try:
-        print "writing Separator.exe.config"
-        separatorConfigFile = open( BIN_DIR + "\\" + SEPARATOR_CONFIG, "w" )
-        xml.dom.ext.PrettyPrint( doc, separatorConfigFile )
-        separatorConfigFile.close()
+        print("writing Separator.exe.config")
+        #separatorConfigFile = open( BIN_DIR + "\\" + SEPARATOR_CONFIG, "w" )
+        #xml.dom.ext.PrettyPrint( doc, separatorConfigFile )
+        #separatorConfigFile.close()
+        doc.toprettyxml()
     except:
         RoboTrace.RoboSepMessageBox('Cannot Access Separator.exe.config! Terminating...');
         sys.exit(EXIT_FAILURE)
@@ -355,7 +359,7 @@ def compressLogFiles( zipFileName, filesToCompress, timeStarted, timeCompleted )
         if os.path.isfile(sselogs):
               filesToCompress.append(sselogs);
     
-    print ( '\nCreating compressed file ' + zipFileName )
+    print(( '\nCreating compressed file ' + zipFileName ))
     zFile = zipfile.ZipFile( zipFileName, "w" )
     for name in filesToCompress:
         zFile.write(name, os.path.basename(name), zipfile.ZIP_DEFLATED)
@@ -369,7 +373,7 @@ def compressLogFiles( zipFileName, filesToCompress, timeStarted, timeCompleted )
 ##            print( info.filename, info.file_size, info.compress_size )
             totalFileSize += info.file_size
             totalCompressSize += info.compress_size
-        print( zipFileName, "contains", len(zFile.namelist()), "files;", totalFileSize, "bytes; compressed to", int(totalCompressSize*100/totalFileSize ), "%" )
+        print(( zipFileName, "contains", len(zFile.namelist()), "files;", totalFileSize, "bytes; compressed to", int(totalCompressSize*100/totalFileSize ), "%" ))
         print ( 'No errors encountered during compression, Original files are being removed.' )
         
         roboSepLogPath = os.path.join( tesla.config.LOG_DIR, 'robosep.log.*' );
@@ -395,7 +399,7 @@ def compressLogFiles( zipFileName, filesToCompress, timeStarted, timeCompleted )
               except:
                 pass;  
     else:
-        print( "Errors encountered in compression; no log file cleanup was performed:", zipFileError )
+        print(( "Errors encountered in compression; no log file cleanup was performed:", zipFileError ))
 
 
 # -----------------------------------------------------------------------------
@@ -408,7 +412,7 @@ if __name__ == '__main__':
     
     thrd = None
 
-    if os.environ.has_key('ProgramFiles(x86)'):    
+    if 'ProgramFiles(x86)' in os.environ:    
        BIN_DIR = BIN_DIR64
        tesla.config.BASE_DIR = tesla.config.BASE_DIR64
     else:
@@ -426,7 +430,7 @@ if __name__ == '__main__':
     
     SplashMgr = RoboTrace.GetRoboSplashMgrInstance();
     os.chdir(BIN_DIR)
-    if not os.environ.has_key('ROBO_MANUAL_CONSOLE'):
+    if 'ROBO_MANUAL_CONSOLE' not in os.environ:
         SplashMgr.StartSplash();
 
     # 2011-11-24    sp -- program logging setup
@@ -498,8 +502,8 @@ if __name__ == '__main__':
     svrLog.logID( '', svrLog.logPrefix, 'RoboSepLauncher.main', 'Host=%s |Server V%s'
                     % ( tesla.config.GATEWAY_HOST, tesla.config.SOFTWARE_VERSION ) )
     
-    print '\n\n ### BIN_DIR : %s'%BIN_DIR
-    print '\n ### PROTOCOL_DIR : %s'%(tesla.config.PROTOCOL_DIR)
+    print('\n\n ### BIN_DIR : %s'%BIN_DIR)
+    print('\n ### PROTOCOL_DIR : %s'%(tesla.config.PROTOCOL_DIR))
     
     try:                                                            # CWJ Add
       FullSrcName = '%s\\home_axes.xml'%BIN_DIR                     # CWJ Add
@@ -512,7 +516,7 @@ if __name__ == '__main__':
       FullDstName = '%s\\shutdown.xml'%tesla.config.PROTOCOL_DIR    # CWJ Add
       shutil.copyfile(FullSrcName, FullDstName)                     # CWJ Add
     except IOError:                                                 # CWJ Add  
-      print 'Cannot copy essentail protcols!!!\n\a'                 # CWJ Add
+      print('Cannot copy essentail protcols!!!\n\a')                 # CWJ Add
       # 2011-11-24    sp -- program logging setup
       svrLog.logError( '', svrLog.logPrefix, 'RoboSepLauncher.main', 'Cannot copy essential protcols!' )
 
@@ -606,7 +610,7 @@ if __name__ == '__main__':
 
     zipFileName = os.path.join( tesla.config.LOG_DIR, '%slog.zip' % timeStarted )
     
-    print filesToCompress
+    print(filesToCompress)
     
     if tesla.config.FULL_SHUTDOWN_IN_PROGRESS == False:
         compressLogFiles( zipFileName, filesToCompress, timeStarted, timeCompleted )

@@ -38,11 +38,11 @@ if __name__ == '__main__':
         count = 0
         while not eventObj.isSet():
             count += 1
-            print 'Count = %d' % (count,)
+            print('Count = %d' % (count,))
             eventObj.wait(sleepPeriod)
 
     testThread = SimpleThread(myTask)
-    print 'Thread is called:', testThread.getName()
+    print('Thread is called:', testThread.getName())
     testThread.start()
     time.sleep(10.0)
     testThread.join()

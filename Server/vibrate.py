@@ -16,6 +16,6 @@ if (__name__ == '__main__'):
     thArm.sendAndCheck('P200,200,0')
     Carou.sendAndCheck('P200,200,0')
     
-    raw_input('Press <Enter> to finish!!!')
+    input('Press <Enter> to finish!!!')
 
 

@@ -7,15 +7,14 @@ import os.path, sys, types
 
 from xml.dom import EMPTY_NAMESPACE
 from xml.dom import Node
-from xml.dom.ext.reader import PyExpat
+#from xml.dom.ext.reader import PyExpat
+import xml.parsers.expat
+from xml.dom.minidom import parse, parseString
+import xml.dom.minidom
 
 __version__ = '1.1.20040127'        # History at the end of the file.
 __all__ = ['path', 'xml', 'xpath']
 
-try:
-    True, False
-except NameError:
-    True, False = (1==1, 1==0)
 
 # Try to use 4Suite for speed.
 bDomlette = False
@@ -54,7 +53,7 @@ class HandyXmlWrapper:
             return getattr(self.node, attr)
 
         if attr[0:2] != '__':        
-            #print "Looking for "+attr, self.node, dir(self.node)
+            #print ("Looking for "+attr, self.node, dir(self.node))
             if hasattr(self.node, 'hasAttribute'):
                 if self.node.hasAttribute(attr):
                     return self.node.getAttribute(attr)
@@ -76,12 +75,12 @@ class HandyXmlWrapper:
             if els:
                 # Save the attribute, since this could be a hasattr
                 # that will be followed by getattr
-                els = map(HandyXmlWrapper, els)
-                if type(self.node) == types.InstanceType:
+                els = list(map(HandyXmlWrapper, els))
+                if type(self.node) is type: #== types.InstanceType:
                     setattr(self.node, attr, els)
                 return els
 
-        raise AttributeError, "Couldn't find %s for node" % attr
+        raise AttributeError("Couldn't find %s for node" % attr)
 
 # The path on which we look for XML files.
 path = ['.']
@@ -92,7 +91,7 @@ def _findFile(filename):
     ret = None
     searchPath = path
     # If cog is in use, then use its path as well.
-    if sys.modules.has_key('cog'):
+    if 'cog' in sys.modules:
         searchPath += sys.modules['cog'].path
     # Search the directories on the path.
     for dir in searchPath:
@@ -114,22 +113,25 @@ def xml(xmlin, cacheFile = True):
     filename = None
 
     # A string argument is a file name.
-    if isinstance(xmlin, types.StringTypes):
+    if isinstance(xmlin, (str,)):
         filename = _findFile(xmlin)
         if not filename:
             raise "Couldn't find XML to parse: %s" % xmlin
 
     if filename:
-        if _xmlcache.has_key(filename):
+        if filename in _xmlcache:
             return _xmlcache[filename]
         xmlin = open(filename)
 
     xmldata = xmlin.read()
-
     if bDomlette:
         doc = NonvalidatingReader.parseString(xmldata, filename or ' ')
     else:
-        doc = PyExpat.Reader().fromString(xmldata)
+        #p = xml.parsers.expat.ParserCreate()
+        #doc = p.Parse(xmldata)
+        #doc = PyExpat.Reader().fromString(xmldata)
+        doc = parseString(xmldata)
+        #doc = parse(filename)
 
     parsedxml = HandyXmlWrapper(doc.documentElement)
 
@@ -142,10 +144,10 @@ if bXPath:
     def xpath(input, expr):
         """ Evaluate the xpath expression against the input XML.
         """
-        if isinstance(input, types.StringTypes) or hasattr(input, 'read'):
+        if isinstance(input, (str,)) or hasattr(input, 'read'):
             # If input is a filename or an open file, then parse the XML.
             input = xml(input)
-        return map(HandyXmlWrapper, xml_xpath.Evaluate(expr, input))
+        return list(map(HandyXmlWrapper, xml_xpath.Evaluate(expr, input)))
 
 else:
     def xpath(input, expr):

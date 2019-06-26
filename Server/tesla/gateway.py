@@ -18,7 +18,7 @@
 # the program(s) have been supplied.
 # 
   
-import SimpleXMLRPCServer
+import xmlrpc.server
 import socket
 import time
 
@@ -50,7 +50,7 @@ class Gateway(object):
             successFlag = True            
             gatewayAddress = "http://%s:%d" % (targetHost, controlPort)
             try:
-                self.controlServer = SimpleXMLRPCServer.SimpleXMLRPCServer((targetHost, controlPort), 
+                self.controlServer = xmlrpc.server.SimpleXMLRPCServer((targetHost, controlPort), 
                                         logRequests = logging)
                 # Register the various methods for the instrument control server
                 self.controlServer.register_instance(InstrumentInterface(gatewayAddress, controlCentre))
@@ -58,13 +58,13 @@ class Gateway(object):
                 self.controlServer.register_function(self.halt)
                 # If we got to here, we succeeded so break out
                 break
-            except socket.error, msg:
+            except socket.error as msg:
                 # Got here because we couldn't bind to the specified gateway address
-                print "WARNING: Unable to bind %s (%s)" % (gatewayAddress, msg)
+                print("WARNING: Unable to bind %s (%s)" % (gatewayAddress, msg))
                 successFlag = False
         if not successFlag:
-            raise TeslaException, "XML-RPC server socket error = %s (address = %s)" % \
-                    (msg, gatewayAddress)
+            raise TeslaException("XML-RPC server socket error = %s (address = %s)" % \
+                    (msg, gatewayAddress))
 
                 
     def isRunning(self):
@@ -86,8 +86,8 @@ class Gateway(object):
             # Caught an interrupt, can we exit more gracefully than just
             # dropping out of the handle_request() loop?
             pass
-        except StandardError, e:
-            raise TeslaException, "Caught unexpected error: %s" % (e)
+        except Exception as e:
+            raise TeslaException("Caught unexpected error: %s" % (e))
         # A server has cleared the run flag, so close the servers
         self.close()
 

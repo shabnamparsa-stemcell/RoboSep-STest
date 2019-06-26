@@ -19,7 +19,7 @@
 # the program(s) have been supplied.
 # 
 
-class TeslaException(StandardError):
+class TeslaException(Exception):
     '''The base exception class for the Tesla instrument software. All other
     exceptions should be derived from this to pick up any specific behaviour
     that we want/need for Tesla.'''

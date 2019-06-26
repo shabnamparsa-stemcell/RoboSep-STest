@@ -18,7 +18,7 @@ class MyClass(object):
 
     
     def printX(self):
-        print self.x
+        print(self.x)
 
 
 
@@ -37,16 +37,16 @@ class TestNull(unittest.TestCase):
     
     def testNull(self):
         n = Null()
-        self.failUnless(isinstance(n.foobar(), Null))
+        self.assertTrue(isinstance(n.foobar(), Null))
 
     
     def testNullReturn(self):
         for i in (3.3999999999999999, 2, 1, 0):
             val = compute(i).getX()
             if i != 0:
-                self.failUnless(type(val) == type(i))
+                self.assertTrue(type(val) == type(i))
                 continue
-            self.failUnless(isinstance(val, Null))
+            self.assertTrue(isinstance(val, Null))
         
 
 

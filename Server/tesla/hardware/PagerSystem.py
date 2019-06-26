@@ -4,7 +4,7 @@ import datetime
 from ipl.utils.wait import wait_msecs
 from tesla.hardware.config import gHardwareData, LoadSettings
 from tesla.serialnum import InstrumentSerialNumber
-class PagerSystemError(StandardError):
+class PagerSystemError(Exception):
     __module__ = __name__
     __doc__ = 'Exception for errors related to talking to the PagerSystem card(s)'
 
@@ -47,22 +47,22 @@ class PagerSystem:
         self.serialNumber = InstrumentSerialNumber().getSerial()
         
         self.DEBUG = True #os.environ.has_key('ROBO_DEBUG')
-        self.INFO = (self.DEBUG or os.environ.has_key('ROBO_INFO'))
-        if os.environ.has_key('ROBO_FORCE_EMULATION'):
+        self.INFO = (self.DEBUG or 'ROBO_INFO' in os.environ)
+        if 'ROBO_FORCE_EMULATION' in os.environ:
             if self.INFO:
-                print 'PagerSystem emulation forced'
+                print('PagerSystem emulation forced')
             useEmulator = True
         self.usingEmulator = useEmulator
         if self.INFO:
-            print ('Emulator status = %d' % useEmulator)
+            print(('Emulator status = %d' % useEmulator))
             
         if useEmulator:
             self.port = EmulatedPort(port)
             if self.INFO:
-                print "WARNING: emulation mode in use! Hardware won't operate!!"
+                print("WARNING: emulation mode in use! Hardware won't operate!!")
         else:
             self.port = None
-            if PagerSystem.openPorts.has_key(port):
+            if port in PagerSystem.openPorts:
                 self.port = PagerSystem.openPorts[port]
             else:
                 import serial
@@ -70,16 +70,16 @@ class PagerSystem:
                 from SimpleStep.SerialComms import SerialComms
                 try:
                     self.port = SerialComms(port,9600)
-                except serial.serialutil.SerialException, args:
+                except serial.serialutil.SerialException as args:
                     if (str(args).find('Access is denied') >= 0):
                         errorMsg = ("Can't access port %s (%s). Locked by another resource?" % (port,
                          args))
                     else:
                         errorMsg = args
-                    print "PagerSystemError: %s" % (errorMsg)
+                    print("PagerSystemError: %s" % (errorMsg))
                 PagerSystem.openPorts[port] = self.port
             if self.port == None or not self.reset():
-                print "PagerSystemError: Could not talk to %s pager system" % (self.port)
+                print("PagerSystemError: Could not talk to %s pager system" % (self.port))
             self.setEcho(False)
             self.setRePage(5)
             self.setTime(time.localtime()[3],time.localtime()[4])
@@ -130,7 +130,7 @@ class PagerSystem:
         
         result = self.process('PAGE,'+str(pagerID)+','+str(sysID)+','+msg)
         if result.find(PagerSystem.PAGE_SUCCESSFUL)!=0:
-            print "PagerSystemError: Page failed. (%s)" % (msg)
+            print("PagerSystemError: Page failed. (%s)" % (msg))
         return result.find(PagerSystem.PAGE_SUCCESSFUL)==0   
 
     #hr in 24hr clk
@@ -141,17 +141,17 @@ class PagerSystem:
         """Wait until the PagerSystem is ready, then send data to the card
         and return a tuple of payload data and the status."""
         if self.DEBUG:
-            print ('PagerSystem(%s): [%s] ->' % (self.getPort(),data))
+            print(('PagerSystem(%s): [%s] ->' % (self.getPort(),data)))
         if self.port == None:
             return ''
         try:
             payload = self.port.sendAndCheck(data,delay)
-        except Exception, errMsg:
-            print "PagerSystemError: process failed. (%s)" % (errMsg)
+        except Exception as errMsg:
+            print("PagerSystemError: process failed. (%s)" % (errMsg))
             payload = None
         returnValue = payload
         if self.DEBUG:
-            print ('process returnValue = [%s]' % returnValue)
+            print(('process returnValue = [%s]' % returnValue))
         if returnValue==None:
             return ''
         return returnValue

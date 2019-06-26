@@ -7,7 +7,7 @@ def findMatchingDirs(dirRE, startDir = '.', reFlags = re.IGNORECASE):
     match the supplied regular expression. reFlags sets regexp flags; by 
     default, we do case-insensitive searches."""
     pattern = re.compile(dirRE, reFlags)
-    return filter(pattern.search, path(startDir).walkdirs())
+    return list(filter(pattern.search, path(startDir).walkdirs()))
 
 
                                        
@@ -16,7 +16,7 @@ def findMatchingFiles(fileRE, searchPath = '.', reFlags = re.IGNORECASE):
     supplied regular expression. reFlags sets regexp flags; by default, we do
     case-insensitive searches."""
     pattern = re.compile(fileRE, reFlags)
-    return filter(pattern.search, path(searchPath).files())
+    return list(filter(pattern.search, path(searchPath).files()))
 
 
 
@@ -53,11 +53,11 @@ def createDir(newdir):
     if os.path.isdir(newdir):
         pass
     elif os.path.isfile(newdir):
-        print "createDir error - file name conflicts with dir name"
+        print("createDir error - file name conflicts with dir name")
     else:
         head, tail = os.path.split(newdir)
         if head and not os.path.isdir(head):
             _mkdir(head)
-        print "createDir %s" % repr(newdir)
+        print("createDir %s" % repr(newdir))
         if tail:
             os.mkdir(newdir)

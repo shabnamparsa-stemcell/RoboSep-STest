@@ -19,7 +19,7 @@
 # the program(s) have been supplied.
 # 
 
-from types import IntType, FloatType
+#from types import IntType, FloatType
 
 from ipl.utils.validation import validateNumber
 from tesla.exception import TeslaException
@@ -72,16 +72,16 @@ class Sample:
         self.particleLabel = particleLabel 
         self.antibodyLabel = antibodyLabel 
 
-        print "Sample particleLabel ",self.particleLabel
-        print "Sample cocktailLabel ",self.cocktailLabel
-        print "Sample antibodyLabel ",self.antibodyLabel
+        print("Sample particleLabel ",self.particleLabel)
+        print("Sample cocktailLabel ",self.cocktailLabel)
+        print("Sample antibodyLabel ",self.antibodyLabel)
         
         self.lysisLabel = lysisLabel
         self.sample1Label = sample1Label    # bdr99
         self.sample2Label = sample2Label    # bdr99
         self.bufferLabel = bufferLabel      # sunny
         
-        print "Sample label ",self.sample1Label
+        print("Sample label ",self.sample1Label)
 
         self.verifySampleVolume(volume_uL)
         self.volume = volume_uL
@@ -114,16 +114,16 @@ class Sample:
     def verifySampleVolume(self, volume_uL):
         '''Verify that the sample volume is sensible. Throws a TeslaException
         if the value is not numeric or is out of range.'''
-        if type(volume_uL) not in [IntType, FloatType]:
-            raise TeslaException, 'Invalid type for sample volume'
+        if type(volume_uL) not in [int, float]:
+            raise TeslaException('Invalid type for sample volume')
         elif not validateNumber(volume_uL, 0, tesla.config.DEFAULT_WORKING_VOLUME_uL):
-            raise TeslaException, 'Sample volume is out of range'
+            raise TeslaException('Sample volume is out of range')
 
     def verifyQuadrant(self, quadrantNumber):
         '''Verify that the specified quadrant is valid. Throws a TeslaException
         if it is not.'''
         if not validateNumber(quadrantNumber, 1, tesla.config.NUM_QUADRANTS):
-            raise TeslaException, 'Invalid quadrant number'
+            raise TeslaException('Invalid quadrant number')
 
 
 # eof

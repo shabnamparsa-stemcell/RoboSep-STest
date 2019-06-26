@@ -94,11 +94,11 @@ class ClientProtocol:
         int        numQuadrants
         '''
         if protocolClass not in ClientProtocol.LEGAL_CLASSES:
-            raise ClientProtocolException, "Invalid separation class: %s" % (protocolClass)
-        self.protocolClass = protocolClass
+            raise ClientProtocolException("Invalid separation class: %s" % (protocolClass))
+        self.protocolClass = str(protocolClass)
         
-        self.label = label
-        self.description = description
+        self.label = str(label)
+        self.description = str(description)
         self.ID = simpleHash(label)
 
         # Let's ensure that we don't have a hash collision - just replace the
@@ -110,18 +110,18 @@ class ClientProtocol:
             
         # Sanity check the volumes
         if minVolume_uL > maxVolume_uL:
-            raise ClientProtocolException, 'Min volume must be less than max volume'
+            raise ClientProtocolException('Min volume must be less than max volume')
         elif maxVolume_uL > tesla.config.DEFAULT_WORKING_VOLUME_uL:
-            raise ClientProtocolException, "Maximum volume can not exceed %0.1f uL" % \
-                    (tesla.config.DEFAULT_WORKING_VOLUME_uL)
+            raise ClientProtocolException("Maximum volume can not exceed %0.1f uL" % \
+                    (tesla.config.DEFAULT_WORKING_VOLUME_uL))
         else:
             self.minVol = float(minVolume_uL)
             self.maxVol = float(maxVolume_uL)
 
         # Sanity check the quadrants 
         if numQuadrants < 0 or numQuadrants > tesla.config.NUM_QUADRANTS:
-            raise ClientProtocolException, "Number of quadrants must be between 0 & %d (not %d)" % \
-                    (tesla.config.NUM_QUADRANTS, numQuadrants)
+            raise ClientProtocolException("Number of quadrants must be between 0 & %d (not %d)" % \
+                    (tesla.config.NUM_QUADRANTS, numQuadrants))
         self.numQuadrants = numQuadrants
 
     def __str__(self):

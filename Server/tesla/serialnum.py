@@ -42,13 +42,13 @@ class InstrumentSerialNumber(object):
                 if self.validate(valueFromFile):
                     InstrumentSerialNumber.__serial = valueFromFile
                 else:
-                    raise TeslaException, "Invalid serial number (%s)" % (valueFromFile)
+                    raise TeslaException("Invalid serial number (%s)" % (valueFromFile))
                 f.close()
                 InstrumentSerialNumber.__haveSerial = True
-            except IOError, msg:
+            except IOError as msg:
                 # Any problem, throw an exception to force the developer or
                 # production engineer to install a serial number file
-                raise TeslaException, "Unable to read instrument serial number (%s)" % (msg)
+                raise TeslaException("Unable to read instrument serial number (%s)" % (msg))
 
     def __repr__(self):
         '''Return a string representation of the serial number'''
@@ -59,7 +59,7 @@ class InstrumentSerialNumber(object):
         validFlag = True
         try:
             val = int(serialNumber)
-        except ValueError, msg:
+        except ValueError as msg:
             validFlag = False
         return validFlag
 
@@ -80,7 +80,7 @@ class InstrumentSerialNumber(object):
 
 if __name__ == '__main__':
     serial = InstrumentSerialNumber()
-    print "[%s]" % serial.getSerial()
+    print("[%s]" % serial.getSerial())
 
 # eof
 

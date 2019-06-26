@@ -3,7 +3,7 @@
 # Compiled at: 2004-09-07 02:14:15
 # Decompiled by https://python-decompiler.com
 from ipl.utils.wait import wait_msecs
-from Board import Board, EmulatorError
+from .Board import Board, EmulatorError
 
 class Port:
     """A fake serial port that looks like it has a SimpleStep card attached"""
@@ -57,6 +57,6 @@ class Port:
 
 if __name__ == '__main__':
     fakeCOM1 = Port('COM1')
-    print fakeCOM1.boards
-    print fakeCOM1.sendAndCheck('D1')
-    print fakeCOM1.sendAndCheck('D1v0')
+    print(fakeCOM1.boards)
+    print(fakeCOM1.sendAndCheck('D1'))
+    print(fakeCOM1.sendAndCheck('D1v0'))

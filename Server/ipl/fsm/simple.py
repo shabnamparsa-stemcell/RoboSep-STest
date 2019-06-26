@@ -29,7 +29,7 @@ class SimpleFSM(object):
     
     def addGlobalState(self, state):
         '''Add a state that can be accessed from every other state.'''
-        for startingState in self._SimpleFSM__transitions.keys():
+        for startingState in list(self._SimpleFSM__transitions.keys()):
             self._SimpleFSM__transitions[startingState].append(state)
         
 
@@ -37,7 +37,7 @@ class SimpleFSM(object):
     def addTransition(self, startState, newState):
         '''Add a transition to our FSM transition table defining the
 \tstarting state and the new state we transition to.'''
-        if self._SimpleFSM__transitions.has_key(startState):
+        if startState in self._SimpleFSM__transitions:
             self._SimpleFSM__transitions[startState].append(newState)
         else:
             self._SimpleFSM__transitions[startState] = [
@@ -61,7 +61,7 @@ class SimpleFSM(object):
         if newState in targets:
             self._SimpleFSM__state = newState
         else:
-            raise FSM_Exception, "%s is not a target state for the '%s' state" % (newState, self.getState())
+            raise FSM_Exception("%s is not a target state for the '%s' state" % (newState, self.getState()))
 
     state = property(getState, changeState, doc = 'State property')
 
@@ -86,12 +86,12 @@ if __name__ == '__main__':
     table['SHUTDOWN'] = [
         SimpleFSM.END_STATE]
     fsm = SimpleFSM(table)
-    print fsm.getState()
-    print fsm.getTargetStates()
+    print(fsm.getState())
+    print(fsm.getTargetStates())
     fsm.addGlobalState('ESTOP')
-    print fsm.getTargetStates()
+    print(fsm.getTargetStates())
     fsm.changeState('POWERED_ON')
-    print fsm.getState()
+    print(fsm.getState())
     fsm.changeState('ESTOP')
     fsm.addTransition('ESTOP', SimpleFSM.END_STATE)
     fsm.changeState(SimpleFSM.END_STATE)

@@ -37,7 +37,7 @@ class SchedulerEvaluator(object):
         self.protocols = self.pm.getProtocolsForClient()
         
     def inputNumber(self, prompt = '', minNum = 0, maxNum = 9999):
-        num = int(raw_input(prompt))
+        num = int(input(prompt))
         if num < minNum:
             num = minNum
         elif num > maxNum:
@@ -47,11 +47,11 @@ class SchedulerEvaluator(object):
     def displayProtocols(self):
         i = 0
         for prot in self.protocols:
-            print "    %d\t%s" % (i, prot)
+            print("    %d\t%s" % (i, prot))
             i += 1
 
     def selectSamples(self):
-        print
+        print()
         numSamples = self.inputNumber('Number of samples to schedule: ', 1, 4)
         sampleList = []        
         volume = 1000
@@ -70,18 +70,18 @@ class SchedulerEvaluator(object):
             etc = self.scheduler.getETC()
             duration = self.scheduler.calculateDuration()
 
-        except SchedulerException, msg:
-            print "Scheduler exception: %s" % (msg)
+        except SchedulerException as msg:
+            print("Scheduler exception: %s" % (msg))
             self.schedule = None                # Force the schedule to be null
 
         if self.schedule == None:
-            print "\nFAILED: No schedule could be determined"
+            print("\nFAILED: No schedule could be determined")
         else:
-            print "\nScheduled! ETC = %s, duration = %d secs" % (etc, duration)
+            print("\nScheduled! ETC = %s, duration = %d secs" % (etc, duration))
             
             for wf in self.schedule.getWorkflows():
                 cmd, time = wf.getWorkflowAndTime()
-                print "T = %4d\t%s" % (time, cmd[:60])
+                print("T = %4d\t%s" % (time, cmd[:60]))
 
 # -----------------------------------------------------------------------------
 

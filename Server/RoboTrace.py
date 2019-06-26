@@ -1,4 +1,5 @@
-from wxPython.wx import *
+#from wx import *
+import wx
 from re import *
 import threading
 import sys, os
@@ -15,30 +16,30 @@ import os, sys;
 import win32gui, win32con, win32api, win32clipboard
 
 from tesla.PgmLog import PgmLog     # 2012-01-04 sp -- programming logging
-from ConfigParser import *          # 2012-01-04 sp -- configuration from ini file
+from configparser import *          # 2012-01-04 sp -- configuration from ini file
 
 import ctypes;
 
-ID_FRAME      = wxNewId()
-ID_BUTTON     = wxNewId()
-ID_PANEL      = wxNewId()
-ID_TIMER      = wxNewId()
-ID_PWD        = wxNewId()
-ID_TITLE      = wxNewId()
-ID_CAPT_AXIS  = wxNewId()
-ID_AXIS_X0    = wxNewId()
-ID_AXIS_X1    = wxNewId()
-ID_AXIS_Y0    = wxNewId()
-ID_AXIS_Y1    = wxNewId()
-ID_CMDTYPE    = wxNewId()
-ID_DUMP       = wxNewId()
-ID_DUMPNOTIME = wxNewId()
-ID_DUMPNODISP = wxNewId()
-ID_STEP       = wxNewId()
-ID_STEPBEEP   = wxNewId()
-ID_STEPPOPUP  = wxNewId()
-ID_DUMPBUTTON = wxNewId()
-ID_BMP        = wxNewId()
+ID_FRAME      = wx.Window.NewControlId()
+ID_BUTTON     = wx.Window.NewControlId()
+ID_PANEL      = wx.Window.NewControlId()
+ID_TIMER      = wx.Window.NewControlId()
+ID_PWD        = wx.Window.NewControlId()
+ID_TITLE      = wx.Window.NewControlId()
+ID_CAPT_AXIS  = wx.Window.NewControlId()
+ID_AXIS_X0    = wx.Window.NewControlId()
+ID_AXIS_X1    = wx.Window.NewControlId()
+ID_AXIS_Y0    = wx.Window.NewControlId()
+ID_AXIS_Y1    = wx.Window.NewControlId()
+ID_CMDTYPE    = wx.Window.NewControlId()
+ID_DUMP       = wx.Window.NewControlId()
+ID_DUMPNOTIME = wx.Window.NewControlId()
+ID_DUMPNODISP = wx.Window.NewControlId()
+ID_STEP       = wx.Window.NewControlId()
+ID_STEPBEEP   = wx.Window.NewControlId()
+ID_STEPPOPUP  = wx.Window.NewControlId()
+ID_DUMPBUTTON = wx.Window.NewControlId()
+ID_BMP        = wx.Window.NewControlId()
 
 ORIG_X_FRAME      = 200
 ORIG_Y_FRAME      = 100
@@ -104,7 +105,7 @@ SIZE_Y_STEPPOPUP  = 20
 SIZE_X_DUMPBUTTON = 140
 SIZE_Y_DUMPBUTTON = 25
 
-STYLE_FRAME   = wxCAPTION|wxICONIZE
+STYLE_FRAME   = wx.CAPTION|wx.ICONIZE
 
 CAPT_APP          = "RoboSep Tracer"
 CAPT_BUTTON       = "Enter"
@@ -143,19 +144,19 @@ SPLASH_NAME      = 'Form_SplashScreen.exe';
 
 def opj(path):
     """Convert paths to the platform-specific separator"""
-    return apply(os.path.join, tuple(path.split('/')))
+    return os.path.join(*tuple(path.split('/')))
 
-class RoboTracerFrame(wxFrame):    
+class RoboTracerFrame(wx.Frame):    
     def __init__(self, parent, ID, title):
 
         self.Owner   = None
         self.Mode    = 0
          
-        if os.environ.has_key('ProgramFiles(x86)'):    
+        if 'ProgramFiles(x86)' in os.environ:    
             BIN_DIR = BIN_DIR64
         else:
             BIN_DIR = BIN_DIR32
-        print ('\n** RoboTracer BIN_DIR: %s\n'%BIN_DIR)
+        print(('\n** RoboTracer BIN_DIR: %s\n'%BIN_DIR))
 
 
         wxFrame.__init__(self, parent, ID, title,
@@ -265,7 +266,7 @@ class RoboTracerFrame(wxFrame):
         
         pass
         
-class RoboTracerApp(wxApp):
+class RoboTracerApp(wx.App):
     keyword = None
     AspiHeight = 0;    
     def OnInit(self):
@@ -340,7 +341,7 @@ class RoboCamMgr :
         self.ProtID    = -1
         self.ProtSeq   = -1
         
-        if os.environ.has_key('ProgramFiles(x86)'):    
+        if 'ProgramFiles(x86)' in os.environ:    
             self.BIN_DIR = BIN_DIR64
         else:
             self.BIN_DIR = BIN_DIR32
@@ -372,7 +373,7 @@ class RoboCamMgr :
                 # generate log message of success, report file and version number
                 self.svrLog.logVerbose('', self.logPrefix, funcReference, \
                     'Using log configuration: videoID=%d | audioID=%d | profID=%d' % (self.Vid_ID, self.Aud_ID, self.Prof_ID) ) 
-            except Exception, msg:
+            except Exception as msg:
                 self.svrLog.logWarning('', self.logPrefix, funcReference, \
                     'Error reading from configuration file [%s]...Default settings used: %s' % (configFile, msg) )
         else:
@@ -381,7 +382,7 @@ class RoboCamMgr :
 
                 
     def SetTxData(self, msg):
-        if os.environ.has_key('ROBO_NOCAM'):
+        if 'ROBO_NOCAM' in os.environ:
            return;
     
         win32clipboard.OpenClipboard();
@@ -390,7 +391,7 @@ class RoboCamMgr :
         win32clipboard.CloseClipboard();
         
     def MakeFileNames(self):
-        if os.environ.has_key('ROBO_NOCAM'):
+        if 'ROBO_NOCAM' in os.environ:
            return;
     
         now = time.localtime();
@@ -407,18 +408,18 @@ class RoboCamMgr :
            DeleteMovieName = FileList[0];
            try:
                 os.remove( DeleteMovieName );
-                print ('\n\n### Delete the file %s!\n'%DeleteMovieName);
+                print(('\n\n### Delete the file %s!\n'%DeleteMovieName));
            except:
-                print ('\n\n### Cannot Delete the file %s!\n'%DeleteMovieName);
+                print(('\n\n### Cannot Delete the file %s!\n'%DeleteMovieName));
            DeleteSMIName = string.replace(DeleteMovieName, 'asf', 'smi');
            try:
                 os.remove( DeleteSMIName );
-                print ('\n\n### Delete the file %s!\n'%DeleteSMIName);
+                print(('\n\n### Delete the file %s!\n'%DeleteSMIName));
            except:
-                print ('\n\n### Cannot Delete the file %s!\n'%DeleteSMIName);
+                print(('\n\n### Cannot Delete the file %s!\n'%DeleteSMIName));
         
     def ExcuteRoboCam(self):
-        if os.environ.has_key('ROBO_NOCAM'):
+        if 'ROBO_NOCAM' in os.environ:
            return;
            
         AppName = self.BIN_DIR + '\\' + CAM_NAME + (" %d") % self.CAM_ORIENTATION;
@@ -430,7 +431,7 @@ class RoboCamMgr :
             None;
         
         try:                
-            print '\n >>> RoboCam Start : %s\n'%AppName
+            print('\n >>> RoboCam Start : %s\n'%AppName)
             execCode = win32api.WinExec(AppName);
             self.wh  = win32gui.FindWindow('TApplication','RoboCam');
             if (self.wh != 0):
@@ -444,7 +445,7 @@ class RoboCamMgr :
             print (">> Error launching app: RoboCam");
         
     def TerminateRoboCam(self):
-        if os.environ.has_key('ROBO_NOCAM'):
+        if 'ROBO_NOCAM' in os.environ:
            return;
            
         if (self.wh != 0):
@@ -455,18 +456,18 @@ class RoboCamMgr :
                 try:
                     shutil.copy( self.FileName, self.ErrorFileName ); 
                 except: 
-                    print ('\n\n #### RoboCam cannot find %s !\n'%self.FileName);
+                    print(('\n\n #### RoboCam cannot find %s !\n'%self.FileName));
                 try:
                     shutil.copy( self.FileSmiName, self.ErrorFileSmiName );                 
                 except:
-                    print ('\n\n #### RoboCam cannot find %s !\n'%self.FileSmiName);                    
+                    print(('\n\n #### RoboCam cannot find %s !\n'%self.FileSmiName));                    
 
         self.wh = 0;
         self.FlagError = False;
         
     
     def StartCapture(self):
-        if os.environ.has_key('ROBO_NOCAM'):
+        if 'ROBO_NOCAM' in os.environ:
            return;
     
         self.FlagError = False;
@@ -477,10 +478,10 @@ class RoboCamMgr :
 
             errcode = win32gui.SendMessage(self.wh, self.ROBO_REMOTE_START,0, 0);
             if (errcode == 1):
-               print ('\n\n #### RoboCam starts capturing at %s\n\n'%self.FileName);
+               print(('\n\n #### RoboCam starts capturing at %s\n\n'%self.FileName));
                return True;
             else:
-               print ('\n\n #### RoboCam cannot capture! Error Code: %d\n'%errcode );
+               print(('\n\n #### RoboCam cannot capture! Error Code: %d\n'%errcode ));
                ans = False;
             while (errcode == 3):
                print ('\n\n #### RoboCam fails to receive the file name! Retry...\n');
@@ -492,7 +493,7 @@ class RoboCamMgr :
             return ans;   
                
     def StopCapture(self):
-        if os.environ.has_key('ROBO_NOCAM'):
+        if 'ROBO_NOCAM' in os.environ:
            return;
     
         if (self.wh != 0):
@@ -507,19 +508,19 @@ class RoboCamMgr :
                 try:
                     shutil.copy( self.FileName, self.ErrorFileName ); 
                 except : 
-                    print ('\n\n #### RoboCam cannot find %s !\n'%self.FileName);
+                    print(('\n\n #### RoboCam cannot find %s !\n'%self.FileName));
                 try:
                     shutil.copy( self.FileSmiName, self.ErrorFileSmiName );                 
                 except:
-                    print ('\n\n #### RoboCam cannot find %s !\n'%self.FileSmiName);                    
+                    print(('\n\n #### RoboCam cannot find %s !\n'%self.FileSmiName));                    
                
     def SetProcEvent(self, proc_event):
         self.DemoState = self.RoboEventString[proc_event];
-        if os.environ.has_key('ROBO_NOCAM'):
+        if 'ROBO_NOCAM' in os.environ:
            return;
     
         if (self.wh != 0):
-           print ('\n\n #### RoboCam Event %s \n'%self.RoboEventString[proc_event]);
+           print(('\n\n #### RoboCam Event %s \n'%self.RoboEventString[proc_event]));
            try:
               win32gui.SendMessage(self.wh, self.ROBO_REMOTE_SET_EVENT, proc_event, 0);
            except:   
@@ -536,18 +537,18 @@ class RoboCamMgr :
             
         self.DemoState = self.RoboStepString[proc_step];
         
-        if os.environ.has_key('ROBO_NOCAM'):
+        if 'ROBO_NOCAM' in os.environ:
            return;
     
         if (self.wh != 0):
-           print ('\n\n #### RoboCam Step %s \n'%self.RoboStepString[proc_step]);
+           print(('\n\n #### RoboCam Step %s \n'%self.RoboStepString[proc_step]));
            try: 
               win32gui.SendMessage(self.wh, self.ROBO_REMOTE_SET_STEP, proc_step, 0);
            except:   
                pass;
                
     def SetProcError(self, Critical = False):
-        if os.environ.has_key('ROBO_NOCAM'):
+        if 'ROBO_NOCAM' in os.environ:
            return;
     
         self.FlagError = True;
@@ -561,35 +562,35 @@ class RoboCamMgr :
 
             
     def GetVideoCaptureName(self):
-        if os.environ.has_key('ROBO_NOCAM'):
+        if 'ROBO_NOCAM' in os.environ:
            return 'ROBO_NOCAM';    
         return self.FileName;
         
     def GetErrorVideoCaptureName(self):
-        if os.environ.has_key('ROBO_NOCAM'):
+        if 'ROBO_NOCAM' in os.environ:
            return 'ROBO_NOCAM';    
         return self.ErrorFileName;
 
     def SetCurrentProtocolID(self, id):
         self.ProtID = id;
-        print ('\n\n #### RoboCam id %d \n'%self.ProtID);                
+        print(('\n\n #### RoboCam id %d \n'%self.ProtID));                
 
     def GetCurrentProtocolID(self):
         return self.ProtID;
         
     def SetCurrentProtocolSeq(self, seq):
         self.ProtSeq = seq;
-        print ('\n\n #### RoboCam Seq %d \n'%self.ProtSeq);        
+        print(('\n\n #### RoboCam Seq %d \n'%self.ProtSeq));        
         
     def GetCurrentProtocolSeq(self):
         return self.ProtSeq;
         
     def SetCurrentSec(self, sec):
         self.Sec = sec;
-        if os.environ.has_key('ROBO_NOCAM'):
+        if 'ROBO_NOCAM' in os.environ:
            return;    
         if (self.wh != 0):
-           print ('\n\n #### RoboCam Quadrant %d \n'%self.Sec);
+           print(('\n\n #### RoboCam Quadrant %d \n'%self.Sec));
            win32gui.SendMessage(self.wh, self.ROBO_REMOTE_SET_QUADRANT, self.Sec, 0);
         
     def GetCurrentSec(self): 
@@ -603,15 +604,15 @@ class RoboCamMgr :
             idx = self.RoboStepString.index(cmd_str)
             self.SetProcStep(idx);
         except:
-            print '\n\n #### RoboCam UNKNOWN COMMAND: %s \n' % cmd_str
+            print('\n\n #### RoboCam UNKNOWN COMMAND: %s \n' % cmd_str)
             self.svrLog.logWarning('', self.logPrefix, funcReference, \
                                    '\n\n #### RoboCam UNKNOWN COMMAND: %s \n' % (cmd_str))
             
         self.SetCurrentProtocolID(id)
-        if kw.has_key('seq'):   
+        if 'seq' in kw:   
            seq = kw['seq']      
            self.SetCurrentProtocolSeq(seq)
-        if kw.has_key('initialQuadrant'): 
+        if 'initialQuadrant' in kw: 
            qdr = kw['initialQuadrant']
            self.SetCurrentSec(qdr)
         
@@ -626,7 +627,7 @@ def GetRoboCamMgrInstance():
 
 class RoboSplashMgr:
     def __init__(self):
-        if os.environ.has_key('ProgramFiles(x86)'):    
+        if 'ProgramFiles(x86)' in os.environ:    
             self.BIN_DIR = BIN_DIR64
         else:
             self.BIN_DIR = BIN_DIR32

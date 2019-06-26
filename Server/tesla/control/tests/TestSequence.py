@@ -30,8 +30,8 @@ class TestSequence(unittest.TestCase):
     def test_init(self):
         # Test that we have the right class
         s = Sequence()
-        self.failUnless(isinstance(s, Sequence))
-        self.failUnless(isinstance(s, list))
+        self.assertTrue(isinstance(s, Sequence))
+        self.assertTrue(isinstance(s, list))
 
 
     def test_len(self):
@@ -39,8 +39,8 @@ class TestSequence(unittest.TestCase):
         s1 = Sequence()
         myList = [1,2,3,4,5,6,7]
         s2 = Sequence(myList)
-        self.failUnless(len(s1) == 0)
-        self.failUnless(len(s2) == len(myList))
+        self.assertTrue(len(s1) == 0)
+        self.assertTrue(len(s2) == len(myList))
 
 
     def test_getSeq(self):
@@ -49,7 +49,7 @@ class TestSequence(unittest.TestCase):
         cmd = "Transport(dstVial=self.instrument.ContainerAt(1, 'samplevial'), srcVial=self.instrument.ContainerAt(1, 'cocktailvial'), volume_ul=100.00, usingFreeAirDispense=False, usingBufferTip=False, id=1, seq=%d)" % (cmdSeq)
         s = Sequence()
         seq = s.getSeq(cmd)
-        self.failUnless(seq == cmdSeq)
+        self.assertTrue(seq == cmdSeq)
 
 
     def test_invalidSeq(self):
@@ -58,7 +58,7 @@ class TestSequence(unittest.TestCase):
         invalidCmd = "Incubate(120, id=1, seq=X)"
         s = Sequence()
         seq = s.getSeq(invalidCmd)
-        self.failUnless(seq == 0)
+        self.assertTrue(seq == 0)
 
 
     def test_failedSeq(self):
@@ -67,7 +67,7 @@ class TestSequence(unittest.TestCase):
         invalidCmd = "Doofus(lala_land)"
         s = Sequence()
         seq = s.getSeq(invalidCmd)
-        self.failUnless(seq == 0)
+        self.assertTrue(seq == 0)
 
 
     def test_sort(self):
@@ -91,8 +91,8 @@ class TestSequence(unittest.TestCase):
         ]
         s = Sequence(events)
         s.sort()
-        for origEvent, seqEvent in itertools.izip(events, s):
-            self.failUnless(origEvent == seqEvent, "Expecting %s" % (str(origEvent)))
+        for origEvent, seqEvent in zip(events, s):
+            self.assertTrue(origEvent == seqEvent, "Expecting %s" % (str(origEvent)))
 
 
     def test_seqOrder(self):
@@ -103,7 +103,7 @@ class TestSequence(unittest.TestCase):
         ]
         s = Sequence(events)
         s.sort()
-        self.failUnless(s[1] == (716, 'Separate(0, id=1, seq=18)'))
+        self.assertTrue(s[1] == (716, 'Separate(0, id=1, seq=18)'))
 
 
     def test_timeOrder(self):
@@ -133,7 +133,7 @@ class TestSequence(unittest.TestCase):
         sorted = Sequence(sortedEvents)         # Our well sorted (good) list
         s = Sequence(mixedEvents)               # The mixed up list
         s.sort()
-        self.failUnless(sorted == s, 'Sorted events on time has failed')
+        self.assertTrue(sorted == s, 'Sorted events on time has failed')
 
 # -----------------------------------------------------------------------------
  

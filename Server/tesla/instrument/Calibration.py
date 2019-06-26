@@ -38,7 +38,7 @@ import os                          # 2011-11-28 sp -- programming logging
 
 
 # logging limits
-ROLLOVER_SIZE = 104857600L  # roll the file over @ 100MB
+ROLLOVER_SIZE = 104857600  # roll the file over @ 100MB
 MAX_BACKUPS = 9999
 
 
@@ -331,7 +331,7 @@ class Calibration(Subsystem):
         """Stores the current z height to temp var m_jigZHeight"""
         # Get the current z position
         self.m_jigZHeight = self.m_zAxis.Position()        
-        print '#####!!!!!! Called calibrateZHeight %f### '%self.m_jigZHeight
+        print('#####!!!!!! Called calibrateZHeight %f### '%self.m_jigZHeight)
         
     def calibrateSetSmallVialTipHeight (self):
         """Calculates tiphead Z for small vials var m_jigZHeight - about 192mm (travel -92mm, gap 2mm)"""
@@ -353,13 +353,13 @@ class Calibration(Subsystem):
         
     def calibrateSet14mLTubeTipHeight (self):
         height = self.m_zAxis.Position() - float(self.m_travelOffset5mLTipLabel) + float(self.m_minTipBaseGapLabel)
-        print "calibrateSet14mLTubeTipHeight", height
+        print("calibrateSet14mLTubeTipHeight", height)
         self.m_hardwareConfig.writeItem( self.m_instrument.TeslaLabel,
                                         self.m_instrument.Base14mlLabel,
                                         height )
     def calibrateSet50mLTubeTipHeight (self):
         height = self.m_zAxis.Position() - float(self.m_travelOffset5mLTipLabel) + float(self.m_minTipBaseGapLabel)
-        print "calibrateSet50mLTubeTipHeight", height
+        print("calibrateSet50mLTubeTipHeight", height)
         self.m_hardwareConfig.writeItem( self.m_instrument.TeslaLabel,
                                         self.m_instrument.Base50mlLabel,
                                         height )
@@ -368,10 +368,10 @@ class Calibration(Subsystem):
         tmpJigHeight1 = self.m_sampleTubeTipHeight - float(self.m_travelOffset5mLTipLabel) + float(self.m_minTipBaseGapLabel) - float(self.m_baseOffset14mlVial)
         tmpJigHeight2 = self.m_smallVialTipHeight - float(self.m_travelOffset1mLTipLabel)  + float(self.m_minTipBaseGapLabel) - float(self.m_baseOffsetCocktailVial)
         tmpJigHeightAVG = (tmpJigHeight1 + tmpJigHeight2) / 2
-        print "New Z Cal!!!",self.m_sampleTubeTipHeight , float(self.m_baseOffset14mlVial)
-        print "New Z Cal!!!",self.m_smallVialTipHeight , float(self.m_baseOffsetCocktailVial)
-        print "New Z Cal!!!",tmpJigHeight1, tmpJigHeight2, \
-              " ==>", tmpJigHeightAVG
+        print("New Z Cal!!!",self.m_sampleTubeTipHeight , float(self.m_baseOffset14mlVial))
+        print("New Z Cal!!!",self.m_smallVialTipHeight , float(self.m_baseOffsetCocktailVial))
+        print("New Z Cal!!!",tmpJigHeight1, tmpJigHeight2, \
+              " ==>", tmpJigHeightAVG)
         #don't need this any more
         #self.m_jigZHeight = tmpJigHeightAVG
 
@@ -486,7 +486,7 @@ class Calibration(Subsystem):
             self.m_barcode_offset_degrees -=360
         if self.m_barcode_offset_degrees < -360:
             self.m_barcode_offset_degrees +=360
-        print "----------calibrateBarcodeToVial:",self.m_barcode_offset_degrees,self.m_carouselAxis.Theta(),cTheta
+        print("----------calibrateBarcodeToVial:",self.m_barcode_offset_degrees,self.m_carouselAxis.Theta(),cTheta)
     
     def ContainerAt (self, sector, name):
         return self.m_instrument.ContainerAt(sector,name)
@@ -527,7 +527,7 @@ class Calibration(Subsystem):
         """Generic set calibration value method. Stores 'robot_theta, carousel_theta' pair,
         using the current axis positions."""
         s = self.convertTupleToString(( theta, carousel ))
-        print "setCalibrationReferencePoint:",key,theta,carousel
+        print("setCalibrationReferencePoint:",key,theta,carousel)
         self.m_hardwareConfig.writeItem( Calibration.ReferencePointsLabel, key, s )
     
     ### End calibration method
@@ -536,21 +536,21 @@ class Calibration(Subsystem):
         '''Do final calibration calculations (if required) and write the
         results into the hardware configuration file.'''
         
-        print '#### Enter endCalibration ####'
+        print('#### Enter endCalibration ####')
         # Work out centreline of jig and store to hardware config
         if None != self.m_jigCarouselAngle1 and None != self.m_jigCarouselAngle2:
             centreline = ( self.m_jigCarouselAngle1 + self.m_jigCarouselAngle2 ) / 2. + 90.
             self.m_hardwareConfig.writeItem( self.m_platform.SectionName,
                                         self.m_platform.CarouselThetaOffsetLabel,
                                         centreline )
-            print '#### calibrate CarouselThetaOffsetLabel v1  %f ####' % (centreline )
+            print('#### calibrate CarouselThetaOffsetLabel v1  %f ####' % (centreline ))
 
         if None != self.m_jigCarouselAngle1_v2 and None != self.m_jigCarouselAngle2_v2:
             centreline = ( self.m_jigCarouselAngle1_v2 + self.m_jigCarouselAngle2_v2 ) / 2. + 90 +90.
             self.m_hardwareConfig.writeItem( self.m_platform.SectionName,
                                         self.m_platform.CarouselThetaOffsetLabel,
                                         centreline )
-            print '#### calibrate CarouselThetaOffsetLabel v2 %f ####' % (centreline )
+            print('#### calibrate CarouselThetaOffsetLabel v2 %f ####' % (centreline ))
 
         # Store the reference points to hardware config
         if None != self.m_reagentVialAngle:
@@ -584,7 +584,7 @@ class Calibration(Subsystem):
                                         self.m_platform.Tip5_5ml_Label, s )
 
         if None != self.m_1mlStripTipAngle: 
-            print '\t###Enter 1mL Strip cal!'
+            print('\t###Enter 1mL Strip cal!')
             s = self.convertTupleToString(( self.m_1mlStripTipAngle, float( self.m_tip1ThetaOffset )))
             self.m_hardwareConfig.writeItem( self.ReferencePointsLabel,
                                         self.m_platform.StripTip1_1ml_Label, s )
@@ -604,7 +604,7 @@ class Calibration(Subsystem):
                                         height )
 
         if None != self.m_5mlStripTipAngle: 
-            print '\t###Enter 5mL Strip cal!'        
+            print('\t###Enter 5mL Strip cal!')        
             s = self.convertTupleToString(( self.m_5mlStripTipAngle, float( self.m_tip4ThetaOffset )))
             self.m_hardwareConfig.writeItem( self.ReferencePointsLabel,
                                         self.m_platform.StripTip4_5ml_Label, s )
@@ -653,7 +653,7 @@ class Calibration(Subsystem):
 
         # Calculate all Z heights from the jig height
         if None != self.m_jigZHeight:
-            print "\t\tEnter m_jigZHeight!!!"
+            print("\t\tEnter m_jigZHeight!!!")
 
             # antibody vial base
             # new height = self.m_zAxis.Position() + self.sampleRefToCarouselZ + self.maxCarouselToVialZ
@@ -690,14 +690,14 @@ class Calibration(Subsystem):
                                         height )
 
             # 1 ml prepickup
-            print '\t###Enter 1mL pickup cal!'                                
+            print('\t###Enter 1mL pickup cal!')                                
             height = float(self.m_calZPrePickup1ml) + self.m_jigZHeight
             self.m_hardwareConfig.writeItem( self.m_platform.SectionName,
                                         self.m_platform.PrePickupPosition1mLTipLabel,
                                         height )
 
             # 5 ml prepickup
-            print '\t###Enter 5mL pickup cal!'                    
+            print('\t###Enter 5mL pickup cal!')                    
             height = float(self.m_calZPrePickup5ml) + self.m_jigZHeight
             self.m_hardwareConfig.writeItem( self.m_platform.SectionName,
                                         self.m_platform.PrePickupPosition5mLTipLabel,
@@ -740,7 +740,7 @@ class Calibration(Subsystem):
             self.m_hardwareConfig.writeItem( 'ReferencePoints', 'separationvial_14ml_degrees', self.m_separationvial_14ml_degrees )
 
         if None != self.m_barcode_offset_degrees:
-            print '#### m_barcode_offset_degrees ####', self.m_barcode_offset_degrees
+            print('#### m_barcode_offset_degrees ####', self.m_barcode_offset_degrees)
             self.m_hardwareConfig.writeItem( 'Barcode_reader', 'barcode_offset_degrees', self.m_barcode_offset_degrees )
 
         if None != self.m_smallvial_tip_height:
@@ -769,7 +769,7 @@ class Calibration(Subsystem):
 # 2012-03-05 RL -- added True
         self.m_hardwareConfig.write(True)
         ReloadHardwareData()
-        print '#### Leave endCalibration ####'
+        print('#### Leave endCalibration ####')
 
 
 

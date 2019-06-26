@@ -25,7 +25,7 @@ import os, sys, socket
 import logging
 
 import time         # 2011-11-24 sp -- added for creating log filename prefix
-from ConfigParser import *          # 2012-01-30 sp -- configuration from ini file
+from configparser import *          # 2012-01-30 sp -- configuration from ini file
 
 # -----------------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ def getGatewayHost():
     # If the TESLA_FQDN environment variable is set, use it. Otherwise, try to 
     # resolve the FQDN (fully qualified domain name). If that fails, just fall back
     # to the DEFAULT_GATEWAY_HOST, which is "localhost" by default
-    if os.environ.has_key('TESLA_FQDN'):
+    if 'TESLA_FQDN' in os.environ:
         host = os.environ['TESLA_FQDN']
     else:
         try:
@@ -395,16 +395,16 @@ FULL_SHUTDOWN_IN_PROGRESS = False;
 # Debugging or testing flags
 
 # Enable XML-RPC debugging (both ways)
-XMLRPC_DEBUG = False or os.environ.has_key('TESLA_XMLRPC_DEBUG')
+XMLRPC_DEBUG = False or 'TESLA_XMLRPC_DEBUG' in os.environ
 
 # Enable debugging of dispatch events
-DISPATCH_DEBUG = False or os.environ.has_key('TESLA_DISPATCH_DEBUG')
+DISPATCH_DEBUG = False or 'TESLA_DISPATCH_DEBUG' in os.environ
 
 # Enable debugging of the scheduling subsystem
-SCHEDULER_DEBUG = False or os.environ.has_key('TESLA_SCHEDULER_DEBUG')
+SCHEDULER_DEBUG = False or 'TESLA_SCHEDULER_DEBUG' in os.environ
 
 # Enable instrument/hardware layer debugging
-HW_DEBUG = False or os.environ.has_key('TESLA_HW_DEBUG')
+HW_DEBUG = False or 'TESLA_HW_DEBUG' in os.environ
 
 TIME_START = None;
 

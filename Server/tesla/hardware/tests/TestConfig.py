@@ -28,18 +28,18 @@ class TestConfig(unittest.TestCase):
         
     def testSections(self):
         sections = self.hc.cfg.sections()
-        self.failUnless('theta' in sections, 'Testing sections')
-        self.failUnless(self.hc.cfg.has_section('z'), "Has a 'z' section")
+        self.assertTrue('theta' in sections, 'Testing sections')
+        self.assertTrue(self.hc.cfg.has_section('z'), "Has a 'z' section")
     
     def testDefaults(self):
         # At the moment, the h/w config should have no defaults?
         defaults = self.hc.cfg.defaults()
-        self.failUnless(defaults == {}, 'Empty defaults test')
+        self.assertTrue(defaults == {}, 'Empty defaults test')
   
     def testValues(self):
         options = self.hc.cfg.options('z')
-        self.failUnless('home' in options, 'Testing options')
-        self.failUnless(self.hc.cfg.has_option('carousel', 'power'), 'Has a power option')
+        self.assertTrue('home' in options, 'Testing options')
+        self.assertTrue(self.hc.cfg.has_option('carousel', 'power'), 'Has a power option')
 
 if __name__ == '__main__':
     unittest.main()

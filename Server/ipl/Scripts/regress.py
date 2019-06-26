@@ -10,10 +10,10 @@ def regressionTest():
     if len(files):
         
         filenameToModuleName = lambda f: str(f[2:-3])
-        moduleNames = map(filenameToModuleName, files)
-        modules = map(__import__, moduleNames)
+        moduleNames = list(map(filenameToModuleName, files))
+        modules = list(map(__import__, moduleNames))
         load = unittest.defaultTestLoader.loadTestsFromModule
-        return unittest.TestSuite(map(load, modules))
+        return unittest.TestSuite(list(map(load, modules)))
     
 
 if __name__ == '__main__':
