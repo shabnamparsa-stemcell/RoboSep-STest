@@ -1351,6 +1351,19 @@ namespace GUI_Console
             else
                 vialBarcodeCharsCheckLength = code2.Length;
 #else
+            string  strSymbols;
+            char[]  symbols;
+            System.Collections.Specialized.NameValueCollection nvc = (System.Collections.Specialized.NameValueCollection)System.Configuration.ConfigurationManager.GetSection("Separator/BarcodeControl");
+            try
+            {
+                strSymbols = nvc.Get("Symbols");
+                symbols = strSymbols.ToCharArray();
+                code2 = code2.Trim(symbols);
+            }
+            catch
+            {
+                code2 = code2.Trim();            
+            }
             vialBarcodeCharsCheckLength = code2.Length;
 #endif
             bool result = false; 
