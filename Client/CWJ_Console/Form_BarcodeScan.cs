@@ -1344,6 +1344,8 @@ namespace GUI_Console
 
         private bool IsVialBarcodeValid(string code1, string code2)
         {
+            //code1: Barcode from scanner
+            //code2: Ref barcode within protocol
             int vialBarcodeCharsCheckLength;
 #if false            
             if (code2.Length < 7)
@@ -1351,6 +1353,10 @@ namespace GUI_Console
             else
                 vialBarcodeCharsCheckLength = code2.Length;
 #else
+        #if true
+            char[] symbols = {'.'};
+            code2 = code2.Trim(symbols);
+        #endif
             vialBarcodeCharsCheckLength = code2.Length;
 #endif
             bool result = false; 

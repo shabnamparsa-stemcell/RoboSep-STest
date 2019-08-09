@@ -1,1 +1,0 @@
-D:\Projects-git\INS-RoboSep-S\Client\separator\bin\x86\Release\Separator.exe.config
