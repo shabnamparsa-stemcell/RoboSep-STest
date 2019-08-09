@@ -1354,8 +1354,9 @@ namespace GUI_Console
                 vialBarcodeCharsCheckLength = code2.Length;
 #else
         #if true
-            char[] symbols = {'.'};
-            code2 = code2.Trim(symbols);
+            string codeOrg = code2;
+            code2 = code2.Replace(".",string.Empty);
+            System.Diagnostics.Debug.WriteLine(String.Format("Origin String={0}, After Remove={1}, Len={2}", codeOrg, code2, code2.Length));
         #endif
             vialBarcodeCharsCheckLength = code2.Length;
 #endif

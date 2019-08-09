@@ -1,0 +1,79 @@
+2019-08-09T14:06:58 INFO Application log initialised
+2019-08-09T14:06:58 DEBUG Remoting Address = 127.0.0.1
+2019-08-09T14:06:58 DEBUG ICS Server URL       = http://127.0.0.1:8000
+2019-08-09T14:06:58 DEBUG ICS EventSink URL    = http://127.0.0.1:8001/InstrumentControlEventSink
+2019-08-09T14:06:58 DEBUG Separator Server URL =  tcp://127.0.0.1:3149/Separator
+2019-08-09T14:06:58 DEBUG Configured address = 127.0.0.1
+2019-08-09T14:06:58 INFO Initializing User Console
+2019-08-09T14:06:58 DEBUG Initializing UserDB
+2019-08-09T14:06:58 INFO Application config path: C:\Program Files\STI\RoboSep\config\
+2019-08-09T14:06:58 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-08-09T14:06:58 INFO XSD Path : c:\Program Files\STI\RoboSep\
+2019-08-09T14:06:59 DEBUG 241protocols loaded
+2019-08-09T14:06:59 ERROR Failed to convert variable '00/00/0000' to valid date.
+2019-08-09T14:06:59 ERROR WarrantyExpireDate in GUI.ini file is invalid.
+2019-08-09T14:06:59 DEBUG Creating new Form_Home
+2019-08-09T14:06:59 INFO Command to launch service 'dns-sd.exe -R "Orca1" _robosep._tcp . 5899' for Network ORCA.
+2019-08-09T14:06:59 INFO Service 'dns-sd.exe' for network ORCA has been launched. ProcessID='1712'. Path='C:\Windows\system32'
+2019-08-09T14:06:59 INFO Loading User Console
+2019-08-09T14:06:59 ERROR Starting GUI Thread
+2019-08-09T14:06:59 INFO set user.db file to : User1.udb
+2019-08-09T14:06:59 INFO Connecting...
+2019-08-09T14:06:59 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 1 tcp://127.0.0.1:3149/Separator
+2019-08-09T14:06:59 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 2
+2019-08-09T14:06:59 INFO output: C:\Program Files\STI\RoboSep\protocols\
+2019-08-09T14:06:59 DEBUG Loaded Robosep User
+2019-08-09T14:06:59 INFO Current user ID : 'SAP'.
+2019-08-09T14:07:00 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:00 WARNING retryCount = 25 Unable to connect to the remote server
+2019-08-09T14:07:03 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:03 WARNING retryCount = 24 Unable to connect to the remote server
+2019-08-09T14:07:06 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:06 WARNING retryCount = 23 Unable to connect to the remote server
+2019-08-09T14:07:09 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:09 WARNING retryCount = 22 Unable to connect to the remote server
+2019-08-09T14:07:12 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:12 WARNING retryCount = 21 Unable to connect to the remote server
+2019-08-09T14:07:15 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:15 WARNING retryCount = 20 Unable to connect to the remote server
+2019-08-09T14:07:18 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:18 WARNING retryCount = 19 Unable to connect to the remote server
+2019-08-09T14:07:21 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:21 WARNING retryCount = 18 Unable to connect to the remote server
+2019-08-09T14:07:24 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:24 WARNING retryCount = 17 Unable to connect to the remote server
+2019-08-09T14:07:27 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:27 WARNING retryCount = 16 Unable to connect to the remote server
+2019-08-09T14:07:30 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:30 WARNING retryCount = 15 Unable to connect to the remote server
+2019-08-09T14:07:33 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:33 WARNING retryCount = 14 Unable to connect to the remote server
+2019-08-09T14:07:36 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:36 WARNING retryCount = 13 Unable to connect to the remote server
+2019-08-09T14:07:40 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:40 WARNING retryCount = 12 Unable to connect to the remote server
+2019-08-09T14:07:43 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:43 WARNING retryCount = 11 Unable to connect to the remote server
+2019-08-09T14:07:46 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:46 WARNING retryCount = 10 Unable to connect to the remote server
+2019-08-09T14:07:49 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:49 WARNING retryCount = 9 Unable to connect to the remote server
+2019-08-09T14:07:52 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:52 WARNING retryCount = 8 Unable to connect to the remote server
+2019-08-09T14:07:55 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:55 WARNING retryCount = 7 Unable to connect to the remote server
+2019-08-09T14:07:58 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:07:58 WARNING retryCount = 6 Unable to connect to the remote server
+2019-08-09T14:08:01 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:08:01 WARNING retryCount = 5 Unable to connect to the remote server
+2019-08-09T14:08:04 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:08:04 WARNING retryCount = 4 Unable to connect to the remote server
+2019-08-09T14:08:07 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:08:07 WARNING retryCount = 3 Unable to connect to the remote server
+2019-08-09T14:08:10 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:08:10 WARNING retryCount = 2 Unable to connect to the remote server
+2019-08-09T14:08:13 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:08:13 WARNING retryCount = 1 Unable to connect to the remote server
+2019-08-09T14:08:13 INFO <<<<<<<<<<<<<<<<<<<<<<<,,, 3
+2019-08-09T14:08:14 DEBUG Instrument Control API Ping() returned False
+2019-08-09T14:08:14 WARNING retryCount = 25 Unable to connect to the remote server
