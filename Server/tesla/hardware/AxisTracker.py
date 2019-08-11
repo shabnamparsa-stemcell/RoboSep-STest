@@ -20,7 +20,7 @@
 # 
 
 from datetime import date
-import dbm
+import dbm.dumb
         
 # ---------------------------------------------------------------------------
 def Report(file = None):
