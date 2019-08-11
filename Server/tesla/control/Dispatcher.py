@@ -181,6 +181,7 @@ class Dispatcher(object):
         errorMsg = 'Unknown error'        # Our default error message
         errorCode = 'TEC0101'           # Our default error code
         funcReference = __name__ + '.__eventHandler'          # 2011-11-28 sp -- added logging
+        errorMsgRaw = 'Unknown error'        # Our default error message
         
         try:            
             # Report the progress (at the moment by just reporting the action)
@@ -229,6 +230,7 @@ class Dispatcher(object):
             # It's not good if this happens; usually means that a stepper card
             # has failed badly
             errorMsg = str(msg)
+            errorMsgRaw = str(msg)
             errorCode = 'TEC0700'
             if str(msg) == "Tip strip failed":
                 errorCode = 'TSC3003' 
@@ -245,9 +247,11 @@ class Dispatcher(object):
         except (InstrumentError, TeslaException) as msg:        
                 # Caught an instrument error or some other Tesla exception?
             errorMsg = str(msg)
+            errorMsgRaw = str(msg)
             self.svrLog.logError('', self.logPrefix, funcReference, "Instrument Err msg=%s" % (msg))   # 2011-11-28 sp -- added logging
         except Exception as msg:                # Not good? An unanticipated error
             errorMsg = "Unexpected error: %s" % (str(msg))
+            errorMsgRaw = str(msg)
             self.svrLog.logError('', self.logPrefix, funcReference, errorMsg)   # 2011-11-28 sp -- added logging
             self.pager.page(errorMsg)
 
@@ -258,8 +262,8 @@ class Dispatcher(object):
             # move us, in __endOfRun(), to the HALTED state
             errorMsg = "DI: Error occurred during '%s'" % (event)
             self.logger.logError(errorMsg)
-            self.logger.logError("DI: Error = %s" % (msg))
-            self.svrLog.logError('', self.logPrefix, funcReference, "%s |msg=%s" % (errorMsg, msg))   # 2011-11-28 sp -- added logging
+            self.logger.logError("DI: Error = %s" % (errorMsgRaw))
+            self.svrLog.logError('', self.logPrefix, funcReference, "%s |msg=%s" % (errorMsg, errorMsgRaw))   # 2011-11-28 sp -- added logging
             self.reportError(errorMsg, errorCode)
             self.sequencer.abandonDispatching()
 
