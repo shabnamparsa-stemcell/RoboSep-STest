@@ -271,7 +271,7 @@ class SampleScheduler(object):
         '''Reset the scheduler and associated members.'''
 
         self.scheduler.Reset()
-        self.scheduler.SetNbrSchedules(self.NUM_SCHEDULES)
+        #self.scheduler.SetNbrSchedules(self.NUM_SCHEDULES)
         self.scheduler.SetMaxIterations(self.MAX_ITERATIONS)
         self.__duration_secs = 0            # Last calculated schedule duration
         self.__schedule = None                    # Last calculated schedule

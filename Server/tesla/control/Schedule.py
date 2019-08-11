@@ -52,9 +52,10 @@ class WorkflowContainer(object):
         '''Return the sample ID associated with this workflow'''
         return self.__sampleID
 
-    def __cmp__(self, otherWorkflow):
+    #def __cmp__(self, otherWorkflow):
+    def __lt__(self, otherWorkflow):
         '''Let's us sort WorkflowContainer objects, which we do based on start time.'''
-        return cmp(self.__startTime, otherWorkflow.__startTime)
+        return self.__startTime < otherWorkflow.__startTime
 
 # -----------------------------------------------------------------------------
 
