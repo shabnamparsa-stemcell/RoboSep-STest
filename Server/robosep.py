@@ -60,7 +60,8 @@ def reportException(msg):
     limit = None
     type, value, tb = sys.exc_info(  )
     list = traceback.format_tb(tb, limit) + traceback.format_exception_only(type, value)
-    tracebackMsg = "\nError traceback:\n\n" + "%-20s %s" % (string.join(list[:-1], ""), list[-1])
+    #tracebackMsg = "\nError traceback:\n\n" + "%-20s %s" % (string.join(list[:-1], ""), list[-1])
+    tracebackMsg = "\nError traceback:\n\n" + "%-20s %s" % ("".join(list[:-1]), list[-1])
     
     print("\nCAUGHT FATAL ERROR:", msg)
     print(tracebackMsg)

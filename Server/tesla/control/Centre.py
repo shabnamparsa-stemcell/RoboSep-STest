@@ -1112,7 +1112,8 @@ class Centre(object):
                 # If there's traceback data, log the exception traceback
                 # We don't do this if it's the bug noted in TT#485 or if there
                 # is no exception traceback available
-                tracebackMsg = "Error traceback:\n" + "%-20s %s" % (string.join(tbList[:-1], ""), tbList[-1])
+                #tracebackMsg = "Error traceback:\n" + "%-20s %s" % (string.join(tbList[:-1], ""), tbList[-1])
+                tracebackMsg = "Error traceback:\n" + "%-20s %s" % ("".join(tbList[:-1]), tbList[-1])
                 self.logger.logDebug(tracebackMsg)                      
                 self.svrLog.logInfo('S', self.logPrefix, funcReference, tracebackMsg)       # 2011-11-28 sp -- added logging
             self.logger.logError(logMsg)

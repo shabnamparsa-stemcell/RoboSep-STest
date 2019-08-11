@@ -399,8 +399,8 @@ class RoboCamMgr :
         CaptureErrorDir       = tesla.config.LOG_DIR+'\\videoErrorlog\\';
         self.FileName         = CaptureDir + ('%04d%02d%02d-%02dh%02dm%02ds.asf' % (now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec))
         self.ErrorFileName    = CaptureErrorDir + ('Error%04d%02d%02d-%02dh%02dm%02ds.asf' % (now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec))
-        self.FileSmiName      = string.replace(self.FileName, 'asf', 'smi');
-        self.ErrorFileSmiName = string.replace(self.ErrorFileName, 'asf', 'smi');
+        self.FileSmiName      = self.FileName.replace('asf', 'smi');
+        self.ErrorFileSmiName = self.ErrorFileName.replace( 'asf', 'smi');
         FileList = glob.glob( os.path.join(CaptureDir, '*.asf') )
         FileList.sort();
         ListLen = len(FileList);
@@ -411,7 +411,7 @@ class RoboCamMgr :
                 print(('\n\n### Delete the file %s!\n'%DeleteMovieName));
            except:
                 print(('\n\n### Cannot Delete the file %s!\n'%DeleteMovieName));
-           DeleteSMIName = string.replace(DeleteMovieName, 'asf', 'smi');
+           DeleteSMIName = DeleteMovieName.replace( 'asf', 'smi');
            try:
                 os.remove( DeleteSMIName );
                 print(('\n\n### Delete the file %s!\n'%DeleteSMIName));
