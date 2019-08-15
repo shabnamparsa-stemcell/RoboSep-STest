@@ -698,8 +698,8 @@ class TeslaPlatform (Platform):
                                     self.ExtLogger.SetCmdListLog("Tip strip failed because stripper arm didn't come out all the way.", self.tipStripper.m_Card.prefix)
                                     self.ExtLogger.CheckSystemAvail()
                                     self.ExtLogger.DumpHistory()
-                                raise AxisError ('Tip strip failed')
-                                #isStripperArmFailed = False #REMOVE this if raise error
+                                #raise AxisError ('Tip strip failed')
+                                isStripperArmFailed = False #REMOVE this if raise error
 
                                 # raw_input('\n##### Tip Stripper Arm Failed!!!! #####\a')
 
