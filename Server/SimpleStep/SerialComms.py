@@ -25,12 +25,12 @@ class SerialComms:
     def send(self, data):
         """Send a packet to the serial port handle"""
         packet = ('%s\r' % (data))
-        self.port.write(packet)
+        self.port.write(packet.encode())
 
     def sendwithout(self, data):
         """Send a packet to the serial port handle"""
         packet = ('%s' % (data))
-        self.port.write(packet)
+        self.port.write(packet.encode())
 
 
 
@@ -55,8 +55,9 @@ class SerialComms:
                 break
 
         data = self.port.read(numChars)
-        if (data != ''):
-            return data
+        result = str(data.decode())
+        if (result != ''):
+            return result
         else:
             return None
 
