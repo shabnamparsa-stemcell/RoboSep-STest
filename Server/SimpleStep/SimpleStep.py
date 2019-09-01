@@ -39,6 +39,7 @@ class SimpleStepExtLogger:
     ver              = 104
     NumOfNoneError   = 0
     MAXNONEERROR     = 4096
+    writeFileMode        = 'w' #SimpleStepExtLogger.writeFileMode
     def __init__(self):
         SSExtLogger  = self
         self.Extlog  = []
@@ -307,7 +308,7 @@ class SimpleStepExtLogger:
         self.filename = tesla.config.LOG_DIR+'\\SSE' + ('%04d%s%02d-%02dh%02dm%02ds.err' % (now.tm_year, month[now.tm_mon], now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec))
         print(self.filename)
         try:
-              hFile = open(self.filename,'wb')
+              hFile = open(self.filename,SimpleStepExtLogger.writeFileMode)
               hFile.writelines(self.Extlog)
               hFile.close()
               print('Error Log Created!!!')
@@ -320,7 +321,7 @@ class SimpleStepExtLogger:
         self.filename = tesla.config.LOG_DIR+'\\SSE' + ('%04d%s%02d-%02dh%02dm%02ds_Poll.err' % (now.tm_year, month[now.tm_mon], now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec))
         print(self.filename)
         try:
-              hFile = open(self.filename,'wb')
+              hFile = open(self.filename,SimpleStepExtLogger.writeFileMode)
               hFile.writelines(self.Extlog)
               hFile.close()
               print('Error Log Created!!!')
@@ -336,7 +337,7 @@ class SimpleStepExtLogger:
               if self.ver >= 109 :
                  print('############# Detect [None] Error #####################')
                  ln = len(self.Extlog)
-                 hFile = open(self.filename,'wb')
+                 hFile = open(self.filename,SimpleStepExtLogger.writeFileMode)
                  hFile.writelines(self.Extlog[((ln)-50):])
                  hFile.close()
                  print('Error Log Created!!!')
@@ -345,7 +346,7 @@ class SimpleStepExtLogger:
                    if self.NumOfNoneError > self.MAXNONEERROR :
                       print('############# Detect [None] Error #####################')
                       ln = len(self.Extlog)
-                      hFile = open(self.filename,'wb')
+                      hFile = open(self.filename,SimpleStepExtLogger.writeFileMode)
                       hFile.writelines(self.Extlog)
                       hFile.close()
                       print('Error Log Created!!!')
@@ -358,7 +359,7 @@ class SimpleStepExtLogger:
         self.filename = tesla.config.LOG_DIR+'\\SSE.trm'
         print(self.filename)
         try:
-              hFile = open(self.filename,'wb')
+              hFile = open(self.filename,SimpleStepExtLogger.writeFileMode)
               hFile.writelines(self.Extlog)
               hFile.close()
               print('Terminate Log Created!!!')
@@ -370,7 +371,7 @@ class SimpleStepExtLogger:
             self.filename = tesla.config.LOG_DIR+'\\SSE.dmp'
             print(self.filename)
             try:
-                hFile = open(self.filename,'wb')
+                hFile = open(self.filename,SimpleStepExtLogger.writeFileMode)
                 hFile.writelines(self.ExtDump)
                 hFile.close()
                 print('SS Dump Created!!!')
