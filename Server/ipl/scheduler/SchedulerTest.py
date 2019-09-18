@@ -131,17 +131,17 @@ class SchedulerCheckOK(unittest.TestCase):
         
 
     
-    #def testNbrIterations(self):
+    def testNbrIterations(self):
         ''' Obtain number of iterations used in a calculation '''
-     #   blockList = BuildBlockList(testProtocolA)
-     #   s = Scheduler.Scheduler()
-     #   batchID = 1
-     #   for block in blockList:
-     #       s.AppendBlock(batchID, block)
+        blockList = BuildBlockList(testProtocolA)
+        s = Scheduler.Scheduler()
+        batchID = 1
+        for block in blockList:
+            s.AppendBlock(batchID, block)
         
-    #    self.assertTrue(s.NbrIterations() == 0)
-    #    self.assertTrue(s.CalculateTimes(), 0)
-    #    self.assertTrue(s.NbrIterations() > 0)
+        self.assertTrue(s.NbrIterations() == 0)
+        self.assertTrue(s.CalculateTimes())
+        self.assertTrue(s.NbrIterations() > 0)
 
     
     def testResetBatchID(self):

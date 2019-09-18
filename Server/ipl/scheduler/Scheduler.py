@@ -79,12 +79,14 @@ class Scheduler(object):
 
     #Returns True if Successful
     def DoNextStep(self, currentTime, scheduleState):
+        print("!!!!!!!!!!!!!!!!!!!!!! DoNextStep Start",currentTime)
 
         if len(scheduleState.m_BatchStateDictionary) == 0:
             print("################## DoNextStep completed!")
             return True
 
         if len(self.UniqueCommandCombo) >= self.__MaxIterations:
+            print("################## self.UniqueCommandCombo failed!",len(self.UniqueCommandCombo), self.__MaxIterations)
             return False
             
         
@@ -148,7 +150,7 @@ class Scheduler(object):
             nextScheduleState = copy.deepcopy(scheduleState)
             tmpBlock = TimeBlock()
             step = nextScheduleState.m_BatchStateDictionary[batchID].m_Step
-            #print "CCCCCCCCCCCC 0"
+            #print ("CCCCCCCCCCCC 0")
             if self.GetBlock(batchID, step,tmpBlock) != 0 :
                 #print("CCCCCCCCCCCC Block ",batchID, tmpBlock.m_OpenPeriod,tmpBlock.m_UsedPeriod,tmpBlock.m_FreePeriod)
                 tmpTime = currentTime
@@ -231,7 +233,8 @@ class Scheduler(object):
         return blockList[blockID]
     
     def Reset(self):
-        self.__MaxIterations = 1
+        self.__MaxIterations = 50
+        self.UniqueCommandCombo = []
         #BatchID -> Block List
         self.__BlocklistDictionary = {}
 
@@ -240,6 +243,9 @@ class Scheduler(object):
 
     def SetMaxIterations(self, i):
         self.__MaxIterations = i
+        
+    def NbrIterations(self):
+        return len(self.UniqueCommandCombo)
 
 
 
