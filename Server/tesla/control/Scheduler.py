@@ -171,7 +171,7 @@ class SampleScheduler(object):
     # ensure that there is sufficient flexibility in the schedule
 
   
-    MAX_ITERATIONS = 10000            # Maximum number of iterations in a schedule calc
+    MAX_ITERATIONS = 200            # Maximum number of iterations in a schedule calc
     NUM_SCHEDULES  = 1                    # Number of schedules calculated internally
     SEARCH_SPACE_MULTIPLIER = 1            # Failed? Increase the search space by this much & try again
 

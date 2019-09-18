@@ -122,26 +122,26 @@ class SchedulerCheckOK(unittest.TestCase):
         
 
     
-    def testNbrSchedules(self):
+    #def testNbrSchedules(self):
         ''' read/write NbrSchedules as a property '''
-        s = Scheduler.Scheduler()
-        for i in range(10):
-            s.SetNbrSchedules(i)
-            self.assertEqual(s.NbrSchedules(), i)
+     #   s = Scheduler.Scheduler()
+     #   for i in range(10):
+     #       s.SetNbrSchedules(i)
+     #       self.assertEqual(s.NbrSchedules(), i)
         
 
     
-    def testNbrIterations(self):
+    #def testNbrIterations(self):
         ''' Obtain number of iterations used in a calculation '''
-        blockList = BuildBlockList(testProtocolA)
-        s = Scheduler.Scheduler()
-        batchID = 1
-        for block in blockList:
-            s.AppendBlock(batchID, block)
+     #   blockList = BuildBlockList(testProtocolA)
+     #   s = Scheduler.Scheduler()
+     #   batchID = 1
+     #   for block in blockList:
+     #       s.AppendBlock(batchID, block)
         
-        self.assertTrue(s.NbrIterations() == 0)
-        self.assertTrue(s.CalculateTimes(), 0)
-        self.assertTrue(s.NbrIterations() > 0)
+    #    self.assertTrue(s.NbrIterations() == 0)
+    #    self.assertTrue(s.CalculateTimes(), 0)
+    #    self.assertTrue(s.NbrIterations() > 0)
 
     
     def testResetBatchID(self):
@@ -159,27 +159,27 @@ class SchedulerCheckOK(unittest.TestCase):
         self.assertEqual(s.GetBlock(batchID, 0, checkBlock), 0)
 
     
-    def testDelaySetting(self):
+    #def testDelaySetting(self):
         ''' Batch start time should be delayed as required.  '''
-        s = Scheduler.Scheduler()
-        batchID = 1
-        blockList = BuildBlockList(testProtocolA)
-        blockIndex = { }
-        for block in blockList:
-            blockIndex[s.AppendBlock(batchID, block)] = block
+     #   s = Scheduler.Scheduler()
+     #   batchID = 1
+     #   blockList = BuildBlockList(testProtocolA)
+     #   blockIndex = { }
+     #   for block in blockList:
+     #       blockIndex[s.AppendBlock(batchID, block)] = block
         
-        self.assertTrue(s.DelayFor(batchID) == 0)
-        self.assertTrue(s.CalculateTimes(), 0)
-        self.assertTrue(s.DelayFor(batchID) == 0)
-        checkBlock = Scheduler.TimeBlock()
-        self.assertNotEqual(s.GetBlock(batchID, 0, checkBlock), 0)
-        self.assertTrue(checkBlock.m_StartTime == 0)
-        delay = 100
-        s.SetDelayFor(batchID, delay)
-        self.assertTrue(s.DelayFor(batchID) == delay)
-        self.assertTrue(s.CalculateTimes(), 0)
-        self.assertNotEqual(s.GetBlock(batchID, 0, checkBlock), 0)
-        self.assertTrue(checkBlock.m_StartTime == delay)
+     #   self.assertTrue(s.DelayFor(batchID) == 0)
+     #   self.assertTrue(s.CalculateTimes(), 0)
+     #   self.assertTrue(s.DelayFor(batchID) == 0)
+     #   checkBlock = Scheduler.TimeBlock()
+     #   self.assertNotEqual(s.GetBlock(batchID, 0, checkBlock), 0)
+     #   self.assertTrue(checkBlock.m_StartTime == 0)
+     #   delay = 100
+     #   s.SetDelayFor(batchID, delay)
+     #   self.assertTrue(s.DelayFor(batchID) == delay)
+     #   self.assertTrue(s.CalculateTimes(), 0)
+     #   self.assertNotEqual(s.GetBlock(batchID, 0, checkBlock), 0)
+     #   self.assertTrue(checkBlock.m_StartTime == delay)
 
 
 
