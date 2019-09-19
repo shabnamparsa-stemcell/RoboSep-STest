@@ -68,7 +68,7 @@ class SchedulerBlock(TimeBlock):
 
     def __repr__(self):
         '''String representation of the SchedulerBlock object, to aid debugging.'''
-        return "%d %d %d %d" % (self.m_OpenPeriod, self.m_UsedPeriod, self.m_FreePeriod, self.m_StartTime)
+        return "(%d, %d, %d, %d)" % (self.m_OpenPeriod, self.m_UsedPeriod, self.m_FreePeriod, self.m_StartTime)
 
     def getPeriods(self):
         '''Return a tuple of (open, used and free) times '''
@@ -171,7 +171,7 @@ class SampleScheduler(object):
     # ensure that there is sufficient flexibility in the schedule
 
   
-    MAX_ITERATIONS = 200            # Maximum number of iterations in a schedule calc
+    MAX_ITERATIONS = 1000            # Maximum number of iterations in a schedule calc
     NUM_SCHEDULES  = 1                    # Number of schedules calculated internally
     SEARCH_SPACE_MULTIPLIER = 1            # Failed? Increase the search space by this much & try again
 

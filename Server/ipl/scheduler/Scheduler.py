@@ -12,7 +12,7 @@ class TimeBlock(object):
 
     def __repr__(self):
         '''String representation of the SchedulerBlock object, to aid debugging.'''
-        return "%d %d %d %d" % (self.m_OpenPeriod, self.m_UsedPeriod, self.m_FreePeriod, self.m_StartTime)
+        return "(%d, %d, %d, %d)" % (self.m_OpenPeriod, self.m_UsedPeriod, self.m_FreePeriod, self.m_StartTime)
 
 class BatchState(object):
 
@@ -38,6 +38,8 @@ class ScheduleState(object):
 
 class Scheduler(object):
 
+    debug = False
+    debugResult = True
     
     def __init__(self):
         self.Reset()
@@ -50,9 +52,16 @@ class Scheduler(object):
         blockList = []
         if batchID in self.__BlocklistDictionary:
             blockList = self.__BlocklistDictionary[batchID]
-        blockList.append(block)
+        tmpBlock = TimeBlock()
+        tmpBlock.m_OpenPeriod = block.m_OpenPeriod
+        tmpBlock.m_UsedPeriod = block.m_UsedPeriod
+        tmpBlock.m_FreePeriod = block.m_FreePeriod
+        tmpBlock.m_StartTime  = block.m_StartTime
+        blockList.append(tmpBlock)
 
         #print "################## AppendBlock ",block.m_OpenPeriod,block.m_UsedPeriod,block.m_FreePeriod
+
+        #print(batchID,block)
 
         #update dictionary in case batchID is new
         self.__BlocklistDictionary[batchID] = blockList
@@ -61,6 +70,18 @@ class Scheduler(object):
     
     #Returns True if Successful
     def CalculateTimes(self):
+
+        if self.debug:
+            print('#############CalculateTimes Starts!#######################################')
+            for batchID, blockList in list(self.__BlocklistDictionary.items()):
+                if blockList:
+                    print('batchID=',batchID)
+                    step=1
+                    for block in blockList:
+                        print(step,block)
+                        step=step+1
+                        
+                     
 
         #should track level of recursion
         #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -75,18 +96,37 @@ class Scheduler(object):
 
         self.UniqueCommandCombo = []
         scheduleState = ScheduleState(batchStateList)
-        return self.DoNextStep(0, scheduleState)
+        result =  self.DoNextStep(0, scheduleState)
+
+        if result and (self.debug or self.debugResult):
+            print('#############CalculateTimes Results!#######################################')
+            for batchID, blockList in list(self.__BlocklistDictionary.items()):
+                if blockList:
+                    print('batchID=',batchID)
+                    step=1
+                    for block in blockList:
+                        print(step,block)
+                        step=step+1
+        elif not result and self.debug:
+            print('#############CalculateTimes FAILED!#######################################')
+            
+                        
+        return result
 
     #Returns True if Successful
     def DoNextStep(self, currentTime, scheduleState):
-        print("!!!!!!!!!!!!!!!!!!!!!! DoNextStep Start",currentTime)
+        
+        if self.debug:
+            print('#############DoNextStep Starts!!############# time=',currentTime)
 
         if len(scheduleState.m_BatchStateDictionary) == 0:
-            print("################## DoNextStep completed!")
+            if self.debug:
+                print('#DoNextStep completed!!############# time=',currentTime)
             return True
 
         if len(self.UniqueCommandCombo) >= self.__MaxIterations:
-            print("################## self.UniqueCommandCombo failed!",len(self.UniqueCommandCombo), self.__MaxIterations)
+            if self.debug:
+                print("#DoNextStep OVER MAX ITERATION!!#############",len(self.UniqueCommandCombo), self.__MaxIterations)
             return False
             
         
@@ -103,7 +143,8 @@ class Scheduler(object):
         #if current time is passed any m_StartBefore, then there is no point continuing
         for batchID, batchState in batchIDOrderList:
             if batchState.m_StartBefore < currentTime:
-                print("DDDDDDDDDDDDDDDDD batchState.m_StartBefore < currentTime ")
+                if self.debug:
+                    print("#Shortcut batchState.m_StartBefore < currentTime ",batchState.m_StartBefore,currentTime)
                 return False
         
 
@@ -121,12 +162,10 @@ class Scheduler(object):
         #the_file.write(line)
 
 
-
-    
-        debug = False
         #print for debug
-        if debug:
-            print("OOOOOOOOOOO DoNextStep time ",currentTime)
+        #batchIDOrderList.sort(key=lambda a: a[1].m_StartAfter) #uncomment if you want to see algo first choice instead of ID order
+        if self.debug:
+            print("## Protocol Batch State ",currentTime)
             for batchID, batchState in batchIDOrderList:
                 print(batchState.m_BatachID, batchState.m_Step, "from",batchState.m_StartAfter, "to", batchState.m_StartBefore) 
 
@@ -135,15 +174,6 @@ class Scheduler(object):
 
         #batchIDOrderList.sort(key=lambda a: a[1].m_StartBefore) #this leads to doing the protocol one at a time instead of concurrently
 
-        #print for debug
-        debug = False
-        if debug:
-            print("################## DoNextStep time ",currentTime)
-            for batchID, batchState in batchIDOrderList:
-                print(batchState.m_BatachID, batchState.m_Step, "from",batchState.m_StartAfter, "to", batchState.m_StartBefore) 
-
-
- 
 
         #loop through batchID to perform
         for batchID, batchState in batchIDOrderList:
@@ -164,8 +194,8 @@ class Scheduler(object):
 
                 #loop until no more back to back steps (current free period > 0 && next open period > 0)
                 while True:
-
-                    print("CCCCCCCCCCCC SetBlock ",batchID,step, tmpTime)
+                    if self.debug:
+                        print("## SetBlock ID=",batchID,'step=',step,'time=', tmpTime)
                     self.SetBlockStartTime(batchID, step, tmpTime)
 
                     step = step +1
@@ -176,7 +206,8 @@ class Scheduler(object):
 
                     nextOpenPeriod = 0
                     if self.GetBlock(batchID, step,tmpBlock) != 0 : #next block if exist
-                        print("CCCCCCCCCCCC NEXT Block ",batchID, tmpBlock.m_OpenPeriod,tmpBlock.m_UsedPeriod,tmpBlock.m_FreePeriod)
+                        if self.debug:
+                            print("## NEXT Block ID=",batchID, tmpBlock)
                         nextOpenPeriod = tmpBlock.m_OpenPeriod
                     
                     nextScheduleState.m_BatchStateDictionary[batchID].m_StartBefore = tmpTimeAfter + nextOpenPeriod
@@ -190,7 +221,6 @@ class Scheduler(object):
                 
                 if self.DoNextStep(tmpTime,nextScheduleState):
                     return True
-                print("DDDDDDDDDDDDDDDDD Branch failed ")
             else:
                 #can't find block, meaning batchID is completed
                 nextScheduleState.m_BatchStateDictionary.pop(batchID)
@@ -198,7 +228,8 @@ class Scheduler(object):
                     return True
         
 
-        
+        if self.debug:
+            print('#############DoNextStep END OF LOOP!!############# time=',currentTime)
         return False
 
 
@@ -233,7 +264,7 @@ class Scheduler(object):
         return blockList[blockID]
     
     def Reset(self):
-        self.__MaxIterations = 50
+        self.__MaxIterations = 1000
         self.UniqueCommandCombo = []
         #BatchID -> Block List
         self.__BlocklistDictionary = {}

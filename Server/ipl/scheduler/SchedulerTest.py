@@ -5,7 +5,27 @@ import unittest
 from . import Scheduler
 print('This suite tests interface call validity only.')
 print('To exercise the Scheduler algorithm, use the CPPUNIT suite and the spreadsheet')
-testProtocolA = ((10000, 40, 0, 0), (0, 31, 0, 0), (1200, 31, 0, 0), (1200, 105, 300, 0), (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 285, 0, 0), (0, 285, 900, 0), (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 105, 0, 0), (0, 105, 480, 0), (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 105, 0, 0), (0, 105, 480, 0), (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 105, 0, 0), (0, 105, 300, 0), (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 105, 300, 0), (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0))
+testProtocolA = ((10000, 40, 0, 0), (0, 31, 0, 0), (1200, 31, 0, 0), (1200, 105, 300, 0),
+                 (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 285, 0, 0), (0, 285, 900, 0),
+                 (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 105, 0, 0), (0, 105, 480, 0),
+                 (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 105, 0, 0), (0, 105, 480, 0),
+                 (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 105, 0, 0), (0, 105, 300, 0),
+                 (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0), (900, 105, 300, 0),
+                 (0, 31, 0, 0), (280, 31, 0, 0), (280, 31, 0, 0))
+
+
+testProtocolCantDo4WithDefaultSettings = ((600, 0, 0, -1), (0, 31, 240, -1), (226, 0, 0, -1), (0, 41, 0, -1),
+                                          (226, 31, 0, -1),(0, 31, 0, -1), (151, 41, 0, -1), (151, 58, 2, -1),
+                                          (226, 0, 0, -1), (226, 87, 0, -1), (0, 50, 0, -1),
+                                          (226, 41, 0, -1), (226, 56, 3, -1), (226, 0, 0, -1), (0, 26, 0, -1))
+
+
+testProtocolImpossible1of2 = ((300, 31, 240, -1), (0, 240, 0, -1))
+testProtocolImpossible2of2 = ((300, 31, 0, -1), (10, 240, 0, -1))
+
+testProtocolBacktrack1of2 = ((300, 31, 240, -1), (0, 31, 0, -1))
+testProtocolBacktrack2of2 = ((300, 31, 0, -1), (10, 240, 0, -1))
+
 
 def BuildBlockList(dataList):
     blockList = []
@@ -181,6 +201,47 @@ class SchedulerCheckOK(unittest.TestCase):
      #   self.assertNotEqual(s.GetBlock(batchID, 0, checkBlock), 0)
      #   self.assertTrue(checkBlock.m_StartTime == delay)
 
+    def testScheduleFailed1(self):
+        blockList = BuildBlockList(testProtocolCantDo4WithDefaultSettings)
+        blockIndex = { }
+        checkBlock = Scheduler.TimeBlock()
+        s = Scheduler.Scheduler()
+
+        #can do 3
+        for block in blockList:
+            for batchID in range(3):
+                s.AppendBlock(batchID, block)
+        self.assertTrue(s.CalculateTimes(), "Should be able to schedule 3")
+        
+        #cant do 4
+        for block in blockList:
+            s.AppendBlock(3, block)
+        self.assertFalse(s.CalculateTimes(), "Should NOT be able to schedule 4 given defaults")
+
+
+    def testScheduleFailed2(self):
+        blockList = BuildBlockList(testProtocolImpossible1of2)
+        blockList2 = BuildBlockList(testProtocolImpossible1of2)
+        blockIndex = { }
+        checkBlock = Scheduler.TimeBlock()
+        s = Scheduler.Scheduler()
+        for block in blockList:
+            s.AppendBlock(1, block)
+        for block in blockList2:
+            s.AppendBlock(2, block)
+        self.assertFalse(s.CalculateTimes(), "Should NOT be able to schedule impossible")
+        
+    def testScheduleBacktrack1(self):
+        blockList = BuildBlockList(testProtocolBacktrack1of2)
+        blockList2 = BuildBlockList(testProtocolBacktrack2of2)
+        blockIndex = { }
+        checkBlock = Scheduler.TimeBlock()
+        s = Scheduler.Scheduler()
+        for block in blockList:
+            s.AppendBlock(1, block)
+        for block in blockList2:
+            s.AppendBlock(2, block)
+        self.assertTrue(s.CalculateTimes(), "Should be able to schedule with backtrack")
 
 
 class SchedulerCheckBad(unittest.TestCase):
