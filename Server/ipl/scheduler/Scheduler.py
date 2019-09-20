@@ -142,7 +142,9 @@ class Scheduler(object):
 
         #if current time is passed any m_StartBefore, then there is no point continuing
         for batchID, batchState in batchIDOrderList:
-            if batchState.m_StartBefore < currentTime:
+            tmpBlock = TimeBlock()
+            step = batchState.m_Step
+            if batchState.m_StartBefore < currentTime and self.GetBlock(batchID, step,tmpBlock) != 0:
                 if self.debug:
                     print("#Shortcut batchState.m_StartBefore < currentTime ",batchState.m_StartBefore,currentTime)
                 return False

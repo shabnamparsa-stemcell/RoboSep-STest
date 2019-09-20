@@ -26,6 +26,8 @@ testProtocolImpossible2of2 = ((300, 31, 0, -1), (10, 240, 0, -1))
 testProtocolBacktrack1of2 = ((300, 31, 240, -1), (0, 31, 0, -1))
 testProtocolBacktrack2of2 = ((300, 31, 0, -1), (10, 240, 0, -1))
 
+testProtocolSimple1of2 = ((300, 31, 50, -1), (100, 31, 0, -1))
+testProtocolSimple2of2 = ((300, 31, 20, -1), (10, 31, 0, -1))
 
 def BuildBlockList(dataList):
     blockList = []
@@ -203,7 +205,6 @@ class SchedulerCheckOK(unittest.TestCase):
 
     def testScheduleFailed1(self):
         blockList = BuildBlockList(testProtocolCantDo4WithDefaultSettings)
-        blockIndex = { }
         checkBlock = Scheduler.TimeBlock()
         s = Scheduler.Scheduler()
 
@@ -222,7 +223,6 @@ class SchedulerCheckOK(unittest.TestCase):
     def testScheduleFailed2(self):
         blockList = BuildBlockList(testProtocolImpossible1of2)
         blockList2 = BuildBlockList(testProtocolImpossible1of2)
-        blockIndex = { }
         checkBlock = Scheduler.TimeBlock()
         s = Scheduler.Scheduler()
         for block in blockList:
@@ -234,7 +234,6 @@ class SchedulerCheckOK(unittest.TestCase):
     def testScheduleBacktrack1(self):
         blockList = BuildBlockList(testProtocolBacktrack1of2)
         blockList2 = BuildBlockList(testProtocolBacktrack2of2)
-        blockIndex = { }
         checkBlock = Scheduler.TimeBlock()
         s = Scheduler.Scheduler()
         for block in blockList:
@@ -242,6 +241,17 @@ class SchedulerCheckOK(unittest.TestCase):
         for block in blockList2:
             s.AppendBlock(2, block)
         self.assertTrue(s.CalculateTimes(), "Should be able to schedule with backtrack")
+
+    def testScheduleSimple1(self):
+        blockList = BuildBlockList(testProtocolSimple1of2)
+        blockList2 = BuildBlockList(testProtocolSimple2of2)
+        checkBlock = Scheduler.TimeBlock()
+        s = Scheduler.Scheduler()
+        for block in blockList:
+            s.AppendBlock(1, block)
+        for block in blockList2:
+            s.AppendBlock(2, block)
+        self.assertTrue(s.CalculateTimes(), "Should be able to schedule with simple")
 
 
 class SchedulerCheckBad(unittest.TestCase):
