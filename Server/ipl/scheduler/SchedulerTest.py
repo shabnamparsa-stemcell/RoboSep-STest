@@ -203,6 +203,19 @@ class SchedulerCheckOK(unittest.TestCase):
      #   self.assertNotEqual(s.GetBlock(batchID, 0, checkBlock), 0)
      #   self.assertTrue(checkBlock.m_StartTime == delay)
 
+    def checkBlocks(self, scheduler, batchID):
+        checkBlock = Scheduler.TimeBlock()
+        lastBlockEndTime = 0
+        index = 0
+        while scheduler.GetBlock(batchID, index, checkBlock) != 0:
+            latestAllowedStartTime = lastBlockEndTime + checkBlock.m_OpenPeriod
+            self.assertTrue(checkBlock.m_StartTime >= lastBlockEndTime)
+            self.assertTrue(checkBlock.m_StartTime <= latestAllowedStartTime)
+            lastBlockEndTime = checkBlock.m_StartTime + checkBlock.m_UsedPeriod + checkBlock.m_FreePeriod
+            index = index + 1
+        
+        
+
     def testScheduleFailed1(self):
         blockList = BuildBlockList(testProtocolCantDo4WithDefaultSettings)
         checkBlock = Scheduler.TimeBlock()
@@ -241,6 +254,9 @@ class SchedulerCheckOK(unittest.TestCase):
         for block in blockList2:
             s.AppendBlock(2, block)
         self.assertTrue(s.CalculateTimes(), "Should be able to schedule with backtrack")
+        self.checkBlocks(s,1)
+        self.checkBlocks(s,2)
+
 
     def testScheduleSimple1(self):
         blockList = BuildBlockList(testProtocolSimple1of2)
@@ -252,6 +268,8 @@ class SchedulerCheckOK(unittest.TestCase):
         for block in blockList2:
             s.AppendBlock(2, block)
         self.assertTrue(s.CalculateTimes(), "Should be able to schedule with simple")
+        self.checkBlocks(s,1)
+        self.checkBlocks(s,2)
 
 
 class SchedulerCheckBad(unittest.TestCase):
