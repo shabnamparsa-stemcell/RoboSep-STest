@@ -112,7 +112,13 @@ def cmpVersions(version1, version2):
     v1 = convertVersionString(version1)
     v2 = convertVersionString(version2)
     return cmp(v1, v2)
-    
+
+def cmp(a, b):
+    if a is None:
+        return -1
+    if b is None:
+        return 1
+    return (a > b) - (a < b)
 
 def createNewInstallerFile(filename, versionTuple):
     '''Create a new installer file with the latest version info, *if* required'''

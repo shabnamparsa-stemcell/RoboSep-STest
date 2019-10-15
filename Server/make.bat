@@ -36,7 +36,8 @@ rem zip -q9r robosep.zip tesla -i *.pyo -x *\tests\*.pyo
 rem Now build the launcher exe
 rem 
 echo Building launcher exe
-python setup.py --quiet py2exe --includes xml.sax.drivers2.drv_pyexpat,dbhash
+rem python setup.py --quiet py2exe --includes xml.sax.drivers2.drv_pyexpat,dbhash
+pyinstaller  -y RoboSepLauncher.py
 
 
 rem Update the version information in the installer script file

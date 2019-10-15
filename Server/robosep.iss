@@ -50,8 +50,9 @@ Source: "Separator.exe.config.bak"; DestDir: "{app}\bin"
 ;Source: "tools\schedeval.py"; DestDir: "{app}\bin"
 ;Source: "tesla\instrument\tests\HandsOnTest.py"; DestDir: "{app}\bin"
 ;Source: "tesla\instrument\tests\TipTest.py"; DestDir: "{app}\bin"
-;Source: "tesla\instrument\tests\ZAxisTester.py"; DestDir: "{app}\bin"
-Source: "dist\*"; DestDir: "{app}\launcher"
+;Source: "tesla\instrument\tests\ZAxisTester.py"; DestDir: "{app}\bin" 
+Source: "dist\RoboSepLauncher\*"; DestDir: "{app}\launcher"
+Source: "dist\RoboSepLauncher\wx\*"; DestDir: "{app}\launcher\wx"
 
 ; Data files
 Source: "tesla\control\cmd_times.ini"; DestDir: "{app}\config"
