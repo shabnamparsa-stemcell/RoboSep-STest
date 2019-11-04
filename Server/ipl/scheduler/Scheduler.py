@@ -280,6 +280,9 @@ class Scheduler(object):
     def NbrIterations(self):
         return len(self.UniqueCommandCombo)
 
+    def GetBatchIDs(self):
+        return list(self.__BlocklistDictionary)
+
 
 
     
