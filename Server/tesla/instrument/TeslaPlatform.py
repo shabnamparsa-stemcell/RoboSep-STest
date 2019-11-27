@@ -641,7 +641,9 @@ class TeslaPlatform (Platform):
                     #Michael: Error messages (when I26==1, even though tip stripper is extended out) will be displayed/logged depending on SS_EnableStripArmPositionCheck. 
                     #tipStripper.getHomeStatus(self): checks I26
                     i26 = self.tipStripper.getHomeStatus()
-                    isStripperArmFailed = i26 == 1 #ERROR case!
+                    msg = 'SS_XY_MICRO_LC->I26 =' + i26
+                    self.__logger.logDebug(msg)
+                    isStripperArmFailed = int(i26) == 1 #ERROR case!
                     ###isStripperArmFailed = True #force emulation tip strip fail
                     if isStripperArmFailed: 
                         boRaiseError = tesla.config.SS_ENABLE_STRIP_ARM_POSITION_CHECK == 1
@@ -651,6 +653,7 @@ class TeslaPlatform (Platform):
                             msg = tipStripWarningMsg
 
                         print ('\n### Strip ARM Failed with SSXYMicroLC ####\n')
+                        self.__logger.logDebug('### Strip ARM Failed with SSXYMicroLC ####')
                         self.__logger.logDebug(msg)
                         self.svrLog.logError('', self.logPrefix, funcReference, msg)   
                         if( tesla.config.SS_EXT_LOGGER == 1 ):  

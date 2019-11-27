@@ -2,6 +2,7 @@
 
 from threading import *
 import copy
+import sys
 
 class Future:
     """From the Python Cookbook discussion:
@@ -75,7 +76,9 @@ class Future:
         self._Future__result = None
         self._Future__status = 'working'
         self._Future__caughtException = False
-        self._Future__exception = RuntimeError()
+        self._Future__exception_type = None
+        self._Future__exception_value = None
+        self._Future__exception_traceback = None
         self._Future__C = Condition()
         self._Future__T = Thread(target = self._Future__wrapper, args = (func, param))
         self._Future__T.setName('FutureThread')
@@ -104,7 +107,7 @@ class Future:
             self._Future__C.wait()
         self._Future__C.release()
         if self._Future__caughtException:
-            raise self._Future__exception
+            raise self._Future__exception_type, self._Future__exception_value, self._Future__exception_traceback
         else:
             result = copy.deepcopy(self._Future__result)
             return result
@@ -118,9 +121,11 @@ class Future:
         try:
             self._Future__result = func(*param)
         except Exception:
-            inst = None
             self._Future__caughtException = True
-            self._Future__exception = inst
+            t, v, tb = sys.exc_info()
+            self._Future__exception_type = t
+            self._Future__exception_value = v
+            self._Future__exception_traceback = tb
 
         self._Future__done = True
         self._Future__status = repr(self._Future__result)
