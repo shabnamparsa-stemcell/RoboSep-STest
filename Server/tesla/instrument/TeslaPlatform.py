@@ -635,16 +635,23 @@ class TeslaPlatform (Platform):
                 tipStripWarningMsg = "Tip strip could fail because stripper arm didn't come out all the way."
                 tipStripFailedMsg = "Tip strip failed because stripper arm didn't come out all the way."
 
-                if tesla.config.SS_FORCE_EMULATION == 1:
+                force_stripper_arm_fail = False
+
+                #force emulation tip strip fail
+                #self.__SS_XY_MICRO_LC = 1
+                #force_stripper_arm_fail = True
+                #i26 = "1"
+
+                if tesla.config.SS_FORCE_EMULATION == 1 and not force_stripper_arm_fail:
                     isStripperArmFailed = False
                 elif self.__SS_XY_MICRO_LC == 1: #2019-04-09 new logic for new board without i27
                     #Michael: Error messages (when I26==1, even though tip stripper is extended out) will be displayed/logged depending on SS_EnableStripArmPositionCheck. 
                     #tipStripper.getHomeStatus(self): checks I26
-                    i26 = self.tipStripper.getHomeStatus()
+                    i26 = self.tipStripper.getHomeStatus() #comment to force emulation tip strip fail
                     msg = 'SS_XY_MICRO_LC->I26 =' + i26
                     self.__logger.logDebug(msg)
                     isStripperArmFailed = int(i26) == 1 #ERROR case!
-                    ###isStripperArmFailed = True #force emulation tip strip fail
+                    #isStripperArmFailed = True #force emulation tip strip fail
                     if isStripperArmFailed: 
                         boRaiseError = tesla.config.SS_ENABLE_STRIP_ARM_POSITION_CHECK == 1
                         if boRaiseError:
