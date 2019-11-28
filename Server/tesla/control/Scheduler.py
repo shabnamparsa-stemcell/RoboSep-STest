@@ -324,11 +324,11 @@ class SampleScheduler(object):
         self.reset()
         self.endTimeSpanThreshold = self.schedulerEndTimeSpan1
         self.appendBlocks(sampleList)
-        self.logger.logDebug("SS: calculateTimes() called")
-        self.svrLog.logInfo('S', self.logPrefix, funcReference, "calculateTimes() called" )    # 2011-11-24 sp -- added logging
+        self.logger.logDebug("SS: new calculateTimes() called")
+        self.svrLog.logInfo('S', self.logPrefix, funcReference, " new calculateTimes() called" )    # 2011-11-24 sp -- added logging
         schedulingSuccess = self.scheduler.CalculateTimes()
-        self.logger.logDebug("SS: calculateTimes() finished")
-        self.svrLog.logDebug('', self.logPrefix, funcReference, "calculateTimes() finished" )    # 2011-11-24 sp -- added logging
+        self.logger.logDebug("SS: new calculateTimes() finished")
+        self.svrLog.logDebug('', self.logPrefix, funcReference, " new calculateTimes() finished" )    # 2011-11-24 sp -- added logging
         
         if not schedulingSuccess:
 

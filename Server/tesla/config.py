@@ -32,7 +32,7 @@ from configparser import *          # 2012-01-30 sp -- configuration from ini fi
 # The version of the instrument control server software
 # Changing this affects the version number for the installation package (via
 # robosep.iss)   .... 338 represents a repair to lysis proportional volume
-SOFTWARE_VERSION = '1.3.0.0'
+SOFTWARE_VERSION = '1.4.0.20191126'
 
 # -----------------------------------------------------------------------------
 # Configuration meta-data; don't touch anything in this section unless you
