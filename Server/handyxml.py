@@ -121,7 +121,7 @@ def xml(xmlin, cacheFile = True):
     if filename:
         if filename in _xmlcache:
             return _xmlcache[filename]
-        xmlin = open(filename)
+        xmlin = open(filename, 'r', encoding='utf=8')
 
     xmldata = xmlin.read()
     if bDomlette:

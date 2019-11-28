@@ -175,10 +175,12 @@ class ProtocolManager(object):
         files = []
         if os.path.isfile(udbPath):
             try:
+                print("xml: "+udbPath)
                 xmlData = handyxml.xml(udbPath,False)
                 files = [os.path.join(self.path,node.childNodes[0].nodeValue) \
                          for node in xmlData.ProtocolFile ]
             except Exception as msg:
+                print(msg)
                 pass
             
         files.append(os.path.join(self.path,"home_axes.xml"))
@@ -482,8 +484,10 @@ class ProtocolManager(object):
         #print "###### Now in Function: %s ######" %  funcReference
         self.svrLog.logID('', self.logPrefix, funcReference, 'File to add, path=%s' % path )    # 2011-11-254 sp -- added logging
         if path in ProtocolManager.presetUserData:
+            print("__getFileInfo")
             files = [ f.name for f in self.__getFileInfo(self.fileDBPath)]
         else:
+            print("__getFilesFromUDB")
             #print ">>>>>> ProtocolManager.presentUserData has no key <<<<<<<"
             #print ">>>>>> Going to call __getFilesFromUDB using path: %s after 5 secs <<<<<<" % path 
             #time.sleep(5)
@@ -519,6 +523,7 @@ class ProtocolManager(object):
         count = 0
         for entry in xmlFileList:
             try:
+                
                 if os.path.exists(entry):
                     protocol = Protocol(fileName = entry, **self.protocol_args)
                     self.add(protocol)
