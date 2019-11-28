@@ -30,7 +30,7 @@ def Report(file = None):
     else:
         dbFile = file
         
-    db = dbm.open (dbFile, 'r')
+    db = dbm.open (dbFile, 'cr')
 
     try:
         print("%-16s %-17s %-10s %17s %15s %15s" % ("Name:", "Commissioned:", "Movements:", "Steps (x10^6):", "Full motions:", "Failures/Homes:"))
@@ -184,7 +184,7 @@ class AxisTracker:
     #-------------------------------------------------------------------------
     def __StoreData (self):
         """Store data to the database"""
-        db = dbm.open (AxisTracker.dbFilePath, 'w')
+        db = dbm.open (AxisTracker.dbFilePath, 'cw')
 
         try:
             dataString = "%d, %d, %d, %d, %d, %d, %d" % \

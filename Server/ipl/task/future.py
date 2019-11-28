@@ -107,7 +107,9 @@ class Future:
             self._Future__C.wait()
         self._Future__C.release()
         if self._Future__caughtException:
-            raise self._Future__exception_type, self._Future__exception_value, self._Future__exception_traceback
+            e = self._Future__exception_type(self._Future__exception_value)
+            e.__traceback__ = self._Future__exception_traceback
+            raise e #self._Future__exception_type, self._Future__exception_value, self._Future__exception_traceback
         else:
             result = copy.deepcopy(self._Future__result)
             return result
