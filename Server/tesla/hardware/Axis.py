@@ -287,11 +287,14 @@ class Axis(Device):
             self.Home()
 
         if tipstrip and not isHome:
+            self.logger.logInfo("Axis: %s (%s), Tipstripping NOT HOME SS_MINNIE_DEV=%d" % (self.m_Name, self.m_Card.prefix, tesla.config.SS_MINNIE_DEV))
             # 2011-10-26 sp -- use previously tested code when environment variable is defined
             # 2012-01-30 sp -- replace environment variable with configuration variable
             #if not os.environ.has_key('SS_MINNIE_DEV'):
             if tesla.config.SS_MINNIE_DEV == 0:
                 val = self.m_Card.FindMissingSteps()
+                self.logger.logError("Tip strip failed! [%s steps from the %s Home sensor]"%(val,self.m_Card.prefix))
+            
                 self.svrLog.logError('X', self.logPrefix, funcReference, "Tip strip failed! [%s steps from the %s Home sensor]"%(val,self.m_Card.prefix))   # 2011-11-29 sp -- added logging
                 if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
                     self.m_Card.ExtLogger.SetCmdListLog("Tip strip failed! [%s steps from the %s Home sensor]"%(val,self.m_Card.prefix), self.m_Card.prefix)
@@ -305,14 +308,21 @@ class Axis(Device):
                 self.Home()
                 val = self.m_Card.getStepsToHome()
                 slippedSteps = postitionBeforeHome - val;
+                
+                self.logger.logInfo("postitionBeforeHome=%d getStepsToHome=%d slippedSteps=%d StepsSlippedThreshold=%d" % \
+                                    (postitionBeforeHome, val, slippedSteps, int( self.m_Settings[Axis.StepsSlippedThreshold] )))
+            
                 self.svrLog.logDebug('S', self.logPrefix, funcReference, 'Steps slipped going home=%d' % ( slippedSteps ) )
                 if( abs( slippedSteps ) > int( self.m_Settings[Axis.StepsSlippedThreshold] ) ):
+                    self.logger.logError("Tip strip failed! [slippedSteps=%d > StepsSlippedThreshold=%d]" % (slippedSteps, int( self.m_Settings[Axis.StepsSlippedThreshold] )))
                     self.svrLog.logError('', self.logPrefix, funcReference, 'Steps slipped exceeded threshold=%s' % ( self.m_Settings[Axis.StepsSlippedThreshold] ) )
                     if( tesla.config.SS_EXT_LOGGER == 1 ):  # 2013-01-14 -- sp, added ini file flag
                         self.m_Card.ExtLogger.SetCmdListLog("Tip strip failed! [%s steps from the %s Home sensor]"%(val,self.m_Card.prefix), self.m_Card.prefix)
                         self.m_Card.ExtLogger.CheckSystemAvail()
                         self.m_Card.ExtLogger.DumpHistory()
                     raise AxisError ('Tip strip failed')
+                else:
+                    self.logger.logInfo("NO Tip strip failed because slippedSteps <= StepsSlippedThreshold")
 
 
     def End(self):
