@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -280,71 +280,82 @@ namespace GUI_Console
             string CompleteStatus = string.Empty;
             string QuadrantsUsed = string.Empty;
 
+            int count = 0;
+
             // parse documents
             for (int i = 0; i < myReportFiles.Length; i++)
             {
                 FileCreated = myReportFiles[i].LastWriteTime;
 
-                if (File.Exists(myReportFiles[i].FullName))
+                try //myXmlDocument.Load(myReportFiles[i].FullName) would throw exception if xml is blank, so just skip it 
                 {
-                    myXmlDocument.Load(myReportFiles[i].FullName);
-                    node = myXmlDocument.DocumentElement;
-
-                    int nSample = 0;
-                    UserName = string.Empty;
-                    CompleteStatus = string.Empty;
-                    QuadrantsUsed = string.Empty;
-
-                    foreach (XmlNode node1 in node.ChildNodes)
+                    if (File.Exists(myReportFiles[i].FullName))
                     {
-                        if (string.IsNullOrEmpty(node1.Name)) 
-                            continue;
-                        
-                        // table 'RunDetails'
-                        if (node1.Name == "RunDetails")
+                        myXmlDocument.Load(myReportFiles[i].FullName);
+                        node = myXmlDocument.DocumentElement;
+
+                        int nSample = 0;
+                        UserName = string.Empty;
+                        CompleteStatus = string.Empty;
+                        QuadrantsUsed = string.Empty;
+
+                        foreach (XmlNode node1 in node.ChildNodes)
                         {
-                            int nCount = 0;
-                            foreach (XmlNode node2 in node1.ChildNodes)
+                            if (string.IsNullOrEmpty(node1.Name))
+                                continue;
+
+                            // table 'RunDetails'
+                            if (node1.Name == "RunDetails")
                             {
-                                if (string.IsNullOrEmpty(node2.Name))
-                                    continue;
+                                int nCount = 0;
+                                foreach (XmlNode node2 in node1.ChildNodes)
+                                {
+                                    if (string.IsNullOrEmpty(node2.Name))
+                                        continue;
 
-                                if (node2.Name == "operatorID" && string.IsNullOrEmpty(UserName))
-                                {
-                                    UserName = node2.InnerText;
-                                    nCount++;
+                                    if (node2.Name == "operatorID" && string.IsNullOrEmpty(UserName))
+                                    {
+                                        UserName = node2.InnerText;
+                                        nCount++;
+                                    }
+                                    if (node2.Name == "finalStatus" && string.IsNullOrEmpty(CompleteStatus))
+                                    {
+                                        CompleteStatus = node2.InnerText;
+                                        nCount++;
+                                    }
+                                    if (nCount == 2)
+                                        break;
                                 }
-                                if (node2.Name == "finalStatus" && string.IsNullOrEmpty(CompleteStatus))
-                                {
-                                    CompleteStatus = node2.InnerText;
-                                    nCount++;
-                                }
-                                if (nCount == 2)
-                                    break;
                             }
-                        }
-                        
-                        // Count the number of samples
-                        if (node1.Name == "RunSample")
-                        {
-                            nSample++;
-                        }
-                    } // end for node1
 
-                    QuadrantsUsed = nSample.ToString();
+                            // Count the number of samples
+                            if (node1.Name == "RunSample")
+                            {
+                                nSample++;
+                            }
+                        } // end for node1
 
-                    // add item to listview
-                    ListViewItem lvItem = listView_robostat.Items.Add(string.Format("{0:HH:mm dd/MM/yy}", FileCreated));
-                    lvItem.Tag = i;
+                        QuadrantsUsed = nSample.ToString();
 
-                    listView_robostat.Items[i].SubItems.Add(UserName);
+                        // add item to listview
+                        ListViewItem lvItem = listView_robostat.Items.Add(string.Format("{0:HH:mm dd/MM/yy}", FileCreated));
+                        lvItem.Tag = i;
 
-                    string tmp = QuadrantsUsed + " Protocol";
-                    tmp = QuadrantsUsed == "1" ? tmp + "  - " : tmp + "s - ";
-                    tmp += CompleteStatus.StartsWith("ABORTED") ? "ABORTED by User" : CompleteStatus;
-                    listView_robostat.Items[i].SubItems.Add(tmp);
+                        lvItem.SubItems.Add(UserName);
 
-                } 
+                        string tmp = QuadrantsUsed + " Protocol";
+                        tmp = QuadrantsUsed == "1" ? tmp + "  - " : tmp + "s - ";
+                        tmp += CompleteStatus.StartsWith("ABORTED") ? "ABORTED by User" : CompleteStatus;
+                        lvItem.SubItems.Add(tmp);
+
+                        count++;
+
+                    }
+                }
+                catch (Exception e) 
+                {
+                    string err = e.Message;
+                }
             } 
 
             listView_robostat.UpdateScrollbar();
