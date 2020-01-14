@@ -214,10 +214,10 @@ class ZThetaRobot(Subsystem):
         """Define the Z-axis position to adopt prior to rotating the theta 
         axis."""
         # Ensure that result is within limits
-        position = self.Z().MaxPosition()
+        position = zTravelPosition
         if zTravelPosition != None:
             position = min(zTravelPosition, self.Z().MaxPosition())
-        position = max(position, self.Z().MinPosition())
+            position = max(position, self.Z().MinPosition())
         self.__m_ZTravelPosition = position
 
 
